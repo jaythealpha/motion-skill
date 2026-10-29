@@ -1,0 +1,911 @@
+{
+ "subject": {
+  "name": {
+   "ko": "미니 선박",
+   "en": "Mini Ship"
+  },
+  "kind": "ship",
+  "built": 1910,
+  "dims": {
+   "loa": 200,
+   "beam": 20,
+   "depth": 15,
+   "draft": 8
+  },
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "features": {
+  "lights": true,
+  "compartments": true,
+  "break": true,
+  "projection": true
+ },
+ "chapters": [
+  {
+   "id": "night",
+   "name": {
+    "ko": "그날 밤",
+    "en": "That night"
+   },
+   "start": "1912-04-14T23:39",
+   "end": "1912-04-15T02:20",
+   "bar": [
+    0,
+    45
+   ],
+   "unit": "minute"
+  },
+  {
+   "id": "descent",
+   "name": {
+    "ko": "하강",
+    "en": "Descent"
+   },
+   "start": "1912-04-15T02:20",
+   "end": "1912-04-15T02:40",
+   "bar": [
+    45,
+    55
+   ],
+   "unit": "minute"
+  },
+  {
+   "id": "seabed",
+   "name": {
+    "ko": "해저",
+    "en": "Seabed"
+   },
+   "start": "1912-04-15T02:40",
+   "end": 2026,
+   "bar": [
+    55,
+    90
+   ],
+   "unit": "year"
+  },
+  {
+   "id": "future",
+   "name": {
+    "ko": "앞으로",
+    "en": "Ahead"
+   },
+   "start": 2026,
+   "end": 2100,
+   "bar": [
+    90,
+    100
+   ],
+   "unit": "year"
+  }
+ ],
+ "pieces": [
+  {
+   "id": "ship",
+   "name": {
+    "ko": "선박",
+    "en": "Ship"
+   },
+   "template": "group",
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "bow",
+   "name": {
+    "ko": "선수부",
+    "en": "Bow section"
+   },
+   "template": "hull",
+   "parent": "ship",
+   "sourceIds": [
+    "s1"
+   ],
+   "params": {
+    "depth": 15,
+    "draft": 8,
+    "sheer": {
+     "fwd": 2,
+     "aft": 1
+    },
+    "stem": "straight",
+    "stern": "cruiser",
+    "range": [
+     0,
+     100
+    ],
+    "cap": "jagged",
+    "offsets": {
+     "waterlines": [
+      0,
+      4,
+      8,
+      15
+     ],
+     "stations": [
+      {
+       "x": -100,
+       "hb": [
+        0.5,
+        3,
+        5,
+        6
+       ]
+      },
+      {
+       "x": -50,
+       "hb": [
+        8,
+        9.5,
+        10,
+        10
+       ]
+      },
+      {
+       "x": 0,
+       "hb": [
+        9,
+        10,
+        10,
+        10
+       ]
+      },
+      {
+       "x": 50,
+       "hb": [
+        7,
+        9,
+        9.5,
+        10
+       ]
+      },
+      {
+       "x": 100,
+       "hb": [
+        0.2,
+        0.5,
+        1,
+        2
+       ]
+      }
+     ]
+    },
+    "paint": {
+     "topside": "#1c1d20",
+     "bottom": "#8e2b1f",
+     "boot": "#f2efe6",
+     "bootHeight": 0.6
+    },
+    "windows": [
+     {
+      "z": 12,
+      "from": -80,
+      "to": 80,
+      "spacing": 4
+     }
+    ]
+   },
+   "embed": 18
+  },
+  {
+   "id": "stern",
+   "name": {
+    "ko": "선미부",
+    "en": "Stern section"
+   },
+   "template": "hull",
+   "parent": "ship",
+   "sourceIds": [
+    "s1"
+   ],
+   "params": {
+    "depth": 15,
+    "draft": 8,
+    "sheer": {
+     "fwd": 2,
+     "aft": 1
+    },
+    "stem": "straight",
+    "stern": "cruiser",
+    "range": [
+     -100,
+     0
+    ],
+    "cap": "jagged",
+    "offsets": {
+     "waterlines": [
+      0,
+      4,
+      8,
+      15
+     ],
+     "stations": [
+      {
+       "x": -100,
+       "hb": [
+        0.5,
+        3,
+        5,
+        6
+       ]
+      },
+      {
+       "x": -50,
+       "hb": [
+        8,
+        9.5,
+        10,
+        10
+       ]
+      },
+      {
+       "x": 0,
+       "hb": [
+        9,
+        10,
+        10,
+        10
+       ]
+      },
+      {
+       "x": 50,
+       "hb": [
+        7,
+        9,
+        9.5,
+        10
+       ]
+      },
+      {
+       "x": 100,
+       "hb": [
+        0.2,
+        0.5,
+        1,
+        2
+       ]
+      }
+     ]
+    },
+    "paint": {
+     "topside": "#1c1d20",
+     "bottom": "#8e2b1f",
+     "boot": "#f2efe6",
+     "bootHeight": 0.6
+    }
+   },
+   "embed": 4
+  },
+  {
+   "id": "house",
+   "name": {
+    "ko": "갑판실",
+    "en": "Deckhouse"
+   },
+   "template": "deckhouse",
+   "parent": "bow",
+   "on": "bow",
+   "offset": [
+    30,
+    0,
+    15
+   ],
+   "confidence": "estimated",
+   "params": {
+    "l": 40,
+    "b": 14,
+    "h": 6,
+    "r": 2,
+    "windows": 2
+   }
+  },
+  {
+   "id": "funnel",
+   "name": {
+    "ko": "굴뚝",
+    "en": "Funnel"
+   },
+   "template": "funnel",
+   "parent": "bow",
+   "offset": [
+    30,
+    0,
+    21
+   ],
+   "passesThrough": [
+    "house"
+   ],
+   "sourceIds": [
+    "s1"
+   ],
+   "params": {
+    "a": 4,
+    "b": 3,
+    "h": 14,
+    "rake": 4,
+    "top": 2
+   }
+  },
+  {
+   "id": "c1",
+   "name": {
+    "ko": "1구획",
+    "en": "Compartment 1"
+   },
+   "template": "compartment",
+   "parent": "bow",
+   "sourceIds": [
+    "s1"
+   ],
+   "params": {
+    "x0": 60,
+    "x1": 95,
+    "floor": 1
+   }
+  },
+  {
+   "id": "c2",
+   "name": {
+    "ko": "2구획",
+    "en": "Compartment 2"
+   },
+   "template": "compartment",
+   "parent": "bow",
+   "sourceIds": [
+    "s1"
+   ],
+   "params": {
+    "x0": 25,
+    "x1": 60,
+    "floor": 1
+   }
+  },
+  {
+   "id": "b12",
+   "name": {
+    "ko": "1-2 격벽",
+    "en": "Bulkhead 1-2"
+   },
+   "template": "bulkhead",
+   "parent": "bow",
+   "sourceIds": [
+    "s1"
+   ],
+   "params": {
+    "x": 60,
+    "top": 9
+   }
+  },
+  {
+   "id": "berg",
+   "name": {
+    "ko": "빙산",
+    "en": "Iceberg"
+   },
+   "template": "iceberg",
+   "offset": [
+    400,
+    -30,
+    0
+   ],
+   "sourceIds": [
+    "s1"
+   ],
+   "params": {
+    "l": 60,
+    "b": 40,
+    "above": 18,
+    "below": 90,
+    "seed": 3
+   }
+  },
+  {
+   "id": "boiler",
+   "name": {
+    "ko": "보일러",
+    "en": "Boiler"
+   },
+   "template": "boiler",
+   "parent": "stern",
+   "offset": [
+    -20,
+    0,
+    4
+   ],
+   "confidence": "estimated",
+   "params": {
+    "d": 4.8,
+    "l": 6
+   }
+  },
+  {
+   "id": "floor",
+   "name": {
+    "ko": "해저",
+    "en": "Seabed"
+   },
+   "template": "seabed",
+   "confidence": "estimated",
+   "params": {}
+  }
+ ],
+ "tracks": [
+  {
+   "piece": "ship",
+   "prop": "pose",
+   "interp": "linear",
+   "keys": [
+    {
+     "at": "1912-04-14T23:39",
+     "v": {
+      "pos": [
+       0,
+       0,
+       -8
+      ],
+      "trim": 0,
+      "list": 0,
+      "heading": 0
+     },
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1912-04-15T01:00",
+     "v": {
+      "pos": [
+       380,
+       0,
+       -10
+      ],
+      "trim": 3,
+      "list": 1,
+      "heading": 0
+     },
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1912-04-15T02:15",
+     "v": {
+      "pos": [
+       380,
+       0,
+       -16
+      ],
+      "trim": 10,
+      "list": 2,
+      "heading": 0
+     },
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "bow",
+   "prop": "pose",
+   "interp": "smooth",
+   "keys": [
+    {
+     "at": "1912-04-15T02:18",
+     "v": {
+      "pos": [
+       380,
+       0,
+       -16
+      ],
+      "trim": 10,
+      "list": 2,
+      "heading": 0
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1912-04-15T02:28",
+     "v": {
+      "pos": [
+       600,
+       50,
+       -2000
+      ],
+      "trim": 30,
+      "list": 0,
+      "heading": 0
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1912-04-15T02:35",
+     "v": {
+      "pos": [
+       700,
+       80,
+       -3800
+      ],
+      "trim": 2,
+      "list": 0,
+      "heading": 0
+     },
+     "sourceIds": [
+      "s1"
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "stern",
+   "prop": "pose",
+   "interp": "smooth",
+   "keys": [
+    {
+     "at": "1912-04-15T02:18",
+     "v": {
+      "pos": [
+       380,
+       0,
+       -16
+      ],
+      "trim": 10,
+      "list": 2,
+      "heading": 0
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1912-04-15T02:30",
+     "v": {
+      "pos": [
+       300,
+       -100,
+       -2400
+      ],
+      "trim": -20,
+      "list": 30,
+      "heading": 120
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1912-04-15T02:38",
+     "v": {
+      "pos": [
+       150,
+       -400,
+       -3800
+      ],
+      "trim": 0,
+      "list": 5,
+      "heading": 180
+     },
+     "sourceIds": [
+      "s1"
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "c1",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1912-04-14T23:40",
+     "v": 1,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1912-04-15T00:20",
+     "v": 9.5,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1912-04-15T02:00",
+     "v": 15,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "c2",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1912-04-14T23:40",
+     "v": 1,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1912-04-15T00:30",
+     "v": 3,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1912-04-15T02:00",
+     "v": 14,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "ship",
+   "prop": "lights",
+   "keys": [
+    {
+     "at": "1912-04-14T23:39",
+     "v": 1,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1912-04-15T02:17",
+     "v": 1,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1912-04-15T02:18",
+     "v": 0,
+     "sourceIds": [
+      "s1"
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "*",
+   "prop": "rust",
+   "keys": [
+    {
+     "at": "1912-04-15T02:40",
+     "v": 0,
+     "confidence": "estimated"
+    },
+    {
+     "at": 2026,
+     "v": 0.7,
+     "confidence": "estimated"
+    },
+    {
+     "at": 2100,
+     "v": 1,
+     "confidence": "projection"
+    }
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "hit",
+   "kind": "collision",
+   "at": "1912-04-14T23:40",
+   "piece": "bow",
+   "title": {
+    "ko": "충돌",
+    "en": "Collision"
+   },
+   "text": {
+    "ko": "빙산에 부딪혀요.",
+    "en": "It hits the iceberg."
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "spill",
+   "kind": "overflow",
+   "at": "1912-04-15T00:20",
+   "from": "c1",
+   "to": "c2",
+   "title": {
+    "ko": "넘침",
+    "en": "Overflow"
+   },
+   "text": {
+    "ko": "물이 격벽을 넘어요.",
+    "en": "Water spills over the bulkhead."
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "dark",
+   "kind": "lightsOut",
+   "at": "1912-04-15T02:18",
+   "title": {
+    "ko": "정전",
+    "en": "Lights out"
+   },
+   "text": {
+    "ko": "불이 꺼져요.",
+    "en": "The lights go out."
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "split",
+   "kind": "break",
+   "at": "1912-04-15T02:18",
+   "title": {
+    "ko": "두 동강",
+    "en": "The break"
+   },
+   "text": {
+    "ko": "배가 부러져요.",
+    "en": "The ship breaks."
+   },
+   "confidence": "disputed",
+   "alternatives": {
+    "ko": "다른 각도라는 학설도 있어요.",
+    "en": "Another theory gives a different angle."
+   }
+  },
+  {
+   "id": "found",
+   "kind": "discovery",
+   "at": 1985.67,
+   "title": {
+    "ko": "발견",
+    "en": "Found"
+   },
+   "text": {
+    "ko": "난파선이 발견돼요.",
+    "en": "The wreck is found."
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "fall",
+   "kind": "collapse",
+   "at": 1990,
+   "until": 1991,
+   "piece": "funnel",
+   "mode": "drop",
+   "title": {
+    "ko": "굴뚝 붕괴",
+    "en": "Funnel falls"
+   },
+   "text": {
+    "ko": "굴뚝이 떨어져요.",
+    "en": "The funnel falls."
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "sag",
+   "kind": "collapse",
+   "at": 2050,
+   "until": 2080,
+   "piece": "house",
+   "mode": "sag",
+   "title": {
+    "ko": "갑판실 처짐",
+    "en": "Deckhouse sags"
+   },
+   "text": {
+    "ko": "갑판실이 내려앉아요.",
+    "en": "The deckhouse sags."
+   },
+   "confidence": "projection"
+  }
+ ],
+ "camera": [
+  {
+   "at": "1912-04-14T23:39",
+   "target": "ship",
+   "yaw": 210,
+   "pitch": 16,
+   "dist": 380
+  },
+  {
+   "at": "1912-04-15T02:17",
+   "target": "ship",
+   "yaw": 235,
+   "pitch": 10,
+   "dist": 380
+  },
+  {
+   "at": "1912-04-15T02:20",
+   "target": "bow",
+   "yaw": 240,
+   "pitch": 10,
+   "dist": 300
+  },
+  {
+   "at": "1912-04-15T02:35",
+   "target": "bow",
+   "yaw": 250,
+   "pitch": 12,
+   "dist": 300
+  },
+  {
+   "at": "1912-04-15T02:40",
+   "target": [
+    460,
+    -160,
+    -3800
+   ],
+   "yaw": 215,
+   "pitch": 32,
+   "dist": 900
+  }
+ ],
+ "cameraSubject": [
+  "bow",
+  "stern"
+ ],
+ "environment": {
+  "seaDepth": 3800,
+  "sky": "night",
+  "seabed": {
+   "size": 4000,
+   "relief": 6
+  }
+ },
+ "wreck": {
+  "separation": {
+   "between": [
+    "bow",
+    "stern"
+   ],
+   "metres": 640,
+   "tol": 120
+  },
+  "heading": {
+   "between": [
+    "bow",
+    "stern"
+   ],
+   "deg": 180,
+   "tol": 30
+  }
+ },
+ "refs": {
+  "ko": {
+   "name": "롯데월드타워",
+   "height": 555
+  },
+  "en": {
+   "name": "Eiffel Tower",
+   "height": 330
+  }
+ },
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Test source",
+   "url": "https://example.org/",
+   "publisher": "Example",
+   "year": 2020
+  }
+ ],
+ "meta": {
+  "interpretation": {
+   "ko": "테스트용",
+   "en": "for tests"
+  },
+  "limitations": [],
+  "about": {
+   "ko": "테스트",
+   "en": "test"
+  }
+ }
+}

@@ -1,0 +1,4198 @@
+{
+ "subject": {
+  "name": {
+   "ko": "HMHS 브리타닉",
+   "en": "HMHS Britannic"
+  },
+  "kind": "ship",
+  "built": 1915,
+  "dims": {
+   "loa": 269.1,
+   "beam": 28.65,
+   "depth": 19.66,
+   "draft": 10.5
+  },
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "features": {
+  "lights": false,
+  "compartments": true,
+  "break": false,
+  "projection": false,
+  "xrayChapters": [
+   "explosion",
+   "flooding"
+  ]
+ },
+ "chapters": [
+  {
+   "id": "explosion",
+   "name": {
+    "ko": "폭발",
+    "en": "Explosion"
+   },
+   "start": "1916-11-21T08:10",
+   "end": "1916-11-21T08:16",
+   "bar": [
+    0,
+    8
+   ],
+   "unit": "minute"
+  },
+  {
+   "id": "flooding",
+   "name": {
+    "ko": "침수",
+    "en": "Flooding"
+   },
+   "start": "1916-11-21T08:16",
+   "end": "1916-11-21T09:00",
+   "bar": [
+    8,
+    40
+   ],
+   "unit": "minute"
+  },
+  {
+   "id": "capsize",
+   "name": {
+    "ko": "전복",
+    "en": "Capsize"
+   },
+   "start": "1916-11-21T09:00",
+   "end": "1916-11-21T09:10",
+   "bar": [
+    40,
+    62
+   ],
+   "unit": "minute"
+  },
+  {
+   "id": "quiet",
+   "name": {
+    "ko": "잊힌 60년",
+    "en": "Sixty quiet years"
+   },
+   "start": "1916-11-21T09:10",
+   "end": 1975.85,
+   "bar": [
+    62,
+    70
+   ],
+   "unit": "year"
+  },
+  {
+   "id": "explored",
+   "name": {
+    "ko": "탐사",
+    "en": "Explored"
+   },
+   "start": 1975.85,
+   "end": 2026.8,
+   "bar": [
+    70,
+    100
+   ],
+   "unit": "year"
+  }
+ ],
+ "pieces": [
+  {
+   "id": "ship",
+   "name": {
+    "ko": "브리타닉호",
+    "en": "Britannic"
+   },
+   "template": "group",
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "hull",
+   "name": {
+    "ko": "선체",
+    "en": "Hull"
+   },
+   "template": "hull",
+   "parent": "ship",
+   "params": {
+    "offsets": {
+     "waterlines": [
+      0,
+      0.55,
+      1.32,
+      2.2,
+      5.25,
+      10.5,
+      15.08,
+      19.66
+     ],
+     "stations": [
+      {
+       "x": -124.55,
+       "hb": [
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        1.854,
+        3.744,
+        5.635
+       ]
+      },
+      {
+       "x": -113.75,
+       "hb": [
+        2.327,
+        2.595,
+        2.698,
+        2.732,
+        2.732,
+        4.916,
+        6.998,
+        8.802
+       ]
+      },
+      {
+       "x": -102.96,
+       "hb": [
+        4.425,
+        4.946,
+        5.148,
+        5.213,
+        5.213,
+        7.588,
+        9.586,
+        11.098
+       ]
+      },
+      {
+       "x": -92.16,
+       "hb": [
+        6.397,
+        7.158,
+        7.451,
+        7.547,
+        7.547,
+        9.856,
+        11.55,
+        12.657
+       ]
+      },
+      {
+       "x": -81.37,
+       "hb": [
+        8.223,
+        9.205,
+        9.584,
+        9.708,
+        9.708,
+        11.701,
+        12.939,
+        13.617
+       ]
+      },
+      {
+       "x": -70.57,
+       "hb": [
+        9.867,
+        11.048,
+        11.504,
+        11.653,
+        11.653,
+        13.096,
+        13.81,
+        14.116
+       ]
+      },
+      {
+       "x": -59.78,
+       "hb": [
+        11.262,
+        12.613,
+        13.134,
+        13.304,
+        13.304,
+        14.001,
+        14.235,
+        14.301
+       ]
+      },
+      {
+       "x": -49.93,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": -48.98,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": -38.18,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": -27.39,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": -16.59,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": -5.8,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 5,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 15.8,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 26.59,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 37.39,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 43.35,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 48.18,
+       "hb": [
+        11.977,
+        13.429,
+        14.002,
+        14.203,
+        14.251,
+        14.294,
+        14.31,
+        14.318
+       ]
+      },
+      {
+       "x": 58.98,
+       "hb": [
+        11.265,
+        12.667,
+        13.26,
+        13.507,
+        13.72,
+        13.964,
+        14.095,
+        14.179
+       ]
+      },
+      {
+       "x": 69.78,
+       "hb": [
+        10.234,
+        11.541,
+        12.128,
+        12.406,
+        12.772,
+        13.246,
+        13.539,
+        13.753
+       ]
+      },
+      {
+       "x": 80.57,
+       "hb": [
+        8.963,
+        10.135,
+        10.69,
+        10.98,
+        11.454,
+        12.119,
+        12.571,
+        12.931
+       ]
+      },
+      {
+       "x": 91.37,
+       "hb": [
+        7.493,
+        8.493,
+        8.989,
+        9.268,
+        9.792,
+        10.571,
+        11.14,
+        11.623
+       ]
+      },
+      {
+       "x": 102.16,
+       "hb": [
+        5.846,
+        6.642,
+        7.051,
+        7.296,
+        7.803,
+        8.592,
+        9.201,
+        9.746
+       ]
+      },
+      {
+       "x": 112.96,
+       "hb": [
+        4.04,
+        4.6,
+        4.898,
+        5.085,
+        5.502,
+        6.175,
+        6.72,
+        7.229
+       ]
+      },
+      {
+       "x": 123.75,
+       "hb": [
+        2.088,
+        2.382,
+        2.543,
+        2.649,
+        2.897,
+        3.313,
+        3.663,
+        4.001
+       ]
+      },
+      {
+       "x": 134.55,
+       "hb": [
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        0.12
+       ]
+      }
+     ]
+    },
+    "depth": 19.66,
+    "draft": 10.5,
+    "sheer": {
+     "fwd": 4,
+     "aft": 1.5
+    },
+    "stem": "straight",
+    "stern": "counter",
+    "sternOverhang": 10,
+    "counterFrom": 8.5,
+    "counterRise": 5,
+    "paint": {
+     "topside": "#f1efe8",
+     "bottom": "#8a2a1d",
+     "boot": "#3b3b3b",
+     "bootHeight": 0.35,
+     "bands": [
+      {
+       "z0": 12.4,
+       "z1": 13.9,
+       "color": "#2f7d3a",
+       "from": -128.55,
+       "to": 130.55
+      },
+      {
+       "z0": 8.15,
+       "z1": 18.15,
+       "color": "#c8102e",
+       "from": 26.5,
+       "to": 29.5
+      },
+      {
+       "z0": 11.65,
+       "z1": 14.65,
+       "color": "#c8102e",
+       "from": 23,
+       "to": 33
+      },
+      {
+       "z0": 8.15,
+       "z1": 18.15,
+       "color": "#c8102e",
+       "from": -35.5,
+       "to": -32.5
+      },
+      {
+       "z0": 11.65,
+       "z1": 14.65,
+       "color": "#c8102e",
+       "from": -39,
+       "to": -29
+      },
+      {
+       "z0": 1.5,
+       "z1": 6.5,
+       "color": "#151515",
+       "from": 89.25,
+       "to": 102.85,
+       "side": "stbd"
+      }
+     ]
+    }
+   },
+   "embed": 2,
+   "sourceIds": [
+    "s1"
+   ],
+   "notes": "LOA, beam, moulded depth and draught sourced (s1). The form (offsets) is estimated with linerOffsets from the sister ship: no lines plan is public."
+  },
+  {
+   "id": "hull-main",
+   "name": {
+    "ko": "선체 (뒤쪽 대부분)",
+    "en": "Hull (main part)"
+   },
+   "template": "hull",
+   "parent": "ship",
+   "appear": "1916-11-21T09:05",
+   "params": {
+    "offsets": {
+     "waterlines": [
+      0,
+      0.55,
+      1.32,
+      2.2,
+      5.25,
+      10.5,
+      15.08,
+      19.66
+     ],
+     "stations": [
+      {
+       "x": -124.55,
+       "hb": [
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        1.854,
+        3.744,
+        5.635
+       ]
+      },
+      {
+       "x": -113.75,
+       "hb": [
+        2.327,
+        2.595,
+        2.698,
+        2.732,
+        2.732,
+        4.916,
+        6.998,
+        8.802
+       ]
+      },
+      {
+       "x": -102.96,
+       "hb": [
+        4.425,
+        4.946,
+        5.148,
+        5.213,
+        5.213,
+        7.588,
+        9.586,
+        11.098
+       ]
+      },
+      {
+       "x": -92.16,
+       "hb": [
+        6.397,
+        7.158,
+        7.451,
+        7.547,
+        7.547,
+        9.856,
+        11.55,
+        12.657
+       ]
+      },
+      {
+       "x": -81.37,
+       "hb": [
+        8.223,
+        9.205,
+        9.584,
+        9.708,
+        9.708,
+        11.701,
+        12.939,
+        13.617
+       ]
+      },
+      {
+       "x": -70.57,
+       "hb": [
+        9.867,
+        11.048,
+        11.504,
+        11.653,
+        11.653,
+        13.096,
+        13.81,
+        14.116
+       ]
+      },
+      {
+       "x": -59.78,
+       "hb": [
+        11.262,
+        12.613,
+        13.134,
+        13.304,
+        13.304,
+        14.001,
+        14.235,
+        14.301
+       ]
+      },
+      {
+       "x": -49.93,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": -48.98,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": -38.18,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": -27.39,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": -16.59,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": -5.8,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 5,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 15.8,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 26.59,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 37.39,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 43.35,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 48.18,
+       "hb": [
+        11.977,
+        13.429,
+        14.002,
+        14.203,
+        14.251,
+        14.294,
+        14.31,
+        14.318
+       ]
+      },
+      {
+       "x": 58.98,
+       "hb": [
+        11.265,
+        12.667,
+        13.26,
+        13.507,
+        13.72,
+        13.964,
+        14.095,
+        14.179
+       ]
+      },
+      {
+       "x": 69.78,
+       "hb": [
+        10.234,
+        11.541,
+        12.128,
+        12.406,
+        12.772,
+        13.246,
+        13.539,
+        13.753
+       ]
+      },
+      {
+       "x": 80.57,
+       "hb": [
+        8.963,
+        10.135,
+        10.69,
+        10.98,
+        11.454,
+        12.119,
+        12.571,
+        12.931
+       ]
+      },
+      {
+       "x": 91.37,
+       "hb": [
+        7.493,
+        8.493,
+        8.989,
+        9.268,
+        9.792,
+        10.571,
+        11.14,
+        11.623
+       ]
+      },
+      {
+       "x": 102.16,
+       "hb": [
+        5.846,
+        6.642,
+        7.051,
+        7.296,
+        7.803,
+        8.592,
+        9.201,
+        9.746
+       ]
+      },
+      {
+       "x": 112.96,
+       "hb": [
+        4.04,
+        4.6,
+        4.898,
+        5.085,
+        5.502,
+        6.175,
+        6.72,
+        7.229
+       ]
+      },
+      {
+       "x": 123.75,
+       "hb": [
+        2.088,
+        2.382,
+        2.543,
+        2.649,
+        2.897,
+        3.313,
+        3.663,
+        4.001
+       ]
+      },
+      {
+       "x": 134.55,
+       "hb": [
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        0.12
+       ]
+      }
+     ]
+    },
+    "depth": 19.66,
+    "draft": 10.5,
+    "sheer": {
+     "fwd": 4,
+     "aft": 1.5
+    },
+    "stem": "straight",
+    "stern": "counter",
+    "sternOverhang": 10,
+    "counterFrom": 8.5,
+    "counterRise": 5,
+    "paint": {
+     "topside": "#f1efe8",
+     "bottom": "#8a2a1d",
+     "boot": "#3b3b3b",
+     "bootHeight": 0.35,
+     "bands": [
+      {
+       "z0": 12.4,
+       "z1": 13.9,
+       "color": "#2f7d3a",
+       "from": -128.55,
+       "to": 130.55
+      },
+      {
+       "z0": 8.15,
+       "z1": 18.15,
+       "color": "#c8102e",
+       "from": 26.5,
+       "to": 29.5
+      },
+      {
+       "z0": 11.65,
+       "z1": 14.65,
+       "color": "#c8102e",
+       "from": 23,
+       "to": 33
+      },
+      {
+       "z0": 8.15,
+       "z1": 18.15,
+       "color": "#c8102e",
+       "from": -35.5,
+       "to": -32.5
+      },
+      {
+       "z0": 11.65,
+       "z1": 14.65,
+       "color": "#c8102e",
+       "from": -39,
+       "to": -29
+      },
+      {
+       "z0": 1.5,
+       "z1": 6.5,
+       "color": "#151515",
+       "from": 89.25,
+       "to": 102.85,
+       "side": "stbd"
+      }
+     ]
+    },
+    "range": [
+     -134.55,
+     91.25
+    ],
+    "cap": "jagged"
+   },
+   "embed": 2,
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "hull-bow",
+   "name": {
+    "ko": "찌그러진 선수",
+    "en": "Crumpled bow"
+   },
+   "template": "hull",
+   "parent": "ship",
+   "appear": "1916-11-21T09:05",
+   "params": {
+    "offsets": {
+     "waterlines": [
+      0,
+      0.55,
+      1.32,
+      2.2,
+      5.25,
+      10.5,
+      15.08,
+      19.66
+     ],
+     "stations": [
+      {
+       "x": -124.55,
+       "hb": [
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        1.854,
+        3.744,
+        5.635
+       ]
+      },
+      {
+       "x": -113.75,
+       "hb": [
+        2.327,
+        2.595,
+        2.698,
+        2.732,
+        2.732,
+        4.916,
+        6.998,
+        8.802
+       ]
+      },
+      {
+       "x": -102.96,
+       "hb": [
+        4.425,
+        4.946,
+        5.148,
+        5.213,
+        5.213,
+        7.588,
+        9.586,
+        11.098
+       ]
+      },
+      {
+       "x": -92.16,
+       "hb": [
+        6.397,
+        7.158,
+        7.451,
+        7.547,
+        7.547,
+        9.856,
+        11.55,
+        12.657
+       ]
+      },
+      {
+       "x": -81.37,
+       "hb": [
+        8.223,
+        9.205,
+        9.584,
+        9.708,
+        9.708,
+        11.701,
+        12.939,
+        13.617
+       ]
+      },
+      {
+       "x": -70.57,
+       "hb": [
+        9.867,
+        11.048,
+        11.504,
+        11.653,
+        11.653,
+        13.096,
+        13.81,
+        14.116
+       ]
+      },
+      {
+       "x": -59.78,
+       "hb": [
+        11.262,
+        12.613,
+        13.134,
+        13.304,
+        13.304,
+        14.001,
+        14.235,
+        14.301
+       ]
+      },
+      {
+       "x": -49.93,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": -48.98,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": -38.18,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": -27.39,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": -16.59,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": -5.8,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 5,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 15.8,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 26.59,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 37.39,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 43.35,
+       "hb": [
+        12.125,
+        13.58,
+        14.141,
+        14.325,
+        14.325,
+        14.325,
+        14.325,
+        14.325
+       ]
+      },
+      {
+       "x": 48.18,
+       "hb": [
+        11.977,
+        13.429,
+        14.002,
+        14.203,
+        14.251,
+        14.294,
+        14.31,
+        14.318
+       ]
+      },
+      {
+       "x": 58.98,
+       "hb": [
+        11.265,
+        12.667,
+        13.26,
+        13.507,
+        13.72,
+        13.964,
+        14.095,
+        14.179
+       ]
+      },
+      {
+       "x": 69.78,
+       "hb": [
+        10.234,
+        11.541,
+        12.128,
+        12.406,
+        12.772,
+        13.246,
+        13.539,
+        13.753
+       ]
+      },
+      {
+       "x": 80.57,
+       "hb": [
+        8.963,
+        10.135,
+        10.69,
+        10.98,
+        11.454,
+        12.119,
+        12.571,
+        12.931
+       ]
+      },
+      {
+       "x": 91.37,
+       "hb": [
+        7.493,
+        8.493,
+        8.989,
+        9.268,
+        9.792,
+        10.571,
+        11.14,
+        11.623
+       ]
+      },
+      {
+       "x": 102.16,
+       "hb": [
+        5.846,
+        6.642,
+        7.051,
+        7.296,
+        7.803,
+        8.592,
+        9.201,
+        9.746
+       ]
+      },
+      {
+       "x": 112.96,
+       "hb": [
+        4.04,
+        4.6,
+        4.898,
+        5.085,
+        5.502,
+        6.175,
+        6.72,
+        7.229
+       ]
+      },
+      {
+       "x": 123.75,
+       "hb": [
+        2.088,
+        2.382,
+        2.543,
+        2.649,
+        2.897,
+        3.313,
+        3.663,
+        4.001
+       ]
+      },
+      {
+       "x": 134.55,
+       "hb": [
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        0.12,
+        0.12
+       ]
+      }
+     ]
+    },
+    "depth": 19.66,
+    "draft": 10.5,
+    "sheer": {
+     "fwd": 4,
+     "aft": 1.5
+    },
+    "stem": "straight",
+    "stern": "counter",
+    "sternOverhang": 10,
+    "counterFrom": 8.5,
+    "counterRise": 5,
+    "paint": {
+     "topside": "#f1efe8",
+     "bottom": "#8a2a1d",
+     "boot": "#3b3b3b",
+     "bootHeight": 0.35,
+     "bands": [
+      {
+       "z0": 12.4,
+       "z1": 13.9,
+       "color": "#2f7d3a",
+       "from": -128.55,
+       "to": 130.55
+      },
+      {
+       "z0": 8.15,
+       "z1": 18.15,
+       "color": "#c8102e",
+       "from": 26.5,
+       "to": 29.5
+      },
+      {
+       "z0": 11.65,
+       "z1": 14.65,
+       "color": "#c8102e",
+       "from": 23,
+       "to": 33
+      },
+      {
+       "z0": 8.15,
+       "z1": 18.15,
+       "color": "#c8102e",
+       "from": -35.5,
+       "to": -32.5
+      },
+      {
+       "z0": 11.65,
+       "z1": 14.65,
+       "color": "#c8102e",
+       "from": -39,
+       "to": -29
+      },
+      {
+       "z0": 1.5,
+       "z1": 6.5,
+       "color": "#151515",
+       "from": 89.25,
+       "to": 102.85,
+       "side": "stbd"
+      }
+     ]
+    },
+    "range": [
+     91.25,
+     134.55
+    ],
+    "cap": "jagged"
+   },
+   "embed": 2.5,
+   "sourceIds": [
+    "s1"
+   ],
+   "notes": "Heavily deformed and held only by parts of C deck (s1). The bend angle and hinge are estimated."
+  },
+  {
+   "id": "b-deck",
+   "name": {
+    "ko": "B 갑판",
+    "en": "B deck"
+   },
+   "template": "deckhouse",
+   "parent": "hull-main",
+   "offset": [
+    -0.45,
+    0,
+    19.66
+   ],
+   "params": {
+    "l": 174,
+    "b": 23.94,
+    "h": 2.74,
+    "r": 1.2,
+    "windows": 1,
+    "windowSpacing": 2.6
+   },
+   "confidence": "estimated",
+   "on": "hull-main"
+  },
+  {
+   "id": "a-deck",
+   "name": {
+    "ko": "A 갑판 (산책 갑판)",
+    "en": "A deck (promenade)"
+   },
+   "template": "deckhouse",
+   "parent": "hull-main",
+   "offset": [
+    0.55,
+    0,
+    22.4
+   ],
+   "params": {
+    "l": 152,
+    "b": 22.94,
+    "h": 2.74,
+    "r": 1.2,
+    "windows": 1,
+    "windowSpacing": 2.6
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "officers",
+   "name": {
+    "ko": "항해 선교와 사관실",
+    "en": "Bridge and officers' quarters"
+   },
+   "template": "deckhouse",
+   "parent": "hull-main",
+   "offset": [
+    65.55,
+    0,
+    26.01
+   ],
+   "params": {
+    "l": 22,
+    "b": 13,
+    "h": 2.9,
+    "r": 1.2,
+    "windows": 1,
+    "windowSpacing": 2.6
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "first-house",
+   "name": {
+    "ko": "1등석 계단실",
+    "en": "First-class staircase house"
+   },
+   "template": "deckhouse",
+   "parent": "hull-main",
+   "offset": [
+    19.55,
+    0,
+    25.19
+   ],
+   "params": {
+    "l": 46,
+    "b": 12,
+    "h": 2.9,
+    "r": 1.2,
+    "windows": 1,
+    "windowSpacing": 2.6
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "aft-house",
+   "name": {
+    "ko": "뒤쪽 갑판실",
+    "en": "After deckhouse"
+   },
+   "template": "deckhouse",
+   "parent": "hull-main",
+   "offset": [
+    -42.45,
+    0,
+    25.34
+   ],
+   "params": {
+    "l": 54,
+    "b": 12,
+    "h": 2.9,
+    "r": 1.2,
+    "windows": 1,
+    "windowSpacing": 2.6
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "bridge-wings",
+   "name": {
+    "ko": "선교 날개",
+    "en": "Bridge wings"
+   },
+   "template": "box",
+   "parent": "hull-main",
+   "offset": [
+    76.05,
+    0,
+    28.64
+   ],
+   "params": {
+    "l": 2.4,
+    "b": 23.54,
+    "h": 0.6,
+    "color": "#f4f1ea"
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "funnel-1",
+   "name": {
+    "ko": "1번 굴뚝",
+    "en": "Funnel 1"
+   },
+   "template": "funnel",
+   "parent": "hull-main",
+   "offset": [
+    58.55,
+    0,
+    28.72
+   ],
+   "params": {
+    "a": 3.73,
+    "b": 2.9,
+    "h": 24.58,
+    "rake": 9.46,
+    "top": 4.6,
+    "color": "#d39b3a",
+    "topColor": "#141517"
+   },
+   "confidence": "estimated",
+   "passesThrough": [
+    "officers",
+    "first-house",
+    "aft-house"
+   ]
+  },
+  {
+   "id": "funnel-2",
+   "name": {
+    "ko": "2번 굴뚝",
+    "en": "Funnel 2"
+   },
+   "template": "funnel",
+   "parent": "hull-main",
+   "offset": [
+    24.55,
+    0,
+    28.13
+   ],
+   "params": {
+    "a": 3.73,
+    "b": 2.9,
+    "h": 25.17,
+    "rake": 9.46,
+    "top": 4.6,
+    "color": "#d39b3a",
+    "topColor": "#141517"
+   },
+   "confidence": "estimated",
+   "passesThrough": [
+    "officers",
+    "first-house",
+    "aft-house"
+   ]
+  },
+  {
+   "id": "funnel-3",
+   "name": {
+    "ko": "3번 굴뚝",
+    "en": "Funnel 3"
+   },
+   "template": "funnel",
+   "parent": "hull-main",
+   "offset": [
+    -7.45,
+    0,
+    28.05
+   ],
+   "params": {
+    "a": 3.73,
+    "b": 2.9,
+    "h": 25.25,
+    "rake": 9.46,
+    "top": 4.6,
+    "color": "#d39b3a",
+    "topColor": "#141517"
+   },
+   "confidence": "estimated",
+   "passesThrough": [
+    "officers",
+    "first-house",
+    "aft-house"
+   ]
+  },
+  {
+   "id": "funnel-4",
+   "name": {
+    "ko": "4번 굴뚝 (환기용)",
+    "en": "Funnel 4 (ventilation dummy)"
+   },
+   "template": "funnel",
+   "parent": "hull-main",
+   "offset": [
+    -42.45,
+    0,
+    28.24
+   ],
+   "params": {
+    "a": 3.73,
+    "b": 2.9,
+    "h": 25.06,
+    "rake": 9.46,
+    "top": 4.6,
+    "color": "#d39b3a",
+    "topColor": "#141517"
+   },
+   "confidence": "estimated",
+   "passesThrough": [
+    "officers",
+    "first-house",
+    "aft-house"
+   ]
+  },
+  {
+   "id": "foremast",
+   "name": {
+    "ko": "앞 돛대",
+    "en": "Foremast"
+   },
+   "template": "mast",
+   "parent": "hull-main",
+   "offset": [
+    88.55,
+    0,
+    21.32
+   ],
+   "params": {
+    "h": 38.68,
+    "d": 1,
+    "rake": 9.5
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "mainmast",
+   "name": {
+    "ko": "뒷 돛대",
+    "en": "Mainmast"
+   },
+   "template": "mast",
+   "parent": "hull-main",
+   "offset": [
+    -97.45,
+    0,
+    20.6
+   ],
+   "params": {
+    "h": 39.4,
+    "d": 1,
+    "rake": 9.5
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "gantry-1",
+   "name": {
+    "ko": "갠트리 대빗(보트 걸이)",
+    "en": "Gantry davit"
+   },
+   "template": "davit",
+   "parent": "hull-main",
+   "offset": [
+    66.55,
+    11.6,
+    26.04
+   ],
+   "params": {
+    "h": 6.5,
+    "reach": 3.2,
+    "side": "port"
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "gantry-2",
+   "name": {
+    "ko": "갠트리 대빗(보트 걸이)",
+    "en": "Gantry davit"
+   },
+   "template": "davit",
+   "parent": "hull-main",
+   "offset": [
+    66.55,
+    -11.6,
+    26.04
+   ],
+   "params": {
+    "h": 6.5,
+    "reach": 3.2,
+    "side": "stbd"
+   },
+   "confidence": "estimated",
+   "embed": 3
+  },
+  {
+   "id": "gantry-3",
+   "name": {
+    "ko": "갠트리 대빗(보트 걸이)",
+    "en": "Gantry davit"
+   },
+   "template": "davit",
+   "parent": "hull-main",
+   "offset": [
+    -17.45,
+    11.6,
+    25.19
+   ],
+   "params": {
+    "h": 6.5,
+    "reach": 3.2,
+    "side": "port"
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "gantry-4",
+   "name": {
+    "ko": "갠트리 대빗(보트 걸이)",
+    "en": "Gantry davit"
+   },
+   "template": "davit",
+   "parent": "hull-main",
+   "offset": [
+    -17.45,
+    -11.6,
+    25.19
+   ],
+   "params": {
+    "h": 6.5,
+    "reach": 3.2,
+    "side": "stbd"
+   },
+   "confidence": "estimated",
+   "embed": 3
+  },
+  {
+   "id": "gantry-5",
+   "name": {
+    "ko": "갠트리 대빗(보트 걸이)",
+    "en": "Gantry davit"
+   },
+   "template": "davit",
+   "parent": "hull-main",
+   "offset": [
+    -63.45,
+    11.6,
+    25.56
+   ],
+   "params": {
+    "h": 6.5,
+    "reach": 3.2,
+    "side": "port"
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "bulkhead-A",
+   "name": {
+    "ko": "A 격벽",
+    "en": "Bulkhead A"
+   },
+   "template": "bulkhead",
+   "parent": "hull-bow",
+   "params": {
+    "x": 120.55,
+    "top": 19.68,
+    "floor": 1.5
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "bulkhead-B",
+   "name": {
+    "ko": "B 격벽",
+    "en": "Bulkhead B"
+   },
+   "template": "bulkhead",
+   "parent": "hull-bow",
+   "params": {
+    "x": 106.85,
+    "top": 18.97,
+    "floor": 1.5
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "bulkhead-C",
+   "name": {
+    "ko": "C 격벽",
+    "en": "Bulkhead C"
+   },
+   "template": "bulkhead",
+   "parent": "hull-main",
+   "params": {
+    "x": 91.25,
+    "top": 15.57,
+    "floor": 1.5
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "bulkhead-D",
+   "name": {
+    "ko": "D 격벽",
+    "en": "Bulkhead D"
+   },
+   "template": "bulkhead",
+   "parent": "hull-main",
+   "params": {
+    "x": 75.75,
+    "top": 14.99,
+    "floor": 1.5
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "bulkhead-E",
+   "name": {
+    "ko": "E 격벽",
+    "en": "Bulkhead E"
+   },
+   "template": "bulkhead",
+   "parent": "hull-main",
+   "params": {
+    "x": 59.25,
+    "top": 23.1,
+    "floor": 1.5
+   },
+   "confidence": "disputed",
+   "alternatives": {
+    "ko": "B 갑판까지 올린 격벽은 5개라는 자료와 6개라는 자료가 있고, 어느 것인지는 확인하지 못했어요.",
+    "en": "Sources give five or six bulkheads raised to B deck; which ones is not recorded in what was found."
+   }
+  },
+  {
+   "id": "bulkhead-F",
+   "name": {
+    "ko": "F 격벽",
+    "en": "Bulkhead F"
+   },
+   "template": "bulkhead",
+   "parent": "hull-main",
+   "params": {
+    "x": 41.85,
+    "top": 22.72,
+    "floor": 1.5
+   },
+   "confidence": "disputed",
+   "alternatives": {
+    "ko": "B 갑판까지 올린 격벽은 5개라는 자료와 6개라는 자료가 있고, 어느 것인지는 확인하지 못했어요.",
+    "en": "Sources give five or six bulkheads raised to B deck; which ones is not recorded in what was found."
+   }
+  },
+  {
+   "id": "bulkhead-G",
+   "name": {
+    "ko": "G 격벽",
+    "en": "Bulkhead G"
+   },
+   "template": "bulkhead",
+   "parent": "hull-main",
+   "params": {
+    "x": 24.55,
+    "top": 22.49,
+    "floor": 1.5
+   },
+   "confidence": "disputed",
+   "alternatives": {
+    "ko": "B 갑판까지 올린 격벽은 5개라는 자료와 6개라는 자료가 있고, 어느 것인지는 확인하지 못했어요.",
+    "en": "Sources give five or six bulkheads raised to B deck; which ones is not recorded in what was found."
+   }
+  },
+  {
+   "id": "bulkhead-H",
+   "name": {
+    "ko": "H 격벽",
+    "en": "Bulkhead H"
+   },
+   "template": "bulkhead",
+   "parent": "hull-main",
+   "params": {
+    "x": 7.15,
+    "top": 22.4,
+    "floor": 1.5
+   },
+   "confidence": "disputed",
+   "alternatives": {
+    "ko": "B 갑판까지 올린 격벽은 5개라는 자료와 6개라는 자료가 있고, 어느 것인지는 확인하지 못했어요.",
+    "en": "Sources give five or six bulkheads raised to B deck; which ones is not recorded in what was found."
+   }
+  },
+  {
+   "id": "bulkhead-J",
+   "name": {
+    "ko": "J 격벽",
+    "en": "Bulkhead J"
+   },
+   "template": "bulkhead",
+   "parent": "hull-main",
+   "params": {
+    "x": -11.15,
+    "top": 22.42,
+    "floor": 1.5
+   },
+   "confidence": "disputed",
+   "alternatives": {
+    "ko": "B 갑판까지 올린 격벽은 5개라는 자료와 6개라는 자료가 있고, 어느 것인지는 확인하지 못했어요.",
+    "en": "Sources give five or six bulkheads raised to B deck; which ones is not recorded in what was found."
+   }
+  },
+  {
+   "id": "bulkhead-K",
+   "name": {
+    "ko": "K 격벽",
+    "en": "Bulkhead K"
+   },
+   "template": "bulkhead",
+   "parent": "hull-main",
+   "params": {
+    "x": -22.15,
+    "top": 16.57,
+    "floor": 1.5
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "bulkhead-L",
+   "name": {
+    "ko": "L 격벽",
+    "en": "Bulkhead L"
+   },
+   "template": "bulkhead",
+   "parent": "hull-main",
+   "params": {
+    "x": -43.15,
+    "top": 16.71,
+    "floor": 1.5
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "bulkhead-M",
+   "name": {
+    "ko": "M 격벽",
+    "en": "Bulkhead M"
+   },
+   "template": "bulkhead",
+   "parent": "hull-main",
+   "params": {
+    "x": -60.55,
+    "top": 16.88,
+    "floor": 1.5
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "bulkhead-M2",
+   "name": {
+    "ko": "M2 격벽",
+    "en": "Bulkhead M2"
+   },
+   "template": "bulkhead",
+   "parent": "hull-main",
+   "params": {
+    "x": -70.15,
+    "top": 17,
+    "floor": 1.5
+   },
+   "confidence": "disputed",
+   "alternatives": {
+    "ko": "15개 격벽(위키백과, Chirnside 인용)이라는 자료와, 격벽 하나를 더해 17칸이 됐다는 자료가 있어요. 이 격벽은 위치도 추정이에요.",
+    "en": "One account gives 15 bulkheads (Wikipedia, citing Chirnside); others say a bulkhead was added, making 17 compartments. Its position is estimated too."
+   }
+  },
+  {
+   "id": "bulkhead-N",
+   "name": {
+    "ko": "N 격벽",
+    "en": "Bulkhead N"
+   },
+   "template": "bulkhead",
+   "parent": "hull-main",
+   "params": {
+    "x": -79.75,
+    "top": 17.14,
+    "floor": 1.5
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "bulkhead-O",
+   "name": {
+    "ko": "O 격벽",
+    "en": "Bulkhead O"
+   },
+   "template": "bulkhead",
+   "parent": "hull-main",
+   "params": {
+    "x": -96.15,
+    "top": 17.41,
+    "floor": 1.5
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "bulkhead-P",
+   "name": {
+    "ko": "P 격벽",
+    "en": "Bulkhead P"
+   },
+   "template": "bulkhead",
+   "parent": "hull-main",
+   "params": {
+    "x": -113.55,
+    "top": 17.76,
+    "floor": 1.5
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "forepeak",
+   "name": {
+    "ko": "선수 피크",
+    "en": "Forepeak"
+   },
+   "template": "compartment",
+   "parent": "hull-bow",
+   "params": {
+    "x0": 120.55,
+    "x1": 133.05,
+    "floor": 1.5,
+    "top": 19.68,
+    "b": 0.91
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "hold-1",
+   "name": {
+    "ko": "1번 화물창",
+    "en": "No. 1 hold"
+   },
+   "template": "compartment",
+   "parent": "hull-bow",
+   "params": {
+    "x0": 106.85,
+    "x1": 120.55,
+    "floor": 1.5,
+    "top": 18.97,
+    "b": 6.63
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "hold-2",
+   "name": {
+    "ko": "2번 화물창",
+    "en": "No. 2 hold"
+   },
+   "template": "compartment",
+   "parent": "hull-bow",
+   "params": {
+    "x0": 91.25,
+    "x1": 106.85,
+    "floor": 1.5,
+    "top": 15.57,
+    "b": 12.34
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "hold-3",
+   "name": {
+    "ko": "3번 화물창",
+    "en": "No. 3 hold"
+   },
+   "template": "compartment",
+   "parent": "hull-main",
+   "params": {
+    "x0": 75.75,
+    "x1": 91.25,
+    "floor": 1.5,
+    "top": 14.99,
+    "b": 17.73
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "br-6",
+   "name": {
+    "ko": "6번 보일러실",
+    "en": "Boiler room 6"
+   },
+   "template": "compartment",
+   "parent": "hull-main",
+   "params": {
+    "x0": 59.25,
+    "x1": 75.75,
+    "floor": 1.5,
+    "top": 14.99,
+    "b": 21.84
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "br-5",
+   "name": {
+    "ko": "5번 보일러실",
+    "en": "Boiler room 5"
+   },
+   "template": "compartment",
+   "parent": "hull-main",
+   "params": {
+    "x0": 41.85,
+    "x1": 59.25,
+    "floor": 1.5,
+    "top": 22.72,
+    "b": 24.71
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "br-4",
+   "name": {
+    "ko": "4번 보일러실",
+    "en": "Boiler room 4"
+   },
+   "template": "compartment",
+   "parent": "hull-main",
+   "params": {
+    "x0": 24.55,
+    "x1": 41.85,
+    "floor": 1.5,
+    "top": 22.49,
+    "b": 25.79
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "br-3",
+   "name": {
+    "ko": "3번 보일러실",
+    "en": "Boiler room 3"
+   },
+   "template": "compartment",
+   "parent": "hull-main",
+   "params": {
+    "x0": 7.15,
+    "x1": 24.55,
+    "floor": 1.5,
+    "top": 22.4,
+    "b": 25.79
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "br-2",
+   "name": {
+    "ko": "2번 보일러실",
+    "en": "Boiler room 2"
+   },
+   "template": "compartment",
+   "parent": "hull-main",
+   "params": {
+    "x0": -11.15,
+    "x1": 7.15,
+    "floor": 1.5,
+    "top": 22.4,
+    "b": 25.79
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "br-1",
+   "name": {
+    "ko": "1번 보일러실",
+    "en": "Boiler room 1"
+   },
+   "template": "compartment",
+   "parent": "hull-main",
+   "params": {
+    "x0": -22.15,
+    "x1": -11.15,
+    "floor": 1.5,
+    "top": 16.57,
+    "b": 25.79
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "engine",
+   "name": {
+    "ko": "왕복기관실",
+    "en": "Reciprocating engine room"
+   },
+   "template": "compartment",
+   "parent": "hull-main",
+   "params": {
+    "x0": -43.15,
+    "x1": -22.15,
+    "floor": 1.5,
+    "top": 16.57,
+    "b": 25.78
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "turbine",
+   "name": {
+    "ko": "터빈실",
+    "en": "Turbine room"
+   },
+   "template": "compartment",
+   "parent": "hull-main",
+   "params": {
+    "x0": -60.55,
+    "x1": -43.15,
+    "floor": 1.5,
+    "top": 16.71,
+    "b": 23.94
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "electric-1",
+   "name": {
+    "ko": "발전기실 (앞)",
+    "en": "Electric engine room (fwd)"
+   },
+   "template": "compartment",
+   "parent": "hull-main",
+   "params": {
+    "x0": -70.15,
+    "x1": -60.55,
+    "floor": 1.5,
+    "top": 16.88,
+    "b": 21.39
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "electric-2",
+   "name": {
+    "ko": "발전기실 (뒤)",
+    "en": "Electric engine room (aft)"
+   },
+   "template": "compartment",
+   "parent": "hull-main",
+   "params": {
+    "x0": -79.75,
+    "x1": -70.15,
+    "floor": 1.5,
+    "top": 17,
+    "b": 18.39
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "tunnel-1",
+   "name": {
+    "ko": "축로 (앞)",
+    "en": "Shaft tunnel (forward)"
+   },
+   "template": "compartment",
+   "parent": "hull-main",
+   "params": {
+    "x0": -96.15,
+    "x1": -79.75,
+    "floor": 1.5,
+    "top": 17.14,
+    "b": 12.46
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "tunnel-2",
+   "name": {
+    "ko": "축로 (뒤)",
+    "en": "Shaft tunnel (aft)"
+   },
+   "template": "compartment",
+   "parent": "hull-main",
+   "params": {
+    "x0": -113.55,
+    "x1": -96.15,
+    "floor": 1.5,
+    "top": 17.41,
+    "b": 5.29
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "afterpeak",
+   "name": {
+    "ko": "선미 피크",
+    "en": "After peak"
+   },
+   "template": "compartment",
+   "parent": "hull-main",
+   "params": {
+    "x0": -118.55,
+    "x1": -113.55,
+    "floor": 1.5,
+    "top": 17.76,
+    "b": 3.09
+   },
+   "confidence": "estimated"
+  }
+ ],
+ "tracks": [
+  {
+   "piece": "ship",
+   "prop": "pose",
+   "interp": "linear",
+   "keys": [
+    {
+     "at": "1916-11-21T08:10:00",
+     "v": {
+      "pos": [
+       -430.9,
+       -1184,
+       -9.5
+      ],
+      "trim": 0,
+      "list": 0,
+      "heading": 70
+     },
+     "sourceIds": [
+      "s1",
+      "s3"
+     ]
+    },
+    {
+     "at": "1916-11-21T08:12:00",
+     "v": {
+      "pos": [
+       0,
+       0,
+       -9.5
+      ],
+      "trim": 0,
+      "list": 0,
+      "heading": 70
+     },
+     "sourceIds": [
+      "s1",
+      "s3"
+     ]
+    },
+    {
+     "at": "1916-11-21T08:14:00",
+     "v": {
+      "pos": [
+       592.6,
+       944.5,
+       -9.8
+      ],
+      "trim": 0.8,
+      "list": 0.5,
+      "heading": 45
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T08:16:00",
+     "v": {
+      "pos": [
+       1302.6,
+       1406.6,
+       -10
+      ],
+      "trim": 1.5,
+      "list": 1,
+      "heading": 20
+     },
+     "sourceIds": [
+      "s1",
+      "s2"
+     ]
+    },
+    {
+     "at": "1916-11-21T08:22:00",
+     "v": {
+      "pos": [
+       3257.8,
+       1670.8,
+       -10.4
+      ],
+      "trim": 3,
+      "list": 3,
+      "heading": 354.7
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T08:27:00",
+     "v": {
+      "pos": [
+       4596.3,
+       1299,
+       -10.8
+      ],
+      "trim": 4,
+      "list": 4,
+      "heading": 333.7
+     },
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T08:35:00",
+     "v": {
+      "pos": [
+       5868.6,
+       144.9,
+       -11.2
+      ],
+      "trim": 5.5,
+      "list": 6,
+      "heading": 300
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T08:45:00",
+     "v": {
+      "pos": [
+       6154.3,
+       -414.5,
+       -11.8
+      ],
+      "trim": 7,
+      "list": 8,
+      "heading": 290
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T08:50:00",
+     "v": {
+      "pos": [
+       6190.3,
+       -528.9,
+       -12.2
+      ],
+      "trim": 8,
+      "list": 9,
+      "heading": 285
+     },
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T09:00:00",
+     "v": {
+      "pos": [
+       6294.5,
+       -1481.8,
+       -13.5
+      ],
+      "trim": 11,
+      "list": 14,
+      "heading": 270
+     },
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T09:03:00",
+     "v": {
+      "pos": [
+       6294.5,
+       -1744.1,
+       -25
+      ],
+      "trim": 16,
+      "list": 24,
+      "heading": 270
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:04:00",
+     "v": {
+      "pos": [
+       6294.5,
+       -1788.3,
+       -40
+      ],
+      "trim": 20,
+      "list": 32,
+      "heading": 270
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:05:00",
+     "v": {
+      "pos": [
+       6294.5,
+       -1810.9,
+       -63.47
+      ],
+      "trim": 25,
+      "list": 40,
+      "heading": 270
+     },
+     "sourceIds": [
+      "s1",
+      "s6"
+     ]
+    },
+    {
+     "at": "1916-11-21T09:05:20",
+     "v": {
+      "pos": [
+       6294.5,
+       -1810.1,
+       -65.38
+      ],
+      "trim": 24.16,
+      "list": 41.71,
+      "heading": 270
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:05:40",
+     "v": {
+      "pos": [
+       6294.5,
+       -1808,
+       -70.36
+      ],
+      "trim": 21.91,
+      "list": 46.31,
+      "heading": 270
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:06:00",
+     "v": {
+      "pos": [
+       6294.5,
+       -1805.4,
+       -77.65
+      ],
+      "trim": 18.65,
+      "list": 52.96,
+      "heading": 270
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:06:20",
+     "v": {
+      "pos": [
+       6294.5,
+       -1802.7,
+       -86.46
+      ],
+      "trim": 14.78,
+      "list": 60.85,
+      "heading": 270
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:06:40",
+     "v": {
+      "pos": [
+       6294.5,
+       -1800.6,
+       -95.87
+      ],
+      "trim": 10.72,
+      "list": 69.15,
+      "heading": 270
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:07:00",
+     "v": {
+      "pos": [
+       6294.5,
+       -1799.3,
+       -101.32
+      ],
+      "trim": 6.85,
+      "list": 77.04,
+      "heading": 270
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:07:20",
+     "v": {
+      "pos": [
+       6294.5,
+       -1798.6,
+       -104.35
+      ],
+      "trim": 3.59,
+      "list": 83.69,
+      "heading": 270
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:07:40",
+     "v": {
+      "pos": [
+       6294.5,
+       -1798.3,
+       -106.1
+      ],
+      "trim": 1.34,
+      "list": 88.29,
+      "heading": 270
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": {
+      "pos": [
+       6294.5,
+       -1798.3,
+       -106.76
+      ],
+      "trim": 0.5,
+      "list": 90,
+      "heading": 270
+     },
+     "sourceIds": [
+      "s1",
+      "s4"
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "hull-bow",
+   "prop": "pose",
+   "interp": "linear",
+   "keys": [
+    {
+     "at": "1916-11-21T09:05:00",
+     "v": {
+      "pos": [
+       6294.5,
+       -1810.9,
+       -63.47
+      ],
+      "trim": 25,
+      "list": 40,
+      "heading": 270
+     },
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T09:05:20",
+     "v": {
+      "pos": [
+       6295.56,
+       -1810.03,
+       -66.38
+      ],
+      "trim": 23.5,
+      "list": 41.89,
+      "heading": 269.36
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:05:40",
+     "v": {
+      "pos": [
+       6298.45,
+       -1808.09,
+       -73.6
+      ],
+      "trim": 19.74,
+      "list": 47.02,
+      "heading": 267.61
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:06:00",
+     "v": {
+      "pos": [
+       6302.67,
+       -1806.47,
+       -83.04
+      ],
+      "trim": 14.97,
+      "list": 54.53,
+      "heading": 265.05
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:06:20",
+     "v": {
+      "pos": [
+       6307.34,
+       -1805.61,
+       -92.67
+      ],
+      "trim": 10.33,
+      "list": 63.58,
+      "heading": 262.12
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:06:40",
+     "v": {
+      "pos": [
+       6311.2,
+       -1805.55,
+       -101.02
+      ],
+      "trim": 6.61,
+      "list": 73.13,
+      "heading": 259.55
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:07:00",
+     "v": {
+      "pos": [
+       6312.92,
+       -1805.45,
+       -104.01
+      ],
+      "trim": 4.04,
+      "list": 81.92,
+      "heading": 258.28
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:07:20",
+     "v": {
+      "pos": [
+       6313.02,
+       -1805.03,
+       -104.55
+      ],
+      "trim": 2.2,
+      "list": 89.08,
+      "heading": 258.06
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:07:40",
+     "v": {
+      "pos": [
+       6312.95,
+       -1804.76,
+       -104.56
+      ],
+      "trim": 0.96,
+      "list": 94.05,
+      "heading": 258
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": {
+      "pos": [
+       6312.89,
+       -1804.74,
+       -104.58
+      ],
+      "trim": 0.49,
+      "list": 95.9,
+      "heading": 258
+     },
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "forepeak",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T08:12:00",
+     "v": 1.5,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T08:14:00",
+     "v": 7,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T08:20:00",
+     "v": 13,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T08:27:00",
+     "v": 19.68,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 19.68,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "hold-1",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T08:12:00",
+     "v": 1.5,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T08:16:00",
+     "v": 7,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T08:25:00",
+     "v": 13,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T08:35:00",
+     "v": 18.97,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 18.97,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "hold-2",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T08:12:00",
+     "v": 1.5,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T08:14:00",
+     "v": 8,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T08:20:00",
+     "v": 13,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T08:30:00",
+     "v": 15.57,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 15.57,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "hold-3",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T08:12:00",
+     "v": 1.5,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T08:14:00",
+     "v": 8,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T08:22:00",
+     "v": 14.99,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 14.99,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "br-6",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T08:12:00",
+     "v": 1.5,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T08:14:00",
+     "v": 3,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T08:30:00",
+     "v": 9,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T08:50:00",
+     "v": 14.99,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 14.99,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "br-5",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T08:14:00",
+     "v": 1.5,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T08:16:00",
+     "v": 2.5,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T08:40:00",
+     "v": 9,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:00:00",
+     "v": 16.82,
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T09:05:00",
+     "v": 21,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 22.72,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "br-4",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T08:45:00",
+     "v": 1.5,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:00:00",
+     "v": 6,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:05:00",
+     "v": 12,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 22.49,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "br-3",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T09:05:00",
+     "v": 1.5,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 22.4,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "br-2",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T09:05:00",
+     "v": 1.5,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 22.4,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "br-1",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T09:05:00",
+     "v": 1.5,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 16.57,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "engine",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T09:05:00",
+     "v": 1.5,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 16.57,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "turbine",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T09:05:00",
+     "v": 1.5,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 16.71,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "electric-1",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T09:05:00",
+     "v": 1.5,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 16.88,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "electric-2",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T09:05:00",
+     "v": 1.5,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 17,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "tunnel-1",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T09:05:00",
+     "v": 1.5,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 17.14,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "tunnel-2",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T09:05:00",
+     "v": 1.5,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 17.41,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "afterpeak",
+   "prop": "water",
+   "keys": [
+    {
+     "at": "1916-11-21T09:05:00",
+     "v": 1.5,
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:08:00",
+     "v": 17.76,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "*",
+   "prop": "rust",
+   "keys": [
+    {
+     "at": "1916-11-21T09:10:00",
+     "v": 0,
+     "confidence": "estimated"
+    },
+    {
+     "at": 1975.92,
+     "v": 0.3,
+     "confidence": "estimated"
+    },
+    {
+     "at": 2025.4,
+     "v": 0.42,
+     "confidence": "estimated"
+    }
+   ]
+  },
+  {
+   "piece": "funnel-2",
+   "prop": "pose",
+   "interp": "linear",
+   "keys": [
+    {
+     "at": "1916-11-21T09:04:30",
+     "v": {
+      "pos": [
+       6277.97,
+       -1830.99,
+       -40.1
+      ],
+      "trim": 22.5,
+      "list": 36,
+      "heading": 270
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:05:20",
+     "v": {
+      "pos": [
+       6290.2,
+       -1719.9,
+       -80
+      ],
+      "trim": 11.3,
+      "list": 70,
+      "heading": 290
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:06:40",
+     "v": {
+      "pos": [
+       6302.5,
+       -1608.8,
+       -117.4
+      ],
+      "trim": 0,
+      "list": 90,
+      "heading": 310
+     },
+     "sourceIds": [
+      "s1"
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "funnel-3",
+   "prop": "pose",
+   "interp": "linear",
+   "keys": [
+    {
+     "at": "1916-11-21T09:05:00",
+     "v": {
+      "pos": [
+       6276.47,
+       -1813.23,
+       -40.85
+      ],
+      "trim": 25,
+      "list": 40,
+      "heading": 270
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:05:50",
+     "v": {
+      "pos": [
+       6273.5,
+       -1691,
+       -80.4
+      ],
+      "trim": 12.5,
+      "list": 70,
+      "heading": 290
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:07:10",
+     "v": {
+      "pos": [
+       6270.5,
+       -1568.8,
+       -117.4
+      ],
+      "trim": 0,
+      "list": 90,
+      "heading": 0
+     },
+     "sourceIds": [
+      "s1"
+     ]
+    }
+   ]
+  },
+  {
+   "piece": "funnel-4",
+   "prop": "pose",
+   "interp": "linear",
+   "keys": [
+    {
+     "at": "1916-11-21T09:05:30",
+     "v": {
+      "pos": [
+       6274.88,
+       -1777.93,
+       -32.57
+      ],
+      "trim": 23.04,
+      "list": 44.01,
+      "heading": 270
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:06:20",
+     "v": {
+      "pos": [
+       6292.7,
+       -1650.9,
+       -76.3
+      ],
+      "trim": 11.5,
+      "list": 70,
+      "heading": 290
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:07:40",
+     "v": {
+      "pos": [
+       6310.5,
+       -1523.8,
+       -117.4
+      ],
+      "trim": 0,
+      "list": 90,
+      "heading": 50
+     },
+     "sourceIds": [
+      "s1"
+     ]
+    }
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "channel",
+   "kind": "note",
+   "at": "1916-11-21T08:10:00",
+   "title": {
+    "ko": "케아 해협",
+    "en": "The Kea Channel"
+   },
+   "text": {
+    "ko": "병원선 브리타닉호가 무드로스로 가는 길에 케아 해협을 전속력으로 북쪽으로 지나요.",
+    "en": "The hospital ship Britannic steams north through the Kea Channel at full speed, bound for Mudros."
+   },
+   "detail": {
+    "ko": "1,066명이 타고 있었어요: 승무원 673명, 육군 의무대 315명, 간호사 77명, 그리고 선장. 다친 병사를 태우러 가는 길이라 환자는 없었어요.",
+    "en": "1,066 aboard: 673 crew, 315 Army medical corps, 77 nurses and the captain. She was going out to fetch the wounded, so no patients were aboard."
+   },
+   "sourceIds": [
+    "s1",
+    "s3"
+   ]
+  },
+  {
+   "id": "explosion",
+   "kind": "collision",
+   "at": "1916-11-21T08:12:00",
+   "piece": "hull",
+   "title": {
+    "ko": "폭발",
+    "en": "Explosion"
+   },
+   "text": {
+    "ko": "08:12, 우현 앞쪽 2번과 3번 화물창 사이에서 기뢰가 터져요.",
+    "en": "At 08:12 a mine explodes on the starboard bow, between holds 2 and 3."
+   },
+   "detail": {
+    "ko": "독일 잠수함 U-73이 한 달 전 이 해협에 깐 기뢰예요. 1번 화물창 앞 격벽이 상하고, 6번 보일러실로 가는 화부 통로도 부서져 앞쪽 네 칸이 빠르게 차요.",
+    "en": "The German submarine U-73 had laid mines in the channel a month earlier. The bulkhead ahead of hold 1 is damaged and the firemen’s tunnel to boiler room 6 is broken, so the first four compartments flood fast."
+   },
+   "sourceIds": [
+    "s1",
+    "s2",
+    "s3"
+   ]
+  },
+  {
+   "id": "door",
+   "kind": "overflow",
+   "at": "1916-11-21T08:14:00",
+   "from": "br-6",
+   "to": "br-5",
+   "title": {
+    "ko": "닫히지 않은 문",
+    "en": "A door that would not close"
+   },
+   "text": {
+    "ko": "6번과 5번 보일러실 사이의 방수문이 제대로 닫히지 않아 물이 5번 보일러실로 들어가요.",
+    "en": "The watertight door between boiler rooms 6 and 5 fails to close, and water gets into boiler room 5."
+   },
+   "detail": {
+    "ko": "폭발 2분 뒤 두 보일러실에서 사람들이 빠져나와요. 이제 여섯 칸이 열렸어요. 이 배는 여섯 칸이 차도 떠 있도록 만들어졌으니, 한계에 닿은 거예요.",
+    "en": "Two minutes after the blast both boiler rooms are cleared. Six compartments are now open: exactly the most she was built to survive."
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "turn",
+   "kind": "note",
+   "at": "1916-11-21T08:16:00",
+   "title": {
+    "ko": "케아 섬으로",
+    "en": "Turning for Kea"
+   },
+   "text": {
+    "ko": "바틀릿 선장이 배를 얕은 곳에 올리려고 오른쪽 케아 섬으로 방향을 틀어요.",
+    "en": "Captain Bartlett turns to starboard for Kea, hoping to run her aground."
+   },
+   "detail": {
+    "ko": "폭발로 조타 장치가 고장 나, 좌현 프로펠러를 더 빨리 돌려 방향을 잡았어요. 시각은 추정이에요.",
+    "en": "The steering gear was knocked out, so he steered by running the port propeller faster. The time is estimated."
+   },
+   "sourceIds": [
+    "s1",
+    "s2"
+   ]
+  },
+  {
+   "id": "ten-min",
+   "kind": "note",
+   "at": "1916-11-21T08:22:00",
+   "title": {
+    "ko": "10분 만에",
+    "en": "Ten minutes in"
+   },
+   "text": {
+    "ko": "폭발 10분 뒤, 배는 타이타닉이 충돌 한 시간 뒤에 있던 상태쯤에 와 있어요.",
+    "en": "Ten minutes after the blast she is about where Titanic was an hour after the iceberg."
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "portholes",
+   "kind": "inflow",
+   "piece": "br-5",
+   "at": "1916-11-21T08:27:00",
+   "title": {
+    "ko": "열린 현창",
+    "en": "Open portholes"
+   },
+   "text": {
+    "ko": "15분쯤 지나 E 갑판의 현창들이 물에 잠겨요. 병실 환기를 위해 열어 둔 것들이에요.",
+    "en": "About fifteen minutes in, the E-deck portholes go under. Many had been opened to air the wards."
+   },
+   "detail": {
+    "ko": "규정과 달리 열려 있던 현창으로 물이 방수 칸막이 위쪽으로 들어와 퍼졌어요.",
+    "en": "Left open against standing orders, they let water in above the watertight bulkheads."
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "boats",
+   "kind": "note",
+   "at": "1916-11-21T08:35:00",
+   "title": {
+    "ko": "멈춘 기관",
+    "en": "Engines stopped"
+   },
+   "text": {
+    "ko": "일찍 내린 구명보트들이 아직 돌던 프로펠러 쪽으로 밀려가는 사고가 나요. 선장이 기관을 멈춰요.",
+    "en": "Boats lowered early drift toward the still-turning propellers, and there is an accident. The captain stops the engines."
+   },
+   "detail": {
+    "ko": "이 사고의 정확한 시각은 기록되지 않았어요(추정 08:35).",
+    "en": "The exact time is not recorded (about 08:35 here)."
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "beyond",
+   "kind": "overflow",
+   "at": "1916-11-21T08:45:00",
+   "from": "br-5",
+   "to": "br-4",
+   "title": {
+    "ko": "한계를 넘어",
+    "en": "Past the limit"
+   },
+   "text": {
+    "ko": "물이 5번 보일러실 뒤의 4번 보일러실까지 번져요. 일곱째 칸이에요.",
+    "en": "Water reaches boiler room 4, behind boiler room 5: a seventh compartment."
+   },
+   "detail": {
+    "ko": "물이 뒤쪽 칸으로 넘어간 것은 기록에 있지만 시각은 추정이에요. 열린 현창으로 들어온 물이 큰 몫을 했어요.",
+    "en": "That water got aft of boiler room 5 is recorded; the time is estimated. Water through the open portholes did much of it."
+   },
+   "confidence": "estimated"
+  },
+  {
+   "id": "restart",
+   "kind": "note",
+   "at": "1916-11-21T08:50:00",
+   "title": {
+    "ko": "마지막 시도",
+    "en": "One more try"
+   },
+   "text": {
+    "ko": "구명보트 35척이 떠나고, 선장이 다시 기관을 돌려 섬으로 향해요.",
+    "en": "With 35 boats away, the captain starts the engines again and heads for the island."
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "abandon",
+   "kind": "note",
+   "at": "1916-11-21T09:00:00",
+   "title": {
+    "ko": "배를 떠나라",
+    "en": "Abandon ship"
+   },
+   "text": {
+    "ko": "물이 D 갑판까지 올라와요. 기관을 멈추고, 긴 기적 두 번으로 배를 떠나라고 알려요.",
+    "en": "The water reaches D deck. The engines are stopped and two long blasts order everyone off."
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "funnels",
+   "kind": "collapse",
+   "at": "1916-11-21T09:04:00",
+   "until": "1916-11-21T09:06:00",
+   "piece": "funnel-1",
+   "mode": "drop",
+   "title": {
+    "ko": "굴뚝이 하나씩",
+    "en": "The funnels go one by one"
+   },
+   "text": {
+    "ko": "배가 오른쪽으로 넘어가며 굴뚝들이 차례로 무너져요.",
+    "en": "As she rolls to starboard the funnels collapse one after another."
+   },
+   "detail": {
+    "ko": "1번 굴뚝은 보트 갑판 바로 옆에, 2~4번은 선미 너머 잔해 속에 놓여 있어요.",
+    "en": "Funnel 1 lies a few metres from the boat deck; funnels 2 to 4 lie in the debris off the stern."
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "hull-swap",
+   "kind": "collapse",
+   "card": false,
+   "at": "1916-11-21T09:05",
+   "until": "1916-11-21T09:05",
+   "piece": "hull",
+   "mode": "vanish",
+   "title": {
+    "ko": "선체 교체",
+    "en": "Hull swap"
+   },
+   "text": {
+    "ko": "",
+    "en": ""
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "bow-strikes",
+   "kind": "note",
+   "at": "1916-11-21T09:05",
+   "title": {
+    "ko": "선수가 바닥에",
+    "en": "The bow hits bottom"
+   },
+   "text": {
+    "ko": "배 길이(269m)가 바다 깊이(약 120m)의 두 배가 넘어, 선미가 아직 물 위에 있을 때 선수가 바닥에 부딪혀요.",
+    "en": "She is more than twice as long (269 m) as the sea is deep (about 120 m): the bow strikes the seabed while the stern is still above water."
+   },
+   "detail": {
+    "ko": "선수는 크게 찌그러져 C 갑판 일부로만 붙어 있어요. 구부러진 각도는 추정이에요.",
+    "en": "The bow is badly crumpled and hangs on only by parts of C deck. The bend angle drawn is estimated."
+   },
+   "sourceIds": [
+    "s1",
+    "s6"
+   ]
+  },
+  {
+   "id": "foremast-falls",
+   "kind": "collapse",
+   "card": false,
+   "at": "1916-11-21T09:05:30",
+   "until": "1916-11-21T09:07:00",
+   "piece": "foremast",
+   "mode": "drop",
+   "title": {
+    "ko": "앞 돛대",
+    "en": "Foremast"
+   },
+   "text": {
+    "ko": "앞 돛대가 휘어 난파선 옆에 떨어져요.",
+    "en": "The foremast bends and falls beside the wreck."
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "gone",
+   "kind": "note",
+   "at": "1916-11-21T09:07:00",
+   "title": {
+    "ko": "55분",
+    "en": "Fifty-five minutes"
+   },
+   "text": {
+    "ko": "09:07, 폭발 55분 만에 배가 오른쪽으로 누운 채 사라져요.",
+    "en": "At 09:07, fifty-five minutes after the explosion, she rolls onto her starboard side and is gone."
+   },
+   "sourceIds": [
+    "s1",
+    "s2"
+   ]
+  },
+  {
+   "id": "rest",
+   "kind": "note",
+   "at": "1916-11-21T09:08:30",
+   "title": {
+    "ko": "해저 120m",
+    "en": "At 120 metres"
+   },
+   "text": {
+    "ko": "배는 오른쪽 옆구리를 대고 누워요. 선수는 남쪽을 향해요.",
+    "en": "She lies on her starboard side, bow to the south."
+   },
+   "detail": {
+    "ko": "바닥은 약 117~122m, 가장 높은 부분은 약 90m예요. 기뢰 구멍은 배 밑에 깔려 보이지 않아요.",
+    "en": "The seabed is about 117–122 m down and her highest parts about 90 m. The mine hole is hidden beneath her."
+   },
+   "sourceIds": [
+    "s1",
+    "s4",
+    "s6"
+   ]
+  },
+  {
+   "id": "found",
+   "kind": "discovery",
+   "at": 1975.92,
+   "title": {
+    "ko": "발견",
+    "en": "Found"
+   },
+   "text": {
+    "ko": "1975년, 자크 쿠스토의 탐사선 칼립소 팀이 케아 해협 바닥에서 난파선을 찾아요.",
+    "en": "In 1975 Jacques Cousteau’s team on Calypso finds the wreck in the Kea Channel."
+   },
+   "confidence": "disputed",
+   "alternatives": {
+    "ko": "발견 날짜는 1975년 11월 13일(위키백과), 12월 3일(여러 자료), 12월 4일(Titanic Inquiry Project)로 갈려요. 이 모델은 12월 3일을 따랐어요.",
+    "en": "The date is given as 13 November (Wikipedia), 3 December (several accounts) or 4 December 1975 (Titanic Inquiry Project). This model uses 3 December."
+   }
+  },
+  {
+   "id": "cousteau-dives",
+   "kind": "discovery",
+   "at": 1976.6,
+   "title": {
+    "ko": "첫 진입",
+    "en": "First inside"
+   },
+   "text": {
+    "ko": "1976년, 쿠스토의 잠수부들이 처음으로 난파선 안에 들어가요.",
+    "en": "In 1976 Cousteau’s divers go inside the wreck for the first time."
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "ballard",
+   "kind": "discovery",
+   "at": 1995.5,
+   "title": {
+    "ko": "밸러드",
+    "en": "Ballard"
+   },
+   "text": {
+    "ko": "1995년 로버트 밸러드가 찾아와, 굴뚝들이 놀랄 만큼 온전하다고 기록해요.",
+    "en": "In 1995 Robert Ballard visits and finds the funnels in surprisingly good condition."
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "mills",
+   "kind": "note",
+   "at": 1996.6,
+   "title": {
+    "ko": "소유자",
+    "en": "An owner"
+   },
+   "text": {
+    "ko": "1996년 8월, 해양사 연구자 사이먼 밀스가 난파선을 사요. 지금도 그가 소유자예요.",
+    "en": "In August 1996 the maritime historian Simon Mills buys the wreck. He still owns it."
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "project-2012",
+   "kind": "discovery",
+   "at": 2012.4,
+   "title": {
+    "ko": "부식 연구",
+    "en": "Studying the decay"
+   },
+   "text": {
+    "ko": "2012년, 잠수부들이 물과 퇴적물, 생물 표본을 모아 난파선이 어떻게 삭아 가는지 연구해요.",
+    "en": "In 2012 divers collect water, sediment and organisms to study how the wreck is wearing away."
+   },
+   "sourceIds": [
+    "s4"
+   ]
+  },
+  {
+   "id": "shell-door",
+   "kind": "discovery",
+   "at": 2016.5,
+   "title": {
+    "ko": "열린 출입문",
+    "en": "An open shell door"
+   },
+   "text": {
+    "ko": "2016년, 잠수정이 E 갑판 옆구리의 출입문이 열려 있는 것을 찾아요.",
+    "en": "In 2016 a submersible finds a shell door open on E deck."
+   },
+   "sourceIds": [
+    "s5"
+   ]
+  },
+  {
+   "id": "bell",
+   "kind": "discovery",
+   "at": 2019.5,
+   "title": {
+    "ko": "망루의 종",
+    "en": "The crow’s-nest bell"
+   },
+   "text": {
+    "ko": "2019년, 쓰러진 앞 돛대 망루 아래 모래 위에서 종이 발견돼요.",
+    "en": "In 2019 divers spot the crow’s-nest bell on the sand below the fallen foremast’s lookout."
+   },
+   "sourceIds": [
+    "s1",
+    "s5"
+   ]
+  },
+  {
+   "id": "opened",
+   "kind": "note",
+   "at": 2022.45,
+   "title": {
+    "ko": "바깥만 허락",
+    "en": "Outside only"
+   },
+   "text": {
+    "ko": "2022년, 그리스가 허가받은 잠수의 바깥 관람을 열어요. 안에 들어가거나 물건을 옮기는 것은 금지예요.",
+    "en": "In 2022 Greece opens the wreck to licensed dives on the outside only. Going in or moving anything is forbidden."
+   },
+   "sourceIds": [
+    "s11"
+   ]
+  },
+  {
+   "id": "recovery",
+   "kind": "discovery",
+   "at": 2025.4,
+   "title": {
+    "ko": "첫 인양",
+    "en": "First recovery"
+   },
+   "text": {
+    "ko": "2025년 5월, 허가를 받은 잠수팀이 망루의 종과 좌현 항해등 등을 건져 올려요.",
+    "en": "In May 2025 a licensed team raises the crow’s-nest bell, the port navigation light and other items."
+   },
+   "detail": {
+    "ko": "종은 약 70kg이에요. 유물은 보존 처리 뒤 피레우스의 국립수중고고학박물관에 전시될 예정이에요.",
+    "en": "The bell weighs about 70 kg. After conservation the items are to go on show at the national museum of underwater antiquities in Piraeus."
+   },
+   "sourceIds": [
+    "s5",
+    "s7"
+   ]
+  }
+ ],
+ "camera": [
+  {
+   "at": "1916-11-21T08:10:00",
+   "target": "ship",
+   "yaw": 10,
+   "pitch": 16,
+   "dist": 520
+  },
+  {
+   "at": "1916-11-21T08:12:00",
+   "target": "ship",
+   "yaw": 25,
+   "pitch": 14,
+   "dist": 400
+  },
+  {
+   "at": "1916-11-21T08:16:00",
+   "target": "ship",
+   "yaw": -50,
+   "pitch": 22,
+   "dist": 430
+  },
+  {
+   "at": "1916-11-21T08:27:00",
+   "target": "ship",
+   "yaw": 253.68421052631578,
+   "pitch": 20,
+   "dist": 420
+  },
+  {
+   "at": "1916-11-21T08:50:00",
+   "target": "ship",
+   "yaw": 185,
+   "pitch": 18,
+   "dist": 430
+  },
+  {
+   "at": "1916-11-21T09:00:00",
+   "target": "ship",
+   "yaw": 195,
+   "pitch": 12,
+   "dist": 460
+  },
+  {
+   "at": "1916-11-21T09:04:00",
+   "target": "ship",
+   "yaw": 200,
+   "pitch": 6,
+   "dist": 520
+  },
+  {
+   "at": "1916-11-21T09:05:00",
+   "target": "ship",
+   "yaw": 195,
+   "pitch": 4,
+   "dist": 520
+  },
+  {
+   "at": "1916-11-21T09:07:00",
+   "target": "ship",
+   "yaw": 175,
+   "pitch": 10,
+   "dist": 380
+  },
+  {
+   "at": "1916-11-21T09:10:00",
+   "target": "ship",
+   "yaw": 150,
+   "pitch": 13,
+   "dist": 340
+  },
+  {
+   "at": 1975.92,
+   "target": "ship",
+   "yaw": 135,
+   "pitch": 12,
+   "dist": 330
+  },
+  {
+   "at": 1993,
+   "target": "ship",
+   "yaw": 125,
+   "pitch": 12,
+   "dist": 330
+  },
+  {
+   "at": 1996,
+   "target": "hull-bow",
+   "yaw": 120,
+   "pitch": 16,
+   "dist": 220
+  },
+  {
+   "at": 2012,
+   "target": "ship",
+   "yaw": 60,
+   "pitch": 12,
+   "dist": 340
+  },
+  {
+   "at": 2019.5,
+   "target": "hull-main",
+   "yaw": 110,
+   "pitch": 14,
+   "dist": 300
+  },
+  {
+   "at": 2026.8,
+   "target": "ship",
+   "yaw": 160,
+   "pitch": 13,
+   "dist": 350
+  }
+ ],
+ "cameraSubject": [
+  "hull-main",
+  "hull-bow"
+ ],
+ "environment": {
+  "seaDepth": 120,
+  "sky": "day",
+  "seabed": {
+   "size": 15000,
+   "relief": 3
+  },
+  "growth": {
+   "kind": "crust",
+   "color": "#6f7a4a"
+  }
+ },
+ "wreck": {
+  "poses": [
+   {
+    "piece": "ship",
+    "list": 90,
+    "heading": 270,
+    "tol": 15
+   }
+  ]
+ },
+ "refs": {
+  "ko": {
+   "name": "63빌딩",
+   "height": 249
+  },
+  "en": {
+   "name": "Big Ben",
+   "height": 96
+  }
+ },
+ "sources": [
+  {
+   "id": "s1",
+   "title": "HMHS Britannic (cites Chirnside 2011; Mills)",
+   "url": "https://en.wikipedia.org/wiki/HMHS_Britannic",
+   "publisher": "Wikipedia",
+   "year": "2026"
+  },
+  {
+   "id": "s2",
+   "title": "Britannic (II)",
+   "url": "https://www.titanicinquiry.org/ships/britannicii.php",
+   "publisher": "Titanic Inquiry Project",
+   "year": "n.d."
+  },
+  {
+   "id": "s3",
+   "title": "Britannic",
+   "url": "https://www.wreckdiving.gr/wreck/britannic",
+   "publisher": "wreckdiving.gr",
+   "year": "n.d."
+  },
+  {
+   "id": "s4",
+   "title": "Project Britannic",
+   "url": "https://divernet.com/scuba-diving/general-wrecks/project-britannic/",
+   "publisher": "Divernet",
+   "year": "2012"
+  },
+  {
+   "id": "s5",
+   "title": "Inside Britannic: permits, politics and the physics of a 120-metre mission",
+   "url": "https://indepthmag.com/inside-britannic-permits-politics-and-the-physics-of-a-120-meter-mission/",
+   "publisher": "InDepth",
+   "year": "2025"
+  },
+  {
+   "id": "s6",
+   "title": "As time goes by: Britannic 109 years later",
+   "url": "https://indepthmag.com/as-time-goes-by-britannic-109-years-later/",
+   "publisher": "InDepth",
+   "year": "2025"
+  },
+  {
+   "id": "s7",
+   "title": "Divers recover artifacts from the Titanic's sister ship Britannic for the first time",
+   "url": "https://www.news4jax.com/news/world/2025/09/16/divers-recover-artifacts-from-the-titanics-sister-ship-britannic-for-the-first-time/",
+   "publisher": "Associated Press",
+   "year": "2025"
+  },
+  {
+   "id": "s8",
+   "title": "Hague Convention (X) of 1907, art. 5",
+   "url": "https://avalon.law.yale.edu/20th_century/hague10.asp",
+   "publisher": "Avalon Project, Yale",
+   "year": "1907"
+  },
+  {
+   "id": "s9",
+   "title": "British Wreck Commissioner's Inquiry: Watertight Compartments (sister ship)",
+   "url": "https://www.titanicinquiry.org/BOTInq/BOTReport/botRepWC.php",
+   "publisher": "HMSO",
+   "year": "1912"
+  },
+  {
+   "id": "s10",
+   "title": "British Wreck Commissioner's Inquiry: Detailed Description (sister ship)",
+   "url": "https://www.titanicinquiry.org/BOTInq/BOTReport/botRepTitanic.php",
+   "publisher": "HMSO",
+   "year": "1912"
+  },
+  {
+   "id": "s11",
+   "title": "Diving tourism: 11 Greek shipwrecks now open for visits",
+   "url": "https://news.gtp.gr/2022/06/15/diving-tourism-11-greek-shipwrecks-now-open-for-visits/",
+   "publisher": "GTP",
+   "year": "2022"
+  },
+  {
+   "id": "s12",
+   "title": "Kea Underwater Historic Site: legal framework",
+   "url": "https://keadivers.com/kea-underwater-historic-site/85-legal-framework.html",
+   "publisher": "Kea Divers",
+   "year": "n.d."
+  }
+ ],
+ "meta": {
+  "interpretation": {
+   "ko": "HMHS 브리타닉(1916): 타이타닉의 동생 배로, 병원선으로 쓰이다 그리스 케아 해협에서 기뢰에 맞아 가라앉은 배예요. 1874년과 1930년의 다른 브리타닉호가 아니에요. 낮(08:12~09:07)에 가라앉아 조명 장면은 넣지 않았고, 배는 한 덩어리로 가라앉아 두 동강 장면도 없어요(찌그러진 선수만 따로 그렸어요). 어느 칸이 찼는지는 기록이 있어 구획 투시를 넣었어요. 날짜가 있는 붕괴 예측이 없어서 \"앞으로\" 장은 만들지 않았어요.",
+   "en": "HMHS Britannic (1916): Titanic’s younger sister, serving as a hospital ship when a mine sank her in the Kea Channel, Greece. Not the Britannic of 1874 or of 1930. She sank by day (08:12–09:07), so there is no lights scene; she went down in one piece, so there is no break (only the crumpled bow is drawn as a separate part). Which compartments flooded is recorded, so x-ray is on. No dated forecast of her collapse exists, so there is no projection chapter."
+  },
+  "about": {
+   "ko": "1916년 11월 21일, 타고 있던 1,066명 가운데 30명이 목숨을 잃었어요(자료에 따라 21~41명). 이 그림에는 사람과 구명보트를 그리지 않았어요. 난파선은 그리스 문화부 수중고고학청이 관리하는 보호 유적이고, 허가받은 다이빙 센터를 통해 바깥만 볼 수 있으며 물건을 옮기는 것은 금지예요. 1996년부터 사이먼 밀스가 소유하고 있어요.",
+   "en": "Of the 1,066 people aboard, 30 died on 21 November 1916 (sources range from 21 to 41). No people or lifeboats are drawn here. The wreck is a protected site under the Greek Ministry of Culture’s Ephorate of Underwater Antiquities: licensed dives may visit the outside only, and nothing may be moved. Simon Mills has owned it since 1996."
+  },
+  "limitations": [
+   {
+    "ko": "선체 곡면, 상부 구조, 굴뚝·돛대·대빗의 위치는 자매선 타이타닉의 옆모습에서 잡은 추정이에요.",
+    "en": "The hull form, superstructure and the positions of funnels, masts and davits are estimated from the sister ship Titanic’s profile."
+   },
+   {
+    "ko": "초록 띠와 붉은 십자는 선체에 칠한 무늬로 그렸어요. 띠의 높이와 십자의 수·위치는 추정이에요. 기뢰로 뚫린 자리(우현 앞쪽)는 어두운 칸으로 표시했고, 크기는 추정이에요.",
+    "en": "The green band and red crosses are painted on the hull; the band height and the crosses’ number and position are estimated. The mine damage (starboard bow) is marked as a dark patch of estimated size."
+   },
+   {
+    "ko": "격벽 수(15 또는 16)와 B 갑판까지 올린 격벽(5 또는 6개, 어느 것인지 미상)은 자료가 갈려요. 구획 수위와 기울기, 배의 항로는 모두 추정이에요.",
+    "en": "The bulkhead count (15 or 16) and which bulkheads reached B deck (five or six, which ones unknown) are disputed. Water levels, angles and the ship’s track are all estimated."
+   },
+   {
+    "ko": "선수가 구부러진 각도와 모양, 굴뚝 2~4번이 놓인 자리는 추정이에요.",
+    "en": "The angle and shape of the crumpled bow and where funnels 2–4 lie are estimated."
+   },
+   {
+    "ko": "해저에서 날짜가 기록된 붕괴는 찾지 못했어요. 해양 생물이 덮인 정도는 추정이에요.",
+    "en": "No dated collapse on the seabed was found. The amount of marine growth is estimated."
+   }
+  ]
+ }
+}

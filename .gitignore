@@ -1,0 +1,8 @@
+# work files that are not part of the skills
+analysis/
+trials/
+.backup/
+.superpowers/
+**/.out/
+node_modules/
+.DS_Store

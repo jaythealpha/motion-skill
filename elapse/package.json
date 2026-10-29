@@ -1,0 +1,11 @@
+{
+  "name": "elapse",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Elapse: drag a chaptered time bar and watch a real subject change over time, from a sinking ship to its wreck.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "TZ=UTC node --test && TZ=Asia/Seoul node --test"
+  }
+}

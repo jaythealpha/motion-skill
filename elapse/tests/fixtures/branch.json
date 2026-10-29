@@ -1,0 +1,12 @@
+{
+  "subject": { "name": "Branch test", "kind": "ship", "dims": { "loa": 10, "beam": 2, "depth": 1, "draft": 0.5 }, "sourceIds": ["s1"] },
+  "chapters": [{ "id": "all", "name": "All", "start": 2000, "end": 2100, "bar": [0, 100], "unit": "year" }],
+  "pieces": [{ "id": "ship", "name": "Ship", "template": "group", "sourceIds": ["s1"] }],
+  "tracks": [{ "piece": "ship", "prop": "rust", "keys": [{ "at": 2000, "v": 0, "sourceIds": ["s1"] }, { "at": 2100, "v": 1, "sourceIds": ["s1"] }] }],
+  "events": [],
+  "branches": [{ "id": "b", "name": { "ko": "다른 길", "en": "Other way" }, "from": 50,
+    "tracks": [{ "piece": "ship", "prop": "rust", "keys": [{ "at": 2100, "v": 0.2, "sourceIds": ["s1"] }] }] }],
+  "environment": { "seaDepth": 100, "sky": "day" },
+  "sources": [{ "id": "s1", "title": "Test", "url": "https://example.org/" }],
+  "meta": {}
+}

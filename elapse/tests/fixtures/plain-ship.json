@@ -1,0 +1,317 @@
+{
+ "subject": {
+  "name": {
+   "ko": "평범한 배",
+   "en": "Plain Ship"
+  },
+  "kind": "ship",
+  "built": 1915,
+  "dims": {
+   "loa": 100,
+   "beam": 14,
+   "depth": 9,
+   "draft": 5
+  },
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "chapters": [
+  {
+   "id": "day",
+   "name": {
+    "ko": "그날 낮",
+    "en": "That day"
+   },
+   "start": "1916-11-21T08:00",
+   "end": "1916-11-21T09:00",
+   "bar": [
+    0,
+    100
+   ],
+   "unit": "minute"
+  }
+ ],
+ "pieces": [
+  {
+   "id": "ship",
+   "name": {
+    "ko": "선박",
+    "en": "Ship"
+   },
+   "template": "group",
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "hull",
+   "name": {
+    "ko": "선체",
+    "en": "Hull"
+   },
+   "template": "hull",
+   "parent": "ship",
+   "sourceIds": [
+    "s1"
+   ],
+   "params": {
+    "depth": 9,
+    "draft": 5,
+    "sheer": {
+     "fwd": 1,
+     "aft": 0.5
+    },
+    "stem": "straight",
+    "stern": "transom",
+    "offsets": {
+     "waterlines": [
+      0,
+      2,
+      5,
+      9
+     ],
+     "stations": [
+      {
+       "x": -50,
+       "hb": [
+        0.5,
+        3,
+        4.5,
+        5
+       ]
+      },
+      {
+       "x": -25,
+       "hb": [
+        6,
+        6.8,
+        7,
+        7
+       ]
+      },
+      {
+       "x": 0,
+       "hb": [
+        6.5,
+        7,
+        7,
+        7
+       ]
+      },
+      {
+       "x": 25,
+       "hb": [
+        5,
+        6.5,
+        6.8,
+        7
+       ]
+      },
+      {
+       "x": 50,
+       "hb": [
+        0.2,
+        0.4,
+        0.8,
+        1.5
+       ]
+      }
+     ]
+    },
+    "paint": {
+     "topside": "#2b2f33",
+     "bottom": "#7d2a20",
+     "boot": "#efe9dc",
+     "bootHeight": 0.4
+    }
+   },
+   "embed": 3
+  },
+  {
+   "id": "house",
+   "name": {
+    "ko": "갑판실",
+    "en": "Deckhouse"
+   },
+   "template": "deckhouse",
+   "parent": "hull",
+   "on": "hull",
+   "offset": [
+    0,
+    0,
+    9
+   ],
+   "confidence": "estimated",
+   "params": {
+    "l": 24,
+    "b": 10,
+    "h": 4,
+    "r": 1.5,
+    "windows": 1
+   }
+  },
+  {
+   "id": "funnel",
+   "name": {
+    "ko": "굴뚝",
+    "en": "Funnel"
+   },
+   "template": "funnel",
+   "parent": "hull",
+   "offset": [
+    0,
+    0,
+    13
+   ],
+   "sourceIds": [
+    "s1"
+   ],
+   "params": {
+    "a": 2,
+    "b": 1.5,
+    "h": 8,
+    "rake": 6,
+    "top": 1
+   }
+  }
+ ],
+ "tracks": [
+  {
+   "piece": "ship",
+   "prop": "pose",
+   "interp": "smooth",
+   "keys": [
+    {
+     "at": "1916-11-21T08:00",
+     "v": {
+      "pos": [
+       0,
+       0,
+       -5
+      ],
+      "trim": 0,
+      "list": 0,
+      "heading": 30
+     },
+     "sourceIds": [
+      "s1"
+     ]
+    },
+    {
+     "at": "1916-11-21T08:40",
+     "v": {
+      "pos": [
+       0,
+       0,
+       -9
+      ],
+      "trim": 6,
+      "list": 8,
+      "heading": 30
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T08:55",
+     "v": {
+      "pos": [
+       10,
+       0,
+       -60
+      ],
+      "trim": 20,
+      "list": 30,
+      "heading": 30
+     },
+     "confidence": "estimated"
+    },
+    {
+     "at": "1916-11-21T09:00",
+     "v": {
+      "pos": [
+       20,
+       0,
+       -113
+      ],
+      "trim": 0,
+      "list": 80,
+      "heading": 30
+     },
+     "sourceIds": [
+      "s1"
+     ]
+    }
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "hit",
+   "kind": "collision",
+   "at": "1916-11-21T08:12",
+   "title": {
+    "ko": "폭발",
+    "en": "Explosion"
+   },
+   "text": {
+    "ko": "기뢰에 닿아요.",
+    "en": "It strikes a mine."
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  },
+  {
+   "id": "gone",
+   "kind": "note",
+   "at": "1916-11-21T09:00",
+   "title": {
+    "ko": "가라앉음",
+    "en": "Gone"
+   },
+   "text": {
+    "ko": "해저에 눕습니다.",
+    "en": "It lies on the seabed."
+   },
+   "sourceIds": [
+    "s1"
+   ]
+  }
+ ],
+ "cameraSubject": [
+  "hull"
+ ],
+ "environment": {
+  "seaDepth": 120,
+  "sky": "day",
+  "seabed": {
+   "size": 400,
+   "relief": 2
+  }
+ },
+ "refs": {
+  "ko": {
+   "name": "롯데월드타워",
+   "height": 555
+  },
+  "en": {
+   "name": "Eiffel Tower",
+   "height": 330
+  }
+ },
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Test source",
+   "url": "https://example.org/"
+  }
+ ],
+ "meta": {
+  "limitations": [],
+  "about": {
+   "ko": "테스트용 배예요.",
+   "en": "A test ship."
+  }
+ }
+}
