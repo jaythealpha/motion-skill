@@ -40,7 +40,12 @@ writeFileSync(join(SKILL, 'SKILL.md'), skillMd);
 
 // the demo site
 mkdirSync(join(OUT, 'docs/examples'), { recursive: true });
-for (const m of examples) cpSync(join(SRC, 'examples', `${m}.html`), join(OUT, 'docs/examples', `${m}.html`));
+// built by the exported skill itself, so CI's "demo pages match a fresh build" check holds byte for byte.
+// The examples passed Gate 2 here before export (unfold/examples/*.html carry the same result).
+for (const m of examples) {
+  if (!/"gate2":"pass"/.test(readFileSync(join(SRC, 'examples', `${m}.html`), 'utf8'))) throw new Error(`${m}: the monorepo build does not record a Gate 2 pass`);
+  execFileSync(process.execPath, [join(SKILL, 'scripts/build.mjs'), join(SKILL, 'examples', `${m}.json`), join(OUT, 'docs/examples', `${m}.html`), '--gate2', 'pass'], { stdio: 'ignore' });
+}
 cpSync(join(TPL, 'docs'), join(OUT, 'docs'), { recursive: true });
 // one card per example, with the numbers the page itself shows
 const { normalizeModel, verifiedShare } = await import(join(SRC, 'engine/model.js'));
