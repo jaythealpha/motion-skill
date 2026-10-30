@@ -21,14 +21,14 @@ The skill folder (`<skill>` below) holds the engine (`engine/`), the bundled sha
 ## Rules that always hold
 
 - **Work unattended.** Do not stop to ask the person questions mid-way. If the model name is ambiguous, take the most likely reading, say which in `meta.interpretation`, and carry on.
-- **Facts from sources, everything else marked estimated.** Every part has `sourceIds` or `confidence: "estimated"`. Never present a guess as sourced. The page shows the sourced share and warns below 50%. That is fine and honest, so don't inflate it.
+- **Facts from sources, everything else marked estimated.** Every part has `sourceIds` or `confidence: "estimated"`. Never present a guess as sourced. A part is verified only when a cited source, for this exact model, states both that the part is there and how it is held. `references/research.md` ("When a part counts as verified") has the rule and examples; apply it strictly. The page shows the sourced share and warns below 50%. That is fine and honest, so don't inflate it.
 - **Licence:** teardown sites (iFixit is CC BY-NC-SA) may not be reused commercially. Take facts only (sizes, counts, order, names, fastening). Write every sentence yourself, never copy text, and never embed or download their photos. Sources appear as links only.
 - **Gates loop at most 3 rounds each.** Whatever still fails after that goes into `meta.limitations` (shown on the page), and you say so when you deliver.
 - Requires Node 18+ for Gate 1 and the build, and Node 22+ plus Chrome or Chromium for Gate 2 (no npm packages). When Gate 2 can't run, it prints `GATE2 SKIPPED` with the reason: build with `--gate2 skipped` and say so. Gate 1 always runs.
 
 ## Workflow
 
-1. **Understand the request.** Pin down the product and variant (e.g. "Galaxy S24" means the base SM-S921, not the S24+). When regional variants differ inside (SIM tray vs eSIM-only, battery size), build the variant sold where the requester is (a Korean request → the Korean model), and say which in `meta.interpretation`. Phones are tuned: 40–80 parts for a bar phone, 50–100 for a foldable. Other products work with the same templates, but say they are outside the tuned range.
+1. **Understand the request.** Pin down the product and variant (e.g. "Galaxy S24" means the base SM-S921, not the S24+). When regional variants differ inside (SIM tray vs eSIM-only, battery size), build the variant sold where the requester is (a Korean request → the Korean model; if it is not sold there, the variant the main teardown used), and say which in `meta.interpretation`. Phones are tuned: 40–80 parts for a bar phone, 50–100 for a foldable. Other products work with the same templates, but say they are outside the tuned range.
    - **A photo instead of a name:** identify the model from what you can see: camera layout, logo, a fold seam, buttons, colour, screen shape.
      - If you are sure, use that model.
      - If not, take **the latest flagship of that maker**. Check what is latest at the time by searching.
@@ -65,6 +65,7 @@ The skill folder (`<skill>` below) holds the engine (`engine/`), the bundled sha
 
 4. **Gate 1 (data).** Run
    `node <skill>/scripts/check_model.mjs model.json --official W,L,T` (foldables: add `--official-folded W,L,T`)
+   W, L, T are width, length and thickness. Makers usually list height × width × depth, so reorder them: 147 × 70.6 × 7.6 becomes `--official 70.6,147,7.6`.
    until it prints `GATE1 PASS`. It checks references, steps (≥ 2), a single base, fastening on every other part, key parts, dimensions (±0.5 mm) and boxes inside the product. It then checks collisions when assembled, and, sampled finely in both layouts, parts passing through each other in the burst or through already-seated parts on their way in. For foldables it also checks the two halves when shut and the folded size. Fix the data, not the checker. When something really goes through another part (a lens through the back glass, a port through the frame), declare it with `passesThrough`. Gate 1 treats `holes` as solid, so a part sitting in a hole still needs `passesThrough`. Boxes may reach up to 6 mm beyond the body's thickness on either face, for camera bumps.
 
 5. **Build, then Gate 2 (pictures).**
@@ -82,14 +83,14 @@ The skill folder (`<skill>` below) holds the engine (`engine/`), the bundled sha
    - the playback speed
    - the printed manual
 
-   It fails on script errors, a blank canvas, horizontal scroll, labels outside the stage, overflowing text, no lit screen at the ends, or an incomplete manual. Besides `contact.png`, it writes `key.png`: the eight shots most worth reading, two to a row. Then **look** at `out-shots/key.png` and `contact.png`, and open any doubtful shot full size. For a close look at one spot, run `node <skill>/scripts/shoot.mjs out.html views --only "t=0&yaw=200&pitch=15&zoom=2.5" --scale 2`; you can repeat `--only`. This is worth doing for a foldable's hinge end and its crease at `fold=90`. Check:
+   It fails on script errors, a blank canvas, horizontal scroll, labels outside the stage, overflowing text, no lit screen at the ends, or an incomplete manual. Besides `contact.png`, it writes `key.png`: the shots most worth reading, two to a row, including two pages of the printed manual. Then **look** at `out-shots/key.png` and `contact.png`, and open any doubtful shot full size. For a close look, run `node <skill>/scripts/shoot.mjs out.html views --only "t=0&yaw=200&pitch=15&zoom=2.5" --scale 2`; you can repeat `--only`. `zoom` closes in on the centre of the view, so turn it with `yaw`/`pitch` until the spot you want sits near the centre. This is worth doing for a foldable's hinge end and its crease at `fold=90`. Check:
    - no part drawn through another, and no floating part at t=100
    - the layers read clearly at t=0
    - labels point at the right parts
    - at t=0 and t=100 the phone is whole and lit (a foldable shut, its cover screen lit)
    - a foldable's inner screen bends smoothly and nothing crosses at the fold
    - the mat layout is tidy
-   Fix and repeat, then rebuild with `--gate2 pass` (or `fail` / `skipped`) so the page records the result.
+   Fix and repeat, then rebuild with `--gate2 pass` (or `fail` / `skipped`) so the page records the result. Rerun Gate 2 after any change the page draws: parts, positions, steps or labels. A change to `sources`, `limitations` or `meta` text alone needs only the rebuild.
 
 6. **Deliver.** Hand over `out.html` (it works offline and on phones; keep `model.json` beside it). In a few lines, tell the person:
    - the model you built
@@ -97,7 +98,7 @@ The skill folder (`<skill>` below) holds the engine (`engine/`), the bundled sha
    - the sourced share
    - the main limitations
    - how to use it:
-     - drag the bar or press play, and pick the speed (아주 느리게 ~ 빠르게)
+     - drag the bar or press play, and pick the speed (1× is the slowest; 2×, 3×, 5×)
      - the toggles switch depth (간단히/자세히/매뉴얼), layout (층층이/매트 정렬) and style (컬러/도면)
      - on a foldable, the 접기 slider folds it at 0 or 100
      - click a part for its details
@@ -105,7 +106,7 @@ The skill folder (`<skill>` below) holds the engine (`engine/`), the bundled sha
 
 ## Page parameters (for screenshots and links)
 
-`?t=0..100` `&layout=stack|knoll` `&style=color|blueprint` `&depth=simple|detail|manual` `&step=N` `&lang=ko|en` `&speed=xslow|slow|normal|fast` `&fold=0..180` (foldables, at t=0 or 100) `&yaw=&pitch=` `&auto=0` `&play=1` `&panel=sources` `&pick=<partId>`
+`?t=0..100` `&layout=stack|knoll` `&style=color|blueprint` `&depth=simple|detail|manual` `&step=N` (the end of step N; `t` wins if both are given) `&lang=ko|en` `&speed=xslow|slow|normal|fast` (1× / 2× / 3× / 5×; default 2×) `&fold=0..180` (foldables, at t=0 or 100) `&yaw=&pitch=` `&auto=0` `&play=1` `&panel=sources` `&pick=<partId>`
 
 ## When something else fits better
 

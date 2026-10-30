@@ -3,7 +3,7 @@
 // shoot it across the time bar, layouts, styles, depths and a real phone viewport, check each shot, and make
 // a contact sheet.  node scripts/shoot.mjs page.html outDir [--quick]
 // Prints GATE2 PASS | FAIL | SKIPPED.  Exit 0 pass, 1 fail, 2 skipped (no Chrome found).
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, writeFileSync } from 'node:fs';
 import { resolve, join, basename } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { openBrowser, shooter, writeSheets } from '../shared/cdp.mjs';
@@ -18,7 +18,7 @@ if (!page || !outDir) { console.error('usage: node scripts/shoot.mjs page.html o
 
 mkdirSync(outDir, { recursive: true });
 const B = await openBrowser({ tag: 'unfold' });
-const { evaluate, nextLoad, sleep, cleanup, bail } = B;
+const { S, evaluate, nextLoad, sleep, cleanup, bail } = B;
 try {
 const base = pathToFileURL(resolve(page)).href;
 const CHECK = `(async () => {
@@ -82,8 +82,8 @@ await shot('mobile-detail-t40', { t: 40 }, { w: 375, h: 812, mobile: true });
 await shot('mobile-manual-step3', { depth: 'manual', step: Math.min(3, nSteps) }, { w: 375, h: 812, mobile: true });
 await shot('mobile-knoll-t15', { t: 15, layout: 'knoll' }, { w: 375, h: 812, mobile: true });
 
-// playback speed: each speed covers the whole bar in its own time (60 / 36 / 24 / 12 s)
-for (const [speed, secs] of quick ? [['normal', 24]] : [['slow', 36], ['normal', 24], ['fast', 12]]) {
+// playback speed: each speed covers the whole bar in its own time (1× 60 s, 2× 30 s, 3× 20 s, 5× 12 s)
+for (const [speed, secs] of quick ? [['slow', 30]] : [['xslow', 60], ['slow', 30], ['normal', 20], ['fast', 12]]) {
   await shot(`speed-${speed}`, { t: 10, speed, play: 1, auto: 0 });
   const moved = await evaluate(`(async () => { const t0 = window.__unfold.st.t, p0 = performance.now(); await new Promise(r => setTimeout(r, 2000));
     return { dt: window.__unfold.st.t - t0, secs: (performance.now() - p0) / 1000 }; })()`);
@@ -101,10 +101,22 @@ const manual = await evaluate(`(async () => { window.print = () => {}; document.
 const mOk = manual.sections === manual.steps + 2 && manual.images === manual.steps + 1 && !manual.errors;
 console.log(`${mOk ? 'ok  ' : 'FAIL'} print-manual  sections=${manual.sections} images=${manual.images} steps=${manual.steps}`);
 if (!mOk) shots.push({ name: 'print-manual', file: 'print-check.png', errors: [], problems: ['printed manual is incomplete'] });
+// pictures of the printed pages themselves (print media): the first step and a middle one, so they can be read in key.png
+await S('Emulation.setEmulatedMedia', { media: 'print' });
+await S('Emulation.setDeviceMetricsOverride', { width: 794, height: 1123, deviceScaleFactor: 1, mobile: false });
+for (const i of [...new Set([1, Math.max(1, Math.ceil(manual.steps / 2))])]) {
+  const r = await evaluate(`(() => { const s = document.querySelectorAll('.uf-print section')[${i}]; if (!s) return null; const b = s.getBoundingClientRect();
+    return { x: b.left + scrollX, y: b.top + scrollY, w: b.width, h: Math.min(b.height, 1123) }; })()`);
+  if (!r) continue;
+  const { data } = await S('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true, clip: { x: r.x, y: r.y, width: r.w, height: r.h, scale: 1 } });
+  writeFileSync(join(outDir, `print-step${i}.png`), Buffer.from(data, 'base64'));
+  shots.push({ name: `print-step${i}`, file: `print-step${i}.png`, errors: [], problems: [] });
+}
+await S('Emulation.setEmulatedMedia', { media: '' });
 
 // contact sheet and the shots worth reading closely
 await writeSheets({ ...B, outDir, title: basename(page), shots,
-  key: ['lit-t0', 'story-t6', 'stack-color-t25', 'stack-color-t50', 'knoll-color-t50', 'lit-t100', 'simple-t20', 'mobile-detail-t40'] });
+  key: ['lit-t0', 'story-t6', 'stack-color-t25', 'stack-color-t50', 'knoll-color-t50', 'lit-t100', 'story-t4', 'mobile-detail-t40', ...shots.filter(x => x.name.startsWith('print-step')).map(x => x.name)] });
 
 await cleanup();
 const failed = shots.filter(s => s.errors.length + s.problems.length);

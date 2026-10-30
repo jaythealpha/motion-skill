@@ -65,10 +65,11 @@ export function createTimeline(model, layout = 'stack') {
     s.parts.forEach((id, i) => info.set(id, { a: a + i * stag, b: a + i * stag + dur, step: s, path: byId.get(id)?.path || s.path }));
   }
 
-  // a sliding part (a SIM tray) comes in from the edge it is pushed through: part.slideFrom 'y0' (default, the
-  // charging-port end), 'y1', 'x0' or 'x1'
-  const { w } = model.product.dims;
-  const slideSide = id => ({ y0: [0, -0.3 * l, 0], y1: [0, 0.3 * l, 0], x0: [-0.6 * w, 0, 0], x1: [0.6 * w, 0, 0] })[byId.get(id)?.slideFrom || 'y0'] || [0, -0.3 * l, 0];
+  // a sliding part (a SIM tray, a stylus) comes in from the edge it is pushed through: part.slideFrom 'y0' (default,
+  // the charging-port end), 'y1', 'x0' or 'x1'. It waits just clear of that edge, however long it is.
+  const { w } = model.product.dims, EDGE = 4;
+  const slideSide = id => { const p = byId.get(id), b = p?.bbox || [0, 0, 0, w, l, 0];
+    return ({ y0: [0, -(b[4] + EDGE), 0], y1: [0, l - b[1] + EDGE, 0], x0: [-(b[3] + EDGE), 0, 0], x1: [w - b[0] + EDGE, 0, 0] })[p?.slideFrom || 'y0']; };
 
   // the last leg into the seat, from `from` (an offset) to home, in the part's own way of going in
   function finish(path, k, from, id) {
@@ -79,8 +80,10 @@ export function createTimeline(model, layout = 'stack') {
       pos = [at[0], at[1], at[2] - seat * spin * (k > 0.6 ? 1 : 0)];
       rot = [0, 0, (1 - spin) * 6 * Math.PI];
     } else if (path === 'slide') {
-      const side = slideSide(id), p1 = ease(clamp(k / 0.5)), p2 = ease(clamp((k - 0.5) / 0.5));
-      pos = k < 0.5 ? from.map((v, j) => v + (side[j] - v) * p1) : side.map(v => v * (1 - p2));
+      // across at its height to beside the edge, down to its seat height there, then in: never over the phone on the way down
+      const side = slideSide(id), above = [side[0], side[1], from[2]];
+      const p1 = ease(clamp(k / 0.35)), p2 = ease(clamp((k - 0.35) / 0.25)), p3 = ease(clamp((k - 0.6) / 0.4));
+      pos = k < 0.35 ? from.map((v, j) => v + (above[j] - v) * p1) : k < 0.6 ? above.map((v, j) => v + (side[j] - v) * p2) : side.map(v => v * (1 - p3));
     } else {
       const p = ease(k);
       pos = lerp3(from, 1 - p);

@@ -6,3 +6,9 @@ trials/
 **/.out/
 node_modules/
 .DS_Store
+
+# personal social media drafts
+social/
+
+# the exported standalone repositories
+dist/

@@ -5,7 +5,7 @@ import { strings, pick } from './i18n.js';
 import { classShares, WARN_SHARE } from './model.js';
 import { chapterAt, formatTime } from './chapters.js';
 import { subjectBox, frameSubject } from './camera.js';
-import { SPEEDS, advance, stepSpeed } from '../shared/speeds.js';
+import { SPEEDS, DEFAULT_SPEED, advance, stepSpeed, speedLabel } from '../shared/speeds.js';
 import { CLASSES, classOf, badge } from '../shared/confidence.js';
 
 const CSS = `
@@ -78,7 +78,7 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '
 
 export function mountElapse(root, model, params = {}) {
   const st = { lang: params.lang === 'en' ? 'en' : 'ko', depth: params.depth === 'simple' ? 'simple' : 'detail',
-    style: params.style === 'blueprint' ? 'blueprint' : 'color', t: 0, playing: false, speed: SPEEDS[params.speed] ? params.speed : 'normal',
+    style: params.style === 'blueprint' ? 'blueprint' : 'color', t: 0, playing: false, speed: SPEEDS[params.speed] ? params.speed : DEFAULT_SPEED,
     xray: params.xray === '1' ? true : params.xray === '0' ? false : null, branch: params.branch === 'b' && model.branches.length ? 'b' : 'a' };
   const errors = window.__elapse?.errors || [];
   let L = strings(st.lang);
@@ -120,7 +120,7 @@ export function mountElapse(root, model, params = {}) {
     const seg = (key, opts, cur, lab = o => L[o]) => `<span class="el-seg"><b>${L[key]}</b><div role="group" aria-label="${L[key]}">${opts.map(o => `<button type="button" data-k="${key}" data-o="${o}" aria-pressed="${cur === o}">${lab(o)}</button>`).join('')}</div></span>`;
     $('.el-controls').innerHTML = seg('style', ['color', 'blueprint'], st.style) + seg('xray', ['on', 'off'], xrayNow() ? 'on' : 'off') + seg('depth', ['simple', 'detail'], st.depth)
       + `<span class="el-seg"><div role="group" aria-label="language">${['ko', 'en'].map(o => `<button type="button" data-k="lang" data-o="${o}" aria-pressed="${st.lang === o}">${o.toUpperCase()}</button>`).join('')}</div></span>`;
-    $('.el-pl select').innerHTML = Object.keys(SPEEDS).map(k => `<option value="${k}"${st.speed === k ? ' selected' : ''}>${L[k]}</option>`).join('');
+    $('.el-pl select').innerHTML = Object.keys(SPEEDS).map(k => `<option value="${k}"${st.speed === k ? ' selected' : ''}>${speedLabel(k)}</option>`).join('');
     $('.el-pl select').setAttribute('aria-label', L.speed);
     $('.el-bands').innerHTML = model.chapters.map(c => `<span style="left:${c.bar[0]}%;width:${c.bar[1] - c.bar[0]}%" title="${esc(pick(c.name, st.lang))}">${esc(pick(c.name, st.lang))}</span>`).join('');
     $('.el-ticks').innerHTML = cards.map(e => `<i style="left:${e._t}%" title="${esc(pick(e.title, st.lang))}"></i>`).join('') + model.chapters.slice(1).map(c => `<i class="ch" style="left:${c.bar[0]}%"></i>`).join('');

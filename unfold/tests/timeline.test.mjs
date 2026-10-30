@@ -88,3 +88,18 @@ test('a step end still belongs to that step', () => {
   assert.equal(tl.stepAt(INTRO_END - 0.1), null);
   assert.equal(tl.stepIndexAt(INTRO_END), 0);
 });
+
+test('a long sliding part (a stylus) only comes down beside the phone, never over it', () => {
+  const m = mini(), { w, l, t } = m.product.dims;
+  const last = m.steps.at(-1);
+  const pen = { ...m.parts.find(p => p.id === last.parts[0]), id: 'pen', bbox: [w - 6, 4, 1, w - 2, l * 0.7, t - 1], path: 'slide', slideFrom: 'y0', attachedTo: m.parts.find(p => !p.attachedTo).id, key: false };
+  m.parts.push(pen); last.parts.push('pen');
+  const tl = createTimeline(m, 'stack'), [a, b] = stepWindows(m).get(last.n);
+  for (let i = 0; i <= 200; i++) {
+    const { pos } = tl.pose('pen', a + (b - a) * i / 200);
+    const y1 = pen.bbox[4] + pos[1], z0 = pen.bbox[2] + pos[2];
+    // while it is still lower than the top of the phone, it must be wholly past the y0 edge or sliding straight in
+    if (z0 < t && y1 > 0) assert.ok(Math.abs(pos[0]) < 1e-9 && Math.abs(pos[2]) < 1e-6, `pen over the phone at k=${i / 200}: ${pos}`);
+  }
+  assert.ok(near(tl.pose('pen', b).pos, [0, 0, 0], 1e-6));
+});

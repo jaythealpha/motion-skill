@@ -142,9 +142,9 @@
    "half": "hinge",
    "count": 1,
    "bbox": [
-    1.0,
-    1.0,
-    0.0,
+    1,
+    1,
+    0,
     160.4,
     122.9,
     0.45
@@ -163,9 +163,9 @@
    "shape": {
     "template": "flexdisplay",
     "r": 6,
-    "bezel": 1.0,
+    "bezel": 1,
     "hole": [
-     27.0,
+     27,
      114.5,
      1.3
     ]
@@ -225,8 +225,8 @@
    "half": "hinge",
    "count": 1,
    "bbox": [
-    1.0,
-    1.0,
+    1,
+    1,
     0.45,
     160.4,
     122.9,
@@ -260,9 +260,9 @@
    "half": "hinge",
    "count": 1,
    "bbox": [
-    1.0,
-    1.0,
-    0.0,
+    1,
+    1,
+    0,
     160.4,
     122.9,
     0.45
@@ -297,8 +297,8 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    1.0,
-    1.0,
+    1,
+    1,
     0.55,
     74.7,
     122.9,
@@ -330,7 +330,7 @@
    "count": 1,
    "bbox": [
     86.7,
-    1.0,
+    1,
     0.55,
     160.4,
     122.9,
@@ -361,8 +361,8 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    0.0,
-    0.0,
+    0,
+    0,
     0.6,
     74.7,
     123.9,
@@ -383,7 +383,7 @@
    "shape": {
     "template": "housing",
     "r": 6,
-    "wall": 1.0,
+    "wall": 1,
     "floorAt": [
      0.6,
      0.7
@@ -403,7 +403,7 @@
    "count": 1,
    "bbox": [
     86.7,
-    0.0,
+    0,
     0.6,
     161.4,
     123.9,
@@ -424,7 +424,7 @@
    "shape": {
     "template": "housing",
     "r": 6,
-    "wall": 1.0,
+    "wall": 1,
     "floorAt": [
      0.6,
      1.03
@@ -443,12 +443,12 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    0.0,
-    84.0,
+    0,
+    84,
     1.6,
-    1.0,
-    100.0,
-    3.0
+    1,
+    100,
+    3
    ],
    "attachedTo": "frame-a",
    "fastening": {
@@ -475,12 +475,12 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    0.0,
-    62.0,
+    0,
+    62,
     1.6,
-    1.0,
-    76.0,
-    3.0
+    1,
+    76,
+    3
    ],
    "attachedTo": "frame-a",
    "fastening": {
@@ -510,7 +510,7 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    1.0,
+    1,
     59.1,
     1.17,
     3.8,
@@ -552,7 +552,7 @@
    "count": 1,
    "bbox": [
     74.7,
-    1.0,
+    1,
     0.6,
     86.7,
     122.9,
@@ -583,10 +583,10 @@
    "count": 1,
    "bbox": [
     75.2,
-    6.0,
+    6,
     0.9,
     86.2,
-    34.0,
+    34,
     2.8
    ],
    "attachedTo": "frame-a",
@@ -615,10 +615,10 @@
    "count": 1,
    "bbox": [
     75.2,
-    48.0,
+    48,
     0.9,
     86.2,
-    76.0,
+    76,
     2.8
    ],
    "attachedTo": "frame-a",
@@ -652,10 +652,10 @@
    "count": 1,
    "bbox": [
     75.2,
-    90.0,
+    90,
     0.9,
     86.2,
-    118.0,
+    118,
     2.8
    ],
    "attachedTo": "frame-a",
@@ -720,11 +720,11 @@
    "half": "hinge",
    "count": 6,
    "bbox": [
-    79.0,
-    10.0,
+    79,
+    10,
     2.8,
     82.4,
-    114.0,
+    114,
     4.5
    ],
    "attachedTo": "hinge-spine",
@@ -774,33 +774,33 @@
    "path": "screw"
   },
   {
-   "id": "screws-hinge-frame-a",
-   "name_en": "Hinge-to-frame screws, half A side",
-   "name_ko": "힌지-프레임 나사 (A)",
+   "id": "screws-hinge-spine",
+   "name_en": "Hinge spine screws",
+   "name_ko": "힌지 스파인 나사",
    "category": "fastener",
-   "half": "a",
-   "count": 9,
+   "half": "hinge",
+   "count": 18,
    "bbox": [
     72.6,
-    8.0,
-    1.0,
-    73.65,
-    116.0,
+    8,
+    1,
+    88.7,
+    116,
     1.6
    ],
-   "attachedTo": "frame-a",
+   "attachedTo": "hinge-spine",
    "fastening": {
     "type": "screw",
     "spec": "Phillips/JIS, length unknown",
-    "count": 9
+    "count": 18
    },
    "step": 3,
    "sourceIds": [
     "s9"
    ],
    "confidence": "estimated",
-   "notes": "s9 says 18 screws keep the spine rigid. My reading is that these fix the hinge to the frames, split 9/9 between the halves. The split and positions are estimated.",
-   "shapeNote": "9 screws in a row along the hinge edge of frame A",
+   "notes": "s9 says 18 screws keep the spine rigid. Shown as two rows of 9 along the hinge edges; the split and positions are estimated.",
+   "shapeNote": "18 screws in two rows of 9 along the hinge edges",
    "shape": {
     "template": "screw",
     "head": 1.6,
@@ -840,43 +840,7 @@
      [
       72.65,
       20.12
-     ]
-    ]
-   },
-   "path": "screw"
-  },
-  {
-   "id": "screws-hinge-frame-b",
-   "name_en": "Hinge-to-frame screws, half B side",
-   "name_ko": "힌지-프레임 나사 (B)",
-   "category": "fastener",
-   "half": "b",
-   "count": 9,
-   "bbox": [
-    87.75,
-    8.0,
-    1.0,
-    88.7,
-    116.0,
-    1.6
-   ],
-   "attachedTo": "frame-b",
-   "fastening": {
-    "type": "screw",
-    "spec": "Phillips/JIS, length unknown",
-    "count": 9
-   },
-   "step": 3,
-   "sourceIds": [
-    "s9"
-   ],
-   "confidence": "estimated",
-   "notes": "See screws-hinge-frame-a.",
-   "shapeNote": "9 screws in a row along the hinge edge of frame B",
-   "shape": {
-    "template": "screw",
-    "head": 1.6,
-    "positions": [
+     ],
      [
       87.7,
       19.16
@@ -1261,11 +1225,11 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    4.0,
+    4,
     1.5,
     1.05,
-    30.0,
-    8.0,
+    30,
+    8,
     1.8
    ],
    "attachedTo": "frame-a",
@@ -1293,11 +1257,11 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    17.0,
-    2.0,
+    17,
+    2,
     1.05,
-    19.0,
-    4.0,
+    19,
+    4,
     2.3
    ],
    "attachedTo": "sub-board-a",
@@ -1316,8 +1280,8 @@
     "head": 1.6,
     "positions": [
      [
-      18.0,
-      3.0
+      18,
+      3
      ]
     ]
    },
@@ -1331,11 +1295,11 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    12.0,
+    12,
     1.5,
     1.8,
-    15.0,
-    4.0,
+    15,
+    4,
     2.4
    ],
    "attachedTo": "sub-board-a",
@@ -1361,10 +1325,10 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    24.0,
+    24,
     4.5,
     1.8,
-    29.0,
+    29,
     7.5,
     2.2
    ],
@@ -1390,10 +1354,10 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    4.0,
-    9.0,
+    4,
+    9,
     1.05,
-    22.0,
+    22,
     16.5,
     3.3
    ],
@@ -1419,11 +1383,11 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    32.0,
-    0.0,
+    32,
+    0,
     0.9,
-    41.0,
-    8.0,
+    41,
+    8,
     3.5
    ],
    "attachedTo": "frame-a",
@@ -1500,10 +1464,10 @@
    "count": 2,
    "bbox": [
     31.5,
-    6.0,
+    6,
     1.05,
     41.5,
-    9.0,
+    9,
     3.6
    ],
    "attachedTo": "usb-c-port",
@@ -1524,11 +1488,11 @@
     "head": 1.6,
     "positions": [
      [
-      38.0,
+      38,
       7.2
      ],
      [
-      35.0,
+      35,
       7.8
      ]
     ]
@@ -1543,10 +1507,10 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    44.0,
+    44,
     1.5,
     1.05,
-    70.0,
+    70,
     16.5,
     3.4
    ],
@@ -1570,22 +1534,23 @@
   },
   {
    "id": "battery-a-adhesive",
-   "name_en": "Battery A pull-tab adhesive",
-   "name_ko": "배터리 A 풀탭 접착제",
+   "name_en": "Battery A pull-jacket adhesive",
+   "name_ko": "배터리 A 풀 재킷 접착제",
    "category": "adhesive",
    "half": "a",
    "count": 1,
    "bbox": [
-    4.0,
+    4,
     18.5,
-    1.0,
-    70.0,
+    1,
+    70,
     78.5,
     1.05
    ],
    "attachedTo": "frame-a",
    "fastening": {
-    "type": "adhesive"
+    "type": "adhesive",
+    "spec": "pull jacket"
    },
    "step": 6,
    "sourceIds": [
@@ -1594,8 +1559,8 @@
     "s8"
    ],
    "confidence": "verified",
-   "notes": "Pull tabs / pull jackets verified. Strip layout estimated.",
-   "shapeNote": "easy-release adhesive strips with pull tabs / pull jacket",
+   "notes": "Pull jacket (easy-release adhesive) per s5; other teardowns call it a pull tab. Strip layout estimated.",
+   "shapeNote": "easy-release adhesive strips under a pull jacket",
    "shape": {
     "template": "adhesive",
     "r": 4,
@@ -1610,10 +1575,10 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    4.0,
+    4,
     18.5,
     1.05,
-    70.0,
+    70,
     78.5,
     3.75
    ],
@@ -1648,11 +1613,11 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    50.0,
-    96.0,
-    1.0,
-    60.0,
-    106.0,
+    50,
+    96,
+    1,
+    60,
+    106,
     1.1
    ],
    "attachedTo": "mainboard",
@@ -1682,11 +1647,11 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    32.0,
-    80.0,
+    32,
+    80,
     1.1,
     72.5,
-    122.0,
+    122,
     1.8
    ],
    "attachedTo": "frame-a",
@@ -1723,11 +1688,11 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    44.0,
-    83.0,
+    44,
+    83,
     1.8,
-    72.0,
-    120.0,
+    72,
+    120,
     2.5
    ],
    "attachedTo": "mainboard",
@@ -1752,10 +1717,10 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    36.0,
+    36,
     80.5,
     1.8,
-    42.0,
+    42,
     83.5,
     2.2
    ],
@@ -1781,7 +1746,7 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    64.0,
+    64,
     80.2,
     1.8,
     71.5,
@@ -1810,10 +1775,10 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    46.0,
+    46,
     120.2,
     1.8,
-    58.0,
+    58,
     121.9,
     2.2
    ],
@@ -1842,7 +1807,7 @@
     62.5,
     120.2,
     1.8,
-    71.0,
+    71,
     121.9,
     2.2
    ],
@@ -1868,11 +1833,11 @@
    "half": "a",
    "count": 3,
    "bbox": [
-    33.0,
-    100.0,
+    33,
+    100,
     1.8,
-    43.0,
-    120.0,
+    43,
+    120,
     2.2
    ],
    "attachedTo": "mainboard",
@@ -1888,21 +1853,21 @@
     "template": "connector",
     "units": [
      [
-      33.0,
+      33,
       100.2,
-      43.0,
+      43,
       106.47
      ],
      [
-      33.0,
+      33,
       106.87,
-      43.0,
+      43,
       113.13
      ],
      [
-      33.0,
+      33,
       113.53,
-      43.0,
+      43,
       119.8
      ]
     ]
@@ -1917,11 +1882,11 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    5.0,
-    101.0,
+    5,
+    101,
     1.05,
-    21.0,
-    119.0,
+    21,
+    119,
     5.9
    ],
    "attachedTo": "frame-a",
@@ -1947,8 +1912,8 @@
     "barrel": 1.2,
     "lenses": [
      [
-      13.0,
-      110.0,
+      13,
+      110,
       5.76
      ]
     ]
@@ -1967,11 +1932,11 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    7.0,
-    86.0,
+    7,
+    86,
     1.05,
-    19.0,
-    99.0,
+    19,
+    99,
     5.6
    ],
    "attachedTo": "frame-a",
@@ -1996,7 +1961,7 @@
     "barrel": 1.2,
     "lenses": [
      [
-      13.0,
+      13,
       92.5,
       4.32
      ]
@@ -2011,11 +1976,11 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    24.0,
-    88.0,
+    24,
+    88,
     1.05,
-    30.0,
-    94.0,
+    30,
+    94,
     3.95
    ],
    "attachedTo": "frame-a",
@@ -2041,10 +2006,10 @@
    "count": 1,
    "bbox": [
     23.5,
-    110.0,
+    110,
     0.6,
     30.5,
-    119.0,
+    119,
     3.2
    ],
    "attachedTo": "frame-a",
@@ -2067,7 +2032,7 @@
     "barrel": 0.78,
     "lenses": [
      [
-      27.0,
+      27,
       114.5,
       2.52
      ]
@@ -2082,11 +2047,11 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    32.0,
-    80.0,
+    32,
+    80,
     2.5,
     72.5,
-    122.0,
+    122,
     2.9
    ],
    "attachedTo": "mainboard",
@@ -2117,7 +2082,7 @@
     32.5,
     80.5,
     1.1,
-    72.0,
+    72,
     121.5,
     3.2
    ],
@@ -2190,11 +2155,11 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    44.0,
-    83.0,
+    44,
+    83,
     2.9,
-    72.0,
-    120.0,
+    72,
+    120,
     2.98
    ],
    "attachedTo": "mainboard-bracket",
@@ -2222,11 +2187,11 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    32.0,
-    118.0,
+    32,
+    118,
     2.98,
-    72.0,
-    122.0,
+    72,
+    122,
     3.2
    ],
    "attachedTo": "mainboard-bracket",
@@ -2252,10 +2217,10 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    4.0,
+    4,
     1.5,
     3.5,
-    70.0,
+    70,
     17.5,
     3.75
    ],
@@ -2284,11 +2249,11 @@
    "half": "a",
    "count": 6,
    "bbox": [
-    5.0,
-    2.0,
+    5,
+    2,
     1.05,
-    69.0,
-    17.0,
+    69,
+    17,
     3.8
    ],
    "attachedTo": "lower-bracket-a",
@@ -2342,11 +2307,11 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    8.0,
-    4.0,
+    8,
+    4,
     3.78,
-    66.0,
-    60.0,
+    66,
+    60,
     3.95
    ],
    "attachedTo": "battery-a",
@@ -2388,7 +2353,7 @@
     3.95,
     74.5,
     123.6,
-    4.0
+    4
    ],
    "attachedTo": "frame-a",
    "fastening": {
@@ -2417,7 +2382,7 @@
    "bbox": [
     0.2,
     0.3,
-    4.0,
+    4,
     74.5,
     123.6,
     4.5
@@ -2444,28 +2409,28 @@
     },
     "holes": [
      [
-      13.0,
-      110.0,
+      13,
+      110,
       12.12,
       12.12,
       6.06
      ],
      [
-      13.0,
+      13,
       92.5,
       9.24,
       9.24,
       4.62
      ],
      [
-      14.0,
+      14,
       94.59,
       15.51,
       15.51,
       7.75
      ],
      [
-      14.0,
+      14,
       110.91,
       15.51,
       15.51,
@@ -2487,10 +2452,10 @@
    "half": "a",
    "count": 1,
    "bbox": [
-    4.0,
-    85.0,
+    4,
+    85,
     4.5,
-    24.0,
+    24,
     120.5,
     6.5
    ],
@@ -2522,11 +2487,11 @@
    "half": "b",
    "count": 1,
    "bbox": [
-    128.0,
+    128,
     1.5,
     1.05,
-    158.0,
-    9.0,
+    158,
+    9,
     1.8
    ],
    "attachedTo": "frame-b",
@@ -2554,10 +2519,10 @@
    "half": "b",
    "count": 1,
    "bbox": [
-    129.0,
-    5.0,
+    129,
+    5,
     1.8,
-    135.0,
+    135,
     8.5,
     2.2
    ],
@@ -2583,11 +2548,11 @@
    "half": "b",
    "count": 1,
    "bbox": [
-    141.0,
-    0.0,
+    141,
+    0,
     1.9,
-    157.0,
-    15.0,
+    157,
+    15,
     2.9
    ],
    "attachedTo": "frame-b",
@@ -2621,11 +2586,11 @@
    "half": "b",
    "count": 1,
    "bbox": [
-    90.0,
+    90,
     1.5,
     1.05,
-    126.0,
-    9.0,
+    126,
+    9,
     1.4
    ],
    "attachedTo": "frame-b",
@@ -2645,22 +2610,23 @@
   },
   {
    "id": "battery-b-adhesive",
-   "name_en": "Battery B pull-tab adhesive",
-   "name_ko": "배터리 B 풀탭 접착제",
+   "name_en": "Battery B pull-jacket adhesive",
+   "name_ko": "배터리 B 풀 재킷 접착제",
    "category": "adhesive",
    "half": "b",
    "count": 1,
    "bbox": [
-    90.0,
+    90,
     18.5,
-    1.0,
-    158.0,
-    94.0,
+    1,
+    158,
+    94,
     1.05
    ],
    "attachedTo": "frame-b",
    "fastening": {
-    "type": "adhesive"
+    "type": "adhesive",
+    "spec": "pull jacket"
    },
    "step": 10,
    "sourceIds": [
@@ -2669,8 +2635,8 @@
     "s8"
    ],
    "confidence": "verified",
-   "notes": "Pull tabs verified.",
-   "shapeNote": "easy-release strips with pull tabs",
+   "notes": "Pull jacket (easy-release adhesive) per s5; other teardowns call it a pull tab. Strip layout estimated.",
+   "shapeNote": "easy-release adhesive strips under a pull jacket",
    "shape": {
     "template": "adhesive",
     "r": 4,
@@ -2685,11 +2651,11 @@
    "half": "b",
    "count": 1,
    "bbox": [
-    90.0,
+    90,
     18.5,
     1.05,
-    158.0,
-    94.0,
+    158,
+    94,
     3.3
    ],
    "attachedTo": "battery-b-adhesive",
@@ -2718,11 +2684,11 @@
    "half": "b",
    "count": 1,
    "bbox": [
-    90.0,
-    95.0,
+    90,
+    95,
     1.05,
-    118.0,
-    122.0,
+    118,
+    122,
     1.8
    ],
    "attachedTo": "frame-b",
@@ -2750,10 +2716,10 @@
    "half": "b",
    "count": 1,
    "bbox": [
-    92.0,
+    92,
     95.5,
     1.8,
-    98.0,
+    98,
     98.5,
     2.2
    ],
@@ -2782,7 +2748,7 @@
     90.5,
     118.5,
     1.8,
-    98.0,
+    98,
     121.8,
     2.2
    ],
@@ -2808,11 +2774,11 @@
    "half": "b",
    "count": 1,
    "bbox": [
-    104.0,
-    96.0,
+    104,
+    96,
     1.8,
-    116.0,
-    99.0,
+    116,
+    99,
     2.2
    ],
    "attachedTo": "board-b",
@@ -2837,11 +2803,11 @@
    "half": "b",
    "count": 1,
    "bbox": [
-    110.0,
-    112.0,
+    110,
+    112,
     1.8,
-    117.0,
-    116.0,
+    117,
+    116,
     2.2
    ],
    "attachedTo": "board-b",
@@ -2866,11 +2832,11 @@
    "half": "b",
    "count": 1,
    "bbox": [
-    100.0,
-    120.0,
+    100,
+    120,
     1.8,
-    103.0,
-    122.0,
+    103,
+    122,
     2.4
    ],
    "attachedTo": "board-b",
@@ -2896,11 +2862,11 @@
    "half": "b",
    "count": 1,
    "bbox": [
-    120.0,
-    111.0,
+    120,
+    111,
     1.05,
-    128.0,
-    120.0,
+    128,
+    120,
     3.3
    ],
    "attachedTo": "frame-b",
@@ -2921,7 +2887,7 @@
     "barrel": 0.6749999999999999,
     "lenses": [
      [
-      124.0,
+      124,
       115.5,
       2.88
      ]
@@ -2936,11 +2902,11 @@
    "half": "b",
    "count": 1,
    "bbox": [
-    130.0,
-    108.0,
+    130,
+    108,
     1.05,
-    158.0,
-    122.0,
+    158,
+    122,
     3.3
    ],
    "attachedTo": "frame-b",
@@ -3015,11 +2981,11 @@
    "half": "b",
    "count": 1,
    "bbox": [
-    90.0,
-    95.0,
+    90,
+    95,
     2.5,
-    118.0,
-    122.0,
+    118,
+    122,
     2.9
    ],
    "attachedTo": "board-b",
@@ -3181,9 +3147,9 @@
     "template": "display",
     "r": 6,
     "face": "back",
-    "bezel": 1.0,
+    "bezel": 1,
     "hole": [
-     124.0,
+     124,
      115.5,
      1.2
     ]
@@ -3258,8 +3224,7 @@
     "hinge-module-top",
     "hinge-spine",
     "screws-hinge-module",
-    "screws-hinge-frame-a",
-    "screws-hinge-frame-b"
+    "screws-hinge-spine"
    ],
    "tools": {
     "ko": "십자/JIS #00 드라이버",
@@ -3334,8 +3299,8 @@
     "battery-a"
    ],
    "tools": {
-    "ko": "당김 탭 접착제",
-    "en": "pull-tab adhesive"
+    "ko": "배터리 풀 재킷 (용제 필요 없음)",
+    "en": "battery pull jacket (no solvent needed)"
    },
    "cautions": {
     "ko": "셀을 휘지 마세요. 얇은 실리콘-탄소 파우치는 쉽게 휘어요.",
@@ -3440,8 +3405,8 @@
     "battery-b"
    ],
    "tools": {
-    "ko": "당김 탭 접착제",
-    "en": "pull-tab adhesive"
+    "ko": "배터리 풀 재킷 (용제 필요 없음)",
+    "en": "battery pull jacket (no solvent needed)"
    },
    "cautions": {
     "ko": "SIM 트레이 실링을 제대로 끼우고, 셀을 휘지 마세요.",
@@ -3522,6 +3487,14 @@
    {
     "ko": "안쪽 화면은 힌지 축을 감싸며 작은 반지름으로 휘게 그렸어요. 실제 물방울형 힌지의 휘는 모양과는 달라요.",
     "en": "The inner screen is drawn wrapping the hinge axis on a small radius; the real teardrop bend is shaped differently."
+   },
+   {
+    "ko": "힌지 나사 수가 자료(s9) 안에서 엇갈려요. 힌지 부분만 세면 24개(6+18)인데, 전체 나사는 56개라고도 적혀 있어요. 스파인 나사 18개는 그 수를 따랐지만 위치와 나눔은 추정이에요.",
+    "en": "Source s9 gives conflicting screw totals: 24 for the hinge (6 + 18) and 56 overall. The 18 spine screws follow s9, but their placement is estimated."
+   },
+   {
+    "ko": "iFixit(s5)은 두 배터리 모두 바깥 화면 쪽으로 들어가야 꺼낼 수 있다고 해요. 이 모델은 배터리 A를 후면 유리 쪽에서 넣어서 그 설명과 맞지 않아요.",
+    "en": "iFixit (s5) says either battery is reached through the outer display; this model reaches battery A from the back-glass side, which conflicts with s5."
    }
   ]
  }

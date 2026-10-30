@@ -33,7 +33,7 @@ One JSON file. The page reads only this, so everything the page shows comes from
 B turns about an axis in the middle of the gap.
 - **Bends:** only the screen stack. That is the `flexdisplay`, plus thin `columns: true` layers (≤ 0.8 mm thick, top within 1.3 mm of the screen surface). It wraps round the axis.
 - **Splits:** every other `half: "hinge"` part, cables included, splits at the fold line. Its A side stays and its B side turns with B. The hinge barrel turns by half the angle.
-- **The spine:** the page draws `spine` as the hinge cover when the phone is shut.
+- **The spine:** the page draws `spine` as the hinge cover when the phone is shut. You need no part for the outer cover. If you do model a hinge spine or cover as a part (the Fold8 example has one, carrying the hinge screws), keep it thin and stop it a few mm short of each end, so it never pokes out of the corners at `fold=90`. Check the hinge end at `fold=90` and `135` in close-ups either way.
 - **Gate 1:** measures the folded size on the parts themselves (z kept within the body, so bumps don't count) and compares it with the official one. Model the phone **open, inner screen down**.
 
 **Build direction:** `product.access` is `"back"` (default) or `"front"`.
@@ -50,14 +50,14 @@ Text fields take `{ko, en}`, a plain string, or research-style `name_ko` / `name
 |---|---|
 | `id` | kebab-case, unique |
 | `name` | `{ko, en}` |
-| `category` | `housing display board battery camera audio haptics wireless connector flex fastener bracket adhesive button port sim antenna shield thermal other`. Picks the default material. `fastener`, `adhesive` and `flex` are exempt from collision checks. |
+| `category` | `housing display board battery camera audio haptics wireless connector flex fastener bracket adhesive button port sim antenna shield thermal hinge other`. Picks the default material. `fastener`, `adhesive` and `flex` are exempt from collision checks. |
 | `count` | identical units (screws) |
 | `bbox` | `[x0,y0,z0,x1,y1,z1]`, inside the product's w × l (z may exceed t) |
 | `shape` | `{template, …params}`, see below |
 | `attachedTo` | the id it is fixed to. Exactly one part, the **base**, omits it: the lowest part (usually the display, screen down), in step 1. It is the only part that never moves. |
-| `fastening` | required on every part but the base: `{type, spec?, count?}`, type one of `screw adhesive press-connector clip solder integral magnet friction tape`, several joined with `+` (`screw+clip`) |
+| `fastening` | required on every part but the base: `{type, spec?, count?}`, type one of `screw adhesive press-connector clip solder integral magnet friction tape`, several joined with `+` (`screw+clip`). `spec` is printed as is in the parts list and the manual, so keep it language-neutral (`PH #0 3.5 mm`, `Torx Plus 4IP`) or give `{ko, en}`. |
 | `step` | the assembly step number; the part must also be listed in that step |
-| `path` | optional per-part motion: `drop|screw|press|slide|fold` (screws: `screw`). `slide` comes in through the edge named by `slideFrom`: `y0` (default, the charging-port end), `y1`, `x0` or `x1`. Use it for a SIM tray on a side edge. |
+| `path` | optional per-part motion: `drop|screw|press|slide|fold` (screws: `screw`). `slide` comes in through the edge named by `slideFrom`: `y0` (default, the charging-port end), `y1`, `x0` or `x1`. Use it for a SIM tray on a side edge, or a stylus (S Pen): a `box` the length of the pen, going in last through its edge, after the back is closed. The pen's silo is part of the frame. A slide part waits just clear of its edge, however long it is, so keep it in the step where it really goes in. |
 | `passesThrough` | ids it really goes through (a lens through the back glass, a port or SIM tray through the frame) |
 | `sourceIds`, `confidence` | `verified` needs ≥ 1 source; otherwise `estimated` |
 | `key`, `desc` | 6–8 key parts get `key: true` and a one-line `desc {ko, en}` (shown in the simple view) |
@@ -65,7 +65,7 @@ Text fields take `{ko, en}`, a plain string, or research-style `name_ko` / `name
 
 ## Step
 
-`{ n, title {ko,en}, parts: [ids], tools {ko,en}, cautions {ko,en}, path: drop|screw|press|slide|fold, sourceIds }`. The time bar gives each step a share weighted by its part count. **Within a step, parts go in in list order**, so list a part before whatever covers it. A part's `path` overrides its step's.
+`{ n, title {ko,en}, parts: [ids], tools {ko,en}, cautions {ko,en}, path: drop|screw|press|slide|fold, sourceIds }`. List steps in order of `n`, starting at 1. The time bar gives each step a share weighted by its part count. **Within a step, parts go in in list order**, so list a part before whatever covers it. A part's `path` overrides its step's.
 
 ## Shape templates
 

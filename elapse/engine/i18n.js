@@ -3,7 +3,7 @@ const S = {
   ko: {
     style: '그림', color: '컬러', blueprint: '도면', xray: '투시', on: '켜기', off: '끄기',
     depth: '보기', simple: '간단히', detail: '자세히',
-    play: '재생', pause: '멈춤', speed: '속도', xslow: '아주 느리게', slow: '느리게', normal: '보통', fast: '빠르게',
+    play: '재생', pause: '멈춤', speed: '속도',
     sourced: '출처 있음', estimated: '추정', disputed: '학설이 갈림', projection: '예측',
     share: (k, p) => `${k} ${p}%`,
     warn: p => `출처가 있는 항목이 ${p}%뿐이에요. 나머지는 추정이에요.`,
@@ -19,7 +19,7 @@ const S = {
   en: {
     style: 'Style', color: 'Colour', blueprint: 'Blueprint', xray: 'X-ray', on: 'On', off: 'Off',
     depth: 'View', simple: 'Simple', detail: 'Detailed',
-    play: 'Play', pause: 'Pause', speed: 'Speed', xslow: 'Very slow', slow: 'Slow', normal: 'Normal', fast: 'Fast',
+    play: 'Play', pause: 'Pause', speed: 'Speed',
     sourced: 'Sourced', estimated: 'Estimated', disputed: 'Disputed', projection: 'Projection',
     share: (k, p) => `${k} ${p}%`,
     warn: p => `Only ${p}% of the items have a source. The rest are estimates.`,

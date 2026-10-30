@@ -44,6 +44,11 @@ if (!errors.length) try {
     const h = hit(boxes.get(a.id), boxes.get(b.id));
     if (h) errors.push({ part: a.id, field: 'collision', msg: `collision when assembled: ${a.id} ${fmtBox(h[0])} overlaps ${b.id} ${fmtBox(h[1])} (fix a bbox, or mark attachedTo / passesThrough if it really goes through)` });
   }
+  // a sliding part is the usual cause when one is involved: say so, so the fix goes to the part, not the step order
+  const pathOf = id => { const p = model.parts.find(q => q.id === id); return p?.path || model.steps.find(s => s.parts.includes(id))?.path; };
+  const stepOf = id => model.steps.find(s => s.parts.includes(id))?.n, sameStep = (x, y) => stepOf(x) != null && stepOf(x) === stepOf(y);
+  const slideHint = (...ids) => { const sl = ids.filter(id => pathOf(id) === 'slide');
+    return sl.length ? ` (${sl.join(', ')} slides in from an edge: check its bbox, slideFrom and its step; keep it in the step where it really goes in)` : ''; };
   // every moving part, finely along its own way in, against every part already seated, in both layouts
   for (const layout of ['stack', 'knoll']) {
     const tl = createTimeline(model, layout), seen = new Set();
@@ -56,7 +61,7 @@ if (!errors.length) try {
         for (const b of parts) {
           if (b === a || exempt(a, b) || seen.has(a.id + '|' + b.id) || tl.pose(b.id, t).progress < 1) continue;
           if (hit(A, boxes.get(b.id))) { seen.add(a.id + '|' + b.id);
-            errors.push({ part: a.id, field: 'path', msg: `${layout}: on its way in (t=${t.toFixed(1)}) ${a.id} passes through ${b.id}, which is already in place (move it to a later step, or fix a position)` }); }
+            errors.push({ part: a.id, field: 'path', msg: `${layout}: on its way in (t=${t.toFixed(1)}) ${a.id} passes through ${b.id}, which is already in place (move it to a later step, or fix a position)${slideHint(a.id, b.id)}` }); }
         }
       }
     }
@@ -72,7 +77,7 @@ if (!errors.length) try {
       for (let i = 0; i < parts.length; i++) for (let j = i + 1; j < parts.length; j++) {
         const a = parts[i], b = parts[j], key = a.id + '|' + b.id; if (seen.has(key) || exempt(a, b)) continue;
         if (hit(at.get(a.id), at.get(b.id))) { seen.add(key);
-          errors.push({ part: a.id, field: 'burst', msg: `${layout}: in the burst (t=${t.toFixed(2)}) ${a.id} passes through ${b.id} (check their steps and positions)` }); }
+          errors.push({ part: a.id, field: 'burst', msg: `${layout}: in the burst (t=${t.toFixed(2)}) ${a.id} passes through ${b.id}${sameStep(a.id, b.id) ? ' (they are in the same step, so they float out as one layer: if one rests on the other, move the covering part to the next step)' : ' (check their steps and positions)'}${slideHint(a.id, b.id)}` }); }
       }
     }
   }

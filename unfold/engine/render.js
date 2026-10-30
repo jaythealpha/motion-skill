@@ -326,12 +326,26 @@ export function createRenderer(canvas, model, opts = {}) {
       const pr = renderer.getPixelRatio(); renderer.setPixelRatio(scale); resize(); placeCamera(); renderer.render(scene, camera);
       return new Promise(res => canvas.toBlob(b => { renderer.setPixelRatio(pr); resize(); dirty = true; res(b); }, 'image/png'));
     },
-    // render one frame at another t / style (for the printed manual) and return it as an image
-    dataURL(t, { style, depth } = {}) {
+    // render one frame at another t / style (for the printed manual) and return it as an image. With focus (part ids),
+    // the view closes in on those parts, keeping about as much again around them so the reader sees where they sit.
+    dataURL(t, { style, depth, focus } = {}) {
       const keep = { t: S.t, style: S.style, depth: S.depth, camT: S.camT.clone(), camZ: S.camZ, fold: S.foldOverride };
       S.foldOverride = null;
       S.style = style || S.style; S.depth = depth || S.depth; S.t = t; applyStyle(); applyPoses();
-      S.camT.copy(S.frameCentre); S.camZ = 1; placeCamera(); renderer.render(scene, camera);
+      S.camT.copy(S.frameCentre); S.camZ = 1; placeCamera();
+      if (focus?.length) {
+        root.updateMatrixWorld(true); const b = new THREE.Box3();
+        for (const id of focus) { const P = parts.get(id); if (P) b.expandByObject(P.group); }
+        if (!b.isEmpty()) {
+          const c = b.getCenter(new THREE.Vector3()), right = new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 0), up = new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 1);
+          const aspect = (camera.right - camera.left) / (camera.top - camera.bottom); let hr = 1, hu = 1;
+          for (const x of [b.min.x, b.max.x]) for (const y of [b.min.y, b.max.y]) for (const z of [b.min.z, b.max.z]) {
+            const d = new THREE.Vector3(x, y, z).sub(c); hr = Math.max(hr, Math.abs(d.dot(right))); hu = Math.max(hu, Math.abs(d.dot(up))); }
+          const z = Math.max(1, Math.min(3, camera.top / (Math.max(hu, hr / aspect) * 2.2)));
+          if (z > 1.05) { S.camT.copy(c); S.camZ = z; placeCamera(); }
+        }
+      }
+      renderer.render(scene, camera);
       const url = canvas.toDataURL('image/png');
       Object.assign(S, { t: keep.t, style: keep.style, depth: keep.depth, camZ: keep.camZ, foldOverride: keep.fold }); S.camT.copy(keep.camT); applyStyle(); applyPoses();
       return url;

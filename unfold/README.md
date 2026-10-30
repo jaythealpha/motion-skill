@@ -2,7 +2,7 @@
 
 A Claude skill. Name a phone, or show a photo of one. Bar phones and foldables are both supported. Claude researches the phone's real parts from public teardown and repair data, then builds one self-contained HTML page.
 
-Drag the 0–100 time bar and the finished phone opens, bursts into its parts and assembles itself again. A foldable folds and unfolds, and viewers can also fold it by hand. Pick the playback speed from very slow to fast.
+Drag the 0–100 time bar and the finished phone opens, bursts into its parts and assembles itself again. A foldable folds and unfolds, and viewers can also fold it by hand. Pick the playback speed: 1× (the slowest), 2×, 3× or 5×.
 
 - **Two layouts:** an exploded stack, or every part laid out on a cutting mat (knolling).
 - **Two styles:** colour illustration, or an animated blueprint with numbered balloons, assembly guides and a parts list.

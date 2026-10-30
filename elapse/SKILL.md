@@ -145,7 +145,7 @@ s.pieces.get('funnel-1').matrix   // its world matrix then (column-major 4×4)
 
 ## Page parameters (for screenshots and links)
 
-`?t=0..100` `&chapter=N` `&style=color|blueprint` `&xray=0|1` `&depth=simple|detail` `&lang=ko|en` `&speed=xslow|slow|normal|fast` `&yaw=&pitch=&zoom=` `&auto=0` `&play=1` `&panel=sources|about` `&branch=a|b`
+`?t=0..100` `&chapter=N` `&style=color|blueprint` `&xray=0|1` `&depth=simple|detail` `&lang=ko|en` `&speed=xslow|slow|normal|fast` (1× / 2× / 3× / 5×; default 2×) `&yaw=&pitch=&zoom=` `&auto=0` `&play=1` `&panel=sources|about` `&branch=a|b`
 
 ## When something else fits better
 

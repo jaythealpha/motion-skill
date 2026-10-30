@@ -4,7 +4,7 @@ import { strings, pick } from './i18n.js';
 import { verifiedShare, WARN_SHARE } from './model.js';
 import { INTRO_END, ASM_END } from './timeline.js';
 
-import { SPEEDS, advance, stepSpeed } from '../shared/speeds.js';
+import { SPEEDS, DEFAULT_SPEED, advance, stepSpeed, speedLabel } from '../shared/speeds.js';
 // seconds for the whole bar at each speed
 export { SPEEDS };
 
@@ -113,7 +113,7 @@ const fmt = v => (Math.round(v * 10) / 10).toString();
 export function mountUnfold(root, model, params = {}) {
   const st = { lang: params.lang === 'en' ? 'en' : 'ko', depth: ['simple', 'detail', 'manual'].includes(params.depth) ? params.depth : 'detail',
     layout: params.layout === 'knoll' ? 'knoll' : 'stack', style: params.style === 'blueprint' ? 'blueprint' : (params.style === 'color' ? 'color' : null),
-    t: 0, playing: false, sel: null, speed: SPEEDS[params.speed] ? params.speed : 'normal' };
+    t: 0, playing: false, sel: null, speed: SPEEDS[params.speed] ? params.speed : DEFAULT_SPEED };
   if (!st.style) st.style = st.depth === 'manual' ? 'blueprint' : 'color';
   const errors = window.__unfold?.errors || [];
   let L = strings(st.lang);
@@ -149,7 +149,7 @@ export function mountUnfold(root, model, params = {}) {
     L = strings(st.lang); document.documentElement.lang = st.lang;
     $('.uf-top h1').textContent = pick(model.product.name, st.lang);
     $('.uf-sub').textContent = [model.product.maker, model.meta.interpretation ? L.interpreted(pick(model.meta.interpretation, st.lang)) : null].filter(Boolean).join(' · ');
-    $('.uf-trust').innerHTML = `<span>${L.parts(model.parts.length)}</span><span class="v">${L.verified(pct)}</span><span class="e">${L.estimated(100 - pct)}</span>${model.meta.positionsEstimated ? `<span class="e">${L.posEstimated}</span>` : ''}`;
+    $('.uf-trust').innerHTML = `<span>${L.parts(model.parts.length)}</span><span class="v">${L.verified(pct)}</span><span class="e">${L.estimated(100 - pct)}</span>${model.meta.positionsEstimated ? `<span class="e">${L.posEstimated}</span>` : ''}<span>${L.unofficialChip}</span>`;
     $('.uf-trust').setAttribute('aria-label', L.sources);
     const warn = $('.uf-warn'); warn.hidden = share >= WARN_SHARE; warn.textContent = L.warn(pct);
     const seg = (key, opts) => `<span class="uf-seg"><b>${L[key]}</b><div role="group" aria-label="${L[key]}">${opts.map(o => `<button type="button" data-k="${key}" data-o="${o}" aria-pressed="${st[key] === o}">${L[o]}</button>`).join('')}</div></span>`;
@@ -159,7 +159,7 @@ export function mountUnfold(root, model, params = {}) {
     $('.uf-view [data-v=auto]').setAttribute('aria-pressed', R.state.auto);
     $('.uf-actions').innerHTML = `<button type="button" data-a="png">${L.png}</button><button type="button" data-a="video"${st.recording ? ' disabled' : ''}>${st.recording ? L.recording : L.video}</button><button type="button" data-a="print">${L.print}</button><button type="button" data-a="src">${L.sources}</button>`;
     foldRow.hidden = !R.foldable; foldRow.querySelector('span').textContent = L.fold;
-    $('.uf-speed').innerHTML = `<select aria-label="${L.speed}">${Object.keys(SPEEDS).map(k => `<option value="${k}"${st.speed === k ? ' selected' : ''}>${L[k]}</option>`).join('')}</select>`;
+    $('.uf-speed').innerHTML = `<select aria-label="${L.speed}">${Object.keys(SPEEDS).map(k => `<option value="${k}"${st.speed === k ? ' selected' : ''}>${speedLabel(k)}</option>`).join('')}</select>`;
     $('.uf-play').textContent = st.playing ? '❚❚' : '▶'; $('.uf-play').setAttribute('aria-label', st.playing ? L.pause : L.play);
     ticks(); bom(); sources(); setT(st.t, true);
   }
@@ -182,13 +182,13 @@ export function mountUnfold(root, model, params = {}) {
   function fastenText(p) {
     const f = p.fastening; if (!f) return L.fasten.none;
     const kind = String(f.type || '').split('+').filter(Boolean).map(x => L.fasten[x] || x).join(' + ');
-    return [kind || L.fasten.none, f.spec, f.count ? `× ${f.count}` : null].filter(Boolean).join(' ');
+    return [kind || L.fasten.none, typeof f.spec === 'object' && f.spec ? pick(f.spec, st.lang) : f.spec, f.count ? `× ${f.count}` : null].filter(Boolean).join(' ');
   }
 
   function sources() {
     const el = $('.uf-src');
     const lim = model.meta.limitations || [];
-    el.innerHTML = `<button class="x" type="button">${L.close}</button><h2>${L.sourcesTitle}</h2><p>${L.method}</p><ol>`
+    el.innerHTML = `<button class="x" type="button">${L.close}</button><h2>${L.sourcesTitle}</h2><p>${L.unofficial}</p><p>${L.method}</p><ol>`
       + model.sources.map(s => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>${s.covers ? ` — ${esc(pick(typeof s.covers === 'string' ? { ko: s.covers, en: s.covers } : s.covers, st.lang))}` : ''}</li>`).join('') + '</ol>'
       + `<p>${esc(L.gate2[model.meta.gate2] || L.gate2.unknown)}${model.meta.researchedAt ? ` · ${esc(model.meta.researchedAt)}` : ''}</p>`
       + (lim.length ? `<h2>${L.limitations}</h2><ul>${lim.map(x => `<li>${esc(pick(typeof x === 'string' ? { ko: x, en: x } : x, st.lang))}</li>`).join('')}</ul>` : '');
@@ -403,7 +403,8 @@ export function mountUnfold(root, model, params = {}) {
   async function savePng() { download(await R.snapshot(2), `${slug}-t${Math.round(st.t)}.png`); }
   function saveVideo(btn) {
     if (!window.MediaRecorder || !canvas.captureStream) { alert(L.noVideo); return; }
-    const type = ['video/webm;codecs=vp9', 'video/webm', 'video/mp4'].find(t => MediaRecorder.isTypeSupported(t));
+    // MP4 first where the browser can record it: it plays and uploads almost everywhere
+    const type = ['video/mp4;codecs=avc1', 'video/mp4', 'video/webm;codecs=vp9', 'video/webm'].find(t => MediaRecorder.isTypeSupported(t));
     const rec = new MediaRecorder(canvas.captureStream(30), type ? { mimeType: type } : undefined), chunks = [];
     rec.ondataavailable = e => e.data.size && chunks.push(e.data);
     rec.onstop = () => { const mt = rec.mimeType || type || 'video/webm', ext = /mp4/.test(mt) ? 'mp4' : 'webm';
@@ -418,9 +419,9 @@ export function mountUnfold(root, model, params = {}) {
   function printManual() { buildPrint(); printFresh = true; setTimeout(() => window.print(), 50); }
   function buildPrint() {
     const keep = st.t, ends = model.steps.map(s => tl().windows.get(s.n)[1]);
-    const shots = ends.map(t => R.dataURL(t, { style: 'blueprint', depth: 'detail' })), done = R.dataURL(100, { style: 'color', depth: 'detail' });
+    const shots = ends.map((t, i) => R.dataURL(t, { style: 'blueprint', depth: 'detail', focus: model.steps[i].parts })), done = R.dataURL(100, { style: 'color', depth: 'detail' });
     setT(keep, true);
-    $('.uf-print').innerHTML = `<section><h1>${esc(pick(model.product.name, st.lang))} — ${L.printCover}</h1><p>${esc(model.product.maker || '')} · ${L.printedFrom}: ${pct}%</p><img src="${done}" alt="">
+    $('.uf-print').innerHTML = `<section><h1>${esc(pick(model.product.name, st.lang))} — ${L.printCover}</h1><p>${esc(model.product.maker || '')} · ${L.printedFrom}: ${pct}%</p><p>${L.unofficial}</p><img src="${done}" alt="">
       <h2>${L.bom}</h2><table><tr><th>${L.no}</th><th>${L.part}</th><th>${L.qty}</th><th>${L.step}</th><th>${L.fastening}</th><th>${L.confidence}</th></tr>
       ${model.parts.map(p => `<tr><td>${bomIndex.get(p.id)}</td><td>${esc(pick(p.name, st.lang))}</td><td>${p.count}</td><td>${p.step}</td><td>${esc(fastenText(p))}</td><td>${p.confidence === 'verified' ? L.verifiedBadge : L.estimatedBadge}</td></tr>`).join('')}</table></section>`
       + model.steps.map((s, i) => `<section><h2>${L.step} ${i + 1} / ${model.steps.length}. ${esc(pick(s.title, st.lang))}</h2><img src="${shots[i]}" alt="">

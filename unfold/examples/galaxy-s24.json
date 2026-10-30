@@ -14,7 +14,7 @@
   ],
   "dims": {
    "w": 70.6,
-   "l": 147.0,
+   "l": 147,
    "t": 7.6
   },
   "weight_g": 167,
@@ -123,12 +123,6 @@
    "title": "Samsung Mobile Press - Galaxy S24 tech specs (seen via search snippet only)",
    "url": "https://www.samsungmobilepress.com/media-assets/galaxy-s24?tab=specs",
    "covers": "Weight 167 g Sub6 / 168 g mmWave; rated battery 3880 mAh. Page did not render on fetch, so this is from a search-result summary"
-  },
-  {
-   "id": "s17",
-   "title": "Subtel retailer listing for S24 replacement battery (seen via search snippet only; low trust)",
-   "url": "https://www.subtel.nl/en/battery-eb-bs922abe-for-samsung-galaxy-s24-3800mah-from-cellonic-942922.html",
-   "covers": "Third-party battery outline about 68 x 60.1 x 5.1 mm; used only to size the battery bbox"
   }
  ],
  "parts": [
@@ -143,8 +137,8 @@
     0,
     0,
     70.6,
-    147.0,
-    7.0
+    147,
+    7
    ],
    "attachedTo": "display",
    "fastening": {
@@ -162,7 +156,7 @@
     "wall": 1.4,
     "floorAt": [
      1.3,
-     2.0
+     2
     ],
     "floorMat": "metal",
     "screen": false,
@@ -301,7 +295,7 @@
    "bbox": [
     18,
     12,
-    2.0,
+    2,
     23.5,
     18,
     2.6
@@ -334,7 +328,7 @@
     1.4,
     62,
     133,
-    2.0
+    2
    ],
    "attachedTo": "frame",
    "fastening": {
@@ -365,16 +359,13 @@
     2.6,
     1.4,
     97,
-    5.0
+    5
    ],
    "attachedTo": "frame",
    "fastening": {
     "type": "clip"
    },
    "step": 1,
-   "sourceIds": [
-    "s1"
-   ],
    "confidence": "estimated",
    "shape": {
     "template": "button",
@@ -398,16 +389,13 @@
     2.6,
     1.4,
     123,
-    5.0
+    5
    ],
    "attachedTo": "frame",
    "fastening": {
     "type": "clip"
    },
    "step": 1,
-   "sourceIds": [
-    "s1"
-   ],
    "confidence": "estimated",
    "shape": {
     "template": "button",
@@ -438,7 +426,6 @@
     "type": "adhesive"
    },
    "step": 3,
-   "sourceIds": [],
    "confidence": "estimated",
    "shape": {
     "template": "motor",
@@ -500,8 +487,7 @@
    "sourceIds": [
     "s1",
     "s8",
-    "s16",
-    "s17"
+    "s16"
    ],
    "confidence": "estimated",
    "shape": {
@@ -513,7 +499,7 @@
     }
    },
    "shapeNote": "rounded rect ~60x68x4.9 pouch cell, flex tail at top edge toward the motherboard",
-   "notes": "Capacity verified (s1). Outline from a retailer listing (s17, ~68x60.1x5.1) fitted to the z budget; placement between bottom module and motherboard is estimated.",
+   "notes": "Capacity verified (s1, s16). Outline and placement between the bottom module and the motherboard are estimated to fit the z budget.",
    "key": true,
    "desc": {
     "ko": "4,000mAh 배터리. 당김 탭이 달린 접착 필름 위에 놓여요.",
@@ -529,7 +515,7 @@
    "bbox": [
     24,
     8.6,
-    2.0,
+    2,
     64,
     24,
     2.8
@@ -538,7 +524,7 @@
    "fastening": {
     "type": "screw",
     "spec": "Phillips #0, 3.4 mm",
-    "count": 2
+    "count": 3
    },
    "step": 3,
    "sourceIds": [
@@ -614,14 +600,13 @@
     2.8,
     57,
     17,
-    5.0
+    5
    ],
    "attachedTo": "daughterboard",
    "fastening": {
     "type": "solder"
    },
    "step": 3,
-   "sourceIds": [],
    "confidence": "estimated",
    "shape": {
     "template": "shield",
@@ -649,7 +634,6 @@
     "type": "solder"
    },
    "step": 3,
-   "sourceIds": [],
    "confidence": "estimated",
    "shape": {
     "template": "box",
@@ -708,11 +692,11 @@
    "name_en": "Daughterboard screws",
    "name_ko": "서브보드 나사",
    "category": "fastener",
-   "count": 2,
+   "count": 3,
    "bbox": [
     25,
     9,
-    2.0,
+    2,
     63,
     23,
     3.4
@@ -721,11 +705,10 @@
    "fastening": {
     "type": "screw",
     "spec": "Phillips #0, 3.4 mm",
-    "count": 2
+    "count": 3
    },
    "step": 3,
    "sourceIds": [
-    "s9",
     "s6"
    ],
    "confidence": "verified",
@@ -740,11 +723,15 @@
      [
       61.5,
       21.5
+     ],
+     [
+      61.5,
+      10.5
      ]
     ]
    },
    "shapeNote": "Phillips screws spread around the board",
-   "notes": "s9 says 2 screws; s6 says 3 screws, both 3.4 mm. Count conflicts between guides. Positions estimated.",
+   "notes": "Three 3.4 mm Phillips screws per s6 (step 25); s9 shows two. s6 is followed. Positions estimated.",
    "path": "screw"
   },
   {
@@ -923,7 +910,7 @@
     1.9,
     65,
     145.6,
-    2.0
+    2
    ],
    "attachedTo": "frame",
    "fastening": {
@@ -951,10 +938,10 @@
    "bbox": [
     42,
     135,
-    2.0,
+    2,
     65,
     145.6,
-    3.0
+    3
    ],
    "attachedTo": "frame",
    "fastening": {
@@ -1016,7 +1003,7 @@
     1.4,
     39.4,
     144.5,
-    5.0
+    5
    ],
    "attachedTo": "frame",
    "fastening": {
@@ -1187,7 +1174,7 @@
     5.6,
     26,
     128,
-    6.0
+    6
    ],
    "attachedTo": "motherboard",
    "fastening": {
@@ -1234,7 +1221,7 @@
    "bbox": [
     22,
     96,
-    2.0,
+    2,
     65,
     134.5,
     5.6
@@ -1242,7 +1229,7 @@
    "attachedTo": "frame",
    "fastening": {
     "type": "screw",
-    "spec": "Phillips #0, 3.4 mm",
+    "spec": "Phillips #0, 3.5 mm",
     "count": 2
    },
    "step": 8,
@@ -1264,7 +1251,7 @@
       101.5,
       47,
       117.5,
-      1.0,
+      1,
       "#b9c0c8"
      ],
      [
@@ -1272,7 +1259,7 @@
       101.5,
       59.5,
       124,
-      1.0,
+      1,
       "#b9c0c8"
      ],
      [
@@ -1312,9 +1299,6 @@
     "type": "solder"
    },
    "step": 8,
-   "sourceIds": [
-    "s4"
-   ],
    "confidence": "estimated",
    "shape": {
     "template": "box",
@@ -1343,7 +1327,6 @@
     "type": "solder"
    },
    "step": 8,
-   "sourceIds": [],
    "confidence": "estimated",
    "shape": {
     "template": "box",
@@ -1362,7 +1345,7 @@
    "bbox": [
     21,
     112,
-    5.0,
+    5,
     30,
     130,
     6.2
@@ -1370,7 +1353,7 @@
    "attachedTo": "frame",
    "fastening": {
     "type": "screw",
-    "spec": "Phillips #0, 3.4 mm",
+    "spec": "Phillips #0, 3.5 mm",
     "count": 2
    },
    "step": 8,
@@ -1394,8 +1377,12 @@
     ]
    },
    "shapeNote": "two screws near the camera column",
-   "notes": "s9 says 3.4 mm, s5 says 3.5 mm. Count (2) agrees. Positions estimated.",
-   "path": "screw"
+   "notes": "3.5 mm per s5 (the motherboard guide); s9 lists 3.4 mm. Count (2) agrees. Positions estimated.",
+   "path": "screw",
+   "desc": {
+    "ko": "후면 카메라 브래킷을 지나 메인보드까지 박히는 나사 두 개.",
+    "en": "Two screws that pass through the rear camera bracket into the main board."
+   }
   },
   {
    "id": "conn-battery",
@@ -1409,7 +1396,7 @@
     5.6,
     46,
     99.5,
-    6.0
+    6
    ],
    "attachedTo": "motherboard",
    "fastening": {
@@ -1439,7 +1426,7 @@
     5.6,
     27,
     99.5,
-    6.0
+    6
    ],
    "attachedTo": "motherboard",
    "fastening": {
@@ -1468,7 +1455,7 @@
     5.6,
     31.5,
     99.5,
-    6.0
+    6
    ],
    "attachedTo": "motherboard",
    "fastening": {
@@ -1497,7 +1484,7 @@
     5.6,
     39.5,
     99.5,
-    6.0
+    6
    ],
    "attachedTo": "motherboard",
    "fastening": {
@@ -1527,7 +1514,7 @@
     5.6,
     58,
     99.5,
-    6.0
+    6
    ],
    "attachedTo": "motherboard",
    "fastening": {
@@ -1557,7 +1544,7 @@
     5.6,
     64.5,
     99.5,
-    6.0
+    6
    ],
    "attachedTo": "motherboard",
    "fastening": {
@@ -1587,7 +1574,7 @@
     5.6,
     64.8,
     110,
-    6.0
+    6
    ],
    "attachedTo": "motherboard",
    "fastening": {
@@ -1617,7 +1604,7 @@
     5.6,
     41,
     133,
-    6.0
+    6
    ],
    "attachedTo": "motherboard",
    "fastening": {
@@ -1647,7 +1634,7 @@
     5.6,
     49,
     134.4,
-    6.0
+    6
    ],
    "attachedTo": "motherboard",
    "fastening": {
@@ -1759,12 +1746,12 @@
      [
       66.8,
       21,
-      3.0
+      3
      ],
      [
       66.8,
       94.5,
-      3.0
+      3
      ],
      [
       60,
@@ -1885,7 +1872,7 @@
     5.1,
     64,
     145,
-    7.0
+    7
    ],
    "attachedTo": "earpiece-module",
    "fastening": {
@@ -1941,7 +1928,7 @@
     6.2,
     45.75,
     100.75,
-    7.0
+    7
    ],
    "attachedTo": "battery",
    "fastening": {
@@ -2102,7 +2089,6 @@
     "type": "integral"
    },
    "step": 13,
-   "sourceIds": [],
    "confidence": "estimated",
    "shape": {
     "template": "plate",
@@ -2121,10 +2107,10 @@
    "bbox": [
     7.5,
     27.5,
-    6.0,
+    6,
     63.5,
     92.5,
-    7.0
+    7
    ],
    "attachedTo": "wireless-coil",
    "fastening": {
@@ -2185,7 +2171,7 @@
     5.5,
     69,
     25,
-    7.0
+    7
    ],
    "attachedTo": "loudspeaker-module",
    "fastening": {
@@ -2250,7 +2236,7 @@
     6.92,
     70.3,
     146.7,
-    7.0
+    7
    ],
    "attachedTo": "frame",
    "fastening": {
@@ -2278,7 +2264,7 @@
    "bbox": [
     0.3,
     0.3,
-    7.0,
+    7,
     70.3,
     146.7,
     7.6
@@ -2348,7 +2334,7 @@
    "bbox": [
     7.5,
     99.5,
-    7.0,
+    7,
     19.5,
     140.5,
     8.5
@@ -2430,8 +2416,8 @@
     "battery"
    ],
    "tools": {
-    "ko": "없음 (당김 탭)",
-    "en": "none (pull tab)"
+    "ko": "당김 탭 (잘 안 떨어지면 이소프로필 알코올)",
+    "en": "pull tab; isopropyl alcohol if it resists"
    },
    "cautions": {
     "ko": "배터리에 금속 공구를 쓰지 마세요.",
@@ -2460,8 +2446,8 @@
     "en": "Phillips #0, spudger"
    },
    "cautions": {
-    "ko": "USB-C 포트를 비스듬히 먼저 넣고, 오른쪽 위 모서리를 끼워요.",
-    "en": "Seat the USB-C port at an angle first, then clip the top-right corner"
+    "ko": "USB-C 포트를 비스듬히 홈에 먼저 끼운 다음, 보드를 평평하게 눌러요.",
+    "en": "Seat the USB-C port into its recess at an angle, then press the board flat."
    },
    "path": "drop",
    "sourceIds": [
@@ -2691,8 +2677,8 @@
     "en": "Phillips #0, spudger"
    },
    "cautions": {
-    "ko": "스피커 가장자리를 프레임에 먼저 끼운 다음 나사 13개를 조이고, 코일을 연결해요.",
-    "en": "Clip the speaker edges into the frame before inserting the 13 screws, then connect the coil"
+    "ko": "스피커 테두리를 돌아가며 눌러 프레임에 딸깍 고정한 뒤 나사 13개를 조이고, 코일 커넥터를 꽂아요.",
+    "en": "Work round the speaker's rim until it snaps into the frame, then drive the 13 screws and plug in the coil."
    },
    "path": "drop",
    "sourceIds": [
@@ -2736,8 +2722,8 @@
     "en": "No internal dimensions are published; inner positions and sizes are estimated against the outer size and the battery."
    },
    {
-    "ko": "보조 보드 나사 수는 자료마다 달라요(2개/3개). 전체 24개와 맞는 2개를 썼어요.",
-    "en": "Sources disagree on the daughterboard screws (2 vs 3); 2 matches the 24-screw total."
+    "ko": "보조 보드 나사 수는 자료마다 달라요(2개/3개). 보조 보드만 다루는 iFixit 가이드(3개)를 따랐어요.",
+    "en": "Sources disagree on the daughterboard screws (2 vs 3); the dedicated iFixit daughterboard guide (3) is followed."
    },
    {
     "ko": "진동 모터 위치, 상단 안테나의 이름, mmWave 케이블의 다른 끝은 자료가 없어 추정했어요.",

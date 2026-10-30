@@ -105,8 +105,8 @@ if (pc) {
   if (!(shown && hidden)) flag('projection', 'projection.png', 'the projection badge must show in the projection chapter and nowhere else');
 } else console.log('skip projection (feature off)');
 
-// playback speed: each speed covers the whole bar in its own time (36 / 24 / 12 s)
-for (const [speed, secs] of quick ? [['normal', 24]] : [['slow', 36], ['normal', 24], ['fast', 12]]) {
+// playback speed: each speed covers the whole bar in its own time (1× 60 s, 2× 30 s, 3× 20 s, 5× 12 s)
+for (const [speed, secs] of quick ? [['slow', 30]] : [['xslow', 60], ['slow', 30], ['normal', 20], ['fast', 12]]) {
   await shot(`speed-${speed}`, { t: 10, speed, play: 1 });
   const moved = await evaluate(`(async () => { const t0 = window.__elapse.st.t, p0 = performance.now(); await new Promise(r => setTimeout(r, 2000));
     return { dt: window.__elapse.st.t - t0, secs: (performance.now() - p0) / 1000 }; })()`);
