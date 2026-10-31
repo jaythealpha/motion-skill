@@ -2,11 +2,13 @@
 // Two styles from the same meshes ('color': toon bands and ink edges; 'blueprint': flat fills and light lines),
 // and an x-ray mode that thins the hull to show bulkheads and the water inside.
 import * as THREE from 'three';
+import { createCinematic } from './cinematic.js';
+import { isTitanic, isBritannic, hasDirecting, smooth } from './directing.js';
 import { buildPiece, LOOK, rng } from './shapes.js';
 import { buildEnvironment } from './env.js';
 import { evaluate } from './tracks.js';
 import { cameraAt, subjectBox, frameSubject, pieceWorldBox } from './camera.js';
-import { pieceBox, waterPlane, clampToPlane, groundFn } from './geom.js';
+import { pieceBox, waterPlane, clampToPlane, groundFn, worldBox } from './geom.js';
 import { gradientMap, INK, BP } from '../shared/toon.js';
 
 const DEG = Math.PI / 180;
@@ -92,8 +94,16 @@ export function createRenderer(canvas, model, opts = {}) {
     items.push({ p, g, meshes, windows, rusticles, local });
   }
   if (env.seabed) env.seabed.userData.mats = {
-    color: new THREE.MeshToonMaterial({ color: LOOK.sand, gradientMap: gmap }), blueprint: new THREE.MeshBasicMaterial({ color: BP.dim, wireframe: true, transparent: true, opacity: 0.45 }) };
+    color: new THREE.MeshToonMaterial({ color: isTitanic(model) ? '#18323d' : isBritannic(model) ? '#2b565d' : LOOK.sand, gradientMap: gmap }), blueprint: new THREE.MeshBasicMaterial({ color: BP.dim, wireframe: true, transparent: true, opacity: 0.45 }) };
 
+  if(env.seabed && isBritannic(model)){
+    // Neutral procedural sediment grain: lighting/texture, not mapped site data.
+    const pixels=new Uint8Array(128*128*4),noise=rng(1916);
+    for(let i=0;i<128*128;i++){const x=i%128,y=Math.floor(i/128),v=Math.round(180+50*noise()+20*Math.sin(x*.07)*Math.cos(y*.09));pixels.set([v,v,v,255],i*4);}
+    const texture=new THREE.DataTexture(pixels,128,128);texture.wrapS=texture.wrapT=THREE.RepeatWrapping;texture.repeat.set(250,250);texture.needsUpdate=true;
+    env.seabed.userData.mats.color.map=texture;
+  }
+  const cinematic = hasDirecting(model) && opts.cinematic !== false ? createCinematic(root, model, env.surface) : null;
   const st = { t: 0, branch: 'a', style: 'color', xray: false, auto: opts.auto !== false, yaw: opts.yaw ?? null, pitch: opts.pitch ?? null, zoom: opts.zoom || 1, last: null, cam: null };
   if (opts.yaw != null || opts.pitch != null) st.auto = false;
 
@@ -150,7 +160,7 @@ export function createRenderer(canvas, model, opts = {}) {
     if (env.seabed) env.seabed.material = env.seabed.userData.mats[st.style];
     // light: a dim blue night and dark deep water, still drawn bright enough to see
     const deep = st.cam ? st.cam.target[2] < -200 : false;
-    hemi.intensity = bp ? 1.5 : night || deep ? 1.15 : 1.6; hemi.color.set(night || deep ? '#c9d6f0' : '#ffffff'); sun.intensity = night || deep ? 1.3 : 2;
+    hemi.intensity = bp ? 1.5 : night || deep ? 1.15 : 1.6; hemi.color.set(night || deep ? '#c9d6f0' : '#ffffff'); sun.color.set(cinematic && (deep || (isBritannic(model) && st.eyeZ<0)) ? '#a1c7df' : '#ffffff'); sun.intensity = night || deep ? (cinematic ? 2.6 : 1.3) : 2;
   }
 
   // flatten the water box to its level surface, tilted in the ship's frame as the ship trims and lists
@@ -163,19 +173,64 @@ export function createRenderer(canvas, model, opts = {}) {
   }
 
   function placeCamera() {
-    const c = cameraAt(model, st.t, st.last); st.cam = c;
+    const c = cameraAt(model, st.t, st.last);
+    if (cinematic && st.auto && isTitanic(model)) {
+      // Broadside makes the iceberg contact, flooding compartments and broken keel readable.
+      if (st.t < 38) {
+        const fade=1-smooth((st.t-34)/4);
+        const side=(st.last.pieces.get('ship')?.heading || 100)-87;
+        c.yaw=c.yaw+(side-c.yaw)*fade;c.pitch=14+(c.pitch-14)*(1-fade);
+      }
+      if(st.t>=38 && st.t<45.2){
+        const blend=smooth((st.t-38)/1.2)*(1-smooth((st.t-44)/1.2));
+        c.yaw+=(13-c.yaw)*blend;c.pitch+=(11-c.pitch)*blend;
+      }
+    }
+    if(cinematic && st.auto && isBritannic(model)){
+      if(st.t<40){const heading=st.last.pieces.get('ship').heading;c.yaw=heading-90;c.pitch=17;}
+      else if(st.t<62){const p=(st.t-40)/22,heading=st.last.pieces.get('ship').heading;c.yaw=heading-90-30*smooth(p);c.pitch=8;}
+      else{c.yaw=150+20*Math.sin((st.t-62)/38*Math.PI);c.pitch=14;}
+    }
+    st.focusIds=null;st.focusBox=null;
+    if(cinematic && st.auto && isTitanic(model) && st.t>=56){
+      const event=model.events.filter(e=>e.kind==='collapse'&&e.mode!=='vanish'&&e.card!==false&&st.t>=e._t-.12&&st.t<=e._until+.35).at(-1);
+      if(event){const it=items.find(it=>it.p.id===event.piece),ps=st.last.pieces.get(event.piece);
+        const drawn=collapseMatrix(it,st.last,new THREE.Matrix4().fromArray(ps.matrix));
+        const b=it.local?worldBox(it.local,drawn.elements):pieceWorldBox(model,st.last,event.piece),f=smooth((st.t-event._t+.12)/.12)*(1-smooth((st.t-event._until)/.35));
+        const centre=b.min.map((v,k)=>(v+b.max[k])/2);c.target=c.target.map((v,k)=>v+(centre[k]-v)*f);const close=Math.max(12,Math.hypot(...b.max.map((v,k)=>v-b.min[k]))*2.3);c.dist=c.dist+(close-c.dist)*f;
+        if(f>.95){st.focusIds=[event.piece];st.focusBox=b;}
+      }
+    }
+    st.cam = c;
     const yaw = (st.auto || st.yaw == null ? c.yaw : st.yaw) * DEG, pitch = Math.max(-80, Math.min(85, st.auto || st.pitch == null ? c.pitch : st.pitch)) * DEG;
     // a tall, narrow screen (a phone held upright) sees less across, so the camera stands further back
     const narrow = camera.aspect < 1 ? Math.min(2.4, 1 / camera.aspect) ** 0.85 : 1;
-    const dist = c.dist * st.zoom * narrow, T = c.target;
+    let dist = c.dist * st.zoom * narrow; const T = c.target;
     const eye = [T[0] + dist * Math.cos(pitch) * Math.cos(yaw), T[1] + dist * Math.cos(pitch) * Math.sin(yaw), T[2] + dist * Math.sin(pitch)];
+    const submerged=cinematic && isBritannic(model) && subjectBox(model,st.last,frameSubject(model,st.t)).max[2]<-10;
+    if(submerged)eye[2]=Math.min(-8,eye[2]);
     camera.position.copy(toThree(eye)); camera.near = Math.max(0.5, dist / 200); camera.far = dist * 40 + 10000; camera.updateProjectionMatrix();
     camera.lookAt(toThree(T));
+    if(cinematic && st.auto){
+      // Fit the current subject at every aspect ratio, with room for the overlay cards.
+      const b=st.focusBox || subjectBox(model,st.last,frameSubject(model,st.t));
+      for(let attempt=0;attempt<18;attempt++){
+        camera.updateMatrixWorld();let fit=true;
+        for(const x of [b.min[0],b.max[0]])for(const y of [b.min[1],b.max[1]])for(const z of [b.min[2],b.max[2]]){
+          const v=toThree([x,y,z]).project(camera);if(Math.abs(v.x)>.83||Math.abs(v.y)>.56||v.z>1)fit=false;
+        }
+        if(fit)break;dist*=1.12;
+        eye[0]=T[0]+dist*Math.cos(pitch)*Math.cos(yaw);eye[1]=T[1]+dist*Math.cos(pitch)*Math.sin(yaw);eye[2]=T[2]+dist*Math.sin(pitch);
+        if(submerged)eye[2]=Math.min(-8,eye[2]);
+        camera.position.copy(toThree(eye));camera.lookAt(toThree(T));
+      }
+      camera.far=dist*40+10000;camera.updateProjectionMatrix();
+    }
     env.update(scene, eye[2], st.style, BP, dist);
     st.eyeZ = eye[2];
   }
 
-  function render() { if (!st.last) apply(st.t); placeCamera(); renderer.render(scene, camera); }
+  function render() { if (!st.last) apply(st.t); placeCamera(); cinematic?.update(st); renderer.render(scene, camera); }
 
   function resize() {
     const w = canvas.clientWidth || 800, h = canvas.clientHeight || 500;
@@ -198,7 +253,7 @@ export function createRenderer(canvas, model, opts = {}) {
 
   // the subject's box on screen: how much of it is in view, and how big it is
   function screenBox() {
-    const b = subjectBox(model, st.last, frameSubject(model, st.t)), lo = [Infinity, Infinity], hi = [-Infinity, -Infinity];
+    const b = st.focusBox || subjectBox(model, st.last, frameSubject(model, st.t)), lo = [Infinity, Infinity], hi = [-Infinity, -Infinity];
     let behind = 0;
     for (const x of [b.min[0], b.max[0]]) for (const y of [b.min[1], b.max[1]]) for (const z of [b.min[2], b.max[2]]) {
       const v = toThree([x, y, z]).project(camera);
@@ -208,7 +263,7 @@ export function createRenderer(canvas, model, opts = {}) {
     return behind === 8 ? null : { lo, hi };
   }
   function frame() {
-    const ids = frameSubject(model, st.t), top = subjectBox(model, st.last, ids).max[2], s = screenBox();
+    const ids = st.focusIds || frameSubject(model, st.t), top = (st.focusBox || subjectBox(model, st.last, ids)).max[2], s = screenBox();
     if (!s) return { area: 0, inside: 0, ids, eyeZ: st.eyeZ, subjectTop: top };
     const w = Math.max(1e-9, s.hi[0] - s.lo[0]), h = Math.max(1e-9, s.hi[1] - s.lo[1]);
     const cw = Math.max(0, Math.min(1, s.hi[0]) - Math.max(-1, s.lo[0])), ch = Math.max(0, Math.min(1, s.hi[1]) - Math.max(-1, s.lo[1]));

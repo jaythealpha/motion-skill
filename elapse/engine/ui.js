@@ -1,6 +1,7 @@
 // Page shell: header with the confidence shares, toggles, the stage (canvas, event card, gauges), the chaptered
 // time bar, chapter buttons, the branch switch, panels and exports.
 import { createRenderer } from './render.js';
+import { hasDirecting, directingBeat } from './directing.js';
 import { strings, pick } from './i18n.js';
 import { classShares, WARN_SHARE } from './model.js';
 import { chapterAt, formatTime } from './chapters.js';
@@ -50,6 +51,7 @@ body{margin:0;background:linear-gradient(180deg,#f2f4f7,#e3e8ee);min-height:100v
 .el-view{position:absolute;right:12px;bottom:12px;display:flex;gap:6px}
 .el-view button{all:unset;cursor:pointer;background:rgba(255,255,255,.9);border-radius:8px;padding:5px 9px;font-size:12px}
 .el-view button[aria-pressed=true]{background:var(--ink);color:#fff}
+.el-directing{padding:8px 2px 0;color:var(--muted);font-size:12px;overflow-wrap:anywhere}
 .el-bar{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;margin-top:12px}
 .el-pl{display:flex;gap:6px;align-items:center}
 .el-play{all:unset;cursor:pointer;width:38px;height:38px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:14px}
@@ -70,7 +72,16 @@ body{margin:0;background:linear-gradient(180deg,#f2f4f7,#e3e8ee);min-height:100v
 .el-panel h2{font-size:15px;margin:0 0 8px;display:flex;justify-content:space-between;gap:10px}
 .el-panel h2 button{all:unset;cursor:pointer;font-size:12.5px;color:var(--muted)}
 .el-panel li{margin:3px 0;overflow-wrap:anywhere}
-@media (max-width:640px){.el{padding:12px 16px 22px}.el-stage{height:58vh}.el-bar{grid-template-columns:auto 1fr}.el-now{grid-column:1/-1;text-align:left;max-width:none}
+.el-cinematic .el-stage{touch-action:auto;user-select:auto;overflow:visible;height:auto;background:transparent;border:0;display:flex;flex-wrap:wrap;gap:8px}
+.el-cinematic .el-stage canvas{touch-action:none;height:min(64vh,620px);border-radius:16px;background:#060a13;border:1px solid var(--line)}
+.el-cinematic .el-card{position:static;max-width:100%;flex:1 1 300px;box-shadow:none;border:1px solid var(--line)}
+.el-cinematic .el-gauges{position:static;flex-direction:row;flex-wrap:wrap;max-width:100%;align-items:flex-start}
+.el-cinematic .el-view{top:12px;bottom:auto}
+.el-cinematic .el-proj{top:12px;bottom:auto;right:auto}
+.el-cinematic .el-lightnote{display:none}
+.el button:focus-visible,.el select:focus-visible,.el input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.el-cinematic .el-view button,.el-cinematic .el-chapters button{min-height:44px}
+@media (max-width:640px){.el-cinematic .el-proj{top:76px}.el{padding:12px 16px 22px}.el-stage{height:58vh}.el-bar{grid-template-columns:auto 1fr}.el-now{grid-column:1/-1;text-align:left;max-width:none}
   .el-g{min-width:96px;padding:5px 8px}.el-levels{height:36px}.el-card{font-size:12.5px;max-width:calc(100% - 24px)}.el-gauges{top:auto;bottom:52px}.el-lightnote{display:none}}
 `;
 
@@ -83,16 +94,17 @@ export function mountElapse(root, model, params = {}) {
   const errors = window.__elapse?.errors || [];
   let L = strings(st.lang);
   const style = document.createElement('style'); style.textContent = CSS; document.head.appendChild(style);
-  root.className = 'el';
+  root.className = 'el' + (hasDirecting(model) ? ' el-cinematic' : '');
   root.innerHTML = `
     <header class="el-top"><div><h1></h1><div class="el-sub"></div></div><button class="el-trust" type="button"></button></header>
     <div class="el-warn" hidden></div>
     <div class="el-controls"></div>
-    <div class="el-stage"><canvas></canvas><div class="el-card" hidden></div><div class="el-gauges"></div>
+    <div class="el-stage"><canvas role="img" aria-label="시간에 따른 선체 변화 3D"></canvas><div class="el-card" hidden></div><div class="el-gauges"></div>
       <div class="el-proj" hidden></div><div class="el-lightnote" hidden></div>
       <div class="el-view"><button type="button" data-v="auto"></button><button type="button" data-v="reset"></button></div></div>
+    <div class="el-directing" hidden></div>
     <div class="el-bar"><div class="el-pl"><button class="el-play" type="button"></button><select></select></div>
-      <div class="el-track"><div class="el-bands"></div><input type="range" min="0" max="100" step="0.05" value="0"><div class="el-ticks"></div></div>
+      <div class="el-track"><div class="el-bands"></div><input aria-label="시간 진행" type="range" min="0" max="100" step="0.05" value="0"><div class="el-ticks"></div></div>
       <div class="el-now"></div></div>
     <div class="el-chapters"></div>
     <div class="el-branch" hidden></div>
@@ -112,6 +124,7 @@ export function mountElapse(root, model, params = {}) {
 
   function chrome() {
     L = strings(st.lang); document.documentElement.lang = st.lang;
+    range.setAttribute('aria-label',st.lang==='en'?'Timeline':'시간 진행');canvas.setAttribute('aria-label',st.lang==='en'?'3D ship changes over time':'시간에 따른 선체 변화 3D');
     $('.el-top h1').textContent = pick(model.subject.name, st.lang);
     $('.el-sub').textContent = model.meta.interpretation ? L.interpreted(pick(model.meta.interpretation, st.lang)) : '';
     $('.el-trust').innerHTML = CLASSES.filter(c => shares[c] || c === 'sourced').map(c => `<span class="cf-badge cf-${c}">${L.share(L[c], shares[c])}</span>`).join('');
@@ -171,6 +184,8 @@ export function mountElapse(root, model, params = {}) {
     R.set({ t, style: st.style, xray: xrayNow(), branch: st.branch });
     const s = R.state.last, ev = card(), ci = chapterAt(model, t), c = model.chapters[ci];
     gauges(s, ev);
+    const direction=$('.el-directing');direction.hidden=!hasDirecting(model);
+    if(!direction.hidden){const beat=directingBeat(model,t);direction.textContent=beat.label[st.lang==='en'?1:0]+' · '+(st.lang==='en'?'Illustrative effects; estimated motion':'물·입자 효과는 설명용 연출 · 움직임은 추정 포함')+(beat.rate<.5?(st.lang==='en'?' · Slow passage':' · 주요 순간 저속 재생'):'');}
     $('.el-now').textContent = formatTime(model, t, st.lang) + (c.unit === 'minute' ? ' ' + L.shipTime : '');
     root.querySelectorAll('.el-chapters button').forEach((b, i) => b.setAttribute('aria-current', i === ci));
     const proj = $('.el-proj'); proj.hidden = !projCh.has(c.id); proj.textContent = L.projBadge;
@@ -195,7 +210,7 @@ export function mountElapse(root, model, params = {}) {
     if (st.t >= 100) setT(0);
     last = performance.now();
     const step = now => { if (!st.playing) return; const dt = Math.min(0.5, (now - last) / 1000); last = now;
-      setT(advance(st.t, dt, st.speed)); if (st.t >= 100) { play(false); return; } requestAnimationFrame(step); };
+      setT(advance(st.t, dt * (hasDirecting(model) ? directingBeat(model,st.t).rate : 1), st.speed)); if (st.t >= 100) { play(false); return; } requestAnimationFrame(step); };
     requestAnimationFrame(step);
   }
 
@@ -238,8 +253,10 @@ export function mountElapse(root, model, params = {}) {
     rec.ondataavailable = e => e.data.size && chunks.push(e.data);
     rec.onstop = () => { const mt = rec.mimeType || type || 'video/webm'; download(new Blob(chunks, { type: mt }), `${slug}.${/mp4/.test(mt) ? 'mp4' : 'webm'}`); st.recording = false; chrome(); };
     play(false); st.recording = true; chrome(); setT(0, true); rec.start();
-    const t0 = performance.now(), dur = SPEEDS[st.speed] * 1000;
-    const step = now => { const k = Math.min(1, (now - t0) / dur); setT(100 * k); if (k < 1) requestAnimationFrame(step); else setTimeout(() => rec.stop(), 600); };
+    let recordedLast = performance.now();
+    const step = now => { const dt=Math.min(.5,(now-recordedLast)/1000);recordedLast=now;
+      setT(advance(st.t,dt*(hasDirecting(model)?directingBeat(model,st.t).rate:1),st.speed));
+      if(st.t<100)requestAnimationFrame(step);else setTimeout(()=>rec.stop(),600); };
     requestAnimationFrame(step);
   }
 
@@ -248,7 +265,7 @@ export function mountElapse(root, model, params = {}) {
   const ch = num('chapter'), t0 = num('t') ?? (ch != null ? model.chapters[Math.max(0, Math.min(model.chapters.length - 1, ch - 1))].bar[0] : 0);
   st.t = t0; chrome();
   if (params.panel === 'sources' || params.panel === 'about') panel(params.panel);
-  if (params.play === '1') play(true);
+  if (params.play === '1' && !matchMedia('(prefers-reduced-motion: reduce)').matches) play(true);
   window.__elapse = Object.assign(window.__elapse || {}, { R, model, st, errors, setT, play });
   return window.__elapse;
 }
