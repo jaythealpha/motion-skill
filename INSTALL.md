@@ -16,7 +16,7 @@ git clone https://github.com/jaythealpha/motion-skill.git
 cd motion-skill
 ```
 
-저장소가 비공개인 동안에는 접근 권한이 있는 계정이 필요합니다. 공개 전환 후의 익명 다운로드는 아직 검증하지 않았습니다.
+공개 저장소이므로 clone에 GitHub 로그인이 필요하지 않습니다. 스킬 생성 작업에는 별도로 Claude Code와 해당 도구 권한이 필요합니다.
 
 ## 3. 스킬 복사
 
@@ -85,7 +85,7 @@ node "$HOME/.claude/skills/elapse/scripts/build.mjs" "$HOME/.claude/skills/elaps
 
 ## 6. 데모 보기
 
-[데모 목록](DEMOS.md)을 확인하세요. GitHub 파일 보기 화면은 HTML 앱을 실행하지 않습니다. 저장소를 받은 뒤 로컬 서버를 열거나, HTML 원본을 내려받아 브라우저에서 여세요. GitHub Pages는 이 저장소에 아직 배포하지 않았습니다.
+[데모 목록](DEMOS.md)을 확인하세요. GitHub 파일 보기 화면은 HTML 앱을 실행하지 않습니다. 저장소를 받은 뒤 로컬 서버를 열거나, HTML 원본을 내려받아 브라우저에서 여세요. [GitHub Pages 데모 목록](https://jaythealpha.github.io/motion-skill/)에서는 다운로드 없이 바로 실행할 수 있습니다.
 
 ## 업데이트와 제거
 

@@ -46,6 +46,9 @@ Two experimental [Claude Code](https://claude.com/claude-code) skills. Each turn
 
 ## 시작하기
 
+**[브라우저에서 12개 데모 바로 보기](https://jaythealpha.github.io/motion-skill/)**
+
+
 - **설치:** [준비물·복제·기존 설치 보존·첫 빌드](INSTALL.md)
 - **보기:** [12개 데모와 로컬 실행 방법](DEMOS.md)
 - **최근 변경:** [역사 건축·WTC·해저 장면과 공개 준비](elapse/CHANGELOG.md)
@@ -78,7 +81,7 @@ cd elapse && npm test
 cd shared && node --test
 ```
 
-최신 설치 재현·데모·라이선스 점검 결과는 [공개 준비 리포트](docs/reviews/2026-11-02-public-readiness.md)에 정리했습니다. 저장소 공개 전환과 공개 데모 배포는 별도 작업입니다.
+최신 설치 재현·데모·라이선스 점검 결과는 [공개 준비 리포트](docs/reviews/2026-11-02-public-readiness.md)에 정리했습니다. 공개 데모는 GitHub Pages에서 제공하며, 새 버전의 재현·검증 범위는 리포트에서 확인하세요.
 
 ## Licence
 
