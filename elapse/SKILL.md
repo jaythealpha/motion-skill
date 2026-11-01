@@ -1,11 +1,11 @@
 ---
 name: elapse
-description: Turn a shipwreck into one self-contained HTML page with a chaptered time bar that runs from the accident through the sinking to the wreck's decay on the seabed. For example, RMS Titanic from the iceberg to its projected collapse. The page shows water filling the watertight compartments in an x-ray view, the lights failing, the hull breaking, the pieces falling to the seabed with a depth gauge, rusticles and dated collapses over the years, and projections clearly marked. Every scene is marked sourced, estimated, disputed or projection. Claude researches inquiry records, analyses and expedition reports, writes a time model, and must pass two automatic gates before delivering. Use whenever someone wants to see how a ship sank, what happened to a wreck over time, "what happened to the Titanic / Lusitania / Britannic", a sinking timeline, or how a wreck changed from discovery to now, even if they don't name the skill. Korean UI by default.
+description: Build a World Trade Center9/11/recovery/rebuilding study (2001–2018), an offline Notre-Dame fire/restoration timeline (2019–2024), a chaptered construction timeline for the Eiffel Tower (1887–1889), or turn a shipwreck into one self-contained HTML page with a chaptered time bar that runs from the accident through the sinking to the wreck's decay on the seabed. For example, RMS Titanic from the iceberg to its projected collapse. The page shows water filling the watertight compartments in an x-ray view, the lights failing, the hull breaking, the pieces falling to the seabed with a depth gauge, rusticles and dated collapses over the years, and projections clearly marked. Every scene is marked sourced, estimated, disputed or projection. Claude researches inquiry records, analyses and expedition reports, writes a time model, and must pass two automatic gates before delivering. Use whenever someone wants to see how a ship sank, what happened to a wreck over time, "what happened to the Titanic / Lusitania / Britannic", a sinking timeline, or how a wreck changed from discovery to now, even if they don't name the skill. Korean UI by default.
 ---
 
 # Elapse
 
-Elapse makes one HTML page about how something changes over time. This version covers **shipwrecks**. The time bar is cut into **chapters**, each with its own unit. For Titanic:
+Elapse makes one HTML page about how something changes over time. This version covers **shipwrecks** and three **historical building templates: Eiffel construction, Notre-Dame fire/restoration, and World Trade Center site history**. The time bar is cut into **chapters**, each with its own unit. For Titanic:
 
 | Chapter | Real time | Bar | Unit |
 |---|---|---|---|
@@ -21,6 +21,7 @@ One storyline runs through the bar: **how the water changed the ship.** The nigh
 - turn on **x-ray** to see the bulkheads and the water inside
 - switch between colour and blueprint, and simple and detailed cards
 - read a card at every event, each marked with how sure it is
+- enter **Explore** on the bundled Titanic/Britannic examples: lock the historical date, visit existing bow/bridge/stern structures, orbit/zoom and adjust virtual survey light. Titanic also supports an independent fauna/snow clock in its eligible observation window; leaving Explore restores the prior historical time and view.
 
 **You** supply the subject as a *time model* (JSON) built from public records. Two gates check your work, because nobody reviews it before the person sees it.
 
@@ -61,7 +62,10 @@ s.pieces.get('funnel-1').matrix   // its world matrix then (column-major 4×4)
 
 1. **Understand the request.**
    - **Check the refusal rule first.** If it applies, refuse as above and stop.
-   - **Not a ship:** say in chat that Elapse covers shipwrecks for now, and stop.
+   - **Eiffel Tower construction:** follow the building branch below; do not create hulls or fake ship dimensions.
+   - **World Trade Center9/11/rebuilding:** follow its separate building branch below; the recent-sinking refusal concerns sinkings.
+   - **Notre-Dame fire/restoration:** follow its building branch below. The recent-sinking refusal is specific to sinkings, not building conservation.
+   - **Other non-ship subjects:** explain that the current templates cover shipwrecks, Eiffel construction and Notre-Dame restoration. A new building template needs separate research, geometry and checks.
    - **Pin down the ship.**
      - The tuned range is steel powered ships from 1880 on: liners, cargo ships, warships.
      - Sailing ships, wooden ships and raised wrecks (Vasa, Mary Rose) can be made, but say in `meta.interpretation` and at delivery that they are outside the tuned range.
@@ -152,3 +156,29 @@ s.pieces.get('funnel-1').matrix   // its world matrix then (column-major 4×4)
 - How a product goes together, or an exploded view of a phone → **unfold**.
 - A playful, hand-drawn object you press buttons on → **colorfigures**.
 - A data chart of ship losses → a charting skill.
+
+## Bundled exploration mode
+
+The example renderer supports `?mode=explore`. Starting in a sinking/projection chapter opens a documented illustrative wreck-view date; starting in a historical wreck chapter retains that date. History playback, chapter navigation and full-timeline video recording are disabled during exploration. Image capture remains available. Return to Timeline restores the prior date/style/camera and stays paused. The new fauna/snow clock is separate from calendar years, stops with its own pause button, and respects reduced motion. Britannic supports structural/camera/light inspection, not the Titanic-specific fauna animation. Light strength is an illustrative viewing preference, not measured expedition lighting.
+
+`node scripts/check_exploration.mjs [outputDirectory]` checks the bundled examples at 375/768/1440px, independent clocks, view restoration, intensity, zoom control and reduced motion. Building-history examples require a separate subject presentation layer; they are not implemented by relabelling ship parts.
+
+## Building branch — Eiffel Tower (1887–1889)
+
+Read `references/building-format.md` and `research/eiffel-notes.md`. Use `research/eiffel-gen.mjs` as the source-model pattern. Keep official milestone dates separate from estimated member geometry and intermediate construction. Main-structure height300m does not reproduce the complete historical flagpole/top-fittings height; no modern antennas or modern night lights. The site and subgrade view are illustrative, not surveyed.
+
+Use `subject.kind=building` and `geometry.type=eiffel-1889`; the renderer, gauges, monthly date labels and Gate1 follow a building-specific branch. Reuse the common time bar, speed choices, cards, source marking, colour/blueprint and exploration view. Run Gate1, the full general Gate2, and the focused `check_building.mjs`. Inspect stage and macro views at all three responsive sizes. Do not present a stage height ratio as a labour/progress percentage, or this mesh as a verified structural/assembly plan.
+
+## Building branch — Notre-Dame (2019–2024)
+
+Read `research/notredame-notes.md`; use `research/notredame-gen.mjs`. `subject.kind=building`, `geometry.type=notredame-2019`, `restoration.template=roof-spire-2019-2024` select a dedicated geometry/state renderer, not Eiffel height growth. Minute chapters use Paris local wall-clock values; later stages use months. Official records supply dated milestones. Roof loss, smoke/fire, approximate spire motion, damaged vault openings, supports and intermediate restoration are estimates. Never label the short collapse-animation interval as a measured physical duration. Keep surviving twin towers and rose windows. Do not infer cause or draw people. The final date is the December2024 reopening, not all conservation ending.
+
+Seven exploration stops lock the chosen historical time. Vault inspection deliberately hides roof/spire layers for a labelled cutaway; it is not a visitor-access claim. Keep ship controls absent. Run Gate1, full Gate2 and `scripts/check_notredame.mjs`. Check reversible intact/damaged/rebuilt geometry and all stops at375/768/1440px; inspect screenshots. Other buildings still require independent templates.
+
+## Building branch — World Trade Center (2001–2018)
+
+Read `research/wtc-notes.md`; use `research/wtc-gen.mjs`. `geometry.type=wtc-2001-2018` and `restoration.template=wtc-site-history` select independent old/new geometry and dated site states. Source the two impacts, separate tower collapses, separateWTC7 fire/collapse, recovery and reopening milestones from memorial/NIST/owner records. No inferred trajectories, attack controls, harm to people or invented names. Full collapse/aircraft/fire/dust and two-minute motion windows are **illustrative**, not NIST models, physics or real durations. Keep this distinction visible in cards, captions and limitations.
+
+Use New York local wall-clock values; seconds labels preserveWTC7’s17:20:52 record. Original tower footprints remain when buildings are lost; new One WTC is not either original tower. Memorial/One/Oculus inspection availability must follow dates. Stop at the2018 milestone; do not infer today’s whole campus or invent a completed2 WTC. Run Gate1, full Gate2 and `scripts/check_wtc.mjs` across375/768/1440px. Check damage order, reversal, absent/future structures, fixed slots and view restoration. Other subjects require their own researched templates.
+
+For WTC critical scenes, retain `wtc-direction.js` authored shot windows and `wtc-effects.js` procedural layers. Automatic camera must yield to manual/exploration views. Include `scripts/check_wtc_directed.mjs` coverage of approach/impact/smoke and upper/mid/ground collapse stages at375/768/1440px. Generic context blocks are not surveyed buildings. Preserve the visible distinction between official event times and estimated motion.

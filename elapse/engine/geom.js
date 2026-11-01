@@ -8,9 +8,14 @@ const stations = p => p.offsets.stations.slice().sort((a, b) => a.x - b.x);
 const ends = p => { const s = stations(p); return [s[0].x, s.at(-1).x]; };
 
 // the deck at x: the moulded depth plus sheer, a parabola rising to sheer.fwd / sheer.aft at the ends
-export function deckHeightAt(p, x) {
+export function sheerHeightAt(p, x) {
   const [a, b] = ends(p), mid = (a + b) / 2, half = (b - a) / 2 || 1, u = (x - mid) / half, sh = p.sheer || {};
   return p.depth + (u >= 0 ? (sh.fwd || 0) : (sh.aft || 0)) * u * u;
+}
+
+export function deckHeightAt(p,x){
+  const recess=(p.planWellCuts||[]).find(w=>x>=w.from&&x<=w.to);
+  return sheerHeightAt(p,x)-(recess?.drop||0);
 }
 
 // half-breadth of one waterline row at x: a monotone cubic through the stations, so the hull never bulges past
@@ -33,7 +38,7 @@ function hbRow(st, i, x) {
 
 
 export function halfBreadthAt(p, x, z) {
-  const st = stations(p), wl = p.offsets.waterlines, n = wl.length, scale = deckHeightAt(p, x) / p.depth, zz = z / scale;
+  const st = stations(p), wl = p.offsets.waterlines, n = wl.length, scale = sheerHeightAt(p, x) / p.depth, zz = z / scale;
   if (zz <= wl[0]) return hbRow(st, 0, x);
   for (let i = 1; i < n; i++) if (zz <= wl[i]) { const f = (zz - wl[i - 1]) / (wl[i] - wl[i - 1]); return hbRow(st, i - 1, x) * (1 - f) + hbRow(st, i, x) * f; }
   return hbRow(st, n - 1, x);
@@ -43,10 +48,11 @@ export function halfBreadthAt(p, x, z) {
 function endShift(p, x, z, a, b) {
   const h = z / p.depth;
   if (Math.abs(x - b) < 1e-9 && p.stem === 'raked') return (p.stemRake ?? p.depth * 0.25) * h;
-  if (Math.abs(x - a) < 1e-9 && p.stern === 'counter') {
+  if ((Math.abs(x-a)<1e-9 || (p.planForm && x<a+12)) && p.stern === 'counter') {
     // the counter overhangs from counterFrom (default the waterline) and reaches its full length counterRise above
     const from = p.counterFrom ?? p.draft, rise = p.counterRise ?? (p.depth - p.draft), f = Math.max(0, Math.min(1, (z - from) / rise));
-    return -(p.sternOverhang ?? p.depth * 0.3) * f * f * (3 - 2 * f);
+    const u=p.planForm?Math.max(0,Math.min(1,1-(x-a)/12)):1, blend=u*u*(3-2*u);
+    return -(p.sternOverhang ?? p.depth * 0.3) * f * f * (3 - 2 * f)*blend;
   }
   return 0;
 }
@@ -68,6 +74,7 @@ function ringXs(p) {
     const x = st[j].x + (st[j + 1].x - st[j].x) * k / X_SUB;
     if (x > r0 && x < r1) xs.add(x);
   }
+  for(const w of p.planWellCuts||[])for(const edge of [w.from,w.to])for(const x of [edge-.015,edge,edge+.015])if(x>Math.max(a,r0)&&x<Math.min(b,r1))xs.add(x);
   for (const x of paintRings(p)) if (x > Math.max(a, r0) && x < Math.min(b, r1)) xs.add(x);
   return [...xs].sort((u, v) => u - v);
 }
@@ -80,11 +87,11 @@ function ring(p, x, a, b) {
   const hs = new Set(wl);
   for (let i = 0; i < wl.length - 1; i++) for (let k = 1; k < Z_SUB; k++) hs.add(wl[i] + (wl[i + 1] - wl[i]) * k / Z_SUB);
   for (const h of paintRows(p)) if (h > wl[0] && h < top) hs.add(+h.toFixed(4));
-  const scale = deckHeightAt(p, x) / p.depth;
+  const scale = sheerHeightAt(p, x) / p.depth;
   const side = [...hs].sort((u, v) => u - v).map(h => {
     let i = wl.findIndex(w => w >= h); if (i <= 0) i = 1;
     const f = (h - wl[i - 1]) / (wl[i] - wl[i - 1]);
-    return [hbRow(st, i - 1, x) * (1 - f) + hbRow(st, i, x) * f, h * scale];
+    return [hbRow(st, i - 1, x) * (1 - f) + hbRow(st, i, x) * f, Math.min(h * scale,deckHeightAt(p,x))];
   });
   for (const [hb, z] of side) pts.push([x + endShift(p, x, z, a, b), -hb, z]);
   for (const [hb, z] of side.slice().reverse()) pts.push([x + endShift(p, x, z, a, b), hb, z]);
@@ -118,9 +125,9 @@ export function hullMesh(p) {
 export function hullWindows(p) {
   const out = [], [a, b] = ends(p), [r0, r1] = p.range || [a, b];
   for (const w of p.windows || []) for (let x = w.from; x <= w.to + 1e-9; x += w.spacing) {
-    if (x < r0 || x > r1) continue;
+    if (x < r0 || x > r1 || (p.planWellCuts && w.z+.25>deckHeightAt(p,x))) continue;
     const hb = halfBreadthAt(p, x, w.z) + 0.02;
-    for (const side of ['port', 'stbd']) out.push({ x0: x - 0.3, x1: x + 0.3, z0: w.z - 0.25, z1: w.z + 0.25, y: side === 'port' ? hb : -hb, side });
+    for (const side of ['port', 'stbd']) out.push({ x0: x - 0.3, x1: x + 0.3, z0: w.z - 0.25, z1: w.z + 0.25, y: side === 'port' ? hb : -hb, side,kind:w.kind,width:w.width,height:w.height });
   }
   return out;
 }

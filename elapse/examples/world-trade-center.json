@@ -1,0 +1,669 @@
+{
+  "subject": {
+    "kind": "building",
+    "id": "world-trade-center",
+    "name": {
+      "ko": "세계무역센터 · 9·11과 재건",
+      "en": "World Trade Center · 9/11 and rebuilding"
+    },
+    "dims": {
+      "width": 360,
+      "depth": 400,
+      "height": 541.3
+    }
+  },
+  "geometry": {
+    "type": "wtc-2001-2018"
+  },
+  "restoration": {
+    "template": "wtc-site-history"
+  },
+  "sources": [
+    {
+      "id": "memorial",
+      "title": "9/11 Memorial & Museum · FAQs",
+      "url": "https://www.911memorial.org/911-faqs"
+    },
+    {
+      "id": "towers",
+      "title": "NIST · WTC Towers Investigation",
+      "url": "https://www.nist.gov/world-trade-center-investigation/study-faqs/wtc-towers-investigation"
+    },
+    {
+      "id": "dimensions",
+      "title": "NIST · tower dimensions",
+      "url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=101194"
+    },
+    {
+      "id": "seven",
+      "title": "NIST · WTC7 Investigation",
+      "url": "https://www.nist.gov/world-trade-center-investigation/study-faqs/wtc-7-investigation"
+    },
+    {
+      "id": "recovery",
+      "title": "9/11 Memorial · end of recovery",
+      "url": "https://www.911memorial.org/connect/commemoration/May-30-2002"
+    },
+    {
+      "id": "pools",
+      "title": "9/11 Memorial · memorial design",
+      "url": "https://www.911memorial.org/visit/memorial/about-memorial"
+    },
+    {
+      "id": "history",
+      "title": "World Trade Center · rebuilding chronology",
+      "url": "https://wtc.com/history-timeline/"
+    },
+    {
+      "id": "new7",
+      "title": "SOM · rebuilt7 WTC",
+      "url": "https://www.som.com/projects/7-world-trade-center/"
+    },
+    {
+      "id": "pa",
+      "title": "Port Authority · site history",
+      "url": "https://wtcprod.panynj.gov/en/local/learn-about-wtc/history.html"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "before",
+      "name": {
+        "ko": "테러 전",
+        "en": "Before attacks"
+      },
+      "start": "2001-09-11T08:30",
+      "end": "2001-09-11T08:46",
+      "bar": [
+        0,
+        8
+      ],
+      "unit": "minute"
+    },
+    {
+      "id": "attacks",
+      "name": {
+        "ko": "항공기 충돌",
+        "en": "Aircraft impacts"
+      },
+      "start": "2001-09-11T08:46",
+      "end": "2001-09-11T09:59",
+      "bar": [
+        8,
+        28
+      ],
+      "unit": "minute"
+    },
+    {
+      "id": "collapse",
+      "name": {
+        "ko": "쌍둥이 타워",
+        "en": "Twin towers"
+      },
+      "start": "2001-09-11T09:59",
+      "end": "2001-09-11T10:30",
+      "bar": [
+        28,
+        48
+      ],
+      "unit": "minute"
+    },
+    {
+      "id": "aftermath",
+      "name": {
+        "ko": "당일 오후",
+        "en": "Later that day"
+      },
+      "start": "2001-09-11T10:30",
+      "end": "2001-09-12",
+      "bar": [
+        48,
+        58
+      ],
+      "unit": "minute"
+    },
+    {
+      "id": "recovery",
+      "name": {
+        "ko": "수습 현장",
+        "en": "Recovery"
+      },
+      "start": "2001-09-12",
+      "end": "2002-05-30",
+      "bar": [
+        58,
+        68
+      ],
+      "unit": "month"
+    },
+    {
+      "id": "rebuild",
+      "name": {
+        "ko": "추모·재건",
+        "en": "Memorial / rebuilding"
+      },
+      "start": "2002-05-30",
+      "end": "2018-06-11T23:59",
+      "bar": [
+        68,
+        100
+      ],
+      "unit": "month"
+    }
+  ],
+  "events": [
+    {
+      "id": "before",
+      "at": "2001-09-11T08:30",
+      "kind": "note",
+      "title": {
+        "ko": "테러 이전의 단지",
+        "en": "Before the attacks"
+      },
+      "text": {
+        "ko": "북·남타워와 주변 저층 건물이 있던 단지입니다. 관찰 시작 시각과 세부 배치는 도해를 위한 추정입니다.",
+        "en": "The twin towers and surrounding low-rise buildings form the earlier site. The opening viewing boundary and detailed layout are illustrative."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "dimensions"
+      ]
+    },
+    {
+      "id": "northHit",
+      "at": "2001-09-11T08:46",
+      "kind": "note",
+      "title": {
+        "ko": "08:46 · 북타워 충돌",
+        "en": "08:46 · North Tower impact"
+      },
+      "text": {
+        "ko": "납치된 아메리칸 항공 11편이 북타워에 충돌합니다. 항공기 실루엣·짧은 이동과 충돌 효과는 추정 표현입니다.",
+        "en": "Hijacked American Airlines Flight 11 strikes the North Tower. The generic aircraft silhouette, short motion and impact effect are illustrative."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "memorial"
+      ]
+    },
+    {
+      "id": "southHit",
+      "at": "2001-09-11T09:03",
+      "kind": "note",
+      "title": {
+        "ko": "09:03 · 남타워 충돌",
+        "en": "09:03 · South Tower impact"
+      },
+      "text": {
+        "ko": "납치된 유나이티드 항공 175편이 남타워에 충돌합니다. 실제 항로·속도·충돌 역학을 재현한 장면은 아닙니다.",
+        "en": "Hijacked United Airlines Flight 175 strikes the South Tower. This does not reconstruct flight paths, speeds or impact mechanics."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "memorial"
+      ]
+    },
+    {
+      "id": "southFall",
+      "at": "2001-09-11T09:59",
+      "kind": "note",
+      "title": {
+        "ko": "09:59 · 남타워 붕괴",
+        "en": "09:59 · South Tower collapse"
+      },
+      "text": {
+        "ko": "남타워가 먼저 붕괴합니다. 부재·분진·낙하 경로와 재생 길이는 설명용 추정이며 검증된 구조 해석이 아닙니다.",
+        "en": "The South Tower collapses first. Members, dust, motion and playback duration are estimates, not validated structural analysis."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "memorial"
+      ]
+    },
+    {
+      "id": "northFall",
+      "at": "2001-09-11T10:28",
+      "kind": "note",
+      "title": {
+        "ko": "10:28 · 북타워 붕괴",
+        "en": "10:28 · North Tower collapse"
+      },
+      "text": {
+        "ko": "북타워도 붕괴합니다. NIST 조사 결과와 이 도해의 전체 붕괴 모션을 동일한 것으로 보아서는 안 됩니다.",
+        "en": "The North Tower collapses. This illustrative full-collapse motion is not the NIST investigation or its model."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "memorial"
+      ]
+    },
+    {
+      "id": "sevenFall",
+      "at": "2001-09-11T17:20:52",
+      "kind": "note",
+      "title": {
+        "ko": "17:20:52 · 7 WTC 붕괴",
+        "en": "17:20:52 · WTC 7 collapse"
+      },
+      "text": {
+        "ko": "항공기가 직접 충돌하지 않은 7 WTC도 화재 이후 붕괴합니다. 별도의 NIST 조사 대상입니다.",
+        "en": "WTC 7, which was not struck by an aircraft, collapses after fires. It was the subject of a separate NIST investigation."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "seven"
+      ]
+    },
+    {
+      "id": "recovery",
+      "at": "2002-05-30",
+      "kind": "note",
+      "title": {
+        "ko": "공식 수습 기간의 종료",
+        "en": "Formal recovery period ends"
+      },
+      "text": {
+        "ko": "9개월에 걸친 현장 수습의 공식 종료를 기념합니다. 현장 변화는 도식화했으며 사람과 유해는 표현하지 않습니다.",
+        "en": "The formal recovery period ends after nearly nine months. Site change is schematic; no people or human remains are depicted."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "sevenNew",
+      "at": "2006-05-23",
+      "kind": "note",
+      "title": {
+        "ko": "새 7 WTC",
+        "en": "Rebuilt 7 WTC"
+      },
+      "text": {
+        "ko": "2006년 새 7 WTC가 들어섭니다. 원래 건물과 재건 건물은 별개의 형상으로 표시합니다.",
+        "en": "A new 7 WTC opens in 2006. The old and rebuilt buildings are represented separately."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "new7"
+      ]
+    },
+    {
+      "id": "memorial",
+      "at": "2011-09-11",
+      "kind": "note",
+      "title": {
+        "ko": "추모공원 개관",
+        "en": "Memorial opens"
+      },
+      "text": {
+        "ko": "원래 두 타워의 자리에 놓인 반사 풀을 중심으로 추모공원이 개관합니다. 개별 이름은 임의로 생성하지 않습니다.",
+        "en": "The Memorial opens with reflecting pools at the former tower footprints. No victims’ names are invented."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "pools"
+      ]
+    },
+    {
+      "id": "four",
+      "at": "2013-11-13",
+      "kind": "note",
+      "title": {
+        "ko": "4 WTC 개관",
+        "en": "4 WTC opens"
+      },
+      "text": {
+        "ko": "새 단지의 4 WTC가 2013년에 문을 엽니다. 외관·유리 격자와 중간 공정은 추정 도해입니다.",
+        "en": "4 WTC opens in 2013. Facade grids and intermediate construction are illustrative."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "history"
+      ]
+    },
+    {
+      "id": "one",
+      "at": "2014-11-03",
+      "kind": "note",
+      "title": {
+        "ko": "원 월드 트레이드 센터",
+        "en": "One WTC opens"
+      },
+      "text": {
+        "ko": "원 월드 트레이드 센터가 문을 엽니다. 쌍둥이 타워를 같은 자리에 다시 세운 모습이 아닙니다.",
+        "en": "One World Trade Center opens. The rebuilt site does not simply replace the twin towers in their original footprints."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "history"
+      ]
+    },
+    {
+      "id": "oculus",
+      "at": "2016-03-03",
+      "kind": "note",
+      "title": {
+        "ko": "오큘러스의 개방",
+        "en": "Oculus opening milestone"
+      },
+      "text": {
+        "ko": "교통 허브의 오큘러스가 단계적으로 개방됩니다. 모델은 날개 모양 리브를 단순화한 추정 형상입니다.",
+        "en": "The Oculus opens in stages. This model simplifies its wing-like ribs."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "history"
+      ]
+    },
+    {
+      "id": "three",
+      "at": "2018-06-11",
+      "kind": "note",
+      "title": {
+        "ko": "3 WTC 개관 · 재건의 이정표",
+        "en": "3 WTC opens · rebuilding milestone"
+      },
+      "text": {
+        "ko": "3 WTC 개관 시점에서 도해를 마칩니다. 2018년의 주요 구조만 다루며 현재 단지 전체나 재건 종료를 뜻하지 않습니다.",
+        "en": "The study ends with the opening of 3 WTC. It depicts selected structures in 2018, not the present site or an end to redevelopment."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "pa"
+      ]
+    }
+  ],
+  "pieces": [
+    {
+      "id": "overview",
+      "name": {
+        "ko": "단지 전체",
+        "en": "Site overview"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "history"
+      ]
+    },
+    {
+      "id": "north",
+      "name": {
+        "ko": "북타워·북쪽 풀 자리",
+        "en": "North Tower / pool site"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "history"
+      ]
+    },
+    {
+      "id": "south",
+      "name": {
+        "ko": "남타워·남쪽 풀 자리",
+        "en": "South Tower / pool site"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "history"
+      ]
+    },
+    {
+      "id": "seven",
+      "name": {
+        "ko": "7 WTC 자리",
+        "en": "7 WTC site"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "seven"
+      ]
+    },
+    {
+      "id": "memorial",
+      "name": {
+        "ko": "추모공원·반사 풀",
+        "en": "Memorial / reflecting pools"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "pools"
+      ]
+    },
+    {
+      "id": "one",
+      "name": {
+        "ko": "원 월드 트레이드 센터",
+        "en": "One World Trade Center"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "history"
+      ]
+    },
+    {
+      "id": "oculus",
+      "name": {
+        "ko": "오큘러스·교통 허브",
+        "en": "Oculus / transit hub"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "history"
+      ]
+    }
+  ],
+  "stops": [
+    {
+      "id": "overview",
+      "name": {
+        "ko": "단지 전체",
+        "en": "Site overview"
+      },
+      "parts": [
+        "overview"
+      ],
+      "box": {
+        "min": [
+          -150,
+          -140,
+          -8
+        ],
+        "max": [
+          160,
+          210,
+          541.3
+        ]
+      },
+      "availableFrom": 0,
+      "yaw": 225,
+      "pitch": 22
+    },
+    {
+      "id": "north",
+      "name": {
+        "ko": "북타워·북쪽 풀 자리",
+        "en": "North Tower / pool site"
+      },
+      "parts": [
+        "north"
+      ],
+      "box": {
+        "min": [
+          -75,
+          0,
+          -8
+        ],
+        "max": [
+          -12,
+          63,
+          417
+        ]
+      },
+      "availableFrom": 0,
+      "yaw": 150,
+      "pitch": 22
+    },
+    {
+      "id": "south",
+      "name": {
+        "ko": "남타워·남쪽 풀 자리",
+        "en": "South Tower / pool site"
+      },
+      "parts": [
+        "south"
+      ],
+      "box": {
+        "min": [
+          -12,
+          -78,
+          -8
+        ],
+        "max": [
+          51,
+          -15,
+          415
+        ]
+      },
+      "availableFrom": 0,
+      "yaw": 225,
+      "pitch": 22
+    },
+    {
+      "id": "seven",
+      "name": {
+        "ko": "7 WTC 자리",
+        "en": "7 WTC site"
+      },
+      "parts": [
+        "seven"
+      ],
+      "box": {
+        "min": [
+          -35,
+          142,
+          0
+        ],
+        "max": [
+          35,
+          202,
+          226
+        ]
+      },
+      "availableFrom": 0,
+      "yaw": 45,
+      "pitch": 24
+    },
+    {
+      "id": "memorial",
+      "name": {
+        "ko": "추모공원·반사 풀",
+        "en": "Memorial / reflecting pools"
+      },
+      "parts": [
+        "memorial"
+      ],
+      "box": {
+        "min": [
+          -78,
+          -82,
+          -9
+        ],
+        "max": [
+          55,
+          67,
+          12
+        ]
+      },
+      "availableFrom": 86.52689309644835,
+      "yaw": 220,
+      "pitch": 55
+    },
+    {
+      "id": "one",
+      "name": {
+        "ko": "원 월드 트레이드 센터",
+        "en": "One World Trade Center"
+      },
+      "parts": [
+        "one"
+      ],
+      "box": {
+        "min": [
+          -133,
+          72,
+          0
+        ],
+        "max": [
+          -57,
+          148,
+          541.3
+        ]
+      },
+      "availableFrom": 75.8019473139865,
+      "yaw": 220,
+      "pitch": 20
+    },
+    {
+      "id": "oculus",
+      "name": {
+        "ko": "오큘러스·교통 허브",
+        "en": "Oculus / transit hub"
+      },
+      "parts": [
+        "oculus"
+      ],
+      "box": {
+        "min": [
+          65,
+          25,
+          0
+        ],
+        "max": [
+          145,
+          105,
+          55
+        ]
+      },
+      "availableFrom": 95.45979495805055,
+      "yaw": 45,
+      "pitch": 32
+    }
+  ],
+  "meta": {
+    "interpretation": {
+      "ko": "2001년 9·11 당시 항공기 충돌·붕괴, 수습과 2018년까지의 주요 재건을 다루는 교육용 추정 도해입니다.",
+      "en": "An educational schematic of the 2001 aircraft impacts and collapses, recovery and selected rebuilding milestones through 2018."
+    },
+    "about": {
+      "ko": "9·11 테러로 총 2,977명이 사망했고, 이 중 뉴욕의 희생자는 2,753명입니다(9/11 Memorial 기록). 사람·피해자·유해는 표현하지 않습니다. 원인·구조 조사를 모방한 시뮬레이션이나 게임이 아닙니다.",
+      "en": "The 9/11 attacks killed 2,977 people, including 2,753 in New York, according to the 9/11 Memorial. No people, victims or human remains are depicted. This is not an investigative simulation or a game."
+    },
+    "limitations": [
+      {
+        "ko": "옥상 설비·안테나 부속·붕괴 단면의 바닥과 기둥은 구조를 읽기 위한 추정 도해이며 실제 시공 도면을 재현하지 않습니다.",
+        "en": "Rooftop equipment, antenna fittings and exposed floors/columns are estimated explanatory details, not construction drawings."
+      },
+      {
+        "ko": "충돌·화염·붕괴·분진은 추정 모션입니다. 실제 항로, 충돌 속도, 구조 파괴와 전체 붕괴를 검증하거나 재현하지 않습니다.",
+        "en": "Impact, fire, collapse and dust are illustrative motion; actual flight paths, speeds, structural failure and full-collapse dynamics are not validated."
+      },
+      {
+        "ko": "붕괴는 관찰을 위해 느리게 표현합니다. 모션 구간과 재생 시간은 실제 붕괴 소요시간이 아닙니다. 뉴욕 현지 시각을 표시합니다.",
+        "en": "Collapses are slowed for observation; animation windows and playback length are not measured collapse durations. Times are New York local."
+      },
+      {
+        "ko": "북타워 지붕 417m·남타워 415m·평면 약 63m 정사각은 NIST 참고치입니다. 개별 창·부재·현장 좌표·잔해·재건 중간 공정과 주변 건물은 추정입니다.",
+        "en": "NIST reference figures: North roof 417 m, South 415 m, roughly 63 m square plans. Windows, members, site coordinates, debris, interim construction and surrounding buildings are approximate."
+      },
+      {
+        "ko": "주요 재건 건물과 추모공간만 선택해 2018년 이정표까지 표현합니다. 전체 도시·현재 단지나 재건 완료를 의미하지 않으며 2 WTC 완성 탑을 임의로 추가하지 않습니다.",
+        "en": "Selected buildings and memorial spaces end at a 2018 milestone, not the full city/current site or completed redevelopment. No completed 2 WTC tower is invented."
+      },
+      {
+        "ko": "탐사는 가상 관찰입니다. 해당 시점에 건물이 없으면 잔해·터·풀의 같은 자리를 봅니다. 실제 방문·구조 동선이 아닙니다.",
+        "en": "Inspection is virtual; when a tower is absent its debris, footprint or pool is shown. This is not an actual visitor or emergency route."
+      }
+    ]
+  }
+}

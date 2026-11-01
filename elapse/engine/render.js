@@ -2,7 +2,13 @@
 // Two styles from the same meshes ('color': toon bands and ink edges; 'blueprint': flat fills and light lines),
 // and an x-ray mode that thins the hull to show bulkheads and the water inside.
 import * as THREE from 'three';
+import { createWreckDetail } from './wreck-detail.js';
+import { refineBritannicPiece } from './britannic-form.js';
+import {refineTitanicPiece} from './titanic-form.js';
 import { createCinematic } from './cinematic.js';
+import {createDeepEcology} from './deep-ecology.js';
+import {ecologyMode} from './ecology-model.js';
+import {explorationStops} from './exploration.js';
 import { isTitanic, isBritannic, hasDirecting, smooth } from './directing.js';
 import { buildPiece, LOOK, rng } from './shapes.js';
 import { buildEnvironment } from './env.js';
@@ -32,7 +38,9 @@ export function createRenderer(canvas, model, opts = {}) {
     size: Math.max(model.environment.seabed?.size || 0, span * 1.4 + 600) });
   root.add(env.group);
 
-  const gmap = gradientMap(THREE), byId = new Map(model.pieces.map(p => [p.id, p]));
+  const refine=isBritannic(model)?refineBritannicPiece:isTitanic(model)?refineTitanicPiece:null;
+  const drawingModel=refine?{...model,pieces:model.pieces.map(refine)}:model;
+  const gmap = gradientMap(THREE), byId = new Map(drawingModel.pieces.map(p => [p.id, p]));
   const rustCol = new THREE.Color(LOOK.rust), white = new THREE.Color('#ffffff');
   // ink edges by day; light edges against the night sky and dark water, so a black hull still reads
   const lines = { color: new THREE.LineBasicMaterial({ color: INK }), colorDim: new THREE.LineBasicMaterial({ color: INK, transparent: true, opacity: 0.18, depthWrite: false }),
@@ -42,9 +50,9 @@ export function createRenderer(canvas, model, opts = {}) {
   // every piece: its group (placed by matrix each frame) and its meshes with a material per style
   const items = [];
   const order = [], seen = new Set(), visit = p => { if (seen.has(p.id)) return; seen.add(p.id); if (p.parent && byId.has(p.parent)) visit(byId.get(p.parent)); order.push(p); };
-  model.pieces.forEach(visit);
+  drawingModel.pieces.forEach(visit);
   for (const p of order) {
-    const g = buildPiece(THREE, p, model); g.matrixAutoUpdate = false; root.add(g);
+    const g = buildPiece(THREE, p, drawingModel); g.matrixAutoUpdate = false; root.add(g);
     const meshes = [];
     g.traverse(o => { if ((o.isMesh || o.isLineSegments) && o.userData.role) meshes.push(o); });
     for (const m of meshes) {
@@ -55,6 +63,7 @@ export function createRenderer(canvas, model, opts = {}) {
           blueprint: new THREE.MeshBasicMaterial({ color: BP.accent, transparent: true, opacity: 0.5, depthWrite: false }) };
         m.renderOrder = 3; continue;
       }
+      if(u.planGlass){u.mats={color:new THREE.MeshBasicMaterial({color:'#122831',side:THREE.DoubleSide}),blueprint:new THREE.MeshBasicMaterial({color:'#081d36',side:THREE.DoubleSide})};continue;}
       if (u.role === 'bulkhead') {
         u.mats = { color: new THREE.MeshBasicMaterial({ color: base, transparent: true, opacity: 0.32, side: THREE.DoubleSide, depthWrite: false }),
           blueprint: new THREE.MeshBasicMaterial({ color: BP.line, transparent: true, opacity: 0.18, side: THREE.DoubleSide, depthWrite: false }) };
@@ -90,11 +99,11 @@ export function createRenderer(canvas, model, opts = {}) {
       }
       rusticles.count = 0; g.add(rusticles);
     }
-    const lb = pieceBox(p, model), local = lb && { min: lb.min.map((v, k) => v - p.offset[k]), max: lb.max.map((v, k) => v - p.offset[k]) };
+    const lb = pieceBox(p, drawingModel), local = lb && { min: lb.min.map((v, k) => v - p.offset[k]), max: lb.max.map((v, k) => v - p.offset[k]) };
     items.push({ p, g, meshes, windows, rusticles, local });
   }
   if (env.seabed) env.seabed.userData.mats = {
-    color: new THREE.MeshToonMaterial({ color: isTitanic(model) ? '#18323d' : isBritannic(model) ? '#2b565d' : LOOK.sand, gradientMap: gmap }), blueprint: new THREE.MeshBasicMaterial({ color: BP.dim, wireframe: true, transparent: true, opacity: 0.45 }) };
+    color: new THREE.MeshToonMaterial({ color: isTitanic(model) ? '#18323d' : isBritannic(model) ? '#2b565d' : LOOK.sand, gradientMap: gmap }), blueprint: new THREE.MeshBasicMaterial({ color: BP.bg }) };
 
   if(env.seabed && isBritannic(model)){
     // Neutral procedural sediment grain: lighting/texture, not mapped site data.
@@ -104,7 +113,10 @@ export function createRenderer(canvas, model, opts = {}) {
     env.seabed.userData.mats.color.map=texture;
   }
   const cinematic = hasDirecting(model) && opts.cinematic !== false ? createCinematic(root, model, env.surface) : null;
-  const st = { t: 0, branch: 'a', style: 'color', xray: false, auto: opts.auto !== false, yaw: opts.yaw ?? null, pitch: opts.pitch ?? null, zoom: opts.zoom || 1, last: null, cam: null };
+  const wreckDetail = hasDirecting(model) ? createWreckDetail({root,model,items,ground,shallow:isBritannic(model)}) : null;
+  const ecology=isTitanic(model)?createDeepEcology({root,scene,camera,model,items,ground}):null;
+  const surveyLamp=new THREE.SpotLight('#c5e6ef',1,500,.5,.85,2);scene.add(surveyLamp,surveyLamp.target);surveyLamp.visible=false;surveyLamp.name='exploration-lamp';
+  const st = {exploring:false,exploreTarget:null,lampStrength:1, ecology:opts.ecology!==false, exploreLight:opts.exploreLight!==false, ecoView:opts.ecoView||'scene',ecoClock:0,t: 0, branch: 'a', style: 'color', xray: false, auto: opts.auto !== false, yaw: opts.yaw ?? null, pitch: opts.pitch ?? null, zoom: opts.zoom || 1, last: null, cam: null };
   if (opts.yaw != null || opts.pitch != null) st.auto = false;
 
   // the extra motion of a collapsing piece, on top of its pose
@@ -189,7 +201,7 @@ export function createRenderer(canvas, model, opts = {}) {
     if(cinematic && st.auto && isBritannic(model)){
       if(st.t<40){const heading=st.last.pieces.get('ship').heading;c.yaw=heading-90;c.pitch=17;}
       else if(st.t<62){const p=(st.t-40)/22,heading=st.last.pieces.get('ship').heading;c.yaw=heading-90-30*smooth(p);c.pitch=8;}
-      else{c.yaw=150+20*Math.sin((st.t-62)/38*Math.PI);c.pitch=14;}
+      else{c.yaw=150+20*Math.sin((st.t-62)/38*Math.PI);c.pitch=14;c.dist*=.82;}
     }
     st.focusIds=null;st.focusBox=null;
     if(cinematic && st.auto && isTitanic(model) && st.t>=56){
@@ -201,6 +213,22 @@ export function createRenderer(canvas, model, opts = {}) {
         if(f>.95){st.focusIds=[event.piece];st.focusBox=b;}
       }
     }
+    if(wreckDetail && isTitanic(model) && st.auto && !st.focusIds && st.t>=80 && st.t<=88){
+      const f=smooth((st.t-80)/2)*(1-smooth((st.t-86)/2)),ids=['officers','first-house','bridge-wings'];
+      const b=subjectBox(model,st.last,ids),centre=b.min.map((v,k)=>(v+b.max[k])/2),heading=st.last.pieces.get('hull-bow').heading;
+      c.target=c.target.map((v,k)=>v+(centre[k]-v)*f);c.dist+=(150-c.dist)*f;c.yaw+=(heading-65-c.yaw)*f;c.pitch+=(22-c.pitch)*f;
+      if(f>.95){st.focusIds=ids;st.focusBox=b;}
+    }
+    if(wreckDetail && isBritannic(model) && st.auto && st.t>=82 && st.t<=98){
+      const f=smooth((st.t-82)/4)*(1-smooth((st.t-94)/4));
+      const ids=['officers','gantry-1','bridge-wings'],b=subjectBox(model,st.last,ids),centre=b.min.map((v,k)=>(v+b.max[k])/2);
+      c.target=c.target.map((v,k)=>v+(centre[k]-v)*f);c.dist+=(105-c.dist)*f;c.yaw+=(220-c.yaw)*f;c.pitch+=(26-c.pitch)*f;
+      if(f>.95){st.focusIds=ids;st.focusBox=b;}
+    }
+    const stop=st.exploring&&explorationStops(model).find(s=>s.id===st.exploreTarget);
+    if(stop){let b=subjectBox(model,st.last,stop.parts);if(stop.trimX){const it=items.find(q=>q.p.id===stop.parts[0]);if(it?.local){const box={min:[...it.local.min],max:[...it.local.max]},span=box.max[0]-box.min[0];box.max[0]=box.min[0]+span*stop.trimX[1];box.min[0]+=span*stop.trimX[0];b=worldBox(box,it.g.matrix.elements);}}c.target=b.min.map((v,k)=>(v+b.max[k])/2);c.dist=Math.max(8,...b.max.map((v,k)=>(v-b.min[k])*1.55));c.yaw=stop.yaw;c.pitch=stop.pitch;st.focusBox=b;st.focusIds=stop.parts;}
+    st.ecoFocus=null;ecology?.updateAnimals(st);const ecoFocus=ecology?.inspect(st);
+    if(ecoFocus){st.ecoFocus=ecoFocus;const b=ecoFocus.box;c.target=b.min.map((v,k)=>(v+b.max[k])/2);c.dist=ecoFocus.dist;c.yaw=ecoFocus.yaw;c.pitch=st.ecoView==='sponge'?35:12;st.focusBox=b;st.focusIds=[st.ecoView==='sponge'?'aft-house-stern':st.ecoView==='coral'?'rail-bow-stbd':'hull-bow'];}
     st.cam = c;
     const yaw = (st.auto || st.yaw == null ? c.yaw : st.yaw) * DEG, pitch = Math.max(-80, Math.min(85, st.auto || st.pitch == null ? c.pitch : st.pitch)) * DEG;
     // a tall, narrow screen (a phone held upright) sees less across, so the camera stands further back
@@ -209,7 +237,7 @@ export function createRenderer(canvas, model, opts = {}) {
     const eye = [T[0] + dist * Math.cos(pitch) * Math.cos(yaw), T[1] + dist * Math.cos(pitch) * Math.sin(yaw), T[2] + dist * Math.sin(pitch)];
     const submerged=cinematic && isBritannic(model) && subjectBox(model,st.last,frameSubject(model,st.t)).max[2]<-10;
     if(submerged)eye[2]=Math.min(-8,eye[2]);
-    camera.position.copy(toThree(eye)); camera.near = Math.max(0.5, dist / 200); camera.far = dist * 40 + 10000; camera.updateProjectionMatrix();
+    camera.position.copy(toThree(eye)); camera.near = Math.max(st.ecoFocus ? .003 : .5, dist / 200); camera.far = st.ecoFocus ? Math.max(20,dist*40) : dist * 40 + 10000; camera.updateProjectionMatrix();
     camera.lookAt(toThree(T));
     if(cinematic && st.auto){
       // Fit the current subject at every aspect ratio, with room for the overlay cards.
@@ -224,13 +252,15 @@ export function createRenderer(canvas, model, opts = {}) {
         if(submerged)eye[2]=Math.min(-8,eye[2]);
         camera.position.copy(toThree(eye));camera.lookAt(toThree(T));
       }
-      camera.far=dist*40+10000;camera.updateProjectionMatrix();
+      camera.far=st.ecoFocus?Math.max(20,dist*40):dist*40+10000;camera.updateProjectionMatrix();
     }
     env.update(scene, eye[2], st.style, BP, dist);
     st.eyeZ = eye[2];
   }
 
-  function render() { if (!st.last) apply(st.t); placeCamera(); cinematic?.update(st); renderer.render(scene, camera); }
+  function render() { if (!st.last) apply(st.t); placeCamera(); cinematic?.update(st); wreckDetail?.update(st); ecology?.updateLight(st,hemi,sun); surveyLamp.visible=st.exploring&&(!ecology||!ecologyMode(model,st))&&st.style==='color'&&st.exploreLight;
+    if(surveyLamp.visible){const T=toThree(st.cam.target),d=camera.position.distanceTo(T);surveyLamp.position.copy(camera.position);surveyLamp.target.position.copy(T);surveyLamp.distance=d*5+5;surveyLamp.intensity=d*d*2*st.lampStrength;}
+    renderer.render(scene, camera); opts.onRender?.(); }
 
   function resize() {
     const w = canvas.clientWidth || 800, h = canvas.clientHeight || 500;
@@ -288,9 +318,20 @@ export function createRenderer(canvas, model, opts = {}) {
     return { warm, water: wet };
   }
 
+  function diagram(){
+    const W=canvas.clientWidth||800,ids=isBritannic(model)?['officers','gantry-1','funnel-1','hull-bow']:(st.focusIds?.includes('first-house')?['officers','first-house','hull-bow','bridge-wings']:['officers','hull-bow','funnel-1','hull-stern']);
+    const anchors=ids.map(id=>{const it=items.find(q=>q.p.id===id);if(!it?.g.visible||!it.local)return null;
+      const b=worldBox(it.local,it.g.matrix.elements),v=toThree(b.min.map((n,k)=>(n+b.max[k])/2)).project(camera);
+      return v.z>1||v.z< -1?null:{id,name:it.p.name,x:(v.x+1)/2,y:(1-v.y)/2};}).filter(Boolean);
+    const a=toThree(st.cam?.target||[0,0,0]),right=new THREE.Vector3(1,0,0).applyQuaternion(camera.quaternion),b=a.clone().add(right);
+    a.project(camera);b.project(camera);return {anchors,ppm:Math.max(.0001,Math.abs(b.x-a.x)*W/2)};
+  }
   return {
-    state: st, renderer, scene, camera,
+    state: st, renderer, scene, camera, diagram,
+    ecologyInfo(){return ecology?{available:st.t>=0&&ecologyMode(model,st),kind:st.ecoFocus?.kind||null,clock:st.ecoClock,...ecology.stats()}:null;},
     set(o = {}) {
+      for(const k of ['ecology','exploreLight','ecoView','ecoClock','exploring','lampStrength'])if(o[k]!=null)st[k]=o[k];
+      if('exploreTarget' in o)st.exploreTarget=o.exploreTarget;
       if (o.style) st.style = o.style;
       if (o.xray != null) st.xray = !!o.xray;
       if (o.branch) st.branch = o.branch;
@@ -299,6 +340,9 @@ export function createRenderer(canvas, model, opts = {}) {
     },
     setAuto(on) { st.auto = !!on; if (on) { st.zoom = 1; } render(); },
     reset() { st.auto = true; st.zoom = 1; st.yaw = st.pitch = null; render(); },
+    restoreView(v){for(const k of ['auto','yaw','pitch','zoom'])st[k]=v[k];render();},
+    zoomBy(f){manual();st.zoom=Math.max(.2,Math.min(5,st.zoom*f));render();},
+    animateEcology(clock){st.ecoClock=clock;render();},
     frame, probe, resize, render,
     dataURL() { render(); return renderer.domElement.toDataURL('image/png'); },
   };

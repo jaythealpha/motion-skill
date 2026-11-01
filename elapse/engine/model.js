@@ -1,4 +1,5 @@
 // The time model: what Claude writes from research, and what the page and Gate 1 read. Pure.
+import {isBuilding,normalizeBuilding,validateBuilding} from './building-model.js';
 import { parseAt, timeToBar } from './chapters.js';
 
 // why a time did not land on the bar: it is not a time at all, or it falls outside the chapters
@@ -18,6 +19,7 @@ const bi = v => v == null ? v : typeof v === 'string' ? { ko: v, en: v } : v;
 const arr = v => Array.isArray(v) ? v : [];
 
 export function normalizeModel(raw) {
+  if(isBuilding(raw))return normalizeBuilding(raw);
   const m = structuredClone(raw);
   m.subject = m.subject || {}; m.subject.name = bi(m.subject.name);
   m.features = Object.fromEntries(FEATURES.map(f => [f, !!m.features?.[f]]).concat(
@@ -65,6 +67,7 @@ export const sourcedShare = m => classShares(m).sourced;
 
 // schema and references only; the physical checks live in checks.js
 export function validateModel(m) {
+  if(isBuilding(m))return validateBuilding(m);
   const errors = [], warnings = [], err = (where, msg) => errors.push({ where, msg });
   const ids = new Set(), sources = new Set(m.sources.map(s => s.id));
   const d = m.subject.dims || {};

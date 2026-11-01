@@ -1,5 +1,6 @@
 // Gate 1's physical checks, on top of the schema checks in model.js. Pure; the CLI is scripts/check_model.mjs.
 // Checks tied to an optional feature run only when the model turns that feature on.
+import {isBuilding,validateBuilding} from './building-model.js';
 import { validateModel, confidenceItems, DIM_TOL } from './model.js';
 import { classOf } from '../shared/confidence.js';
 import { evaluate } from './tracks.js';
@@ -176,6 +177,7 @@ function branches(m, err) {
 }
 
 export function runChecks(model, { official } = {}) {
+  if(isBuilding(model))return validateBuilding(model);
   const { errors, warnings } = validateModel(model);
   if (errors.length) return { errors, warnings };
   const err = (where, msg) => errors.push({ where, msg });

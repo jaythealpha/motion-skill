@@ -41,7 +41,9 @@ const p2 = n => String(n).padStart(2, '0');
 // the real time at bar t: '4월 15일 01:00' / 'Apr 15, 01:00' in a minute chapter, '1996년' / '1996' in a year chapter
 export function formatTime(model, t, lang = 'ko') {
   const c = model.chapters[chapterAt(model, t)], ms = barToTime(model, t);
+  if(c.unit==='month'){const d=new Date(ms);return lang==='en'?`${d.getUTCFullYear()}.${p2(d.getUTCMonth()+1)}`:`${d.getUTCFullYear()}년 ${d.getUTCMonth()+1}월`;}
   if (c.unit === 'year') { const y = new Date(ms).getUTCFullYear(); return lang === 'en' ? String(y) : `${y}년`; }
+  if(model.geometry?.type==='wtc-2001-2018'){const d=new Date(Math.floor(ms/1000)*1000),hm=`${p2(d.getUTCHours())}:${p2(d.getUTCMinutes())}:${p2(d.getUTCSeconds())}`;return lang==='en'?`${MON[d.getUTCMonth()]} ${d.getUTCDate()}, ${hm}`:`${d.getUTCMonth()+1}월 ${d.getUTCDate()}일 ${hm}`;}
   const d = new Date(Math.round(ms / 60000) * 60000), hm = `${p2(d.getUTCHours())}:${p2(d.getUTCMinutes())}`;
   return lang === 'en' ? `${MON[d.getUTCMonth()]} ${d.getUTCDate()}, ${hm}` : `${d.getUTCMonth() + 1}월 ${d.getUTCDate()}일 ${hm}`;
 }

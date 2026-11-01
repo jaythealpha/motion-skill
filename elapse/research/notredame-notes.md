@@ -1,0 +1,24 @@
+# Notre-Dame fire / restoration evidence
+
+Checked 2026-11-02. Scope ends at the December 2024 reopening; it does not show the present conservation site. All geometry is independently generated. No source photos, scans, models, textures or video frames were downloaded or embedded. Statements are paraphrased and sources appear as links.
+
+## Primary records
+
+- Cathedral plan summary: https://www.notredamedeparis.fr/en/understand/architecture/plans/ and French counterpart `/comprendre/architecture/plans/`. Official search-index excerpts confirm Latin-cross plan, width48m, tower69m and under-vault33m. Direct opens returned403. Therefore this is **not a traced plan or a full-plan visual review**. The128m model length, bay spacing, chapel polygon and ornament are explicitly estimated.
+- Cathedral roof summary: https://www.notredamedeparis.fr/en/understand/architecture/the-roof-structure/ . Official indexed reference: longitudinal timber roof about100m, nave span13m, transept40m, roof height10m. The model uses approximate schematic subdivisions, not an inventory of historic timbers.
+- Ministry historic spire: https://notre-dame-de-paris.culture.gouv.fr/fr/petite-histoire-de-la-fleche . Reference height96m. Model excludes exact sculpture and reliquary detail; no people/statues represented as human figures.
+- Ministry retrospective: https://www.culture.gouv.fr/de/regions/drac-ile-de-france/actualites/actualite-a-la-une/les-premiers-mois-cruciaux-du-sauvetage-de-notre-dame-de-paris . Approximately19:45 spire collapse. Other accounts may round the minute differently. A five-minute illustrated motion interval is an authored presentation window, **not measured collapse duration**.
+- Ministry emergency diagnosis, full text read: https://notre-dame-de-paris.culture.gouv.fr/fr/les-mesures-durgence . Loss of roof, spire, portions of vault; surviving rose glazing; scaffold remained after spire fall. High-vault temporary weather protection by19April2019. The actual damaged vault areas are not surveyed here; openings/debris locations remain estimated.
+- Ministry stabilisation: https://notre-dame-de-paris.culture.gouv.fr/fr/les-travaux-de-securisation-et-de-consolidation . Damaged scaffold removal completed24November2020; debris clearance throughMarch2021, timber centering and interior scaffolds. Source descriptions differ on when dismantling started; the June2020–November2020 visual fade is schematic rather than a dated component schedule.
+- Ministry restoration overview, full text read: https://www.culture.gouv.fr/actualites/special-notre-dame-de-paris-1-6-les-grandes-etapes-d-une-renaissance . Roof fire controlled around03:45; stabilisation through2021, interior works summer2022; cockerel placed16December2023; choir framing ceremony January2024.
+- Project owner: https://rebatirnotredamedeparis.fr/actualites/retour-sur-2023 and https://rebatirnotredamedeparis.fr/actualites/lancement-de-la-reconstruction-de-la-fleche . Rebuilt timber spire,96m top. Rebuild/reveal pacing and scaffold coordinates remain estimated.
+- Government reopening: https://www.info.gouv.fr/actualite/la-reouverture-historique-de-notre-dame-de-paris . Ceremonies7–8December2024 and public reopening8December. The end card represents this milestone, not all works finishing.
+- Project-owner continuing-work FAQ, full text read: https://rebatirnotredamedeparis.fr/support-projects/faq . Subsequent exterior, buttress, window and other conservation continues; no invented2026 finished-state claim.
+
+## Presentation decisions and limits
+
+Dates are Paris **local wall-clock values**, stored without automatic timezone conversion under the existing chapter contract. Initial18:30 is an illustrative pre-fire viewing boundary. Fire size, smoke, roof-loss order, fall direction, five-minute fall window, temporary supports, exposed timber, cleaning colour and rebuilding interpolation are estimates. Motion is a deterministic function of historical time; reverse scrubbing restores all components. The collapse passage is deliberately slowed during playback; the speed multiplier is not a duration claim.
+
+Stone twin towers remain standing. Roof skin and timber are separate from masonry and local vault openings. Exploration locks the chosen date and returns paused to the previous time/style/camera. Seven stops include surviving west front/rose, crossing, roof, cutaway vault and apse/buttresses. The vault stop hides roof and spire layers explicitly for observation. This is not a real visitor route, emergency training tool, structural/fire simulation, restoration work instruction or surveyed CAD.
+
+The confidence share counts tagged explanatory pieces and dated events; it is not a percentage accuracy of the mesh. Geometry is estimated even when the corresponding event date is sourced. Sources were current when checked; later conservation milestones are outside this model.

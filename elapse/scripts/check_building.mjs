@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+import {mkdirSync,writeFileSync} from 'node:fs';
+import {resolve,join} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {openBrowser} from '../shared/cdp.mjs';
+const [page='elapse/examples/eiffel-tower.html',out='elapse/.out/building-check']=process.argv.slice(2);mkdirSync(out,{recursive:true});const B=await openBrowser({tag:'elapse-building'}),rows=[];
+try{const load=B.nextLoad(15000);await B.S('Page.navigate',{url:pathToFileURL(resolve(page)).href});await load;await B.evaluate(`(async()=>{for(let i=0;i<100&&!window.__elapse?.ready;i++)await new Promise(r=>setTimeout(r,100));if(!window.__elapse?.ready)throw new Error('not ready');})()`);
+ for(const width of [375,768,1440]){
+  await B.S('Emulation.setDeviceMetricsOverride',{width,height:1000,deviceScaleFactor:1,mobile:false});await B.evaluate('new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))');
+  for(const style of ['color','blueprint'])for(const t of [0,15,38,48,68,95,100]){const r=await B.evaluate(`(()=>{const u=window.__elapse;u.st.style='${style}';u.setT(${t},true);return {t:${t},style:'${style}',...u.R.frame(),height:u.R.constructionInfo().height,overflow:document.documentElement.scrollWidth>innerWidth+1,slots:[...document.querySelectorAll('.el-card,[data-gauge],.el-bar')].map(e=>{const r=e.getBoundingClientRect();return[r.x,r.y+scrollY,r.width,r.height]}),errors:u.errors};})()`);if(r.overflow||r.errors.length||r.inside<.6||r.area<.02)throw new Error(width+': '+JSON.stringify(r));const ref=rows.find(q=>q.width===width);if(ref)for(let i=0;i<5;i++)for(let k=0;k<4;k++)if(Math.abs(ref.slots[i][k]-r.slots[i][k])>.5)throw new Error('moving slot '+width+'/'+style+'/'+t);rows.push({width,...r});}
+  await B.evaluate(`(()=>{const u=window.__elapse;u.st.style='color';u.setT(100,true);u.explore(true);})()`);const ids=await B.evaluate(`[...document.querySelector('[data-survey=stop]').options].map(o=>o.value)`);
+  for(const id of ids){const r=await B.evaluate(`(()=>{const u=window.__elapse,s=document.querySelector('[data-survey=stop]');s.value='${id}';s.dispatchEvent(new Event('change',{bubbles:true}));return {stop:'${id}',...u.R.frame(),overflow:document.documentElement.scrollWidth>innerWidth+1,errors:u.errors};})()`);if(r.overflow||r.errors.length||r.inside<.6||r.area<.02)throw new Error('exploration '+width+': '+JSON.stringify(r));rows.push({width,...r});if(['overview','first','crown'].includes(id)){const {data}=await B.S('Page.captureScreenshot',{format:'png'});writeFileSync(join(out,width+'-'+id+'.png'),Buffer.from(data,'base64'));}}
+  await B.evaluate(`(()=>{const u=window.__elapse;u.explore(false);if(u.st.t!==100)throw new Error('date not restored');u.setT(0,true);u.explore(true);if([...document.querySelector('[data-survey=stop]').options].filter(o=>o.value!=='overview'&&o.value!=='foundation').some(o=>!o.disabled))throw new Error('unbuilt stop enabled');if(document.querySelector('[data-survey=motion]'))throw new Error('ship ecology control leaked');u.explore(false);})()`);console.log('PASS building '+width+'px: timeline/styles/fixed slots and inspection');
+ }
+ writeFileSync(join(out,'results.json'),JSON.stringify(rows,null,2)+'\n');console.log('BUILDING PASS ('+rows.length+' frames)');
+}catch(e){console.error('BUILDING FAIL: '+e.message);process.exitCode=1;}finally{await B.cleanup();}

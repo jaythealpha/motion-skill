@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import {isWTC,wtcRate} from '../engine/wtc-model.js';
+import {notreDameRate} from '../engine/notredame-model.js';
 // Gate 2: open a built Elapse page in headless Chrome (over the DevTools protocol, no npm packages), shoot it
 // across chapters, events, styles, x-ray, languages and a phone viewport, check each shot, and make contact sheets.
 //   node scripts/shoot.mjs page.html outDir [--quick] [--only "t=30&yaw=200"]... [--scale N]
@@ -61,7 +63,7 @@ if (only.length) {
 }
 
 await shot('ch1-start', { t: 0 });
-const M = await evaluate(`(() => { const m = window.__elapse.model; return { subject: m.subject, chapters: m.chapters.map(c => ({ id: c.id, bar: c.bar })),
+const M = await evaluate(`(() => { const m = window.__elapse.model; return { subject: m.subject, geometry:m.geometry, chapters: m.chapters.map(c => ({ id: c.id, bar: c.bar, start:c.start, end:c.end })),
   events: m.events.map(e => ({ id: e.id, kind: e.kind, card: e.card, t: e._t, _t: e._t, _until: e._until })), features: m.features }; })()`);
 const evName = e => 'ev-' + e.id.replace(/[^a-z0-9-]+/gi, '_');
 for (const [i, c] of M.chapters.entries()) {        // --quick keeps every chapter's start and end, and drops the rest
@@ -111,11 +113,13 @@ for (const [speed, secs] of quick ? [['slow', 30]] : [['xslow', 60], ['slow', 30
   await shot(`speed-${speed}`, { t: 10, speed, play: 1 });
   const moved = await evaluate(`(async () => { const t0 = window.__elapse.st.t, p0 = performance.now(); await new Promise(r => setTimeout(r, 2000));
     return { start: t0, dt: window.__elapse.st.t - t0, secs: (performance.now() - p0) / 1000 }; })()`);
-  // Directed ships deliberately linger at critical events. Integrate that time map;
+  // Directed scenes deliberately linger at critical events. Integrate that time map;
   // the tolerance is unchanged, and other ships retain their constant-rate check.
   let expectedEnd=moved.start;
-  for(let elapsed=0;elapsed<moved.secs;elapsed+=.005){const dt=Math.min(.005,moved.secs-elapsed);expectedEnd+=dt*100/secs*(hasDirecting(M)?directingBeat(M,expectedEnd).rate:1);}
+  const quantum=isWTC(M)?.0001:.005;
+  for(let elapsed=0;elapsed<moved.secs;elapsed+=quantum){const dt=Math.min(quantum,moved.secs-elapsed);expectedEnd+=dt*100/secs*(hasDirecting(M)?directingBeat(M,expectedEnd).rate:isWTC(M)?wtcRate(M,expectedEnd):notreDameRate(M,expectedEnd));}
   const expect = expectedEnd-moved.start, ok = Math.abs(moved.dt - expect) < Math.max(2, expect * 0.3);
+  if(isWTC(M))console.log(`WTC clock: start=${moved.start.toFixed(5)} elapsed=${moved.secs.toFixed(3)}`);
   console.log(`${ok ? 'ok  ' : 'FAIL'} speed-${speed}  moved ${moved.dt.toFixed(1)} in ${moved.secs.toFixed(1)} s (expected ~${expect.toFixed(1)})`);
   if (!ok) flag(`speed-${speed}-rate`, `speed-${speed}.png`, 'playback speed is off');
 }

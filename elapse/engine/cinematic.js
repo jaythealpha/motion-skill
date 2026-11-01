@@ -1,5 +1,6 @@
 // Deterministic illustrative water/particles; not a fluid or structural solver.
 import * as THREE from 'three';
+import {ecologyMode} from './ecology-model.js';
 import { rng, apply } from './math.js';
 import { barToTime, parseAt } from './chapters.js';
 import { directingBeat, smooth, isBritannic } from './directing.js';
@@ -32,6 +33,7 @@ export function createCinematic(root, model, surface) {
     const pulse=id==='collision'?smooth((p-.5)/.04)*(1-smooth((p-.68)/.3)):id==='break'?smooth(sec/5)*(1-smooth((sec-30)/100)):.15;
     material.uniforms.impact.value=pulse*1.5;
     const collapse=model.events.filter(e=>e.kind==='collapse'&&e.mode!=='vanish'&&e.card!==false&&t>=e._t&&t<e._until+.8).at(-1);
+    points.visible=!ecologyMode(model,st)||!!collapse;
     const dustPiece=collapse?s.pieces.get(collapse.piece):null;
     const cp=collapse?smooth((t-collapse._t)/Math.max(.08,collapse._until-collapse._t)):0;
     const landing=model.events.filter(e=>['bow-lands','stern-lands'].includes(e.id)&&t>=e._t&&t<e._t+.65).at(-1);

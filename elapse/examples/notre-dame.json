@@ -1,0 +1,610 @@
+{
+  "subject": {
+    "kind": "building",
+    "id": "notredame",
+    "name": {
+      "ko": "노트르담 · 화재와 복원",
+      "en": "Notre-Dame · Fire and restoration"
+    },
+    "dims": {
+      "width": 48,
+      "depth": 128,
+      "height": 96
+    }
+  },
+  "geometry": {
+    "type": "notredame-2019"
+  },
+  "restoration": {
+    "template": "roof-spire-2019-2024"
+  },
+  "sources": [
+    {
+      "id": "plans",
+      "title": "Cathedral · plan and reference dimensions",
+      "url": "https://www.notredamedeparis.fr/en/understand/architecture/plans/"
+    },
+    {
+      "id": "spire",
+      "title": "Ministry of Culture · historic spire",
+      "url": "https://notre-dame-de-paris.culture.gouv.fr/fr/petite-histoire-de-la-fleche"
+    },
+    {
+      "id": "roof",
+      "title": "Cathedral · timber roof structure",
+      "url": "https://www.notredamedeparis.fr/en/understand/architecture/the-roof-structure/"
+    },
+    {
+      "id": "fire",
+      "title": "Ministry of Culture · first rescue months",
+      "url": "https://www.culture.gouv.fr/de/regions/drac-ile-de-france/actualites/actualite-a-la-une/les-premiers-mois-cruciaux-du-sauvetage-de-notre-dame-de-paris"
+    },
+    {
+      "id": "damage",
+      "title": "Ministry of Culture · emergency diagnosis",
+      "url": "https://notre-dame-de-paris.culture.gouv.fr/fr/les-mesures-durgence"
+    },
+    {
+      "id": "secure",
+      "title": "Ministry of Culture · stabilisation",
+      "url": "https://notre-dame-de-paris.culture.gouv.fr/fr/les-travaux-de-securisation-et-de-consolidation"
+    },
+    {
+      "id": "rebirth",
+      "title": "Ministry of Culture · restoration milestones",
+      "url": "https://www.culture.gouv.fr/actualites/special-notre-dame-de-paris-1-6-les-grandes-etapes-d-une-renaissance"
+    },
+    {
+      "id": "reopen",
+      "title": "French Government · reopening",
+      "url": "https://www.info.gouv.fr/actualite/la-reouverture-historique-de-notre-dame-de-paris"
+    },
+    {
+      "id": "ongoing",
+      "title": "Rebâtir Notre-Dame · continuing conservation",
+      "url": "https://rebatirnotredamedeparis.fr/support-projects/faq"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "before",
+      "name": {
+        "ko": "화재 전",
+        "en": "Before fire"
+      },
+      "start": "2019-04-15T18:30",
+      "end": "2019-04-15T18:45",
+      "bar": [
+        0,
+        10
+      ],
+      "unit": "minute"
+    },
+    {
+      "id": "fire",
+      "name": {
+        "ko": "화재·첨탑",
+        "en": "Fire / spire"
+      },
+      "start": "2019-04-15T18:45",
+      "end": "2019-04-15T21:00",
+      "bar": [
+        10,
+        32
+      ],
+      "unit": "minute"
+    },
+    {
+      "id": "damage",
+      "name": {
+        "ko": "손상 상태",
+        "en": "Damage"
+      },
+      "start": "2019-04-15T21:00",
+      "end": "2019-04-16T12:00",
+      "bar": [
+        32,
+        42
+      ],
+      "unit": "minute"
+    },
+    {
+      "id": "secure",
+      "name": {
+        "ko": "안정화",
+        "en": "Stabilisation"
+      },
+      "start": "2019-04-16T12:00",
+      "end": "2020-11-24",
+      "bar": [
+        42,
+        58
+      ],
+      "unit": "month"
+    },
+    {
+      "id": "restore",
+      "name": {
+        "ko": "구조 복원",
+        "en": "Rebuilding"
+      },
+      "start": "2020-11-24",
+      "end": "2023-12-16",
+      "bar": [
+        58,
+        88
+      ],
+      "unit": "month"
+    },
+    {
+      "id": "reopen",
+      "name": {
+        "ko": "재개관",
+        "en": "Reopening"
+      },
+      "start": "2023-12-16",
+      "end": "2024-12-08T23:59",
+      "bar": [
+        88,
+        100
+      ],
+      "unit": "month"
+    }
+  ],
+  "events": [
+    {
+      "id": "before",
+      "at": "2019-04-15T18:30",
+      "kind": "note",
+      "title": {
+        "ko": "화재 이전의 구조",
+        "en": "Before the fire"
+      },
+      "text": {
+        "ko": "쌍탑·석조 벽과 목조 지붕·첨탑을 구분해 보세요. 첨탑 둘레에는 당시 보수 비계가 있었습니다.",
+        "en": "Compare stone towers and walls with the timber roof and spire; a restoration scaffold already surrounded the spire."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "damage"
+      ]
+    },
+    {
+      "id": "alarm",
+      "at": "2019-04-15T18:45",
+      "kind": "note",
+      "title": {
+        "ko": "지붕 화재",
+        "en": "Roof fire"
+      },
+      "text": {
+        "ko": "4월 15일 저녁 지붕에서 불이 번집니다. 화염 크기·확산과 중간 시각은 설명용 추정입니다.",
+        "en": "The roof burns on the evening of 15 April. Flame scale, spread and intermediate timing are illustrative."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "fire"
+      ]
+    },
+    {
+      "id": "collapse",
+      "at": "2019-04-15T19:45",
+      "kind": "note",
+      "title": {
+        "ko": "첨탑 붕괴",
+        "en": "Spire collapse"
+      },
+      "text": {
+        "ko": "문화부 회고는 첨탑 붕괴를 약 19:45로 기록합니다. 기울기·낙하 경로는 추정이며 석조 쌍탑 전체가 무너진 것은 아닙니다.",
+        "en": "A ministry account places the spire collapse around 19:45. Its motion is estimated; the stone twin towers did not collapse."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "fire"
+      ]
+    },
+    {
+      "id": "night",
+      "at": "2019-04-15T21:00",
+      "kind": "note",
+      "title": {
+        "ko": "남아 있는 석조 구조",
+        "en": "Surviving stone structure"
+      },
+      "text": {
+        "ko": "지붕·첨탑과 볼트 일부가 손상됩니다. 장미창과 주요 석조 구조는 남아 있습니다.",
+        "en": "The roof, spire and parts of the vault are damaged. Rose windows and the main stone structure survive."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "damage"
+      ]
+    },
+    {
+      "id": "control",
+      "at": "2019-04-16T03:45",
+      "kind": "note",
+      "title": {
+        "ko": "지붕 화재 진정",
+        "en": "Roof fire brought under control"
+      },
+      "text": {
+        "ko": "문화부 회고는 지붕 화재가 새벽 03:45경 진정됐다고 기록합니다. 잔해·그을음 위치는 추정 도해입니다.",
+        "en": "The ministry account places control of the roof fire around 03:45. Debris and soot positions are illustrative."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "rebirth"
+      ]
+    },
+    {
+      "id": "tarp",
+      "at": "2019-04-19",
+      "kind": "note",
+      "title": {
+        "ko": "임시 덮개·긴급 지지",
+        "en": "Temporary protection"
+      },
+      "text": {
+        "ko": "4월 19일까지 높은 볼트 위의 임시 방수 덮개가 설치됩니다. 부벽과 볼트의 지지·안정화가 이어집니다.",
+        "en": "Temporary high-vault weather protection is in place by 19 April; buttress and vault stabilisation continues."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "damage"
+      ]
+    },
+    {
+      "id": "scaffold",
+      "at": "2020-11-24",
+      "kind": "note",
+      "title": {
+        "ko": "손상 비계 철거",
+        "en": "Damaged scaffold removed"
+      },
+      "text": {
+        "ko": "화재 때 남았던 첨탑 비계의 철거가 완료됩니다. 이후 볼트 조사와 보수 접근이 나아집니다.",
+        "en": "Removal of the fire-damaged spire scaffold is completed, improving access to the vaults."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "secure"
+      ]
+    },
+    {
+      "id": "restoration",
+      "at": "2022-07-01",
+      "kind": "note",
+      "title": {
+        "ko": "구조 복원 준비·시공",
+        "en": "Restoration works"
+      },
+      "text": {
+        "ko": "2022년 여름 내부 복원 작업이 본격화됩니다. 도해의 트러스·석재 조립 순서와 중간 형상은 추정입니다.",
+        "en": "Interior restoration intensifies in summer 2022. Truss and masonry assembly sequences in this study are estimated."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "rebirth"
+      ]
+    },
+    {
+      "id": "spire",
+      "at": "2023-12-16",
+      "kind": "note",
+      "title": {
+        "ko": "첨탑 실루엣의 귀환",
+        "en": "Spire silhouette returns"
+      },
+      "text": {
+        "ko": "12월 16일 첨탑 꼭대기에 수탉 장식이 놓입니다. 지붕 골조와 덮개 공사는 이후에도 이어집니다.",
+        "en": "The cockerel is installed on 16 December; roof-frame and covering works continue."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "rebirth"
+      ]
+    },
+    {
+      "id": "reopen",
+      "at": "2024-12-08",
+      "kind": "note",
+      "title": {
+        "ko": "재개관",
+        "en": "Reopening"
+      },
+      "text": {
+        "ko": "2024년 12월 재개관을 맞습니다. 이는 모든 보존 공사가 끝났다는 의미가 아닙니다.",
+        "en": "The cathedral reopens in December 2024; this does not mean every conservation project is finished."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "reopen"
+      ]
+    }
+  ],
+  "pieces": [
+    {
+      "id": "overview",
+      "name": {
+        "ko": "전체 구조",
+        "en": "Whole cathedral"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "plans"
+      ]
+    },
+    {
+      "id": "west",
+      "name": {
+        "ko": "서쪽 정면·쌍탑",
+        "en": "West front / towers"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "plans"
+      ]
+    },
+    {
+      "id": "rose",
+      "name": {
+        "ko": "장미창·트레이서리",
+        "en": "Rose / tracery"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "plans"
+      ]
+    },
+    {
+      "id": "crossing",
+      "name": {
+        "ko": "교차부·첨탑",
+        "en": "Crossing / spire"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "spire"
+      ]
+    },
+    {
+      "id": "roof",
+      "name": {
+        "ko": "지붕·참나무 트러스",
+        "en": "Roof / oak trusses"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "roof"
+      ]
+    },
+    {
+      "id": "vault",
+      "name": {
+        "ko": "볼트 손상·보수",
+        "en": "Vault damage / repair"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "plans"
+      ]
+    },
+    {
+      "id": "buttress",
+      "name": {
+        "ko": "공중 부벽·후진",
+        "en": "Flying buttresses / apse"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "plans"
+      ]
+    }
+  ],
+  "stops": [
+    {
+      "id": "overview",
+      "name": {
+        "ko": "전체 구조",
+        "en": "Whole cathedral"
+      },
+      "box": {
+        "min": [
+          -65,
+          -27,
+          0
+        ],
+        "max": [
+          65,
+          27,
+          96
+        ]
+      },
+      "parts": [
+        "overview"
+      ],
+      "availableFrom": 0,
+      "yaw": 225,
+      "pitch": 20
+    },
+    {
+      "id": "west",
+      "name": {
+        "ko": "서쪽 정면·쌍탑",
+        "en": "West front / towers"
+      },
+      "box": {
+        "min": [
+          -65,
+          -23,
+          0
+        ],
+        "max": [
+          -42,
+          23,
+          70
+        ]
+      },
+      "parts": [
+        "west"
+      ],
+      "availableFrom": 0,
+      "yaw": 210,
+      "pitch": 13
+    },
+    {
+      "id": "rose",
+      "name": {
+        "ko": "장미창·트레이서리",
+        "en": "Rose / tracery"
+      },
+      "box": {
+        "min": [
+          -65,
+          -8,
+          20
+        ],
+        "max": [
+          -59,
+          8,
+          46
+        ]
+      },
+      "parts": [
+        "rose"
+      ],
+      "availableFrom": 0,
+      "yaw": 180,
+      "pitch": 8
+    },
+    {
+      "id": "crossing",
+      "name": {
+        "ko": "교차부·첨탑",
+        "en": "Crossing / spire"
+      },
+      "box": {
+        "min": [
+          -5,
+          -10,
+          28
+        ],
+        "max": [
+          15,
+          10,
+          96
+        ]
+      },
+      "parts": [
+        "crossing"
+      ],
+      "availableFrom": 0,
+      "yaw": 230,
+      "pitch": 18
+    },
+    {
+      "id": "roof",
+      "name": {
+        "ko": "지붕·참나무 트러스",
+        "en": "Roof / oak trusses"
+      },
+      "box": {
+        "min": [
+          -42,
+          -12,
+          29
+        ],
+        "max": [
+          48,
+          12,
+          49
+        ]
+      },
+      "parts": [
+        "roof"
+      ],
+      "availableFrom": 0,
+      "yaw": 235,
+      "pitch": 38
+    },
+    {
+      "id": "vault",
+      "name": {
+        "ko": "볼트 손상·보수",
+        "en": "Vault damage / repair"
+      },
+      "box": {
+        "min": [
+          -11,
+          -12,
+          24
+        ],
+        "max": [
+          19,
+          12,
+          44
+        ]
+      },
+      "parts": [
+        "vault"
+      ],
+      "availableFrom": 0,
+      "yaw": 225,
+      "pitch": 53
+    },
+    {
+      "id": "buttress",
+      "name": {
+        "ko": "공중 부벽·후진",
+        "en": "Flying buttresses / apse"
+      },
+      "box": {
+        "min": [
+          23,
+          -26,
+          0
+        ],
+        "max": [
+          65,
+          26,
+          40
+        ]
+      },
+      "parts": [
+        "buttress"
+      ],
+      "availableFrom": 0,
+      "yaw": 40,
+      "pitch": 24
+    }
+  ],
+  "meta": {
+    "interpretation": {
+      "ko": "2019년 화재 전부터 2024년 재개관까지. 공식 기록을 바탕으로 만든 추정 건축 도해입니다.",
+      "en": "From before the 2019 fire to the 2024 reopening; an estimated architectural study grounded in official records."
+    },
+    "about": {
+      "ko": "파리 노트르담 대성당의 손상과 복원을 설명하는 교육용 도해입니다. 사람·피해자·구조대원은 표현하지 않습니다. 화재 원인을 추정하지 않으며 연소·붕괴의 물리 시뮬레이션이 아닙니다.",
+      "en": "An educational study of cathedral damage and restoration. No people, victims or responders are depicted. It does not infer a fire cause or simulate combustion/collapse physics."
+    },
+    "limitations": [
+      {
+        "ko": "쌍탑 69m·첨탑 96m·폭 48m는 공식 참고 치수입니다. 모델 길이 128m와 개별 배치·장식·부재는 추정이며 실측 CAD가 아닙니다.",
+        "en": "Towers69m, spire96m and width48m are official reference dimensions. Model length128m and detailed coordinates, ornament and members are approximate, not surveyed CAD."
+      },
+      {
+        "ko": "현지 시각을 표기합니다. 첨탑 붕괴는 약 19:45의 회고를 따르며, 짧은 낙하·화염·연기·잔해·볼트 구멍과 중간 복원 순서는 추정입니다.",
+        "en": "Displayed times are Paris local wall-clock values. The collapse follows an approximately19:45 account; motion, fire/smoke, debris, vault openings and intermediate rebuilding are estimated."
+      },
+      {
+        "ko": "복원 중에는 지붕 골조를 볼 수 있습니다. 손상 부위 탐사는 가상 관찰이며 실제 접근 가능한 방문 동선이 아닙니다.",
+        "en": "Roof frames are visible during rebuilding. Damage inspection is a virtual view, not an accessible visitor route."
+      },
+      {
+        "ko": "마지막 장면은 2024년 12월 재개관의 도해입니다. 이후 외부·부벽·창 등의 보존 작업이 계속됩니다.",
+        "en": "The final scene depicts the December2024 reopening, not present-day completion; exterior, buttress and window conservation continues."
+      }
+    ]
+  }
+}

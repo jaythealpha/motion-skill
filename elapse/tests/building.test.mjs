@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {normalizeModel} from '../engine/model.js';
+import {runChecks} from '../engine/checks.js';
+import {buildingProgress} from '../engine/building-model.js';
+import {eiffelMembers} from '../engine/eiffel-form.js';
+import {timeToBar,formatTime} from '../engine/chapters.js';
+const raw=JSON.parse(readFileSync(new URL('../examples/eiffel-tower.json',import.meta.url))),m=normalizeModel(raw);
+test('building model passes its own contract without fake ship dimensions or raw mutation',()=>{const before=JSON.stringify(raw);assert.equal(runChecks(m).errors.length,0);assert.equal(JSON.stringify(raw),before);assert.equal(m.subject.dims.draft,undefined);assert.equal(m.features.compartments,false);});
+test('source schedule maps to its milestones, with bounded monotonic intermediate height',()=>{for(const [date,h] of [['1887-07-01',0],['1887-12-07',57],['1888-04-01',57],['1888-08-14',115],['1889-03-31',300]])assert.ok(Math.abs(buildingProgress(m,timeToBar(m,date)).height-h)<1e-8);let prev=-1;for(let t=0;t<=100;t+=.25){const p=buildingProgress(m,t);assert.ok(p.height>=prev&&p.height<=300);prev=p.height;for(const k of ['foundation','first','second','crown','arch','scaffold'])assert.ok(p[k]>=0&&p[k]<=1);}});
+test('period study has a finite 125m square nominal member envelope and 300m main structure',()=>{const a=eiffelMembers();assert.ok(a.length>2000);for(const b of a)assert.ok(b.w>0&&[...b.a,...b.b].every(Number.isFinite));const p=a.flatMap(b=>[b.a,b.b]);for(const i of [0,1])assert.equal(Math.max(...p.map(v=>v[i]))-Math.min(...p.map(v=>v[i])),125);assert.equal(Math.max(...p.map(v=>v[2])),300);});
+test('month labels keep the construction year and completion month',()=>{assert.equal(formatTime(m,0),'1887년 1월');assert.equal(formatTime(m,100),'1889년 3월');assert.equal(formatTime(m,100,'en'),'1889.03');});
+test('invalid dimensions, sources, timing and unsupported building templates are rejected',()=>{for(const change of [q=>q.subject.dims.height=330,q=>q.events[0].sourceIds=['missing'],q=>q.construction.heightKeys[2].height=-1,q=>q.geometry.type='other-building',q=>q.chapters[1].bar[0]=14,q=>q.stops[1].box.max[0]=Infinity]){const q=structuredClone(raw);change(q);assert.ok(runChecks(normalizeModel(q)).errors.length);}});
+test('unknown/missing building data reports errors without a schema crash',()=>{assert.ok(runChecks(normalizeModel({subject:{kind:'building'}})).errors.length);});

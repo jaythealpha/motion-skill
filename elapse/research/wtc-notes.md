@@ -1,0 +1,34 @@
+# World Trade Center: 9/11, recovery and selected rebuilding
+
+Checked2026-11-02. Educational historical site study, not an investigation, flight-path reconstruction or validated physical-collapse simulation. It ends at the11June2018 opening milestone for3 WTC, not the present campus. No photos, source meshes/scans, video, textures or names lists are embedded; facts are paraphrased and sources are links.
+
+## Records and boundaries
+
+-9/11 Memorial & Museum FAQs: https://www.911memorial.org/911-faqs . Read primary text for the two aircraft impacts, South/North collapse order, death toll and recovery. Rounded public chronology:08:46 North Tower,09:03 South Tower,09:59 South collapse,10:28 North collapse. These are minute-resolution references, not exact-second measurements. The model does not imply flight paths, speeds, damage dimensions or a cause-specific structural analysis from those facts. The memorial reports2,977 killed across the attacks, of whom2,753 were in New York; figures appear once in the About note. No people, victims or human remains are drawn.
+-NIST dimensions summary: https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=101194 . Official indexed abstract confirms roof heights417m/415m and approximately63m-square plans. No original plan scan was downloaded or traced. North mast geometry/top near527m, facades, floors, other old buildings and coordinates are approximate.
+-NIST tower investigation FAQ: https://www.nist.gov/world-trade-center-investigation/study-faqs/wtc-towers-investigation . It addresses the probable sequence leading to collapse initiation. The Elapse upper-block/front/dust motion is independently authored and is **not** the NIST model, an explanation of member-by-member failure or a validated full-collapse reconstruction. No attack optimisation or operational trajectory is provided.
+-NIST WTC7 FAQ: https://www.nist.gov/world-trade-center-investigation/study-faqs/wtc-7-investigation . Recorded17:20:52 collapse, after fires; no aircraft strike. NIST also describes limits/uncertainty after global collapse begins. WTC7 has its own site/group/smoke event. The Elapse envelope animation is not that analysis.
+-Memorial recovery commemoration: https://www.911memorial.org/connect/commemoration/May-30-2002 . Formal recovery period ended30May2002; gradual debris fade is a schematic interpolation, not a surveyed clearance diary.
+-Memorial design: https://www.911memorial.org/visit/memorial/about-memorial . Opened11September2011; pools occupy former tower footprints. Model uses real mesh openings and recessed water/void shapes, but exact wall/water depth, parapet, trees and planting counts are estimated. No individual victims’ names are invented.
+-World Trade Center chronology: https://wtc.com/history-timeline/ . Primary campus chronology supports rebuilt structures and staggered Oculus opening; use3March2016 as an opening milestone, not the completion of every transport/retail facility. Rebuilt7 WTC2006,4 WTC2013,One WTC2014 and3 WTC2018 are distinct buildings. Detailed facade dimensions, elevations and interim assembly remain estimated. Chronology sites can be script-heavy; corroborate with the following owner/designer pages.
+-Owner site history: https://wtcprod.panynj.gov/en/local/learn-about-wtc/history.html ; indexed chronology gives3 WTC11June2018 and staged Oculus openings in2016. Direct page extraction is sparse/script-driven; no visual plan verification is claimed.
+-Owner7 WTC: https://wtcprod.panynj.gov/en/local/learn-about-wtc/7-world-trade-center.html ; rebuilt2006,52storeys. Architect: https://www.som.com/projects/7-world-trade-center/ . Old and rebuilt7 WTC are separate approximate meshes at the northern site.
+-Owner4 WTC: https://wtcdev.panynj.gov/en/local/learn-about-wtc/4-world-trade-center.html ; November2013 opening,977ft. Rounded298m geometric reference; other facade extents estimated.
+
+## Geometry and pacing assumptions
+
+The study envelope360×400m is an authored framing region, not a surveyed boundary. Local+x approximates east,+y north; site centres, orientations and streets are simplified to separate original/rebuilt structures and preserve two footprint locations. Neighbouring old buildings are schematic blocks and disappear collectively; this does not reconstruct each building’s damage sequence. New2 WTC is not invented as a completed tower; later buildings and current redevelopment are outside the2018 endpoint. New One WTC uses an approximate chamfered/tapered glass form and541.3m tip reference (rounded1776ft). Rebuilt7/3/4 profiles and internal layouts are not verified CAD. Surrounding Lower Manhattan is not reproduced.
+
+Generic unbranded aircraft silhouettes appear only briefly near the recorded impacts. Size, approach segment, orientation, position and all orange flashes/smoke are explanatory estimates, not actual aircraft geometry, trajectories, speeds or an interactive attack scenario. No aircraft controls or tactical mechanics exist.
+
+Collapses have two-minute **presentation windows**, paced slowly so viewers can see the transition. They do not claim actual duration, acceleration, trajectory, failure progression or energy. Upper blocks and disappearing lower envelopes with dust indicate loss of the structure only. The same rule applies to WTC7; no scientific inference can be made from these meshes. Reverse scrubbing deterministically restores each stage.
+
+Date/time values are New York local wall-clock, held without timezone conversion under Elapse’s existing convention. Seconds are displayed for WTC minute chapters so17:20:52 is not rounded to17:21. Initial08:30 and the following-midnight chapter boundary are authored viewing intervals.
+
+Exploration locks the chosen date. North/South/7 stops retain geographic footprints when the former building is absent; later memorial/One/Oculus stops are disabled until their documented/illustrated availability. The One stop can inspect estimated construction from2006. Not a real visitor/emergency route. Lighting is illustrative. No independent fauna animation or ship gauges.
+
+## Integrated observation direction (2026-11-02)
+
+The two impacts and three collapses now have separate authored camera windows, slow-down zones and soft procedural fire/smoke/dust layers. Detailed generic aircraft and a 1024×2048 procedural facade atlas are shared with the impact study. Surrounding context blocks are generic massing, not a surveyed Manhattan skyline. Separate upper chunks, clipped lower envelopes and falling fragments are explanatory transitions, not validated failure mechanics. Quarter/half speed settings are viewing controls. No photographic textures or human figures are included.
+
+Rooftop parapets, generic ventilation banks/louvers and exposed floor-grid/core/columns at the moving collapse boundary were added for legibility. Their layout, count and dimensions are estimates rather than plan-derived construction details.
