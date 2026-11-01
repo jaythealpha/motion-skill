@@ -21,3 +21,5 @@ npm test                                                                       #
 See `SKILL.md` for the workflow Claude follows, and `references/` for the model format and research rules.
 
 MIT. Bundles three.js (MIT).
+
+The bundled three.js authors’ notice is retained in [shared/vendor/LICENSE-three.txt](shared/vendor/LICENSE-three.txt).

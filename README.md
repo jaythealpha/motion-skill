@@ -1,6 +1,6 @@
 # Unfold & Elapse
 
-Two [Claude Code](https://claude.com/claude-code) skills. Each turns a real subject into **one offline HTML page** with a time bar you can drag.
+Two experimental [Claude Code](https://claude.com/claude-code) skills. Each turns a real subject into **one offline HTML page** with a time bar you can drag.
 
 **Unfold: how a product goes together**
 - It researches public teardown data and writes an assembly model of the phone's parts.
@@ -11,7 +11,7 @@ Two [Claude Code](https://claude.com/claude-code) skills. Each turns a real subj
   - a printable assembly manual
 - It covers bar phones and foldables. Examples: Galaxy S24, Galaxy Z Fold8, Galaxy Z Flip8, iPhone 17 Pro, iPhone Duo.
 
-**Elapse: how a subject changes over time** (this version: shipwrecks)
+**Elapse: how a subject changes over time** (shipwrecks + historical buildings)
 - The bar is cut into chapters, from the accident to the wreck on the seabed.
 - The page shows:
   - water filling the watertight compartments in an x-ray view
@@ -20,9 +20,10 @@ Two [Claude Code](https://claude.com/claude-code) skills. Each turns a real subj
   - the descent, with a depth gauge
   - decay over the decades
   - projections, clearly marked
-- Examples: RMS Titanic and HMHS Britannic.
+- Ship examples: RMS Titanic and HMHS Britannic.
+- Building examples: World Trade Center9/11, recovery and selected rebuilding through2018, with dated exploration; Notre-Dame fire, damage and restoration (2019–2024), with seven inspection stops and an explicitly labelled vault cutaway; Eiffel Tower construction (1887–1889), with monthly milestones, estimated lattice geometry, construction-height gauges and structural exploration.
 
-한국어 UI가 기본이고 영어도 지원해요. 두 스킬 모두 공개 자료를 조사해서 만들고, 사람의 검토 없이 끝까지 혼자 돌아가요. 결과물을 내기 전에 자동 검사 두 개(데이터, 화면)를 통과해야 해요.
+한국어 UI가 기본이고 영어도 지원해요. 두 스킬 모두 공개 자료를 조사해서 만들고, 자료 조사부터 빌드까지 이어지는 작업 절차를 제공해요. 도구 권한·네트워크·AI 실행 환경에 따라 중단될 수 있고, 새 결과물은 데이터·화면 검사를 거쳐야 해요. 자동 검사는 역사·제품 구조·수리 안전성의 정확성을 보증하지 않아요.
 
 ## Principles
 
@@ -43,23 +44,15 @@ Two [Claude Code](https://claude.com/claude-code) skills. Each turns a real subj
   - a plain memorial note on every wreck
   - recent or politically disputed sinkings are declined
 
-## Install
+## 시작하기
 
-Copy a skill folder into your Claude Code skills folder:
+- **설치:** [준비물·복제·기존 설치 보존·첫 빌드](INSTALL.md)
+- **보기:** [12개 데모와 로컬 실행 방법](DEMOS.md)
+- **최근 변경:** [역사 건축·WTC·해저 장면과 공개 준비](elapse/CHANGELOG.md)
 
-```bash
-cp -R unfold ~/.claude/skills/unfold
-```
+생성 작업은 Claude Code용입니다. 포함된 HTML 데모는 AI 없이 브라우저에서 볼 수 있습니다. 전체 검사에는 Node 22 이상과 Chrome/Chromium이 필요하며 npm 패키지는 설치하지 않습니다. 설치·빌드 재현은 macOS에서 확인하며, 다른 OS와 에이전트의 동작은 별도 검증이 필요합니다.
 
-```bash
-cp -R elapse ~/.claude/skills/elapse
-```
-
-Then ask Claude Code, for example, "갤럭시 S24가 어떻게 조립되는지 보여줘" or "show me how the Titanic sank".
-
-**Requirements:**
-- Node 18+ for the data gate and the build.
-- Node 22+ and Chrome or Chromium for the screenshot gate. There are no npm packages.
+**교육·설명용입니다.** 내부 좌표·치수·조립 경로에는 추정이 포함됩니다. 매뉴얼 모드는 제조사 승인 수리 매뉴얼을 대신하지 않습니다. 기존 모델의 제한을 [데모 안내](DEMOS.md#한계)와 각 페이지에서 확인하세요.
 
 ## Repository
 
@@ -85,6 +78,10 @@ cd elapse && npm test
 cd shared && node --test
 ```
 
+최신 설치 재현·데모·라이선스 점검 결과는 [공개 준비 리포트](docs/reviews/2026-11-02-public-readiness.md)에 정리했습니다. 저장소 공개 전환과 공개 데모 배포는 별도 작업입니다.
+
 ## Licence
 
-MIT (see `LICENSE`). three.js is MIT, © three.js authors (`shared/vendor/LICENSE-three.txt`). The facts in the examples come from the sources linked in each page.
+MIT (see [LICENSE](LICENSE)). Bundled three.js is separately attributed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md), with its licence retained in every skill. External sources remain subject to their own terms; source links do not grant rights to their text or images.
+
+These are unofficial educational illustrations, not endorsed by Apple, Samsung or the shipwreck source organisations. Product names remain their owners’ marks.

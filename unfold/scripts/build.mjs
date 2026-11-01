@@ -4,7 +4,7 @@
 // three.js and every engine module go into an import map as data: URLs, the model into a JSON script tag.
 // Nothing is fetched from the network when the page opens.
 import { readFileSync, writeFileSync } from 'node:fs';
-import { importMap } from '../shared/inline.mjs';
+import { importMap, licenseBlock } from '../shared/inline.mjs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -26,6 +26,7 @@ const html = `<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${String(name || 'Unfold').replace(/[<&]/g, '')} · Unfold</title>
 <meta name="generator" content="Unfold">
+${licenseBlock(ROOT)}
 <script type="importmap">${JSON.stringify({ imports })}</script>
 </head><body>
 <div id="unfold"></div>

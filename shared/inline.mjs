@@ -21,3 +21,9 @@ export function importMap({ root, prefix }) {
     imports[`${prefix}/${f}`] = dataUrl(rewrite(readFileSync(join(root, 'engine', f), 'utf8'), prefix));
   return { imports };
 }
+
+// Standalone pages must carry full notices even when separated from the skill folder.
+export function licenseBlock(root) {
+  const notice = ['LICENSE', 'shared/vendor/LICENSE-three.txt'].map(f => readFileSync(join(root, f), 'utf8')).join('\n\n');
+  return '<script type="text/plain" id="motion-license">' + notice.replace(/</g, '&lt;') + '</script>';
+}
