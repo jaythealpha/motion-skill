@@ -81,7 +81,7 @@ cd elapse && npm test
 cd shared && node --test
 ```
 
-최신 설치 재현·데모·라이선스 점검 결과는 [공개 준비 리포트](docs/reviews/2026-11-02-public-readiness.md)에 정리했습니다. 공개 데모는 GitHub Pages에서 제공하며, 새 버전의 재현·검증 범위는 리포트에서 확인하세요.
+최신 공개 배포·익명 설치 확인은 [공개 배포 리포트](docs/reviews/2026-11-02-public-release.md), 이전 라이선스·오프라인 점검은 [공개 준비 리포트](docs/reviews/2026-11-02-public-readiness.md)에 정리했습니다. 공개 데모는 GitHub Pages에서 제공하며, 새 버전의 재현·검증 범위는 리포트에서 확인하세요.
 
 ## Licence
 
