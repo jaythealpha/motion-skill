@@ -4841,7 +4841,7 @@
    "en": "Apple iPhone Duo (October 2026, the first foldable iPhone)"
   },
   "researchedAt": "2026-10-29",
-  "gate2": "unknown",
+  "gate2": "pass",
   "positionsEstimated": true,
   "limitations": [
    {
@@ -4851,7 +4851,12 @@
    {
     "ko": "안쪽 화면은 힌지 축을 감싸며 작은 반지름으로 휘게 그렸어요. 실제 물방울형 힌지의 휘는 모양과는 달라요.",
     "en": "The inner screen is drawn wrapping the hinge axis on a small radius; the real teardrop bend is shaped differently."
+   },
+   {
+    "ko": "고품질 표면의 회로 무늬·미세 결·렌즈 코팅은 설명용 추정입니다. 실측 회로도·재료 사양을 뜻하지 않습니다.",
+    "en": "High-quality circuit marks, micrograin and lens coatings are illustrative estimates, not measured circuitry or material specifications."
    }
-  ]
+  ],
+  "renderQuality": "high"
  }
 }

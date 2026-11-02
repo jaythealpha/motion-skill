@@ -62,7 +62,7 @@ export function buildPartMesh(THREE, part, ctx = {}) {
   const ext = (shape, za, zb, bevel = true) => {
     const depth = Math.max(0.02, zb - za), bv = bevel ? Math.min(0.35, depth * 0.22) : 0;
     const g = new THREE.ExtrudeGeometry(shape, { depth: Math.max(0.01, depth - 2 * bv), bevelEnabled: bv > 0,
-      bevelThickness: bv, bevelSize: bv, bevelOffset: -bv, bevelSegments: 1, curveSegments: 8 });
+      bevelThickness: bv, bevelSize: bv, bevelOffset: -bv, bevelSegments: ctx.quality ? 2 : 1, curveSegments: ctx.quality ? 12 : 8 });
     g.translate(0, 0, za + bv);
     return g;
   };

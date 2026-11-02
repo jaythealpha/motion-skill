@@ -85,8 +85,18 @@ await shot('mobile-knoll-t15', { t: 15, layout: 'knoll' }, { w: 375, h: 812, mob
 // playback speed: each speed covers the whole bar in its own time (1× 60 s, 2× 30 s, 3× 20 s, 5× 12 s)
 for (const [speed, secs] of quick ? [['slow', 30]] : [['xslow', 60], ['slow', 30], ['normal', 20], ['fast', 12]]) {
   await shot(`speed-${speed}`, { t: 10, speed, play: 1, auto: 0 });
-  const moved = await evaluate(`(async () => { const t0 = window.__unfold.st.t, p0 = performance.now(); await new Promise(r => setTimeout(r, 2000));
-    return { dt: window.__unfold.st.t - t0, secs: (performance.now() - p0) / 1000 }; })()`);
+  // Measure from a known running state after page/shader startup; autoplay may have finished while loading.
+  await evaluate("(()=>{const u=window.__unfold;u.play(false);u.setT(10);u.R.renderNow();u.play(true);})()");
+  const moved = await evaluate(`(async () => {
+    const u=window.__unfold, original=requestAnimationFrame, samples=[];
+    u.play(false);u.setT(10);u.R.renderNow();
+    window.requestAnimationFrame=cb=>original(ts=>{const now=performance.now();cb(ts);if(cb.name==='tick')samples.push({now,t:u.st.t});});
+    u.play(true);const deadline=performance.now()+12000;
+    try{while(performance.now()<deadline){await new Promise(r=>setTimeout(r,50));if(samples.length>1&&samples.at(-1).now-samples[0].now>=2000)break;}
+      if(samples.length<2||samples.at(-1).now-samples[0].now<2000)throw Error('not enough playback frames for a two-second interval');
+      return{dt:samples.at(-1).t-samples[0].t,secs:(samples.at(-1).now-samples[0].now)/1000};
+    }finally{u.play(false);window.requestAnimationFrame=original;}
+  })()`);
   const expect = moved.secs * 100 / secs, sOk = Math.abs(moved.dt - expect) < Math.max(2, expect * 0.3);
   console.log(`${sOk ? 'ok  ' : 'FAIL'} speed-${speed}  moved ${moved.dt.toFixed(1)} in ${moved.secs.toFixed(1)} s (expected ~${expect.toFixed(1)})`);
   if (!sOk) shots.push({ name: `speed-${speed}-rate`, file: `speed-${speed}.png`, errors: [], problems: ['playback speed is off'] });

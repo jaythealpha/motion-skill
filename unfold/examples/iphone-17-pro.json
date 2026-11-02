@@ -3474,7 +3474,13 @@
    {
     "ko": "커넥터 덮개 나사 길이는 분해 단계(1.3·1.4 mm)와 조립 단계(1.2 mm)에서 다르게 적혀 있어요.",
     "en": "The connector-cover screw lengths differ between the removal (1.3/1.4 mm) and reassembly (1.2 mm) steps of the guides."
+   },
+   {
+    "ko": "고품질 표면의 회로 무늬·미세 결·렌즈 코팅은 설명용 추정입니다. 실측 회로도·재료 사양을 뜻하지 않습니다.",
+    "en": "High-quality circuit marks, micrograin and lens coatings are illustrative estimates, not measured circuitry or material specifications."
    }
-  ]
+  ],
+  "renderQuality": "high",
+  "gate2": "pass"
  }
 }

@@ -23,7 +23,7 @@ export async function openBrowser({ tag = 'shoot', minutes = 15 } = {}) {
   if (!chrome) { console.log('GATE2 SKIPPED (no Chrome or Chromium found; set CHROME=/path/to/chrome)'); process.exit(2); }
   const profile = mkdtempSync(join(tmpdir(), `${tag}-shoot-`));
   const proc = spawn(chrome, ['--headless=new', '--remote-debugging-port=0', `--user-data-dir=${profile}`, '--hide-scrollbars',
-    '--no-first-run', '--no-default-browser-check', '--enable-unsafe-swiftshader', '--use-angle=swiftshader', 'about:blank'], { stdio: ['ignore', 'ignore', 'pipe'] });
+    '--no-first-run', '--no-default-browser-check', '--disable-background-timer-throttling', '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows', '--enable-unsafe-swiftshader', '--use-angle=swiftshader', 'about:blank'], { stdio: ['ignore', 'ignore', 'pipe'] });
   let ws = null, cleaned = false, deadline = null;
   const waiting = new Map(), listeners = [];
   const failAll = why => { for (const [, w] of waiting) w.rej(new Error(why)); waiting.clear(); };

@@ -2715,7 +2715,7 @@
    "en": "Samsung Galaxy S24 base model (SM-S921)"
   },
   "researchedAt": "2026-10-29",
-  "gate2": "unknown",
+  "gate2": "pass",
   "limitations": [
    {
     "ko": "내부 부품의 치수와 위치는 공개된 수치가 없어 외형 치수와 배터리 크기에 맞춰 추정했어요.",
@@ -2740,8 +2740,13 @@
    {
     "ko": "케이블 경로, 나사 위치, 차폐 캔 배치는 사진 비례로 그린 그림이에요.",
     "en": "Cable routes, screw positions and shield-can layout are drawn from photo proportions."
+   },
+   {
+    "ko": "고품질 표면의 회로 무늬·미세 결·렌즈 코팅은 설명용 추정입니다. 실측 회로도·재료 사양을 뜻하지 않습니다.",
+    "en": "High-quality circuit marks, micrograin and lens coatings are illustrative estimates, not measured circuitry or material specifications."
    }
   ],
-  "positionsEstimated": true
+  "positionsEstimated": true,
+  "renderQuality": "high"
  }
 }

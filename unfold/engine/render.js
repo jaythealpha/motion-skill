@@ -1,6 +1,7 @@
 // three.js renderer. The model lives in a root group turned so model z (the assembly axis) points up.
-// Two styles from the same meshes: 'color' (toon bands + ink edges) and 'blueprint' (flat fills + light lines).
+// Two styles share the same parts: material-finished colour (or original toon) and blueprint line work.
 import * as THREE from 'three';
+import {qualityMaterial} from './quality.js';
 import { buildPartMesh, partCentre } from './shapes.js';
 import { createTimeline, storyPose, screenFor, ease, INTRO_END, ASM_END } from './timeline.js';
 import { foldInfo, motionOf, bAffine, mapPoint, spineBand } from './fold.js';
@@ -50,6 +51,10 @@ export function createRenderer(canvas, model, opts = {}) {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   const scene = new THREE.Scene();
+  const enhanced = model.meta.renderQuality === "high";
+  const gl=renderer.getContext(), dbg=gl.getExtension('WEBGL_debug_renderer_info');
+  const gpu=dbg?String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL)):'';
+  const lightweight = innerWidth < 600 || /swiftshader|llvmpipe|software/i.test(gpu);
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, -5000, 5000);
   scene.add(new THREE.HemisphereLight('#ffffff', '#8a94a3', 1.6));
   const sun = new THREE.DirectionalLight('#ffffff', 2.2); sun.position.set(-0.6, 1.4, 0.9); scene.add(sun);
@@ -83,6 +88,7 @@ export function createRenderer(canvas, model, opts = {}) {
     let m;
     if (style === 'blueprint') m = new THREE.MeshBasicMaterial({ color: BP.fill, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
     else if (key === 'shine') m = new THREE.MeshBasicMaterial({ color: '#ffffff' });
+    else if (enhanced) m = qualityMaterial(key, color || COLOR[key] || COLOR.black, lightweight);
     else m = new THREE.MeshToonMaterial({ color: color || COLOR[key] || COLOR.black, gradientMap: gmap, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
     if (key === 'adhesive' && style === 'color') { m.transparent = true; m.opacity = 0.55; }
     if (dim === 1) { m.transparent = true; m.opacity = style === 'blueprint' ? 0.25 : 0.14; m.depthWrite = false; }
@@ -94,7 +100,7 @@ export function createRenderer(canvas, model, opts = {}) {
   // parts -------------------------------------------------------------------------------------------
   const parts = new Map();   // id -> { part, group, meshes, edges, home }
   for (const part of model.parts) {
-    const group = buildPartMesh(THREE, part, { fold: FI, access: model.product.access }), meshes = [], edges = [], motion = FI ? motionOf(model, part, FI) : 'a';
+    const group = buildPartMesh(THREE, part, { fold: FI, access: model.product.access, quality: enhanced }), meshes = [], edges = [], motion = FI ? motionOf(model, part, FI) : 'a';
     const half = motion === 'bend' || motion === 'split' ? 'hinge' : motion;
     group.traverse(o => { if (o.isMesh || o.isInstancedMesh) meshes.push(o); });
     for (const m of meshes) {
@@ -122,8 +128,9 @@ export function createRenderer(canvas, model, opts = {}) {
     const uc = FI.at + FI.bSign * (FI.spine - band) / 2, zc = (FI.T - (FI.T + FI.gap)) / 2;
     g.translate(U ? w / 2 - C[0] : uc - C[0], U ? uc - C[1] : l / 2 - C[1], zc - C[2]);
     const frameCol = model.parts.find(p => p.shape?.template === 'housing')?.shape?.colors?.alu;
-    spineMesh = new THREE.Mesh(g, new THREE.MeshToonMaterial({ color: frameCol || COLOR.alu, gradientMap: gmap }));
+    spineMesh = new THREE.Mesh(g, enhanced ? qualityMaterial('alu',frameCol || COLOR.alu, lightweight) : new THREE.MeshToonMaterial({ color: frameCol || COLOR.alu, gradientMap: gmap }));
     spineMesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(g, 28), edgeMats.color));
+    spineMesh.userData.colorMaterial=spineMesh.material;
     spineMesh.visible = false; halves.a.add(spineMesh);
   }
 
@@ -209,7 +216,7 @@ export function createRenderer(canvas, model, opts = {}) {
       mB.set(M[0][0], M[0][1], M[0][2], M[0][3], M[1][0], M[1][1], M[1][2], M[1][3], M[2][0], M[2][1], M[2][2], M[2][3], 0, 0, 0, 1);
       halves.b.matrix.copy(mCi).multiply(mB).multiply(mC); halves.b.matrixWorldNeedsUpdate = true;
       bendTo(fin.fold);
-      if (spineMesh) { spineMesh.visible = fin.fold > 160; spineMesh.scale.set(1, 1, 1); }
+      if (spineMesh) { spineMesh.material = bp ? matFor('blueprint','alu') : spineMesh.userData.colorMaterial; spineMesh.children[0].material = bp ? edgeMats.blueprint : edgeMats.color; spineMesh.visible = fin.fold > 160; spineMesh.scale.set(1, 1, 1); }
     }
     const guidePts = [];
     for (const [id, P] of parts) {
@@ -236,7 +243,7 @@ export function createRenderer(canvas, model, opts = {}) {
         m.material = matFor(S.style, m.userData.mat, S.style === 'color' ? (m.userData.color || P.part.shape?.colors?.[m.userData.mat] || (m.userData.role === 'body' && P.part.shape?.color) || null) : null, dim);
       }
       const em = dim === 1 ? edgeMats[S.style + 'Dim'] : P.active ? edgeMats[S.style + 'Active'] : dim === 2 ? edgeMats[S.style + 'Ghost'] : edgeMats[S.style];
-      for (const e of P.edges) e.material = em;
+      for (const e of P.edges) { e.material = em; e.visible = bp || !enhanced || P.active; }
     }
     guideBuf.fill(0); guideBuf.set(guidePts.slice(0, guideBuf.length)); guideGeo.attributes.position.needsUpdate = true;
     guideGeo.setDrawRange(0, guidePts.length / 3); guides.computeLineDistances();

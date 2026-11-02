@@ -3477,7 +3477,7 @@
    "en": "Samsung Galaxy Z Fold8 (wide model, SM-F971)"
   },
   "researchedAt": "2026-10-29",
-  "gate2": "unknown",
+  "gate2": "pass",
   "positionsEstimated": true,
   "limitations": [
    {
@@ -3495,7 +3495,12 @@
    {
     "ko": "iFixit(s5)은 두 배터리 모두 바깥 화면 쪽으로 들어가야 꺼낼 수 있다고 해요. 이 모델은 배터리 A를 후면 유리 쪽에서 넣어서 그 설명과 맞지 않아요.",
     "en": "iFixit (s5) says either battery is reached through the outer display; this model reaches battery A from the back-glass side, which conflicts with s5."
+   },
+   {
+    "ko": "고품질 표면의 회로 무늬·미세 결·렌즈 코팅은 설명용 추정입니다. 실측 회로도·재료 사양을 뜻하지 않습니다.",
+    "en": "High-quality circuit marks, micrograin and lens coatings are illustrative estimates, not measured circuitry or material specifications."
    }
-  ]
+  ],
+  "renderQuality": "high"
  }
 }

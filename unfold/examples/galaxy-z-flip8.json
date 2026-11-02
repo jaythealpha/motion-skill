@@ -2926,7 +2926,13 @@
    {
     "ko": "아직 플립8 분해 자료가 공개되지 않았어요. 그래서 나사 개수와 내부 구조 상당 부분은 이전 플립 세대의 자료를 따랐고, 모두 '추정'으로 표시했어요.",
     "en": "No Flip8 teardown was public yet, so the screw counts and much of the inside follow earlier Flip generations and are marked estimated."
+   },
+   {
+    "ko": "고품질 표면의 회로 무늬·미세 결·렌즈 코팅은 설명용 추정입니다. 실측 회로도·재료 사양을 뜻하지 않습니다.",
+    "en": "High-quality circuit marks, micrograin and lens coatings are illustrative estimates, not measured circuitry or material specifications."
    }
-  ]
+  ],
+  "renderQuality": "high",
+  "gate2": "pass"
  }
 }

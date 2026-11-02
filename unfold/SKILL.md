@@ -113,3 +113,12 @@ The skill folder (`<skill>` below) holds the engine (`engine/`), the bundled sha
 - How a ship sank or a wreck changed over time → **elapse**.
 - A playful, hand-drawn object you press buttons on → **colorfigures**.
 - A data chart → a charting skill.
+
+
+## High-detail finish
+
+New models default to `meta.renderQuality: "high"`. Packaged examples enable this explicitly. This improves existing geometry/materials without changing part IDs, bounding boxes, fastening, fold kinematics or assembly paths. The original source confidence and existing limitations remain authoritative.
+
+High detail uses material-specific metal/polymer/PCB finishes, lens coating, subtle anti-aliased estimated circuit/label surface marks and smoother bevel/curve tessellation. These marks are illustrative, not measured traces, serials, labels or material specifications. Add this limitation to the model in both languages. Do not invent extra components or raise the sourced share because the rendering looks more detailed.
+
+`?quality=standard` retains the original toon rendering for comparison and a lighter geometry path. Blueprint and manual modes retain technical line work. Run Gate1 and full Gate2, review full-size shots, and additionally check375/768/1440px, both layouts, both styles, fold controls and the print manual before claiming delivery. Headless timings do not establish real-device FPS or engineering accuracy. See `references/quality-tier.md`.

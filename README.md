@@ -25,6 +25,8 @@ Two experimental [Claude Code](https://claude.com/claude-code) skills. Each turn
 
 한국어 UI가 기본이고 영어도 지원해요. 두 스킬 모두 공개 자료를 조사해서 만들고, 자료 조사부터 빌드까지 이어지는 작업 절차를 제공해요. 도구 권한·네트워크·AI 실행 환경에 따라 중단될 수 있고, 새 결과물은 데이터·화면 검사를 거쳐야 해요. 자동 검사는 역사·제품 구조·수리 안전성의 정확성을 보증하지 않아요.
 
+Packaged demos include subject-specific high-detail finishes; see [visual quality and limits](DEMOS.md#고품질-표현). Additional surface/structural detail is illustrative and does not increase measured accuracy or the sourced share.
+
 ## Principles
 
 - **Every fact is marked:**

@@ -111,6 +111,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const fmt = v => (Math.round(v * 10) / 10).toString();
 
 export function mountUnfold(root, model, params = {}) {
+  if(params.quality==='standard') model={...model,meta:{...model.meta,renderQuality:'standard'}};
   const st = { lang: params.lang === 'en' ? 'en' : 'ko', depth: ['simple', 'detail', 'manual'].includes(params.depth) ? params.depth : 'detail',
     layout: params.layout === 'knoll' ? 'knoll' : 'stack', style: params.style === 'blueprint' ? 'blueprint' : (params.style === 'color' ? 'color' : null),
     t: 0, playing: false, sel: null, speed: SPEEDS[params.speed] ? params.speed : DEFAULT_SPEED };
@@ -241,7 +242,7 @@ export function mountUnfold(root, model, params = {}) {
     goal = st.depth === 'manual' ? stepEnds().find(e => e > st.t + 0.05) ?? 100 : 100;
     last = performance.now();
     // the rate is read every frame, so a new speed takes over smoothly from where the bar is
-    const tick = now => { const dt = Math.min(0.5, (now - last) / 1000); last = now;
+    const tick = () => { const now = performance.now(), dt = Math.max(0, (now - last) / 1000); last = now;
       const nt = Math.min(goal, advance(st.t, dt, st.speed)); setT(nt);
       if (nt >= goal) { play(false); return; } raf = requestAnimationFrame(tick); };
     raf = requestAnimationFrame(tick);
@@ -440,7 +441,7 @@ export function mountUnfold(root, model, params = {}) {
   if (params.panel === 'sources') $('.uf-src').hidden = false;
   if (params.zoom != null && isFinite(+params.zoom) && +params.zoom > 0) R.zoom(+params.zoom);
   if (params.pick) requestAnimationFrame(() => { const a = R.project(params.pick); if (a) showPop(params.pick, a.x, a.y); });
-  if (params.play === '1') play(true);
+  if (params.play === '1') { R.renderNow(); play(true); }
   window.__unfold = Object.assign(window.__unfold || {}, { R, model, st, errors, setT, play });
   return window.__unfold;
 }

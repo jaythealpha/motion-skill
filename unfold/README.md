@@ -23,3 +23,7 @@ See `SKILL.md` for the workflow Claude follows, and `references/` for the model 
 MIT. Bundles three.js (MIT).
 
 The bundled three.js authors’ notice is retained in [shared/vendor/LICENSE-three.txt](shared/vendor/LICENSE-three.txt).
+
+## 고품질 표현
+
+새 모델과 포함된 예시는 금속·렌즈·기판별 재질과 부드러운 곡면을 기본 사용합니다. 모바일·소프트웨어 렌더러에서는 가벼운 광택 재질을 사용합니다. `?quality=standard`로 기존 일러스트 방식과 비교할 수 있습니다. 회로 무늬·코팅·미세 결은 추정 표현이며 실측 회로도나 제조사 수리 지침이 아닙니다. 자세한 범위는 [품질 기준](references/quality-tier.md)을 확인하세요.

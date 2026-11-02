@@ -47,7 +47,7 @@ export function normalizeModel(raw) {
     path: s.path || 'drop',
     sourceIds: s.sourceIds ?? [],
   })).sort((a, b) => a.n - b.n);
-  const meta = { limitations: [], gate2: 'unknown', ...(raw.meta || {}) };
+  const meta = { limitations: [], gate2: 'unknown', renderQuality: 'high', ...(raw.meta || {}) };
   return { product, sources: raw.sources || [], parts, steps, meta };
 }
 
