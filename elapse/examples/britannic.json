@@ -4161,6 +4161,18 @@
    "url": "https://keadivers.com/kea-underwater-historic-site/85-legal-framework.html",
    "publisher": "Kea Divers",
    "year": "n.d."
+  },
+  {
+   "id": "quality-expedition-1998",
+   "title": "Nick Hope · Britannic98 expedition account",
+   "url": "https://www.bubblevision.com/underwater-videos/HMHS-Britannic.htm",
+   "year": 1998
+  },
+  {
+   "id": "quality-propellers-2019",
+   "title": "Atlantic Wreck Salvage · Britannic expedition / propeller observations",
+   "url": "https://dvtenacious.com/h-m-h-s-britannics-lost-bell/",
+   "year": 2019
   }
  ],
  "meta": {
@@ -4192,7 +4204,109 @@
    {
     "ko": "해저에서 날짜가 기록된 붕괴는 찾지 못했어요. 해양 생물이 덮인 정도는 추정이에요.",
     "en": "No dated collapse on the seabed was found. The amount of marine growth is estimated."
+   },
+   {
+    "ko": "고품질 선수 파손·늑골·갑판·장비는 탐사 기록을 참고한 독립 추정 형상입니다. 정확한 균열·부재·장비 좌표를 측량하지 않았습니다. 선교 지붕·선수 내부 절개는 설명용이며 실제 붕괴 기록이 아닙니다. 부착물·입자는 연도별 관측 개체가 아닙니다.",
+    "en": "Quality damage, frames, decks and equipment are independently estimated from expedition accounts, not surveyed coordinates. The bridge roof / forward shell cutaway is illustrative, not a recorded collapse. Growth and particles are not a dated census."
    }
-  ]
- }
+  ],
+  "renderQuality": "high",
+  "gate2": "pass"
+ },
+ "stops": [
+  {
+   "id": "wreck",
+   "name": {
+    "ko": "전체 선체",
+    "en": "Wreck overview"
+   },
+   "parts": [
+    "hull-main",
+    "hull-bow"
+   ],
+   "yaw": 160,
+   "pitch": 12
+  },
+  {
+   "id": "bow",
+   "name": {
+    "ko": "선수 파손·내부 구조",
+    "en": "Bow break / structure"
+   },
+   "parts": [
+    "hull-main"
+   ],
+   "trimX": [
+    0.91,
+    1
+   ],
+   "yaw": 290,
+   "pitch": 35
+  },
+  {
+   "id": "breach",
+   "name": {
+    "ko": "파손면·판재 단면 확대",
+    "en": "Fracture / plate edge close-up"
+   },
+   "parts": [
+    "hull-main"
+   ],
+   "trimX": [
+    0.94,
+    1
+   ],
+   "trimY": [
+    0.45,
+    1
+   ],
+   "trimZ": [
+    0.08,
+    0.9
+   ],
+   "yaw": 290,
+   "pitch": 35
+  },
+  {
+   "id": "bridge",
+   "name": {
+    "ko": "선교 장비·인양 장치",
+    "en": "Bridge / davits"
+   },
+   "parts": [
+    "officers",
+    "bridge-wings"
+   ],
+   "yaw": 220,
+   "pitch": 20
+  },
+  {
+   "id": "foredeck",
+   "name": {
+    "ko": "선수 갑판·윈치",
+    "en": "Foredeck / winches"
+   },
+   "parts": [
+    "hull-bow"
+   ],
+   "yaw": 210,
+   "pitch": 20
+  },
+  {
+   "id": "stern",
+   "name": {
+    "ko": "선미·추진기",
+    "en": "Stern / propulsion"
+   },
+   "parts": [
+    "hull-main"
+   ],
+   "trimX": [
+    0,
+    0.16
+   ],
+   "yaw": 120,
+   "pitch": 12
+  }
+ ]
 }

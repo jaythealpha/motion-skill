@@ -6,7 +6,7 @@ import { createRenderer } from './render.js';
 import { rng, apply } from './math.js';
 
 const raw=JSON.parse(document.querySelector('#elapse-model').textContent), model=normalizeModel(raw);
-const canvas=document.querySelector('canvas'), R=createRenderer(canvas,model,{auto:false,cinematic:false});
+const canvas=document.querySelector('canvas'), R=createRenderer(canvas,model,{auto:false,cinematic:false,quality:model.meta.renderQuality});
 const q=new URLSearchParams(location.search), reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const errors=[]; addEventListener('error',e=>errors.push(e.message));
 const root=new THREE.Group(); root.rotation.x=-Math.PI/2; R.scene.add(root);

@@ -105,3 +105,24 @@ Set `card: false` on an event that only moves a piece (a funnel falling during t
 - **자세히** adds `detail`, the sources and `alternatives`.
 
 Keep `text` to one or two sentences, and put the numbers in `detail`.
+
+## Generic ship inspection and pacing
+
+`stops` optionally declares inspection targets independently of the subject name:
+
+```json
+"stops": [
+  {"id":"hull-study","name":{"ko":"선체","en":"Hull"},
+   "parts":["my-hull"],"yaw":315,"pitch":3,"trimX":[0,1]}
+]
+```
+
+Each stop needs a unique id, a bilingual-name object (at least one language), existing nonempty piece ids and finite yaw/pitch (pitch −80…80). `trimX` is optional, increasing fractions in 0…1; it crops the first piece's local x bounds for framing, not geometry. Pick angles from the actual final pose and verify the target stays underwater. Without `stops`, existing tuned ships retain their stops and unfamiliar ships receive an overview of hull pieces. An explicit empty array disables inspection. Inspection opens the midpoint of the latest non-projection year chapter when starting from a sinking/projection chapter, and restores the previous time/view on exit. Building stops keep their existing schema.
+
+`chapters[].playbackRate` optionally sets 0.1…2 times the viewer's selected speed for ship timelines. It overrides the built-in ship director's pacing for that chapter; dedicated building directors keep their existing pacing. Use existing `camera[]` keys for framing. These observation settings are illustrative, not historical evidence, and do not add to the sourced share. Effects and measured wreck geometry still require separate implementation/research.
+
+### Optional quality rendering metadata
+
+`meta.renderQuality: "high"` selects the opt-in Britannic rendering layer by default. URL `quality=standard` overrides it. `cutaway=1` opens an explicitly explanatory bridge roof cutaway; it does not add a historical collapse event. `mode=explore&stop=<valid stop id>` starts a model-declared inspection target. Unknown stop ids fall back to the normal default. `build-quality.mjs` produces a companion model with independently authored quality stops, source links and limitations while leaving its input model unchanged.
+
+`stops[].trimY` and `trimZ` use the same optional0…1 fraction contract as `trimX`, clipping the first target piece's local bounds for inspection framing only. They do not remove geometry. The Britannic `breach` inspection uses these crops to show the torn plate edge closely.

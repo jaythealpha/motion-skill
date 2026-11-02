@@ -1,3 +1,5 @@
+import {eiffelDetail} from './quality-buildings.js';
+import {qualityLighting,qualitySceneMaterials} from './quality-surfaces.js';
 import {isWTC} from './wtc-model.js';
 import {createWTCRenderer} from './wtc-render.js';
 import {isNotreDame} from './notredame-model.js';
@@ -32,7 +34,8 @@ export function createBuildingRenderer(canvas,model,opts={}){
   st.cam={target,yaw,pitch,dist};const place=()=>{const y=yaw*Math.PI/180,p=pitch*Math.PI/180;camera.position.copy(V([target[0]+dist*Math.cos(p)*Math.cos(y),target[1]+dist*Math.cos(p)*Math.sin(y),target[2]+dist*Math.sin(p)]));camera.lookAt(V(target));camera.updateMatrixWorld();};place();if(st.auto)for(let n=0;n<24;n++){const q=project(b);if(q.minX>-.85&&q.maxX<.85&&q.minY>-.78&&q.maxY<.78)break;dist*=1.08;place();}st.cam.dist=dist;camera.near=Math.max(.05,dist/2000);camera.far=dist*10+1500;camera.updateProjectionMatrix();st.eyeZ=camera.position.y;
  }
  function project(b){const ps=[];for(const x of [b.min[0],b.max[0]])for(const y of [b.min[1],b.max[1]])for(const z of [b.min[2],b.max[2]])ps.push(V([x,y,z]).project(camera));return {minX:Math.min(...ps.map(p=>p.x)),maxX:Math.max(...ps.map(p=>p.x)),minY:Math.min(...ps.map(p=>p.y)),maxY:Math.max(...ps.map(p=>p.y))};}
- function render(){view();renderer.render(scene,camera);opts.onRender?.();}
+ const enhanced=opts.quality==='high';if(enhanced){eiffelDetail(groups,beams,material);qualitySceneMaterials(root,()=> 'metal');}
+ function render(){view();if(enhanced)qualityLighting(renderer,scene,st);renderer.render(scene,camera);opts.onRender?.();}
  function set(o={}){Object.assign(st,o);progress=buildingProgress(model,st.t);st.progress=progress;st.last={pieces:new Map(),water:new Map(),lights:0};const bp=st.style==='blueprint';scene.background=new THREE.Color(bp?'#17314c':'#e4e8df');ground.material.color.set(bp?'#17314c':'#c7c6b8');grid.visible=!bp;foundations.scale.z=.25+.75*progress.foundation;
   for(const [kind,g] of groups){const p=['first','second','crown','arch'].includes(kind)?progress[kind]:1;g.visible=kind==='scaffold'?progress.scaffold>.001&&st.t>15:p>.001;const h=kind==='steel'?progress.height:kind==='scaffold'?Math.min(40,progress.height):kind==='arch'?55*progress.arch:kind==='first'?65:kind==='second'?120:300;planes[kind].constant=h;}
   for(const m of materials){const kind=m.userData.group,p=kind==='scaffold'?progress.scaffold:['first','second','crown'].includes(kind)?progress[kind]:1;m.color.copy(bp?new THREE.Color('#a9d4e8'):m.userData.color);m.opacity=bp?(kind==='foundation'?.65:.9):Math.max(.15,p);m.metalness=bp?0:.27;}

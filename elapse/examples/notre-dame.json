@@ -604,7 +604,13 @@
       {
         "ko": "마지막 장면은 2024년 12월 재개관의 도해입니다. 이후 외부·부벽·창 등의 보존 작업이 계속됩니다.",
         "en": "The final scene depicts the December2024 reopening, not present-day completion; exterior, buttress and window conservation continues."
+      },
+      {
+        "ko": "고품질 구조·접합부·외벽 부재·재질 디테일은 기존 기준 자료를 참고한 독립 추정 형상이며 실측 CAD나 물리 시뮬레이션이 아닙니다.",
+        "en": "Enhanced structure, joints, facade members and material details are independent estimates based on the existing references, not surveyed CAD or physical simulation."
       }
-    ]
+    ],
+    "renderQuality": "high",
+    "gate2": "pass"
   }
 }

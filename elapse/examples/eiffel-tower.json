@@ -40,8 +40,14 @@
       {
         "ko": "착공일은 공식 자료 간 일자 차이가 있어 1887년 1월로 표현합니다. 지하부는 노출 도해입니다.",
         "en": "Groundbreaking is shown by month because official pages differ on the day. Subgrade work is shown exposed."
+      },
+      {
+        "ko": "고품질 구조·접합부·외벽 부재·재질 디테일은 기존 기준 자료를 참고한 독립 추정 형상이며 실측 CAD나 물리 시뮬레이션이 아닙니다.",
+        "en": "Enhanced structure, joints, facade members and material details are independent estimates based on the existing references, not surveyed CAD or physical simulation."
       }
-    ]
+    ],
+    "renderQuality": "high",
+    "gate2": "pass"
   },
   "sources": [
     {

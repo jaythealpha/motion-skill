@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {QUALITY_VIEWS} from '../engine/quality-form.js';
 // Writes model.json for HMHS Britannic from the facts in britannic-notes.md (source ids s1… are that file's).
 //   node research/britannic-gen.mjs [out.json]
 // Ship frame: x forward from midships (the stem at +LOA/2), y to port, z up from the keel. World: x east, y north,
@@ -298,6 +299,7 @@ const model = {
     { id: 'quiet', name: bi('잊힌 60년', 'Sixty quiet years'), start: '1916-11-21T09:10', end: 1975.85, bar: [62, 70], unit: 'year' },
     { id: 'explored', name: bi('탐사', 'Explored'), start: 1975.85, end: 2026.8, bar: [70, 100], unit: 'year' },
   ],
+  stops: QUALITY_VIEWS,
   pieces, tracks, events, camera, cameraSubject: ['hull-main', 'hull-bow'],
   environment: { seaDepth: SEA, sky: 'day', seabed: { size: 15000, relief: 3 }, growth: { kind: 'crust', color: '#6f7a4a' } },
   // recorded: on her starboard side, bow to the south (s1, s4)
@@ -305,6 +307,7 @@ const model = {
   refs: { ko: { name: '63빌딩', height: 249 }, en: { name: 'Big Ben', height: 96 } },
   sources,
   meta: {
+    renderQuality: 'high',
     interpretation: bi('HMHS 브리타닉(1916): 타이타닉의 동생 배로, 병원선으로 쓰이다 그리스 케아 해협에서 기뢰에 맞아 가라앉은 배예요. 1874년과 1930년의 다른 브리타닉호가 아니에요. 낮(08:12~09:07)에 가라앉아 조명 장면은 넣지 않았고, 배는 한 덩어리로 가라앉아 두 동강 장면도 없어요(찌그러진 선수만 따로 그렸어요). 어느 칸이 찼는지는 기록이 있어 구획 투시를 넣었어요. 날짜가 있는 붕괴 예측이 없어서 "앞으로" 장은 만들지 않았어요.',
       'HMHS Britannic (1916): Titanic’s younger sister, serving as a hospital ship when a mine sank her in the Kea Channel, Greece. Not the Britannic of 1874 or of 1930. She sank by day (08:12–09:07), so there is no lights scene; she went down in one piece, so there is no break (only the crumpled bow is drawn as a separate part). Which compartments flooded is recorded, so x-ray is on. No dated forecast of her collapse exists, so there is no projection chapter.'),
     about: bi('1916년 11월 21일, 타고 있던 1,066명 가운데 30명이 목숨을 잃었어요(자료에 따라 21~41명). 이 그림에는 사람과 구명보트를 그리지 않았어요. 난파선은 그리스 문화부 수중고고학청이 관리하는 보호 유적이고, 허가받은 다이빙 센터를 통해 바깥만 볼 수 있으며 물건을 옮기는 것은 금지예요. 1996년부터 사이먼 밀스가 소유하고 있어요.',

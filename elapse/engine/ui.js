@@ -10,7 +10,7 @@ import { createRenderer } from './render.js';
 import {PLAN_SOURCES} from './britannic-form.js';
 import {TITANIC_PLAN_SOURCES} from './titanic-form.js';
 import {ecologyAvailable,ECO_SOURCES,scaleBar} from './ecology-model.js';
-import { hasDirecting, directingBeat, isBritannic, isTitanic } from './directing.js';
+import { hasDirecting, playbackRate, directingBeat, isBritannic, isTitanic } from './directing.js';
 import { strings, pick } from './i18n.js';
 import { classShares, WARN_SHARE } from './model.js';
 import { chapterAt, formatTime } from './chapters.js';
@@ -99,6 +99,7 @@ body{margin:0;background:linear-gradient(180deg,#f2f4f7,#e3e8ee);min-height:100v
 @media(max-width:640px){.el-cinematic .el-stage canvas{height:min(42vh,340px)}.el-cinematic .el-card{block-size:216px}.el-cinematic .el-gauges{block-size:180px;gap:6px}.el-cinematic .el-g{padding:10px 8px}.el-cinematic .el-g b{font-size:10px;min-height:32px}.el-cinematic .el-directing{block-size:96px}}
 .el-exploration{padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--panel);margin:0 0 12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}.el-exploration[hidden]{display:none}.el-exploration label{display:flex;gap:6px;align-items:center}.el-exploration select,.el-exploration button{min-height:44px;max-width:100%;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);font:inherit;padding:8px 10px}.el-exploration button:disabled,.el-exploration select:disabled{opacity:.45;cursor:not-allowed}.el-exploration p{flex-basis:100%;margin:0;font-size:12px;color:var(--muted)}
 .el-building [data-gauge=time] .big{font-size:clamp(12px,1.3vw,18px);line-height:1.4;white-space:normal}
+.el-quality-links{flex-wrap:wrap}.el-quality-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;border-radius:8px;color:#174d86}.el-quality-links a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.el-quality-links span{font-size:11px;color:var(--muted)}
 .el-eco-controls[hidden]{display:none}
 .el-eco-controls button{box-sizing:border-box;min-height:44px}.el-eco-controls button:disabled{opacity:.4;cursor:not-allowed}
 .el button:focus-visible,.el select:focus-visible,.el input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
@@ -110,7 +111,8 @@ body{margin:0;background:linear-gradient(180deg,#f2f4f7,#e3e8ee);min-height:100v
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 export function mountElapse(root, model, params = {}) {
-  const wtc=isWTC(model),nd=isNotreDame(model),building=isBuilding(model),defaultStop=building?'overview':'bridge';
+  params={...params,quality:params.quality??model.meta.renderQuality};
+  const wtc=isWTC(model),nd=isNotreDame(model),building=isBuilding(model),defaultStop=explorationStops(model).find(s=>s.id==='bridge')?.id||explorationStops(model)[0]?.id;
   const speedKeys=wtc?['quarter','half',...Object.keys(SPEEDS)]:Object.keys(SPEEDS),speedName=k=>k==='quarter'?'0.25×':k==='half'?'0.5×':speedLabel(k);
   const st = { lang: params.lang === 'en' ? 'en' : 'ko', depth: params.depth === 'simple' ? 'simple' : 'detail',
     exploring:false,exploreMoving:false,exploreStop:'bridge',lampStrength:1,history:null,ecology:params.life!=='0',exploreLight:params.lamp!=='0',ecoClock:0,ecoView:['coral','sponge','fish'].includes(params.eco)?params.eco:'scene',
@@ -120,7 +122,7 @@ export function mountElapse(root, model, params = {}) {
   const errors = window.__elapse?.errors || [];
   let L = strings(st.lang);
   const style = document.createElement('style'); style.textContent = CSS; document.head.appendChild(style);
-  root.className = 'el'+(building?' el-building':'') + (hasDirecting(model)||building ? ' el-cinematic' : '');
+  root.className = 'el'+(building?' el-building':'') + ' el-cinematic';
   root.innerHTML = `
     <header class="el-top"><div><h1></h1><div class="el-sub"></div></div><button class="el-trust" type="button"></button></header>
     <div class="el-warn" hidden></div>
@@ -139,7 +141,7 @@ export function mountElapse(root, model, params = {}) {
   const $ = s => root.querySelector(s);
   const canvas = $('canvas'), range = $('.el-track input');
   const num = k => params[k] != null && isFinite(+params[k]) ? +params[k] : undefined;
-  const R = (building?createBuildingRenderer:createRenderer)(canvas, model, {ecology:st.ecology,exploreLight:st.exploreLight,ecoView:st.ecoView, auto: params.auto !== '0', yaw: num('yaw'), pitch: num('pitch'), zoom: num('zoom'), onManual: () => viewButtons(), onRender: () => drawing() });
+  const R = (building?createBuildingRenderer:createRenderer)(canvas, model, {quality:params.quality,qualityCutaway:params.cutaway==='1',ecology:st.ecology,exploreLight:st.exploreLight,ecoView:st.ecoView, auto: params.auto !== '0', yaw: num('yaw'), pitch: num('pitch'), zoom: num('zoom'), onManual: () => viewButtons(), onRender: () => drawing() });
   const cs = classShares(model), shares = Object.fromEntries(CLASSES.map(c => [c, Math.round(100 * cs[c])]));
   const projCh = new Set(model.features.projectionChapters || []);
   const comps = model.pieces.filter(p => p.template === 'compartment' && model.tracks.some(tr => tr.piece === p.id && tr.prop === 'water'));
@@ -162,6 +164,11 @@ export function mountElapse(root, model, params = {}) {
     const seg = (key, opts, cur, lab = o => L[o]) => `<span class="el-seg"><b>${L[key]}</b><div role="group" aria-label="${L[key]}">${opts.map(o => `<button type="button" data-k="${key}" data-o="${o}" aria-pressed="${cur === o}">${lab(o)}</button>`).join('')}</div></span>`;
     $('.el-controls').innerHTML = seg('style', ['color', 'blueprint'], st.style) + seg('xray', ['on', 'off'], xrayNow() ? 'on' : 'off') + seg('depth', ['simple', 'detail'], st.depth)
       + `<span class="el-seg"><div role="group" aria-label="language">${['ko', 'en'].map(o => `<button type="button" data-k="lang" data-o="${o}" aria-pressed="${st.lang === o}">${o.toUpperCase()}</button>`).join('')}</div></span>`;
+    if(isBritannic(model)&&(params.study==='quality'||model.meta.renderQuality==='high')){
+      const cut=new URL(location.href);cut.searchParams.set('cutaway',params.cutaway==='1'?'0':'1');
+      const link=high=>{const u=new URL(location.href);u.searchParams.set('quality',high?'high':'standard');u.searchParams.set('t',st.t);return esc(u.href);};
+      $('.el-controls').insertAdjacentHTML('beforeend',`<span class="el-seg el-quality-links"><b>고품질 보기</b><a data-quality-mode="standard" href="${link(false)}">기존</a> · <a data-quality-mode="high" href="${link(true)}">고품질</a><a data-quality-mode="cutaway" href="${esc(cut.href)}">${params.cutaway==='1'?'절개 닫기':'구조 절개'}</a><span>형상·장비 배치 추정 · 절개는 설명용</span></span>`);
+    }
     if(building)$('[data-k=xray]')?.closest('.el-seg')?.remove();
     if(isTitanic(model)){
       const ecoSeg=(label,key,options,current)=>`<span class="el-seg el-eco-controls"><b>${label}</b><div role="group" aria-label="${label}">${options.map(([v,text])=>`<button type="button" data-k="${key}" data-o="${v}" aria-pressed="${current===v}">${text}</button>`).join('')}</div></span>`;
@@ -178,7 +185,7 @@ export function mountElapse(root, model, params = {}) {
     $('.el-actions').innerHTML = `<button type="button" data-a="png">${L.png}</button><button type="button" data-a="video"${st.recording ? ' disabled' : ''}>${st.recording ? L.recording : L.video}</button><button type="button" data-a="sources">${L.sources}</button><button type="button" data-a="about">${L.about}</button>`;
     L.explorationMode=st.lang==='en'?'Mode':'모드';
     if(st.exploring&&(!isTitanic(model)||!ecologyAvailable(model,st.t)||st.style!=='color'||xrayNow()))surveyMotion(false);
-    if(hasDirecting(model)||building)$('.el-controls').insertAdjacentHTML('beforeend',seg('explorationMode',['timeline','survey'],st.exploring?'survey':'timeline',o=>st.lang==='en'?(o==='survey'?'Explore':'Timeline'):(o==='survey'?'탐사':'시간순')));
+    if(explorationStops(model).length)$('.el-controls').insertAdjacentHTML('beforeend',seg('explorationMode',['timeline','survey'],st.exploring?'survey':'timeline',o=>st.lang==='en'?(o==='survey'?'Explore':'Timeline'):(o==='survey'?'탐사':'시간순')));
     const legacyInspect=$('[data-k=ecoView]')?.closest('.el-seg');if(legacyInspect)legacyInspect.hidden=st.exploring;
     explorationPanel();
     viewButtons(); playButton(); if (!$('.el-panel').hidden) panel(st.panel); setT(st.t, true);
@@ -222,7 +229,7 @@ export function mountElapse(root, model, params = {}) {
       return `<i class="${pulse.has(cp.id)?'pulse':''}" title="${esc(pick(cp.name,st.lang))}${wet?': '+h.toFixed(1)+' m':''}"><s style="height:${(f*100).toFixed(0)}%"></s></i>`;}).join('');
     const b=R.state.ecoFocus?R.state.focusBox:subjectBox(model,s,R.state.focusIds||frameSubject(model,st.t)),z=-(b.min[2]+b.max[2])/2,available=z>50,ref=model.refs?.[st.lang];
     const value=minute?formatTime(model,st.t,st.lang).split(' ').at(-1):formatTime(model,st.t,'en');
-    const note=wet?(st.lang==='en'?'Modelled water levels':'모델의 구획별 수위'):(st.lang==='en'?'Not used in this chapter':'이 구간에서는 사용 안 함');
+    const note=!model.features.compartments?(st.lang==='en'?'No compartment-level evidence modelled':'구획별 침수 자료 미적용'):wet?(st.lang==='en'?'Modelled water levels':'모델의 구획별 수위'):(st.lang==='en'?'Not used in this chapter':'이 구간에서는 사용 안 함');
     $('.el-gauges').innerHTML=`<div class="el-g" data-gauge="time"><b>${L.clock} / ${L.year}</b><span class="big">${esc(value)}</span><span class="el-g-note">${minute?L.shipTime:(st.lang==='en'?'Historical year':'연대 기록')}</span><div class="el-status">${projCh.has(c.id)?'':esc(pick(c.name,st.lang))}<span class="el-proj" hidden></span></div></div>
       <div class="el-g" data-gauge="levels"><b>${L.levels}</b><div class="el-levels${wet?'':' is-inactive'}">${bars}</div><span class="el-g-note">${note}</span></div>
       <div class="el-g" data-gauge="depth"><b>${L.depthG}</b><span class="big">${available?Math.round(z).toLocaleString()+' '+L.m:'—'}</span><span class="el-g-note">${available&&ref?esc(L.towers((z/ref.height).toFixed(1),ref.name)):(st.lang==='en'?'Underwater view':'수중 장면에서 표시')}</span><div class="el-depthbar"><s style="width:${available?Math.min(100,100*z/(model.environment.seaDepth||z)):0}%"></s></div><span class="el-g-note">${st.lang==='en'?'Hull length':'선체 길이'} ${model.subject.dims.loa} m</span></div>`;
@@ -261,6 +268,8 @@ export function mountElapse(root, model, params = {}) {
     st.t = t; range.value = t;
     R.set({ t, style: st.style, xray: xrayNow(), branch: st.branch,exploring:st.exploring,exploreTarget:st.exploring?st.exploreStop:null,lampStrength:st.exploring?st.lampStrength:1,ecology:st.ecology,exploreLight:st.exploreLight,ecoView:st.ecoView,ecoClock:st.ecoClock });
     const s = R.state.last, ev = card(), ci = chapterAt(model, t), c = model.chapters[ci];
+    root.querySelectorAll('[data-quality-mode]').forEach(a=>{const url=new URL(location.href);url.searchParams.set('t',st.t);url.searchParams.set('mode',st.exploring?'explore':'timeline');if(st.exploring)url.searchParams.set('stop',st.exploreStop);if(a.dataset.qualityMode==='cutaway')url.searchParams.set('cutaway',params.cutaway==='1'?'0':'1');else url.searchParams.set('quality',a.dataset.qualityMode);a.href=url.href;});
+
     gauges(s, ev);
     const direction=$('.el-directing');direction.hidden=!(hasDirecting(model)||building);if(wtc)direction.textContent=st.lang==='en'?'Official event times · illustrative impacts/collapses and intermediate rebuilding · ends at2018 milestone':'공식 사건 시각 · 충돌·붕괴·중간 재건은 추정 도해 · 2018 이정표까지';else if(nd)direction.textContent=st.lang==='en'?'Official dated milestones · fire, collapse and intermediate rebuilding are illustrative · ends at 2024 reopening':'공식 주요 기록 · 화염·낙하·중간 복원은 추정 도해 · 2024 재개관까지';else if(building)direction.textContent=st.lang==='en'?'Recorded milestones · intermediate geometry/sequence interpolated · 300 m main-structure reference':'주요 시점은 공식 기록 · 중간 형상·순서는 추정·보간 · 300m 주구조 기준';
     if(wtc&&R.state.shot?.weight>.05)direction.textContent=(st.lang==='en'?R.state.shot.id.replace('-',' '):R.state.shot.label)+' · '+(st.lang==='en'?'Automatic observation camera · effects and motion estimated':'자동 관찰 카메라 · 효과·낙하·중간 과정 추정');
@@ -312,7 +321,7 @@ export function mountElapse(root, model, params = {}) {
   function play(on){
     cancelAnimationFrame(playRaf);if(on&&st.exploring)return;st.playing=on;playButton();if(!on)return;
     if(st.t>=100)setT(0);last=performance.now();
-    const step=now=>{if(!st.playing||st.exploring)return;const dt=Math.min(.5,(now-last)/1000);last=now;if(!reducedMotion.matches)st.ecoClock+=dt;setT(wtc?advanceWTC(model,st.t,dt,st.speed):nd?advanceNotreDame(model,st.t,dt,st.speed):advance(st.t,dt*(hasDirecting(model)?directingBeat(model,st.t).rate:1),st.speed));if(st.t>=100){play(false);return;}playRaf=requestAnimationFrame(step);};playRaf=requestAnimationFrame(step);
+    const step=now=>{if(!st.playing||st.exploring)return;const dt=Math.min(.5,(now-last)/1000);last=now;if(!reducedMotion.matches)st.ecoClock+=dt;setT(wtc?advanceWTC(model,st.t,dt,st.speed):nd?advanceNotreDame(model,st.t,dt,st.speed):advance(st.t,dt*playbackRate(model,st.t),st.speed));if(st.t>=100){play(false);return;}playRaf=requestAnimationFrame(step);};playRaf=requestAnimationFrame(step);
   }
 
   root.addEventListener('click', e => {
@@ -364,7 +373,7 @@ export function mountElapse(root, model, params = {}) {
     let recordedLast = performance.now();
     const step = now => { const dt=Math.min(.5,(now-recordedLast)/1000);recordedLast=now;
       if(!reducedMotion.matches)st.ecoClock+=dt;
-      setT(wtc?advanceWTC(model,st.t,dt,st.speed):nd?advanceNotreDame(model,st.t,dt,st.speed):advance(st.t,dt*(hasDirecting(model)?directingBeat(model,st.t).rate:1),st.speed));
+      setT(wtc?advanceWTC(model,st.t,dt,st.speed):nd?advanceNotreDame(model,st.t,dt,st.speed):advance(st.t,dt*playbackRate(model,st.t),st.speed));
       if(st.t<100)requestAnimationFrame(step);else setTimeout(()=>rec.stop(),600); };
     requestAnimationFrame(step);
   }
@@ -374,7 +383,7 @@ export function mountElapse(root, model, params = {}) {
   const ch = num('chapter'), t0 = num('t') ?? (ch != null ? model.chapters[Math.max(0, Math.min(model.chapters.length - 1, ch - 1))].bar[0] : 0);
   st.t = t0; chrome();
   if (params.panel === 'sources' || params.panel === 'about') panel(params.panel);
-  if(params.mode==='explore')explore(true);
+  if(params.mode==='explore'){explore(true);if(explorationStops(model).some(s=>s.id===params.stop)){st.exploreStop=params.stop;explorationPanel();setT(st.t,true);}}
   if (params.play === '1' && !matchMedia('(prefers-reduced-motion: reduce)').matches) play(true);
   window.__elapse = Object.assign(window.__elapse || {}, { R, model, st, errors, setT, play,explore,surveyMotion });
   return window.__elapse;

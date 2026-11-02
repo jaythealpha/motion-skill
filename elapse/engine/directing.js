@@ -18,3 +18,6 @@ export function directingBeat(model, t) {
   for(const e of model.events)if(e.kind==='collapse'&&t>=e._t&&t<=e._until&&e.card!==false)rate=Math.min(rate,.38,Math.max(.02,(e._until-e._t)*.15));
   return {id:c.id,p,rate,label:labels[c.id]||['','']};
 }
+
+// Explicit model pacing also works for subjects without a bespoke director.
+export function playbackRate(model,t){const c=model.chapters[chapterAt(model,t)];return c.playbackRate??(hasDirecting(model)?directingBeat(model,t).rate:1);}

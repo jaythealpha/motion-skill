@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {TITANIC_QUALITY_VIEWS} from '../engine/quality-form.js';
 // Writes examples/titanic.json from the facts in research/titanic-notes.md (source ids s1… are that file's).
 //   node research/titanic-gen.mjs [out.json]
 // Ship frame: x forward from midships (the stem at +LOA/2), y to port, z up from the keel. World: x east, y north,
@@ -358,16 +359,19 @@ const model = {
     { id: 'seabed', name: bi('해저', 'On the seabed'), start: '1912-04-15T02:30', end: 2026, bar: [56, 90], unit: 'year' },
     { id: 'ahead', name: bi('앞으로 (예측)', 'Ahead (projection)'), start: 2026, end: 2100, bar: [90, 100], unit: 'year' },
   ],
+  stops: TITANIC_QUALITY_VIEWS,
   pieces, tracks, events, camera, cameraSubject: ['hull-bow', 'hull-stern'],
   environment: { seaDepth: 3800, sky: 'night', seabed: { size: 3200, relief: 8 } },
   wreck: { separation: { between: ['hull-bow', 'hull-stern'], metres: 600, tol: 60 }, heading: { between: ['hull-bow', 'hull-stern'], deg: 180, tol: 25 } },
   refs: { ko: { name: '롯데월드타워', height: 555 }, en: { name: 'Eiffel Tower', height: 330 } },
   sources,
   meta: {
+    renderQuality: 'high',
     interpretation: bi('RMS 타이타닉(1912) — 빙산 충돌부터 해저의 난파선, 붕괴 예측까지', 'RMS Titanic (1912): from the iceberg to the wreck on the seabed and the forecasts of its collapse'),
     about: bi('1912년 4월 15일 이 배와 함께 1,490~1,517명(1912년 공식 집계, 오늘날 연구로는 약 1,496명)이 목숨을 잃었어요. 이 그림에는 사람을 그리지 않았어요. 난파선은 2012년부터 유네스코 수중문화유산 협약의 대상이고, 2019년 11월 18일 발효된 영국·미국 협정이 보호하고 있어요.',
       'Between 1,490 and 1,517 people (the 1912 official counts; about 1,496 by modern research) died with her on 15 April 1912. No people are drawn here. The wreck has fallen under the UNESCO convention on underwater heritage since 2012 and is protected by a UK–US agreement in force since 18 November 2019.'),
     limitations: [
+      bi('기존 선체 상단22.3m는 상부 갑판 기준이며 C갑판 형심 약19.7m와 다른 값입니다. 기존 형상·운동 좌표를 유지하는 시각 모델입니다.','The22.3m upper-deck model reference differs from the approximately19.7m C-deck moulded-depth datum; existing geometry and motion coordinates are retained.'),
       bi('선체 곡면은 추정이에요. 공개된 선도(lines plan)가 없어 주요 치수와 일반적인 여객선 형상으로 만들었어요. 앞뒤의 낮은 갑판(웰 데크)은 채워서 그렸어요.', 'The hull form is estimated: no lines plan is public, so it is built from the main dimensions and a typical liner form. The fore and aft well decks are drawn filled in.'),
       bi('굴뚝과 돛대의 위치는 옆모습에서 비례로 잡은 추정이에요(±약 5m).', 'Funnel and mast positions are estimated from the profile (±about 5 m).'),
       bi('구획 수위는 증언 시점 사이를 이은 추정이 섞여 있어요.', 'Compartment water levels between the testimony points are interpolated.'),

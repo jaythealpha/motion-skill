@@ -1,3 +1,5 @@
+import {towerFacade} from './quality-buildings.js';
+import {qualitySceneMaterials} from './quality-surfaces.js';
 import * as THREE from 'three';
 import {aircraft,facadeTexture,softTexture,studyTower,uprightBox} from './wtc-study-assets.js';
 const canvas=document.querySelector('canvas'),renderer=new THREE.WebGLRenderer({canvas,antialias:true,preserveDrawingBuffer:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
@@ -17,6 +19,7 @@ const light=new THREE.PointLight('#ff8a32',0,110,2);light.position.copy(V([19.5,
 const range=document.querySelector('#timeline'),playButton=document.querySelector('#play'),speed=document.querySelector('#speed'),motion=matchMedia('(prefers-reduced-motion: reduce)');let p=Math.max(0,Math.min(1,+(new URLSearchParams(location.search).get('p')||.35))),playing=false,last=0,raf=0;
 const clamp=x=>Math.max(0,Math.min(1,x)),smooth=x=>{x=clamp(x);return x*x*(3-2*x);};
 function state(t){return{contact:.46,travel:t<.46?t/.46:1+(t-.46)*5.5,fire:clamp((t-.46)/.16),smoke:clamp((t-.48)/.48),phase:t<.38?'접근':t<.53?'접촉 · 저속':t<.74?'화염의 확산':'연기와 외벽 손상'};}
+towerFacade(south,415,new THREE.MeshStandardMaterial({color:'#a7b6bd',roughness:.58,metalness:.35}));towerFacade(north,417,new THREE.MeshStandardMaterial({color:'#a7b6bd',roughness:.58,metalness:.35}));qualitySceneMaterials(root,m=>m.map?'facade':'metal');
 function render(t=p){p=clamp(t);const s=state(p),hit=p>=s.contact;plane.visible=p<.59;plane.position.set(19.5,-330+228*s.travel,300);plane.rotation.y=-.1;plane.rotation.z=-.025;damage.visible=hit;damage.material.opacity=smooth((p-.46)/.045);
  const clock=(p-.46)*24;for(const[i,q]of fire.entries()){const seed=i*2.39996,life=clamp((p-.46-i%6*.003)/.08),fade=1-smooth((p-.69)/.24),r=(7+i%5*3)*life;q.visible=hit&&fade>.001;q.position.set(19.5+Math.cos(seed)*r,-79-Math.abs(Math.sin(seed))*r*1.7,298+Math.sin(seed*.7)*r*.6+life*(i%4)*2);const size=(11+i%7*2)*(.3+.7*life)*(1+.07*Math.sin(p*95+i));q.scale.set(size,size*(1.1+i%3*.12),1);q.material.opacity=life*fade*.54;q.material.rotation=seed+p*.4;}
  for(const[i,q]of smoke.entries()){const born=.48+i*.0034,age=clamp((p-born)/.3);q.visible=p>born;const a=i*2.4,spread=10+age*20;q.position.set(19.5+Math.cos(a)*spread+age*35,-90-Math.abs(Math.sin(a))*spread-age*17,300+age*70+(i%4)*3);const size=(12+i%7*2)*(1+age*1.2);q.scale.set(size,size*(1.05+i%3*.1),1);q.material.rotation=a+age*.2;q.material.opacity=smooth((p-born)/.07)*(.16+(i%3)*.035)*(1-age*.38);}

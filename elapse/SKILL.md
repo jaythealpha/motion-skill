@@ -21,7 +21,7 @@ One storyline runs through the bar: **how the water changed the ship.** The nigh
 - turn on **x-ray** to see the bulkheads and the water inside
 - switch between colour and blueprint, and simple and detailed cards
 - read a card at every event, each marked with how sure it is
-- enter **Explore** on the bundled Titanic/Britannic examples: lock the historical date, visit existing bow/bridge/stern structures, orbit/zoom and adjust virtual survey light. Titanic also supports an independent fauna/snow clock in its eligible observation window; leaving Explore restores the prior historical time and view.
+- enter **Explore** on any ship with hull geometry or explicit `stops`: lock the historical date, visit existing bow/bridge/stern structures, orbit/zoom and adjust virtual survey light. Titanic also supports an independent fauna/snow clock in its eligible observation window; leaving Explore restores the prior historical time and view.
 
 **You** supply the subject as a *time model* (JSON) built from public records. Two gates check your work, because nobody reviews it before the person sees it.
 
@@ -114,6 +114,11 @@ s.pieces.get('funnel-1').matrix   // its world matrix then (column-major 4×4)
 
    Fix the data, not the checker.
 5. **Build, then Gate 2 (pictures).**
+   - All subjects use fixed information slots outside the canvas. Do not restore overlay cards for a new ship.
+   - New ships automatically get a hull overview; set `stops` for researched areas and observation angles (see model format). Use `stops: []` when inspection is unsupported. This does not generate detailed geometry or evidence.
+   - `chapters[].playbackRate` sets a model-specific speed multiplier (0.1–2) without a new subject-name branch. Camera keys remain model data. Dedicated water/fire/ecological effects are still subject-specific; do not claim they transfer automatically.
+   - Run `node <skill>/scripts/check_layout.mjs out.html layout.json`: 375×667, 375×812, 768×1024 and 1440×900, both styles, five times. Information slots must remain fixed and must not intersect.
+
    ```
    node <skill>/scripts/build.mjs model.json out.html
    node <skill>/scripts/shoot.mjs out.html out-shots
@@ -125,7 +130,7 @@ s.pieces.get('funnel-1').matrix   // its world matrix then (column-major 4×4)
    - no water in x-ray after the first overflow (`compartments`)
    - the projection badge missing (`projection`)
 
-   Iterate with `--quick` (a few shots) and finish with a full run. Then **look** at `out-shots/key.png` and `contact.png`, and open doubtful shots at full size. For a close look, run `node <skill>/scripts/shoot.mjs out.html views --only "t=30&yaw=200&pitch=10&zoom=0.6&xray=1" --scale 2` (you can repeat `--only`). Check:
+   Iterate with `--quick` (a few shots) and finish with a full run. Automatic gates are structural checks, not visual approval. Inspect the full-size 375×812 and short-phone screenshots for occlusion/readability as well as the contact sheet. Then **look** at `out-shots/key.png` and `contact.png`, and open doubtful shots at full size. For a close look, run `node <skill>/scripts/shoot.mjs out.html views --only "t=30&yaw=200&pitch=10&zoom=0.6&xray=1" --scale 2` (you can repeat `--only`). Check:
    - the ship is recognisably that ship (funnels, colours, superstructure)
    - the overflow is visible in x-ray
    - the break and the landing match the record
@@ -182,3 +187,27 @@ Read `research/wtc-notes.md`; use `research/wtc-gen.mjs`. `geometry.type=wtc-200
 Use New York local wall-clock values; seconds labels preserveWTC7’s17:20:52 record. Original tower footprints remain when buildings are lost; new One WTC is not either original tower. Memorial/One/Oculus inspection availability must follow dates. Stop at the2018 milestone; do not infer today’s whole campus or invent a completed2 WTC. Run Gate1, full Gate2 and `scripts/check_wtc.mjs` across375/768/1440px. Check damage order, reversal, absent/future structures, fixed slots and view restoration. Other subjects require their own researched templates.
 
 For WTC critical scenes, retain `wtc-direction.js` authored shot windows and `wtc-effects.js` procedural layers. Automatic camera must yield to manual/exploration views. Include `scripts/check_wtc_directed.mjs` coverage of approach/impact/smoke and upper/mid/ground collapse stages at375/768/1440px. Generic context blocks are not surveyed buildings. Preserve the visible distinction between official event times and estimated motion.
+
+## Optional Britannic quality tier
+
+This is an independently authored damaged-wreck interpretation, not a photogrammetric survey. It supports the existing Britannic template only; never promise it for an arbitrary new subject.
+
+```
+node <skill>/scripts/build-quality.mjs <skill>/examples/britannic.json britannic-quality.html
+node <skill>/scripts/check_model.mjs britannic-quality.model.json --official 269.1,28.65,19.66
+node <skill>/scripts/shoot.mjs britannic-quality.html quality-shots
+node <skill>/scripts/check_quality.mjs britannic-quality.html quality-views
+```
+
+Open `?t=90&mode=explore&stop=bow&cutaway=1&study=quality`. The page offers existing/high comparison and six inspection targets. The roof/forward-shell cutaway is explicitly explanatory; do not describe it as observed roof collapse. Cutaway/quality links reload the page. `quality=standard` overrides the companion model's high default.
+
+- Damage, frames, deck plates, estimated bridge instruments, foredeck gear and three propellers supplement the existing model. Individual coordinates, plate tears, blade profiles/pitch and instrument positions remain estimates. Sources are expedition text/facts, no downloaded photos or traced modern meshes.
+- Mobile and detected software renderers use fewer repeated rivets/growth details, cheaper material normals and no high-resolution shadow pass. This is an asset tier, not guaranteed real-device FPS.
+- Inspect full-size screenshots of the break, bridge, foredeck and stern at all three widths. Also check mode transitions, below-wreck camera position, render errors, performance and source caveats. Automatic Gate 2 alone is not visual approval.
+- The generated companion model resets Gate 2 to unknown. Record pass only after running its checks. A quality label is not a claim of measured CAD accuracy or photorealism.
+
+## Approved visual direction
+
+For subsequent Elapse subjects and revisions, follow `references/visual-quality-baseline.md`: the user approved the Britannic fracture art-pass detail level on2026-11-02. Preserve this level of structural readability, restrained materials, context/close-up views and fixed information slots. Implement subject-specific evidence and geometry rather than copying Britannic damage into unrelated examples. Visual approval does not establish measured accuracy or physical-device performance.
+
+The packaged Titanic, Britannic, Eiffel, Notre-Dame and WTC examples opt into subject-specific high-detail tiers with `meta.renderQuality: "high"`; their research generators retain that setting. See `references/quality-tier.md`. New geometry must use the subject's own structural references and dated visibility/transform groups. The shared material treatment alone is not sufficient evidence of matching the approved detail standard.

@@ -85,6 +85,18 @@ export function validateModel(m) {
     ids.add(p.id);
   }
   const has = id => ids.has(id);
+  if(m.stops!=null){
+    if(!Array.isArray(m.stops))err('stops','must be an array');
+    else {const seen=new Set();for(const s of m.stops){
+      if(!s.id||seen.has(s.id))err('stops','each stop needs a unique id');seen.add(s.id);
+      if(!s.name||(!s.name.ko&&!s.name.en))err('stop '+s.id,'name needs ko or en');
+      if(!Array.isArray(s.parts)||!s.parts.length||s.parts.some(id=>!has(id)))err('stop '+s.id,'parts must reference existing pieces');
+      if(!Number.isFinite(s.yaw)||!Number.isFinite(s.pitch)||Math.abs(s.pitch)>80)err('stop '+s.id,'finite yaw and pitch (-80..80) required');
+      for(const key of ['trimX','trimY','trimZ'])if(s[key]&&(!Array.isArray(s[key])||s[key].length!==2||!s[key].every(Number.isFinite)||s[key][0]<0||s[key][1]>1||s[key][0]>=s[key][1]))err('stop '+s.id,key+' must be an increasing fraction pair within 0..1');
+    }}
+  }
+  for(const c of m.chapters)if(c.playbackRate!=null&&(!Number.isFinite(c.playbackRate)||c.playbackRate<.1||c.playbackRate>2))err('chapter '+c.id,'playbackRate must be 0.1..2');
+
   const srcCheck = (where, it) => { for (const s of arr(it.sourceIds)) if (!sources.has(s)) err(where, `unknown source '${s}'`); };
   for (const p of m.pieces) {
     if (!TEMPLATES.includes(p.template)) err(`piece ${p.id}`, `unknown template '${p.template}'`);

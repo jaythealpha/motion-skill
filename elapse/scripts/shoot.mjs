@@ -6,7 +6,7 @@ import {notreDameRate} from '../engine/notredame-model.js';
 //   node scripts/shoot.mjs page.html outDir [--quick] [--only "t=30&yaw=200"]... [--scale N]
 // Prints GATE2 PASS | FAIL | SKIPPED.  Exit 0 pass, 1 fail, 2 skipped (no Chrome or Node < 22).
 import { mkdirSync } from 'node:fs';
-import { directingBeat, hasDirecting } from '../engine/directing.js';
+import { playbackRate } from '../engine/directing.js';
 import { resolve, join, basename } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { openBrowser, shooter, writeSheets } from '../shared/cdp.mjs';
@@ -37,6 +37,11 @@ const CHECK = `(async () => {
     if (stage && (r.left < stage.left - 1 || r.right > stage.right + 1 || r.top < stage.top - 1 || r.bottom > stage.bottom + 1)) out.problems.push('outside the stage: ' + el.className + ' "' + el.textContent.slice(0, 30) + '"'); }
   for (const el of document.querySelectorAll('.el-card h3, .el-card p, .el-g, .el-chapters button, .el-actions button')) {
     if (el.scrollWidth > el.clientWidth + 2 && getComputedStyle(el).textOverflow !== 'ellipsis') out.problems.push('text overflows: "' + el.textContent.slice(0, 30) + '"'); }
+  const slots=[...document.querySelectorAll('.el-card:not([hidden]),[data-gauge]')];
+  for(let i=0;i<slots.length;i++)for(let j=i+1;j<slots.length;j++){
+    const a=slots[i].getBoundingClientRect(),b=slots[j].getBoundingClientRect();
+    if(Math.min(a.right,b.right)-Math.max(a.left,b.left)>1&&Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top)>1)out.problems.push('information slots overlap: '+slots[i].className+' / '+slots[j].className);
+  }
   out.frame = u.R.frame();
   return out; })()`;
 const { shot: rawShot, shots } = shooter({ ...B, base, outDir, check: CHECK, scale });
@@ -82,6 +87,8 @@ if (!quick) {
   await shot('panel-about', { t: 60, panel: 'about' }, {}, { frame: false });
   await shot('simple-t35', { t: 35, depth: 'simple' });
 }
+await shot('phone-short', { t:50 }, {w:375,h:667,mobile:true});
+await shot('tablet', {t:50}, {w:768,h:1024});
 for (const t of quick ? [50] : [10, 50, 80]) await shot(`phone-t${t}`, { t }, { w: 375, h: 812, mobile: true });
 
 // optional features: checked only when the model turns them on
@@ -117,7 +124,7 @@ for (const [speed, secs] of quick ? [['slow', 30]] : [['xslow', 60], ['slow', 30
   // the tolerance is unchanged, and other ships retain their constant-rate check.
   let expectedEnd=moved.start;
   const quantum=isWTC(M)?.0001:.005;
-  for(let elapsed=0;elapsed<moved.secs;elapsed+=quantum){const dt=Math.min(quantum,moved.secs-elapsed);expectedEnd+=dt*100/secs*(hasDirecting(M)?directingBeat(M,expectedEnd).rate:isWTC(M)?wtcRate(M,expectedEnd):notreDameRate(M,expectedEnd));}
+  for(let elapsed=0;elapsed<moved.secs;elapsed+=quantum){const dt=Math.min(quantum,moved.secs-elapsed);expectedEnd+=dt*100/secs*(isWTC(M)?wtcRate(M,expectedEnd):M.subject.kind==='building'?notreDameRate(M,expectedEnd):playbackRate(M,expectedEnd));}
   const expect = expectedEnd-moved.start, ok = Math.abs(moved.dt - expect) < Math.max(2, expect * 0.3);
   if(isWTC(M))console.log(`WTC clock: start=${moved.start.toFixed(5)} elapsed=${moved.secs.toFixed(3)}`);
   console.log(`${ok ? 'ok  ' : 'FAIL'} speed-${speed}  moved ${moved.dt.toFixed(1)} in ${moved.secs.toFixed(1)} s (expected ~${expect.toFixed(1)})`);

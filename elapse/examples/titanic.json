@@ -6261,7 +6261,102 @@
    {
     "ko": "충돌 뒤 배의 방향, 하강 경로, 잔해의 위치, 빙산의 크기는 추정이에요. 해저의 두 조각의 방향은 기록이 약해요.",
     "en": "The ship’s heading after the collision, the descent paths, the debris positions and the iceberg’s size are estimated; the headings of the two pieces on the seabed are weakly recorded."
+   },
+   {
+    "ko": "고품질 구조·접합부·외벽 부재·재질 디테일은 기존 기준 자료를 참고한 독립 추정 형상이며 실측 CAD나 물리 시뮬레이션이 아닙니다.",
+    "en": "Enhanced structure, joints, facade members and material details are independent estimates based on the existing references, not surveyed CAD or physical simulation."
+   },
+   {
+    "ko": "기존 시간 모델의 선체 상단 높이 22.3m는 상부 갑판 기준이며, 조사 자료의 C갑판 형심 약19.7m와 같은 치수가 아닙니다. 이 개선에서는 기존 형상·운동 좌표를 유지합니다.",
+    "en": "The existing time model uses a 22.3m upper-deck reference, not the approximately19.7m C-deck moulded-depth datum in the inquiry references. This visual pass preserves the existing geometry and motion coordinates."
    }
-  ]
- }
+  ],
+  "renderQuality": "high",
+  "gate2": "pass"
+ },
+ "stops": [
+  {
+   "id": "wreck",
+   "name": {
+    "ko": "선체 둘러보기",
+    "en": "Wreck overview"
+   },
+   "parts": [
+    "hull-bow",
+    "hull-stern"
+   ],
+   "yaw": 210,
+   "pitch": 18
+  },
+  {
+   "id": "bow",
+   "name": {
+    "ko": "선수",
+    "en": "Bow"
+   },
+   "parts": [
+    "hull-bow"
+   ],
+   "yaw": 180,
+   "pitch": 20
+  },
+  {
+   "id": "bridge",
+   "name": {
+    "ko": "선교·갑판",
+    "en": "Bridge / decks"
+   },
+   "parts": [
+    "officers",
+    "bridge-wings"
+   ],
+   "yaw": 180,
+   "pitch": 26
+  },
+  {
+   "id": "stern",
+   "name": {
+    "ko": "선미",
+    "en": "Stern"
+   },
+   "parts": [
+    "hull-stern"
+   ],
+   "trimX": null,
+   "yaw": 120,
+   "pitch": 20
+  },
+  {
+   "id": "bow-break",
+   "name": {
+    "ko": "선수부 파단면 확대",
+    "en": "Bow fracture close-up"
+   },
+   "parts": [
+    "hull-bow"
+   ],
+   "trimX": [
+    0,
+    0.13
+   ],
+   "yaw": 240,
+   "pitch": 20
+  },
+  {
+   "id": "stern-break",
+   "name": {
+    "ko": "선미부 파단면 확대",
+    "en": "Stern fracture close-up"
+   },
+   "parts": [
+    "hull-stern"
+   ],
+   "trimX": [
+    0.83,
+    1
+   ],
+   "yaw": 285,
+   "pitch": 22
+  }
+ ]
 }

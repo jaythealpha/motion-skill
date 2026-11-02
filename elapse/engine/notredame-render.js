@@ -1,3 +1,5 @@
+import {cathedralDetail} from './quality-buildings.js';
+import {qualityLighting,qualitySceneMaterials} from './quality-surfaces.js';
 import * as THREE from 'three';
 import {cathedralForm} from './notredame-form.js';
 import {notreDameState} from './notredame-model.js';
@@ -17,7 +19,8 @@ export function createNotreDameRenderer(canvas,model,opts={}){
   st.cam={target,yaw,pitch,dist};const place=()=>{const y=yaw*Math.PI/180,p=pitch*Math.PI/180;camera.position.copy(V([target[0]+dist*Math.cos(p)*Math.cos(y),target[1]+dist*Math.cos(p)*Math.sin(y),target[2]+dist*Math.sin(p)]));camera.lookAt(V(target));camera.updateMatrixWorld();};place();for(let n=0;n<24;n++){const q=project(b);if(q.minX>-.85&&q.maxX<.85&&q.minY>-.86&&q.maxY<.84)break;dist*=1.08;place();}dist*=st.zoom;place();st.cam.dist=dist;camera.near=Math.max(.05,dist/2000);camera.far=dist*10+1500;camera.updateProjectionMatrix();st.eyeZ=camera.position.y;
  }
  function project(b){const nodes=[];if(st.focusIds?.[0]==='overview'){for(const x of [-65,65])for(const y of [-26,26])for(const z of [0,44])nodes.push([x,y,z]);for(const x of [-65,-45])for(const y of [-22,22])nodes.push([x,y,69]);nodes.push([5,0,b.max[2]]);}else for(const x of [b.min[0],b.max[0]])for(const y of [b.min[1],b.max[1]])for(const z of [b.min[2],b.max[2]])nodes.push([x,y,z]);const ps=nodes.map(p=>V(p).project(camera));return {minX:Math.min(...ps.map(p=>p.x)),maxX:Math.max(...ps.map(p=>p.x)),minY:Math.min(...ps.map(p=>p.y)),maxY:Math.max(...ps.map(p=>p.y))};}
- function render(){view();renderer.render(scene,camera);opts.onRender?.();}
+ const enhanced=opts.quality==='high';if(enhanced){cathedralDetail(form);qualitySceneMaterials(root,m=>m===mats.wood||m===mats.char?'wood':m===mats.stone||m===mats.trim?'stone':'metal');}
+ function render(){view();if(enhanced)qualityLighting(renderer,scene,st);renderer.render(scene,camera);opts.onRender?.();}
  function set(o={}){Object.assign(st,o);progress=notreDameState(model,st.t);st.progress=progress;st.last={pieces:new Map(),water:new Map(),lights:0};const bp=st.style==='blueprint';scene.background=new THREE.Color(bp?'#172b40':progress.fire>0?'#a6a6a0':'#e3e6df');ground.material.color.set(bp?'#152639':'#b6b3a6');plinth.material.color.set(bp?'#21384d':'#d3cbb8');
   for(const [m,color] of initialColors){m.color.copy(bp?new THREE.Color('#a9d1dc'):color);if('metalness'in m)m.metalness=bp?0:(m===mats.lead?.35:0);}
   mats.stone.color.copy(bp?new THREE.Color('#95b7c7'):new THREE.Color('#b9ad91').lerp(new THREE.Color('#ded5bd'),progress.clean*.5));mats.dark.color.set(bp?'#132538':'#273541');

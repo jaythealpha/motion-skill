@@ -1,3 +1,5 @@
+import {createTitanicQuality} from './quality-titanic.js';
+import {createQualityStudy} from './quality.js';
 // three.js renderer. Model coordinates are z-up metres; the root group turns them so z points up on screen.
 // Two styles from the same meshes ('color': toon bands and ink edges; 'blueprint': flat fills and light lines),
 // and an x-ray mode that thins the hull to show bulkheads and the water inside.
@@ -78,7 +80,7 @@ export function createRenderer(canvas, model, opts = {}) {
     let windows = null;
     if (g.userData.windows) {
       const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.Float32BufferAttribute(g.userData.windows.flat(), 3));
-      windows = new THREE.Points(geo, new THREE.PointsMaterial({ color: LOOK.window, size: 2, sizeAttenuation: false, transparent: true, depthWrite: false }));
+      windows = new THREE.Points(geo, new THREE.PointsMaterial({ color: LOOK.window, size: 2, sizeAttenuation: false, transparent: true, depthWrite: false, toneMapped: false }));
       windows.renderOrder = 4; g.add(windows);
     }
     // growth on a hull, shown in proportion to its rust: rusticles (downward cones, the deep-sea look) or a crust of
@@ -226,7 +228,7 @@ export function createRenderer(canvas, model, opts = {}) {
       if(f>.95){st.focusIds=ids;st.focusBox=b;}
     }
     const stop=st.exploring&&explorationStops(model).find(s=>s.id===st.exploreTarget);
-    if(stop){let b=subjectBox(model,st.last,stop.parts);if(stop.trimX){const it=items.find(q=>q.p.id===stop.parts[0]);if(it?.local){const box={min:[...it.local.min],max:[...it.local.max]},span=box.max[0]-box.min[0];box.max[0]=box.min[0]+span*stop.trimX[1];box.min[0]+=span*stop.trimX[0];b=worldBox(box,it.g.matrix.elements);}}c.target=b.min.map((v,k)=>(v+b.max[k])/2);c.dist=Math.max(8,...b.max.map((v,k)=>(v-b.min[k])*1.55));c.yaw=stop.yaw;c.pitch=stop.pitch;st.focusBox=b;st.focusIds=stop.parts;}
+    if(stop){let b=subjectBox(model,st.last,stop.parts);if(stop.trimX||stop.trimY||stop.trimZ){const it=items.find(q=>q.p.id===stop.parts[0]);if(it?.local){const box={min:[...it.local.min],max:[...it.local.max]};for(const [k,key]of ['trimX','trimY','trimZ'].entries()){const v=stop[key];if(v){const lo=box.min[k],span=box.max[k]-lo;box.max[k]=lo+span*v[1];box.min[k]=lo+span*v[0];}}b=worldBox(box,it.g.matrix.elements);}}c.target=b.min.map((v,k)=>(v+b.max[k])/2);c.dist=Math.max(8,...b.max.map((v,k)=>(v-b.min[k])*1.55));c.yaw=stop.yaw;c.pitch=stop.pitch;st.focusBox=b;st.focusIds=stop.parts;}
     st.ecoFocus=null;ecology?.updateAnimals(st);const ecoFocus=ecology?.inspect(st);
     if(ecoFocus){st.ecoFocus=ecoFocus;const b=ecoFocus.box;c.target=b.min.map((v,k)=>(v+b.max[k])/2);c.dist=ecoFocus.dist;c.yaw=ecoFocus.yaw;c.pitch=st.ecoView==='sponge'?35:12;st.focusBox=b;st.focusIds=[st.ecoView==='sponge'?'aft-house-stern':st.ecoView==='coral'?'rail-bow-stbd':'hull-bow'];}
     st.cam = c;
@@ -258,8 +260,10 @@ export function createRenderer(canvas, model, opts = {}) {
     st.eyeZ = eye[2];
   }
 
+  const quality=opts.quality==='high'&&isBritannic(model)?createQualityStudy({renderer,scene,camera,root,items,ground,hemi,sun,model,cutaway:opts.qualityCutaway}):opts.quality==='high'&&isTitanic(model)?createTitanicQuality({renderer,scene,items}):null;
   function render() { if (!st.last) apply(st.t); placeCamera(); cinematic?.update(st); wreckDetail?.update(st); ecology?.updateLight(st,hemi,sun); surveyLamp.visible=st.exploring&&(!ecology||!ecologyMode(model,st))&&st.style==='color'&&st.exploreLight;
     if(surveyLamp.visible){const T=toThree(st.cam.target),d=camera.position.distanceTo(T);surveyLamp.position.copy(camera.position);surveyLamp.target.position.copy(T);surveyLamp.distance=d*5+5;surveyLamp.intensity=d*d*2*st.lampStrength;}
+    quality?.update(st);
     renderer.render(scene, camera); opts.onRender?.(); }
 
   function resize() {
@@ -327,7 +331,7 @@ export function createRenderer(canvas, model, opts = {}) {
     a.project(camera);b.project(camera);return {anchors,ppm:Math.max(.0001,Math.abs(b.x-a.x)*W/2)};
   }
   return {
-    state: st, renderer, scene, camera, diagram,
+    state: st, renderer, scene, camera, diagram, qualityInfo:()=>quality?.stats||null,
     ecologyInfo(){return ecology?{available:st.t>=0&&ecologyMode(model,st),kind:st.ecoFocus?.kind||null,clock:st.ecoClock,...ecology.stats()}:null;},
     set(o = {}) {
       for(const k of ['ecology','exploreLight','ecoView','ecoClock','exploring','lampStrength'])if(o[k]!=null)st[k]=o[k];
