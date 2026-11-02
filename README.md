@@ -46,6 +46,8 @@ Packaged demos include subject-specific high-detail finishes; see [visual qualit
   - a plain memorial note on every wreck
   - recent or politically disputed sinkings are declined
 
+공개 갤러리는 **영어 기본**, 한국어·영어·일본어·중국어(간체)·스페인어를 지원합니다. [언어 선택과 데모별 지원 범위](DEMOS.md#갤러리-언어)를 확인하세요.
+
 ## 시작하기
 
 **[브라우저에서 12개 데모 바로 보기](https://jaythealpha.github.io/motion-skill/)**
