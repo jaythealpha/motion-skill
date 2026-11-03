@@ -1,3 +1,4 @@
+import{finishMaterial}from'../shared/surface-finish.js';
 import * as THREE from 'three';
 // Visual surface finish only: these marks are not a measured circuit/serial/fastener inventory.
 export function qualityMaterial(key,color,lightweight=false,environment=null){
@@ -16,5 +17,5 @@ export function qualityMaterial(key,color,lightweight=false,environment=null){
  :`float grain=sin(ufSurface.y*24.)*.015;diffuseColor.rgb*=1.+grain;`;
  s.fragmentShader=s.fragmentShader.replace('#include <color_fragment>','#include <color_fragment>\n'+detail);
  };m.customProgramCacheKey=()=>`unfold-surface-${kind}`;}
- return m;
+ return finishMaterial(m,glass?'glass':metal?'metal':'plastic');
 }

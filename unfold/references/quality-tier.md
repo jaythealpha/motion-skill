@@ -1,5 +1,7 @@
 # Unfold high-detail rendering
 
+The 2026-11-03 material revision adds cached periodic height/roughness tiles for metal and polymer surfaces, cleaner glass response and stronger studio reflection contrast. Tiles are generated once and reused. Geometry, original model JSON, screen states, fold paths, assembly steps and five-language controls remain unchanged. These surface details are illustrative; they do not describe measured coatings, circuit topology or serial markings.
+
 `meta.renderQuality: "high"` (default) enables physically lit, material-specific finishes, smooth2-segment bevels and12-segment curves. No source image, scan, mesh or runtime network asset is embedded. `?quality=standard` selects the original toon material/tessellation path for comparison.
 
 Mobile viewports and identified software renderers use a lightweight Phong finish with the same procedural marks and geometry; other GPUs use Standard/Physical materials. This adaptive path is documented rather than claiming the software screenshots validate hardware PBR performance.

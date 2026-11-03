@@ -1,3 +1,4 @@
+import{cathedralEffects}from'./cathedral-effects.js';
 import{configureMaterialBudget,presentationPixelRatio}from'../shared/material-budget.js';
 import{surfaceMaterial}from'../shared/material-budget.js';
 import{createPresentation}from'../shared/presentation.js';
@@ -23,6 +24,7 @@ export function createNotreDameRenderer(canvas,model,opts={}){
  }
  function project(b){const nodes=[];if(st.focusIds?.[0]==='overview'){for(const x of [-65,65])for(const y of [-26,26])for(const z of [0,44])nodes.push([x,y,z]);for(const x of [-65,-45])for(const y of [-22,22])nodes.push([x,y,69]);nodes.push([5,0,b.max[2]]);}else for(const x of [b.min[0],b.max[0]])for(const y of [b.min[1],b.max[1]])for(const z of [b.min[2],b.max[2]])nodes.push([x,y,z]);const ps=nodes.map(p=>V(p).project(camera));return {minX:Math.min(...ps.map(p=>p.x)),maxX:Math.max(...ps.map(p=>p.x)),minY:Math.min(...ps.map(p=>p.y)),maxY:Math.max(...ps.map(p=>p.y))};}
  const enhanced=opts.quality==='high';if(enhanced){cathedralDetail(form);qualitySceneMaterials(root,m=>m===mats.wood||m===mats.char?'wood':m===mats.stone||m===mats.trim?'stone':'metal');}
+ const fireEffects=cathedralEffects(root);
  const presentation=createPresentation(renderer,scene,{kind:'stone',sun,root});
  function render(){view();presentation.update(st);if(enhanced)qualityLighting(renderer,scene,st);renderer.render(scene,camera);opts.onRender?.();}
  function set(o={}){Object.assign(st,o);progress=notreDameState(model,st.t);st.progress=progress;st.last={pieces:new Map(),water:new Map(),lights:0};const bp=st.style==='blueprint';scene.background=new THREE.Color(bp?'#172b40':progress.fire>0?'#a6a6a0':'#e3e6df');ground.material.color.set(bp?'#152639':'#b6b3a6');plinth.material.color.set(bp?'#21384d':'#d3cbb8');
@@ -38,7 +40,7 @@ export function createNotreDameRenderer(canvas,model,opts={}){
   g.oldScaffold.visible=progress.oldScaffold>.01;g.oldScaffold.scale.z=Math.max(.01,progress.oldScaffold);
   g.newScaffold.visible=progress.newScaffold>.01;g.newScaffold.scale.z=Math.max(.01,progress.newScaffold);
   g.support.visible=progress.support>.05;g.tarp.visible=progress.tarp>.1;
-  g.fire.visible=progress.fire>.001&&!bp;g.smoke.visible=progress.fire>.001&&!bp;g.fire.scale.z=Math.max(.01,progress.fire);g.fire.position.z=44*(1-progress.fire);g.smoke.children.forEach((q,i)=>{q.scale.setScalar(.5+progress.fire*(1+(i%3)*.2));q.material.opacity=.17*progress.fire;});
+  g.fire.visible=g.smoke.visible=false;fireEffects.set(progress,bp,st.t);g.fire.scale.z=Math.max(.01,progress.fire);g.fire.position.z=44*(1-progress.fire);g.smoke.children.forEach((q,i)=>{q.scale.setScalar(.5+progress.fire*(1+(i%3)*.2));q.material.opacity=.17*progress.fire;});
   if(st.exploring&&st.exploreTarget==='vault'){g.roof.visible=false;g.oldTimber.visible=false;g.newTimber.visible=false;g.tarp.visible=false;g.oldSpire.visible=false;g.newSpire.visible=false;}else g.roof.visible=true;
   sun.intensity=(bp?0:3)*(st.exploring?st.lampStrength:1);hemi.intensity=bp?2:2;render();}
  const manual=()=>{if(st.yaw==null)st.yaw=st.cam?.yaw??225;if(st.pitch==null)st.pitch=st.cam?.pitch??20;if(st.auto){st.auto=false;st.yaw=st.cam.yaw;st.pitch=st.cam.pitch;opts.onManual?.();}};const pointers=new Map();let pinch=0;

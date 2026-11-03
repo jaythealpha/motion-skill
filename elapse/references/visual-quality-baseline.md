@@ -8,6 +8,12 @@ This approves the visual direction and level of detail for continued Elapse work
 
 ## Production standard
 
+The 2026-11-03 WTC revision adds shaped airframe sections/airfoils, merged engine/cockpit detail, chamfered tower corners, anti-aliased glazing/columns and a reversible irregular opening with interior fragments. Boeing dimensions and NIST descriptions inform the envelope and facade pattern; detailed contours, damage and placements remain illustrative estimates.
+
+Use cached, independently authored material-data tiles and sixteen-variant flame/smoke atlases. Keep instanced particles, merged repeated geometry and texture uploads in the preparation stage. Do not introduce per-frame texture generation, heavy volume raymarching or individual transparent-object draw calls without comparing performance. Apply the same material/lighting standard with each subject's own surfaces and dated states; do not transplant aircraft, fire or damage into unrelated scenes.
+
+Renderer checks also cover finite buffers, the measured airframe envelope, reverse-scrubbing geometry restoration, stable repeated-render population counts and hiding effects in blueprint mode. Compare isolated GPU traces with retained before pages; distinguish cold/transient stalls, steady frame intervals, draw calls and actual physical-device evidence.
+
 - Show meaningful thickness, joints and internal construction at inspection distance; a silhouette or wire grid alone is insufficient.
 - Damage should express bent, torn and missing material with varied geometry rather than a regular rectangular opening. Keep explanatory cutaways visibly distinct from recorded damage.
 - Subdue repetitive surface noise and oversized decorative growth so the structure reads clearly. Use material differences and local shading to support depth.

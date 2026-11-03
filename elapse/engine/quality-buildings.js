@@ -2,7 +2,7 @@ import{surfaceMaterial}from'../shared/material-budget.js';
 import * as THREE from 'three';
 import {boxInstances} from './quality-surfaces.js';
 // Shapes and coordinates are independent illustrative estimates within the existing model.
-export function towerFacade(parent,h,material){const rows=[],step=62.8/56;for(const side of [-1,1])for(let i=1;i<56;i++){const k=-31.4+i*step;rows.push([k,side*31.8,h/2,.32,.3,h],[side*31.8,k,h/2,.3,.32,h]);}const m=boxInstances(parent,rows,material);m.userData.facadeRibs=true;return m;}
+export function towerFacade(parent,h,material){const rows=[],step=1.016;for(const side of [-1,1])for(let i=0;i<59;i++){const k=(i-29)*step;rows.push([k,side*31.8,h/2,.36,.3,h],[side*31.8,k,h/2,.3,.36,h]);}const m=boxInstances(parent,rows,material);m.userData.facadeRibs=true;return m;}
 export function wtcDetail(form){
  for(const tw of form.towers){towerFacade(tw.body,tw.height,tw.clips[0]);towerFacade(tw.top,tw.topHeight,tw.top.children.find(o=>o.isMesh)?.material||tw.clips[0]);}
  const mat=surfaceMaterial({color:'#716f65',roughness:.95}),steel=surfaceMaterial({color:'#646a69',roughness:.82,metalness:.3}),slabs=[],webs=[],flanges=[];
@@ -31,6 +31,6 @@ export function eiffelDetail(groups,beams,material){
 
 // Thin geometry aliases against the mapped facade when it spans fewer than a few pixels.
 export function facadeLOD(parent,distance,canvasHeight,fov){
- const pitch=canvasHeight/(2*Math.tan(fov*Math.PI/360))*(62.8/56)/Math.max(1,distance);
+ const pitch=canvasHeight/(2*Math.tan(fov*Math.PI/360))*1.016/Math.max(1,distance);
  parent.traverse(q=>{if(!q.userData.facadeRibs)return;if(q.visible&&pitch<5)q.visible=false;else if(!q.visible&&pitch>6)q.visible=true;});
 }
