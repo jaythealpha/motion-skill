@@ -1,0 +1,10 @@
+{
+  "profile": "people-facts-v1",
+  "peopleRecords": 5,
+  "contributors": 7,
+  "numericFacts": 3,
+  "gaps": 0,
+  "warnings": [],
+  "truthVerification": "Structural coverage only; source claims require primary-source review",
+  "gate2": "pass"
+}

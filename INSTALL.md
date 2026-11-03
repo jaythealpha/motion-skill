@@ -93,4 +93,19 @@ node "$HOME/.claude/skills/elapse/scripts/build.mjs" "$HOME/.claude/skills/elaps
 
 ## 기록 화면과 3D
 
-Elapse의 기본 예시 7개는 설치 없이 사실·사람·기억을 읽을 수 있습니다. JavaScript 없이도 영어 본문과 출처를 볼 수 있고, 3D에만 WebGL이 필요합니다. 기존 `?t=…` 링크는 3D로 바로 열립니다. 처음 설치해 새 주제를 만들 때는 [기록 형식](elapse/references/remembrance-format.md)에 따라 값·범위·근거·미확정 사항을 함께 작성하세요. 출처 요약을 포함한 단일 HTML 생성과 역사적 사실의 독립 검증은 별개의 일입니다.
+Elapse의 기본 예시 8개는 설치 없이 사실·사람·기억을 읽을 수 있습니다. JavaScript 없이도 영어 본문과 출처를 볼 수 있고, 3D에만 WebGL이 필요합니다. 기존 `?t=…` 링크는 3D로 바로 열립니다. 처음 설치해 새 주제를 만들 때는 [기록 형식](elapse/references/remembrance-format.md)에 따라 값·범위·근거·미확정 사항을 함께 작성하세요. 출처 요약을 포함한 단일 HTML 생성과 역사적 사실의 독립 검증은 별개의 일입니다.
+
+### Creating a new Elapse topic with people and facts
+
+Ask the agent to use Elapse for your subject. Its default workflow now researches people's or documented collectives' contributions and scoped numeric facts together with the timeline. The agent checks original sources and writes the evidence bundle; the compiler does not browse or invent it. See `elapse/references/new-topic-workflow.md` in your installed folder.
+
+To reproduce the packaged new-topic example from the repository root (Node22+ recommended; no npm dependencies):
+
+```sh
+node elapse/research/sydney-gen.mjs
+node elapse/scripts/build-topic.mjs elapse/research/sydney-opera-house.scene.json opera.html --records elapse/research/records/sydney-opera-house.json
+node elapse/scripts/check-topic.mjs opera.html opera-qa
+node elapse/scripts/shoot.mjs opera.html opera-shots
+```
+
+The compiler writes `opera.html`, `opera.json` and `opera.html.research.json`. Choose an output name different from the input scene. The HTML reads offline; opening source links requires network access. Chrome/Chromium is required for the browser checks. Public deployment remains a separate authorized action, not an installation side effect.

@@ -1,9 +1,16 @@
 ---
 name: elapse
-description: Build a Sampoong Department Store collapse/aftermath study (1995), a Seongsu Bridge collapse/replacement study (1994–1997), a World Trade Center9/11/recovery/rebuilding study (2001–2018), an offline Notre-Dame fire/restoration timeline (2019–2024), a chaptered construction timeline for the Eiffel Tower (1887–1889), or turn a shipwreck into one self-contained HTML page with a chaptered time bar that runs from the accident through the sinking to the wreck's decay on the seabed. For example, RMS Titanic from the iceberg to its projected collapse. The page shows water filling the watertight compartments in an x-ray view, the lights failing, the hull breaking, the pieces falling to the seabed with a depth gauge, rusticles and dated collapses over the years, and projections clearly marked. Every scene is marked sourced, estimated, disputed or projection. Claude researches inquiry records, analyses and expedition reports, writes a time model, and must pass two automatic gates before delivering. Use whenever someone wants to see how a ship sank, what happened to a wreck over time, "what happened to the Titanic / Lusitania / Britannic", a sinking timeline, or how a wreck changed from discovery to now, even if they don't name the skill. English UI by default, with Korean, Japanese, Simplified Chinese and Spanish.
+description: Create sourced, self-contained historical timelines with records of people's contributions, scoped factual values, five-language reading and optional subject-specific 3D context. Use for researched shipwreck, construction, restoration and historical-site studies, including new topics; English defaults with Korean, Japanese, Simplified Chinese and Spanish.
 ---
 
 # Elapse
+
+## New topics: research people and facts by default
+
+For every new topic, use [references/new-topic-workflow.md](references/new-topic-workflow.md). Research the people or documented collectives who built, helped, maintained or restored the subject alongside dated events and scoped numeric values. Do not wait for a separate request to add them. Then use `scripts/build-topic.mjs` as the default authoring entrypoint; it attaches the evidence bundle, runs Gate1/locales and rejects missing coverage. A missing record is not permission to invent a name or count: record an evidenced, visibly displayed gap instead.
+
+The compiler assembles and checks supplied evidence; the agent must actually retrieve and review the sources. It is not an independent fact checker or web-research service. A novel subject needs its own geometry if no existing renderer fits. The Sydney Opera House example demonstrates this complete path, with design/construction/renewal records and an independently authored shell/podium/hall interpretation. Do not relabel Eiffel or ship geometry.
+
 
 For **Sampoong / 삼풍백화점** or **Seongsu Bridge / 성수대교**, start from `research/seoul-civil-gen.mjs` and read `research/seoul-civil-notes.md` plus `references/building-format.md`. Use the dedicated civil template; retain approximate/conflicting event times, estimated geometry, five languages and the historical endpoint. Do not depict people. The sourced Seongsu route16 bus / six-vehicle event can be illustrated: retain the recorded order and distinguish all estimated coordinates, durations, angles and vehicle damage from facts. Seongsu supports an independently clocked normal-traffic illustration before collapse and after reopening; mark every vehicle shape, count, spacing and speed estimated. Hide the independent normal-traffic loop during collapse/replacement without implying evacuation; the separate historically anchored vehicle-event layer remains during failure/aftermath. Do not invent a rebuilt department store, or reduce the whole Seongsu upper-structure replacement to a48m patch. Six Sampoong / seven Seongsu inspection stops (including a close traffic view), locked history, quarter/half playback and staged failure views are included. These are authored educational animations, not forensic simulation or surveyed plans.
 
@@ -36,7 +43,7 @@ The skill folder (`<skill>` below) holds:
 
 ## Facts, people and memory
 
-Read `references/remembrance-format.md` before authoring historical-event content. The purpose is to preserve what happened, concrete help/preparation and lessons, with evidence and uncertainty. Supply optional version-1 `remembrance` with scoped values and all five languages. Keep personal action times at the precision supported by evidence. Never invent a name, rescue count, dialogue, motive or route; do not equate a company's evacuation count with a solo rescue total. Separate survivor recollection, institutional accounts, investigation findings and editorial reflection. Include collective care and preparation; do not rank heroism or animate death totals. Non-disaster subjects may use construction/research/restoration records rather than a memorial narrative.
+Read `references/remembrance-format.md` before authoring historical-event content. The purpose is to preserve what happened, concrete help/preparation and lessons, with evidence and uncertainty. For new topics, supply version-1 `remembrance` with scoped values and all five languages. Keep personal action times at the precision supported by evidence. Never invent a name, rescue count, dialogue, motive or route; do not equate a company's evacuation count with a solo rescue total. Separate survivor recollection, institutional accounts, investigation findings and editorial reflection. Include collective care and preparation; do not rank heroism or animate death totals. Non-disaster subjects may use construction/research/restoration records rather than a memorial narrative.
 
 The Titanic/Britannic examples include help and care records alongside their legacy discovery/survey records. Follow their distinctions between testimony, library-published extracts and contemporary press; never move a Titanic recollection into a Britannic narrative merely because a person survived both. A reported count of people picked up alive is not automatically a final-survivor total.
 
@@ -79,7 +86,8 @@ s.pieces.get('funnel-1').matrix   // its world matrix then (column-major 4×4)
    - **Eiffel Tower construction:** follow the building branch below; do not create hulls or fake ship dimensions.
    - **World Trade Center9/11/rebuilding:** follow its separate building branch below; the recent-sinking refusal concerns sinkings.
    - **Notre-Dame fire/restoration:** follow its building branch below. The recent-sinking refusal is specific to sinkings, not building conservation.
-   - **Other non-ship subjects:** explain that the current templates cover shipwrecks, Eiffel construction and Notre-Dame restoration. A new building template needs separate research, geometry and checks.
+   - **Sydney Opera House:** read `research/sydney-notes.md` and use `research/sydney-gen.mjs`, then compile with the new-topic entrypoint.
+   - **Other non-ship subjects:** create an independent researched template when authorized; do not relabel a supported building. Report unsupported geometry explicitly if it cannot be completed.
    - **Pin down the ship.**
      - The tuned range is steel powered ships from 1880 on: liners, cargo ships, warships.
      - Sailing ships, wooden ships and raised wrecks (Vasa, Mary Rose) can be made, but say in `meta.interpretation` and at delivery that they are outside the tuned range.
@@ -91,7 +99,7 @@ s.pieces.get('funnel-1').matrix   // its world matrix then (column-major 4×4)
 
      Say why in `meta.interpretation`.
    - **Choose the chapters (1–6).** A wreck with no recorded decay can end with its visits and discoveries. Give the accident minutes and the decades on the seabed each their own chapter. Split a long night so that short moments (a ten-second collision, a two-minute break) get enough bar to be seen; give the most important stretch the most bar. Titanic uses six: 충돌, 침수, 두 동강, 하강, 해저, 앞으로.
-2. **Research.** Read `references/research.md`. Collect four things:
+2. **Research.** First collect the people/collective contributions, scoped numeric facts and source-access notes described in `references/new-topic-workflow.md`. Read `references/research.md` for the ship branch. Collect four things:
    - the ship's dimensions, form, superstructure and subdivision
    - the accident timeline with flooding, angles, break and power
    - the descent and the wreck layout
@@ -134,7 +142,7 @@ s.pieces.get('funnel-1').matrix   // its world matrix then (column-major 4×4)
    - Run `node <skill>/scripts/check_layout.mjs out.html layout.json`: 375×667, 375×812, 768×1024 and 1440×900, both styles, five times. Information slots must remain fixed and must not intersect.
 
    ```
-   node <skill>/scripts/build.mjs model.json out.html
+   node <skill>/scripts/build-topic.mjs scene.json out.html --records evidence.json
    node <skill>/scripts/shoot.mjs out.html out-shots
    ```
    Gate 2 shoots every chapter's start, middle and end, every event, both styles, x-ray on and off, three angles, English, the panels, three phone shots and the playback speeds. It fails on:
@@ -151,7 +159,7 @@ s.pieces.get('funnel-1').matrix   // its world matrix then (column-major 4×4)
    - the wreck shows the right damage
    - no people anywhere
 
-   Fix and repeat. Then rebuild with `--gate2 pass` (or `fail` / `skipped`) so the page records it.
+   Fix and repeat. Then rebuild through `build-topic.mjs` with `--gate2 pass` (or `fail` / `skipped`) so the page records it.
 6. **Deliver.** Hand over `out.html`, which works offline and on phones; keep `model.json` beside it. In a few lines, tell the person:
    - what you built and how you read the request
    - the chapters

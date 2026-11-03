@@ -1,6 +1,6 @@
 # Claim-level records (version 1)
 
-`remembrance` is optional and independent of geometry and scene confidence. It contains `version:1`, `sources` and a non-empty `records` array. The seven packaged timelines include it; standalone directing studies retain their scene workflow.
+For new topics, `remembrance` is required through `scripts/build-topic.mjs`; it remains optional for legacy scene-only low-level models and independent of geometry and scene confidence. It contains `version:1`, `sources` and a non-empty `records` array. The eight packaged timelines include it; standalone directing studies retain their scene workflow.
 
 The default is **Read the records**. `?view=records&record=welles&lang=en` selects a record. `?view=scene`, an explicit `?t=…`, `?mode=explore` or `?play=1` opens the existing 3D view; `view=records` overrides them. The same page preserves historical progress and camera when switching views. Only request the 3D runtime when needed. Pause playback, independent survey motion and normal traffic when reading.
 
@@ -26,3 +26,10 @@ The prominent scene label points to evidence and estimated reconstruction. `clas
 For a supported example, edit `research/records/<example-id>.json`; its generator calls `withRemembrance` from `research/remembrance.mjs`. This helper validates and attaches the overlay and explicit event presentation metadata. New topics can supply `remembrance` directly; there is no need to add a dedicated generator or alter the engine.
 
 Run Gate 1 and the builder; both validate the record contract, including building and bridge models. Run `node --test tests/records.test.mjs` from the skill directory. In the monorepo, `node scripts/check-remembrance.mjs <output-dir>` verifies default reading, numeric consistency, five languages at 375/768/1440, record links/focus, 3D return, a forced WebGL failure and script-disabled fallback. Existing scene and localization checks remain required. Schema checks do not independently authenticate testimony or prove native translation quality.
+
+
+## New-topic contributor coverage
+
+The default new-topic compiler sets `meta.researchProfile: "people-facts-v1"`. This profile is checked by both the builder and Gate1, including a direct low-level rebuild. Each documented contribution record may add `contributors:[{name, role:{en,ko,ja,zh,es}, sourceIds}]`; names can identify a documented collective, not only a named individual. Contributor references must also support that record. Human-readable names, actions and limits remain in the record body. Include scoped, evidenced numeric facts, keeping shared values separate from translations.
+
+If the available evidence does not establish people or numeric values, `remembrance.research.gaps` can contain `{kind:"people"|"facts",reason:{en,ko,ja,zh,es},sourceIds,recordId}`. The referenced record's visible `unknowns` must contain that reason in each language. A gap is reported in the compiler report and at delivery; it is not a fabricated successful finding. Legacy examples are not retroactively forced into this new schema.

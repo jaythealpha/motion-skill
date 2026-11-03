@@ -1,0 +1,647 @@
+{
+  "subject": {
+    "kind": "building",
+    "id": "sydney-opera-house",
+    "name": {
+      "en": "Sydney Opera House · building and renewal",
+      "ko": "시드니 오페라하우스 · 건설과 개선",
+      "ja": "シドニー・オペラハウス：建設と改修",
+      "zh": "悉尼歌剧院：建设与改造",
+      "es": "Ópera de Sídney · construcción y renovación"
+    },
+    "dims": {
+      "width": 120,
+      "depth": 180,
+      "height": 67
+    }
+  },
+  "geometry": {
+    "type": "sydney-opera-house",
+    "estimated": true
+  },
+  "meta": {
+    "renderQuality": "high",
+    "interpretation": {
+      "en": "Source-led people records with an estimated architectural context.",
+      "ko": "자료 기반의 사람 기록과 추정 건축 맥락입니다.",
+      "ja": "資料に基づく人々の記録と推定の建築的文脈です。",
+      "zh": "以资料为据的人物记录与估计建筑背景。",
+      "es": "Registros documentados de personas con contexto arquitectónico estimado."
+    },
+    "about": {
+      "en": "Design, construction and care through the2023 recognition milestone. No people are drawn.",
+      "ko": "설계·건설·유지관리와 2023년 기여 인정까지 다룹니다. 사람은 그리지 않습니다.",
+      "ja": "設計・建設・保守から2023年の顕彰まで。人物は描きません。",
+      "zh": "涵盖设计、施工、维护及2023年表彰节点，不描绘人物。",
+      "es": "Diseño, construcción y cuidado hasta el reconocimiento de2023. No se dibujan personas."
+    },
+    "limitations": [
+      {
+        "en": "Illustrative geometry and sequence",
+        "ko": "형상·순서는 추정 도해",
+        "ja": "形状・順序は推定図",
+        "zh": "形状与顺序为估计示意",
+        "es": "Geometría y secuencia ilustrativas"
+      },
+      {
+        "en": "The approximate120×180×67m model envelope, shell count, profiles, ribs, glazing, paving, interior and construction reveal order are estimates, not surveyed plans.",
+        "ko": "약 120×180×67m의 모델 범위, 쉘 수·곡선·리브·창·포장·실내·시공 표시 순서는 추정이며 실측 도면이 아닙니다.",
+        "ja": "約120×180×67mの範囲、シェル数・曲線・リブ・窓・舗装・内部・施工表示順は推定で、実測図面ではありません。",
+        "zh": "约120×180×67米模型范围、壳体数量与曲线、肋梁、窗、铺装、室内和显现顺序均为估计，不是测绘图纸。",
+        "es": "La envolvente aproximada de120×180×67m, las cáscaras, curvas, nervios, vidrios, pavimento, interior y secuencia son estimaciones, no planos medidos."
+      },
+      {
+        "en": "The hall cutaway hides exterior shells for explanation. Reflector positions and lift route are approximate; no acoustic simulation, accessibility audit or visitor route is provided.",
+        "ko": "홀 절개는 설명을 위해 외부 쉘을 숨깁니다. 반사판 위치와 승강기 경로는 추정이며 음향 시뮬레이션·접근성 감사·방문 동선이 아닙니다.",
+        "ja": "断面は外部シェルを隠した説明です。反射板位置と昇降機経路は推定で、音響解析・アクセス監査・来場経路ではありません。",
+        "zh": "剖切为说明而隐藏外壳，反射板位置与电梯路线为估计，未提供声学模拟、无障碍审计或参观路线。",
+        "es": "La sección oculta las cubiertas. Posiciones de reflectores y recorrido del ascensor aproximados; no es simulación acústica, auditoría de accesibilidad ni ruta de visita."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "creators",
+      "title": "Sydney Opera House · The Creators Project",
+      "url": "https://www.sydneyoperahouse.com/our-story/creators-project"
+    },
+    {
+      "id": "spherical",
+      "title": "Sydney Opera House · The spherical solution",
+      "url": "https://www.sydneyoperahouse.com/our-story/the-spherical-solution"
+    },
+    {
+      "id": "nfsa",
+      "title": "NFSA · Landmark: construction of the Sydney Opera House",
+      "url": "https://www.nfsa.gov.au/collection/item/landmark-construction-sydney-opera-house"
+    },
+    {
+      "id": "renewal",
+      "title": "Sydney Opera House · Renewing an icon",
+      "url": "https://stories.sydneyoperahouse.com/renewing-an-icon/"
+    },
+    {
+      "id": "arm",
+      "title": "ARM Architecture · Celebrating a Milestone",
+      "url": "https://armarchitecture.com.au/news/celebrating-a-milestone-sydney-opera-house-reopens/"
+    },
+    {
+      "id": "utzon",
+      "title": "Sydney Opera House · Jørn Utzon AC",
+      "url": "https://www.sydneyoperahouse.com/our-story/jorn-utzon"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "design",
+      "name": {
+        "en": "Design",
+        "ko": "설계",
+        "ja": "設計",
+        "zh": "设计",
+        "es": "Diseño"
+      },
+      "start": "1957-01-29",
+      "end": "1959-03-01",
+      "bar": [
+        0,
+        12
+      ],
+      "unit": "month"
+    },
+    {
+      "id": "podium",
+      "name": {
+        "en": "Podium and steps",
+        "ko": "기단과 계단",
+        "ja": "基壇と階段",
+        "zh": "基座与台阶",
+        "es": "Podio y escalinata"
+      },
+      "start": "1959-03-01",
+      "end": "1963-01-01",
+      "bar": [
+        12,
+        32
+      ],
+      "unit": "month"
+    },
+    {
+      "id": "shells",
+      "name": {
+        "en": "Shells and ribs",
+        "ko": "쉘과 리브",
+        "ja": "シェルとリブ",
+        "zh": "壳体与肋梁",
+        "es": "Cáscaras y nervios"
+      },
+      "start": "1963-01-01",
+      "end": "1973-10-20",
+      "bar": [
+        32,
+        62
+      ],
+      "unit": "month"
+    },
+    {
+      "id": "service",
+      "name": {
+        "en": "Completion and use",
+        "ko": "완성과 이용",
+        "ja": "完成と利用",
+        "zh": "完工与使用",
+        "es": "Terminación y uso"
+      },
+      "start": "1973-10-20",
+      "end": "2020-02-01",
+      "bar": [
+        62,
+        78
+      ],
+      "unit": "month"
+    },
+    {
+      "id": "renewal",
+      "name": {
+        "en": "Acoustics and access",
+        "ko": "음향과 접근성",
+        "ja": "音響とアクセス",
+        "zh": "声学与无障碍",
+        "es": "Acústica y acceso"
+      },
+      "start": "2020-02-01",
+      "end": "2022-07-01",
+      "bar": [
+        78,
+        92
+      ],
+      "unit": "month"
+    },
+    {
+      "id": "recognition",
+      "name": {
+        "en": "Recognition",
+        "ko": "기여의 기록",
+        "ja": "貢献の顕彰",
+        "zh": "记录贡献",
+        "es": "Reconocimiento"
+      },
+      "start": "2022-07-01",
+      "end": "2023-11-08T23:59",
+      "bar": [
+        92,
+        100
+      ],
+      "unit": "month"
+    }
+  ],
+  "pieces": [
+    {
+      "id": "overview",
+      "name": {
+        "en": "Whole site",
+        "ko": "전체 부지",
+        "ja": "全景",
+        "zh": "全景",
+        "es": "Conjunto"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "spherical",
+        "creators"
+      ]
+    },
+    {
+      "id": "podium",
+      "name": {
+        "en": "Podium and steps",
+        "ko": "기단과 계단",
+        "ja": "基壇と階段",
+        "zh": "基座与台阶",
+        "es": "Podio y escalinata"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "spherical",
+        "creators"
+      ]
+    },
+    {
+      "id": "shells",
+      "name": {
+        "en": "Shells and ribs",
+        "ko": "쉘과 리브",
+        "ja": "シェルとリブ",
+        "zh": "壳体与肋梁",
+        "es": "Cáscaras y nervios"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "spherical",
+        "creators"
+      ]
+    },
+    {
+      "id": "hall",
+      "name": {
+        "en": "Concert Hall cutaway",
+        "ko": "콘서트홀 절개",
+        "ja": "ホール断面",
+        "zh": "音乐厅剖切",
+        "es": "Sección del Concert Hall"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "spherical",
+        "creators"
+      ]
+    },
+    {
+      "id": "renewal",
+      "name": {
+        "en": "Acoustics and access",
+        "ko": "음향과 접근성",
+        "ja": "音響とアクセス",
+        "zh": "声学与无障碍",
+        "es": "Acústica y acceso"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "spherical",
+        "creators"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "design",
+      "at": "1957-01-29",
+      "kind": "note",
+      "title": {
+        "en": "Design selected",
+        "ko": "설계 선정",
+        "ja": "設計選定",
+        "zh": "设计获选",
+        "es": "Diseño seleccionado"
+      },
+      "text": {
+        "en": "Jørn Utzon and his architects developed the roof through several geometric approaches. Ove Arup’s engineers worked with them to turn the design into a buildable structure. Deriving shells from a common sphere enabled repetition. The operator’s account does not support treating the familiar orange story as a documented discovery scene.",
+        "ko": "외른 우트손과 건축가들은 여러 기하학적 접근으로 지붕을 발전시켰습니다. 오베 아룹의 엔지니어들은 함께 설계를 시공 가능한 구조로 풀었습니다. 공통 구면에서 쉘을 얻는 방식은 반복 제작을 가능하게 했습니다. 운영기관 자료는 오렌지를 벗기다가 발견했다는 이야기를 실제 발견 장면으로 확정하지 않습니다.",
+        "ja": "ヨーン・ウツソンと建築家たちは複数の幾何学的手法で屋根を発展させました。オーヴ・アラップの技師たちは建設可能な構造へと協働しました。共通の球面からシェルを得ることで反復製作が可能になりました。運営機関はオレンジの逸話を実際の発見場面として確定していません。",
+        "zh": "约恩·伍重与建筑师团队尝试多种几何方案，奥雅纳的工程师与他们协作，将设计转为可建造的结构。从共同球面获得壳体有助于重复制作。运营方的资料并不支持把剥橙子的传说当作已证实的发现场景。",
+        "es": "Jørn Utzon y sus arquitectos exploraron varias geometrías. Los ingenieros de Ove Arup colaboraron para transformar el diseño en una estructura construible. Derivar las cáscaras de una esfera común permitió repetir elementos. El relato del operador no confirma la conocida historia de la naranja como escena documentada del descubrimiento."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "utzon"
+      ],
+      "timePrecision": "date"
+    },
+    {
+      "id": "start",
+      "at": "1959-03-01",
+      "kind": "note",
+      "title": {
+        "en": "Construction begins",
+        "ko": "건설 시작",
+        "ja": "建設開始",
+        "zh": "开始施工",
+        "es": "Inicio de obra"
+      },
+      "text": {
+        "en": "The National Film and Sound Archive’s collection notes describe about 10,000 construction workers participating over the building period. Its dates run from March1,1959 to the opening on October20,1973. The notes support remembering the workforce as a collective; they do not identify each person or establish how many worked together on a particular day.",
+        "ko": "호주 국립영상음성기록원의 소장 해설은 건설 기간에 약 1만 명의 노동자가 참여했다고 설명합니다. 기간은 1959년 3월 1일부터 1973년 10월 20일 개관까지입니다. 집단의 기여를 기억할 근거이며 개인별 명단이나 특정일에 동시에 일한 인원을 확정하는 기록은 아닙니다.",
+        "ja": "豪州国立映像音声アーカイブの所蔵解説は、建設期間に約1万人が参加したと説明します。期間は1959年3月1日から1973年10月20日の開館までです。集団の貢献を記憶する根拠であり、個人名簿や特定日の同時作業人数ではありません。",
+        "zh": "澳大利亚国家影音档案馆的馆藏说明称，建造期间约有一万名工人参与，时间从1959年3月1日至1973年10月20日开幕。这支持记录群体贡献，但不是每个人的名册，也不是某天同时施工的人数。",
+        "es": "Las notas de la National Film and Sound Archive describen unos10.000 trabajadores durante la construcción, del1 de marzo de1959 a la apertura del20 de octubre de1973. Permiten recordar la contribución colectiva, sin identificar a cada persona ni establecer cuántas trabajaban simultáneamente en un día."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "nfsa"
+      ],
+      "timePrecision": "date"
+    },
+    {
+      "id": "open",
+      "at": "1973-10-20",
+      "kind": "note",
+      "title": {
+        "en": "The House opens",
+        "ko": "개관",
+        "ja": "開館",
+        "zh": "开幕",
+        "es": "Apertura"
+      },
+      "text": {
+        "en": "After Utzon’s departure, Hall, Todd & Littlemore took over the architectural work. The operator credits Peter Hall’s design work on the interiors, glass walls and Concert Hall, with Arup continuing the engineering collaboration. Opening in1973 was a milestone of teamwork, not evidence that all future maintenance or later projects were complete.",
+        "ko": "우트손이 떠난 뒤 Hall, Todd & Littlemore가 건축 작업을 맡았습니다. 운영기관은 피터 홀의 실내·유리벽·콘서트홀 설계와 아룹의 계속된 엔지니어링 협업을 기록합니다. 1973년 개관은 협업의 이정표이며 이후의 모든 보수나 후속 공사가 끝났다는 뜻은 아닙니다.",
+        "ja": "ウツソン離任後、Hall, Todd & Littlemoreが建築業務を引き継ぎました。運営機関はピーター・ホールの内部・ガラス壁・コンサートホールの設計と、アラップの継続協働を記録します。1973年開館は協働の節目で、その後の保守や工事の完了ではありません。",
+        "zh": "伍重离开后，Hall, Todd & Littlemore接手建筑工作。运营方记述彼得·霍尔对室内、玻璃墙及音乐厅的设计，奥雅纳继续工程协作。1973年开幕是团队工作的节点，不代表后续维护和工程全部结束。",
+        "es": "Tras la salida de Utzon, Hall, Todd & Littlemore asumió el trabajo arquitectónico. El operador reconoce a Peter Hall por interiores, fachadas acristaladas y Concert Hall, con la colaboración de Arup. La apertura de1973 fue un hito colectivo, no el fin de futuras obras y cuidados."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "nfsa",
+        "creators"
+      ],
+      "timePrecision": "date"
+    },
+    {
+      "id": "renew",
+      "at": "2022-07-01",
+      "kind": "note",
+      "title": {
+        "en": "Concert Hall reopens",
+        "ko": "콘서트홀 재개장",
+        "ja": "ホール再開",
+        "zh": "音乐厅重新开放",
+        "es": "Reapertura del Concert Hall"
+      },
+      "text": {
+        "en": "ARM Architecture, including Andrew Hayne, worked with acoustic consultants Müller-BBM on the Concert Hall renewal. The operator records18 acoustic reflectors and a stage lowered400mm, alongside a new lift and passageway. These changes support musicians hearing one another and improve access. They are recorded interventions, not this model’s acoustic or accessibility certification.",
+        "ko": "앤드루 헤인을 포함한 ARM Architecture는 음향 자문 Müller-BBM과 콘서트홀 개선에 참여했습니다. 운영기관은 음향 반사판 18개, 무대 400mm 하강, 새 승강기와 통로를 기록합니다. 연주자들이 서로의 소리를 듣고 공간에 접근하도록 돕는 변경입니다. 기록된 공사 내용이며 이 도해의 음향·접근성 인증은 아닙니다.",
+        "ja": "アンドリュー・ヘインを含むARM Architectureは音響コンサルタントMüller-BBMと改修に参加しました。運営機関は反射板18枚、舞台400mm下降、新たな昇降機と通路を記録します。演奏者の相互聴取とアクセスを支える変更で、本モデルの音響・アクセス認証ではありません。",
+        "zh": "包括安德鲁·海恩在内的ARM Architecture与声学顾问Müller-BBM参与音乐厅改造。运营方记述18块声学反射板、舞台降低400毫米，以及新电梯和通道。这些改造支持乐手相互听见并改善通行，不是本模型的声学或无障碍认证。",
+        "es": "ARM Architecture, incluido Andrew Hayne, trabajó con los consultores acústicos Müller-BBM en la renovación. El operador documenta18 reflectores y una bajada del escenario de400mm, además de un ascensor y un pasaje. Son intervenciones para la escucha entre músicos y el acceso, no certificaciones acústicas o de accesibilidad de este modelo."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "renewal",
+        "arm"
+      ],
+      "timePrecision": "month"
+    },
+    {
+      "id": "recognise",
+      "at": "2023-11-08",
+      "kind": "note",
+      "title": {
+        "en": "Creators recognized",
+        "ko": "기여자들을 기록하다",
+        "ja": "創り手の顕彰",
+        "zh": "表彰创作者",
+        "es": "Reconocimiento de creadores"
+      },
+      "text": {
+        "en": "On November8,2023, the Opera House unveiled plaques honoring Utzon, Arup, Hall and the collective creativity behind the building. This official recognition helps keep different contributions visible. It is not a complete roster, and it does not replace the continuing Gadigal connection to Tubowgule acknowledged by the institution.",
+        "ko": "2023년 11월 8일 오페라하우스는 우트손·아룹·홀과 건축물을 만든 집단의 창의성을 기리는 명판을 공개했습니다. 서로 다른 기여를 남기는 기관의 기록입니다. 전체 명부는 아니며, 기관이 인정하는 투보굴레와 가디갈의 지속된 관계를 대신하지 않습니다.",
+        "ja": "2023年11月8日、オペラハウスはウツソン、アラップ、ホールと集団の創造性を顕彰する銘板を公開しました。多様な貢献を残す機関の記録であり、全員の名簿ではなく、機関が認めるガディガルとトゥボグルの継続的関係に代わるものでもありません。",
+        "zh": "2023年11月8日，歌剧院揭幕铭牌，纪念伍重、奥雅纳、霍尔及集体创造力。这份机构记录保留不同贡献，但不是完整名册，也不能取代机构所承认的Gadigal与Tubowgule的持续联系。",
+        "es": "El8 de noviembre de2023 se presentaron placas que honran a Utzon, Arup, Hall y la creatividad colectiva. Es reconocimiento institucional, no una nómina completa ni un sustituto de la relación continua de los Gadigal con Tubowgule que reconoce la institución."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "creators"
+      ],
+      "timePrecision": "date"
+    }
+  ],
+  "construction": {
+    "heightKeys": []
+  },
+  "presentation": {
+    "caption": {
+      "en": "1957–2023 · structure and care",
+      "ko": "1957–2023 · 구조와 돌봄",
+      "ja": "1957–2023・構造とケア",
+      "zh": "1957–2023：结构与维护",
+      "es": "1957–2023 · estructura y cuidado"
+    },
+    "estimateNote": {
+      "en": "Illustrative geometry and sequence",
+      "ko": "형상·순서는 추정 도해",
+      "ja": "形状・順序は推定図",
+      "zh": "形状与顺序为估计示意",
+      "es": "Geometría y secuencia ilustrativas"
+    },
+    "timezoneText": {
+      "en": "Dated records; no inferred minutes",
+      "ko": "기록 단위 유지 · 분 단위 추정 없음",
+      "ja": "記録精度を維持・分は推定しない",
+      "zh": "保留记录精度，不推测分钟",
+      "es": "Fechas documentadas; sin minutos inferidos"
+    },
+    "motionNote": {
+      "en": "Illustrative geometry and sequence",
+      "ko": "형상·순서는 추정 도해",
+      "ja": "形状・順序は推定図",
+      "zh": "形状与顺序为估计示意",
+      "es": "Geometría y secuencia ilustrativas"
+    },
+    "inspectionText": {
+      "en": "Inspect the estimated shells, podium and explanatory hall cutaway at a locked date.",
+      "ko": "역사 시점을 고정해 추정 쉘·기단·홀 절개를 살펴봅니다.",
+      "ja": "時点を固定して推定シェル・基壇・ホール断面を観察します。",
+      "zh": "固定历史时间，查看估计壳体、基座及音乐厅剖切。",
+      "es": "Inspeccione cáscaras, podio y sección explicativa a fecha fija."
+    },
+    "inspectionHint": {
+      "en": "Orbit/zoom; the hall cutaway hides shells. Unbuilt stages are disabled. Timeline restores the previous view.",
+      "ko": "회전·확대할 수 있습니다. 홀 절개는 쉘을 숨깁니다. 미시공 단계는 선택할 수 없으며 시간순으로 돌아가면 이전 보기를 복원합니다.",
+      "ja": "回転・拡大可能。ホール断面はシェルを隠します。未施工段階は無効で、時系列に戻ると以前の表示を復元します。",
+      "zh": "可旋转缩放；音乐厅剖切隐藏外壳，未建阶段禁用，返回时间线恢复原视图。",
+      "es": "Gire y amplíe; la sección oculta las cubiertas. Etapas no construidas desactivadas. Volver restaura la vista."
+    },
+    "dimensionLabel": {
+      "en": "Estimated model height",
+      "ko": "모델의 추정 높이",
+      "ja": "モデルの推定高さ",
+      "zh": "模型估计高度",
+      "es": "Altura estimada del modelo"
+    },
+    "dimensionValue": "≈67 m",
+    "dimensionNote": {
+      "en": "Footprint ≈120 × 180 m; not surveyed",
+      "ko": "약 120 × 180 m · 실측 아님",
+      "ja": "約 120 × 180 m・実測ではない",
+      "zh": "约 120 × 180 米，非测绘",
+      "es": "Planta ≈120 × 180 m; no medida"
+    },
+    "sceneLabel": {
+      "en": "Estimated Opera House construction and renewal",
+      "ko": "오페라하우스 건설·개선 추정 도해",
+      "ja": "オペラハウス建設・改修の推定図",
+      "zh": "歌剧院建设与改造估计示意",
+      "es": "Ilustración estimada de construcción y renovación"
+    },
+    "phases": [
+      {
+        "en": "Design",
+        "ko": "설계",
+        "ja": "設計",
+        "zh": "设计",
+        "es": "Diseño"
+      },
+      {
+        "en": "Podium and steps",
+        "ko": "기단과 계단",
+        "ja": "基壇と階段",
+        "zh": "基座与台阶",
+        "es": "Podio y escalinata"
+      },
+      {
+        "en": "Shells and ribs",
+        "ko": "쉘과 리브",
+        "ja": "シェルとリブ",
+        "zh": "壳体与肋梁",
+        "es": "Cáscaras y nervios"
+      },
+      {
+        "en": "Fit-out and use",
+        "ko": "내장과 이용",
+        "ja": "内装と利用",
+        "zh": "装修与使用",
+        "es": "Interiores y uso"
+      },
+      {
+        "en": "Acoustics and access",
+        "ko": "음향과 접근성",
+        "ja": "音響とアクセス",
+        "zh": "声学与无障碍",
+        "es": "Acústica y acceso"
+      }
+    ]
+  },
+  "stops": [
+    {
+      "id": "overview",
+      "name": {
+        "en": "Whole site",
+        "ko": "전체 부지",
+        "ja": "全景",
+        "zh": "全景",
+        "es": "Conjunto"
+      },
+      "box": {
+        "min": [
+          -60,
+          -90,
+          0
+        ],
+        "max": [
+          60,
+          90,
+          67
+        ]
+      },
+      "parts": [
+        "overview"
+      ],
+      "availableFrom": 0,
+      "yaw": 225,
+      "pitch": 25
+    },
+    {
+      "id": "podium",
+      "name": {
+        "en": "Podium and steps",
+        "ko": "기단과 계단",
+        "ja": "基壇と階段",
+        "zh": "基座与台阶",
+        "es": "Podio y escalinata"
+      },
+      "box": {
+        "min": [
+          -60,
+          -90,
+          0
+        ],
+        "max": [
+          60,
+          40,
+          14
+        ]
+      },
+      "parts": [
+        "podium"
+      ],
+      "availableFrom": 32,
+      "yaw": 225,
+      "pitch": 25
+    },
+    {
+      "id": "shells",
+      "name": {
+        "en": "Shells and ribs",
+        "ko": "쉘과 리브",
+        "ja": "シェルとリブ",
+        "zh": "壳体与肋梁",
+        "es": "Cáscaras y nervios"
+      },
+      "box": {
+        "min": [
+          -50,
+          -35,
+          12
+        ],
+        "max": [
+          50,
+          72,
+          67
+        ]
+      },
+      "parts": [
+        "shells"
+      ],
+      "availableFrom": 62,
+      "yaw": 225,
+      "pitch": 25
+    },
+    {
+      "id": "hall",
+      "name": {
+        "en": "Concert Hall cutaway",
+        "ko": "콘서트홀 절개",
+        "ja": "ホール断面",
+        "zh": "音乐厅剖切",
+        "es": "Sección del Concert Hall"
+      },
+      "box": {
+        "min": [
+          -43,
+          -6,
+          12
+        ],
+        "max": [
+          -6,
+          66,
+          41
+        ]
+      },
+      "parts": [
+        "hall"
+      ],
+      "availableFrom": 62,
+      "yaw": 235,
+      "pitch": 55
+    },
+    {
+      "id": "renewal",
+      "name": {
+        "en": "Acoustics and access",
+        "ko": "음향과 접근성",
+        "ja": "音響とアクセス",
+        "zh": "声学与无障碍",
+        "es": "Acústica y acceso"
+      },
+      "box": {
+        "min": [
+          -45,
+          25,
+          12
+        ],
+        "max": [
+          -7,
+          64,
+          36
+        ]
+      },
+      "parts": [
+        "renewal"
+      ],
+      "availableFrom": 92,
+      "yaw": 235,
+      "pitch": 55
+    }
+  ]
+}

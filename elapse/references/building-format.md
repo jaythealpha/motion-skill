@@ -37,3 +37,10 @@ Seven estimated stop boxes share existing confidence/timeline/exploration contra
 ### Detailed civil renderer
 
 Sampoong uses `sampoongStudyForm` through the pure `sampoongProgress(t)` adapter, keeping model dates unchanged. Explore slab/column/basement stops request an explicitly explanatory section. Seongsu normal traffic has an independent clock; its historical six-vehicle event uses deterministic functions of the dated bar. The event's route16 bus follows recorded order (held edge, overturn, contact with fallen deck); every intermediate coordinate, angle, duration, livery and deformation is estimated. Do not conflate the normal traffic loop with the actual vehicle inventory. Chinese display labels use CH while standard locale data remains zh.
+
+
+## Sydney Opera House new-topic example
+
+`geometry.type:"sydney-opera-house"`, `subject.kind:"building"`, `geometry.estimated:true` selects an independent podium/shell/hall renderer. Dimensions120×180×67m are explicitly approximate model extents, not certified source dimensions. There are no Eiffel height keys. Chapters1957–2023 use monthly presentation; records retain date/month precision. Intermediate podium/shell/fit-out reveal is estimated and reversible. Never describe the procedural shell profiles as a measured common-sphere reconstruction.
+
+`presentation` follows the structure UI packs; five stops cover overview, podium, shells, hall and renewal. Hall/renewal inspection hides shells for an explicit explanatory cutaway;18 illustrative reflectors appear only after the2022 renewal. See `research/sydney-notes.md` for factual scope. Run `build-topic.mjs`, `check-topic.mjs`, `check_opera.mjs` and the full `shoot.mjs`; the new-topic profile separately checks contributors and numeric evidence. Preserve earlier templates and their record IDs.

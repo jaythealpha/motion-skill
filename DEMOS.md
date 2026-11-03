@@ -1,10 +1,10 @@
 # 데모 실행
 
-이 저장소의 데모는 단일 HTML입니다. **GitHub의 HTML 파일 링크는 소스 보기이며 실행 화면이 아닙니다.** **[GitHub Pages에서 15개 데모 바로 보기](https://jaythealpha.github.io/motion-skill/)**. 설치 없이 브라우저에서 실행할 수 있습니다.
+이 저장소의 데모는 단일 HTML입니다. **GitHub의 HTML 파일 링크는 소스 보기이며 실행 화면이 아닙니다.** **[GitHub Pages에서 16개 데모 바로 보기](https://jaythealpha.github.io/motion-skill/)**. 설치 없이 브라우저에서 실행할 수 있습니다.
 
 ## 사실·사람·기억 읽기
 
-전체 Elapse 타임라인 7개는 기록 읽기가 기본입니다. WTC는 크라우더의 대피 지원, 레스콜라의 사전 준비, 공동 대응과 집계 범위를 담습니다. 삼풍은 박승현 구조·시민 도움, 성수대교는 생존자 회고·유지관리의 책임을 담습니다. 타이타닉에는 카르파티아호의 준비·로우와 자원자들의 수색·제섭의 아이 돌봄 회고를, 브리타닉에는 실라와 동료들의 돌봄·다우스가 전한 대피 도움·스커지호의 음식 나눔을 추가했습니다. 기존 발견·탐사 기록도 유지하며, 노트르담에는 소방 협력·문화재 보호·석재 조사·장인들의 복원 기록을 추가했고 재개관 기록도 유지했습니다. 에펠탑에는 설계 협업·공장과 리벳 작업·도장과 작업자 보호·승강기 점검과 개보수 기록을 추가했고 기존 완공 기록도 유지했습니다. 총 26개 기록이며 모든 역사·인물을 망라한 것은 아닙니다.
+전체 Elapse 타임라인 8개는 기록 읽기가 기본입니다. WTC는 크라우더의 대피 지원, 레스콜라의 사전 준비, 공동 대응과 집계 범위를 담습니다. 삼풍은 박승현 구조·시민 도움, 성수대교는 생존자 회고·유지관리의 책임을 담습니다. 타이타닉에는 카르파티아호의 준비·로우와 자원자들의 수색·제섭의 아이 돌봄 회고를, 브리타닉에는 실라와 동료들의 돌봄·다우스가 전한 대피 도움·스커지호의 음식 나눔을 추가했습니다. 기존 발견·탐사 기록도 유지하며, 노트르담에는 소방 협력·문화재 보호·석재 조사·장인들의 복원 기록을 추가했고 재개관 기록도 유지했습니다. 에펠탑에는 설계 협업·공장과 리벳 작업·도장과 작업자 보호·승강기 점검과 개보수 기록을 추가했고 기존 완공 기록도 유지했습니다. 시드니 오페라하우스의 기록5건을 포함해 총 31개 기록이며 모든 역사·인물을 망라한 것은 아닙니다.
 
 기록에는 사실 값·단위·범위·자료 유형·원문 위치·확인일과 미확정 사항이 있습니다. 인물의 분 단위 행동 시각이나 구조 인원을 만들지 않습니다. 3D는 선택해서 보는 추정 맥락입니다. 기록으로 돌아오면 재생이 멈추고, 3D로 복귀하면 시간·카메라를 보존합니다. `?view=records&record=welles&lang=ko`와 같은 링크로 특정 기록을 공유할 수 있습니다.
 
@@ -12,7 +12,7 @@ JavaScript가 꺼져도 영어 기록 전체와 출처를 읽을 수 있습니�
 
 ## 갤러리 언어
 
-공개 갤러리는 처음 방문하면 영어로 표시됩니다. 상단에서 English·한국어·日本語·CH · 简体中文·Español을 선택할 수 있으며, 제목·안내·15개 카드 설명·링크·접근성 문구가 함께 바뀝니다. 선택은 이 브라우저에 저장되고 `?lang=en|ko|ja|zh|es` 주소로 공유할 수 있습니다. URL의 명시적 언어가 저장된 선택보다 우선합니다. 브라우저의 기본 언어를 자동 적용하지 않습니다.
+공개 갤러리는 처음 방문하면 영어로 표시됩니다. 상단에서 English·한국어·日本語·CH · 简体中文·Español을 선택할 수 있으며, 제목·안내·16개 카드 설명·링크·접근성 문구가 함께 바뀝니다. 선택은 이 브라우저에 저장되고 `?lang=en|ko|ja|zh|es` 주소로 공유할 수 있습니다. URL의 명시적 언어가 저장된 선택보다 우선합니다. 브라우저의 기본 언어를 자동 적용하지 않습니다.
 
 전체 타임라인 12개와 대표 장면 3개 모두 5개 언어를 지원합니다. 갤러리에서 선택한 언어가 개별 데모와 대표 장면의 전체 타임라인 링크로 이어집니다. 새 방문은 영어가 기본이며, 개별 데모에서도 언어를 바꿀 수 있습니다. 번역은 HTML에 포함되므로 재생 중 외부 번역 서비스에 접속하지 않습니다. 출처의 서지 제목·고유 명칭은 원문을 유지할 수 있습니다. 일본어·중국어·스페인어는 자동 번역 후 주요 UI 용어를 보정했으며 전체 문장의 원어민 교정은 미검증입니다.
 
@@ -88,3 +88,9 @@ WTC 전체 타임라인과 대표 장면은 연기·화염·분진을 인스턴�
 성수대교의 **차량 확대**는 정상 통행을 독립된 시계로 보여줍니다. 붕괴 구간은 별도의16번 버스와 다른5대 차량 도해로 전환합니다. 경계에 걸림→전복→먼저 떨어진 상판과 접촉이라는 순서는 기록을 따르고, 차종·도색·각도·속도·상세 위치·손상은 추정입니다. 재시공 장에서 차량을 숨기는 것은 실제 수습 날짜를 뜻하지 않습니다. 사람은 표현하지 않습니다.
 
 중국어 선택 표시는 **CH**이며 번역 데이터·HTML 언어 태그는 표준 `zh` / `zh-Hans`입니다. 기존 `lang=zh` 링크를 유지하고 `lang=ch` 입력도 지원합니다. 기존12개 예시에도 공통 표면 법선·데스크톱 음영과 언어 표시를 반영해 재생성했습니다. 개별 사건마다 새로운 고증 모델을 추가한 것은 아닙니다.
+
+## Sydney Opera House — default new-topic field test
+
+[Public demo](https://jaythealpha.github.io/motion-skill/elapse/examples/sydney-opera-house.html?view=records&lang=en) · [local HTML](elapse/examples/sydney-opera-house.html) · [evidence notes](elapse/research/sydney-notes.md).
+
+Five records cover shared design, construction workers, Peter Hall and interior completion, Concert Hall acoustic/access renewal, and recognition in2023. Numeric facts are approximately10,000 construction participants over1959–1973,18 reflectors in the2022 Concert Hall renewal and0.4m relative stage lowering, with separate scopes. English defaults with five-language reading, source links, color/blueprint, playback and five exploration stops. The hall/renewal views explicitly hide shells for explanation. Estimated120×180×67m envelope, sail groups, joints, windows, hall and intermediate construction are not surveyed CAD or acoustic/accessibility validation. No people or source media are rendered.

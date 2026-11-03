@@ -1,8 +1,8 @@
 export const messages = {
   "en": {
     "title": "Unfold & Elapse · Interactive demos",
-    "meta": "Explore product structures and historical change in 15 interactive Unfold & Elapse demos.",
-    "eyebrow": "INTERACTIVE STUDIES / 15 DEMOS",
+    "meta": "Explore product structures and historical change in 16 interactive Unfold & Elapse demos.",
+    "eyebrow": "INTERACTIVE STUDIES / 16 DEMOS",
     "skip": "Skip to demos",
     "lead": "See how products fit together and how places change over time.\nRead the evidence and people’s stories; explore optional 3D context.",
     "navLabel": "Get started",
@@ -13,7 +13,7 @@ export const messages = {
     "note": "Experimental educational illustrations. Internal shapes, positions and motion include estimates; these are not official repair manuals or validated physical simulations. Check each demo’s sources and limitations. No AI account is needed to view the demos.",
     "unfoldIntro": "From separate parts to a finished product. Explore colour, blueprint and playback speed.",
     "elapseIntro": "Explore historical change and restoration, distinguishing recorded events from interpretation.",
-    "footer": "15 demos · 5 languages · Standalone HTML · MIT",
+    "footer": "16 demos · 5 languages · Standalone HTML · MIT",
     "notices": "Licences & third-party notices",
     "guide": "Demo guide & known limitations",
     "affiliation": "No approval or affiliation with manufacturers or related institutions is implied.",
@@ -36,7 +36,8 @@ export const messages = {
       "Titanic separation study",
       "Sampoong Department Store",
       "Seongsu Bridge",
-      "Sampoong collapse study"
+      "Sampoong collapse study",
+      "Sydney Opera House"
     ],
     "tags": [
       "ASSEMBLY / PHONE",
@@ -49,7 +50,8 @@ export const messages = {
       "SCENE STUDY / SEPARATION",
       "STRUCTURAL HISTORY / 1995",
       "BRIDGE / 1994–1997",
-      "SCENE STUDY / STRUCTURE"
+      "SCENE STUDY / STRUCTURE",
+      "DESIGN & CARE / 1957–2023"
     ],
     "descs": [
       "Basic assembly example. Compare stacked and mat layouts and inspect the evidence for each part.",
@@ -66,14 +68,15 @@ export const messages = {
       "A scene study exploring the camera and water effects as the hull separates.",
       "A-wing collapse, slab-and-column cutaways, recovery and historical records. Detailed geometry and motion are estimated.",
       "Normal four-lane traffic and a sourced route16 bus fall sequence with estimated motion, followed by the1997 reopening.",
-      "A detailed scene study: recessed facade, roof services, plate fractures and progressive collapse."
+      "A detailed scene study: recessed facade, roof services, plate fractures and progressive collapse.",
+      "Shared design, collective construction, interior completion and acoustic/access renewal. Five sourced records with scoped facts and estimated 3D context."
     ],
     "studySuffix": ""
   },
   "ko": {
     "title": "Unfold & Elapse · 인터랙티브 데모",
-    "meta": "제품 구조와 역사적 변화를 탐색하는 Unfold & Elapse 인터랙티브 데모 15개.",
-    "eyebrow": "인터랙티브 연구 / 데모 15개",
+    "meta": "제품 구조와 역사적 변화를 탐색하는 Unfold & Elapse 인터랙티브 데모 16개.",
+    "eyebrow": "인터랙티브 연구 / 데모 16개",
     "skip": "데모 목록으로 이동",
     "lead": "제품이 어떻게 조립되는지, 시간에 따라 무엇이 달라지는지.\n근거와 사람들의 기록을 읽고, 3D로 구조와 변화를 살펴보세요.",
     "navLabel": "시작하기",
@@ -84,7 +87,7 @@ export const messages = {
     "note": "교육·설명용 실험 버전입니다. 내부 형상·위치·움직임에는 추정이 포함되며, 공식 수리 매뉴얼이나 검증된 물리 시뮬레이션이 아닙니다. 각 데모의 출처와 제한을 확인하세요. 데모 감상에는 AI 계정이 필요하지 않습니다.",
     "unfoldIntro": "분해된 부품에서 완성된 제품까지. 컬러·도면과 속도를 바꾸어 관찰합니다.",
     "elapseIntro": "기록된 사건과 해석을 구분하며, 역사적 변화와 복원을 탐색합니다.",
-    "footer": "데모 15개 · 5개 언어 · 독립 HTML · MIT",
+    "footer": "데모 16개 · 5개 언어 · 독립 HTML · MIT",
     "notices": "라이선스·제3자 고지",
     "guide": "데모 안내·알려진 한계",
     "affiliation": "공식 제조사·관련 기관의 승인이나 제휴를 뜻하지 않습니다.",
@@ -107,7 +110,8 @@ export const messages = {
       "타이타닉 분리 대표 장면",
       "삼풍백화점",
       "성수대교",
-      "삼풍백화점 붕괴 대표 장면"
+      "삼풍백화점 붕괴 대표 장면",
+      "시드니 오페라하우스"
     ],
     "tags": [
       "조립 / 휴대폰",
@@ -120,7 +124,8 @@ export const messages = {
       "대표 장면 / 분리",
       "구조 변화 / 1995",
       "교량 / 1994–1997",
-      "대표 장면 / 구조"
+      "대표 장면 / 구조",
+      "설계와 돌봄 / 1957–2023"
     ],
     "descs": [
       "기본 조립 예시. 층층이·매트 배치와 부품별 근거를 확인합니다.",
@@ -137,14 +142,15 @@ export const messages = {
       "선체가 두 부분으로 나뉘는 장면의 카메라와 물 효과를 살펴봅니다.",
       "A동 붕괴, 층판·기둥 절개, 구조·수습과 역사 기록을 살펴봅니다. 상세 형상과 모션은 추정입니다.",
       "4차로 통행과 기록에 근거한16번 버스 추락을 보여줍니다. 움직임은 추정이며1997년 재개통까지 이어집니다.",
-      "외벽의 깊이·옥상 설비·층판 파단면과 연쇄 붕괴를 가까이 관찰하는 상세 시안입니다."
+      "외벽의 깊이·옥상 설비·층판 파단면과 연쇄 붕괴를 가까이 관찰하는 상세 시안입니다.",
+      "설계 협업·건설 노동·실내 완성·음향과 접근성 개선. 사실값과 출처를 갖춘 기록5건과 추정3D를 제공합니다."
     ],
     "studySuffix": ""
   },
   "ja": {
     "title": "Unfold & Elapse · インタラクティブデモ",
     "meta": "製品の構造と歴史的な変化を探る、Unfold & Elapseの15のインタラクティブデモ。",
-    "eyebrow": "インタラクティブ研究 / 15のデモ",
+    "eyebrow": "インタラクティブ研究 / 16のデモ",
     "skip": "デモ一覧へ移動",
     "lead": "製品が組み上がる仕組みと、時とともに変わる姿を。\n根拠と人々の記録を読み、任意の3D表示で構造と変化を観察できます。",
     "navLabel": "はじめに",
@@ -155,7 +161,7 @@ export const messages = {
     "note": "学習・説明を目的とした実験的な図解です。内部形状・位置・動きには推定が含まれます。公式修理マニュアルや検証済みの物理シミュレーションではありません。各デモの出典と制約をご確認ください。閲覧にAIアカウントは不要です。",
     "unfoldIntro": "個々の部品から完成品まで。カラー・図面・再生速度を切り替えて観察します。",
     "elapseIntro": "記録された出来事と解釈を区別しながら、歴史的な変化と修復を探ります。",
-    "footer": "デモ15件 · 5言語 · 単独HTML · MIT",
+    "footer": "デモ16件 · 5言語 · 単独HTML · MIT",
     "notices": "ライセンス・第三者表記",
     "guide": "デモガイド・既知の制約",
     "affiliation": "メーカーや関連機関による承認・提携を示すものではありません。",
@@ -178,7 +184,8 @@ export const messages = {
       "タイタニック船体分離シーン研究",
       "三豊百貨店",
       "聖水大橋",
-      "三豊百貨店の崩壊シーン"
+      "三豊百貨店の崩壊シーン",
+      "シドニー・オペラハウス"
     ],
     "tags": [
       "組立 / スマートフォン",
@@ -191,7 +198,8 @@ export const messages = {
       "シーン研究 / 分離",
       "構造の歴史 / 1995",
       "橋梁 / 1994–1997",
-      "シーン / 構造"
+      "シーン / 構造",
+      "設計とケア / 1957–2023"
     ],
     "descs": [
       "基本的な組立例。積層配置とマット配置を比較し、各部品の根拠を確認できます。",
@@ -208,14 +216,15 @@ export const messages = {
       "船体が分離する場面のカメラと水の効果を検討します。",
       "A棟崩壊、床版・柱の断面、救助と記録を観察。詳細形状・動作は推定です。",
       "4車線通行と記録に基づく16番バス落下。動きは推定で、1997年の再開通までを表示。",
-      "外壁の奥行き、屋上設備、床版の破断面と連鎖崩壊を近くで観察する詳細スタディ。"
+      "外壁の奥行き、屋上設備、床版の破断面と連鎖崩壊を近くで観察する詳細スタディ。",
+      "設計協働・建設作業・内装完成・音響とアクセス改修。範囲付きの数値と出典を備えた5記録と推定3D。"
     ],
     "studySuffix": ""
   },
   "zh": {
     "title": "Unfold & Elapse · 交互演示",
-    "meta": "通过 Unfold & Elapse 的15个交互演示，探索产品结构与历史变化。",
-    "eyebrow": "交互研究 / 15个演示",
+    "meta": "通过 Unfold & Elapse 的16个交互演示，探索产品结构与历史变化。",
+    "eyebrow": "交互研究 / 16个演示",
     "skip": "跳转到演示列表",
     "lead": "了解产品如何组装，观察事物如何随时间变化。\n阅读依据和人物记录，并可选择3D探索结构与变化。",
     "navLabel": "开始使用",
@@ -226,7 +235,7 @@ export const messages = {
     "note": "用于学习和讲解的实验性图示。内部形状、位置和运动含有推测，不是官方维修手册或经过验证的物理模拟。请查看各演示的来源和局限。观看演示无需 AI 账号。",
     "unfoldIntro": "从独立零件到完整产品。切换彩色、图纸和播放速度进行观察。",
     "elapseIntro": "区分有记录的事件与解读，探索历史变化和修复过程。",
-    "footer": "15个演示 · 5种语言 · 独立HTML · MIT",
+    "footer": "16个演示 · 5种语言 · 独立HTML · MIT",
     "notices": "许可证与第三方声明",
     "guide": "演示指南与已知局限",
     "affiliation": "不代表制造商或相关机构的认可或合作。",
@@ -249,7 +258,8 @@ export const messages = {
       "泰坦尼克号船体分离研究",
       "三丰百货大楼",
       "圣水大桥",
-      "三丰百货坍塌场景"
+      "三丰百货坍塌场景",
+      "悉尼歌剧院"
     ],
     "tags": [
       "组装 / 手机",
@@ -262,7 +272,8 @@ export const messages = {
       "场景研究 / 分离",
       "结构历史 / 1995",
       "桥梁 / 1994—1997",
-      "场景研究 / 结构"
+      "场景研究 / 结构",
+      "设计与维护 / 1957–2023"
     ],
     "descs": [
       "基础组装示例。比较分层与平铺布局，查看各零件的依据。",
@@ -279,14 +290,15 @@ export const messages = {
       "研究船体分离场景中的镜头与水面效果。",
       "观察A栋坍塌、楼板柱剖视、救援与历史记录。详细形状及运动为估计。",
       "展示四车道交通与有记录依据的16路公交坠落。运动为估计，延续至1997年重通。",
-      "近距离观察外墙凹进、屋顶设备、楼板断面与渐进坍塌的细节场景。"
+      "近距离观察外墙凹进、屋顶设备、楼板断面与渐进坍塌的细节场景。",
+      "设计协作、集体施工、室内完工及声学与无障碍改造。五项有来源与数值范围的记录，附估计3D。"
     ],
     "studySuffix": ""
   },
   "es": {
     "title": "Unfold & Elapse · Demostraciones interactivas",
-    "meta": "Explora estructuras de productos y cambios históricos con 15 demostraciones interactivas de Unfold & Elapse.",
-    "eyebrow": "ESTUDIOS INTERACTIVOS / 15 DEMOSTRACIONES",
+    "meta": "Explora estructuras de productos y cambios históricos con 16 demostraciones interactivas de Unfold & Elapse.",
+    "eyebrow": "ESTUDIOS INTERACTIVOS / 16 DEMOSTRACIONES",
     "skip": "Saltar a las demostraciones",
     "lead": "Descubre cómo se ensamblan los productos y cómo cambian los lugares con el tiempo.\nLee las fuentes y las historias de personas; explora el contexto 3D opcional.",
     "navLabel": "Primeros pasos",
@@ -297,7 +309,7 @@ export const messages = {
     "note": "Ilustraciones experimentales con fines educativos. Las formas internas, posiciones y movimientos incluyen estimaciones; no son manuales de reparación oficiales ni simulaciones físicas validadas. Consulta las fuentes y limitaciones de cada demostración. No necesitas una cuenta de IA para verlas.",
     "unfoldIntro": "De las piezas separadas al producto terminado. Explora las vistas en color y de plano y la velocidad de reproducción.",
     "elapseIntro": "Explora los cambios históricos y la restauración, distinguiendo los hechos documentados de las interpretaciones.",
-    "footer": "15 demos · 5 idiomas · HTML independiente · MIT",
+    "footer": "16 demos · 5 idiomas · HTML independiente · MIT",
     "notices": "Licencias y avisos de terceros",
     "guide": "Guía de demostraciones y limitaciones conocidas",
     "affiliation": "No implica aprobación ni afiliación con los fabricantes o instituciones relacionadas.",
@@ -320,7 +332,8 @@ export const messages = {
       "Estudio de la separación del Titanic",
       "Grandes almacenes Sampoong",
       "Puente de Seongsu",
-      "Estudio del colapso de Sampoong"
+      "Estudio del colapso de Sampoong",
+      "Ópera de Sídney"
     ],
     "tags": [
       "ENSAMBLAJE / TELÉFONO",
@@ -333,7 +346,8 @@ export const messages = {
       "ESTUDIO DE ESCENA / SEPARACIÓN",
       "HISTORIA ESTRUCTURAL / 1995",
       "PUENTE / 1994–1997",
-      "ESCENA / ESTRUCTURA"
+      "ESCENA / ESTRUCTURA",
+      "DISEÑO Y CUIDADO / 1957–2023"
     ],
     "descs": [
       "Ejemplo básico de ensamblaje. Compara las disposiciones apilada y sobre tapete y consulta las fuentes de cada pieza.",
@@ -350,15 +364,10 @@ export const messages = {
       "Estudio de la cámara y los efectos del agua durante la separación del casco.",
       "Colapso del ala A, cortes de losas y columnas, rescate y registros históricos. Geometría y movimiento estimados.",
       "Tráfico de cuatro carriles y caída documentada del autobús16 con movimiento estimado, hasta la reapertura de1997.",
-      "Observe de cerca fachada retranqueada, servicios de cubierta, fracturas de losas y colapso progresivo."
+      "Observe de cerca fachada retranqueada, servicios de cubierta, fracturas de losas y colapso progresivo.",
+      "Diseño compartido, construcción colectiva, interiores y renovación acústica y del acceso. Cinco registros documentados y contexto3D estimado."
     ],
     "studySuffix": ""
   }
 };
-export const languageTags = {
-  "en": "en",
-  "ko": "ko",
-  "ja": "ja",
-  "zh": "zh-Hans",
-  "es": "es"
-};
+export const languageTags = {en:"en",ko:"ko",ja:"ja",zh:"zh-Hans",es:"es"};

@@ -1,3 +1,5 @@
+import {isOpera} from './opera-model.js';
+import {createOperaRenderer} from './opera-render.js';
 import {isCivil} from './civil-model.js';
 import {createCivilRenderer} from './civil-render.js';
 import{configureMaterialBudget,presentationPixelRatio}from'../shared/material-budget.js';
@@ -14,6 +16,7 @@ import {eiffelMembers,halfWidth} from './eiffel-form.js';
 import {buildingProgress} from './building-model.js';
 const V=([x,y,z])=>new THREE.Vector3(x,z,-y);
 export function createBuildingRenderer(canvas,model,opts={}){
+ if(isOpera(model))return createOperaRenderer(canvas,model,opts);
  if(isCivil(model))return createCivilRenderer(canvas,model,opts);
  if(isWTC(model))return createWTCRenderer(canvas,model,opts);
  if(isNotreDame(model))return createNotreDameRenderer(canvas,model,opts);

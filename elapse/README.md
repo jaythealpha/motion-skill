@@ -57,3 +57,5 @@ WTC observation update: the full timeline includes separate North/South impact f
 Local checks from repository root: `node elapse/scripts/check_seongsu_traffic.mjs trials/seongsu-traffic-review`. The approved public update is included in the gallery.
 
 The full Sampoong timeline now calls the detailed representative form through `engine/sampoong-timeline.js`; source dates are kept separate from observation choreography. `seongsu-accident.js` adds the route16 bus and five other vehicles, with the recorded order separated from estimated paths, shapes and damage. See `research/seongsu-vehicle-notes.md`. Reproduce with `node scripts/check-civil-bus.mjs` from the repository root, plus the normal traffic and timeline checks. Chinese controls display CH; the standard locale key remains zh.
+
+New subjects use `scripts/build-topic.mjs` after source research. Read [the new-topic workflow](references/new-topic-workflow.md); `research/sydney-gen.mjs` and `research/records/sydney-opera-house.json` form a complete five-language example. Coverage checks reject missing people/facts or require an explicitly visible evidence gap; they do not independently verify a source claim.
