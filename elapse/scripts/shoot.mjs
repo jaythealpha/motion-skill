@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {isCivil,civilRate} from '../engine/civil-model.js';
 import {isWTC,wtcRate} from '../engine/wtc-model.js';
 import {notreDameRate} from '../engine/notredame-model.js';
 // Gate 2: open a built Elapse page in headless Chrome (over the DevTools protocol, no npm packages), shoot it
@@ -124,7 +125,7 @@ for (const [speed, secs] of quick ? [['slow', 30]] : [['xslow', 60], ['slow', 30
   // the tolerance is unchanged, and other ships retain their constant-rate check.
   let expectedEnd=moved.start;
   const quantum=isWTC(M)?.0001:.005;
-  for(let elapsed=0;elapsed<moved.secs;elapsed+=quantum){const dt=Math.min(quantum,moved.secs-elapsed);expectedEnd+=dt*100/secs*(isWTC(M)?wtcRate(M,expectedEnd):M.subject.kind==='building'?notreDameRate(M,expectedEnd):playbackRate(M,expectedEnd));}
+  for(let elapsed=0;elapsed<moved.secs;elapsed+=quantum){const dt=Math.min(quantum,moved.secs-elapsed);expectedEnd+=dt*100/secs*(isCivil(M)?civilRate(M,expectedEnd):isWTC(M)?wtcRate(M,expectedEnd):M.subject.kind==='building'?notreDameRate(M,expectedEnd):playbackRate(M,expectedEnd));}
   const expect = expectedEnd-moved.start, ok = Math.abs(moved.dt - expect) < Math.max(2, expect * 0.3);
   if(isWTC(M))console.log(`WTC clock: start=${moved.start.toFixed(5)} elapsed=${moved.secs.toFixed(3)}`);
   console.log(`${ok ? 'ok  ' : 'FAIL'} speed-${speed}  moved ${moved.dt.toFixed(1)} in ${moved.secs.toFixed(1)} s (expected ~${expect.toFixed(1)})`);

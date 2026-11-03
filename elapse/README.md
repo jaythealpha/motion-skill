@@ -1,6 +1,8 @@
 # Elapse
 
-A chaptered time bar for a real subject. Shipwreck examples cover: from the accident through the sinking to the wreck's decay on the seabed. The page is a single offline HTML file.
+A chaptered time bar for a real subject. Shipwreck examples cover: from the accident through the sinking to the wreck's decay on the seabed. The page is a single offline HTML file. Historical structure templates also include Eiffel, Notre-Dame, WTC, Sampoong and Seongsu Bridge.
+
+New Seoul examples: `examples/sampoong.html` and `examples/seongsu-bridge.html`; six locked-date inspection stops each, five languages (English default). Detailed geometry and failure motion are illustrative. See `research/seoul-civil-notes.md` for reference dimensions, conflicting times and historical endpoints.
 
 - `SKILL.md`: how Claude uses it
 - `references/`: the model format and the research guide

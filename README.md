@@ -25,9 +25,11 @@ Two experimental [Claude Code](https://claude.com/claude-code) skills. Each turn
 
 영어 UI가 기본이며 한국어·일본어·중국어(간체)·스페인어도 지원해요. 두 스킬 모두 공개 자료를 조사해서 만들고, 자료 조사부터 빌드까지 이어지는 작업 절차를 제공해요. 도구 권한·네트워크·AI 실행 환경에 따라 중단될 수 있고, 새 결과물은 데이터·화면 검사를 거쳐야 해요. 자동 검사는 역사·제품 구조·수리 안전성의 정확성을 보증하지 않아요.
 
-All 12 demos and both skills support English (default), Korean, Japanese, Simplified Chinese and Spanish. The gallery passes its selected language to each demo, and standalone pages remember your choice locally. Translation is bundled; playback makes no translation requests.
+All 14 demos and both skills support English (default), Korean, Japanese, Simplified Chinese and Spanish. The gallery passes its selected language to each demo, and standalone pages remember your choice locally. Translation is bundled; playback makes no translation requests.
 
 Packaged demos include subject-specific high-detail finishes; see [visual quality and limits](DEMOS.md#고품질-표현). Additional surface/structural detail is illustrative and does not increase measured accuracy or the sourced share.
+
+New structural-history examples: [Sampoong](https://jaythealpha.github.io/motion-skill/elapse/examples/sampoong.html?lang=en) and [Seongsu Bridge](https://jaythealpha.github.io/motion-skill/elapse/examples/seongsu-bridge.html?lang=en). Both include five languages and locked-date Explore; detailed geometry and failure motion remain estimated.
 
 ## Principles
 
@@ -52,11 +54,11 @@ Packaged demos include subject-specific high-detail finishes; see [visual qualit
 
 ## 시작하기
 
-**[브라우저에서 12개 데모 바로 보기](https://jaythealpha.github.io/motion-skill/)**
+**[브라우저에서 14개 데모 바로 보기](https://jaythealpha.github.io/motion-skill/)**
 
 
 - **설치:** [준비물·복제·기존 설치 보존·첫 빌드](INSTALL.md)
-- **보기:** [12개 데모와 로컬 실행 방법](DEMOS.md)
+- **보기:** [14개 데모와 로컬 실행 방법](DEMOS.md)
 - **최근 변경:** [역사 건축·WTC·해저 장면과 공개 준비](elapse/CHANGELOG.md)
 
 생성 작업은 Claude Code용입니다. 포함된 HTML 데모는 AI 없이 브라우저에서 볼 수 있습니다. 전체 검사에는 Node 22 이상과 Chrome/Chromium이 필요하며 npm 패키지는 설치하지 않습니다. 설치·빌드 재현은 macOS에서 확인하며, 다른 OS와 에이전트의 동작은 별도 검증이 필요합니다.

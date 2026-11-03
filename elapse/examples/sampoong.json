@@ -1,0 +1,687 @@
+{
+  "subject": {
+    "kind": "building",
+    "id": "sampoong",
+    "name": {
+      "en": "Sampoong · Collapse and aftermath",
+      "ko": "삼풍백화점 · 붕괴와 사고 이후",
+      "ja": "三豊百貨店・崩壊とその後",
+      "zh": "三丰百货大楼·坍塌与后续",
+      "es": "Sampoong · Colapso y consecuencias"
+    },
+    "dims": {
+      "width": 133,
+      "depth": 70,
+      "height": 26
+    }
+  },
+  "geometry": {
+    "type": "sampoong-1995",
+    "estimated": true
+  },
+  "construction": {
+    "heightKeys": []
+  },
+  "sources": [
+    {
+      "id": "archive",
+      "title": "National Archives · major collapse records",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/bigAccident.do"
+    },
+    {
+      "id": "sampoong",
+      "title": "National Archives · Sampoong structural-failure account",
+      "url": "https://www.archives.go.kr/next/newsearch/listSubjectDescription.do?id=001042&sitePage="
+    },
+    {
+      "id": "seoulS",
+      "title": "Seoul · Sampoong retrospective",
+      "url": "https://mediahub.seoul.go.kr/archives/2002100"
+    },
+    {
+      "id": "rescue",
+      "title": "National Institute of Korean History · 15 July 1995 record",
+      "url": "https://db.history.go.kr/id/tcct_1995_07_15_0030"
+    },
+    {
+      "id": "policy",
+      "title": "Presidential Archives · 19 July 1995 declaration",
+      "url": "https://www.pa.go.kr/research/contents/policy/index15.jsp?poMode=view&policySeq=3045"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "before",
+      "name": {
+        "en": "Before collapse",
+        "ko": "붕괴 전",
+        "ja": "崩壊前",
+        "zh": "坍塌前",
+        "es": "Antes del colapso"
+      },
+      "start": "1995-06-29T08:00",
+      "end": "1995-06-29T08:05",
+      "bar": [
+        0,
+        12
+      ],
+      "unit": "minute"
+    },
+    {
+      "id": "warning",
+      "name": {
+        "en": "Warning signs",
+        "ko": "이상 징후",
+        "ja": "異常の兆候",
+        "zh": "异常征兆",
+        "es": "Señales de alarma"
+      },
+      "start": "1995-06-29T08:05",
+      "end": "1995-06-29T17:55",
+      "bar": [
+        12,
+        32
+      ],
+      "unit": "minute"
+    },
+    {
+      "id": "collapse",
+      "name": {
+        "en": "A-wing collapse",
+        "ko": "A동 붕괴",
+        "ja": "A棟崩壊",
+        "zh": "A栋坍塌",
+        "es": "Colapso del ala A"
+      },
+      "start": "1995-06-29T17:55",
+      "end": "1995-06-29T17:57",
+      "bar": [
+        32,
+        58
+      ],
+      "unit": "minute"
+    },
+    {
+      "id": "recovery",
+      "name": {
+        "en": "Recovery",
+        "ko": "구조·수습",
+        "ja": "救助・収拾",
+        "zh": "救援与善后",
+        "es": "Rescate y recuperación"
+      },
+      "start": "1995-06-29T17:57",
+      "end": "1995-07-15T00:00",
+      "bar": [
+        58,
+        85
+      ],
+      "unit": "month"
+    },
+    {
+      "id": "records",
+      "name": {
+        "en": "Records / aftermath",
+        "ko": "기록·사고 이후",
+        "ja": "記録・事故後",
+        "zh": "记录与后续",
+        "es": "Registros y consecuencias"
+      },
+      "start": "1995-07-15T00:00",
+      "end": "1995-07-19T23:59",
+      "bar": [
+        85,
+        100
+      ],
+      "unit": "month"
+    }
+  ],
+  "events": [
+    {
+      "id": "structure",
+      "at": "1995-06-29T08:00",
+      "kind": "note",
+      "title": {
+        "en": "Before collapse",
+        "ko": "붕괴 전",
+        "ja": "崩壊前",
+        "zh": "坍塌前",
+        "es": "Antes del colapso"
+      },
+      "text": {
+        "en": "Observe the A-wing slab-and-column system and the separate context wing. The visible envelope and basement cutaway are schematic, not a reconstruction from surveyed plans.",
+        "ko": "A동의 층판·기둥과 인접 동을 구분해 보세요. 외곽·지하 절개는 실측 도면 복원이 아닌 구조 도해입니다.",
+        "ja": "A棟の床版・柱と隣接棟を区別します。外形と地下断面は実測図の復元ではなく概念図です。",
+        "zh": "区分A栋楼板柱体系与相邻楼翼。外形及地下剖面是结构示意，并非实测图纸重建。",
+        "es": "Distinga las losas y columnas del ala A y el ala contigua. El volumen y el corte del sótano son esquemáticos, no planos medidos."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "sampoong"
+      ],
+      "presentationAnchor": true
+    },
+    {
+      "id": "warning",
+      "at": "1995-06-29T08:05",
+      "kind": "note",
+      "title": {
+        "en": "Warning signs",
+        "ko": "이상 징후",
+        "ja": "異常の兆候",
+        "zh": "异常征兆",
+        "es": "Señales de alarma"
+      },
+      "text": {
+        "en": "The archive account records cracks at the fifth-floor restaurant that morning. The highlighted joint and crack paths are illustrative, not measured locations.",
+        "ko": "기록원 해설은 이날 오전 5층 식당 바닥의 균열을 기록합니다. 강조한 접합부·균열 경로는 실측 위치가 아닌 설명용입니다.",
+        "ja": "記録は朝の5階食堂床の亀裂に言及します。強調した接合部と亀裂経路は推定です。",
+        "zh": "档案记载当日上午五层餐厅楼板出现裂缝。突出显示的接头与裂缝路径为示意。",
+        "es": "El archivo menciona grietas matinales en el restaurante de la quinta planta. La unión destacada y las grietas son ilustrativas."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "sampoong"
+      ]
+    },
+    {
+      "id": "collapse",
+      "at": "1995-06-29T17:55",
+      "kind": "note",
+      "title": {
+        "en": "A-wing collapse",
+        "ko": "A동 붕괴",
+        "ja": "A棟崩壊",
+        "zh": "A栋坍塌",
+        "es": "Colapso del ala A"
+      },
+      "text": {
+        "en": "A-wing collapse is recorded around 17:55–17:57 in different accounts. Floor failure is slowed here for observation; neither its exact order nor this two-minute display window is a measured collapse duration.",
+        "ko": "자료는 A동 붕괴를 약 17:55~17:57로 다르게 기록합니다. 관찰을 위해 느리게 표현했으며, 파괴 순서와 2분 표시 구간은 실측 붕괴 시간이 아닙니다.",
+        "ja": "A棟崩壊は資料により約17:55〜17:57。観察用スローで、順序と2分間の表示枠は実測時間ではありません。",
+        "zh": "不同记录将A栋坍塌时间记为约17:55—17:57。此处慢放供观察，顺序和两分钟展示区间均非实测坍塌时长。",
+        "es": "Las fuentes sitúan el colapso hacia las 17:55–17:57. Se ralentiza para observarlo; el orden y esta ventana de dos minutos no son una duración medida."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "sampoong",
+        "seoulS"
+      ]
+    },
+    {
+      "id": "aftermath",
+      "at": "1995-06-29T17:57",
+      "kind": "note",
+      "title": {
+        "en": "Recovery",
+        "ko": "구조·수습",
+        "ja": "救助・収拾",
+        "zh": "救援与善后",
+        "es": "Rescate y recuperación"
+      },
+      "text": {
+        "en": "The collapse killed 502 people. This study shows only structures and debris, without depicting victims or inventing a dated clearance sequence.",
+        "ko": "붕괴로 502명이 사망했습니다. 피해자를 묘사하지 않고 구조·잔해만 표현하며, 날짜별 잔해 제거 순서를 만들지 않습니다.",
+        "ja": "502人が亡くなりました。構造と残骸のみを示し、被害者や日付別撤去順序は描きません。",
+        "zh": "事故造成502人遇难。本图仅展示结构与残骸，不描绘受害者，也不虚构按日清理进程。",
+        "es": "Murieron 502 personas. Solo se muestran estructuras y restos, sin víctimas ni una cronología inventada de retirada de escombros."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "archive"
+      ]
+    },
+    {
+      "id": "last-rescue",
+      "at": "1995-07-15T00:00",
+      "kind": "note",
+      "title": {
+        "en": "Records / aftermath",
+        "ko": "기록·사고 이후",
+        "ja": "記録・事故後",
+        "zh": "记录与后续",
+        "es": "Registros y consecuencias"
+      },
+      "text": {
+        "en": "The historical record dates the last live rescue to 15 July. The diagram keeps a residual site rather than claiming that clearance was already complete.",
+        "ko": "역사 기록은 마지막 생존자 구조를 7월 15일로 기록합니다. 도해는 잔여 현장을 유지하며 철거 완료를 뜻하지 않습니다.",
+        "ja": "最後の生存者救出は7月15日。残存現場を保ち、撤去完了とはしません。",
+        "zh": "历史记录将最后一名生还者获救记为7月15日。图中保留遗存，不表示清理完毕。",
+        "es": "El último rescate con vida se fecha el 15 de julio. Se conservan los restos; no se afirma que la retirada hubiera concluido."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "rescue"
+      ]
+    },
+    {
+      "id": "policy",
+      "at": "1995-07-19T00:00",
+      "kind": "note",
+      "title": {
+        "en": "Disaster declaration",
+        "ko": "특별재난지역 선포",
+        "ja": "特別災難地域の宣言",
+        "zh": "特别灾难地区宣布",
+        "es": "Declaración de desastre"
+      },
+      "text": {
+        "en": "A presidential record on 19 July concerns the special-disaster-area declaration. This is the historical endpoint; the department store is not shown rebuilt.",
+        "ko": "7월 19일 대통령 기록은 특별재난지역 선포를 다룹니다. 여기서 역사 범위를 마치며 백화점을 다시 세운 것으로 표현하지 않습니다.",
+        "ja": "7月19日の大統領記録は特別災難地域宣言を扱います。ここで終了し、百貨店の再建は描きません。",
+        "zh": "7月19日总统档案涉及特别灾难地区宣布。历史范围到此为止，不展示百货店重建。",
+        "es": "Un registro presidencial del 19 de julio trata la declaración de zona de desastre. El estudio termina aquí, sin reconstruir los grandes almacenes."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "policy"
+      ]
+    }
+  ],
+  "pieces": [
+    {
+      "id": "overview",
+      "name": {
+        "en": "Whole site",
+        "ko": "현장 전체",
+        "ja": "現場全体",
+        "zh": "全景",
+        "es": "Todo el lugar"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "sampoong"
+      ]
+    },
+    {
+      "id": "slab",
+      "name": {
+        "en": "Slabs / cutaway",
+        "ko": "층판·절개",
+        "ja": "床版・断面",
+        "zh": "楼板剖视",
+        "es": "Losas / corte"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "sampoong"
+      ]
+    },
+    {
+      "id": "column",
+      "name": {
+        "en": "Column / slab connection",
+        "ko": "기둥·층판 접합부",
+        "ja": "柱と床版接合部",
+        "zh": "柱与楼板连接",
+        "es": "Unión de columna y losa"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "sampoong"
+      ]
+    },
+    {
+      "id": "roof",
+      "name": {
+        "en": "Roof plant",
+        "ko": "옥상 설비",
+        "ja": "屋上設備",
+        "zh": "屋顶设备",
+        "es": "Instalaciones de cubierta"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "sampoong"
+      ]
+    },
+    {
+      "id": "basement",
+      "name": {
+        "en": "Basement / remaining site",
+        "ko": "지하·남은 현장",
+        "ja": "地下・残存部分",
+        "zh": "地下与遗存",
+        "es": "Sótano / restos"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "sampoong"
+      ]
+    },
+    {
+      "id": "context",
+      "name": {
+        "en": "Adjacent-wing context",
+        "ko": "인접 동 맥락",
+        "ja": "隣接棟の配置",
+        "zh": "相邻楼翼示意",
+        "es": "Ala adyacente"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "sampoong"
+      ]
+    }
+  ],
+  "stops": [
+    {
+      "id": "overview",
+      "name": {
+        "en": "Whole site",
+        "ko": "현장 전체",
+        "ja": "現場全体",
+        "zh": "全景",
+        "es": "Todo el lugar"
+      },
+      "box": {
+        "min": [
+          -52,
+          -35,
+          -16
+        ],
+        "max": [
+          81,
+          35,
+          26
+        ]
+      },
+      "parts": [
+        "overview"
+      ],
+      "availableFrom": 0,
+      "yaw": 225,
+      "pitch": 26
+    },
+    {
+      "id": "slab",
+      "name": {
+        "en": "Slabs / cutaway",
+        "ko": "층판·절개",
+        "ja": "床版・断面",
+        "zh": "楼板剖视",
+        "es": "Losas / corte"
+      },
+      "box": {
+        "min": [
+          -32,
+          -26,
+          -14
+        ],
+        "max": [
+          31,
+          26,
+          25
+        ]
+      },
+      "parts": [
+        "slab"
+      ],
+      "availableFrom": 0,
+      "yaw": 230,
+      "pitch": 35
+    },
+    {
+      "id": "column",
+      "name": {
+        "en": "Column / slab connection",
+        "ko": "기둥·층판 접합부",
+        "ja": "柱と床版接合部",
+        "zh": "柱与楼板连接",
+        "es": "Unión de columna y losa"
+      },
+      "box": {
+        "min": [
+          -8,
+          -5,
+          12
+        ],
+        "max": [
+          8,
+          8,
+          22
+        ]
+      },
+      "parts": [
+        "column"
+      ],
+      "availableFrom": 0,
+      "yaw": 230,
+      "pitch": 23
+    },
+    {
+      "id": "roof",
+      "name": {
+        "en": "Roof plant",
+        "ko": "옥상 설비",
+        "ja": "屋上設備",
+        "zh": "屋顶设备",
+        "es": "Instalaciones de cubierta"
+      },
+      "box": {
+        "min": [
+          -28,
+          -20,
+          18
+        ],
+        "max": [
+          30,
+          20,
+          29
+        ]
+      },
+      "parts": [
+        "roof"
+      ],
+      "availableFrom": 0,
+      "yaw": 230,
+      "pitch": 24
+    },
+    {
+      "id": "basement",
+      "name": {
+        "en": "Basement / remaining site",
+        "ko": "지하·남은 현장",
+        "ja": "地下・残存部分",
+        "zh": "地下与遗存",
+        "es": "Sótano / restos"
+      },
+      "box": {
+        "min": [
+          -40,
+          -29,
+          -16
+        ],
+        "max": [
+          40,
+          29,
+          10
+        ]
+      },
+      "parts": [
+        "basement"
+      ],
+      "availableFrom": 0,
+      "yaw": 225,
+      "pitch": 44
+    },
+    {
+      "id": "context",
+      "name": {
+        "en": "Adjacent-wing context",
+        "ko": "인접 동 맥락",
+        "ja": "隣接棟の配置",
+        "zh": "相邻楼翼示意",
+        "es": "Ala adyacente"
+      },
+      "box": {
+        "min": [
+          43,
+          -26,
+          0
+        ],
+        "max": [
+          81,
+          26,
+          25
+        ]
+      },
+      "parts": [
+        "context"
+      ],
+      "availableFrom": 0,
+      "yaw": 225,
+      "pitch": 23
+    }
+  ],
+  "presentation": {
+    "timezoneText": {
+      "en": "(Seoul local · approximate)",
+      "ko": "(서울 현지 · 약시각)",
+      "ja": "（ソウル現地・概時刻）",
+      "zh": "（首尔当地·约时刻）",
+      "es": "(Seúl · hora aproximada)"
+    },
+    "estimateNote": {
+      "en": "Illustrative geometry and motion",
+      "ko": "형상·움직임은 추정 도해",
+      "ja": "形状・動きは推定図解",
+      "zh": "形状与运动为示意",
+      "es": "Geometría y movimiento ilustrativos"
+    },
+    "inspectionText": {
+      "en": "Inspect the structure at the locked date. Slab and joint views expose layers; after collapse they show the remaining site. Individual members, damage and coordinates are estimates, not surveyed engineering drawings.",
+      "ko": "시점을 고정하고 구조를 살펴보세요. 층판·접합부 탐사는 겉면을 숨긴 절개입니다. 붕괴 뒤에는 남은 현장을 보여줍니다. 부재·손상·좌표는 추정이며 실측 설계도가 아닙니다.",
+      "ja": "日時を固定して構造を観察します。床版・接合部では外装を隠します。崩壊後は残存部分を表示。部材・損傷・座標は実測図ではなく推定です。",
+      "zh": "固定时间观察结构。楼板与接头视图隐藏外层；坍塌后显示遗存。构件、损伤与坐标为估计，并非实测工程图。",
+      "es": "Inspeccione la estructura en la fecha fijada. Los cortes revelan losas y uniones; tras el colapso muestran los restos. Miembros, daños y coordenadas son estimados, no planos medidos."
+    },
+    "inspectionHint": {
+      "en": "Drag to orbit; wheel/pinch to zoom. Inspection hides selected outer layers. History stays fixed; Timeline restores your prior date and view. This is not an emergency route or a safety assessment.",
+      "ko": "드래그 회전·휠/핀치 확대. 일부 탐사는 외장층을 숨깁니다. 역사 시점은 고정되며 시간순 보기로 이전 상태를 복원합니다. 실제 구조 동선·안전 진단이 아닙니다.",
+      "ja": "ドラッグで回転、ホイール・ピンチで拡大。一部外装を非表示にします。日時は固定され、時間順表示で元に戻ります。救助経路・安全診断ではありません。",
+      "zh": "拖动旋转，滚轮或双指缩放。部分观察会隐藏外层。历史时间固定，返回时间线可恢复原视图。并非救援路线或安全评估。",
+      "es": "Arrastre para girar; rueda o pellizco para ampliar. Se ocultan capas exteriores. El tiempo queda fijo; Cronología restaura la vista. No es una ruta de rescate ni una evaluación de seguridad."
+    },
+    "caption": {
+      "en": "1995 · Sampoong structural history",
+      "ko": "1995 · 삼풍 구조 변화",
+      "ja": "1995・三豊の構造変化",
+      "zh": "1995·三丰结构变迁",
+      "es": "1995 · Historia estructural de Sampoong"
+    },
+    "phases": [
+      {
+        "en": "Before collapse",
+        "ko": "붕괴 전",
+        "ja": "崩壊前",
+        "zh": "坍塌前",
+        "es": "Antes del colapso"
+      },
+      {
+        "en": "Warning signs",
+        "ko": "이상 징후",
+        "ja": "異常の兆候",
+        "zh": "异常征兆",
+        "es": "Señales de alarma"
+      },
+      {
+        "en": "A-wing collapse",
+        "ko": "A동 붕괴",
+        "ja": "A棟崩壊",
+        "zh": "A栋坍塌",
+        "es": "Colapso del ala A"
+      },
+      {
+        "en": "Recovery",
+        "ko": "구조·수습",
+        "ja": "救助・収拾",
+        "zh": "救援与善后",
+        "es": "Rescate y recuperación"
+      },
+      {
+        "en": "Records / aftermath",
+        "ko": "기록·사고 이후",
+        "ja": "記録・事故後",
+        "zh": "记录与后续",
+        "es": "Registros y consecuencias"
+      }
+    ],
+    "sceneLabel": {
+      "en": "3D study of Sampoong collapse and aftermath",
+      "ko": "삼풍백화점 붕괴·사고 이후 3D 도해",
+      "ja": "三豊百貨店の崩壊とその後の3D図解",
+      "zh": "三丰百货坍塌与后续三维示意",
+      "es": "Estudio 3D del colapso de Sampoong"
+    },
+    "dimensionLabel": {
+      "en": "Model envelope · estimated",
+      "ko": "모델 외곽 · 추정",
+      "ja": "モデル外形・推定",
+      "zh": "模型范围·估计",
+      "es": "Volumen del modelo · estimado"
+    },
+    "dimensionValue": "133 × 70 m",
+    "dimensionNote": {
+      "en": "Height / basement levels schematic",
+      "ko": "높이·지하 층은 도식화",
+      "ja": "高さ・地下階は模式化",
+      "zh": "高度与地下层为示意",
+      "es": "Altura y sótanos esquemáticos"
+    },
+    "motionNote": {
+      "en": "Archive-based history · all detailed geometry and failure motion estimated · floor/joint inspection uses a cutaway · no clearance-completion claim",
+      "ko": "기록 기반 역사 · 상세 형상·파괴 모션 추정 · 층판/접합부 탐사는 절개 보기 · 현장 정리 완료를 뜻하지 않음",
+      "ja": "記録に基づく歴史・詳細形状と破壊動作は推定・床版と接合部は断面表示・撤去完了を意味しません",
+      "zh": "依据档案·详细形状及失效运动为估计·楼板及接头为剖视·不代表清理完成",
+      "es": "Historia basada en archivos · geometría y fallo estimados · cortes de losa/unión · no se afirma la retirada completa"
+    },
+    "anchorLabel": {
+      "en": "Scene context · illustrative time boundary",
+      "ko": "장면 맥락 · 설명용 시간 경계",
+      "ja": "場面の文脈・説明用の時間境界",
+      "zh": "场景背景·示意时间边界",
+      "es": "Contexto de escena · límite temporal ilustrativo"
+    }
+  },
+  "meta": {
+    "renderQuality": "high",
+    "interpretation": {
+      "en": "A-wing collapse",
+      "ko": "A동 붕괴",
+      "ja": "A棟崩壊",
+      "zh": "A栋坍塌",
+      "es": "Colapso del ala A"
+    },
+    "about": {
+      "en": "An educational structural-history study of the 1995 Sampoong disaster in Seoul, with a locked-date inspection mode.",
+      "ko": "1995년 서울 삼풍백화점 참사의 구조·역사 교육용 도해입니다. 시점을 고정한 탐사를 지원합니다.",
+      "ja": "1995年ソウル三豊百貨店事故の構造・歴史教材。日時固定の観察に対応。",
+      "zh": "1995年首尔三丰百货灾难的结构历史教育示意，支持固定时间观察。",
+      "es": "Estudio educativo de la historia estructural del desastre de Sampoong de 1995 en Seúl, con inspección a fecha fija."
+    },
+    "limitations": [
+      {
+        "en": "Historical records anchor dates and structural concepts. Every detailed coordinate, height, facade pattern, fragment, support profile and intermediate pose is an independently authored estimate. No source photographs, plans or meshes are bundled.",
+        "ko": "날짜·구조 개념은 기록에 근거합니다. 개별 좌표·높이·외장 배열·잔해·받침 형상·중간 자세는 독자 제작한 추정입니다. 원본 사진·도면·메시는 포함하지 않습니다.",
+        "ja": "日付と構造概念は記録に基づきます。座標・高さ・外装・残骸・支承・途中姿勢は独自の推定。原写真・図面・メッシュは同梱しません。",
+        "zh": "日期与结构概念依据记录；坐标、高度、外观、碎片、支座及中间姿态均为独立制作的估计。未包含原始照片、图纸或网格。",
+        "es": "Fechas y conceptos se basan en registros. Coordenadas, alturas, fachadas, restos, apoyos y poses intermedias son estimaciones originales. No se incluyen fotos, planos ni mallas ajenos."
+      },
+      {
+        "en": "Non-graphic educational reconstruction. No people or vehicles are depicted. Slow motion, dust and water are presentation effects, not an engineering simulation or a measured failure sequence.",
+        "ko": "비선정적 교육용 재구성입니다. 사람·차량을 묘사하지 않습니다. 저속 재생·분진·물은 설명용 효과이며 구조 해석·실측 파괴 순서가 아닙니다.",
+        "ja": "非グラフィックな教育用再構成。人・車両は描きません。スロー・粉塵・水は説明用で、構造解析や実測破壊順序ではありません。",
+        "zh": "非血腥教育性重建，不描绘人员或车辆。慢放、粉尘与水为说明效果，不是结构仿真或实测失效顺序。",
+        "es": "Reconstrucción educativa sin imágenes explícitas, personas ni vehículos. Cámara lenta, polvo y agua son efectos explicativos, no simulación estructural ni secuencia medida."
+      },
+      {
+        "en": "The context wing is illustrative and is not certified safe. Nominal block dimensions, floor heights, basement tiers, rooftop equipment and individual column positions are not surveyed. The 17:55–17:57 record difference is retained.",
+        "ko": "인접 동은 맥락용이며 안전 판정을 뜻하지 않습니다. 블록 치수·층고·지하 층·옥상 설비·기둥 좌표는 실측값이 아닙니다. 기록 간 17:55~17:57 차이를 유지합니다.",
+        "ja": "隣接棟は文脈用で安全認定ではありません。外形・階高・地下階・屋上設備・柱位置は実測値ではありません。17:55〜17:57の資料差を保持します。",
+        "zh": "相邻楼翼仅作环境示意，不代表安全认证。外廓、层高、地下层、屋顶设备及柱坐标均非实测。保留17:55—17:57的记录差异。",
+        "es": "El ala contigua es contextual, sin certificar su seguridad. Volúmenes, alturas, sótanos, equipos y columnas no son medidos. Se conserva la diferencia 17:55–17:57."
+      }
+    ]
+  }
+}

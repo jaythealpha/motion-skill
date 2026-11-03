@@ -1,0 +1,675 @@
+{
+  "subject": {
+    "kind": "bridge",
+    "id": "seongsu-bridge",
+    "name": {
+      "en": "Seongsu Bridge · Collapse and rebuilding",
+      "ko": "성수대교 · 붕괴와 재시공",
+      "ja": "聖水大橋・崩壊と再施工",
+      "zh": "圣水大桥·坍塌与重建",
+      "es": "Puente de Seongsu · Colapso y reconstrucción"
+    },
+    "dims": {
+      "width": 19.4,
+      "depth": 1160.8,
+      "height": 23
+    }
+  },
+  "geometry": {
+    "type": "seongsu-1994-1997",
+    "estimated": true,
+    "suspendedLength": 48,
+    "referenceSpan": 120,
+    "bridgeLength": 1160.8
+  },
+  "construction": {
+    "heightKeys": []
+  },
+  "sources": [
+    {
+      "id": "archive",
+      "title": "National Archives · major collapse records",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/bigAccident.do"
+    },
+    {
+      "id": "technical",
+      "title": "CODIL · facility safety report, suspended truss account",
+      "url": "https://www.codil.or.kr/filebank/original/RK/OTKCRK190878/OTKCRK190878.pdf"
+    },
+    {
+      "id": "seoulB",
+      "title": "Seoul · Seongsu collapse and bridge maintenance",
+      "url": "https://news.seoul.go.kr/safe/archives/28907?listPage=1"
+    },
+    {
+      "id": "reopen",
+      "title": "Seoul · four-lane reopening in 1997 and later widening",
+      "url": "https://mediahub.seoul.go.kr/archives/145526"
+    },
+    {
+      "id": "replacement",
+      "title": "Yonhap · contemporaneous reopening report, 3 July 1997",
+      "url": "https://www.yna.co.kr/view/AKR19970703001400004"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "before",
+      "name": {
+        "en": "Before collapse",
+        "ko": "붕괴 전",
+        "ja": "崩壊前",
+        "zh": "坍塌前",
+        "es": "Antes del colapso"
+      },
+      "start": "1994-10-21T07:30",
+      "end": "1994-10-21T07:40",
+      "bar": [
+        0,
+        18
+      ],
+      "unit": "minute"
+    },
+    {
+      "id": "drop",
+      "name": {
+        "en": "Suspended span falls",
+        "ko": "현수 구간 낙하",
+        "ja": "吊り区間の落下",
+        "zh": "悬挂区段坠落",
+        "es": "Caída del tramo suspendido"
+      },
+      "start": "1994-10-21T07:40",
+      "end": "1994-10-21T07:41",
+      "bar": [
+        18,
+        48
+      ],
+      "unit": "minute"
+    },
+    {
+      "id": "aftermath",
+      "name": {
+        "en": "Gap / aftermath",
+        "ko": "단절·사고 이후",
+        "ja": "断絶・事故後",
+        "zh": "缺口与后续",
+        "es": "Brecha y consecuencias"
+      },
+      "start": "1994-10-21T07:41",
+      "end": "1995-04-26T00:00",
+      "bar": [
+        48,
+        65
+      ],
+      "unit": "month"
+    },
+    {
+      "id": "replace",
+      "name": {
+        "en": "Upper structure replaced",
+        "ko": "상부 구조 교체",
+        "ja": "上部構造の交換",
+        "zh": "上部结构更换",
+        "es": "Sustitución de la estructura"
+      },
+      "start": "1995-04-26T00:00",
+      "end": "1997-07-03T12:00",
+      "bar": [
+        65,
+        94
+      ],
+      "unit": "month"
+    },
+    {
+      "id": "reopen",
+      "name": {
+        "en": "1997 reopening",
+        "ko": "1997 재개통",
+        "ja": "1997年再開通",
+        "zh": "1997年重通",
+        "es": "Reapertura de 1997"
+      },
+      "start": "1997-07-03T12:00",
+      "end": "1997-07-03T23:59",
+      "bar": [
+        94,
+        100
+      ],
+      "unit": "minute"
+    }
+  ],
+  "events": [
+    {
+      "id": "span",
+      "at": "1994-10-21T07:30",
+      "kind": "note",
+      "title": {
+        "en": "Before collapse",
+        "ko": "붕괴 전",
+        "ja": "崩壊前",
+        "zh": "坍塌前",
+        "es": "Antes del colapso"
+      },
+      "text": {
+        "en": "A 48 m suspended truss lies within the 120 m span between piers 10 and 11. The truss is below the roadway; adjacent cantilever arms are separate from the falling segment.",
+        "ko": "10·11번 교각 사이 120m 경간에 48m 현수 트러스가 있습니다. 트러스는 도로 아래에 있으며 인접 캔틸레버와 낙하 구간을 구분합니다.",
+        "ja": "10・11番橋脚間の120m径間に48mの吊りトラスがあります。道路の下に位置し、隣接片持部と落下区間を区別します。",
+        "zh": "10号与11号桥墩间120米桥跨含48米悬挂桁架。桁架位于道路下方，区分相邻悬臂与坠落区段。",
+        "es": "Un tramo suspendido de 48 m ocupa parte del vano de 120 m entre las pilas 10 y 11. La cercha queda bajo la calzada; los voladizos no forman parte del tramo caído."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "technical"
+      ],
+      "presentationAnchor": true
+    },
+    {
+      "id": "drop",
+      "at": "1994-10-21T07:40",
+      "kind": "note",
+      "title": {
+        "en": "Suspended span falls",
+        "ko": "현수 구간 낙하",
+        "ja": "吊り区間の落下",
+        "zh": "悬挂区段坠落",
+        "es": "Caída del tramo suspendido"
+      },
+      "text": {
+        "en": "Seoul places the collapse at about 07:40. Only the central suspended segment falls here. Tilt, joint separation and splash are illustrative; the one-minute display window is not a measured fall duration.",
+        "ko": "서울시 기록은 약 07:40을 사용합니다. 중앙 현수 구간만 낙하합니다. 기울기·접합 분리·물보라는 추정이며 1분 표시 구간은 실측 낙하 시간이 아닙니다.",
+        "ja": "ソウル市記録は約07:40。中央吊り区間のみが落下します。傾き・接合分離・水しぶきと1分の表示枠は実測ではありません。",
+        "zh": "首尔记录为约07:40。仅中央悬挂区段坠落。倾斜、连接分离与水花为示意，一分钟展示区间并非实测坠落时长。",
+        "es": "Seúl sitúa el colapso hacia las 07:40. Solo cae el tramo central. Inclinación, separación y agua son ilustrativas; la ventana de un minuto no mide la caída."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "seoulB"
+      ]
+    },
+    {
+      "id": "gap",
+      "at": "1994-10-21T07:41",
+      "kind": "note",
+      "title": {
+        "en": "Gap / aftermath",
+        "ko": "단절·사고 이후",
+        "ja": "断絶・事故後",
+        "zh": "缺口与后续",
+        "es": "Brecha y consecuencias"
+      },
+      "text": {
+        "en": "The disaster killed 32 people and injured 17. The remaining bridge and the open gap stay visible; no vehicles or victims are depicted.",
+        "ko": "사고로 32명이 사망하고 17명이 다쳤습니다. 남은 교량과 단절 구간을 보여주며 차량·피해자는 묘사하지 않습니다.",
+        "ja": "32人が死亡、17人が負傷。残った橋と開口部を示し、車両・被害者は描きません。",
+        "zh": "事故造成32人遇难、17人受伤。保留桥体与缺口，不描绘车辆或受害者。",
+        "es": "Murieron 32 personas y 17 resultaron heridas. Se muestran el puente restante y la brecha, sin vehículos ni víctimas."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "seoulB"
+      ],
+      "presentationAnchor": true
+    },
+    {
+      "id": "replace",
+      "at": "1995-04-26T00:00",
+      "kind": "note",
+      "title": {
+        "en": "Upper structure replaced",
+        "ko": "상부 구조 교체",
+        "ja": "上部構造の交換",
+        "zh": "上部结构更换",
+        "es": "Sustitución de la estructura"
+      },
+      "text": {
+        "en": "The reopening report dates the start of replacement works to 26 April 1995. The entire deck and truss were replaced. The staged reveal is illustrative, not a documented erection schedule.",
+        "ko": "재개통 당시 보도는 교체 공사 착수를 1995년 4월 26일로 기록합니다. 전체 상판·트러스를 교체했으며 도해의 순차 등장은 실제 시공 일정이 아닙니다.",
+        "ja": "再開通時の報道は交換工事開始を1995年4月26日とします。全床版・トラスを交換。順次表示は実際の工程表ではありません。",
+        "zh": "重通当日报道将更换工程开工记为1995年4月26日。全部桥面与桁架被更换，分段出现仅为示意，并非实际施工日程。",
+        "es": "La crónica de reapertura fecha el inicio de las obras el 26 de abril de 1995. Se sustituyeron todo el tablero y la cercha; la secuencia visual no es un calendario de obra."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "replacement"
+      ]
+    },
+    {
+      "id": "reopen",
+      "at": "1997-07-03T12:00",
+      "kind": "note",
+      "title": {
+        "en": "1997 reopening",
+        "ko": "1997 재개통",
+        "ja": "1997年再開通",
+        "zh": "1997年重通",
+        "es": "Reapertura de 1997"
+      },
+      "text": {
+        "en": "The four-lane bridge reopened on 3 July 1997. This timeline ends in 1997; it does not depict the later eight-lane widening or certify any structure as safe.",
+        "ko": "4차로 교량은 1997년 7월 3일 재개통했습니다. 여기서 마치며 이후 8차로 확장이나 구조 안전 인증을 나타내지 않습니다.",
+        "ja": "4車線橋は1997年7月3日に再開通。ここで終了し、後年の8車線拡幅や安全認証は示しません。",
+        "zh": "四车道桥于1997年7月3日重新开放。时间线到此结束，不展示后来的八车道扩建，也不作安全认证。",
+        "es": "El puente de cuatro carriles reabrió el 3 de julio de 1997. El estudio no muestra la ampliación posterior a ocho carriles ni certifica seguridad."
+      },
+      "confidence": "sourced",
+      "sourceIds": [
+        "reopen",
+        "replacement"
+      ]
+    }
+  ],
+  "pieces": [
+    {
+      "id": "overview",
+      "name": {
+        "en": "Critical span / context",
+        "ko": "사고 경간·맥락",
+        "ja": "事故径間・配置",
+        "zh": "事故跨与环境",
+        "es": "Vano crítico y contexto"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "technical"
+      ]
+    },
+    {
+      "id": "suspended",
+      "name": {
+        "en": "48 m suspended segment",
+        "ko": "48m 현수 구간",
+        "ja": "48m吊り区間",
+        "zh": "48米悬挂区段",
+        "es": "Tramo suspendido de 48 m"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "technical"
+      ]
+    },
+    {
+      "id": "joint",
+      "name": {
+        "en": "Suspension joint / cutaway",
+        "ko": "현수 접합부·절개",
+        "ja": "吊り接合部・断面",
+        "zh": "悬挂接头剖视",
+        "es": "Unión suspendida / corte"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "technical"
+      ]
+    },
+    {
+      "id": "cantilever",
+      "name": {
+        "en": "Cantilever / under-deck truss",
+        "ko": "캔틸레버·하부 트러스",
+        "ja": "片持部・下部トラス",
+        "zh": "悬臂与下承桁架",
+        "es": "Voladizo / cercha inferior"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "technical"
+      ]
+    },
+    {
+      "id": "pier",
+      "name": {
+        "en": "Pier and bearing",
+        "ko": "교각·받침",
+        "ja": "橋脚・支承",
+        "zh": "桥墩与支座",
+        "es": "Pila y apoyo"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "technical"
+      ]
+    },
+    {
+      "id": "replacement",
+      "name": {
+        "en": "Replacement structure",
+        "ko": "교체 상부 구조",
+        "ja": "交換上部構造",
+        "zh": "更换后的结构",
+        "es": "Estructura sustituida"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "technical"
+      ]
+    }
+  ],
+  "stops": [
+    {
+      "id": "overview",
+      "name": {
+        "en": "Critical span / context",
+        "ko": "사고 경간·맥락",
+        "ja": "事故径間・配置",
+        "zh": "事故跨与环境",
+        "es": "Vano crítico y contexto"
+      },
+      "box": {
+        "min": [
+          -160,
+          -20,
+          -3
+        ],
+        "max": [
+          160,
+          20,
+          25
+        ]
+      },
+      "parts": [
+        "overview"
+      ],
+      "availableFrom": 0,
+      "yaw": 235,
+      "pitch": 19
+    },
+    {
+      "id": "suspended",
+      "name": {
+        "en": "48 m suspended segment",
+        "ko": "48m 현수 구간",
+        "ja": "48m吊り区間",
+        "zh": "48米悬挂区段",
+        "es": "Tramo suspendido de 48 m"
+      },
+      "box": {
+        "min": [
+          -29,
+          -12,
+          -3
+        ],
+        "max": [
+          29,
+          12,
+          23
+        ]
+      },
+      "parts": [
+        "suspended"
+      ],
+      "availableFrom": 0,
+      "yaw": 235,
+      "pitch": 15
+    },
+    {
+      "id": "joint",
+      "name": {
+        "en": "Suspension joint / cutaway",
+        "ko": "현수 접합부·절개",
+        "ja": "吊り接合部・断面",
+        "zh": "悬挂接头剖视",
+        "es": "Unión suspendida / corte"
+      },
+      "box": {
+        "min": [
+          19,
+          -11,
+          12
+        ],
+        "max": [
+          29,
+          -5,
+          22
+        ]
+      },
+      "parts": [
+        "joint"
+      ],
+      "availableFrom": 0,
+      "yaw": 240,
+      "pitch": 10
+    },
+    {
+      "id": "cantilever",
+      "name": {
+        "en": "Cantilever / under-deck truss",
+        "ko": "캔틸레버·하부 트러스",
+        "ja": "片持部・下部トラス",
+        "zh": "悬臂与下承桁架",
+        "es": "Voladizo / cercha inferior"
+      },
+      "box": {
+        "min": [
+          24,
+          -12,
+          10
+        ],
+        "max": [
+          65,
+          12,
+          23
+        ]
+      },
+      "parts": [
+        "cantilever"
+      ],
+      "availableFrom": 0,
+      "yaw": 230,
+      "pitch": 9
+    },
+    {
+      "id": "pier",
+      "name": {
+        "en": "Pier and bearing",
+        "ko": "교각·받침",
+        "ja": "橋脚・支承",
+        "zh": "桥墩与支座",
+        "es": "Pila y apoyo"
+      },
+      "box": {
+        "min": [
+          52,
+          -13,
+          -3
+        ],
+        "max": [
+          67,
+          13,
+          22
+        ]
+      },
+      "parts": [
+        "pier"
+      ],
+      "availableFrom": 0,
+      "yaw": 230,
+      "pitch": 12
+    },
+    {
+      "id": "replacement",
+      "name": {
+        "en": "Replacement structure",
+        "ko": "교체 상부 구조",
+        "ja": "交換上部構造",
+        "zh": "更换后的结构",
+        "es": "Estructura sustituida"
+      },
+      "box": {
+        "min": [
+          -68,
+          -14,
+          10
+        ],
+        "max": [
+          68,
+          14,
+          24
+        ]
+      },
+      "parts": [
+        "replacement"
+      ],
+      "availableFrom": 65,
+      "yaw": 235,
+      "pitch": 19
+    }
+  ],
+  "presentation": {
+    "timezoneText": {
+      "en": "(Seoul local · approximate)",
+      "ko": "(서울 현지 · 약시각)",
+      "ja": "（ソウル現地・概時刻）",
+      "zh": "（首尔当地·约时刻）",
+      "es": "(Seúl · hora aproximada)"
+    },
+    "estimateNote": {
+      "en": "Illustrative geometry and motion",
+      "ko": "형상·움직임은 추정 도해",
+      "ja": "形状・動きは推定図解",
+      "zh": "形状与运动为示意",
+      "es": "Geometría y movimiento ilustrativos"
+    },
+    "inspectionText": {
+      "en": "Inspect the structure at the locked date. Slab and joint views expose layers; after collapse they show the remaining site. Individual members, damage and coordinates are estimates, not surveyed engineering drawings.",
+      "ko": "시점을 고정하고 구조를 살펴보세요. 층판·접합부 탐사는 겉면을 숨긴 절개입니다. 붕괴 뒤에는 남은 현장을 보여줍니다. 부재·손상·좌표는 추정이며 실측 설계도가 아닙니다.",
+      "ja": "日時を固定して構造を観察します。床版・接合部では外装を隠します。崩壊後は残存部分を表示。部材・損傷・座標は実測図ではなく推定です。",
+      "zh": "固定时间观察结构。楼板与接头视图隐藏外层；坍塌后显示遗存。构件、损伤与坐标为估计，并非实测工程图。",
+      "es": "Inspeccione la estructura en la fecha fijada. Los cortes revelan losas y uniones; tras el colapso muestran los restos. Miembros, daños y coordenadas son estimados, no planos medidos."
+    },
+    "inspectionHint": {
+      "en": "Drag to orbit; wheel/pinch to zoom. Inspection hides selected outer layers. History stays fixed; Timeline restores your prior date and view. This is not an emergency route or a safety assessment.",
+      "ko": "드래그 회전·휠/핀치 확대. 일부 탐사는 외장층을 숨깁니다. 역사 시점은 고정되며 시간순 보기로 이전 상태를 복원합니다. 실제 구조 동선·안전 진단이 아닙니다.",
+      "ja": "ドラッグで回転、ホイール・ピンチで拡大。一部外装を非表示にします。日時は固定され、時間順表示で元に戻ります。救助経路・安全診断ではありません。",
+      "zh": "拖动旋转，滚轮或双指缩放。部分观察会隐藏外层。历史时间固定，返回时间线可恢复原视图。并非救援路线或安全评估。",
+      "es": "Arrastre para girar; rueda o pellizco para ampliar. Se ocultan capas exteriores. El tiempo queda fijo; Cronología restaura la vista. No es una ruta de rescate ni una evaluación de seguridad."
+    },
+    "caption": {
+      "en": "1994–1997 · Seongsu Bridge",
+      "ko": "1994–1997 · 성수대교",
+      "ja": "1994–1997・聖水大橋",
+      "zh": "1994—1997·圣水大桥",
+      "es": "1994–1997 · Puente de Seongsu"
+    },
+    "phases": [
+      {
+        "en": "Before collapse",
+        "ko": "붕괴 전",
+        "ja": "崩壊前",
+        "zh": "坍塌前",
+        "es": "Antes del colapso"
+      },
+      {
+        "en": "Suspended span falls",
+        "ko": "현수 구간 낙하",
+        "ja": "吊り区間の落下",
+        "zh": "悬挂区段坠落",
+        "es": "Caída del tramo suspendido"
+      },
+      {
+        "en": "Gap / aftermath",
+        "ko": "단절·사고 이후",
+        "ja": "断絶・事故後",
+        "zh": "缺口与后续",
+        "es": "Brecha y consecuencias"
+      },
+      {
+        "en": "Upper structure replaced",
+        "ko": "상부 구조 교체",
+        "ja": "上部構造の交換",
+        "zh": "上部结构更换",
+        "es": "Sustitución de la estructura"
+      },
+      {
+        "en": "1997 reopening",
+        "ko": "1997 재개통",
+        "ja": "1997年再開通",
+        "zh": "1997年重通",
+        "es": "Reapertura de 1997"
+      }
+    ],
+    "sceneLabel": {
+      "en": "3D history of Seongsu Bridge collapse and replacement",
+      "ko": "성수대교 붕괴·상부 교체 3D 도해",
+      "ja": "聖水大橋崩壊・上部交換の3D図解",
+      "zh": "圣水大桥坍塌与上部更换三维示意",
+      "es": "Historia 3D del colapso y sustitución del puente"
+    },
+    "dimensionLabel": {
+      "en": "Suspended segment / span",
+      "ko": "현수 구간 / 경간",
+      "ja": "吊り区間 / 径間",
+      "zh": "悬挂段 / 桥跨",
+      "es": "Tramo suspendido / vano"
+    },
+    "dimensionValue": "48 / 120 m",
+    "dimensionNote": {
+      "en": "Original width 19.4 m · 4 lanes",
+      "ko": "기존 폭 19.4m · 4차로",
+      "ja": "元の幅19.4m・4車線",
+      "zh": "原宽19.4米·四车道",
+      "es": "Ancho original 19,4 m · 4 carriles"
+    },
+    "motionNote": {
+      "en": "Record anchor ≈07:40; source times vary · water level, joints and fall path estimated · all upper structure replaced · endpoint: 1997 four-lane reopening",
+      "ko": "기록 기준 약 07:40·자료별 시각 차이 · 수위·접합부·낙하 추정 · 전체 상부 구조 교체 · 1997년 4차로 재개통까지",
+      "ja": "約07:40を基準・資料差あり・水位と接合部と落下は推定・全上部構造を交換・1997年4車線再開通まで",
+      "zh": "以约07:40为记录锚点，来源有差异·水位、接头及坠落为估计·全部上部结构更换·终点为1997年四车道重通",
+      "es": "Referencia ≈07:40; las fuentes difieren · agua, uniones y caída estimadas · sustitución de toda la estructura superior · reapertura de cuatro carriles en 1997"
+    },
+    "anchorLabel": {
+      "en": "Scene context · illustrative time boundary",
+      "ko": "장면 맥락 · 설명용 시간 경계",
+      "ja": "場面の文脈・説明用の時間境界",
+      "zh": "场景背景·示意时间边界",
+      "es": "Contexto de escena · límite temporal ilustrativo"
+    }
+  },
+  "meta": {
+    "renderQuality": "high",
+    "interpretation": {
+      "en": "Suspended span falls",
+      "ko": "현수 구간 낙하",
+      "ja": "吊り区間の落下",
+      "zh": "悬挂区段坠落",
+      "es": "Caída del tramo suspendido"
+    },
+    "about": {
+      "en": "An educational history of the Seongsu Bridge disaster and replacement, focused on the 48 m suspended span.",
+      "ko": "48m 현수 구간을 중심으로 성수대교 참사와 상부 구조 교체를 설명하는 교육용 도해입니다.",
+      "ja": "48m吊り区間を中心に聖水大橋事故と上部構造交換を解説する教材。",
+      "zh": "以48米悬挂区段为重点，介绍圣水大桥灾难及上部更换的教育示意。",
+      "es": "Historia educativa del desastre y sustitución del puente de Seongsu, centrada en el tramo suspendido de 48 m."
+    },
+    "limitations": [
+      {
+        "en": "Historical records anchor dates and structural concepts. Every detailed coordinate, height, facade pattern, fragment, support profile and intermediate pose is an independently authored estimate. No source photographs, plans or meshes are bundled.",
+        "ko": "날짜·구조 개념은 기록에 근거합니다. 개별 좌표·높이·외장 배열·잔해·받침 형상·중간 자세는 독자 제작한 추정입니다. 원본 사진·도면·메시는 포함하지 않습니다.",
+        "ja": "日付と構造概念は記録に基づきます。座標・高さ・外装・残骸・支承・途中姿勢は独自の推定。原写真・図面・メッシュは同梱しません。",
+        "zh": "日期与结构概念依据记录；坐标、高度、外观、碎片、支座及中间姿态均为独立制作的估计。未包含原始照片、图纸或网格。",
+        "es": "Fechas y conceptos se basan en registros. Coordenadas, alturas, fachadas, restos, apoyos y poses intermedias son estimaciones originales. No se incluyen fotos, planos ni mallas ajenos."
+      },
+      {
+        "en": "Non-graphic educational reconstruction. No people or vehicles are depicted. Slow motion, dust and water are presentation effects, not an engineering simulation or a measured failure sequence.",
+        "ko": "비선정적 교육용 재구성입니다. 사람·차량을 묘사하지 않습니다. 저속 재생·분진·물은 설명용 효과이며 구조 해석·실측 파괴 순서가 아닙니다.",
+        "ja": "非グラフィックな教育用再構成。人・車両は描きません。スロー・粉塵・水は説明用で、構造解析や実測破壊順序ではありません。",
+        "zh": "非血腥教育性重建，不描绘人员或车辆。慢放、粉尘与水为说明效果，不是结构仿真或实测失效顺序。",
+        "es": "Reconstrucción educativa sin imágenes explícitas, personas ni vehículos. Cámara lenta, polvo y agua son efectos explicativos, no simulación estructural ni secuencia medida."
+      },
+      {
+        "en": "Length 1160.8 m, width19.4 m, 120 m reference span and 48 m suspended segment follow published records. Pier spacing outside the critical span, water level, bearing details, joint geometry and the replacement profiles are schematic. The river is not a surveyed cross-section.",
+        "ko": "길이 1160.8m·폭 19.4m·120m 경간·48m 현수 구간은 기록을 따릅니다. 나머지 교각 간격·수위·받침·접합부·교체 부재 형상은 도식이며 실측 하천 단면이 아닙니다.",
+        "ja": "全長1160.8m・幅19.4m・径間120m・吊り区間48mは記録値。他の橋脚間隔・水位・支承・接合部・交換部材は模式図で、実測河川断面ではありません。",
+        "zh": "全长1160.8米、宽19.4米、120米桥跨与48米悬挂段依据记录。其余墩距、水位、支座、接头与更换构件为示意，并非实测河道断面。",
+        "es": "Longitud1160,8 m, ancho19,4 m, vano120 m y tramo48 m según registros. Otras separaciones, nivel del río, apoyos, uniones y perfiles sustituidos son esquemáticos, no un levantamiento del cauce."
+      },
+      {
+        "en": "Technical records use approximately07:38 or07:40; Seoul uses approximately07:40. The display uses the Seoul approximation and does not resolve an exact second. All intermediate replacement stages are estimated.",
+        "ko": "기술 자료는 약 07:38 또는 07:40, 서울시는 약 07:40을 씁니다. 서울시의 약시각을 사용하며 초 단위 시각을 확정하지 않습니다. 중간 교체 공정은 모두 추정입니다.",
+        "ja": "技術資料は約07:38または07:40、市は約07:40。市の概時刻を採用し秒単位は確定しません。交換途中の工程はすべて推定です。",
+        "zh": "技术资料使用约07:38或07:40，首尔使用约07:40。展示采用首尔约时，不确定具体秒数。中间更换阶段均为估计。",
+        "es": "Los informes técnicos indican ≈07:38 o07:40; Seúl usa ≈07:40. Se adopta la aproximación municipal, sin fijar segundos. Las etapas intermedias de sustitución son estimadas."
+      }
+    ]
+  }
+}

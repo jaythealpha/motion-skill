@@ -1,6 +1,6 @@
 // Stops reuse existing model parts; this mode freezes historical time, not the observation clock.
 export function explorationStops(model){
- if(model.subject?.kind==='building')return model.stops;
+ if(['building','bridge'].includes(model.subject?.kind))return model.stops;
  const valid=new Set(model.pieces.map(p=>p.id));
  if(Array.isArray(model.stops))return model.stops.map(s=>({...s,parts:(s.parts||[]).filter(id=>valid.has(id))})).filter(s=>s.parts.length);
  const hulls=model.pieces.filter(p=>p.template==='hull').map(p=>p.id);
@@ -15,7 +15,7 @@ export function explorationStops(model){
  return stops.map(s=>({...s,parts:s.parts.filter(id=>ids.has(id))})).filter(s=>s.parts.length);
 }
 export function explorationStart(model,t){
- if(model.subject?.kind==='building')return t;
+ if(['building','bridge'].includes(model.subject?.kind))return t;
  const projection=model.features.projectionChapters||(model.features.projection?[model.chapters.at(-1).id]:[]);
  const historical=model.chapters.filter(c=>c.unit==='year'&&!projection.includes(c.id));
  const c=historical.find(c=>t>=c.bar[0]&&t<=c.bar[1]);

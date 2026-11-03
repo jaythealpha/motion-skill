@@ -1,0 +1,27 @@
+# Seoul civil-history examples — evidence and geometry boundaries
+
+Researched 2026-11-03. Generator: `seoul-civil-gen.mjs`. This is educational structural history, not a validated structural solver, surveyed CAD, emergency instruction or a certificate of safety. No people/vehicles are drawn. No downloaded photographs, scanned plans, third-party meshes or source prose are included. All five narrative language packs are authored in the generator.
+
+## Sampoong (29 June–19 July 1995)
+
+- [National Archives subject account](https://www.archives.go.kr/next/newsearch/listSubjectDescription.do?id=001042&sitePage=) describes the morning fifth-floor cracks, flat-slab/column failure, added roof loading and A-wing collapse. Its authored subject explanation is not itself an original as-built plan or forensic simulation.
+- [National Archives historical overview](https://theme.archives.go.kr/next/koreaOfRecord/bigAccident.do) identifies the collapsed A wing and final death toll502. No victims are rendered.
+- Approximate time differs: the Archives account uses17:55; [Seoul's retrospective](https://mediahub.seoul.go.kr/archives/2002100) uses17:57. Keep the difference visible. The 17:55–17:57 chapter is a display interval, **not** a measured two-minute collapse duration.
+- [National History record](https://db.history.go.kr/id/tcct_1995_07_15_0030) dates the final live rescue to15 July; [Presidential Archives](https://www.pa.go.kr/research/contents/policy/index15.jsp?poMode=view&policySeq=3045) records the19 July disaster-area declaration. July15/19 event entries are date anchors, not assertions of midnight execution.
+- The08:00 opening is a presentation bound, not a recorded event; its card says scene context rather than a recorded timestamp. No day-by-day debris-clearance schedule or completed clearing is asserted. No rebuilt department store is invented. The residual-site scene is held after collapse.
+- Geometry is explicitly estimated: a nominal133×70m scene envelope (including adjacent context wing),26m height envelope, five aboveground study levels, four illustrative subgrade tiers, positions, column grid, slab subdivisions, roof plant, facade pattern, cracks and fragment paths. The context wing remains as context; its depiction does not certify safety. The reference material does not establish the model's grid or basement measurements.
+- Explore hides exterior panels/selected roof cells for column/slab inspection. This is an explanatory cutaway, not a dated missing facade or a real access route.
+
+## Seongsu (21 October1994–3 July1997)
+
+- [National Archives](https://theme.archives.go.kr/next/koreaOfRecord/bigAccident.do): original length1160.8m and width19.4m, four lanes, Gerber truss, central48m loss. The scene uses road **above** the trusses, not a through-truss bridge.
+- [CODIL facility-safety report](https://www.codil.or.kr/filebank/original/RK/OTKCRK190878/OTKCRK190878.pdf):48m suspended segment within the120m span between piers10 and11. [Seoul's20-year review](https://news.seoul.go.kr/safe/archives/28907?listPage=1) also describes the48m loss and approximately07:40, with32 fatalities and17 injuries. Source times are approximate; another [CODIL account](https://www.codil.or.kr/filebank/original/RK/OTMCRK500958/OTMCRK500958.pdf) uses07:38. The UI adopts Seoul's approximate07:40, never exact seconds. The displayed07:40–07:41 interval is not a measured fall duration.
+- [Contemporaneous reopening report](https://www.yna.co.kr/view/AKR19970703001400004) dates works to26 April1995 and reopening/traffic to3 July1997 noon, and describes replacement of the **whole deck and truss**, not a48m patch. Facts are independently paraphrased, no article text/images copied. [Seoul's2004 expansion announcement](https://mediahub.seoul.go.kr/archives/145526) independently confirms the1997-07-03 four-lane reopening and distinguishes subsequent widening.
+- The final state is1997's four lanes. No modern eight-lane bridge or later ramps are retroactively shown. Intermediate erection stages are illustrative, not dated construction evidence. Piers/water/support profiles are schematic; retention on screen does not assert their exact historical repair treatment.
+- The07:30 opening and07:41 aftermath bound are labelled scene context, not recorded event timestamps. Only the48m central upper section drops. Adjacent cantilever arms remain. Entire upper works are subsequently replaced. River level, fall tilt, joint plates, bolt patterns, support profiles and splashes are estimates. The1160.8m context envelope is not a surveyed map or actual pier-spacing schedule outside the critical span.
+
+## Shared quality / delivery
+
+Use the existing fixed information slots, deterministic scrubbing, continuous camera framing, coalesced pointer/wheel updates, cached material textures and instanced dust/mist. Distant bridge pieces are consolidated by material, with staged reveal preserving full upper replacement. No added paid generation or runtime network dependencies. English default; en/ko/ja/zh/es; six inspection stops per subject. Ship and existing building templates remain independent.
+
+Validation evidence and limitations: `docs/reviews/2026-11-03-seoul-civil-history.md`. Headless native-GPU checks do not prove physical-mobile performance, historical motion accuracy or photorealism.
