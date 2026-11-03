@@ -12,7 +12,7 @@ Source review: museum accounts and collection records, Commission§9.4, Korean h
 
 | Check | Result | Evidence / scope |
 |---|---|---|
-| Reader browser checks | 200/200 passed | `trials/remembrance-2026-11-03/reader-qa-release/results.json`; all12 records ×5 languages ×375/768/1440 =180 cases, plus20 navigation/fallback/motion cases |
+| Reader browser checks | 200/200 passed | `trials/remembrance-2026-11-03/reader-qa-final-links/results.json`; all12 records ×5 languages ×375/768/1440 =180 cases, plus20 navigation/fallback/motion cases |
 | Existing demos | 225/225 passed | `trials/remembrance-2026-11-03/scene-qa/results.json`;15 full/study demos ×5 languages ×3 widths, canvas framing, localization, progress and page errors |
 | Gate1 | 7/7 passed | All final Elapse models; bridge/building branches include the record contract |
 | Elapse unit tests | 139/139 in each zone | `npm test --prefix elapse`, UTC and Asia/Seoul |
@@ -33,6 +33,7 @@ Existing Elapse white/gray cards, typography and blue accents were retained. Vie
 - Kept record selection stable while history changes. Scene links occupy a separate fixed-role navigation area; no automatic record replacement.
 - Corrected observation-boundary/date-only/approximate scene-card labels without moving historical events. Original time-zone-neutral scene evaluation stays unchanged.
 - Removed the prominent model-share percentage from record-enabled scene headers. The source panel explains it is item composition, not historical accuracy.
+- Native public-browser review also found toolbar URLs retaining English after localization. Corrected native/new-tab links to preserve language, record, revision and available historical context; added this assertion to every reader case.
 - Real anchor links, labelled native select, visible focus outlines,44px targets, source links and semantic headings. Browser Tab/focus behavior checked. No color-only state, newly added autoplay, or reader animation.
 - Reading pauses historical playback, survey motion and independently clocked bridge traffic. Global scene keyboard shortcuts cannot restart hidden playback. Returning restores historical progress/camera, and traffic resumes only in eligible periods.
 - English records and evidence are emitted as ordinary HTML. With scripts disabled, the tested WTC page retains all four records and factual values. Forced WebGL failure retains localized content, an explicit error and source links. This is separate from a normal successful3D run.
