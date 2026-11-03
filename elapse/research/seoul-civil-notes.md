@@ -1,6 +1,6 @@
 # Seoul civil-history examples — evidence and geometry boundaries
 
-Researched 2026-11-03. Generator: `seoul-civil-gen.mjs`. This is educational structural history, not a validated structural solver, surveyed CAD, emergency instruction or a certificate of safety. No people/vehicles are drawn. No downloaded photographs, scanned plans, third-party meshes or source prose are included. All five narrative language packs are authored in the generator.
+Researched 2026-11-03. Generator: `seoul-civil-gen.mjs`. This is educational structural history, not a validated structural solver, surveyed CAD, emergency instruction or a certificate of safety. No people are drawn. The Seongsu update includes generic normal-traffic vehicles before collapse and after reopening, not accident vehicle identities or fall trajectories. No downloaded photographs, scanned plans, third-party meshes or source prose are included. All five narrative language packs are authored in the generator.
 
 ## Sampoong (29 June–19 July 1995)
 
@@ -25,3 +25,6 @@ Researched 2026-11-03. Generator: `seoul-civil-gen.mjs`. This is educational str
 Use the existing fixed information slots, deterministic scrubbing, continuous camera framing, coalesced pointer/wheel updates, cached material textures and instanced dust/mist. Distant bridge pieces are consolidated by material, with staged reveal preserving full upper replacement. No added paid generation or runtime network dependencies. English default; en/ko/ja/zh/es; six inspection stops per subject. Ship and existing building templates remain independent.
 
 Validation evidence and limitations: `docs/reviews/2026-11-03-seoul-civil-history.md`. Headless native-GPU checks do not prove physical-mobile performance, historical motion accuracy or photorealism.
+
+## Normal-traffic detail update —2026-11-03
+User requested visible cars passing. Four lanes use two directions. Sedans/vans,32 illustration instances, spacing42m and nominal9m/s are original presentation choices, not records of actual vehicles/occupants/speed. The independent traffic clock does not advance historical dates. It freezes on demand, hidden tabs, reduced-motion settings and structural-inspection stops; the dedicated road-traffic stop permits movement. Vehicles are hidden during collapse and incomplete replacement as an explicit display choice, not a claim of evacuation. Original width19.4m and four-lane1997 endpoint are retained.

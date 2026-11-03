@@ -49,3 +49,11 @@ Validation: `node scripts/check_model.mjs examples/notre-dame.json`; `node scrip
 Read `research/wtc-notes.md` and `representative/wtc-qa.md`. Run Gate1, full `shoot.mjs` and `check_wtc.mjs`. The new template keeps original tower sites distinct from new buildings and disables not-yet-built inspection stops.
 
 WTC observation update: the full timeline includes separate North/South impact framing, South/North/7 WTC descent-to-dust camera sequences, procedural facade detail and generic aircraft, plus 0.25× / 0.5× slow viewing. From the repository root, run `node elapse/scripts/check_wtc_directed.mjs` to check critical frames at three widths. These are authored explanatory sequences, not a physics reconstruction.
+
+## Seongsu normal-traffic illustration
+
+`examples/seongsu-bridge.html?lang=en&t=0` now includes generic sedan/van traffic on four lanes. **Traffic close-up** opens a dedicated inspection stop; **Freeze** stops the independent traffic clock without changing the historical date. Traffic appears only before collapse and after the1997 reopening. The collapse and replacement sequence hides this illustration for observation, not as evidence of evacuation. Vehicle shapes, population, spacing and speed are estimates, not an accident reconstruction. Reduced-motion defaults to frozen traffic; an explicit Moving action can enable it.
+
+Local checks from repository root: `node elapse/scripts/check_seongsu_traffic.mjs trials/seongsu-traffic-review`. The approved public update is included in the gallery.
+
+The full Sampoong timeline now calls the detailed representative form through `engine/sampoong-timeline.js`; source dates are kept separate from observation choreography. `seongsu-accident.js` adds the route16 bus and five other vehicles, with the recorded order separated from estimated paths, shapes and damage. See `research/seongsu-vehicle-notes.md`. Reproduce with `node scripts/check-civil-bus.mjs` from the repository root, plus the normal traffic and timeline checks. Chinese controls display CH; the standard locale key remains zh.

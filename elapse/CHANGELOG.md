@@ -1,3 +1,10 @@
+## 2026-11-03 — Detailed civil timeline and shared demo refresh
+
+- Adopt the detailed Sampoong representative form in the dated full timeline, including recessed frontage, roof services, local slab/rebar transforms and bounded camera fitting. Add the standalone Sampoong study to the public gallery (15 demos).
+- Add independent normal traffic and a historically anchored Seongsu route16 bus / six-vehicle event. Separate recorded event order from estimated geometry, motion, damage and vehicle-removal display boundaries. No people are depicted.
+- Display Chinese as CH throughout the gallery, timelines and studies; keep standard zh/zh-Hans tags and support the ch URL alias.
+- Rebuild every demo with cached original material normal tiles, finer native-desktop shadows and improved reflection/contact settings. Lightweight/mobile shadow budgets remain in place.
+
 # 변경 기록
 
 ## 2026-11-03 — 삼풍·성수대교 구조·역사 예시

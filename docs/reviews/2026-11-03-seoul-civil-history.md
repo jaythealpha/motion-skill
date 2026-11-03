@@ -41,3 +41,5 @@ Isolated headless Chrome; AMD Radeon Pro5300 via ANGLE Metal;1440×1100; DPR2.10
 | Seongsu fall t43 |16.6ms|18.1ms|0|49|
 
 These short local timing samples are not a physical-mobile benchmark, long-run leak test or a universal frame-rate guarantee. Translation is authored in five languages; comprehensive native-speaker review remains unverified. Final aesthetic acceptance and forensic motion accuracy are not established by automated checks.
+
+Later local update: the initial no-vehicles scope above is superseded for Seongsu normal-traffic context only. See [detail QA](civil-detail/design-qa.md). The public release is unchanged until separately published.

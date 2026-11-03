@@ -1,10 +1,10 @@
 # 데모 실행
 
-이 저장소의 데모는 단일 HTML입니다. **GitHub의 HTML 파일 링크는 소스 보기이며 실행 화면이 아닙니다.** **[GitHub Pages에서 14개 데모 바로 보기](https://jaythealpha.github.io/motion-skill/)**. 설치 없이 브라우저에서 실행할 수 있습니다.
+이 저장소의 데모는 단일 HTML입니다. **GitHub의 HTML 파일 링크는 소스 보기이며 실행 화면이 아닙니다.** **[GitHub Pages에서 15개 데모 바로 보기](https://jaythealpha.github.io/motion-skill/)**. 설치 없이 브라우저에서 실행할 수 있습니다.
 
 ## 갤러리 언어
 
-공개 갤러리는 처음 방문하면 영어로 표시됩니다. 상단에서 English·한국어·日本語·简体中文·Español을 선택할 수 있으며, 제목·안내·14개 카드 설명·링크·접근성 문구가 함께 바뀝니다. 선택은 이 브라우저에 저장되고 `?lang=en|ko|ja|zh|es` 주소로 공유할 수 있습니다. URL의 명시적 언어가 저장된 선택보다 우선합니다. 브라우저의 기본 언어를 자동 적용하지 않습니다.
+공개 갤러리는 처음 방문하면 영어로 표시됩니다. 상단에서 English·한국어·日本語·CH · 简体中文·Español을 선택할 수 있으며, 제목·안내·15개 카드 설명·링크·접근성 문구가 함께 바뀝니다. 선택은 이 브라우저에 저장되고 `?lang=en|ko|ja|zh|es` 주소로 공유할 수 있습니다. URL의 명시적 언어가 저장된 선택보다 우선합니다. 브라우저의 기본 언어를 자동 적용하지 않습니다.
 
 전체 타임라인 12개와 대표 장면 2개 모두 5개 언어를 지원합니다. 갤러리에서 선택한 언어가 개별 데모와 대표 장면의 전체 타임라인 링크로 이어집니다. 새 방문은 영어가 기본이며, 개별 데모에서도 언어를 바꿀 수 있습니다. 번역은 HTML에 포함되므로 재생 중 외부 번역 서비스에 접속하지 않습니다. 출처의 서지 제목·고유 명칭은 원문을 유지할 수 있습니다. 일본어·중국어·스페인어는 자동 번역 후 주요 UI 용어를 보정했으며 전체 문장의 원어민 교정은 미검증입니다.
 
@@ -31,6 +31,7 @@ python3 -m http.server 8765 --bind 127.0.0.1
 | 에펠탑 건설 · 추정 형상 포함 | [HTML](elapse/examples/eiffel-tower.html) | http://127.0.0.1:8765/elapse/examples/eiffel-tower.html |
 | 타이타닉 | [HTML](elapse/examples/titanic.html) | http://127.0.0.1:8765/elapse/examples/titanic.html |
 | 삼풍백화점 · 구조·사고 이후 | [HTML](elapse/examples/sampoong.html) | http://127.0.0.1:8765/elapse/examples/sampoong.html |
+| 삼풍백화점 붕괴 대표 장면 | [HTML](elapse/examples/sampoong-collapse-study.html) | http://127.0.0.1:8765/elapse/examples/sampoong-collapse-study.html |
 | 성수대교 · 붕괴·재시공 | [HTML](elapse/examples/seongsu-bridge.html) | http://127.0.0.1:8765/elapse/examples/seongsu-bridge.html |
 | 브리타닉 | [HTML](elapse/examples/britannic.html) | http://127.0.0.1:8765/elapse/examples/britannic.html |
 | 타이타닉 분리 장면 연구 | [HTML](elapse/examples/titanic-break-study.html) | http://127.0.0.1:8765/elapse/examples/titanic-break-study.html |
@@ -71,3 +72,11 @@ WTC 전체 타임라인과 대표 장면은 연기·화염·분진을 인스턴�
 ## 서울 구조·역사 예시
 
 삼풍은 1995년 6월 29일 붕괴 전부터 7월 19일 기록까지, 성수대교는 1994년 붕괴 전부터 1997년 4차로 재개통까지 다룹니다. 각각 탐사 부위 6곳, 구조 절개, 컬러·도면, 0.25×·0.5×를 포함한 속도 선택, 주요 파괴 구간 저속 재생을 지원합니다. 사건 기록과 추정 형상을 구분하며 사람·차량은 묘사하지 않습니다. 삼풍의 실측 도면과 지하 치수는 확보하지 못했으므로 모델 외곽·층·기둥 좌표는 추정입니다. [출처와 표현 범위](elapse/research/seoul-civil-notes.md)를 확인하세요.
+
+## 상세 모델·차량 고증 배포
+
+삼풍 대표 장면의 상세 외벽·입구·설비·층판·철근 모델을 전체 타임라인에도 사용합니다. 붕괴 구간의 전면층 숨김은 층판 관찰을 위한 설명용 절개입니다. 표시되는 모델 외곽은 렌더링용 추정 범위이며 실측 건물 치수가 아닙니다.
+
+성수대교의 **차량 확대**는 정상 통행을 독립된 시계로 보여줍니다. 붕괴 구간은 별도의16번 버스와 다른5대 차량 도해로 전환합니다. 경계에 걸림→전복→먼저 떨어진 상판과 접촉이라는 순서는 기록을 따르고, 차종·도색·각도·속도·상세 위치·손상은 추정입니다. 재시공 장에서 차량을 숨기는 것은 실제 수습 날짜를 뜻하지 않습니다. 사람은 표현하지 않습니다.
+
+중국어 선택 표시는 **CH**이며 번역 데이터·HTML 언어 태그는 표준 `zh` / `zh-Hans`입니다. 기존 `lang=zh` 링크를 유지하고 `lang=ch` 입력도 지원합니다. 기존12개 예시에도 공통 표면 법선·데스크톱 음영과 언어 표시를 반영해 재생성했습니다. 개별 사건마다 새로운 고증 모델을 추가한 것은 아닙니다.

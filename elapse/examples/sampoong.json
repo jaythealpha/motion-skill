@@ -10,9 +10,9 @@
       "es": "Sampoong · Colapso y consecuencias"
     },
     "dims": {
-      "width": 133,
-      "depth": 70,
-      "height": 26
+      "width": 151,
+      "depth": 56,
+      "height": 28
     }
   },
   "geometry": {
@@ -47,6 +47,16 @@
       "id": "policy",
       "title": "Presidential Archives · 19 July 1995 declaration",
       "url": "https://www.pa.go.kr/research/contents/policy/index15.jsp?poMode=view&policySeq=3045"
+    },
+    {
+      "id": "study-exterior",
+      "title": "Seoul Institute · June1995 exterior record01O01101Db8000",
+      "url": "https://data.si.re.kr/node/52399"
+    },
+    {
+      "id": "study-structure",
+      "title": "Gardner, Huh & Chung · Lessons from the Sampoong department store collapse (2002)",
+      "url": "https://doi.org/10.1016/S0958-9465(01)00068-3"
     }
   ],
   "chapters": [
@@ -621,20 +631,20 @@
       "zh": "模型范围·估计",
       "es": "Volumen del modelo · estimado"
     },
-    "dimensionValue": "133 × 70 m",
+    "dimensionValue": "151 × 56 m",
     "dimensionNote": {
-      "en": "Height / basement levels schematic",
-      "ko": "높이·지하 층은 도식화",
-      "ja": "高さ・地下階は模式化",
-      "zh": "高度与地下层为示意",
-      "es": "Altura y sótanos esquemáticos"
+      "en": "Rendered envelope, not surveyed dimensions",
+      "ko": "렌더링 외곽이며 실측 건물 치수가 아님",
+      "ja": "描画外形であり実測寸法ではありません",
+      "zh": "渲染范围，并非实测建筑尺寸",
+      "es": "Volumen dibujado, no dimensiones medidas"
     },
     "motionNote": {
-      "en": "Archive-based history · all detailed geometry and failure motion estimated · floor/joint inspection uses a cutaway · no clearance-completion claim",
-      "ko": "기록 기반 역사 · 상세 형상·파괴 모션 추정 · 층판/접합부 탐사는 절개 보기 · 현장 정리 완료를 뜻하지 않음",
-      "ja": "記録に基づく歴史・詳細形状と破壊動作は推定・床版と接合部は断面表示・撤去完了を意味しません",
-      "zh": "依据档案·详细形状及失效运动为估计·楼板及接头为剖视·不代表清理完成",
-      "es": "Historia basada en archivos · geometría y fallo estimados · cortes de losa/unión · no se afirma la retirada completa"
+      "en": "Failure view hides front layers to reveal slabs · geometry and motion estimated · recorded dates retained · not a measured failure clock",
+      "ko": "붕괴 장면은 층판 관찰을 위해 전면층을 숨김 · 형상·움직임 추정 · 기록 날짜 유지 · 실측 붕괴 시계가 아님",
+      "ja": "崩壊場面は床版観察のため前面層を非表示・形状と動きは推定・記録日付を維持・実測崩壊時計ではありません",
+      "zh": "坍塌场景隐藏前层以观察楼板·形状及运动为估计·保留记录日期·非实测坍塌计时",
+      "es": "La escena oculta capas frontales para mostrar losas · geometría y movimiento estimados · fechas registradas · sin cronómetro real del fallo"
     },
     "anchorLabel": {
       "en": "Scene context · illustrative time boundary",
@@ -681,6 +691,13 @@
         "ja": "隣接棟は文脈用で安全認定ではありません。外形・階高・地下階・屋上設備・柱位置は実測値ではありません。17:55〜17:57の資料差を保持します。",
         "zh": "相邻楼翼仅作环境示意，不代表安全认证。外廓、层高、地下层、屋顶设备及柱坐标均非实测。保留17:55—17:57的记录差异。",
         "es": "El ala contigua es contextual, sin certificar su seguridad. Volúmenes, alturas, sótanos, equipos y columnas no son medidos. Se conserva la diferencia 17:55–17:57."
+      },
+      {
+        "en": "The detailed model shares the independent representative study: recessed facade, roof services, plates and reinforcement. Public images guide appearance; the recovered grid or as-built plans were not available. Upper-connection initiation is uncertain. The automatic cutaway is explanatory, not an actual open frontage.",
+        "ko": "대표 장면과 같은 독립 상세 모델을 씁니다. 공개 사진의 외형·층판 구조를 참고했으며 실제 기둥망·준공 도면을 복원한 것이 아닙니다. 최초 상부 접합부 손상 위치에는 불확실성이 있습니다. 자동 절개는 설명용이며 실제 열린 외벽이 아닙니다.",
+        "ja": "代表シーンと同じ独立した詳細モデルです。公開写真で外観を参照し、実際の柱配置・竣工図は復元していません。最初の上部接合部損傷位置は不確実です。自動断面は説明用で実際の開放外壁ではありません。",
+        "zh": "采用与代表场景相同的独立细节模型。外观参考公开照片，并未恢复真实柱网或竣工图。初始上部连接损伤位置存在不确定性。自动剖视为说明用途，并非实际敞开的外墙。",
+        "es": "Usa el mismo modelo detallado original del estudio. Las imágenes públicas orientan la apariencia; no se recuperaron planos ni la retícula real. El inicio en la unión superior es incierto. El corte automático es explicativo, no una fachada realmente abierta."
       }
     ]
   }

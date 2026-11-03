@@ -9,13 +9,13 @@ export function createPresentation(renderer,scene,{kind='architecture',sun,root}
  const back=document.createElement('canvas');back.width=8;back.height=512;const b=back.getContext('2d'),gradient=b.createLinearGradient(0,0,0,512);gradient.addColorStop(0,studio?'#edf1f5':'#a6c0d4');gradient.addColorStop(.72,studio?'#d8e0e7':'#e6e8e5');gradient.addColorStop(1,studio?'#c6d0da':'#c5c9c3');b.fillStyle=gradient;b.fillRect(0,0,8,512);const background=new THREE.CanvasTexture(back);background.colorSpace=THREE.SRGBColorSpace;
  const low=innerWidth<600||renderer.userData?.lightweight;
  root?.traverse(o=>{for(const m of Array.isArray(o.material)?o.material:[o.material])if(m?.isMeshPhongMaterial){m.envMap=env;m.reflectivity=marine?.06:studio?.16:.04;m.needsUpdate=true;}});
- if(sun&&!marine&&!studio){renderer.shadowMap.enabled=!low;renderer.shadowMap.type=THREE.PCFSoftShadowMap;sun.castShadow=!low;sun.shadow.mapSize.set(1024,1024);const span=kind==='city'?650:kind==='iron'?240:110;Object.assign(sun.shadow.camera,{left:-span,right:span,top:span,bottom:-span,near:1,far:2500});sun.shadow.bias=-.00008;sun.shadow.normalBias=kind==='city'?1.2:kind==='iron'?.15:.04;sun.shadow.radius=2;}
+ if(sun&&!marine&&!studio){renderer.shadowMap.enabled=!low;renderer.shadowMap.type=THREE.PCFSoftShadowMap;sun.castShadow=!low;sun.shadow.mapSize.set(2048,2048);const span=kind==='city'?650:kind==='iron'?240:110;Object.assign(sun.shadow.camera,{left:-span,right:span,top:span,bottom:-span,near:1,far:2500});sun.shadow.bias=-.00008;sun.shadow.normalBias=kind==='city'?.22:kind==='iron'?.15:.04;sun.shadow.radius=2;}
  root?.traverse(o=>{if(o.isMesh&&!o.material?.transparent){o.castShadow=true;o.receiveShadow=true;}});
  // Upload cached material tiles during scene preparation, not when a new event
  // first exposes a surface in the middle of playback.
  const uploaded=new Set();root?.traverse(o=>{for(const m of Array.isArray(o.material)?o.material:[o.material])if(m)for(const key of['map','bumpMap','normalMap','roughnessMap','metalnessMap']){const t=m[key];if(t&&!uploaded.has(t)){uploaded.add(t);renderer.initTexture(t);}}});
  let mode;
- return {env,update(st){const color=st.style!=='blueprint';scene.environment=color&&!low?env:null;scene.environmentIntensity=marine?.2:studio?.75:.4;if(!marine)scene.background=color?background:new THREE.Color('#172c42');if(mode===color)return;mode=color;if(sun&&renderer.shadowMap.enabled)sun.castShadow=color;},info:()=>({environment:kind,shadowMap:!low&&!marine&&!studio?1024:0})};
+ return {env,update(st){const color=st.style!=='blueprint';scene.environment=color&&!low?env:null;scene.environmentIntensity=marine?.2:studio?.75:.50;if(!marine)scene.background=color?background:new THREE.Color('#172c42');if(mode===color)return;mode=color;if(sun&&renderer.shadowMap.enabled)sun.castShadow=color;},info:()=>({environment:kind,shadowMap:!low&&!marine&&!studio?2048:0})};
 }
 export function streetTexture(){
  const c=document.createElement('canvas');c.width=c.height=2048;const g=c.getContext('2d');g.fillStyle='#9b9f96';g.fillRect(0,0,2048,2048);const xs=[0,278,574,850,1170,1470,1780],ys=[0,245,540,820,1150,1460,1785];

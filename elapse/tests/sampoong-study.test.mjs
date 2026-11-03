@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {LEVELS,slabPose,studyState,advanceStudy} from '../engine/sampoong-study-motion.js';
+import {studyText} from '../engine/sampoong-study-text.js';
+test('slabs cannot overtake the corresponding lower plate during the authored cascade',()=>{for(const x of[-32.5,-6.5,26])for(const y of[-15,0,15])for(let p=0;p<=1;p+=.005){let z=-Infinity;for(let i=0;i<5;i++){const q=slabPose(i,x,y,p,i*72+11);assert.ok(q.z>=z+.37999);for(const value of Object.values(q))assert.ok(Number.isFinite(value));z=q.z;}}});
+test('upper plates move while lower plates retain their original support, then all reach the residual site',()=>{const first=LEVELS.map((_,i)=>slabPose(i,-6.5,0,.35,i*72));assert.equal(first[0].z,LEVELS[0].z);assert.equal(first[1].z,LEVELS[1].z);assert.ok(first[4].z<LEVELS[4].z);for(let i=0;i<5;i++)assert.ok(slabPose(i,-6.5,0,1,i*72).z<0);assert.deepEqual(studyState(0).layers,[0,0,0,0,0]);assert.deepEqual(studyState(1).layers,[2,2,2,2,2]);});
+test('repeated forward and reverse seeks have no retained motion history',()=>{const before=slabPose(3,8,12,.46,76);slabPose(3,8,12,.98,76);assert.deepEqual(slabPose(3,8,12,.46,76),before);assert.deepEqual(studyState(.46),studyState(.46));});
+test('critical passage really slows at each speed and cannot skip the whole chain at a long frame',()=>{assert.ok(advanceStudy(.40,.5,1)-.40<advanceStudy(.08,.5,1)-.08);assert.ok(advanceStudy(.40,.5,.25)<advanceStudy(.40,.5,1));assert.ok(advanceStudy(.40,.5,2)<.45);assert.equal(advanceStudy(.999,2,2),1);});
+test('five-language authored controls, narrative and error recovery remain complete',()=>{function check(x){if(Array.isArray(x))return x.forEach(check);assert.deepEqual(Object.keys(x).sort(),['en','es','ja','ko','zh']);for(const s of Object.values(x))assert.ok(typeof s==='string'&&s.trim());}for(const value of Object.values(studyText))check(value);});

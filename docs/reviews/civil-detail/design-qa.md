@@ -1,0 +1,25 @@
+# Sampoong detail / Seongsu traffic local QA —2026-11-03
+
+Status: **passed for the bounded local feature update**. Artistic acceptance is pending; this is still an educational procedural3D representation, not a photoreal or surveyed reconstruction. The prior Sampoong QA was functional evidence for a visual iteration the user rejected.
+
+## Delivered locally
+
+- Sampoong representative: physical recessed openings, glazing/frame depth, entry details, articulated cladding, roof fans/grilles/services, plate-attached fracture aggregates/reinforcement, original site context and facade/roof/joint detail views. Original photographic observations and source boundaries: `elapse/research/sampoong-study-notes.md`. All inferred opening/fitting dimensions and surface markings remain estimated.
+- Seongsu full local timeline:32 illustrative sedans/vans across four lanes, independent traffic clock, wheel rotation, Moving/Freeze, one-click traffic close-up and a seventh inspection stop. Normal traffic is visible only before collapse and after reopening. Hiding it during failure/replacement is a display choice, not evidence of evacuation. Generic shapes, spacing and speed are not actual accident vehicle records. Source envelope remains19.4m original width,48m suspended segment and120m reference span.
+- Five languages and English fresh-user default retained. History is fixed while traffic runs. Structural inspection freezes traffic; the dedicated traffic stop allows movement. Paused traffic retains position. Reduced-motion defaults to frozen; explicit user action can start it. Hidden-tab clock guard exists; pure-clock tests cover it, but no physical-device/background-app lifecycle claim is made.
+
+## Actual verification
+
+- `npm test --prefix elapse`:131/131 in UTC and131/131 in Asia/Seoul;262 passes total. No tests disabled.
+- `check_model.mjs seongsu-bridge.json`:Gate1 pass,0 errors/warnings. Estimated-share growth was retained, not relabelled sourced.
+- Generator replay in an isolated temporary destination exactly matches both canonical civil JSON models. It does not rewrite the originals during this verification.
+- `check_sampoong_study.mjs trials/sampoong-detail-2026-11-03/delivery`:93 cases passed.375/768/1440px;18 scene/viewport states,60 language/state/viewport cases,9 detail-view/viewport cases, seek/section/playback controls, reduced-motion autoplay, cold renderer cases, warm render timing, and an expected WebGL-failure/retry check. No unexpected valid-scene console/geometry errors or horizontal overflow. Fault injection is not a successfully rendered scene.
+- `check_seongsu_traffic.mjs trials/seongsu-traffic-2026-11-03/delivery`:48 cases passed.27 phase/viewport cases,3 traffic-close-up viewports,15 locale/viewport cases, independent-clock/control/actual-instance-movement check, timing and reduced-motion default. Canvas position remained fixed across the nine checked historical points at each width. Cars hide in failure/incomplete replacement, resume on eligible historical states, and freeze on structural inspection.
+- Live local HTTP Chrome: reloaded updated Sampoong atp=.43; opened Seongsu traffic stop; toggled Freeze/Moving, restored Timeline and used Traffic close-up to re-enter the correct stop. Both tabs retained for review.
+- Native headless Chrome, ANGLE Metal / Radeon Pro5300. Timing runs did not overlap other headless jobs/unit tests. Sampoong cold1440×1050:actual canvas1202×680CSS,DPR2/buffer2404×1360,118 draw calls,p50≈16.7ms,p95≈17.8ms,1/120 intervals>50ms. Seongsu:actual canvas1142×518CSS,DPR2/buffer2284×1036,57 calls,p50≈16.7ms,p95≈17.2ms,0/180 intervals>50ms. These short samples are not universal or sustained60fps guarantees.375px uses the lightweight/DPR1.5 path; mobile checks are desktop emulation, not a phone benchmark.
+
+## Corrections from inspection
+
+Flat painted panes were replaced with physical recesses and reveals. Plant grilles/blades have actual geometry. Pristine roofs no longer display exposed reinforcing details; detail matrices follow the same slab transforms during failure/rewind. The roof-room pose follows its own slab location. Camera detail selections make added members observable. Traffic has opposite directions and lane/headway constraints; its controls do not advance historical time. A reserved note slot prevents phase-dependent instructions from moving the scene. All controls are native labelled button/select/range elements with44px touch controls and existing focus styling; full assistive-technology and native-language editorial review remain unverified.
+
+No open P0/P1/P2 found in the checked bounded flow. Remaining visible limits are the schematic background, approximate architecture and authored damage; final art quality/engineering accuracy is not certified. No public Pages deployment, Git commit/push or installed-skill replacement was performed in this update. Sampoong's published full timeline remains the previous release. Review images/results are local artifacts; unrelated work is preserved.

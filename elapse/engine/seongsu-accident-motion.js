@@ -1,0 +1,5 @@
+// Recorded order: deck failure, bus held at the edge, overturning, contact with fallen deck.
+// All coordinates, angles, durations and deformation magnitudes are illustrative estimates.
+const clamp=x=>Math.max(0,Math.min(1,x)),smooth=x=>{x=clamp(x);return x*x*(3-2*x);};
+export function busPose(t){const approach=smooth((t-18)/2),tip=smooth((t-29)/7),release=smooth((t-35)/9),impact=smooth((t-44)/3);return{visible:t>=18&&t<65,x:22+3.5*approach-13.5*release,y:-2.3,z:20.34-16.92*release*release,pitch:-Math.PI*(.46*tip+.54*release),compression:1-.32*impact,phase:t<20?'approach':t<29?'held':t<36?'overturning':t<44?'falling':'fallen',estimated:true};}
+export function accidentCarPose(t,id){const f=clamp((t-20)/22),edge=id>=3,d=edge?clamp((t-(24+(id-3)*2))/16):f,rows=[[-12,2.3],[-1,6.8],[11,-6.8],[-24.2,6.8],[23.8,2.3]],[x,y]=rows[id];return{x:x+(edge?(id===3?6:-7)*d:0),y,z:20.34-20.2*d*d,rx:edge?.13*d:-.045*Math.sin(Math.PI*f),ry:edge?(id===3?.65:-.55)*smooth(d):.035*Math.sin(Math.PI*f),yaw:y<0?0:Math.PI,visible:t>=18&&t<65,estimated:true};}

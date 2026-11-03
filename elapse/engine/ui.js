@@ -1,5 +1,6 @@
-import {isCivil,advanceCivil} from './civil-model.js';
-import{LANGS,resolveLocale,setLocale,LANGUAGE_NAMES}from'../shared/locale.js';
+import {trafficText,trafficAvailable} from './seongsu-traffic-motion.js';
+import {isCivil,isSeongsu,advanceCivil} from './civil-model.js';
+import{LANGS,resolveLocale,setLocale,LANGUAGE_NAMES,LANGUAGE_LABELS}from'../shared/locale.js';
 import{tr}from'../shared/locale.js';
 import {isWTC,advanceWTC} from './wtc-model.js';
 import {isNotreDame,advanceNotreDame} from './notredame-model.js';
@@ -22,6 +23,8 @@ import { SPEEDS, DEFAULT_SPEED, advance, stepSpeed, speedLabel } from '../shared
 import { CLASSES, classOf, badge } from '../shared/confidence.js';
 
 const CSS = `
+.el-traffic-note{flex-basis:100%;margin:3px 0;font-size:12px;max-width:80ch;height:4.5em;line-height:1.5;overflow:auto}.el-traffic-note:focus-visible{outline:2px solid #6b8999;outline-offset:3px}@media(max-width:600px){.el-traffic-note{height:7.5em}}
+
 [data-k]{min-width:44px!important;min-height:44px!important;display:inline-flex!important;align-items:center;justify-content:center;box-sizing:border-box!important}
 .el{--ink:#15171c;--muted:#626a76;--line:#d9dee6;--panel:#fff;--accent:#ff5a36;
   font:14px/1.45 system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--ink);max-width:1180px;margin:0 auto;padding:18px 18px 28px;box-sizing:border-box}
@@ -116,10 +119,10 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '
 
 export function mountElapse(root, model, params = {}) {
   params={...params,quality:params.quality??model.meta.renderQuality};
-  const civil=isCivil(model),wtc=isWTC(model),nd=isNotreDame(model),building=isBuilding(model),defaultStop=explorationStops(model).find(s=>s.id==='bridge')?.id||explorationStops(model)[0]?.id;
+  const bridge=isSeongsu(model),civil=isCivil(model),wtc=isWTC(model),nd=isNotreDame(model),building=isBuilding(model),defaultStop=explorationStops(model).find(s=>s.id==='bridge')?.id||explorationStops(model)[0]?.id;
   const speedKeys=(wtc||civil)?['quarter','half',...Object.keys(SPEEDS)]:Object.keys(SPEEDS),speedName=k=>k==='quarter'?'0.25×':k==='half'?'0.5×':speedLabel(k);
   const st = { lang: resolveLocale(params.lang), depth: params.depth === 'simple' ? 'simple' : 'detail',
-    exploring:false,exploreMoving:false,exploreStop:'bridge',lampStrength:1,history:null,ecology:params.life!=='0',exploreLight:params.lamp!=='0',ecoClock:0,ecoView:['coral','sponge','fish'].includes(params.eco)?params.eco:'scene',
+    trafficAllowReduced:false,trafficMoving:!matchMedia('(prefers-reduced-motion: reduce)').matches,exploring:false,exploreMoving:false,exploreStop:'bridge',lampStrength:1,history:null,ecology:params.life!=='0',exploreLight:params.lamp!=='0',ecoClock:0,ecoView:['coral','sponge','fish'].includes(params.eco)?params.eco:'scene',
     style: params.style === 'blueprint' ? 'blueprint' : 'color', t: 0, playing: false, speed: speedKeys.includes(params.speed) ? params.speed : DEFAULT_SPEED,
     xray: params.xray === '1' ? true : params.xray === '0' ? false : null, branch: params.branch === 'b' && model.branches.length ? 'b' : 'a' };
   const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
@@ -167,13 +170,14 @@ export function mountElapse(root, model, params = {}) {
     const pct = shares.sourced, warn = $('.el-warn'); warn.hidden = pct >= WARN_SHARE * 100; warn.textContent = L.warn(pct);
     const seg = (key, opts, cur, lab = o => L[o]) => `<span class="el-seg"><b>${L[key]}</b><div role="group" aria-label="${L[key]}">${opts.map(o => `<button type="button" data-k="${key}" data-o="${o}" aria-pressed="${cur === o}">${lab(o)}</button>`).join('')}</div></span>`;
     $('.el-controls').innerHTML = seg('style', ['color', 'blueprint'], st.style) + seg('xray', ['on', 'off'], xrayNow() ? 'on' : 'off') + seg('depth', ['simple', 'detail'], st.depth)
-      + `<span class="el-seg"><div role="group" aria-label="${tr("Language")}">${LANGS.map(o => `<button type="button" data-k="lang" data-o="${o}" aria-label="${LANGUAGE_NAMES[o]}" lang="${o==='zh'?'zh-Hans':o}" aria-pressed="${st.lang === o}">${o.toUpperCase()}</button>`).join('')}</div></span>`;
+      + `<span class="el-seg"><div role="group" aria-label="${tr("Language")}">${LANGS.map(o => `<button type="button" data-k="lang" data-o="${o}" aria-label="${LANGUAGE_NAMES[o]}" lang="${o==='zh'?'zh-Hans':o}" aria-pressed="${st.lang === o}">${LANGUAGE_LABELS[o]}</button>`).join('')}</div></span>`;
     if(isBritannic(model)&&(params.study==='quality'||model.meta.renderQuality==='high')){
       const cut=new URL(location.href);cut.searchParams.set('cutaway',params.cutaway==='1'?'0':'1');
       const link=high=>{const u=new URL(location.href);u.searchParams.set('quality',high?'high':'standard');u.searchParams.set('t',st.t);return esc(u.href);};
       $('.el-controls').insertAdjacentHTML('beforeend',`<span class="el-seg el-quality-links"><b>${tr("고품질 보기")}</b><a data-quality-mode="standard" href="${link(false)}">${tr("기존")}</a> · <a data-quality-mode="high" href="${link(true)}">${tr("고품질")}</a><a data-quality-mode="cutaway" href="${esc(cut.href)}">${params.cutaway==='1'?tr("절개 닫기"):tr("구조 절개")}</a><span>${tr("형상·장비 배치 추정 · 절개는 설명용")}</span></span>`);
     }
     if(building)$('[data-k=xray]')?.closest('.el-seg')?.remove();
+    if(bridge){const tx=k=>trafficText[k][st.lang];$('.el-controls').insertAdjacentHTML('beforeend',`<span class="el-seg"><b>${tx('label')}</b><div role="group" aria-label="${tx('label')}">${['moving','still'].map(k=>`<button type="button" data-k="traffic" data-o="${k}" aria-pressed="${st.trafficMoving===(k==='moving')}">${tx(k)}</button>`).join('')}</div><button type="button" data-k="trafficFocus">${tx('close')}</button></span><p class="el-traffic-note" tabindex="0"></p>`);}
     if(isTitanic(model)){
       const ecoSeg=(label,key,options,current)=>`<span class="el-seg el-eco-controls"><b>${label}</b><div role="group" aria-label="${label}">${options.map(([v,text])=>`<button type="button" data-k="${key}" data-o="${v}" aria-pressed="${current===v}">${text}</button>`).join('')}</div></span>`;
       $('.el-controls').insertAdjacentHTML('beforeend',ecoSeg(st.lang!=='ko'?tr("Light"):tr("관측 조명"),'exploreLight',[['on',st.lang!=='ko'?tr("Survey"):tr("탐사")],['off',st.lang!=='ko'?tr("Base"):tr("기본")]],st.exploreLight?'on':'off')+ecoSeg(st.lang!=='ko'?tr("Fauna"):tr("생물 재현"),'ecology',[['on',st.lang!=='ko'?tr("On"):tr("켜기")],['off',st.lang!=='ko'?tr("Off"):tr("끄기")]],st.ecology?'on':'off')+ecoSeg(st.lang!=='ko'?tr("Inspect"):tr("생태 확대"),'ecoView',[['scene',st.lang!=='ko'?tr("Context"):tr("전체")],['coral',st.lang!=='ko'?tr("Coral"):tr("산호")],['sponge',st.lang!=='ko'?tr("Sponge"):tr("해면")],['fish',st.lang!=='ko'?tr("Fish"):tr("물고기")]],st.ecoView));
@@ -273,7 +277,8 @@ export function mountElapse(root, model, params = {}) {
     t = Math.max(0, Math.min(100, t));
     if (!force && t === st.t) return;
     st.t = t; range.value = t;
-    R.set({ t, style: st.style, xray: xrayNow(), branch: st.branch,exploring:st.exploring,exploreTarget:st.exploring?st.exploreStop:null,lampStrength:st.exploring?st.lampStrength:1,ecology:st.ecology,exploreLight:st.exploreLight,ecoView:st.ecoView,ecoClock:st.ecoClock });
+    R.set({ trafficPlaying:st.trafficMoving,trafficAllowReduced:st.trafficAllowReduced,historyPlaying:st.playing||st.recording,t, style: st.style, xray: xrayNow(), branch: st.branch,exploring:st.exploring,exploreTarget:st.exploring?st.exploreStop:null,lampStrength:st.exploring?st.lampStrength:1,ecology:st.ecology,exploreLight:st.exploreLight,ecoView:st.ecoView,ecoClock:st.ecoClock });
+    if(bridge){$('[data-k=trafficFocus]').disabled=!trafficAvailable(t);$('.el-traffic-note').textContent=trafficText[!trafficAvailable(t)?'unavailable':st.exploring&&st.exploreStop!=='traffic'?'inspection':'note'][st.lang];for(const b of root.querySelectorAll('[data-k=traffic]'))b.disabled=!trafficAvailable(t)||(st.exploring&&st.exploreStop!=='traffic');}
     const now=performance.now(),eventIndex=cards.findLastIndex(e=>e._t<=t),chapterIndex=chapterAt(model,t);if(st.playing&&!force&&eventIndex===chromeEvent&&chapterIndex===chromeChapter&&now-chromeStamp<80)return;chromeStamp=now;chromeEvent=eventIndex;chromeChapter=chapterIndex;
     const s = R.state.last, ev = card(), ci = chapterAt(model, t), c = model.chapters[ci];
     root.querySelectorAll('[data-quality-mode]').forEach(a=>{const url=new URL(location.href);url.searchParams.set('t',st.t);url.searchParams.set('mode',st.exploring?'explore':'timeline');if(st.exploring)url.searchParams.set('stop',st.exploreStop);if(a.dataset.qualityMode==='cutaway')url.searchParams.set('cutaway',params.cutaway==='1'?'0':'1');else url.searchParams.set('quality',a.dataset.qualityMode);a.href=url.href;});
@@ -327,7 +332,7 @@ export function mountElapse(root, model, params = {}) {
     else{surveyMotion(false);const h=st.history;st.exploring=false;Object.assign(st,{t:h.t,style:h.style,xray:h.xray,ecoView:h.ecoView});chrome();R.restoreView(h);}
   }
   function play(on){
-    cancelAnimationFrame(playRaf);if(on&&st.exploring)return;st.playing=on;playButton();if(!on)return;
+    cancelAnimationFrame(playRaf);if(on&&st.exploring)return;st.playing=on;R.historyPlaying?.(on);playButton();if(!on)return;
     if(st.t>=100)setT(0);last=performance.now();
     const step=now=>{if(!st.playing||st.exploring)return;const dt=Math.min(.5,(now-last)/1000);last=now;if(!reducedMotion.matches)st.ecoClock+=dt;setT(civil?advanceCivil(model,st.t,dt,st.speed):wtc?advanceWTC(model,st.t,dt,st.speed):nd?advanceNotreDame(model,st.t,dt,st.speed):advance(st.t,dt*playbackRate(model,st.t),st.speed));if(st.t>=100){play(false);return;}playRaf=requestAnimationFrame(step);};playRaf=requestAnimationFrame(step);
   }
@@ -335,6 +340,8 @@ export function mountElapse(root, model, params = {}) {
   root.addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
     const { k, o, a, v, ch, br } = b.dataset;
+    if(k==='trafficFocus'){if(!st.exploring)explore(true);st.exploreStop='traffic';R.setAuto(true);chrome();root.querySelector('[data-k=trafficFocus]')?.focus();return;}
+    if(k==='traffic'){st.trafficMoving=o==='moving';st.trafficAllowReduced=st.trafficMoving;chrome();root.querySelector(`[data-k=traffic][data-o=${o}]`)?.focus();return;}
     if(k==='explorationMode'){explore(o==='survey');root.querySelector(`[data-k=explorationMode][data-o=${o}]`)?.focus();return;}
     if(b.dataset.survey==='motion'){surveyMotion(!st.exploreMoving);explorationPanel();$('[data-survey=motion]')?.focus();return;}
     if(['in','out'].includes(b.dataset.survey)){R.zoomBy(b.dataset.survey==='in'?.8:1.25);return;}
@@ -355,7 +362,7 @@ export function mountElapse(root, model, params = {}) {
     if (a === 'png') { download(dataBlob(R.dataURL()), `${slug}-${Math.round(st.t)}.png`); return; }
     if (a === 'video') saveVideo();
   });
-  reducedMotion.addEventListener('change',()=>{if(st.exploring){surveyMotion(false);explorationPanel();setT(st.t,true);}});
+  reducedMotion.addEventListener('change',()=>{if(bridge&&reducedMotion.matches){st.trafficMoving=false;st.trafficAllowReduced=false;chrome();}if(st.exploring){surveyMotion(false);explorationPanel();setT(st.t,true);}});
   root.addEventListener('change',e=>{const kind=e.target.dataset.survey;if(kind==='stop'){st.exploreStop=e.target.value;st.ecoView=['coral','sponge','fish'].includes(st.exploreStop)?st.exploreStop:'scene';R.setAuto(true);setT(st.t,true);}if(kind==='lamp'){st.lampStrength=+e.target.value;setT(st.t,true);}});
   range.addEventListener('input', () => { play(false); setT(+range.value); });
   $('.el-pl select').addEventListener('change', e => { st.speed = e.target.value; });

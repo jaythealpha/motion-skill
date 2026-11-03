@@ -1,4 +1,4 @@
-import{LANGS,resolveLocale,setLocale,LANGUAGE_NAMES}from'../shared/locale.js';
+import{LANGS,resolveLocale,setLocale,LANGUAGE_NAMES,LANGUAGE_LABELS}from'../shared/locale.js';
 import{tr}from'../shared/locale.js';
 // Page shell: header with evidence share, toggles, the stage (canvas + labels), the time bar, panels, exports.
 import { createRenderer } from './render.js';
@@ -159,7 +159,7 @@ export function mountUnfold(root, model, params = {}) {
     const warn = $('.uf-warn'); warn.hidden = share >= WARN_SHARE; warn.textContent = L.warn(pct);
     const seg = (key, opts) => `<span class="uf-seg"><b>${L[key]}</b><div role="group" aria-label="${L[key]}">${opts.map(o => `<button type="button" data-k="${key}" data-o="${o}" aria-pressed="${st[key] === o}">${L[o]}</button>`).join('')}</div></span>`;
     $('.uf-controls').innerHTML = seg('depth', ['simple', 'detail', 'manual']) + seg('layout', ['stack', 'knoll']) + seg('style', ['color', 'blueprint'])
-      + `<span class="uf-seg"><div role="group" aria-label="${tr("Language")}">${LANGS.map(o => `<button type="button" data-k="lang" data-o="${o}" aria-label="${LANGUAGE_NAMES[o]}" lang="${o==='zh'?'zh-Hans':o}" aria-pressed="${st.lang === o}">${o.toUpperCase()}</button>`).join('')}</div></span>`;
+      + `<span class="uf-seg"><div role="group" aria-label="${tr("Language")}">${LANGS.map(o => `<button type="button" data-k="lang" data-o="${o}" aria-label="${LANGUAGE_NAMES[o]}" lang="${o==='zh'?'zh-Hans':o}" aria-pressed="${st.lang === o}">${LANGUAGE_LABELS[o]}</button>`).join('')}</div></span>`;
     $('.uf-view [data-v=auto]').textContent = L.autoCam; $('.uf-view [data-v=reset]').textContent = L.resetView;
     $('.uf-view [data-v=auto]').setAttribute('aria-pressed', R.state.auto);
     $('.uf-actions').innerHTML = `<button type="button" data-a="png">${L.png}</button><button type="button" data-a="video"${st.recording ? ' disabled' : ''}>${st.recording ? L.recording : L.video}</button><button type="button" data-a="print">${L.print}</button><button type="button" data-a="src">${L.sources}</button>`;

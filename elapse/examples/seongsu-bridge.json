@@ -50,6 +50,21 @@
       "id": "replacement",
       "title": "Yonhap · contemporaneous reopening report, 3 July 1997",
       "url": "https://www.yna.co.kr/view/AKR19970703001400004"
+    },
+    {
+      "id": "vehicle-archive",
+      "title": "National Archives · Seongsu Bridge disaster, six vehicles",
+      "url": "https://www.archives.go.kr/next/newsearch/listSubjectDescription.do?id=001921&pageFlag=&sitePage="
+    },
+    {
+      "id": "bus-witness",
+      "title": "Seoul Shinmun · eyewitness account,22 October1994",
+      "url": "https://www.seoul.co.kr/news/1994/10/22/19941022023002"
+    },
+    {
+      "id": "bus-briefing",
+      "title": "2017 disaster-safety briefing · Seongsu account, p29 (hosted by Dongseo University)",
+      "url": "https://www.dsu.ac.kr/kr/index.php?idx=5&mode=fdn&num=2&pCode=dsunoti2&pg=86"
     }
   ],
   "chapters": [
@@ -176,15 +191,18 @@
         "es": "Caída del tramo suspendido"
       },
       "text": {
-        "en": "Seoul places the collapse at about 07:40. Only the central suspended segment falls here. Tilt, joint separation and splash are illustrative; the one-minute display window is not a measured fall duration.",
-        "ko": "서울시 기록은 약 07:40을 사용합니다. 중앙 현수 구간만 낙하합니다. 기울기·접합 분리·물보라는 추정이며 1분 표시 구간은 실측 낙하 시간이 아닙니다.",
-        "ja": "ソウル市記録は約07:40。中央吊り区間のみが落下します。傾き・接合分離・水しぶきと1分の表示枠は実測ではありません。",
-        "zh": "首尔记录为约07:40。仅中央悬挂区段坠落。倾斜、连接分离与水花为示意，一分钟展示区间并非实测坠落时长。",
-        "es": "Seúl sitúa el colapso hacia las 07:40. Solo cae el tramo central. Inclinación, separación y agua son ilustrativas; la ventana de un minuto no mide la caída."
+        "en": "The central48m segment fell. A route16 bus hung at the failure edge, overturned and struck the already fallen deck. Six vehicles fell in total. The animation follows this reported order; angles, speed, positions and deformation are estimated.",
+        "ko": "중앙48m 구간이 떨어졌고, 16번 버스는 붕괴 경계에 걸렸다가 뒤집혀 먼저 떨어진 상판에 부딪혔습니다. 추락 차량은 모두6대였습니다. 도해의 각도·속도·위치·변형은 추정입니다.",
+        "ja": "中央48m区間が落下し、16番バスは崩落端に掛かった後、転覆して先に落ちた床版に衝突しました。落下車両は計6台。角度・速度・位置・変形は推定です。",
+        "zh": "中央48米区段坠落。16路公交车悬挂于断裂边缘后翻转，撞上先落下的桥面，共6辆车坠落。动画角度、速度、位置与变形为估计。",
+        "es": "Cayó el tramo central de48m. Un autobús de la ruta16 quedó en el borde, volcó y golpeó el tablero ya caído. Cayeron seis vehículos. Ángulos, velocidad, posiciones y deformación son estimados."
       },
       "confidence": "sourced",
       "sourceIds": [
-        "seoulB"
+        "seoulB",
+        "vehicle-archive",
+        "bus-witness",
+        "bus-briefing"
       ]
     },
     {
@@ -199,11 +217,11 @@
         "es": "Brecha y consecuencias"
       },
       "text": {
-        "en": "The disaster killed 32 people and injured 17. The remaining bridge and the open gap stay visible; no vehicles or victims are depicted.",
-        "ko": "사고로 32명이 사망하고 17명이 다쳤습니다. 남은 교량과 단절 구간을 보여주며 차량·피해자는 묘사하지 않습니다.",
-        "ja": "32人が死亡、17人が負傷。残った橋と開口部を示し、車両・被害者は描きません。",
-        "zh": "事故造成32人遇难、17人受伤。保留桥体与缺口，不描绘车辆或受害者。",
-        "es": "Murieron 32 personas y 17 resultaron heridas. Se muestran el puente restante y la brecha, sin vehículos ni víctimas."
+        "en": "The disaster killed32 people and injured17. The remaining structure, gap and fallen vehicles are shown without people. Vehicle recovery timing is not reconstructed.",
+        "ko": "사고로32명이 사망하고17명이 다쳤습니다. 남은 교량·단절 구간·추락 차량을 보여주며 사람은 표현하지 않습니다. 개별 차량 수습 시점은 재현하지 않습니다.",
+        "ja": "32人が死亡、17人が負傷。残存構造・断絶区間・落下車両を表示し、人物は描きません。車両回収の正確な時刻は再現しません。",
+        "zh": "事故造成32人死亡、17人受伤。展示遗存、断口及坠落车辆，不描绘人员。未重建各车辆的打捞时间。",
+        "es": "Murieron32 personas y17 resultaron heridas. Se muestran estructura, hueco y vehículos caídos sin personas. No se reconstruye el momento de recuperación de cada vehículo."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -343,6 +361,34 @@
       "sourceIds": [
         "technical"
       ]
+    },
+    {
+      "id": "traffic",
+      "name": {
+        "en": "Road traffic / close-up",
+        "ko": "도로 통행·확대",
+        "ja": "道路の通行・拡大",
+        "zh": "道路通行近景",
+        "es": "Tráfico / primer plano"
+      },
+      "confidence": "estimated",
+      "sourceIds": []
+    },
+    {
+      "id": "accident-vehicles",
+      "name": {
+        "en": "Bus / vehicle fall",
+        "ko": "버스·차량 추락",
+        "ja": "バス・車両の落下",
+        "zh": "公交与车辆坠落",
+        "es": "Caída del autobús y vehículos"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "vehicle-archive",
+        "bus-witness",
+        "bus-briefing"
+      ]
     }
   ],
   "stops": [
@@ -373,6 +419,34 @@
       "availableFrom": 0,
       "yaw": 235,
       "pitch": 19
+    },
+    {
+      "id": "traffic",
+      "name": {
+        "en": "Road traffic / close-up",
+        "ko": "도로 통행·확대",
+        "ja": "道路の通行・拡大",
+        "zh": "道路通行近景",
+        "es": "Tráfico / primer plano"
+      },
+      "box": {
+        "min": [
+          -22,
+          -9,
+          19.5
+        ],
+        "max": [
+          22,
+          9,
+          23
+        ]
+      },
+      "parts": [
+        "traffic"
+      ],
+      "availableFrom": 0,
+      "yaw": 235,
+      "pitch": 38
     },
     {
       "id": "suspended",
@@ -611,11 +685,11 @@
       "es": "Ancho original 19,4 m · 4 carriles"
     },
     "motionNote": {
-      "en": "Record anchor ≈07:40; source times vary · water level, joints and fall path estimated · all upper structure replaced · endpoint: 1997 four-lane reopening",
-      "ko": "기록 기준 약 07:40·자료별 시각 차이 · 수위·접합부·낙하 추정 · 전체 상부 구조 교체 · 1997년 4차로 재개통까지",
-      "ja": "約07:40を基準・資料差あり・水位と接合部と落下は推定・全上部構造を交換・1997年4車線再開通まで",
-      "zh": "以约07:40为记录锚点，来源有差异·水位、接头及坠落为估计·全部上部结构更换·终点为1997年四车道重通",
-      "es": "Referencia ≈07:40; las fuentes difieren · agua, uniones y caída estimadas · sustitución de toda la estructura superior · reapertura de cuatro carriles en 1997"
+      "en": "≈07:40 record anchor · deck first, then bus overturning/contact · vehicle coordinates, deformation and speed estimated · no measured fall clock · ends at1997 reopening",
+      "ko": "기록 기준 약07:40 · 상판 낙하 뒤 버스 전복·접촉 · 차량 좌표·변형·속도 추정 · 실측 추락 시계가 아님 ·1997 재개통까지",
+      "ja": "約07:40の記録を基準・床版落下後にバス転覆と接触・車両位置と変形と速度は推定・実測落下時計ではない・1997年再開通まで",
+      "zh": "以约07:40记录为锚点·桥面先落下，再展示公交翻转接触·车辆坐标、变形及速度为估计·非实测坠落计时·至1997年重通",
+      "es": "Referencia≈07:40 · primero cae el tablero y después vuelca/contacta el autobús · coordenadas, deformación y velocidad estimadas · sin cronómetro real · hasta1997"
     },
     "anchorLabel": {
       "en": "Scene context · illustrative time boundary",
@@ -650,11 +724,11 @@
         "es": "Fechas y conceptos se basan en registros. Coordenadas, alturas, fachadas, restos, apoyos y poses intermedias son estimaciones originales. No se incluyen fotos, planos ni mallas ajenos."
       },
       {
-        "en": "Non-graphic educational reconstruction. No people or vehicles are depicted. Slow motion, dust and water are presentation effects, not an engineering simulation or a measured failure sequence.",
-        "ko": "비선정적 교육용 재구성입니다. 사람·차량을 묘사하지 않습니다. 저속 재생·분진·물은 설명용 효과이며 구조 해석·실측 파괴 순서가 아닙니다.",
-        "ja": "非グラフィックな教育用再構成。人・車両は描きません。スロー・粉塵・水は説明用で、構造解析や実測破壊順序ではありません。",
-        "zh": "非血腥教育性重建，不描绘人员或车辆。慢放、粉尘与水为说明效果，不是结构仿真或实测失效顺序。",
-        "es": "Reconstrucción educativa sin imágenes explícitas, personas ni vehículos. Cámara lenta, polvo y agua son efectos explicativos, no simulación estructural ni secuencia medida."
+        "en": "Normal traffic uses a separate illustrative clock. The route16 bus and five other falling vehicles follow the recorded event outline; all vehicle geometry, intermediate poses and damage are estimated. No people are drawn. Vehicle removal at the replacement chapter is a display boundary, not a recovery date.",
+        "ko": "정상 통행에는 별도 예시 시계를 씁니다. 16번 버스와 다른5대 추락은 기록의 개요를 따르며 차량 형상·중간 자세·손상은 모두 추정입니다. 사람은 표현하지 않습니다. 교체 장 시작 시 차량을 숨기는 것은 표시 경계이며 실제 수습 시점이 아닙니다.",
+        "ja": "通常通行は別の例示時計で動きます。16番バスと他5台の落下は記録の概要に従い、形状・途中姿勢・損傷は推定です。人物は描写しません。架替え章で車両を消すのは表示上の区切りで回収日時ではありません。",
+        "zh": "正常交通使用独立示意时钟。16路公交及另外5辆车的坠落遵循记录概要，车辆形状、中间姿态与损伤均为估计，不描绘人员。重建章节隐藏车辆仅为展示边界，并非打捞日期。",
+        "es": "El tráfico normal usa un reloj ilustrativo independiente. El autobús16 y otros cinco vehículos siguen el esquema registrado; geometría, poses y daños son estimados. No hay personas. Su desaparición al reconstruir es un límite visual, no una fecha de retirada."
       },
       {
         "en": "Length 1160.8 m, width19.4 m, 120 m reference span and 48 m suspended segment follow published records. Pier spacing outside the critical span, water level, bearing details, joint geometry and the replacement profiles are schematic. The river is not a surveyed cross-section.",

@@ -1,0 +1,37 @@
+# Sampoong representative study — evidence / 2026-11-03
+
+Scope: one separate, self-contained representative scene, not a replacement of the published timeline or a new gallery release. Build `node elapse/scripts/build-sampoong-study.mjs`. Open `elapse/examples/sampoong-collapse-study.html?lang=ko&p=.43` via a local server, or the HTML file directly. English is the fresh-user default; five authored language packs are bundled.
+
+## Direct evidence inspected
+
+1. [Seoul Institute photographic record01O01101Db8000](https://data.si.re.kr/node/52399), catalogue date1995/6, Seocho-dong. Inspected the actual image in a browser: broad pink wall areas, tall recessed glazing, narrow upper openings, setbacks and the facade name. Used the catalogue metadata and actual visual observations. The page's separately marked AI-generated caption was **not** used as factual evidence. No image pixels, poster art, logo or photograph were downloaded into the repository or bundled in the result.
+2. [Seoul historical retrospective/photo](https://mediahub.seoul.go.kr/archives/2002100): inspected the aftermath image in a browser, including the remaining tall pink end/core structures. No people, vehicles, rescue equipment or advertising art are reproduced in the model.
+3. Gardner, Huh and Chung, [Lessons from the Sampoong department store collapse](https://doi.org/10.1016/S0958-9465(01)00068-3), Cement and Concrete Composites24(6),523–529,2002. Public [author-uploaded text](https://www.researchgate.net/publication/222322910_Lessons_from_the_Sampoong_department_store_collapse) was readable through web retrieval. It describes a five-storey flat-plate system, round upper columns of600mm rather than the800mm used in calculations,300mm slabs, local drop panels, and surviving north/central shear-wall structures. The committee account places initiation at fifth-floor connection5E; the authors also consider the roof connection possible. This uncertainty is retained in the viewer text. The full PDF/plan image could not be visually inspected because the host served an access challenge. **The model does not claim to trace Figure2, recover an as-built grid or reproduce surveyed CAD.**
+4. [National Archives subject account](https://www.archives.go.kr/next/newsearch/listSubjectDescription.do?id=001042&sitePage=): dated context, flat-slab/column failure and preceding upper-floor distress. The existing17:55–17:57 source discrepancy is retained as an approximate record window. Scene progress is observation time, not a clock measuring the real failure duration.
+
+## What changed in the study
+
+- Large solid rose-coloured walls and vertical glazing replace the earlier uniform horizontal window-ribbon interpretation. End/core masses, roof steps, service room, louvres, fans, facade panel joints and independently moving plant add readable detail. Original typography is authored as text; no copied brand logo or historic ad graphics.
+- Five principal elevated plate levels are split into360 independently moving fragments. Round-column and drop-panel geometry replaces the previous uniformly square-column shorthand. Fragment counts, grid spacing, core volumes, envelope, floor heights, missing-panel illustration and exact positions are estimates; they are not historical member counts or recovered plan coordinates.
+- Upper-floor sag precedes the cascade. For corresponding fragments, upper plates are constrained above the next lower plate, so large slabs do not visibly pass through intact lower levels. They contact, stack and continue downward. This is deterministic explanatory choreography, not load-capacity analysis, finite-element simulation or a validated fracture model.
+- The automatic cutaway removes front envelope/selected front volume explicitly. It is labelled on screen and has an exterior-view control. The exposed subgrade is an explanatory section, not a photographed excavation or a claim that every basement failed.
+-360 main fragments,460 smaller concrete fragments,90 glazing fragments,240 rebar pieces,152 density sprites. These are **rendering population counts**, not real debris inventory. Airborne dust is sparse during the main cascade; lower mineral-coloured dust spreads later. Particles and plant movement are independent, reversible functions of the scene bar.
+- Camera framing is solved with a bounded distance search; the first draft's multiplicative-fit overshoot was removed after screenshot inspection. The central plates fill a closer low-oblique view during failure, with peripheral core/context cropping allowed; the view pulls back over the residual site. Mobile uses a central structural crop, with peripheral context allowed outside the frame.
+
+No victims/people/vehicles are drawn. The502 deaths are stated once in the plain historical note. All detailed geometry, fracture extent, particles, poses and time allocation are estimates. Local performance and automated checks do not establish forensic accuracy, physical-device performance or final artistic acceptance.
+
+## Verification
+
+See `docs/reviews/sampoong-study/design-qa.md`. Reproducible check: `node elapse/scripts/check_sampoong_study.mjs trials/sampoong-study-2026-11-03/final-delivery`; pure motion tests: `node --test elapse/tests/sampoong-study.test.mjs`. The released Sampoong full timeline and public gallery remain unchanged. The separate Seongsu normal-traffic update is documented in `seoul-civil-notes.md`.
+
+## Second detail pass after visual feedback
+
+Replaced the solid-core/pasted-glass construction with real frontage slots,0.85m-deep glazing, physical reveals, separate mullions/transoms, interior floor edges, thresholds, handles, canopy and steps.164 panes and652 architectural members are **rendering counts**, not recovered original inventories. Added metre-scaled antialiased cladding variation; panel dimensions, stains and glazing subdivisions are authored estimates. Original textured background blocks remain schematic.
+
+Added fan blades/grilles, service-room door and louvres, paving/curb/drain/planting context, and three detail views. These inferred fittings are not asserted as a surveyed fit-out. Slab aggregates and reinforcement inherit the full plate instance matrix; they become visible after local failure rather than sticking out of pristine roofs. Roof-room and plant details follow local roof poses, including reverse seeking. The intact roof cap is removed when the illustrative failure begins. Movement remains choreography, not fracture analysis.
+
+Final evidence: `trials/sampoong-detail-2026-11-03/delivery/`.93 browser cases pass, including9 detail-view/viewport cases, cold renderer checks and an intentionally failed-WebGL recovery test. Native Metal/DPR2 timing p50≈16.7ms,p95≈17.8ms,1/120 intervals over50ms. This is not physical-device or final-art acceptance.
+
+## Approved full-timeline adoption
+
+The user approved using this form in the full Sampoong timeline and publishing both. `sampoong-timeline.js` maps the original dated chapters into the existing observation model, rather than rescaling historical timestamps. The inferred rendered envelope is now151×56×28m in the model metadata; it is not a surveyed building footprint. The full page links the exterior record and structural paper, retains uncertainty about initial upper-connection failure, and labels the automatic front-layer removal. Prior local-only statements above describe the earlier review stage.
