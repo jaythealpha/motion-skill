@@ -6,6 +6,8 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {renderShell,RECORDS_CSS} from '../engine/records-view.js';
+import {validateRecords} from '../engine/records-model.js';
 import { importMap, licenseBlock } from '../shared/inline.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -16,6 +18,7 @@ const [src, out] = args;
 if (!src || !out) { console.error('usage: node scripts/build.mjs model.json out.html [--gate2 pass|skipped|fail]'); process.exit(64); }
 
 const model = JSON.parse(readFileSync(src, 'utf8'));
+const recordsCheck=validateRecords(model);if(recordsCheck.errors.length)throw Error(JSON.stringify(recordsCheck.errors));
 if (gate2) model.meta = { ...(model.meta || {}), gate2 };
 const { imports } = importMap({ root: ROOT, prefix: 'elapse' });
 const n = model.subject?.name, name = typeof n === 'object' ? (n.en || n.ko) : n;
@@ -26,9 +29,11 @@ const html = `<!doctype html>
 <meta name="generator" content="Elapse">
 ${licenseBlock(ROOT)}
 <script type="importmap">${JSON.stringify({ imports })}</script>
+<style>${model.remembrance?RECORDS_CSS:""}</style>
 </head><body>
-<div id="elapse"></div>
-<noscript>Elapse needs JavaScript and WebGL.</noscript>
+${model.remembrance?renderShell(model):""}
+<div id="elapse"${model.remembrance?" hidden":""}></div>
+<noscript>${model.remembrance?"Records and evidence are available above. JavaScript and WebGL are required only for the optional 3D view.":"Elapse needs JavaScript and WebGL."}</noscript>
 <script type="application/json" id="elapse-model">${json}</script>
 <script type="module">import 'elapse/main.js';</script>
 </body></html>

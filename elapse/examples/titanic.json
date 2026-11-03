@@ -5244,7 +5244,8 @@
     "s8",
     "s12",
     "s22"
-   ]
+   ],
+   "timePrecision": "date"
   },
   {
    "id": "spill-hold3",
@@ -6973,5 +6974,85 @@
    "yaw": 285,
    "pitch": 22
   }
- ]
+ ],
+ "remembrance": {
+  "version": 1,
+  "sources": [
+   {
+    "id": "discovery",
+    "title": "WHOI · 1985 discovery of RMS Titanic",
+    "url": "https://www.whoi.edu/ocean-learning-hub/ocean-topics/ocean-human-lives/underwater-archaeology/rms-titanic/1985-discovery-of-rms-titanic/",
+    "type": "institution",
+    "locator": "Opening; joint WHOI/IFREMER mission; debris trail",
+    "checkedAt": "2026-11-03"
+   }
+  ],
+  "records": [
+   {
+    "id": "discovery",
+    "title": {
+     "en": "Discovery through collaboration",
+     "ko": "협력으로 남긴 발견 기록",
+     "ja": "協力による発見の記録",
+     "zh": "协作留下的发现记录",
+     "es": "Un descubrimiento colaborativo"
+    },
+    "action": {
+     "en": "WHOI records the wreck’s discovery on September 1, 1985, through a joint WHOI–IFREMER mission. A debris trail helped lead the search to the wreck.",
+     "ko": "WHOI는 WHOI·IFREMER 공동 탐사의 1985년 9월 1일 발견을 기록합니다. 잔해 흔적이 난파선 수색의 단서가 됐습니다.",
+     "ja": "WHOIはWHOI・IFREMER共同探査による1985年9月1日の発見を記しています。残骸の痕跡が手がかりでした。",
+     "zh": "WHOI记录了WHOI与IFREMER联合探测于1985年9月1日发现沉船，残骸痕迹为搜索提供线索。",
+     "es": "WHOI registra el hallazgo del 1 de septiembre de 1985 en una misión conjunta con IFREMER. El rastro de restos orientó la búsqueda."
+    },
+    "meaning": {
+     "en": "Keep the work of teams and the care of historical evidence visible.",
+     "ko": "팀들의 협력과 역사 자료를 다루는 태도를 함께 남깁니다.",
+     "ja": "チームの協力と史料への配慮を残します。",
+     "zh": "记住团队协作与对历史证据的珍视。",
+     "es": "Conservar la colaboración y el cuidado de las pruebas históricas."
+    },
+    "unknowns": {
+     "en": "This record does not establish the precise motion or future collapse dates of the wreck.",
+     "ko": "이 기록은 난파선의 정확한 움직임이나 미래 붕괴 날짜를 확정하지 않습니다.",
+     "ja": "この記録は船体の正確な動きや将来の崩壊日を確定しません。",
+     "zh": "本记录不确定沉船的精确运动或未来坍塌日期。",
+     "es": "No establece movimientos exactos ni fechas de derrumbes futuros."
+    },
+    "time": {
+     "date": "1985-09-01",
+     "precision": "date"
+    },
+    "sceneAnchor": {
+     "eventId": "found"
+    },
+    "sourceIds": [
+     "discovery"
+    ],
+    "facts": [
+     {
+      "id": "date",
+      "label": {
+       "en": "Discovery date",
+       "ko": "발견 날짜",
+       "ja": "発見日",
+       "zh": "发现日期",
+       "es": "Fecha del hallazgo"
+      },
+      "value": "1985-09-01",
+      "unit": "date",
+      "scope": {
+       "en": "Joint mission; WHOI account",
+       "ko": "공동 탐사 · WHOI 기록",
+       "ja": "共同探査・WHOI記録",
+       "zh": "联合探测，WHOI记录",
+       "es": "Misión conjunta; relato de WHOI"
+      },
+      "sourceIds": [
+       "discovery"
+      ]
+     }
+    ]
+   }
+  ]
+ }
 }

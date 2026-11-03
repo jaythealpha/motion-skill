@@ -6,7 +6,7 @@
 
 - 생성 작업: Claude Code와 자료를 조사할 수 있는 실행 환경.
 - 스크립트: Node.js 22 이상 권장. 데이터 검사·빌드는 Node 18 이상, 전체 화면 검사는 Node 22 이상이 필요합니다.
-- 화면 검사: Google Chrome 또는 Chromium, WebGL. npm 패키지 설치는 필요 없습니다.
+- 3D 화면 검사: Google Chrome 또는 Chromium, WebGL. npm 패키지 설치는 필요 없습니다.
 - 아래 명령은 macOS의 터미널 기준입니다. Linux·Windows·다른 에이전트에서의 설치는 이번 공개 전 점검에서 검증하지 않았습니다.
 
 ## 2. 저장소 받기
@@ -90,3 +90,7 @@ node "$HOME/.claude/skills/elapse/scripts/build.mjs" "$HOME/.claude/skills/elaps
 ## 업데이트와 제거
 
 업데이트 전 기존 설치 폴더를 별도 위치에 복사해 보관하고, 새 버전으로 교체하세요. 위 설치 명령은 기존 설치를 갱신하지 않습니다. 제거하려면 본인이 설치한 `~/.claude/skills/unfold` 또는 `elapse` 폴더를 직접 관리하세요. 자동 삭제 명령은 제공하지 않습니다.
+
+## 기록 화면과 3D
+
+Elapse의 기본 예시 7개는 설치 없이 사실·사람·기억을 읽을 수 있습니다. JavaScript 없이도 영어 본문과 출처를 볼 수 있고, 3D에만 WebGL이 필요합니다. 기존 `?t=…` 링크는 3D로 바로 열립니다. 처음 설치해 새 주제를 만들 때는 [기록 형식](elapse/references/remembrance-format.md)에 따라 값·범위·근거·미확정 사항을 함께 작성하세요. 출처 요약을 포함한 단일 HTML 생성과 역사적 사실의 독립 검증은 별개의 일입니다.

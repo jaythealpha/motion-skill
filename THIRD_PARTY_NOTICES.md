@@ -16,3 +16,7 @@ The standalone HTML pages embed the bundled JavaScript and retain the full proje
 The examples contain original schematic geometry and descriptions, and link to their research sources. The project’s MIT licence does not relicense third-party websites, manuals, images or videos. No permission to reproduce source assets is implied. The repository rules prohibit embedding their photos, scans or copied prose.
 
 Apple, Samsung and other names identify the subjects of unofficial examples; no affiliation or endorsement is claimed. This notice records project provenance and scope, not an exhaustive legal clearance of every source or model.
+
+## Fact and remembrance records
+
+The `elapse/research/records/` overlays contain original factual summaries and editorial reflection. Their source URLs, document locations and consultation dates are retained. Sources include the 9/11 Memorial & Museum, 9/11 Commission, Korean archives and historical chronology, Ministry of the Interior and Safety interviews, Seoul records, WHOI, the Eiffel Tower operator, the French Government and an expedition account. Linking a source does not relicense it under MIT. No source photographs, voices, scans or lengthy verbatim passages are bundled. Museum/collection descriptions, interview recollections and institutional retrospectives remain distinguishable evidence types; the project’s original translations are not institution-approved translations.

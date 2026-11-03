@@ -34,6 +34,12 @@ The skill folder (`<skill>` below) holds:
   - `titanic`: a night sinking, flooding by compartment, a break into two, a deep wreck, projections. Its generator is `research/titanic-gen.mjs`, its notes `research/titanic-notes.md`; copy both patterns.
   - `britannic`: a daytime sinking in one piece with a crumpled bow, in shallow water (120 m), capsizing onto her side. It shows hull paint bands (the hospital ship's green band and red crosses, the mine damage), water entering through open portholes (`inflow`), a shallow-water growth crust and a final-attitude check (`wreck.poses`). Generator `research/britannic-gen.mjs`.
 
+## Facts, people and memory
+
+Read `references/remembrance-format.md` before authoring historical-event content. The purpose is to preserve what happened, concrete help/preparation and lessons, with evidence and uncertainty. Supply optional version-1 `remembrance` with scoped values and all five languages. Keep personal action times at the precision supported by evidence. Never invent a name, rescue count, dialogue, motive or route; do not equate a company's evacuation count with a solo rescue total. Separate survivor recollection, institutional accounts, investigation findings and editorial reflection. Include collective care and preparation; do not rank heroism or animate death totals. Non-disaster subjects may use construction/research/restoration records rather than a memorial narrative.
+
+Packaged generators load `research/records/*.json` through `withRemembrance`. Such pages default to the reader, render English content without scripts, and lazily initialize the optional 3D view. `?view=scene`, explicit `?t=…` and Explore/play links retain the old scene entry. A related scene is context, not a re-enactment of a person's exact actions. Gate 1 and build validate records; verify five-language reader behavior, no-JS/WebGL-failure fallback and scene return as well as normal scene QA. Do not claim model-item source shares measure historical accuracy.
+
 ## Rules that always hold
 
 - **Work unattended.** Do not stop to ask the person questions mid-way. If the request is ambiguous (sister ships, two ships of one name), take the most likely reading, say which in `meta.interpretation`, and carry on.
@@ -43,7 +49,7 @@ The skill folder (`<skill>` below) holds:
 
   Examples: Sewol (2014), Cheonan (2010). Instead, say in chat, briefly and plainly, that families are still living with it and the investigations and disputes continue, so Elapse does not make it. Then stop. Don't push alternatives.
 - **Respect.** Never draw people or lifeboats; draw the davits only. No dramatisation. State the death toll in one plain sentence in `meta.about`, with the range when sources differ. Add the site's legal protection if any.
-- **Mark every fact.** Every piece, track key and event is `sourced` (`sourceIds`), `estimated`, `disputed` (with `alternatives`) or `projection`. Never present a guess as sourced. The page shows the shares and warns below 50% sourced. That is fine and honest, so don't inflate it.
+- **Mark every fact.** Every piece, track key and event is `sourced` (`sourceIds`), `estimated`, `disputed` (with `alternatives`) or `projection`. Never present a guess as sourced. The source-share calculation measures model items, not historical accuracy. Record-enabled pages show evidence and reconstruction guidance; other pages retain the below-50% warning. Never inflate the shares.
 - **Licence.** Take facts only (sizes, times, counts, order, names). Write every sentence yourself. Never embed or download photos, scans, sonar images or video frames. Sources appear as links only.
 - **Gates loop at most 3 rounds each.** Whatever still fails goes into `meta.limitations` (shown on the page), and you say so when you deliver.
 - **Requirements.** Node 18+ for Gate 1 and the build; Node 22+ plus Chrome or Chromium for Gate 2 (no npm packages). When Gate 2 can't run, it prints `GATE2 SKIPPED` with the reason. Build with `--gate2 skipped` and say so. Gate 1 always runs.

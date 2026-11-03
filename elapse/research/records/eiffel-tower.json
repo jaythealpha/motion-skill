@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "construction",
+      "title": "Société d’Exploitation de la Tour Eiffel · History",
+      "url": "https://www.toureiffel.paris/en/the-monument/history",
+      "type": "institution",
+      "locator": "Construction dates and key figures",
+      "checkedAt": "2026-11-03"
+    }
+  ],
+  "records": [
+    {
+      "id": "construction",
+      "title": {
+        "en": "Construction · the work behind the structure",
+        "ko": "시공 · 구조물 뒤에 있는 작업",
+        "ja": "建設：構造を支えた仕事",
+        "zh": "建设：结构背后的劳动",
+        "es": "Construcción · el trabajo detrás de la estructura"
+      },
+      "action": {
+        "en": "The operator records completion on March 31, 1889. Its history describes design, workshop fabrication and on-site assembly as distinct contributions.",
+        "ko": "운영기관은 1889년 3월 31일 완공을 기록합니다. 설계, 공장 제작, 현장 조립을 함께 설명합니다.",
+        "ja": "運営機関は1889年3月31日の完成を記録し、設計・工場製作・現場組立を説明しています。",
+        "zh": "运营方记录于1889年3月31日完工，并介绍设计、工厂制作和现场组装的共同贡献。",
+        "es": "El operador registra la finalización el 31 de marzo de 1889 y distingue diseño, fabricación y montaje en obra."
+      },
+      "meaning": {
+        "en": "Read a landmark through its collaborative work, not only its silhouette.",
+        "ko": "랜드마크의 윤곽과 함께 협업의 과정을 읽습니다.",
+        "ja": "輪郭だけでなく協働の過程を読み取ります。",
+        "zh": "既看地标轮廓，也看协作过程。",
+        "es": "Leer también el trabajo colectivo de un monumento."
+      },
+      "unknowns": {
+        "en": "Intermediate assembly geometry and worker positions are not reconstructed from a complete measured log.",
+        "ko": "중간 조립 형상과 작업자 위치를 전체 실측 로그로 재현한 것은 아닙니다.",
+        "ja": "途中の組立形状や作業者位置は完全な実測記録の再現ではありません。",
+        "zh": "中间组装形状和工人位置并非完整实测日志的重建。",
+        "es": "No se reconstruyen geometrías intermedias ni posiciones de trabajadores a partir de un registro medido completo."
+      },
+      "time": {
+        "date": "1889-03-31",
+        "precision": "date"
+      },
+      "sceneAnchor": {
+        "eventId": "complete"
+      },
+      "sourceIds": [
+        "construction"
+      ],
+      "facts": [
+        {
+          "id": "complete",
+          "label": {
+            "en": "Completion",
+            "ko": "완공",
+            "ja": "完成",
+            "zh": "完工",
+            "es": "Finalización"
+          },
+          "value": "1889-03-31",
+          "unit": "date",
+          "scope": {
+            "en": "Tower construction; operator’s history",
+            "ko": "타워 시공 · 운영기관 역사 기록",
+            "ja": "塔の建設・運営機関の記録",
+            "zh": "塔体建设，运营方历史记录",
+            "es": "Construcción; historia del operador"
+          },
+          "sourceIds": [
+            "construction"
+          ]
+        }
+      ]
+    }
+  ]
+}

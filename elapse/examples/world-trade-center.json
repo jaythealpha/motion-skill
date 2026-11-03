@@ -194,7 +194,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "dimensions"
-      ]
+      ],
+      "presentationAnchor": true
     },
     {
       "id": "northHit",
@@ -332,7 +333,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "recovery"
-      ]
+      ],
+      "timePrecision": "date"
     },
     {
       "id": "sevenNew",
@@ -355,7 +357,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "new7"
-      ]
+      ],
+      "timePrecision": "date"
     },
     {
       "id": "memorial",
@@ -378,7 +381,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "pools"
-      ]
+      ],
+      "timePrecision": "date"
     },
     {
       "id": "four",
@@ -401,7 +405,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "history"
-      ]
+      ],
+      "timePrecision": "date"
     },
     {
       "id": "one",
@@ -424,7 +429,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "history"
-      ]
+      ],
+      "timePrecision": "date"
     },
     {
       "id": "oculus",
@@ -447,7 +453,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "history"
-      ]
+      ],
+      "timePrecision": "date"
     },
     {
       "id": "three",
@@ -470,7 +477,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "pa"
-      ]
+      ],
+      "timePrecision": "date"
     }
   ],
   "pieces": [
@@ -839,5 +847,369 @@
     ],
     "renderQuality": "high",
     "gate2": "pass"
+  },
+  "remembrance": {
+    "version": 1,
+    "sources": [
+      {
+        "id": "crowther",
+        "title": "9/11 Memorial & Museum · Remembering the Man in the Red Bandana",
+        "url": "https://www.911memorial.org/connect/blog/remembering-man-red-bandana",
+        "type": "museum",
+        "locator": "Welles Crowther; survivor accounts; South Tower sky lobby",
+        "checkedAt": "2026-11-03"
+      },
+      {
+        "id": "rescorla",
+        "title": "9/11 Memorial & Museum · Manual, C.2014.378.1",
+        "url": "https://collection.911memorial.org/Detail/objects/109735/rel/1",
+        "type": "collection",
+        "locator": "Description; Historical Notes; Curator’s Comment; accession C.2014.378.1",
+        "checkedAt": "2026-11-03"
+      },
+      {
+        "id": "commission",
+        "title": "9/11 Commission Report · Chapter 9",
+        "url": "https://911commission.gov/report/911Report_Ch9.htm",
+        "type": "report",
+        "locator": "§9.4; notes 200–201; printed pp.316–317",
+        "checkedAt": "2026-11-03"
+      },
+      {
+        "id": "scope",
+        "title": "9/11 Memorial & Museum · In Memoriam",
+        "url": "https://m.911memorial.org/visit/museum/exhibitions/in-memoriam",
+        "type": "museum",
+        "locator": "Exhibition description; 2001 and 1993 victims",
+        "checkedAt": "2026-11-03"
+      }
+    ],
+    "records": [
+      {
+        "id": "welles",
+        "title": {
+          "en": "Welles Remy Crowther · guiding others to the stairs",
+          "ko": "웰스 레미 크라우더 · 계단으로 안내한 행동",
+          "ja": "ウェルズ・レミー・クラウザー：階段への案内",
+          "zh": "韦尔斯·雷米·克劳瑟：引导他人走向楼梯",
+          "es": "Welles Remy Crowther · guiar hacia las escaleras"
+        },
+        "action": {
+          "en": "The museum, drawing on survivor accounts, describes Crowther helping people reach the stairs from the South Tower sky lobby. He worked in equities and was a volunteer firefighter.",
+          "ko": "박물관은 생존자들의 회고를 바탕으로 크라우더가 남타워 스카이로비에서 사람들을 계단으로 안내했다고 설명합니다. 그는 증권업 종사자이자 의용소방대원이었습니다.",
+          "ja": "博物館は生存者の回想に基づき、南タワーのスカイロビーから階段へ人々を導いたと説明しています。証券業で働く義勇消防士でした。",
+          "zh": "博物馆依据幸存者回忆，记述他在南塔空中大堂帮助人们走向楼梯。他从事证券工作，也是一名志愿消防员。",
+          "es": "El museo, basándose en supervivientes, relata cómo ayudó a llegar a las escaleras desde el vestíbulo elevado de la Torre Sur. Trabajaba en finanzas y era bombero voluntario."
+        },
+        "meaning": {
+          "en": "Remember the practical act of helping another person find a way out.",
+          "ko": "다른 사람이 나갈 길을 찾도록 도운 구체적인 행동을 기억합니다.",
+          "ja": "他の人の避難を助けた具体的な行動を記憶します。",
+          "zh": "记住帮助他人找到出路的具体行动。",
+          "es": "Recordar el acto concreto de ayudar a encontrar una salida."
+        },
+        "unknowns": {
+          "en": "Exact personal routes, action times and individual rescue totals are not established here.",
+          "ko": "개인의 정확한 동선·활동 시각·구조 인원은 여기서 확정하지 않습니다.",
+          "ja": "個人の正確な経路・活動時刻・救助人数はここでは確定しません。",
+          "zh": "此处未能确定个人的确切路线、行动时间和救援人数。",
+          "es": "No se establecen rutas, horas de acción ni cifras individuales de rescate."
+        },
+        "time": {
+          "date": "2001-09-11",
+          "precision": "date"
+        },
+        "sceneAnchor": {
+          "eventId": "southHit"
+        },
+        "sourceIds": [
+          "crowther"
+        ],
+        "facts": [
+          {
+            "id": "age",
+            "label": {
+              "en": "Age at the event",
+              "ko": "사건 당시 나이",
+              "ja": "事件当時の年齢",
+              "zh": "事发时年龄",
+              "es": "Edad en esa fecha"
+            },
+            "value": 24,
+            "unit": "years",
+            "scope": {
+              "en": "Welles Crowther",
+              "ko": "웰스 크라우더",
+              "ja": "ウェルズ・クラウザー",
+              "zh": "韦尔斯·克劳瑟",
+              "es": "Welles Crowther"
+            },
+            "sourceIds": [
+              "crowther"
+            ]
+          },
+          {
+            "id": "lobby",
+            "label": {
+              "en": "Sky lobby",
+              "ko": "스카이로비",
+              "ja": "スカイロビー",
+              "zh": "空中大堂",
+              "es": "Vestíbulo elevado"
+            },
+            "value": 78,
+            "unit": "floor",
+            "scope": {
+              "en": "South Tower; location described by the museum",
+              "ko": "남타워 · 박물관이 서술한 장소",
+              "ja": "南タワー・博物館が記した場所",
+              "zh": "南塔，博物馆所述地点",
+              "es": "Torre Sur; ubicación indicada por el museo"
+            },
+            "sourceIds": [
+              "crowther"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "rescorla",
+        "title": {
+          "en": "Rick Rescorla · preparation before the emergency",
+          "ko": "릭 레스콜라 · 사건 이전부터 이어진 준비",
+          "ja": "リック・レスコーラ：緊急事態に備える",
+          "zh": "里克·雷斯科拉：事前准备",
+          "es": "Rick Rescorla · prepararse antes de la emergencia"
+        },
+        "action": {
+          "en": "A contingency-plan binder created by Rescorla is dated December 1999. The collection describes his security role and his direction of employee evacuation from the South Tower on September 11, 2001.",
+          "ko": "레스콜라가 만든 비상계획 문서는 1999년 12월 자료로 소장되어 있습니다. 소장 기록은 그의 보안 책임과 2001년 9월 11일 남타워 직원 대피 안내를 설명합니다.",
+          "ja": "レスコーラ作成の非常時計画は1999年12月付です。収蔵記録は保安の職務と2001年9月11日の南タワーでの従業員避難誘導を説明しています。",
+          "zh": "他编制的应急计划文件日期为1999年12月。馆藏记录介绍了其安全职责及2001年9月11日在南塔引导员工疏散的行动。",
+          "es": "Su manual de contingencia está fechado en diciembre de 1999. El registro describe su responsabilidad de seguridad y la evacuación de empleados de la Torre Sur que dirigió en 2001."
+        },
+        "meaning": {
+          "en": "Preparation, practiced responsibilities and collective execution belong in the record alongside help on the day.",
+          "ko": "당일의 도움과 함께 사전 준비, 익힌 역할, 동료들의 실행도 남깁니다.",
+          "ja": "当日の援助とともに、事前準備と役割の共有、同僚の実行を残します。",
+          "zh": "记录当日援助，也记录事前准备、职责分工和同事的共同执行。",
+          "es": "Conservar también la preparación, las responsabilidades y la ejecución colectiva."
+        },
+        "unknowns": {
+          "en": "Exact personal routes, action times and individual rescue totals are not established here.",
+          "ko": "개인의 정확한 동선·활동 시각·구조 인원은 여기서 확정하지 않습니다.",
+          "ja": "個人の正確な経路・活動時刻・救助人数はここでは確定しません。",
+          "zh": "此处未能确定个人的确切路线、行动时间和救援人数。",
+          "es": "No se establecen rutas, horas de acción ni cifras individuales de rescate."
+        },
+        "time": {
+          "date": "1999-12",
+          "precision": "month"
+        },
+        "sceneAnchor": {
+          "eventId": "southHit"
+        },
+        "sourceIds": [
+          "rescorla"
+        ],
+        "facts": [
+          {
+            "id": "manual-date",
+            "label": {
+              "en": "Manual date",
+              "ko": "계획 문서 날짜",
+              "ja": "計画書の日付",
+              "zh": "计划文件日期",
+              "es": "Fecha del manual"
+            },
+            "value": "1999-12",
+            "unit": "date",
+            "scope": {
+              "en": "Document date; not the date of evacuation",
+              "ko": "문서 날짜이며 대피 날짜가 아님",
+              "ja": "文書の日付であり避難日ではありません",
+              "zh": "文件日期，并非疏散日期",
+              "es": "Fecha documental, no fecha de evacuación"
+            },
+            "sourceIds": [
+              "rescorla"
+            ]
+          },
+          {
+            "id": "accession",
+            "label": {
+              "en": "Accession",
+              "ko": "소장 기록",
+              "ja": "収蔵記録",
+              "zh": "馆藏记录",
+              "es": "Registro"
+            },
+            "value": "C.2014.378.1",
+            "unit": "identifier",
+            "scope": {
+              "en": "Museum collection",
+              "ko": "박물관 소장품",
+              "ja": "博物館収蔵品",
+              "zh": "博物馆馆藏",
+              "es": "Colección del museo"
+            },
+            "sourceIds": [
+              "rescorla"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mutual-aid",
+        "title": {
+          "en": "People helping people · collective evacuation",
+          "ko": "서로를 도운 사람들 · 공동 대피",
+          "ja": "人々の助け合い：共同避難",
+          "zh": "人们互相帮助：共同疏散",
+          "es": "Ayuda mutua · evacuación colectiva"
+        },
+        "action": {
+          "en": "The Commission describes tenants assisting one another, responders guiding exits and help for people who could not evacuate without assistance. These actions cannot all be reduced to individual rescue totals.",
+          "ko": "조사위원회는 입주자들의 상호 도움, 현장 대응자의 출구 안내, 혼자 이동하기 어려운 사람에 대한 지원을 설명합니다. 이런 행동을 모두 개인별 구조 인원으로 환산할 수는 없습니다.",
+          "ja": "委員会は入居者同士の助け合い、出口への誘導、自力避難が難しい人への支援を記しています。すべてを個人別の救助人数には換算できません。",
+          "zh": "调查委员会记述了租户互助、应急人员引导出口及协助无法独立疏散者。这些行动无法全部换算为个人救援人数。",
+          "es": "La Comisión describe ayuda entre ocupantes, orientación hacia salidas y apoyo a quienes necesitaban asistencia. No todo puede expresarse en cifras de rescate individuales."
+        },
+        "meaning": {
+          "en": "Keep mutual aid and accessible evacuation visible, including people whose names are absent from this selection.",
+          "ko": "이름이 이 기록에 없는 사람들까지 포함해 상호 도움과 누구나 가능한 대피를 기억합니다.",
+          "ja": "名前がここにない人々も含め、助け合いと誰もができる避難を記憶します。",
+          "zh": "记住互助与无障碍疏散，也包括本记录未列出姓名的人。",
+          "es": "Recordar la ayuda mutua y la evacuación accesible, también de personas sin nombre en esta selección."
+        },
+        "unknowns": {
+          "en": "Exact personal routes, action times and individual rescue totals are not established here.",
+          "ko": "개인의 정확한 동선·활동 시각·구조 인원은 여기서 확정하지 않습니다.",
+          "ja": "個人の正確な経路・活動時刻・救助人数はここでは確定しません。",
+          "zh": "此处未能确定个人的确切路线、行动时间和救援人数。",
+          "es": "No se establecen rutas, horas de acción ni cifras individuales de rescate."
+        },
+        "time": {
+          "date": "2001-09-11",
+          "precision": "date"
+        },
+        "sceneAnchor": {
+          "eventId": "northHit"
+        },
+        "sourceIds": [
+          "commission"
+        ],
+        "facts": []
+      },
+      {
+        "id": "scope",
+        "title": {
+          "en": "Names and numbers · keep the scope visible",
+          "ko": "이름과 숫자 · 범위를 함께 기억하기",
+          "ja": "名前と数：範囲を明示する",
+          "zh": "姓名与数字：明确统计范围",
+          "es": "Nombres y cifras · conservar el alcance"
+        },
+        "action": {
+          "en": "The museum commemorates victims of two attacks. The figures below have different scopes and must not be exchanged or treated as an animated score.",
+          "ko": "박물관은 두 사건의 희생자를 함께 기립니다. 아래 수치는 범위가 다르며 서로 바꾸거나 움직이는 점수처럼 보여주지 않습니다.",
+          "ja": "博物館は二つの事件の犠牲者を追悼しています。以下の数値は範囲が異なり、置き換えたり得点化したりしません。",
+          "zh": "博物馆纪念两起袭击的遇难者。以下数字的统计范围不同，不可互换或当作动态分数。",
+          "es": "El museo recuerda a víctimas de dos atentados. Las cifras tienen distintos alcances y no son intercambiables ni puntuaciones."
+        },
+        "meaning": {
+          "en": "Each number refers to people, not a measure of spectacle or a ranking of loss.",
+          "ko": "숫자는 사람을 가리키며, 장면의 규모나 피해의 순위를 매기는 지표가 아닙니다.",
+          "ja": "数値は人々を指し、場面の規模や被害の順位ではありません。",
+          "zh": "每个数字都指向人，而非场面规模或损失排名。",
+          "es": "Cada cifra representa personas, no espectacularidad ni una clasificación del dolor."
+        },
+        "unknowns": {
+          "en": "These exhibition counts do not quantify later illness-related deaths.",
+          "ko": "이 전시 집계는 이후 질환으로 인한 사망자 수를 뜻하지 않습니다.",
+          "ja": "この展示の集計は後の疾病による死者数ではありません。",
+          "zh": "这些展览统计不代表后来因相关疾病去世的人数。",
+          "es": "Estas cifras de la exposición no cuantifican muertes posteriores por enfermedades."
+        },
+        "time": {
+          "date": "2001-09-11",
+          "precision": "date"
+        },
+        "sceneAnchor": {
+          "eventId": "memorial"
+        },
+        "sourceIds": [
+          "scope"
+        ],
+        "facts": [
+          {
+            "id": "2001",
+            "label": {
+              "en": "2001 attacks",
+              "ko": "2001년 테러",
+              "ja": "2001年の攻撃",
+              "zh": "2001年袭击",
+              "es": "Atentados de 2001"
+            },
+            "value": 2977,
+            "unit": "people",
+            "scope": {
+              "en": "All attack sites, September 11, 2001",
+              "ko": "2001년 9월 11일 · 전체 공격 장소",
+              "ja": "2001年9月11日・全攻撃地点",
+              "zh": "2001年9月11日，所有袭击地点",
+              "es": "Todos los lugares del 11 de septiembre de 2001"
+            },
+            "sourceIds": [
+              "scope"
+            ]
+          },
+          {
+            "id": "1993",
+            "label": {
+              "en": "1993 bombing",
+              "ko": "1993년 폭탄 테러",
+              "ja": "1993年の爆破",
+              "zh": "1993年爆炸案",
+              "es": "Atentado de 1993"
+            },
+            "value": 6,
+            "unit": "people",
+            "scope": {
+              "en": "World Trade Center, February 26, 1993",
+              "ko": "1993년 2월 26일 · 세계무역센터",
+              "ja": "1993年2月26日・世界貿易センター",
+              "zh": "1993年2月26日，世贸中心",
+              "es": "World Trade Center, 26 de febrero de 1993"
+            },
+            "sourceIds": [
+              "scope"
+            ]
+          },
+          {
+            "id": "both",
+            "label": {
+              "en": "Combined commemoration",
+              "ko": "두 사건의 추모 대상",
+              "ja": "両事件の追悼対象",
+              "zh": "两起事件的纪念对象",
+              "es": "Conmemoración conjunta"
+            },
+            "value": 2983,
+            "unit": "people",
+            "scope": {
+              "en": "2001 attacks plus 1993 bombing; 2977 + 6",
+              "ko": "2001년 테러와 1993년 폭탄 테러 · 2977 + 6",
+              "ja": "2001年と1993年の事件・2977 + 6",
+              "zh": "2001年袭击加1993年爆炸案，2977 + 6",
+              "es": "Ambos atentados: 2977 + 6"
+            },
+            "sourceIds": [
+              "scope"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

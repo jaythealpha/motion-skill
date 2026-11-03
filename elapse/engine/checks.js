@@ -1,3 +1,4 @@
+import {validateRecords} from './records-model.js';
 // Gate 1's physical checks, on top of the schema checks in model.js. Pure; the CLI is scripts/check_model.mjs.
 // Checks tied to an optional feature run only when the model turns that feature on.
 import {isBuilding,validateBuilding} from './building-model.js';
@@ -177,8 +178,9 @@ function branches(m, err) {
 }
 
 export function runChecks(model, { official } = {}) {
-  if(isBuilding(model))return validateBuilding(model);
+  if(isBuilding(model)){const v=validateBuilding(model);v.errors.push(...validateRecords(model).errors);return v;}
   const { errors, warnings } = validateModel(model);
+  errors.push(...validateRecords(model).errors);
   if (errors.length) return { errors, warnings };
   const err = (where, msg) => errors.push({ where, msg });
   chapters(model, err);

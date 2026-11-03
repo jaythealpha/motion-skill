@@ -33,6 +33,8 @@ New structural-history examples: [Sampoong](https://jaythealpha.github.io/motion
 
 The Sampoong full timeline now uses the same recessed facade, roof-services and progressive plate-failure model as its [scene study](https://jaythealpha.github.io/motion-skill/elapse/examples/sampoong-collapse-study.html?lang=en). Seongsu includes normal four-lane traffic and a route16 bus / six-vehicle fall illustration anchored in historical accounts. Coordinates, timing, rotation, livery and damage remain estimated; no people are depicted. All demos were rebuilt with shared material-normal detail and finer desktop shadow maps; these are educational graphics, not photoreal or forensic reconstructions.
 
+Elapse now starts with **facts, people and memory** in all seven full timelines. Read [WTC’s records](https://jaythealpha.github.io/motion-skill/elapse/examples/world-trade-center.html?view=records&lang=en), [Sampoong](https://jaythealpha.github.io/motion-skill/elapse/examples/sampoong.html?view=records&lang=en) or [Seongsu](https://jaythealpha.github.io/motion-skill/elapse/examples/seongsu-bridge.html?view=records&lang=en): factual values include scope and evidence, while recollection, editorial reflection and unknowns are separated. Optional 3D provides estimated structural context. All records remain readable as English HTML without JavaScript; WebGL failure retains the localized reader. Use `?view=scene&t=43` for a direct 3D link. See the [record contract and authoring workflow](elapse/references/remembrance-format.md).
+
 Chinese selectors display **CH**. Standard `zh` / `zh-Hans` document tags and existing URLs remain valid; `?lang=ch` is also accepted.
 
 ## Principles
@@ -43,7 +45,7 @@ Chinese selectors display **CH**. Standard `zh` / `zh-Hans` document tags and ex
   - disputed (with the alternatives)
   - projection
 
-  The page shows the shares and warns when less than half is sourced.
+  Scene shares describe model items, not historical accuracy. Pages with claim-level records show evidence and reconstruction guidance instead; other pages retain the source-share warning.
 - **Facts only from sources:**
   - sizes, times, counts, order and names
   - every sentence written fresh

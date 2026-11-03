@@ -194,7 +194,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "damage"
-      ]
+      ],
+      "presentationAnchor": true
     },
     {
       "id": "alarm",
@@ -309,7 +310,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "damage"
-      ]
+      ],
+      "timePrecision": "date"
     },
     {
       "id": "scaffold",
@@ -332,7 +334,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "secure"
-      ]
+      ],
+      "timePrecision": "date"
     },
     {
       "id": "restoration",
@@ -355,7 +358,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "rebirth"
-      ]
+      ],
+      "timePrecision": "date"
     },
     {
       "id": "spire",
@@ -378,7 +382,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "rebirth"
-      ]
+      ],
+      "timePrecision": "date"
     },
     {
       "id": "reopen",
@@ -401,7 +406,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "reopen"
-      ]
+      ],
+      "timePrecision": "date"
     }
   ],
   "pieces": [
@@ -756,5 +762,85 @@
     ],
     "renderQuality": "high",
     "gate2": "pass"
+  },
+  "remembrance": {
+    "version": 1,
+    "sources": [
+      {
+        "id": "reopen",
+        "title": "French Government · La réouverture historique de Notre-Dame de Paris",
+        "url": "https://www.info.gouv.fr/actualite/la-reouverture-historique-de-notre-dame-de-paris",
+        "type": "institution",
+        "locator": "Published 2024-12-03, updated 2025-03-25; public access after ceremonies",
+        "checkedAt": "2026-11-03"
+      }
+    ],
+    "records": [
+      {
+        "id": "restoration",
+        "title": {
+          "en": "Restoration · a reopening milestone",
+          "ko": "복원 · 다시 열린 날의 의미",
+          "ja": "修復：再公開の節目",
+          "zh": "修复：重新开放的节点",
+          "es": "Restauración · un hito de reapertura"
+        },
+        "action": {
+          "en": "The government distinguishes official ceremonies from public visiting, announced from December 8, 2024. Reopening follows years of restoration after the 2019 fire.",
+          "ko": "정부 기록은 공식 행사와 일반 방문을 구분하며 2024년 12월 8일부터의 일반 방문을 안내합니다. 2019년 화재 이후 여러 해의 복원 끝에 다시 열렸습니다.",
+          "ja": "政府記録は公式式典と一般見学を区別し、2024年12月8日からの一般公開を案内しています。2019年の火災後、長年の修復を経た再公開です。",
+          "zh": "政府记录区分官方典礼与公众参观，公布自2024年12月8日起公众可参观。重新开放经历了2019年火灾后的多年修复。",
+          "es": "El gobierno distingue ceremonias y visitas públicas, anunciadas desde el 8 de diciembre de 2024, tras años de restauración posteriores al incendio de 2019."
+        },
+        "meaning": {
+          "en": "Remember sustained restoration work as well as the fire.",
+          "ko": "화재와 함께 오랫동안 이어진 복원의 작업도 기억합니다.",
+          "ja": "火災だけでなく長く続いた修復の仕事も記憶します。",
+          "zh": "记住火灾，也记住长期修复的劳动。",
+          "es": "Recordar también el trabajo sostenido de restauración."
+        },
+        "unknowns": {
+          "en": "Public reopening is not a claim that every restoration task ended, nor a reconstruction of each worker’s actions.",
+          "ko": "일반 공개가 모든 복원 작업의 종료를 뜻하지 않으며 작업자 개개인의 행동을 재현한 것도 아닙니다.",
+          "ja": "一般公開は全修復作業の終了や各作業者の行動再現を意味しません。",
+          "zh": "公众开放不代表所有修复结束，也不重建每位工作者的行动。",
+          "es": "La apertura no significa que toda restauración terminara ni reconstruye acciones individuales."
+        },
+        "time": {
+          "date": "2024-12-08",
+          "precision": "date"
+        },
+        "sceneAnchor": {
+          "eventId": "reopen"
+        },
+        "sourceIds": [
+          "reopen"
+        ],
+        "facts": [
+          {
+            "id": "public",
+            "label": {
+              "en": "Public visiting date",
+              "ko": "일반 방문 날짜",
+              "ja": "一般見学日",
+              "zh": "公众参观日期",
+              "es": "Fecha de visita pública"
+            },
+            "value": "2024-12-08",
+            "unit": "date",
+            "scope": {
+              "en": "Public access, distinct from official ceremonies",
+              "ko": "공식 행사와 구분되는 일반 공개",
+              "ja": "公式式典とは区別する一般公開",
+              "zh": "公众开放，与官方典礼区分",
+              "es": "Acceso público, distinto de las ceremonias"
+            },
+            "sourceIds": [
+              "reopen"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

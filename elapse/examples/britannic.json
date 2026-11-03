@@ -4734,5 +4734,62 @@
    "yaw": 120,
    "pitch": 12
   }
- ]
+ ],
+ "remembrance": {
+  "version": 1,
+  "sources": [
+   {
+    "id": "survey",
+    "title": "InDEPTH · As Time Goes By: Britannic, 109 Years Later",
+    "url": "https://indepthmag.com/as-time-goes-by-britannic-109-years-later/",
+    "type": "expedition",
+    "locator": "2025 expedition account; depth and condition observations",
+    "checkedAt": "2026-11-03"
+   }
+  ],
+  "records": [
+   {
+    "id": "survey",
+    "title": {
+     "en": "A wreck as evidence · observation over time",
+     "ko": "자료로 남은 난파선 · 시간에 따른 관찰",
+     "ja": "史料としての難破船：継続する観察",
+     "zh": "作为证据的沉船：持续观察",
+     "es": "El pecio como evidencia · observar con el tiempo"
+    },
+    "action": {
+     "en": "The expedition account describes the wreck and changes observed on the seabed. The rendered corrosion and organisms are illustrative, not a survey of each surface.",
+     "ko": "탐사 보고는 해저 난파선과 관찰된 변화를 설명합니다. 화면의 부식·생물 분포는 설명용이며 표면별 실측 결과가 아닙니다.",
+     "ja": "探査報告は海底の船体と観察された変化を説明しています。画面の腐食や生物分布は説明用で、各表面の実測ではありません。",
+     "zh": "探测报告描述海底沉船及观察到的变化。画面中的腐蚀及生物分布仅作说明，不是逐面测量。",
+     "es": "El relato de expedición describe el pecio y sus cambios observados. La corrosión y los organismos dibujados no son un levantamiento de cada superficie."
+    },
+    "meaning": {
+     "en": "A historical site deserves documentation and care, beyond the moment of sinking.",
+     "ko": "침몰 순간을 넘어 유적을 기록하고 돌보는 태도를 남깁니다.",
+     "ja": "沈没の瞬間を越えて遺跡を記録し守る姿勢を残します。",
+     "zh": "超越沉没瞬间，记住记录和保护遗址的责任。",
+     "es": "Documentar y cuidar el lugar histórico más allá del hundimiento."
+    },
+    "unknowns": {
+     "en": "This selection does not reconstruct individual actions or predict an exact future collapse.",
+     "ko": "이 기록은 개인별 행동이나 정확한 미래 붕괴를 재현·예측하지 않습니다.",
+     "ja": "個人の行動や正確な将来の崩壊は再現・予測しません。",
+     "zh": "本记录不重建个人行动，也不预测确切的未来坍塌。",
+     "es": "No reconstruye acciones individuales ni predice derrumbes futuros exactos."
+    },
+    "time": {
+     "date": "2025",
+     "precision": "year"
+    },
+    "sceneAnchor": {
+     "eventId": "recovery"
+    },
+    "sourceIds": [
+     "survey"
+    ],
+    "facts": []
+   }
+  ]
+ }
 }

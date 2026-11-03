@@ -1,3 +1,4 @@
+import {withRemembrance} from './remembrance.mjs';
 #!/usr/bin/env node
 import {QUALITY_VIEWS} from '../engine/quality-form.js';
 // Writes model.json for HMHS Britannic from the facts in britannic-notes.md (source ids s1… are that file's).
@@ -343,5 +344,5 @@ const model = {
 
 if (process.argv.includes('--debug')) for (const k of shipKeys) console.log(k._dbg, JSON.stringify(k.v));
 for (const k of shipKeys) delete k._dbg;
-writeFileSync(OUT, JSON.stringify(model, null, 1));
+writeFileSync(OUT, JSON.stringify(withRemembrance(model), null, 1));
 console.log(`wrote ${OUT}: ${pieces.length} pieces, ${tracks.length} tracks, ${events.length} events, ${sources.length} sources`);

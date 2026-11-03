@@ -1,3 +1,4 @@
+import {rt,rp} from './records-text.js';
 import {trafficText,trafficAvailable} from './seongsu-traffic-motion.js';
 import {isCivil,isSeongsu,advanceCivil} from './civil-model.js';
 import{LANGS,resolveLocale,setLocale,LANGUAGE_NAMES,LANGUAGE_LABELS}from'../shared/locale.js';
@@ -127,6 +128,7 @@ export function mountElapse(root, model, params = {}) {
     xray: params.xray === '1' ? true : params.xray === '0' ? false : null, branch: params.branch === 'b' && model.branches.length ? 'b' : 'a' };
   const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
   const errors = window.__elapse?.errors || [];
+  let presentationActive=true;
   let L = strings(st.lang);
   const style = document.createElement('style'); style.textContent = CSS; document.head.appendChild(style);
   root.className = 'el'+(building?' el-building':'') + ' el-cinematic';
@@ -138,6 +140,7 @@ export function mountElapse(root, model, params = {}) {
       <div class="el-lightnote" hidden></div>
       </div>
     <div class="el-directing" tabindex="0" hidden></div>
+    <nav class="el-record-links" hidden></nav>
     <div class="el-bar"><div class="el-pl"><button class="el-play" type="button"></button><select></select></div>
       <div class="el-track"><div class="el-bands"></div><input aria-label="${tr("시간 진행")}" type="range" min="0" max="100" step="0.05" value="0"><div class="el-ticks"></div></div>
       <div class="el-now"></div></div>
@@ -158,7 +161,7 @@ export function mountElapse(root, model, params = {}) {
   const cards = model.events.filter(e => e.card !== false);
 
   function chrome() {
-    setLocale(st.lang);L = strings(st.lang);document.title=pick(model.subject.name,st.lang)+tr(" · Elapse");
+    setLocale(st.lang);params.onLanguage?.(st.lang);L = strings(st.lang);document.title=pick(model.subject.name,st.lang)+tr(" · Elapse");
     $('.el-card').setAttribute('aria-label',st.lang!=='ko'?tr("Scene explanation"):tr("장면 설명"));
     range.setAttribute('aria-label',st.lang!=='ko'?tr("Timeline"):tr("시간 진행"));
     const stopName=st.exploring?explorationStops(model).find(q=>q.id===st.exploreStop)?.name:null;
@@ -166,8 +169,9 @@ export function mountElapse(root, model, params = {}) {
     $('.el-top h1').textContent = pick(model.subject.name, st.lang);
     $('.el-sub').textContent = model.meta.interpretation ? L.interpreted(pick(model.meta.interpretation, st.lang)) : '';
     $('.el-trust').innerHTML = CLASSES.filter(c => shares[c] || c === 'sourced').map(c => `<span class="cf-badge cf-${c}">${L.share(L[c], shares[c])}</span>`).join('');
+    if(model.remembrance)$('.el-trust').textContent=rt('evidence',st.lang)+' · '+rt('reconstruction',st.lang);
     $('.el-trust').setAttribute('aria-label', L.sources);
-    const pct = shares.sourced, warn = $('.el-warn'); warn.hidden = pct >= WARN_SHARE * 100; warn.textContent = L.warn(pct);
+    const pct = shares.sourced, warn = $('.el-warn'); warn.hidden = !!model.remembrance || pct >= WARN_SHARE * 100; warn.textContent = L.warn(pct);
     const seg = (key, opts, cur, lab = o => L[o]) => `<span class="el-seg"><b>${L[key]}</b><div role="group" aria-label="${L[key]}">${opts.map(o => `<button type="button" data-k="${key}" data-o="${o}" aria-pressed="${cur === o}">${lab(o)}</button>`).join('')}</div></span>`;
     $('.el-controls').innerHTML = seg('style', ['color', 'blueprint'], st.style) + seg('xray', ['on', 'off'], xrayNow() ? 'on' : 'off') + seg('depth', ['simple', 'detail'], st.depth)
       + `<span class="el-seg"><div role="group" aria-label="${tr("Language")}">${LANGS.map(o => `<button type="button" data-k="lang" data-o="${o}" aria-label="${LANGUAGE_NAMES[o]}" lang="${o==='zh'?'zh-Hans':o}" aria-pressed="${st.lang === o}">${LANGUAGE_LABELS[o]}</button>`).join('')}</div></span>`;
@@ -221,13 +225,19 @@ export function mountElapse(root, model, params = {}) {
     if (!e) {el.hidden=false;el.innerHTML=`<h3>${esc(pick(model.chapters[chapterAt(model,st.t)].name,st.lang))}</h3><p>${st.lang!=='ko'?tr("Move the timeline to explore recorded events."):tr("시간 바를 움직여 기록된 사건을 확인하세요.")}</p>`;return null;}
     const cls = classOf(e), srcs = (e.sourceIds || []).map(id => sources.get(id)).filter(Boolean);
     el.hidden = false;
-    el.innerHTML = `<div class="el-card-at">${e.presentationAnchor?esc(pick(model.presentation.anchorLabel,st.lang)):(st.lang!=='ko'?tr("Event recorded at"):tr("기록 시점"))+' · '+esc(formatTime(model,e._t,st.lang))}</div><h3>${esc(pick(e.title, st.lang))} ${badge(cls, L)}</h3><p>${esc(pick(e.text, st.lang))}</p>`
+    el.innerHTML = `<div class="el-card-at">${e.presentationAnchor?esc(model.presentation?.anchorLabel?pick(model.presentation.anchorLabel,st.lang):rt('observation',st.lang)):rt(e.timePrecision==='approximate'?'approximate':'recorded',st.lang)+' · '+esc(e.timePrecision==='date'?String(e.at).slice(0,10):formatTime(model,e._t,st.lang))}</div><h3>${esc(pick(e.title, st.lang))} ${badge(cls, L)}</h3><p>${esc(pick(e.text, st.lang))}</p>`
       + (st.depth === 'detail' ? (e.detail ? `<p>${esc(pick(e.detail, st.lang))}</p>` : '')
         + (e.alternatives ? `<p class="alt"><b>${L.alternatives}:</b> ${esc(pick(e.alternatives, st.lang))}</p>` : '')
         + (srcs.length ? `<p class="src">${L.sources}: ${srcs.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>`).join(' · ')}</p>` : '') : '');
     return e;
   }
 
+  let recordSignature='';
+  function relatedRecords(){
+    const el=$('.el-record-links');if(!model.remembrance)return;
+    const sig=st.lang;if(sig===recordSignature)return;recordSignature=sig;el.hidden=false;
+    el.innerHTML=`<span>${rt('all',st.lang)}</span>`+model.remembrance.records.map(r=>`<a href="?view=records&lang=${st.lang}&record=${r.id}" data-record-ref="${r.id}">${esc(rp(r.title,st.lang))}</a>`).join('');
+  }
   function gauges(s, ev) {
     if(building){buildingGauges($('.el-gauges'),model,R,st);return;}
     const c=model.chapters[chapterAt(model,st.t)], minute=c.unit==='minute';
@@ -283,6 +293,7 @@ export function mountElapse(root, model, params = {}) {
     const s = R.state.last, ev = card(), ci = chapterAt(model, t), c = model.chapters[ci];
     root.querySelectorAll('[data-quality-mode]').forEach(a=>{const url=new URL(location.href);url.searchParams.set('t',st.t);url.searchParams.set('mode',st.exploring?'explore':'timeline');if(st.exploring)url.searchParams.set('stop',st.exploreStop);if(a.dataset.qualityMode==='cutaway')url.searchParams.set('cutaway',params.cutaway==='1'?'0':'1');else url.searchParams.set('quality',a.dataset.qualityMode);a.href=url.href;});
 
+    relatedRecords(ev);
     gauges(s, ev);
     const direction=$('.el-directing');direction.hidden=!(hasDirecting(model)||building);if(civil)direction.textContent=pick(model.presentation.motionNote,st.lang);else if(wtc)direction.textContent=st.lang!=='ko'?tr("Official event times · illustrative impacts/collapses and intermediate rebuilding · ends at2018 milestone"):tr("공식 사건 시각 · 충돌·붕괴·중간 재건은 추정 도해 · 2018 이정표까지");else if(nd)direction.textContent=st.lang!=='ko'?tr("Official dated milestones · fire, collapse and intermediate rebuilding are illustrative · ends at 2024 reopening"):tr("공식 주요 기록 · 화염·낙하·중간 복원은 추정 도해 · 2024 재개관까지");else if(building)direction.textContent=st.lang!=='ko'?tr("Recorded milestones · intermediate geometry/sequence interpolated · 300 m main-structure reference"):tr("주요 시점은 공식 기록 · 중간 형상·순서는 추정·보간 · 300m 주구조 기준");
     if(wtc&&R.state.shot?.weight>.05)direction.textContent=(st.lang!=='ko'?tr({'north-impact':'North Tower impact','south-impact':'South Tower impact','north-collapse':'North Tower collapse','south-collapse':'South Tower collapse','seven-collapse':'7 WTC collapse'}[R.state.shot.id]||R.state.shot.label):R.state.shot.label)+' · '+(st.lang!=='ko'?tr("Automatic observation camera · effects and motion estimated"):tr("자동 관찰 카메라 · 효과·낙하·중간 과정 추정"));
@@ -304,7 +315,7 @@ export function mountElapse(root, model, params = {}) {
   function panel(kind) {
     const el = $('.el-panel'); st.panel = kind; el.hidden = false;
     const close = `<button type="button" data-a="close">${L.close}</button>`;
-    if (kind === 'sources') el.innerHTML = `<h2>${L.sources}${close}</h2><p>${L.method}</p><ol>${model.sources.map(s => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>${s.publisher ? ` — ${esc(s.publisher)}` : ''}${s.year ? ` (${esc(s.year)})` : ''}</li>`).join('')}</ol>`;
+    if (kind === 'sources') el.innerHTML = `<h2>${L.sources}${close}</h2><p>${L.method}</p><p>${rt('classification',st.lang)}</p><ol>${model.sources.map(s => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>${s.publisher ? ` — ${esc(s.publisher)}` : ''}${s.year ? ` (${esc(s.year)})` : ''}</li>`).join('')}</ol>`;
     else el.innerHTML = `<h2>${L.about}${close}</h2>${model.meta.about ? `<p>${esc(pick(model.meta.about, st.lang))}</p>` : ''}`
       + (isBritannic(model)?`<h3>${st.lang!=='ko'?tr("Geometry evidence"):tr("형상 기준 자료")}</h3><p>${st.lang!=='ko'?tr("The 1914 passenger-ship plan informs deck outlines and setbacks. Hull sections, individual window coordinates and the transition to the 1916 hospital configuration remain approximations. This visual layer does not change the historical time model or its source-share calculation."):tr("1914년 여객선 갑판도를 참고해 갑판 윤곽과 단차를 보강했습니다. 선체 횡단면·개별 창 좌표와 1916년 병원선 상태의 차이는 추정입니다. 형상 보강은 별도의 표현 계층이며, 기존 시간 모델의 출처 비율에 합산하지 않습니다.")}</p><ul>${PLAN_SOURCES.map(s=>`<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a></li>`).join('')}</ul>`:'')
       + (isTitanic(model)?`<h3>${st.lang!=='ko'?tr("Geometry evidence"):tr("형상 기준 자료")}</h3><p>${st.lang!=='ko'?tr("The 1912 inquiry gives deck extents, 9ft well-deck drops and the 192ft forward promenade screen. The 1911 period profile is a sister-ship/pre-completion reference; the 2001 deck drawings are modern references, not original builder plans. Hull sections and individual window/roof coordinates remain approximate. The original break, sinking and dated collapse tracks are unchanged."):tr("1912년 조사 보고서의 갑판 길이·웰 데크 9ft 단차·전방 방풍 스크린 192ft를 참고했습니다. 1911년 측면도는 자매선/완공 전 자료이며 2001년 갑판도는 현대 참고도입니다. 선체 횡단면·개별 창·지붕 위치는 추정입니다. 두 동강·침몰·날짜별 붕괴 경로는 기존 시간 모델을 유지합니다.")}</p><ul>${TITANIC_PLAN_SOURCES.map(s=>`<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a></li>`).join('')}</ul>`:'')
@@ -322,7 +333,7 @@ export function mountElapse(root, model, params = {}) {
     el.innerHTML=`<b data-explore-time>${ko?tr("역사 시간 고정: "):tr("Historical time locked: ")}${formatTime(model,st.t,st.lang)}</b><label>${ko?tr("이동할 부위"):tr("Visit")} <select data-survey="stop" aria-label="${ko?tr("탐사 위치"):tr("Exploration stop")}">${opts}</select></label><label>${ko?tr("탐사광"):tr("Survey light")} <select data-survey="lamp"${st.style!=='color'||!st.exploreLight?' disabled':''} aria-label="${ko?tr("탐사광 세기"):tr("Survey intensity")}">${[.6,1,1.4].map((v,i)=>`<option value="${v}"${st.lampStrength===v?' selected':''}>${ko?[tr("약하게"),tr("보통"),tr("밝게")][i]:[tr("Dim"),tr("Normal"),tr("Bright")][i]}</option>`).join('')}</select></label><button type="button" data-survey="motion" aria-pressed="${st.exploreMoving}"${!motionReady||reducedMotion.matches?' disabled':''}>${ko?(st.exploreMoving?tr("생물·입자 정지"):tr("생물·입자 재생")):(st.exploreMoving?tr("Pause fauna / snow"):tr("Play fauna / snow"))}</button><button type="button" data-survey="in" aria-label="${ko?tr("확대"):tr("Zoom in")}">${ko?tr("확대"):tr("Zoom in")}</button><button type="button" data-survey="out" aria-label="${ko?tr("축소"):tr("Zoom out")}">${ko?tr("축소"):tr("Zoom out")}</button><p>${ko?tr("드래그 회전·휠/핀치 확대. 탐사광·생물 모션은 설명용이며 역사 연도와 별개입니다. 시간순으로 나가면 이전 시점·보기가 복원됩니다."):tr("Drag to orbit; wheel/pinch to zoom. Survey lights and ecological motion are illustrative. History stays fixed; Timeline restores your prior time and view.")}${!isTitanic(model)?(ko?tr(" 이 예시에는 별도 생물 모션이 없습니다."):tr(" This example has no independent fauna motion.")):''}${reducedMotion.matches?(ko?tr(" 동작 감소 설정으로 생물 모션은 정지합니다."):tr(" Reduced motion keeps fauna still.")):''}</p>`;
     if(building){el.querySelector('[data-survey=motion]')?.remove();el.querySelector('p').textContent=civil?pick(model.presentation.inspectionHint,st.lang):wtc?(ko?tr("역사 시각을 고정해 같은 자리의 변화를 관찰합니다. 아직 조성되지 않은 부위는 선택할 수 없습니다. 실제 방문·구조 동선이 아닙니다."):tr("Lock the date to inspect the same site over time. Unbuilt stops are disabled. This is not a visitor or emergency route.")):nd?(ko?tr("역사 시각을 고정하고 손상·복원 부위를 살펴보세요. 볼트 탐사는 지붕을 숨긴 절개 보기입니다. 실제 방문 동선이 아닙니다."):tr("Inspect damage and restoration at a locked date. Vault inspection hides roof layers for a cutaway; this is not a visitor route.")):ko?tr("드래그 회전·휠/핀치 확대. 미시공 부위는 선택할 수 없습니다. 관찰 조명은 설명용이며, 시간순으로 나가면 이전 시점·보기가 복원됩니다."):tr("Drag to orbit; wheel/pinch to zoom. Unbuilt stops are disabled. View lighting is illustrative. Timeline restores the prior date and view.");const field=el.querySelector('[data-survey=lamp]');field.setAttribute('aria-label',ko?tr("관찰 조명 세기"):tr("View light intensity"));field.parentElement.firstChild.textContent=ko?tr("관찰 조명 "):tr("View light ");}
   }
-  function surveyMotion(on){cancelAnimationFrame(surveyRaf);st.exploreMoving=!!on&&st.exploring&&!reducedMotion.matches;surveyLast=performance.now();
+  function surveyMotion(on){if(on&&!presentationActive)return;cancelAnimationFrame(surveyRaf);st.exploreMoving=!!on&&st.exploring&&!reducedMotion.matches;surveyLast=performance.now();
     const tick=now=>{if(!st.exploring||!st.exploreMoving)return;const dt=Math.min(.5,(now-surveyLast)/1000);surveyLast=now;if(!reducedMotion.matches){st.ecoClock+=dt;R.animateEcology(st.ecoClock);}surveyRaf=requestAnimationFrame(tick);};
     if(st.exploreMoving)surveyRaf=requestAnimationFrame(tick);
   }
@@ -332,12 +343,14 @@ export function mountElapse(root, model, params = {}) {
     else{surveyMotion(false);const h=st.history;st.exploring=false;Object.assign(st,{t:h.t,style:h.style,xray:h.xray,ecoView:h.ecoView});chrome();R.restoreView(h);}
   }
   function play(on){
+    if(on&&!presentationActive)return;
     cancelAnimationFrame(playRaf);if(on&&st.exploring)return;st.playing=on;R.historyPlaying?.(on);playButton();if(!on)return;
     if(st.t>=100)setT(0);last=performance.now();
     const step=now=>{if(!st.playing||st.exploring)return;const dt=Math.min(.5,(now-last)/1000);last=now;if(!reducedMotion.matches)st.ecoClock+=dt;setT(civil?advanceCivil(model,st.t,dt,st.speed):wtc?advanceWTC(model,st.t,dt,st.speed):nd?advanceNotreDame(model,st.t,dt,st.speed):advance(st.t,dt*playbackRate(model,st.t),st.speed));if(st.t>=100){play(false);return;}playRaf=requestAnimationFrame(step);};playRaf=requestAnimationFrame(step);
   }
 
   root.addEventListener('click', e => {
+    const link=e.target.closest('[data-record-ref]');if(link&&params.onRecord&&!e.metaKey&&!e.ctrlKey&&!e.shiftKey&&!e.altKey){e.preventDefault();params.onRecord(link.dataset.recordRef);return;}
     const b = e.target.closest('button'); if (!b) return;
     const { k, o, a, v, ch, br } = b.dataset;
     if(k==='trafficFocus'){if(!st.exploring)explore(true);st.exploreStop='traffic';R.setAuto(true);chrome();root.querySelector('[data-k=trafficFocus]')?.focus();return;}
@@ -367,12 +380,13 @@ export function mountElapse(root, model, params = {}) {
   range.addEventListener('input', () => { play(false); setT(+range.value); });
   $('.el-pl select').addEventListener('change', e => { st.speed = e.target.value; });
   addEventListener('keydown', e => {
+    if(!presentationActive)return;
     if (/input|textarea|select/i.test(e.target.tagName) && e.target !== range) return;
     if (st.recording) return;
     if (e.key === '[' || e.key === ']') { st.speed = (wtc||civil)?speedKeys[Math.max(0,Math.min(speedKeys.length-1,speedKeys.indexOf(st.speed)+(e.key===']'?1:-1)))]:stepSpeed(st.speed, e.key === ']' ? 1 : -1); $('.el-pl select').value = st.speed; return; }
     if (e.key === ' ' && e.target === document.body) { e.preventDefault(); play(!st.playing); }
   });
-  addEventListener('resize', () => { R.resize(); setT(st.t, true); });
+  addEventListener('resize', () => { if(!presentationActive)return;R.resize(); setT(st.t, true); });
 
   // exports ----------------------------------------------------------------------------------------------------
   const slug = (model.subject.name.en || 'elapse').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -400,6 +414,6 @@ export function mountElapse(root, model, params = {}) {
   if (params.panel === 'sources' || params.panel === 'about') panel(params.panel);
   if(params.mode==='explore'){explore(true);if(explorationStops(model).some(s=>s.id===params.stop)){st.exploreStop=params.stop;explorationPanel();setT(st.t,true);}}
   if (params.play === '1' && !matchMedia('(prefers-reduced-motion: reduce)').matches) play(true);
-  window.__elapse = Object.assign(window.__elapse || {}, { R, model, st, errors, setT, play,explore,surveyMotion });
+  window.__elapse = Object.assign(window.__elapse || {}, { R, model, st, errors, setT, play,explore,surveyMotion,setActive(v){presentationActive=!!v;R.setActive?.(v);if(!v){play(false);surveyMotion(false);}} });
   return window.__elapse;
 }

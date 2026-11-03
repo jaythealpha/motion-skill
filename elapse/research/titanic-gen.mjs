@@ -1,3 +1,4 @@
+import {withRemembrance} from './remembrance.mjs';
 #!/usr/bin/env node
 import {TITANIC_QUALITY_VIEWS} from '../engine/quality-form.js';
 // Writes examples/titanic.json from the facts in research/titanic-notes.md (source ids s1… are that file's).
@@ -380,5 +381,5 @@ const model = {
     ],
   },
 };
-writeFileSync(OUT, JSON.stringify(model, null, 1));
+writeFileSync(OUT, JSON.stringify(withRemembrance(model), null, 1));
 console.log(`wrote ${OUT}: ${pieces.length} pieces, ${tracks.length} tracks, ${events.length} events, ${sources.length} sources`);

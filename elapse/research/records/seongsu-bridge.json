@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "interview",
+      "title": "Ministry of the Interior and Safety · Safety TV",
+      "url": "https://www.safetv.go.kr/base/video/view?idx=1104&menuLevel=&menuNo=&playlistManagementIdx=&searchCategory=",
+      "type": "interview",
+      "locator": "Video 1104; transcript 01:07 and 02:16–02:57",
+      "checkedAt": "2026-11-03"
+    },
+    {
+      "id": "learning",
+      "title": "Seoul Metropolitan Government · Han River bridge collapse",
+      "url": "https://news.seoul.go.kr/safe/archives/786?listPage=1",
+      "type": "institution",
+      "locator": "대응·복구 and safety-management changes",
+      "checkedAt": "2026-11-03"
+    },
+    {
+      "id": "span-archive",
+      "title": "National Archives of Korea · Seongsu Bridge collapse",
+      "url": "https://www.archives.go.kr/next/newsearch/listSubjectDescription.do?id=001921&pageFlag=&sitePage=",
+      "type": "archive",
+      "locator": "Authored subject essay; 발생원인; central48m section within120m span; not an institutional position",
+      "checkedAt": "2026-11-03"
+    }
+  ],
+  "records": [
+    {
+      "id": "survivor",
+      "title": {
+        "en": "A survivor’s recollection · help beyond the vehicles",
+        "ko": "생존자의 회고 · 차량 밖으로 이어진 도움",
+        "ja": "生存者の回想：車外での援助",
+        "zh": "幸存者回忆：车辆之外的援助",
+        "es": "Recuerdo de un superviviente · ayuda fuera de los vehículos"
+      },
+      "action": {
+        "en": "A ministry-published interview with a surviving auxiliary policeman recalls people being brought to safety from other vehicles. It offers a survivor’s perspective, distinct from an engineering account.",
+        "ko": "행정안전부가 공개한 생존 의경 인터뷰에는 다른 차량의 사람들을 구조해 오는 행동에 대한 회고가 남아 있습니다. 공학적 설명과 구분되는 생존자의 관점입니다.",
+        "ja": "行政安全部公開の生存した義務警察隊員のインタビューには、他車両の人々の救助の回想が残ります。工学的説明とは異なる生存者の視点です。",
+        "zh": "行政安全部发布的幸存义警访谈回忆了从其他车辆救人的行动。这是幸存者视角，有别于工程分析。",
+        "es": "Una entrevista del ministerio a un policía auxiliar superviviente recuerda el rescate de personas de otros vehículos. Es un testimonio distinto de un informe técnico."
+      },
+      "meaning": {
+        "en": "Preserve the survivor’s voice through a source link, without inventing dialogue or assigning every rescue to one individual.",
+        "ko": "출처 링크로 생존자의 목소리를 남기되 대사를 만들거나 모든 구조를 한 사람의 공로로 돌리지 않습니다.",
+        "ja": "出典へのリンクで生存者の声を残し、せりふや個人の功績を創作しません。",
+        "zh": "通过来源链接保留幸存者声音，不编造对话或把所有救援归于一人。",
+        "es": "Conservar la voz mediante su fuente, sin inventar diálogos ni atribuir todos los rescates a una persona."
+      },
+      "unknowns": {
+        "en": "The excerpt does not establish a complete rescuer list, exact rescue times or individual totals. Recollection is not an independently timed incident log.",
+        "ko": "발췌 내용만으로 모든 구조자, 정확한 구조 시각, 개인별 인원을 확정할 수 없습니다. 회고는 독립 실측 사고 로그가 아닙니다.",
+        "ja": "抜粋から全救助者、正確な時刻、個人別人数は確定できません。回想は独立した実測ログではありません。",
+        "zh": "摘录无法确定全部救援者、确切时刻或个人救援人数。回忆不是独立计时的事故日志。",
+        "es": "El fragmento no establece todos los rescatistas, horas exactas ni cifras individuales. El recuerdo no es un registro cronometrado independiente."
+      },
+      "time": {
+        "date": "1994-10-21",
+        "precision": "date"
+      },
+      "sceneAnchor": {
+        "eventId": "gap"
+      },
+      "sourceIds": [
+        "interview",
+        "span-archive"
+      ],
+      "facts": [
+        {
+          "id": "fallen-span",
+          "label": {
+            "en": "Fallen central section",
+            "ko": "붕괴한 중앙 구간",
+            "ja": "崩落した中央区間",
+            "zh": "坠落的中央区段",
+            "es": "Tramo central caído"
+          },
+          "value": 48,
+          "unit": "metres",
+          "scope": {
+            "en": "1994-10-21; central section within the120m span. Not the whole bridge length or the vehicle drop height.",
+            "ko": "1994-10-21 · 120m 경간 중 중앙 구간. 다리 전체 길이나 차량 낙하 높이가 아닙니다.",
+            "ja": "1994年10月21日・120m支間の中央区間。橋全長や車両の落下高ではありません。",
+            "zh": "1994年10月21日，120米桥跨的中央区段，并非全桥长度或车辆坠落高度。",
+            "es": "21-10-1994; sección central del vano de120m. No es la longitud total del puente ni la altura de caída."
+          },
+          "sourceIds": [
+            "span-archive"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maintenance",
+      "title": {
+        "en": "After the collapse · lasting maintenance responsibilities",
+        "ko": "붕괴 이후 · 계속되는 유지관리의 책임",
+        "ja": "崩壊後：継続する維持管理の責任",
+        "zh": "坍塌之后：持续维护的责任",
+        "es": "Después del derrumbe · responsabilidad de mantenimiento"
+      },
+      "action": {
+        "en": "Seoul’s account describes replacement and reinforcement work and stronger bridge-safety organization, equipment and monitoring after the disaster.",
+        "ko": "서울시 기록은 교량의 교체·보강과 사고 뒤 안전 조직·장비·계측의 보완을 설명합니다.",
+        "ja": "ソウル市の記録は橋の架け替え・補強と、その後の安全組織・設備・計測の改善を説明しています。",
+        "zh": "首尔市记录介绍了桥梁更换、加固及事故后安全组织、设备与监测的改善。",
+        "es": "El relato de Seúl describe sustitución y refuerzo del puente y mejoras de organización, equipos y vigilancia de seguridad."
+      },
+      "meaning": {
+        "en": "Reopening is a milestone; inspection and maintenance remain continuing responsibilities.",
+        "ko": "재개통은 이정표이며 점검과 유지관리는 계속되는 책임입니다.",
+        "ja": "再開通は節目であり、点検と維持管理は継続する責任です。",
+        "zh": "重新通车是节点，检查维护仍是持续责任。",
+        "es": "La reapertura es un hito; inspeccionar y mantener son responsabilidades continuas."
+      },
+      "unknowns": {
+        "en": "An institutional retrospective is not an independent audit of current safety or proof that all risks ended.",
+        "ko": "기관의 회고는 현재 안전에 대한 독립 감사나 모든 위험이 끝났다는 증거가 아닙니다.",
+        "ja": "機関の回顧は現在の安全の独立監査や全リスク解消の証明ではありません。",
+        "zh": "机构回顾并非当前安全的独立审计，也不证明所有风险已消失。",
+        "es": "Una retrospectiva institucional no es una auditoría independiente de seguridad actual ni prueba de riesgo nulo."
+      },
+      "time": {
+        "date": "1994-10-21",
+        "precision": "date",
+        "note": {
+          "en": "Incident reference date; subsequent improvements are not all dated to this day.",
+          "ko": "사건의 기준 날짜이며 이후의 개선이 모두 이날 이루어졌다는 뜻은 아닙니다.",
+          "ja": "事件の基準日であり、その後の改善がすべて同日に行われたという意味ではありません。",
+          "zh": "这是事件参考日期，并非表示后续改善均发生在当天。",
+          "es": "Fecha de referencia del suceso; las mejoras posteriores no se fechan todas ese día."
+        }
+      },
+      "sceneAnchor": {
+        "eventId": "replace"
+      },
+      "sourceIds": [
+        "learning"
+      ],
+      "facts": []
+    }
+  ]
+}

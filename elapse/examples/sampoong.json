@@ -192,7 +192,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "sampoong"
-      ]
+      ],
+      "timePrecision": "approximate"
     },
     {
       "id": "collapse",
@@ -216,7 +217,8 @@
       "sourceIds": [
         "sampoong",
         "seoulS"
-      ]
+      ],
+      "timePrecision": "approximate"
     },
     {
       "id": "aftermath",
@@ -262,7 +264,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "rescue"
-      ]
+      ],
+      "timePrecision": "date"
     },
     {
       "id": "policy",
@@ -285,7 +288,8 @@
       "confidence": "sourced",
       "sourceIds": [
         "policy"
-      ]
+      ],
+      "timePrecision": "date"
     }
   ],
   "pieces": [
@@ -698,6 +702,160 @@
         "ja": "代表シーンと同じ独立した詳細モデルです。公開写真で外観を参照し、実際の柱配置・竣工図は復元していません。最初の上部接合部損傷位置は不確実です。自動断面は説明用で実際の開放外壁ではありません。",
         "zh": "采用与代表场景相同的独立细节模型。外观参考公开照片，并未恢复真实柱网或竣工图。初始上部连接损伤位置存在不确定性。自动剖视为说明用途，并非实际敞开的外墙。",
         "es": "Usa el mismo modelo detallado original del estudio. Las imágenes públicas orientan la apariencia; no se recuperaron planos ni la retícula real. El inicio en la unión superior es incierto. El corte automático es explicativo, no una fachada realmente abierta."
+      }
+    ]
+  },
+  "remembrance": {
+    "version": 1,
+    "sources": [
+      {
+        "id": "rescue",
+        "title": "National Institute of Korean History · Historical Chronology of Korea",
+        "url": "https://db.history.go.kr/id/tcct_1995_07_15_0030",
+        "type": "chronology",
+        "locator": "1995-07-15; HOI tcct_1995_07_15_0030; headline",
+        "checkedAt": "2026-11-03"
+      },
+      {
+        "id": "warning",
+        "title": "National Archives of Korea · Sampoong collapse",
+        "url": "https://www.archives.go.kr/next/newsearch/listSubjectDescription.do?id=001042&sitePage=",
+        "type": "archive",
+        "locator": "Authored subject essay; 사고전개; 김보환; revised 2014; not an institutional position",
+        "checkedAt": "2026-11-03"
+      }
+    ],
+    "records": [
+      {
+        "id": "park",
+        "title": {
+          "en": "Park Seung-hyeon · a rescue recorded",
+          "ko": "박승현 · 구조를 남긴 기록",
+          "ja": "パク・スンヒョン：救出の記録",
+          "zh": "朴胜贤：救援记录",
+          "es": "Park Seung-hyeon · un rescate documentado"
+        },
+        "action": {
+          "en": "The national historical chronology records Park Seung-hyeon’s rescue on July 15, reporting 377 hours of entrapment. This entry preserves a survivor’s name and a rescue milestone.",
+          "ko": "대한민국사연표는 7월 15일 박승현 구조와 매몰 377시간을 기록합니다. 생존자의 이름과 구조의 이정표를 함께 남깁니다.",
+          "ja": "韓国の歴史年表は7月15日のパク・スンヒョン救出と埋没377時間を記しています。生存者の名前と救出の節目を残します。",
+          "zh": "韩国历史年表记录了7月15日朴胜贤获救及被困377小时。记录保留幸存者姓名和救援节点。",
+          "es": "La cronología nacional registra el rescate de Park Seung-hyeon el 15 de julio y 377 horas de sepultamiento. Se conserva su nombre y un hito del rescate."
+        },
+        "meaning": {
+          "en": "Leave room for survival, rescue work and care after the collapse.",
+          "ko": "붕괴 뒤에도 이어진 생존, 구조 작업, 돌봄을 기억할 자리를 둡니다.",
+          "ja": "崩壊後も続く生存、救助、ケアの記憶を残します。",
+          "zh": "为坍塌后的生存、救援和照护留下记忆空间。",
+          "es": "Dejar espacio para la supervivencia, el rescate y los cuidados posteriores."
+        },
+        "unknowns": {
+          "en": "This chronology entry does not establish the exact rescue clock time, all rescuers or every step of the operation.",
+          "ko": "이 연표 항목만으로 정확한 구조 시각, 모든 구조자의 이름과 작업 과정을 확정할 수 없습니다.",
+          "ja": "この年表だけでは正確な救出時刻、全救助者、作業の全過程は確定できません。",
+          "zh": "仅凭此年表无法确定确切获救时刻、全部救援者及每个步骤。",
+          "es": "La entrada no establece la hora exacta, todos los rescatistas ni cada paso de la operación."
+        },
+        "time": {
+          "date": "1995-07-15",
+          "precision": "date"
+        },
+        "sceneAnchor": {
+          "eventId": "last-rescue"
+        },
+        "sourceIds": [
+          "rescue"
+        ],
+        "facts": [
+          {
+            "id": "hours",
+            "label": {
+              "en": "Entrapment duration",
+              "ko": "매몰 시간",
+              "ja": "埋没時間",
+              "zh": "被困时长",
+              "es": "Tiempo sepultada"
+            },
+            "value": 377,
+            "unit": "hours",
+            "scope": {
+              "en": "Duration reported in the chronology headline, not a new measurement",
+              "ko": "연표 제목의 서술이며 새로 실측한 값이 아님",
+              "ja": "年表見出しの記述であり新たな実測ではありません",
+              "zh": "年表标题所载时长，并非新测量",
+              "es": "Duración del titular, no una medición nueva"
+            },
+            "sourceIds": [
+              "rescue"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "warning-care",
+        "title": {
+          "en": "Warnings, evacuation decisions and civic help",
+          "ko": "사전 징후·대피 판단·시민의 도움",
+          "ja": "兆候、避難判断、市民の援助",
+          "zh": "预警、疏散决策与市民援助",
+          "es": "Señales, decisiones de evacuación y ayuda ciudadana"
+        },
+        "action": {
+          "en": "The National Archives subject essay describes a fifth-floor crack around 08:05 and the absence of customer evacuation. It also describes volunteers coming to help after the collapse.",
+          "ko": "국가기록원 주제해설은 08:05경 5층 균열과 고객 대피 조치의 부재를 설명합니다. 붕괴 뒤 도움을 주러 온 자원봉사자들도 기록합니다.",
+          "ja": "国家記録院の主題解説は08:05頃の5階の亀裂と顧客避難措置の不在、崩壊後のボランティアの援助を記しています。",
+          "zh": "国家档案院专题文章记述约08:05五层出现裂缝、未疏散顾客，以及坍塌后志愿者前来援助。",
+          "es": "El ensayo del Archivo Nacional describe grietas en la quinta planta hacia las 08:05, la falta de evacuación de clientes y la llegada de voluntarios tras el derrumbe."
+        },
+        "meaning": {
+          "en": "Remember both the responsibility to act on warnings and the people who offered help.",
+          "ko": "징후를 보고 행동해야 할 책임과 도움을 건넨 사람들을 함께 기억합니다.",
+          "ja": "兆候に対応する責任と援助した人々をともに記憶します。",
+          "zh": "同时记住对预警采取行动的责任和伸出援手的人们。",
+          "es": "Recordar la responsabilidad de actuar y a quienes ofrecieron ayuda."
+        },
+        "unknowns": {
+          "en": "This is an authored archival essay, not a raw forensic log. 08:05 is approximate; it is not the time of the later volunteer response. Sources differ on the collapse minute.",
+          "ko": "집필된 기록 해설이며 현장 실측 로그가 아닙니다. 08:05는 약시각으로 이후 자원봉사 활동 시각이 아닙니다. 붕괴 분 단위 시각에는 자료 차이가 있습니다.",
+          "ja": "執筆された史料解説であり現場の実測ログではありません。08:05は概時で、後の援助時刻ではありません。崩壊時刻は資料差があります。",
+          "zh": "这是署名档案解说，并非现场测量日志。08:05为约时，不是后来志愿行动的时刻。各来源对坍塌分钟有差异。",
+          "es": "Es un ensayo firmado, no un registro forense. Las 08:05 son aproximadas y no fechan el voluntariado posterior. Las fuentes difieren sobre el minuto del derrumbe."
+        },
+        "time": {
+          "date": "1995-06-29T08:05",
+          "precision": "approximate",
+          "zone": "Asia/Seoul"
+        },
+        "sceneAnchor": {
+          "eventId": "warning"
+        },
+        "sourceIds": [
+          "warning"
+        ],
+        "facts": [
+          {
+            "id": "crack-time",
+            "label": {
+              "en": "Crack observation",
+              "ko": "균열 관찰",
+              "ja": "亀裂の観察",
+              "zh": "裂缝观察",
+              "es": "Observación de grietas"
+            },
+            "value": "08:05",
+            "unit": "localTime",
+            "scope": {
+              "en": "Approximately; Seoul; warning observation only",
+              "ko": "약시각 · 서울 · 징후 관찰만 해당",
+              "ja": "概時・ソウル・兆候の観察のみ",
+              "zh": "约时，首尔，仅指预警观察",
+              "es": "Aproximada; Seúl; solo la observación"
+            },
+            "sourceIds": [
+              "warning"
+            ]
+          }
+        ]
       }
     ]
   }
