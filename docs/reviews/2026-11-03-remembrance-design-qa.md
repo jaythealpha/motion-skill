@@ -15,7 +15,7 @@ Source review: museum accounts and collection records, Commission§9.4, Korean h
 | Reader browser checks | 200/200 passed | `trials/remembrance-2026-11-03/reader-qa-final-links/results.json`; all12 records ×5 languages ×375/768/1440 =180 cases, plus20 navigation/fallback/motion cases |
 | Existing demos | 225/225 passed | `trials/remembrance-2026-11-03/scene-qa/results.json`;15 full/study demos ×5 languages ×3 widths, canvas framing, localization, progress and page errors |
 | Gate1 | 7/7 passed | All final Elapse models; bridge/building branches include the record contract |
-| Elapse unit tests | 139/139 in each zone | `npm test --prefix elapse`, UTC and Asia/Seoul |
+| Elapse unit tests | 140/140 in each zone | `npm test --prefix elapse`, UTC and Asia/Seoul |
 | Unfold regression tests | 43/43 passed | `npm test --prefix unfold`; its source/geometry untouched |
 | Shared/locales | 11/11 passed | `node --test shared/tests/*.test.mjs scripts/test-locales.mjs` |
 | Folder install/rebuild | 11/11 byte-identical | `scripts/check-installed-remembrance.mjs`: seven Elapse timelines, three studies, one Unfold example from unique temporary folder copies; all seven Elapse Gate1 runs pass |
@@ -31,7 +31,7 @@ Existing Elapse white/gray cards, typography and blue accents were retained. Vie
 - Fixed list numbers shrinking into two lines; fixed-width number columns preserve01–04.
 - Put concrete actions before numeric fact rows so people are not introduced as scores.
 - Kept record selection stable while history changes. Scene links occupy a separate fixed-role navigation area; no automatic record replacement.
-- Corrected observation-boundary/date-only/approximate scene-card labels without moving historical events. Original time-zone-neutral scene evaluation stays unchanged.
+- Corrected observation-boundary/date-only/approximate scene-card labels without moving historical events. Restricted date-only placeholder handling to identified cases rather than inferring it from every midnight; monthly Eiffel milestones retain month precision, and its opening, Notre-Dame’s summer restoration boundary and Titanic’s compartment-summary boundary are explicitly observational. Original time-zone-neutral scene evaluation stays unchanged.
 - Removed the prominent model-share percentage from record-enabled scene headers. The source panel explains it is item composition, not historical accuracy.
 - Native public-browser review also found toolbar URLs retaining English after localization. Corrected native/new-tab links to preserve language, record, revision and available historical context; added this assertion to every reader case.
 - Real anchor links, labelled native select, visible focus outlines,44px targets, source links and semantic headings. Browser Tab/focus behavior checked. No color-only state, newly added autoplay, or reader animation.

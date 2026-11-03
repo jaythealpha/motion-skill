@@ -310,8 +310,7 @@
       "confidence": "sourced",
       "sourceIds": [
         "damage"
-      ],
-      "timePrecision": "date"
+      ]
     },
     {
       "id": "scaffold",
@@ -334,8 +333,7 @@
       "confidence": "sourced",
       "sourceIds": [
         "secure"
-      ],
-      "timePrecision": "date"
+      ]
     },
     {
       "id": "restoration",
@@ -359,7 +357,7 @@
       "sourceIds": [
         "rebirth"
       ],
-      "timePrecision": "date"
+      "presentationAnchor": true
     },
     {
       "id": "spire",
@@ -382,8 +380,7 @@
       "confidence": "sourced",
       "sourceIds": [
         "rebirth"
-      ],
-      "timePrecision": "date"
+      ]
     },
     {
       "id": "reopen",
@@ -406,8 +403,7 @@
       "confidence": "sourced",
       "sourceIds": [
         "reopen"
-      ],
-      "timePrecision": "date"
+      ]
     }
   ],
   "pieces": [

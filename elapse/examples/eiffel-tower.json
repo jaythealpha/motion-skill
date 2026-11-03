@@ -331,7 +331,8 @@
       "sourceIds": [
         "history"
       ],
-      "timePrecision": "date"
+      "timePrecision": "month",
+      "presentationAnchor": true
     },
     {
       "id": "legs",
@@ -355,7 +356,7 @@
       "sourceIds": [
         "history"
       ],
-      "timePrecision": "date"
+      "timePrecision": "month"
     },
     {
       "id": "joining",
@@ -379,7 +380,7 @@
       "sourceIds": [
         "history"
       ],
-      "timePrecision": "date"
+      "timePrecision": "month"
     },
     {
       "id": "first",
@@ -403,7 +404,7 @@
       "sourceIds": [
         "history"
       ],
-      "timePrecision": "date"
+      "timePrecision": "month"
     },
     {
       "id": "second",
@@ -427,7 +428,7 @@
       "sourceIds": [
         "history"
       ],
-      "timePrecision": "date"
+      "timePrecision": "month"
     },
     {
       "id": "complete",
@@ -451,7 +452,7 @@
       "sourceIds": [
         "history"
       ],
-      "timePrecision": "date"
+      "timePrecision": "month"
     }
   ],
   "construction": {

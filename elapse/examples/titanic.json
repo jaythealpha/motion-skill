@@ -5245,7 +5245,7 @@
     "s12",
     "s22"
    ],
-   "timePrecision": "date"
+   "presentationAnchor": true
   },
   {
    "id": "spill-hold3",
