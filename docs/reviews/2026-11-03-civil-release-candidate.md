@@ -21,6 +21,8 @@ This is the pre-publication QA snapshot. Public Pages delivery is verified after
 - Gallery:15 language/viewport cases plus keyboard focus, saved language, explicit URL precedence, ch/zh-CN aliases, blocked storage and no-JavaScript English fallback pass. The fallback assertion was updated for the intentionally added fifteenth card.
 - Shared copies and `git diff --check` pass. No npm dependency was added. New detailed modules are included in the self-contained HTML import maps and skill folders; original photos/scans/third-party meshes are not bundled.
 
+Fresh committed-archive build: Sampoong, Seongsu and GalaxyS24 build without npm dependencies and match the corresponding release HTML byte-for-byte. The first archive comparison exposed one stale, unused scene-study module embedded in other Elapse pages; all affected HTML import maps were rebuilt from the same source revision.
+
 ## Performance evidence and limits
 
 Native headless Chrome / ANGLE Metal / Radeon Pro5300, rendererDPR2. The civil timing samples at375/768/1440 functional coverage are separate from performance evidence. Warm1440px civil samples:p50≈16.7ms,p95≈17.3–17.5ms;Sampoong's failure sample had1/100 intervals>50ms, other three samples0/100. Normal traffic:p95≈17.3ms,0/180 intervals>50ms,57 draws. No other headless job/unit suite overlapped those timing runs. This does not establish sustained60fps, real-phone performance or a performance result for all other subjects.
