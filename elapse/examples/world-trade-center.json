@@ -4,7 +4,10 @@
     "id": "world-trade-center",
     "name": {
       "ko": "세계무역센터 · 9·11과 재건",
-      "en": "World Trade Center · 9/11 and rebuilding"
+      "en": "World Trade Center · 9/11 and rebuilding",
+      "ja": "世界貿易センター · 9/11 と再建",
+      "zh": "世贸中心 · 9/11 和重建",
+      "es": "World Trade Center · 11 de septiembre y reconstrucción"
     },
     "dims": {
       "width": 360,
@@ -70,7 +73,10 @@
       "id": "before",
       "name": {
         "ko": "테러 전",
-        "en": "Before attacks"
+        "en": "Before attacks",
+        "ja": "攻撃前",
+        "zh": "攻击前",
+        "es": "Antes de los ataques"
       },
       "start": "2001-09-11T08:30",
       "end": "2001-09-11T08:46",
@@ -84,7 +90,10 @@
       "id": "attacks",
       "name": {
         "ko": "항공기 충돌",
-        "en": "Aircraft impacts"
+        "en": "Aircraft impacts",
+        "ja": "航空機の衝突",
+        "zh": "飞机撞击",
+        "es": "Impactos de aeronaves"
       },
       "start": "2001-09-11T08:46",
       "end": "2001-09-11T09:59",
@@ -98,7 +107,10 @@
       "id": "collapse",
       "name": {
         "ko": "쌍둥이 타워",
-        "en": "Twin towers"
+        "en": "Twin towers",
+        "ja": "ツインタワー",
+        "zh": "双塔",
+        "es": "Torres gemelas"
       },
       "start": "2001-09-11T09:59",
       "end": "2001-09-11T10:30",
@@ -112,7 +124,10 @@
       "id": "aftermath",
       "name": {
         "ko": "당일 오후",
-        "en": "Later that day"
+        "en": "Later that day",
+        "ja": "その日の後半",
+        "zh": "那天晚些时候",
+        "es": "Más tarde ese día"
       },
       "start": "2001-09-11T10:30",
       "end": "2001-09-12",
@@ -126,7 +141,10 @@
       "id": "recovery",
       "name": {
         "ko": "수습 현장",
-        "en": "Recovery"
+        "en": "Recovery",
+        "ja": "捜索・復旧",
+        "zh": "搜救与清理",
+        "es": "Recuperación"
       },
       "start": "2001-09-12",
       "end": "2002-05-30",
@@ -140,7 +158,10 @@
       "id": "rebuild",
       "name": {
         "ko": "추모·재건",
-        "en": "Memorial / rebuilding"
+        "en": "Memorial / rebuilding",
+        "ja": "追悼・再建",
+        "zh": "纪念与重建",
+        "es": "Memoria y reconstrucción"
       },
       "start": "2002-05-30",
       "end": "2018-06-11T23:59",
@@ -158,11 +179,17 @@
       "kind": "note",
       "title": {
         "ko": "테러 이전의 단지",
-        "en": "Before the attacks"
+        "en": "Before the attacks",
+        "ja": "攻撃前",
+        "zh": "袭击发生前",
+        "es": "Antes de los ataques"
       },
       "text": {
         "ko": "북·남타워와 주변 저층 건물이 있던 단지입니다. 관찰 시작 시각과 세부 배치는 도해를 위한 추정입니다.",
-        "en": "The twin towers and surrounding low-rise buildings form the earlier site. The opening viewing boundary and detailed layout are illustrative."
+        "en": "The twin towers and surrounding low-rise buildings form the earlier site. The opening viewing boundary and detailed layout are illustrative.",
+        "ja": "かつての敷地を構成するツインタワーと周囲の低層建物です。冒頭の表示範囲と詳細な配置は説明用の推定です。",
+        "zh": "双塔及周边低层建筑构成早期场地。开场视野范围和具体布局为示意。",
+        "es": "Las Torres Gemelas y los edificios bajos del entorno forman el antiguo recinto. El encuadre inicial y la distribución detallada son ilustrativos."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -175,11 +202,17 @@
       "kind": "note",
       "title": {
         "ko": "08:46 · 북타워 충돌",
-        "en": "08:46 · North Tower impact"
+        "en": "08:46 · North Tower impact",
+        "ja": "08:46 · 北棟に航空機が衝突",
+        "zh": "08:46 · 飞机撞击北塔",
+        "es": "08:46 · Impacto en la Torre Norte"
       },
       "text": {
         "ko": "납치된 아메리칸 항공 11편이 북타워에 충돌합니다. 항공기 실루엣·짧은 이동과 충돌 효과는 추정 표현입니다.",
-        "en": "Hijacked American Airlines Flight 11 strikes the North Tower. The generic aircraft silhouette, short motion and impact effect are illustrative."
+        "en": "Hijacked American Airlines Flight 11 strikes the North Tower. The generic aircraft silhouette, short motion and impact effect are illustrative.",
+        "ja": "ハイジャックされたアメリカン航空 11 便がノースタワーに衝突。一般的な航空機のシルエット、短い動き、衝撃効果は例示的なものです。",
+        "zh": "被劫持的美国航空 11 号航班撞向北塔。通用飞机轮廓、短距离运动和撞击效果很能说明问题。",
+        "es": "El vuelo 11 secuestrado de American Airlines golpea la Torre Norte. La silueta genérica del avión, el movimiento corto y el efecto de impacto son ilustrativos."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -192,11 +225,17 @@
       "kind": "note",
       "title": {
         "ko": "09:03 · 남타워 충돌",
-        "en": "09:03 · South Tower impact"
+        "en": "09:03 · South Tower impact",
+        "ja": "09:03 · 南棟に航空機が衝突",
+        "zh": "09:03 · 飞机撞击南塔",
+        "es": "09:03 · Impacto en la Torre Sur"
       },
       "text": {
         "ko": "납치된 유나이티드 항공 175편이 남타워에 충돌합니다. 실제 항로·속도·충돌 역학을 재현한 장면은 아닙니다.",
-        "en": "Hijacked United Airlines Flight 175 strikes the South Tower. This does not reconstruct flight paths, speeds or impact mechanics."
+        "en": "Hijacked United Airlines Flight 175 strikes the South Tower. This does not reconstruct flight paths, speeds or impact mechanics.",
+        "ja": "ハイジャックされたユナイテッド航空 175 便がサウスタワーに衝突。これは飛行経路、速度、衝撃力学を再構築するものではありません。",
+        "zh": "被劫持的联合航空 175 航班撞向南塔。这不会重建飞行路径、速度或冲击力学。",
+        "es": "El vuelo 175 secuestrado de United Airlines golpea la Torre Sur. Esto no reconstruye trayectorias de vuelo, velocidades o mecánica de impacto."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -209,11 +248,17 @@
       "kind": "note",
       "title": {
         "ko": "09:59 · 남타워 붕괴",
-        "en": "09:59 · South Tower collapse"
+        "en": "09:59 · South Tower collapse",
+        "ja": "09:59 · 南棟が崩壊",
+        "zh": "09:59 · 南塔倒塌",
+        "es": "09:59 · Derrumbe de la Torre Sur"
       },
       "text": {
         "ko": "남타워가 먼저 붕괴합니다. 부재·분진·낙하 경로와 재생 길이는 설명용 추정이며 검증된 구조 해석이 아닙니다.",
-        "en": "The South Tower collapses first. Members, dust, motion and playback duration are estimates, not validated structural analysis."
+        "en": "The South Tower collapses first. Members, dust, motion and playback duration are estimates, not validated structural analysis.",
+        "ja": "サウスタワーが最初に崩壊する。メンバー、ダスト、モーション、再生時間は推定値であり、検証された構造解析ではありません。",
+        "zh": "南塔首先倒塌。成员、灰尘、运动和播放持续时间均为估计值，未经验证的结构分析。",
+        "es": "La Torre Sur se derrumba primero. Los miembros, el polvo, el movimiento y la duración de la reproducción son estimaciones, no análisis estructurales validados."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -226,11 +271,17 @@
       "kind": "note",
       "title": {
         "ko": "10:28 · 북타워 붕괴",
-        "en": "10:28 · North Tower collapse"
+        "en": "10:28 · North Tower collapse",
+        "ja": "10:28 · 北棟が崩壊",
+        "zh": "10:28 · 北塔倒塌",
+        "es": "10:28 · Derrumbe de la Torre Norte"
       },
       "text": {
         "ko": "북타워도 붕괴합니다. NIST 조사 결과와 이 도해의 전체 붕괴 모션을 동일한 것으로 보아서는 안 됩니다.",
-        "en": "The North Tower collapses. This illustrative full-collapse motion is not the NIST investigation or its model."
+        "en": "The North Tower collapses. This illustrative full-collapse motion is not the NIST investigation or its model.",
+        "ja": "ノースタワーが崩壊する。この完全崩壊の動きの実例は、NIST の調査やそのモデルではありません。",
+        "zh": "北塔倒塌。这个说明性的完全塌陷运动不是 NIST 的调查或其模型。",
+        "es": "La Torre Norte se derrumba. Este movimiento ilustrativo de colapso total no es la investigación del NIST ni su modelo."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -243,11 +294,17 @@
       "kind": "note",
       "title": {
         "ko": "17:20:52 · 7 WTC 붕괴",
-        "en": "17:20:52 · WTC 7 collapse"
+        "en": "17:20:52 · WTC 7 collapse",
+        "ja": "17:20:52 · 7 WTCが崩壊",
+        "zh": "17:20:52 · 世贸7号楼倒塌",
+        "es": "17:20:52 · Derrumbe del 7 WTC"
       },
       "text": {
         "ko": "항공기가 직접 충돌하지 않은 7 WTC도 화재 이후 붕괴합니다. 별도의 NIST 조사 대상입니다.",
-        "en": "WTC 7, which was not struck by an aircraft, collapses after fires. It was the subject of a separate NIST investigation."
+        "en": "WTC 7, which was not struck by an aircraft, collapses after fires. It was the subject of a separate NIST investigation.",
+        "ja": "WTC 7 は航空機の衝突を受けなかったが、火災後に倒壊した。これは NIST による別の調査の対象となった。",
+        "zh": "WTC 7 号大楼并未被飞机击中，但在火灾后倒塌。这是 NIST 单独调查的主题。",
+        "es": "El WTC 7, que no fue alcanzado por un avión, se derrumba después de los incendios. Fue objeto de una investigación separada del NIST."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -260,11 +317,17 @@
       "kind": "note",
       "title": {
         "ko": "공식 수습 기간의 종료",
-        "en": "Formal recovery period ends"
+        "en": "Formal recovery period ends",
+        "ja": "正式な捜索・復旧期間の終了",
+        "zh": "正式搜救清理阶段结束",
+        "es": "Fin del período formal de recuperación"
       },
       "text": {
         "ko": "9개월에 걸친 현장 수습의 공식 종료를 기념합니다. 현장 변화는 도식화했으며 사람과 유해는 표현하지 않습니다.",
-        "en": "The formal recovery period ends after nearly nine months. Site change is schematic; no people or human remains are depicted."
+        "en": "The formal recovery period ends after nearly nine months. Site change is schematic; no people or human remains are depicted.",
+        "ja": "正式な回復期間はほぼ 9 か月後に終了します。サイトの変更は概略的なものです。人物や遺体は描かれていません。",
+        "zh": "正式恢复期在近九个月后结束。站点变更是示意性的；没有描绘任何人或人类遗骸。",
+        "es": "El período de recuperación formal finaliza después de casi nueve meses. El cambio de sitio es esquemático; No se representan personas ni restos humanos."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -277,11 +340,17 @@
       "kind": "note",
       "title": {
         "ko": "새 7 WTC",
-        "en": "Rebuilt 7 WTC"
+        "en": "Rebuilt 7 WTC",
+        "ja": "再建された 7 WTC",
+        "zh": "重建 7 世贸中心",
+        "es": "Reconstruido 7 WTC"
       },
       "text": {
         "ko": "2006년 새 7 WTC가 들어섭니다. 원래 건물과 재건 건물은 별개의 형상으로 표시합니다.",
-        "en": "A new 7 WTC opens in 2006. The old and rebuilt buildings are represented separately."
+        "en": "A new 7 WTC opens in 2006. The old and rebuilt buildings are represented separately.",
+        "ja": "新しい 7 WTC が 2006 年にオープンします。古い建物と再建された建物は別々に表示されています。",
+        "zh": "新的 7 WTC 于 2006 年开业。旧建筑和重建建筑分别展示。",
+        "es": "En 2006 se inaugura un nuevo 7 WTC. Los edificios antiguos y reconstruidos se representan por separado."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -294,11 +363,17 @@
       "kind": "note",
       "title": {
         "ko": "추모공원 개관",
-        "en": "Memorial opens"
+        "en": "Memorial opens",
+        "ja": "記念碑がオープン",
+        "zh": "纪念馆开放",
+        "es": "Se abre el Memorial"
       },
       "text": {
         "ko": "원래 두 타워의 자리에 놓인 반사 풀을 중심으로 추모공원이 개관합니다. 개별 이름은 임의로 생성하지 않습니다.",
-        "en": "The Memorial opens with reflecting pools at the former tower footprints. No victims’ names are invented."
+        "en": "The Memorial opens with reflecting pools at the former tower footprints. No victims’ names are invented.",
+        "ja": "記念碑は、かつての塔の足跡にある反射池で始まります。被害者の名前はでっち上げられていません。",
+        "zh": "纪念馆在前塔脚印处设有倒影池。没有捏造受害者的名字。",
+        "es": "El Memorial se abre con piscinas reflectantes en las huellas de la antigua torre. No se inventan nombres de víctimas."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -311,11 +386,17 @@
       "kind": "note",
       "title": {
         "ko": "4 WTC 개관",
-        "en": "4 WTC opens"
+        "en": "4 WTC opens",
+        "ja": "4 WTC がオープン",
+        "zh": "4 世贸中心开幕",
+        "es": "4 aperturas del WTC"
       },
       "text": {
         "ko": "새 단지의 4 WTC가 2013년에 문을 엽니다. 외관·유리 격자와 중간 공정은 추정 도해입니다.",
-        "en": "4 WTC opens in 2013. Facade grids and intermediate construction are illustrative."
+        "en": "4 WTC opens in 2013. Facade grids and intermediate construction are illustrative.",
+        "ja": "4 WTC は 2013 年にオープンします。ファサードのグリッドと中間構造は例示的です。",
+        "zh": "4 WTC 于 2013 年开放。立面网格和中间结构很说明问题。",
+        "es": "4 WTC abre sus puertas en 2013. Las retículas de fachada y la construcción intermedia son ilustrativas."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -328,11 +409,17 @@
       "kind": "note",
       "title": {
         "ko": "원 월드 트레이드 센터",
-        "en": "One WTC opens"
+        "en": "One WTC opens",
+        "ja": "ワン・ワールド・トレード・センター開業",
+        "zh": "世贸一号楼启用",
+        "es": "Inauguración de One WTC"
       },
       "text": {
         "ko": "원 월드 트레이드 센터가 문을 엽니다. 쌍둥이 타워를 같은 자리에 다시 세운 모습이 아닙니다.",
-        "en": "One World Trade Center opens. The rebuilt site does not simply replace the twin towers in their original footprints."
+        "en": "One World Trade Center opens. The rebuilt site does not simply replace the twin towers in their original footprints.",
+        "ja": "ワンワールドトレードセンターがオープン。再建された場所は、単に元の敷地内のツインタワーを置き換えるだけではありません。",
+        "zh": "世贸中心一号大楼开业。重建场地并不是简单地取代双塔原有的足迹。",
+        "es": "Se abre el One World Trade Center. El sitio reconstruido no reemplaza simplemente las torres gemelas en su forma original."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -345,11 +432,17 @@
       "kind": "note",
       "title": {
         "ko": "오큘러스의 개방",
-        "en": "Oculus opening milestone"
+        "en": "Oculus opening milestone",
+        "ja": "Oculus オープンのマイルストーン",
+        "zh": "Oculus 开业里程碑",
+        "es": "Hito de apertura de Oculus"
       },
       "text": {
         "ko": "교통 허브의 오큘러스가 단계적으로 개방됩니다. 모델은 날개 모양 리브를 단순화한 추정 형상입니다.",
-        "en": "The Oculus opens in stages. This model simplifies its wing-like ribs."
+        "en": "The Oculus opens in stages. This model simplifies its wing-like ribs.",
+        "ja": "Oculus は段階的に開きます。翼状のリブを簡素化したモデルです。",
+        "zh": "Oculus 分阶段开放。该模型简化了其翼状肋骨。",
+        "es": "Oculus se abre por etapas. Este modelo simplifica sus nervaduras en forma de alas."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -362,11 +455,17 @@
       "kind": "note",
       "title": {
         "ko": "3 WTC 개관 · 재건의 이정표",
-        "en": "3 WTC opens · rebuilding milestone"
+        "en": "3 WTC opens · rebuilding milestone",
+        "ja": "3 WTC オープン · 再建のマイルストーン",
+        "zh": "3 世贸中心开业·重建里程碑",
+        "es": "3 WTC abre · hito de reconstrucción"
       },
       "text": {
         "ko": "3 WTC 개관 시점에서 도해를 마칩니다. 2018년의 주요 구조만 다루며 현재 단지 전체나 재건 종료를 뜻하지 않습니다.",
-        "en": "The study ends with the opening of 3 WTC. It depicts selected structures in 2018, not the present site or an end to redevelopment."
+        "en": "The study ends with the opening of 3 WTC. It depicts selected structures in 2018, not the present site or an end to redevelopment.",
+        "ja": "研究は 3 WTC の開設をもって終了する。描かれているのは、現在の場所や再開発の終焉ではなく、2018 年に選ばれた建造物です。",
+        "zh": "该研究随着第三世贸中心的开放而结束。它描绘的是 2018 年选定的建筑，而不是现在的场地或重建的结束。",
+        "es": "El estudio finaliza con la inauguración de 3 WTC. Representa estructuras seleccionadas en 2018, no el sitio actual ni el final de la remodelación."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -379,7 +478,10 @@
       "id": "overview",
       "name": {
         "ko": "단지 전체",
-        "en": "Site overview"
+        "en": "Site overview",
+        "ja": "サイト概要",
+        "zh": "站点概览",
+        "es": "Descripción general del sitio"
       },
       "confidence": "estimated",
       "sourceIds": [
@@ -390,7 +492,10 @@
       "id": "north",
       "name": {
         "ko": "북타워·북쪽 풀 자리",
-        "en": "North Tower / pool site"
+        "en": "North Tower / pool site",
+        "ja": "ノースタワー・プールサイト",
+        "zh": "北塔/泳池场地",
+        "es": "Torre Norte / sitio de la piscina"
       },
       "confidence": "estimated",
       "sourceIds": [
@@ -401,7 +506,10 @@
       "id": "south",
       "name": {
         "ko": "남타워·남쪽 풀 자리",
-        "en": "South Tower / pool site"
+        "en": "South Tower / pool site",
+        "ja": "サウスタワー・プールサイト",
+        "zh": "南塔/泳池场地",
+        "es": "Torre Sur / sitio de piscina"
       },
       "confidence": "estimated",
       "sourceIds": [
@@ -412,7 +520,10 @@
       "id": "seven",
       "name": {
         "ko": "7 WTC 자리",
-        "en": "7 WTC site"
+        "en": "7 WTC site",
+        "ja": "7 WTCサイト",
+        "zh": "7 世贸中心站点",
+        "es": "7 sitio del WTC"
       },
       "confidence": "estimated",
       "sourceIds": [
@@ -423,7 +534,10 @@
       "id": "memorial",
       "name": {
         "ko": "추모공원·반사 풀",
-        "en": "Memorial / reflecting pools"
+        "en": "Memorial / reflecting pools",
+        "ja": "記念碑 / 反射プール",
+        "zh": "纪念馆/倒影池",
+        "es": "Memorial/piscinas reflectantes"
       },
       "confidence": "estimated",
       "sourceIds": [
@@ -434,7 +548,10 @@
       "id": "one",
       "name": {
         "ko": "원 월드 트레이드 센터",
-        "en": "One World Trade Center"
+        "en": "One World Trade Center",
+        "ja": "ワン ワールド トレード センター",
+        "zh": "世贸中心一号大楼",
+        "es": "Un World Trade Center"
       },
       "confidence": "estimated",
       "sourceIds": [
@@ -445,7 +562,10 @@
       "id": "oculus",
       "name": {
         "ko": "오큘러스·교통 허브",
-        "en": "Oculus / transit hub"
+        "en": "Oculus / transit hub",
+        "ja": "Oculus/トランジットハブ",
+        "zh": "Oculus / 交通枢纽",
+        "es": "Oculus / centro de tránsito"
       },
       "confidence": "estimated",
       "sourceIds": [
@@ -458,7 +578,10 @@
       "id": "overview",
       "name": {
         "ko": "단지 전체",
-        "en": "Site overview"
+        "en": "Site overview",
+        "ja": "サイト概要",
+        "zh": "站点概览",
+        "es": "Descripción general del sitio"
       },
       "parts": [
         "overview"
@@ -483,7 +606,10 @@
       "id": "north",
       "name": {
         "ko": "북타워·북쪽 풀 자리",
-        "en": "North Tower / pool site"
+        "en": "North Tower / pool site",
+        "ja": "ノースタワー・プールサイト",
+        "zh": "北塔/泳池场地",
+        "es": "Torre Norte / sitio de la piscina"
       },
       "parts": [
         "north"
@@ -508,7 +634,10 @@
       "id": "south",
       "name": {
         "ko": "남타워·남쪽 풀 자리",
-        "en": "South Tower / pool site"
+        "en": "South Tower / pool site",
+        "ja": "サウスタワー・プールサイト",
+        "zh": "南塔/泳池场地",
+        "es": "Torre Sur / sitio de piscina"
       },
       "parts": [
         "south"
@@ -533,7 +662,10 @@
       "id": "seven",
       "name": {
         "ko": "7 WTC 자리",
-        "en": "7 WTC site"
+        "en": "7 WTC site",
+        "ja": "7 WTCサイト",
+        "zh": "7 世贸中心站点",
+        "es": "7 sitio del WTC"
       },
       "parts": [
         "seven"
@@ -558,7 +690,10 @@
       "id": "memorial",
       "name": {
         "ko": "추모공원·반사 풀",
-        "en": "Memorial / reflecting pools"
+        "en": "Memorial / reflecting pools",
+        "ja": "記念碑 / 反射プール",
+        "zh": "纪念馆/倒影池",
+        "es": "Memorial/piscinas reflectantes"
       },
       "parts": [
         "memorial"
@@ -583,7 +718,10 @@
       "id": "one",
       "name": {
         "ko": "원 월드 트레이드 센터",
-        "en": "One World Trade Center"
+        "en": "One World Trade Center",
+        "ja": "ワン ワールド トレード センター",
+        "zh": "世贸中心一号大楼",
+        "es": "Un World Trade Center"
       },
       "parts": [
         "one"
@@ -608,7 +746,10 @@
       "id": "oculus",
       "name": {
         "ko": "오큘러스·교통 허브",
-        "en": "Oculus / transit hub"
+        "en": "Oculus / transit hub",
+        "ja": "Oculus/トランジットハブ",
+        "zh": "Oculus / 交通枢纽",
+        "es": "Oculus / centro de tránsito"
       },
       "parts": [
         "oculus"
@@ -633,40 +774,67 @@
   "meta": {
     "interpretation": {
       "ko": "2001년 9·11 당시 항공기 충돌·붕괴, 수습과 2018년까지의 주요 재건을 다루는 교육용 추정 도해입니다.",
-      "en": "An educational schematic of the 2001 aircraft impacts and collapses, recovery and selected rebuilding milestones through 2018."
+      "en": "An educational schematic of the 2001 aircraft impacts and collapses, recovery and selected rebuilding milestones through 2018.",
+      "ja": "2001 年の航空機の衝撃と崩壊、回復、および 2018 年までの選択された再建のマイルストーンを示す教育図。",
+      "zh": "教育示意图，展示了 2001 年飞机的撞击和倒塌、恢复以及截至 2018 年的选定重建里程碑。",
+      "es": "Un esquema educativo de los impactos y colapsos de aeronaves de 2001, la recuperación y los hitos seleccionados de reconstrucción hasta 2018."
     },
     "about": {
       "ko": "9·11 테러로 총 2,977명이 사망했고, 이 중 뉴욕의 희생자는 2,753명입니다(9/11 Memorial 기록). 사람·피해자·유해는 표현하지 않습니다. 원인·구조 조사를 모방한 시뮬레이션이나 게임이 아닙니다.",
-      "en": "The 9/11 attacks killed 2,977 people, including 2,753 in New York, according to the 9/11 Memorial. No people, victims or human remains are depicted. This is not an investigative simulation or a game."
+      "en": "The 9/11 attacks killed 2,977 people, including 2,753 in New York, according to the 9/11 Memorial. No people, victims or human remains are depicted. This is not an investigative simulation or a game.",
+      "ja": "9/11記念館によると、9/11の攻撃ではニューヨークでの2,753人を含む2,977人が死亡した。人々、犠牲者、遺体は描かれていません。これは捜査シミュレーションやゲームではありません。",
+      "zh": "根据 9/11 纪念馆的数据，9/11 袭击造成 2,977 人死亡，其中纽约有 2,753 人死亡。没有描绘任何人、受害者或人类遗骸。这不是调查模拟或游戏。",
+      "es": "Los ataques del 11 de septiembre mataron a 2.977 personas, incluidas 2.753 en Nueva York, según el Memorial del 11 de septiembre. No se representan personas, víctimas ni restos humanos. Esto no es una simulación de investigación ni un juego."
     },
     "limitations": [
       {
         "ko": "옥상 설비·안테나 부속·붕괴 단면의 바닥과 기둥은 구조를 읽기 위한 추정 도해이며 실제 시공 도면을 재현하지 않습니다.",
-        "en": "Rooftop equipment, antenna fittings and exposed floors/columns are estimated explanatory details, not construction drawings."
+        "en": "Rooftop equipment, antenna fittings and exposed floors/columns are estimated explanatory details, not construction drawings.",
+        "ja": "屋上機器、アンテナ金具、露出床・柱は説明詳細の見積もりであり、施工図ではありません。",
+        "zh": "屋顶设备、天线配件和裸露地板/柱子是估计的解释性细节，而不是施工图。",
+        "es": "Los equipos de techo, los accesorios de antena y los pisos/columnas expuestos son detalles explicativos estimados, no dibujos de construcción."
       },
       {
         "ko": "충돌·화염·붕괴·분진은 추정 모션입니다. 실제 항로, 충돌 속도, 구조 파괴와 전체 붕괴를 검증하거나 재현하지 않습니다.",
-        "en": "Impact, fire, collapse and dust are illustrative motion; actual flight paths, speeds, structural failure and full-collapse dynamics are not validated."
+        "en": "Impact, fire, collapse and dust are illustrative motion; actual flight paths, speeds, structural failure and full-collapse dynamics are not validated.",
+        "ja": "衝撃、火災、崩壊、粉塵は動きの一例です。実際の飛行経路、速度、構造的破損、完全崩壊のダイナミクスは検証されていません。",
+        "zh": "撞击、火灾、倒塌和灰尘都是说明性的运动；实际飞行路径、速度、结构故障和完全塌陷动力学未经验证。",
+        "es": "Impacto, fuego, colapso y polvo son movimientos ilustrativos; Las trayectorias de vuelo reales, las velocidades, las fallas estructurales y la dinámica de colapso total no están validadas."
       },
       {
         "ko": "붕괴는 관찰을 위해 느리게 표현합니다. 모션 구간과 재생 시간은 실제 붕괴 소요시간이 아닙니다. 뉴욕 현지 시각을 표시합니다.",
-        "en": "Collapses are slowed for observation; animation windows and playback length are not measured collapse durations. Times are New York local."
+        "en": "Collapses are slowed for observation; animation windows and playback length are not measured collapse durations. Times are New York local.",
+        "ja": "観察のために崩壊は遅くなります。アニメーション ウィンドウと再生の長さは、崩壊時間は測定されません。時間はニューヨークローカルです。",
+        "zh": "塌陷速度减慢以供观察；动画窗口和播放长度不是测量折叠持续时间。时间为纽约当地时间。",
+        "es": "Los colapsos se ralentizan para la observación; las ventanas de animación y la duración de la reproducción no se miden como duraciones de colapso. Los horarios son locales de Nueva York."
       },
       {
         "ko": "북타워 지붕 417m·남타워 415m·평면 약 63m 정사각은 NIST 참고치입니다. 개별 창·부재·현장 좌표·잔해·재건 중간 공정과 주변 건물은 추정입니다.",
-        "en": "NIST reference figures: North roof 417 m, South 415 m, roughly 63 m square plans. Windows, members, site coordinates, debris, interim construction and surrounding buildings are approximate."
+        "en": "NIST reference figures: North roof 417 m, South 415 m, roughly 63 m square plans. Windows, members, site coordinates, debris, interim construction and surrounding buildings are approximate.",
+        "ja": "NIST参考数値：北屋根417m、南屋根415m、約63m四方の平面図。窓、部材、敷地座標、瓦礫、仮設工事、周囲の建物はおおよそのものです。",
+        "zh": "NIST 参考数据：北屋顶 417 m，南屋顶 415 m，大约 63 m 见方的平面图。窗户、构件、场地坐标、碎片、临时建筑和周围建筑物均为近似值。",
+        "es": "Cifras de referencia del NIST: techo norte de 417 m, sur de 415 m, planos cuadrados de aproximadamente 63 m. Las ventanas, los miembros, las coordenadas del sitio, los escombros, la construcción provisional y los edificios circundantes son aproximados."
       },
       {
         "ko": "주요 재건 건물과 추모공간만 선택해 2018년 이정표까지 표현합니다. 전체 도시·현재 단지나 재건 완료를 의미하지 않으며 2 WTC 완성 탑을 임의로 추가하지 않습니다.",
-        "en": "Selected buildings and memorial spaces end at a 2018 milestone, not the full city/current site or completed redevelopment. No completed 2 WTC tower is invented."
+        "en": "Selected buildings and memorial spaces end at a 2018 milestone, not the full city/current site or completed redevelopment. No completed 2 WTC tower is invented.",
+        "ja": "選択された建物と記念スペースは、都市全体/現在の敷地または完了した再開発ではなく、2018 年のマイルストーンで終了します。完成した 2 WTC タワーは発明されません。",
+        "zh": "选定的建筑物和纪念空间以 2018 年里程碑结束，而不是整个城市/当前地点或已完成的重建。尚未发明完成的 2 座世贸中心塔楼。",
+        "es": "Los edificios y espacios conmemorativos seleccionados finalizan en un hito de 2018, no en la ciudad completa/sitio actual o en la reurbanización completa. No se inventa ninguna torre completa del WTC 2."
       },
       {
         "ko": "탐사는 가상 관찰입니다. 해당 시점에 건물이 없으면 잔해·터·풀의 같은 자리를 봅니다. 실제 방문·구조 동선이 아닙니다.",
-        "en": "Inspection is virtual; when a tower is absent its debris, footprint or pool is shown. This is not an actual visitor or emergency route."
+        "en": "Inspection is virtual; when a tower is absent its debris, footprint or pool is shown. This is not an actual visitor or emergency route.",
+        "ja": "検査は仮想化されます。タワーが存在しない場合は、その破片、フットプリント、またはプールが表示されます。これは実際の訪問者や緊急ルートではありません。",
+        "zh": "检查是虚拟的；当塔不存在时，会显示其残骸、足迹或水池。这不是真正的访客或紧急路线。",
+        "es": "La inspección es virtual; cuando una torre está ausente, se muestran sus escombros, huella o charco. Esta no es una ruta real para visitantes ni de emergencia."
       },
       {
         "ko": "고품질 구조·접합부·외벽 부재·재질 디테일은 기존 기준 자료를 참고한 독립 추정 형상이며 실측 CAD나 물리 시뮬레이션이 아닙니다.",
-        "en": "Enhanced structure, joints, facade members and material details are independent estimates based on the existing references, not surveyed CAD or physical simulation."
+        "en": "Enhanced structure, joints, facade members and material details are independent estimates based on the existing references, not surveyed CAD or physical simulation.",
+        "ja": "強化された構造、接合部、ファサード部材、および材料の詳細は、調査された CAD や物理シミュレーションではなく、既存の参考資料に基づいた独立した見積もりです。",
+        "zh": "增强结构、接缝、立面构件和材料细节是根据现有参考资料独立估算的，而不是经过测量的 CAD 或物理模拟。",
+        "es": "La estructura mejorada, las juntas, los miembros de la fachada y los detalles de los materiales son estimaciones independientes basadas en las referencias existentes, no en CAD ni en simulación física."
       }
     ],
     "renderQuality": "high",

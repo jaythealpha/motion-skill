@@ -1,3 +1,5 @@
+import{configureMaterialBudget,presentationPixelRatio}from'../shared/material-budget.js';
+import{createPresentation}from'../shared/presentation.js';
 // three.js renderer. The model lives in a root group turned so model z (the assembly axis) points up.
 // Two styles share the same parts: material-finished colour (or original toon) and blueprint line work.
 import * as THREE from 'three';
@@ -38,7 +40,7 @@ function radialTexture(inner, outer) {
 
 function matTexture() {   // a green cutting mat with a fine grid, for the knolling layout
   const c = document.createElement('canvas'); c.width = c.height = 256; const g = c.getContext('2d');
-  g.fillStyle = '#4c7a63'; g.fillRect(0, 0, 256, 256);
+  g.fillStyle = '#30464b'; g.fillRect(0, 0, 256, 256);
   g.strokeStyle = 'rgba(255,255,255,.18)'; g.lineWidth = 1;
   for (let i = 0; i <= 256; i += 32) { g.beginPath(); g.moveTo(i + .5, 0); g.lineTo(i + .5, 256); g.moveTo(0, i + .5); g.lineTo(256, i + .5); g.stroke(); }
   g.strokeStyle = 'rgba(255,255,255,.07)';
@@ -48,10 +50,11 @@ function matTexture() {   // a green cutting mat with a fine grid, for the knoll
 
 export function createRenderer(canvas, model, opts = {}) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  configureMaterialBudget(renderer);renderer.setPixelRatio(presentationPixelRatio(renderer));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   const scene = new THREE.Scene();
   const enhanced = model.meta.renderQuality === "high";
+  const presentation=createPresentation(renderer,scene,{kind:'studio'});
   const gl=renderer.getContext(), dbg=gl.getExtension('WEBGL_debug_renderer_info');
   const gpu=dbg?String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL)):'';
   const lightweight = innerWidth < 600 || /swiftshader|llvmpipe|software/i.test(gpu);
@@ -88,7 +91,7 @@ export function createRenderer(canvas, model, opts = {}) {
     let m;
     if (style === 'blueprint') m = new THREE.MeshBasicMaterial({ color: BP.fill, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
     else if (key === 'shine') m = new THREE.MeshBasicMaterial({ color: '#ffffff' });
-    else if (enhanced) m = qualityMaterial(key, color || COLOR[key] || COLOR.black, lightweight);
+    else if (enhanced) m = qualityMaterial(key, color || COLOR[key] || COLOR.black, lightweight, presentation.env);
     else m = new THREE.MeshToonMaterial({ color: color || COLOR[key] || COLOR.black, gradientMap: gmap, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
     if (key === 'adhesive' && style === 'color') { m.transparent = true; m.opacity = 0.55; }
     if (dim === 1) { m.transparent = true; m.opacity = style === 'blueprint' ? 0.25 : 0.14; m.depthWrite = false; }
@@ -128,7 +131,7 @@ export function createRenderer(canvas, model, opts = {}) {
     const uc = FI.at + FI.bSign * (FI.spine - band) / 2, zc = (FI.T - (FI.T + FI.gap)) / 2;
     g.translate(U ? w / 2 - C[0] : uc - C[0], U ? uc - C[1] : l / 2 - C[1], zc - C[2]);
     const frameCol = model.parts.find(p => p.shape?.template === 'housing')?.shape?.colors?.alu;
-    spineMesh = new THREE.Mesh(g, enhanced ? qualityMaterial('alu',frameCol || COLOR.alu, lightweight) : new THREE.MeshToonMaterial({ color: frameCol || COLOR.alu, gradientMap: gmap }));
+    spineMesh = new THREE.Mesh(g, enhanced ? qualityMaterial('alu',frameCol || COLOR.alu, lightweight, presentation.env) : new THREE.MeshToonMaterial({ color: frameCol || COLOR.alu, gradientMap: gmap }));
     spineMesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(g, 28), edgeMats.color));
     spineMesh.userData.colorMaterial=spineMesh.material;
     spineMesh.visible = false; halves.a.add(spineMesh);
@@ -155,6 +158,7 @@ export function createRenderer(canvas, model, opts = {}) {
 
   function applyStyle() {
     const bp = S.style === 'blueprint';
+    if(enhanced)presentation.update(S);
     canvas.parentElement?.classList.toggle('bp', bp);
     shadow.visible = !bp && S.layout === 'stack';
     mat.visible = !bp && S.layout === 'knoll';

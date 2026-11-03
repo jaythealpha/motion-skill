@@ -18,10 +18,10 @@ if (!src || !out) { console.error('usage: node scripts/build.mjs model.json out.
 const model = JSON.parse(readFileSync(src, 'utf8'));
 if (gate2) model.meta = { ...(model.meta || {}), gate2 };
 const { imports } = importMap({ root: ROOT, prefix: 'elapse' });
-const n = model.subject?.name, name = typeof n === 'object' ? (n.ko || n.en) : n;
+const n = model.subject?.name, name = typeof n === 'object' ? (n.en || n.ko) : n;
 const json = JSON.stringify(model).replace(/</g, '\\u003c');
 const html = `<!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en" translate="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${String(name || 'Elapse').replace(/[<&]/g, '')} · Elapse</title>
 <meta name="generator" content="Elapse">
 ${licenseBlock(ROOT)}

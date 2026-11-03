@@ -1,10 +1,10 @@
 import * as THREE from 'three';
 // Visual surface finish only: these marks are not a measured circuit/serial/fastener inventory.
-export function qualityMaterial(key,color,lightweight=false){
+export function qualityMaterial(key,color,lightweight=false,environment=null){
  const metals=['alu','metal','metalDark','gold','copper','flex','passive'];
  const glass=['glass','lens'].includes(key),metal=metals.includes(key);
  const p={color,roughness:glass?.19:metal?.38:key==='pcb'?.72:.65,metalness:metal?.48:0,polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1};
- const m=lightweight?new THREE.MeshPhongMaterial({color,shininess:glass?85:metal?45:12,specular:glass?'#667e97':metal?'#6c6c6c':'#151515',polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1}):glass?new THREE.MeshPhysicalMaterial({...p,clearcoat:1,clearcoatRoughness:.12,iridescence:key==='lens'?.65:0}):new THREE.MeshStandardMaterial(p);
+ const m=lightweight?new THREE.MeshPhongMaterial({color,envMap:environment,reflectivity:glass?.3:metal?.2:.06,shininess:glass?85:metal?45:12,specular:glass?'#667e97':metal?'#6c6c6c':'#151515',polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1}):glass?new THREE.MeshPhysicalMaterial({...p,clearcoat:1,clearcoatRoughness:.12,iridescence:key==='lens'?.65:0}):new THREE.MeshStandardMaterial(p);
  const kind=['pcb','pcbDark'].includes(key)?1:key==='chip'?2:key==='label'?3:glass?4:metal?5:0;
  if(kind){m.onBeforeCompile=s=>{
  s.vertexShader=s.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 ufSurface;').replace('#include <begin_vertex>','#include <begin_vertex>\nufSurface=position;');

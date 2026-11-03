@@ -1,3 +1,4 @@
+import{surfaceMaterial}from'../shared/material-budget.js';
 // Independently modelled, small observation-based fauna. Not source photographs, a census or a species-ID model.
 import * as THREE from 'three';
 import {ecologyMode,fishPose,snowPoint} from './ecology-model.js';
@@ -6,8 +7,8 @@ import {worldBox} from './geom.js';
 const toThree=([x,y,z])=>new THREE.Vector3(x,z,-y);
 export function createDeepEcology({root,scene,camera,model,items,ground}){
  const random=rng(38001986),corals=[],sponges=[],fish=[];
- const pale=new THREE.MeshStandardMaterial({color:'#c4baa0',roughness:.88,metalness:0}),stem=new THREE.MeshStandardMaterial({color:'#978569',roughness:.95});
- const dark=new THREE.MeshStandardMaterial({color:'#282a26',roughness:1}),skin=new THREE.MeshStandardMaterial({color:'#8c9290',roughness:.8,metalness:.04});
+ const pale=surfaceMaterial({color:'#c4baa0',roughness:.88,metalness:0}),stem=surfaceMaterial({color:'#978569',roughness:.95});
+ const dark=surfaceMaterial({color:'#282a26',roughness:1}),skin=surfaceMaterial({color:'#8c9290',roughness:.8,metalness:.04});
  const surfaceUniform={value:0};
  // Procedural weathering, not measured corrosion. Confined to the two macro host structures.
  for(const it of items.filter(i=>['rail-bow-stbd','aft-house-stern'].includes(i.p.id)))for(const m of it.meshes){
@@ -41,7 +42,7 @@ float ecoNoise(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix
  const rail=items.find(i=>i.p.id==='rail-bow-stbd');if(rail){coral(rail,.35);coral(rail,-.4);}
  function sponge(it,x){const g=new THREE.Group(),z=it.p.params.h+.016;g.position.set(x,0,z);it.g.add(g);
    const geo=new THREE.SphereGeometry(1,40,24),p=geo.attributes.position,colors=[];
-   for(let i=0;i<p.count;i++){const X=p.getX(i),Y=p.getY(i),Z=p.getZ(i),n=1+.025*Math.sin(X*19+Y*13)*Math.cos(Z*17);p.setXYZ(i,X*.052*n,Y*.038*n,Math.max(-.014,Z*.026*n));const v=.66+.08*Math.sin(X*37+Y*23)*Math.cos(Z*29);colors.push(v,v*.98,v*.84);}geo.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));geo.computeVertexNormals();g.add(new THREE.Mesh(geo,new THREE.MeshStandardMaterial({vertexColors:true,roughness:1})));
+   for(let i=0;i<p.count;i++){const X=p.getX(i),Y=p.getY(i),Z=p.getZ(i),n=1+.025*Math.sin(X*19+Y*13)*Math.cos(Z*17);p.setXYZ(i,X*.052*n,Y*.038*n,Math.max(-.014,Z*.026*n));const v=.66+.08*Math.sin(X*37+Y*23)*Math.cos(Z*29);colors.push(v,v*.98,v*.84);}geo.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));geo.computeVertexNormals();g.add(new THREE.Mesh(geo,surfaceMaterial({vertexColors:true,roughness:1})));
    for(const [X,Y,R] of [[-.018,.01,.004],[.014,-.008,.006],[.024,.014,.003]]){const hole=new THREE.Mesh(new THREE.CircleGeometry(R,9),dark);hole.position.set(X,Y,.025);g.add(hole);}
    sponges.push({it,g,box:{min:[x-.075,-.06,z-.02],max:[x+.075,.06,z+.06]}});
  }
@@ -49,7 +50,7 @@ float ecoNoise(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix
  const bow=items.find(i=>i.p.id==='hull-bow');
  // Joined rings avoid a sphere/cone seam: blunt snout, deep head, continuously tapering rattail.
  function fishSurface(rings){const v=[],ix=[],n=24;for(const [x,r,z] of rings)for(let k=0;k<=n;k++){const a=k/n*Math.PI*2;v.push(x,Math.sin(a)*r,Math.cos(a)*r*1.2+z);}for(let j=0;j<rings.length-1;j++)for(let k=0;k<n;k++){const a=j*(n+1)+k,b=a+n+1;ix.push(a,b,a+1,a+1,b,b+1);}const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(v,3));g.setIndex(ix);g.computeVertexNormals();return g;}
- function fin(g,vertices){const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));geo.computeVertexNormals();g.add(new THREE.Mesh(geo,new THREE.MeshStandardMaterial({color:'#6d7879',roughness:.85,side:THREE.DoubleSide})));}
+ function fin(g,vertices){const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));geo.computeVertexNormals();g.add(new THREE.Mesh(geo,surfaceMaterial({color:'#6d7879',roughness:.85,side:THREE.DoubleSide})));}
  for(let i=0;i<3;i++){
    const g=new THREE.Group();root.add(g);g.add(new THREE.Mesh(fishSurface([[.19,.001,-.007],[.176,.026,-.003],[.14,.048,.006],[.09,.057,.009],[.025,.05,0],[-.065,.036,-.006]]),skin));
    const tail=new THREE.Group();tail.position.x=-.065;g.add(tail);tail.add(new THREE.Mesh(fishSurface([[0,.036,-.006],[-.065,.027,-.007],[-.14,.017,-.01],[-.23,.008,-.014],[-.31,.001,-.016]]),skin));

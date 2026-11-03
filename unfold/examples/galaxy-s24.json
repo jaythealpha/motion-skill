@@ -23,7 +23,10 @@
   "notes": "167 g (Sub6) / 168 g (mmWave) per Samsung press specs. 4000 mAh typical, 3880 mAh rated. 6.2 in full rectangle (6.0 in with rounded corners), 2340x1080 Dynamic AMOLED 2X. Rear: 50 MP f/1.8 main (OIS), 10 MP f/2.4 3x telephoto (OIS), 12 MP f/2.2 ultrawide; front 12 MP f/2.2. Armor Aluminum frame, Gorilla Glass Victus 2 front and back. Coordinates: screen down, viewed from back; x=0 at left edge seen from back (the side-key side), y=0 at USB-C end, z=0 at front glass.",
   "name": {
    "ko": "갤럭시 S24",
-   "en": "Galaxy S24"
+   "en": "Galaxy S24",
+   "ja": "Galaxy S24",
+   "zh": "Galaxy S24",
+   "es": "Galaxy S24"
   },
   "kind": "phone"
  },
@@ -212,8 +215,14 @@
    "key": true,
    "desc": {
     "ko": "알루미늄 프레임과 중간판. 디스플레이를 앞에 붙이고, 나머지 부품을 뒤에서 차례로 얹어요.",
-    "en": "Aluminium frame with its midplate. The display bonds to the front; everything else goes in from the back."
-   }
+    "en": "Aluminium frame with its midplate. The display bonds to the front; everything else goes in from the back.",
+    "ja": "アルミニウムフレームとそのミッドプレート。ディスプレイは前面に接着されています。それ以外はすべて後ろから入ります。",
+    "zh": "铝制框架及其中板。显示屏粘合在前面；其他的东西都从后面进去。",
+    "es": "Estructura de aluminio con su placa intermedia. La pantalla se adhiere al frente; todo lo demás entra desde atrás."
+   },
+   "name_ja": "Armor Aluminumフレーム／ミッドフレーム（前面筐体）",
+   "name_zh": "Armor Aluminum边框／中框（前部壳体）",
+   "name_es": "Marco Armor Aluminum / marco intermedio (carcasa frontal)"
   },
   {
    "id": "display",
@@ -251,9 +260,15 @@
    "key": true,
    "desc": {
     "ko": "6.2인치 디스플레이. 앞면 유리와 패널이 한 덩어리로 붙어 있어요.",
-    "en": "6.2-inch display: cover glass and panel bonded as one unit."
+    "en": "6.2-inch display: cover glass and panel bonded as one unit.",
+    "ja": "6.2 インチ ディスプレイ: カバー ガラスとパネルが 1 つのユニットとして接着されています。",
+    "zh": "6.2 英寸显示屏：盖板玻璃和面板粘合为一体。",
+    "es": "Pantalla de 6,2 pulgadas: cubierta de cristal y panel unidos como una sola unidad."
    },
-   "attachedTo": null
+   "attachedTo": null,
+   "name_ja": "画面一式（Gorilla Glass Victus 2＋Dynamic AMOLED 2Xパネル）",
+   "name_zh": "显示屏总成（Gorilla Glass Victus 2＋Dynamic AMOLED 2X面板）",
+   "name_es": "Conjunto de pantalla (Gorilla Glass Victus 2 + panel Dynamic AMOLED 2X)"
   },
   {
    "id": "display-adhesive",
@@ -284,7 +299,10 @@
     "ring": 1.6
    },
    "shapeNote": "thin perimeter ring under the display edge",
-   "notes": "Exists per s7 (replacement adhesive listed); exact outline estimated."
+   "notes": "Exists per s7 (replacement adhesive listed); exact outline estimated.",
+   "name_ja": "画面とフレームの接着材",
+   "name_zh": "屏幕与边框胶粘层",
+   "name_es": "Adhesivo entre pantalla y marco"
   },
   {
    "id": "display-flex-connector",
@@ -314,7 +332,10 @@
     "template": "connector"
    },
    "shapeNote": "small rectangular press-connector at the end of the display flex tail coming through the midplate",
-   "notes": "s5/s7 place it at the bottom-left, just left of the daughterboard; xy estimated."
+   "notes": "s5/s7 place it at the bottom-left, just left of the daughterboard; xy estimated.",
+   "name_ja": "画面パネルのフレックスコネクター（サブ基板の左）",
+   "name_zh": "显示面板排线连接器（副板左侧）",
+   "name_es": "Conector flexible del panel (a la izquierda de la placa secundaria)"
   },
   {
    "id": "vapor-chamber",
@@ -345,7 +366,10 @@
     "mat": "copper"
    },
    "shapeNote": "thin flat copper plate under the motherboard area",
-   "notes": "s14 confirms a VC about twice the S23's area but gives no outline; position under the SoC area and size are guesses. Not removed in any iFixit guide, so treated as part of the front housing."
+   "notes": "s14 confirms a VC about twice the S23's area but gives no outline; position under the SoC area and size are guesses. Not removed in any iFixit guide, so treated as part of the front housing.",
+   "name_ja": "ベイパーチャンバー（放熱板）",
+   "name_zh": "均热板（散热器）",
+   "name_es": "Cámara de vapor (disipador térmico)"
   },
   {
    "id": "power-key",
@@ -375,7 +399,10 @@
     }
    },
    "shapeNote": "short pill-shaped key in the side rail",
-   "notes": "Keys are on the right side seen from the front, i.e. x=0 seen from the back. Not covered by any guide; y positions estimated."
+   "notes": "Keys are on the right side seen from the front, i.e. x=0 seen from the back. Not covered by any guide; y positions estimated.",
+   "name_ja": "サイドボタン（電源）",
+   "name_zh": "侧键（电源）",
+   "name_es": "Botón lateral (encendido)"
   },
   {
    "id": "volume-key",
@@ -405,7 +432,10 @@
     }
    },
    "shapeNote": "long pill-shaped rocker above the power key",
-   "notes": "Not covered by guides; position estimated."
+   "notes": "Not covered by guides; position estimated.",
+   "name_ja": "音量キー",
+   "name_zh": "音量键",
+   "name_es": "Tecla de volumen"
   },
   {
    "id": "vibration-motor",
@@ -432,7 +462,10 @@
     "r": 0.8
    },
    "shapeNote": "small rectangular linear motor",
-   "notes": "No S24-specific source gives its position. Not removed in s9, so it is assumed to stay in the front housing near the bottom. Treat position as a guess. Placed over the sub board, so it goes in after the sub board (estimated position)."
+   "notes": "No S24-specific source gives its position. Not removed in s9, so it is assumed to stay in the front housing near the bottom. Treat position as a guess. Placed over the sub board, so it goes in after the sub board (estimated position).",
+   "name_ja": "振動モーター（リニアアクチュエーター）",
+   "name_zh": "振动马达（线性执行器）",
+   "name_es": "Motor de vibración (actuador lineal)"
   },
   {
    "id": "battery-adhesive",
@@ -463,7 +496,10 @@
     "r": 2
    },
    "shapeNote": "thin film under the battery with a blue pull tab exiting at the left edge (seen from back)",
-   "notes": "Peel tab toward left edge (s8). Outline estimated."
+   "notes": "Peel tab toward left edge (s8). Outline estimated.",
+   "name_ja": "バッテリーの引き抜きタブ付き接着フィルム",
+   "name_zh": "电池易拉胶膜",
+   "name_es": "Película adhesiva de batería con lengüeta"
   },
   {
    "id": "battery",
@@ -503,8 +539,14 @@
    "key": true,
    "desc": {
     "ko": "4,000mAh 배터리. 당김 탭이 달린 접착 필름 위에 놓여요.",
-    "en": "4,000 mAh battery, seated on a pull-tab adhesive film."
-   }
+    "en": "4,000 mAh battery, seated on a pull-tab adhesive film.",
+    "ja": "プルタブ粘着フィルムに取り付けられた 4,000 mAh バッテリー。",
+    "zh": "4,000 mAh 电池，位于拉片粘合膜上。",
+    "es": "Batería de 4.000 mAh, asentada sobre una película adhesiva con lengüeta."
+   },
+   "name_ja": "バッテリー4000mAh（定格3880mAh）",
+   "name_zh": "4000mAh电池（额定3880mAh）",
+   "name_es": "Batería de 4000 mAh (3880 mAh nominales)"
   },
   {
    "id": "daughterboard",
@@ -552,8 +594,14 @@
    "key": true,
    "desc": {
     "ko": "USB-C 포트와 SIM 리더가 있는 보조 보드. 케이블 두 가닥으로 메인보드와 이어져요.",
-    "en": "Sub board with the USB-C port and SIM reader, linked to the main board by two cables."
-   }
+    "en": "Sub board with the USB-C port and SIM reader, linked to the main board by two cables.",
+    "ja": "USB-C ポートと SIM リーダーを備えたサブボード。2 本のケーブルでメインボードに接続されています。",
+    "zh": "带有 USB-C 端口和 SIM 读卡器的子板，通过两根电缆连接到主板。",
+    "es": "Subplaca con puerto USB-C y lector SIM, unida a la placa principal mediante dos cables."
+   },
+   "name_ja": "サブ基板",
+   "name_zh": "副电路板",
+   "name_es": "Placa secundaria"
   },
   {
    "id": "usb-c-port",
@@ -586,7 +634,10 @@
    "notes": "Soldered to the daughterboard (s6). Centred x is standard; size estimated.",
    "passesThrough": [
     "frame"
-   ]
+   ],
+   "name_ja": "USB-C ポート",
+   "name_zh": "USB-C 端口",
+   "name_es": "Puerto USB-C"
   },
   {
    "id": "sim-reader",
@@ -613,7 +664,10 @@
     "r": 0.5
    },
    "shapeNote": "small metal cage on the daughterboard",
-   "notes": "Assumed on the daughterboard right side (seen from back), behind the SIM slot. Not described by sources."
+   "notes": "Assumed on the daughterboard right side (seen from back), behind the SIM slot. Not described by sources.",
+   "name_ja": "SIM カード リーダー",
+   "name_zh": "SIM卡读卡器",
+   "name_es": "Lector de tarjetas SIM"
   },
   {
    "id": "bottom-mic",
@@ -641,7 +695,10 @@
     "mat": "black"
    },
    "shapeNote": "tiny MEMS mic next to the USB-C port",
-   "notes": "Not described by any source; typical location."
+   "notes": "Not described by any source; typical location.",
+   "name_ja": "下部マイク",
+   "name_zh": "底部麦克风",
+   "name_es": "Micrófono inferior"
   },
   {
    "id": "conn-sub-interconnect",
@@ -685,7 +742,10 @@
     ]
    },
    "shapeNote": "two small press-connectors side by side",
-   "notes": "Two connectors (s6, s9); location on the right of the board estimated."
+   "notes": "Two connectors (s6, s9); location on the right of the board estimated.",
+   "name_ja": "サブ基板の中継コネクター（SUB）",
+   "name_zh": "副板互连连接器（SUB）",
+   "name_es": "Conectores de interconexión de placa secundaria (SUB)"
   },
   {
    "id": "screws-daughterboard",
@@ -732,7 +792,10 @@
    },
    "shapeNote": "Phillips screws spread around the board",
    "notes": "Three 3.4 mm Phillips screws per s6 (step 25); s9 shows two. s6 is followed. Positions estimated.",
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "サブ基板用ねじ",
+   "name_zh": "副板螺钉",
+   "name_es": "Tornillos de placa secundaria"
   },
   {
    "id": "mmwave-antenna",
@@ -764,7 +827,10 @@
     "mat": "black"
    },
    "shapeNote": "slim rectangular module standing beside the right rail",
-   "notes": "In a frame recess with adhesive, connector on the right edge of the motherboard (s5, s9). Only on mmWave SKUs (e.g. SM-S921U). xy estimated."
+   "notes": "In a frame recess with adhesive, connector on the right edge of the motherboard (s5, s9). Only on mmWave SKUs (e.g. SM-S921U). xy estimated.",
+   "name_ja": "5Gミリ波アンテナモジュール（ミリ波対応機種のみ）",
+   "name_zh": "5G毫米波天线模组（仅毫米波机型）",
+   "name_es": "Módulo de antena 5G mmWave (solo modelos mmWave)"
   },
   {
    "id": "mmwave-bracket",
@@ -796,7 +862,10 @@
     "r": 0.6
    },
    "shapeNote": "thin metal strip bracket over the antenna module",
-   "notes": "Lifted out of its recess via the bottom screw hole (s9). Size estimated."
+   "notes": "Lifted out of its recess via the bottom screw hole (s9). Size estimated.",
+   "name_ja": "ミリ波アンテナ固定金具",
+   "name_zh": "毫米波天线支架",
+   "name_es": "Soporte de antena mmWave"
   },
   {
    "id": "screws-mmwave",
@@ -838,7 +907,10 @@
     ]
    },
    "shapeNote": "two screws at the ends of the bracket",
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "ミリ波アンテナ金具用ねじ",
+   "name_zh": "毫米波支架螺钉",
+   "name_es": "Tornillos del soporte mmWave"
   },
   {
    "id": "mmwave-cable",
@@ -896,7 +968,10 @@
     ]
    },
    "shapeNote": "long narrow flex routed along the left rail (route guessed)",
-   "notes": "s5 disconnects a '5G mmWave' connector on the motherboard bottom-left edge; s8 bends it up but no guide removes it. Its far end and routing are undocumented."
+   "notes": "s5 disconnects a '5G mmWave' connector on the motherboard bottom-left edge; s8 bends it up but no guide removes it. Its far end and routing are undocumented.",
+   "name_ja": "5Gミリ波ケーブル（メイン基板左下端から）",
+   "name_zh": "5G毫米波排线（从主板左下边缘引出）",
+   "name_es": "Cable 5G mmWave (desde el borde inferior izquierdo de la placa principal)"
   },
   {
    "id": "antenna-conductive-tape",
@@ -927,7 +1002,10 @@
     "mat": "metal"
    },
    "shapeNote": "thin conductive tape strip",
-   "notes": "s9 notes conductive tape under the antenna may need transfer. Position follows the antenna estimate."
+   "notes": "s9 notes conductive tape under the antenna may need transfer. Position follows the antenna estimate.",
+   "name_ja": "アンテナ下の導電テープ",
+   "name_zh": "天线下方导电胶带",
+   "name_es": "Cinta conductora bajo la antena"
   },
   {
    "id": "antenna-top",
@@ -958,7 +1036,10 @@
     "mat": "black"
    },
    "shapeNote": "small flat antenna carrier pried from a notch at its bottom edge",
-   "notes": "s9 removes an unnamed antenna (adhesive + conductive tape) after the front camera. Its location is not stated. Placed at top right as a guess."
+   "notes": "s9 removes an unnamed antenna (adhesive + conductive tape) after the front camera. Its location is not stated. Placed at top right as a guess.",
+   "name_ja": "アンテナモジュール（資料に名称記載なし）",
+   "name_zh": "天线模组（来源未命名）",
+   "name_es": "Módulo de antena (sin nombre en la fuente)"
   },
   {
    "id": "front-camera-adhesive",
@@ -989,7 +1070,10 @@
     "r": 1,
     "ring": 1.2
    },
-   "shapeNote": "small ring of strong adhesive in the frame recess"
+   "shapeNote": "small ring of strong adhesive in the frame recess",
+   "name_ja": "前面カメラの接着材／エポキシ",
+   "name_zh": "前置相机胶粘层／环氧胶",
+   "name_es": "Adhesivo/epoxi de cámara frontal"
   },
   {
    "id": "front-camera",
@@ -1029,7 +1113,10 @@
     ]
    },
    "shapeNote": "small square module behind the centred punch hole with a flex to the motherboard",
-   "notes": "Glued in a frame recess, heat 90 s to remove (s9, s11). Punch hole is centred (x=35.3); module size estimated."
+   "notes": "Glued in a frame recess, heat 90 s to remove (s9, s11). Punch hole is centred (x=35.3); module size estimated.",
+   "name_ja": "前面カメラ12MP",
+   "name_zh": "1200万像素前置相机",
+   "name_es": "Cámara frontal de 12 MP"
   },
   {
    "id": "camera-telephoto",
@@ -1071,7 +1158,10 @@
    "notes": "Existence and press connector verified. The top-to-bottom order (ultrawide, main, telephoto) is from the phone's exterior and is not stated by iFixit. Module sizes estimated.",
    "passesThrough": [
     "frame"
-   ]
+   ],
+   "name_ja": "望遠カメラ10MP・3倍（OIS）",
+   "name_zh": "1000万像素3倍长焦相机（OIS）",
+   "name_es": "Cámara teleobjetivo de 10 MP 3× (OIS)"
   },
   {
    "id": "camera-main",
@@ -1117,8 +1207,14 @@
    "key": true,
    "desc": {
     "ko": "50MP 메인 카메라(광학식 손떨림 보정). 메인보드에 바로 끼워져요.",
-    "en": "50 MP main camera with optical stabilisation, clipped straight onto the main board."
-   }
+    "en": "50 MP main camera with optical stabilisation, clipped straight onto the main board.",
+    "ja": "光学安定化機能を備えた 50 MP メイン カメラ。メイン ボードに直接クリップされています。",
+    "zh": "具有光学稳定功能的 50 MP 主摄像头，直接夹在主板上。",
+    "es": "Cámara principal de 50 MP con estabilización óptica, acoplada directamente a la placa principal."
+   },
+   "name_ja": "メインカメラ50MP（OIS）",
+   "name_zh": "5000万像素主摄（OIS）",
+   "name_es": "Cámara principal de 50 MP (OIS)"
   },
   {
    "id": "camera-ultrawide",
@@ -1160,7 +1256,10 @@
    "notes": "Peg retention and 45 degree tilt-out verified (s5). Position estimated.",
    "passesThrough": [
     "frame"
-   ]
+   ],
+   "name_ja": "超広角カメラ12MP",
+   "name_zh": "1200万像素超广角相机",
+   "name_es": "Cámara ultra gran angular de 12 MP"
   },
   {
    "id": "conn-rear-cameras",
@@ -1210,7 +1309,10 @@
     ]
    },
    "shapeNote": "three press-connectors along the motherboard's left edge",
-   "notes": "Three press connectors verified; positions estimated."
+   "notes": "Three press connectors verified; positions estimated.",
+   "name_ja": "背面カメラのコネクター",
+   "name_zh": "后置相机连接器",
+   "name_es": "Conectores de cámaras traseras"
   },
   {
    "id": "motherboard",
@@ -1277,8 +1379,14 @@
    "key": true,
    "desc": {
     "ko": "2층으로 쌓은 메인보드. 프로세서와 메모리가 금속 차폐 캔 아래에 있어요.",
-    "en": "Two-layer stacked main board; processor and memory sit under metal shield cans."
-   }
+    "en": "Two-layer stacked main board; processor and memory sit under metal shield cans.",
+    "ja": "2層積層メインボード。プロセッサとメモリは金属シールド缶の下に収まります。",
+    "zh": "两层堆叠主板；处理器和内存位于金属屏蔽罐下方。",
+    "es": "Tablero principal apilado de dos capas; El procesador y la memoria se encuentran bajo latas protectoras de metal."
+   },
+   "name_ja": "メイン基板（2層積層、Snapdragon 8 Gen 3 / Exynos 2400）",
+   "name_zh": "主板（双层堆叠，Snapdragon 8 Gen 3 / Exynos 2400）",
+   "name_es": "Placa principal (apilada de dos capas, Snapdragon 8 Gen 3 / Exynos 2400)"
   },
   {
    "id": "flash-led",
@@ -1306,7 +1414,10 @@
     "mat": "label"
    },
    "shapeNote": "small LED to the right of the top camera",
-   "notes": "s4 confirms a flash cutout near the top edge with adhesive above it; exact position and mounting estimated."
+   "notes": "s4 confirms a flash cutout near the top edge with adhesive above it; exact position and mounting estimated.",
+   "name_ja": "背面フラッシュLED",
+   "name_zh": "后置闪光灯LED",
+   "name_es": "LED de flash trasero"
   },
   {
    "id": "top-mic",
@@ -1334,7 +1445,10 @@
     "mat": "black"
    },
    "shapeNote": "tiny MEMS mic near the top edge",
-   "notes": "Not described by any source."
+   "notes": "Not described by any source.",
+   "name_ja": "トップマイク",
+   "name_zh": "顶部麦克风",
+   "name_es": "Micrófono superior"
   },
   {
    "id": "screws-motherboard",
@@ -1381,8 +1495,14 @@
    "path": "screw",
    "desc": {
     "ko": "후면 카메라 브래킷을 지나 메인보드까지 박히는 나사 두 개.",
-    "en": "Two screws that pass through the rear camera bracket into the main board."
-   }
+    "en": "Two screws that pass through the rear camera bracket into the main board.",
+    "ja": "リアカメラブラケットを通ってメインボードに入る 2 本のネジ。",
+    "zh": "两颗螺丝穿过后置摄像头支架进入主板。",
+    "es": "Dos tornillos que pasan a través del soporte de la cámara trasera hacia la placa principal."
+   },
+   "name_ja": "メイン基板／背面カメラ用ねじ",
+   "name_zh": "主板／后置相机螺钉",
+   "name_es": "Tornillos de placa principal / cámara trasera"
   },
   {
    "id": "conn-battery",
@@ -1412,7 +1532,10 @@
     "template": "connector"
    },
    "shapeNote": "board-mounted press (board-to-board) connector receptacle",
-   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate."
+   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate.",
+   "name_ja": "バッテリーコネクター（メイン基板上）",
+   "name_zh": "电池连接器（主板上）",
+   "name_es": "Conector de batería (en placa principal)"
   },
   {
    "id": "conn-display-board",
@@ -1441,7 +1564,10 @@
     "template": "connector"
    },
    "shapeNote": "board-mounted press (board-to-board) connector receptacle",
-   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate."
+   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate.",
+   "name_ja": "画面ケーブルのコネクター（基板左下）",
+   "name_zh": "屏幕排线连接器（主板左下）",
+   "name_es": "Conector de pantalla (esquina inferior izquierda de placa principal)"
   },
   {
    "id": "conn-mmwave-cable-board",
@@ -1470,7 +1596,10 @@
     "template": "connector"
    },
    "shapeNote": "board-mounted press (board-to-board) connector receptacle",
-   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate."
+   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate.",
+   "name_ja": "5Gミリ波ケーブルのコネクター（基板左下）",
+   "name_zh": "5G毫米波排线连接器（主板左下）",
+   "name_es": "Conector de cable 5G mmWave (esquina inferior izquierda de placa principal)"
   },
   {
    "id": "conn-coil",
@@ -1500,7 +1629,10 @@
     "template": "connector"
    },
    "shapeNote": "board-mounted press (board-to-board) connector receptacle",
-   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate."
+   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate.",
+   "name_ja": "ワイヤレス充電コイルのコネクター",
+   "name_zh": "无线充电线圈连接器",
+   "name_es": "Conector de bobina de carga inalámbrica"
   },
   {
    "id": "conn-interconnect-primary",
@@ -1530,7 +1662,10 @@
     "template": "connector"
    },
    "shapeNote": "board-mounted press (board-to-board) connector receptacle",
-   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate."
+   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate.",
+   "name_ja": "主中継コネクター（メイン基板）",
+   "name_zh": "主互连连接器（主板）",
+   "name_es": "Conector de interconexión principal (placa principal)"
   },
   {
    "id": "conn-interconnect-main",
@@ -1560,7 +1695,10 @@
     "template": "connector"
    },
    "shapeNote": "board-mounted press (board-to-board) connector receptacle",
-   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate."
+   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate.",
+   "name_ja": "MAIN表示の副中継コネクター（右下）",
+   "name_zh": "标有MAIN的副互连连接器（右下）",
+   "name_es": "Conector secundario marcado MAIN (inferior derecho)"
   },
   {
    "id": "conn-mmwave-antenna",
@@ -1590,7 +1728,10 @@
     "template": "connector"
    },
    "shapeNote": "board-mounted press (board-to-board) connector receptacle",
-   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate."
+   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate.",
+   "name_ja": "ミリ波アンテナのコネクター（基板右端）",
+   "name_zh": "毫米波天线连接器（主板右边缘）",
+   "name_es": "Conector de antena mmWave (borde derecho de placa principal)"
   },
   {
    "id": "conn-front-camera",
@@ -1620,7 +1761,10 @@
     "template": "connector"
    },
    "shapeNote": "board-mounted press (board-to-board) connector receptacle",
-   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate."
+   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate.",
+   "name_ja": "前面カメラのコネクター",
+   "name_zh": "前置相机连接器",
+   "name_es": "Conector de cámara frontal"
   },
   {
    "id": "conn-earpiece",
@@ -1649,7 +1793,10 @@
     "template": "connector"
    },
    "shapeNote": "board-mounted press (board-to-board) connector receptacle",
-   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate."
+   "notes": "Existence verified by the listed guides. 'verified' entries also have a stated location (edge/corner); exact xy is still approximate.",
+   "name_ja": "受話スピーカーのコネクター",
+   "name_zh": "听筒扬声器连接器",
+   "name_es": "Conector del auricular"
   },
   {
    "id": "display-cable",
@@ -1707,7 +1854,10 @@
     ]
    },
    "shapeNote": "long narrow flex along the left rail, jogging right at both ends (to display connector at bottom and motherboard bottom-left)",
-   "notes": "Separate removable cable from the display connector to the motherboard bottom-left (s5, s7). Left-rail route is estimated; bbox covers only the straight run."
+   "notes": "Separate removable cable from the display connector to the motherboard bottom-left (s5, s7). Left-rail route is estimated; bbox covers only the straight run.",
+   "name_ja": "画面延長ケーブル",
+   "name_zh": "屏幕延长排线",
+   "name_es": "Cable de extensión de pantalla"
   },
   {
    "id": "interconnect-primary",
@@ -1766,7 +1916,10 @@
     ]
    },
    "shapeNote": "long narrow flex along the right rail beside the battery",
-   "notes": "Two interconnect cables verified; routing along the right rail estimated (both board ends are at the right)."
+   "notes": "Two interconnect cables verified; routing along the right rail estimated (both board ends are at the right).",
+   "name_ja": "主中継フレックスケーブル（メイン基板からサブ基板）",
+   "name_zh": "主互连排线（主板至副板）",
+   "name_es": "Cable flexible principal (placa principal a secundaria)"
   },
   {
    "id": "interconnect-secondary",
@@ -1824,7 +1977,10 @@
      ]
     ]
    },
-   "shapeNote": "long narrow flex stacked over the primary one"
+   "shapeNote": "long narrow flex stacked over the primary one",
+   "name_ja": "副中継フレックスケーブル（MAIN / SUB表示）",
+   "name_zh": "副互连排线（标有MAIN／SUB）",
+   "name_es": "Cable flexible secundario (marcado MAIN/SUB)"
   },
   {
    "id": "earpiece-module",
@@ -1858,7 +2014,10 @@
     "slots": 3
    },
    "shapeNote": "plastic carrier along the top edge holding the earpiece speaker; pried from its bottom edge",
-   "notes": "5 screws and connector verified. Its footprint is estimated (a top carrier is assumed because it needs 5 screws)."
+   "notes": "5 screws and connector verified. Its footprint is estimated (a top carrier is assumed because it needs 5 screws).",
+   "name_ja": "受話スピーカー一式（上部カバー）",
+   "name_zh": "听筒扬声器总成（顶盖）",
+   "name_es": "Conjunto del auricular (cubierta superior)"
   },
   {
    "id": "screws-earpiece",
@@ -1914,7 +2073,10 @@
    },
    "shapeNote": "five screws around the carrier",
    "notes": "Positions estimated.",
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "受話スピーカー一式のねじ",
+   "name_zh": "听筒总成螺钉",
+   "name_es": "Tornillos del conjunto del auricular"
   },
   {
    "id": "battery-flex",
@@ -1957,7 +2119,10 @@
     ]
    },
    "shapeNote": "short flex from the battery top edge folding onto the motherboard connector",
-   "notes": "Disconnected right after the coil assembly comes off, before the earpiece (s5). Shown as a separate step so the plug-in can be animated."
+   "notes": "Disconnected right after the coil assembly comes off, before the earpiece (s5). Shown as a separate step so the plug-in can be animated.",
+   "name_ja": "バッテリーのフレックスケーブルとプラグ",
+   "name_zh": "电池排线及插头",
+   "name_es": "Cable flexible y enchufe de batería"
   },
   {
    "id": "sim-tray",
@@ -1992,7 +2157,10 @@
    "notes": "SIM tray on the bottom edge (s9). On the right seen from the back is estimated. Sits inside the SIM reader cage, so the bboxes overlap.",
    "passesThrough": [
     "frame"
-   ]
+   ],
+   "name_ja": "SIMカードトレー",
+   "name_zh": "SIM卡托",
+   "name_es": "Bandeja de tarjeta SIM"
   },
   {
    "id": "wireless-coil",
@@ -2033,8 +2201,14 @@
    "key": true,
    "desc": {
     "ko": "무선 충전 코일. 배터리 위를 덮고 나사 6개로 고정돼요.",
-    "en": "Wireless charging coil over the battery, held by six screws."
-   }
+    "en": "Wireless charging coil over the battery, held by six screws.",
+    "ja": "バッテリーの上にワイヤレス充電コイルがあり、6 本のネジで固定されています。",
+    "zh": "电池上方的无线充电线圈由六个螺钉固定。",
+    "es": "Bobina de carga inalámbrica sobre la batería, sujeta por seis tornillos."
+   },
+   "name_ja": "ワイヤレス充電／NFCコイル一式",
+   "name_zh": "无线充电／NFC线圈总成",
+   "name_es": "Conjunto de bobina de carga inalámbrica / NFC"
   },
   {
    "id": "loudspeaker-module",
@@ -2068,7 +2242,10 @@
     "slots": 5
    },
    "shapeNote": "sealed speaker box at the bottom-left (seen from back), with a notch on its left edge",
-   "notes": "7 screws, clips, left-edge notch verified. Box position estimated (speaker grille is on the bottom-right seen from the front)."
+   "notes": "7 screws, clips, left-edge notch verified. Box position estimated (speaker grille is on the bottom-right seen from the front).",
+   "name_ja": "スピーカーモジュール",
+   "name_zh": "扬声器模组",
+   "name_es": "Módulo de altavoz"
   },
   {
    "id": "loudspeaker-wing",
@@ -2096,7 +2273,10 @@
     "mat": "black"
    },
    "shapeNote": "flat plastic extension of the speaker module across the daughterboard",
-   "notes": "Hypothesis: 7 speaker screws and the need to remove the speaker before reaching the daughterboard connectors suggest it spans the bottom. Not confirmed."
+   "notes": "Hypothesis: 7 speaker screws and the need to remove the speaker before reaching the daughterboard connectors suggest it spans the bottom. Not confirmed.",
+   "name_ja": "スピーカーモジュールのカバー張り出し部（サブ基板上）",
+   "name_zh": "扬声器模组盖翼（副板上方）",
+   "name_es": "Aleta de cubierta del altavoz (sobre placa secundaria)"
   },
   {
    "id": "screws-coil",
@@ -2157,7 +2337,10 @@
    },
    "shapeNote": "six screws around the coil perimeter",
    "notes": "s13 (community guide) says 8 screws; the 3 main guides say 6. Positions estimated.",
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "ワイヤレスコイル用ねじ",
+   "name_zh": "无线线圈螺钉",
+   "name_es": "Tornillos de bobina inalámbrica"
   },
   {
    "id": "screws-loudspeaker",
@@ -2222,7 +2405,10 @@
    },
    "shapeNote": "seven screws across the bottom module",
    "notes": "Positions estimated.",
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "スピーカーのネジ",
+   "name_zh": "扬声器螺丝",
+   "name_es": "Tornillos de altavoz"
   },
   {
    "id": "back-cover-adhesive",
@@ -2253,7 +2439,10 @@
     "ring": 1.8
    },
    "shapeNote": "perimeter ring plus a spot above the flash cutout",
-   "notes": "All four edges plus a flash-area patch (s4)."
+   "notes": "All four edges plus a flash-area patch (s4).",
+   "name_ja": "背面カバー用接着材",
+   "name_zh": "后盖胶粘层",
+   "name_es": "Adhesivo de tapa trasera"
   },
   {
    "id": "back-cover",
@@ -2322,8 +2511,14 @@
    "key": true,
    "desc": {
     "ko": "후면 유리(Gorilla Glass Victus 2). 접착제로 붙여 방수 밀봉해요.",
-    "en": "Gorilla Glass Victus 2 back, glued down to seal the phone."
-   }
+    "en": "Gorilla Glass Victus 2 back, glued down to seal the phone.",
+    "ja": "Gorilla Glass Victus 2 背面、電話機を密閉するために接着されています。",
+    "zh": "Gorilla Glass Victus 2 背面，粘在一起以密封手机。",
+    "es": "Parte trasera de Gorilla Glass Victus 2, pegado para sellar el teléfono."
+   },
+   "name_ja": "背面ガラス（Gorilla Glass Victus 2）",
+   "name_zh": "背板玻璃（Gorilla Glass Victus 2）",
+   "name_es": "Vidrio trasero (Gorilla Glass Victus 2)"
   },
   {
    "id": "camera-lens-covers",
@@ -2376,7 +2571,10 @@
    "notes": "Individually replaceable per s14. Bump height (~0.9 mm) and positions estimated.",
    "passesThrough": [
     "back-cover"
-   ]
+   ],
+   "name_ja": "背面カメラのレンズカバー／リング",
+   "name_zh": "后置相机镜头盖／环",
+   "name_es": "Cubiertas/anillos de lentes traseras"
   }
  ],
  "steps": [
@@ -2395,17 +2593,26 @@
    ],
    "tools": {
     "ko": "열풍기, 흡착 손잡이, 오프닝 툴 (분리할 때만)",
-    "en": "heat, suction handle, iFlex (only if separating)"
+    "en": "heat, suction handle, iFlex (only if separating)",
+    "ja": "ヒート、吸引ハンドル、iFlex (分離する場合のみ)",
+    "zh": "加热、吸力手柄、iFlex（仅在分离时）",
+    "es": "calor, mango de succión, iFlex (solo si se separa)"
    },
    "cautions": {
     "ko": "디스플레이는 접착으로 붙은 깨지기 쉬운 부품이에요. 서비스용 부품은 배터리가 미리 붙어서 와요.",
-    "en": "Display is a fragile, adhesive-bonded unit; the service part ships with the battery pre-installed"
+    "en": "Display is a fragile, adhesive-bonded unit; the service part ships with the battery pre-installed",
+    "ja": "ディスプレイは壊れやすい、接着されたユニットです。サービス部品はバッテリーが事前に取り付けられた状態で出荷されます",
+    "zh": "显示屏是一个易碎的、用粘合剂粘合的单元；维修部件出厂时已预装电池",
+    "es": "La pantalla es una unidad frágil unida con adhesivo; La pieza de servicio se envía con la batería preinstalada."
    },
    "path": "drop",
    "sourceIds": [
     "s7",
     "s9"
-   ]
+   ],
+   "title_ja": "画面にフレームを取り付ける",
+   "title_zh": "将边框装到屏幕上",
+   "title_es": "Montar el marco sobre la pantalla"
   },
   {
    "n": 2,
@@ -2417,16 +2624,25 @@
    ],
    "tools": {
     "ko": "당김 탭 (잘 안 떨어지면 이소프로필 알코올)",
-    "en": "pull tab; isopropyl alcohol if it resists"
+    "en": "pull tab; isopropyl alcohol if it resists",
+    "ja": "プルタブ。抵抗がある場合はイソプロピルアルコール",
+    "zh": "拉片；异丙醇（如果有抵抗力）",
+    "es": "lengüeta de extracción; alcohol isopropílico si resiste"
    },
    "cautions": {
     "ko": "배터리에 금속 공구를 쓰지 마세요.",
-    "en": "Never use metal tools on the battery"
+    "en": "Never use metal tools on the battery",
+    "ja": "バッテリーには金属製の工具を決して使用しないでください",
+    "zh": "切勿在电池上使用金属工具",
+    "es": "Nunca utilices herramientas metálicas en la batería."
    },
    "path": "drop",
    "sourceIds": [
     "s8"
-   ]
+   ],
+   "title_ja": "引き抜きタブ付き接着材にバッテリーを載せる",
+   "title_zh": "将电池装到易拉胶上",
+   "title_es": "Colocar la batería sobre el adhesivo con lengüeta"
   },
   {
    "n": 3,
@@ -2443,17 +2659,26 @@
    ],
    "tools": {
     "ko": "십자 #0, 스퍼저",
-    "en": "Phillips #0, spudger"
+    "en": "Phillips #0, spudger",
+    "ja": "フィリップス #0、スパッジャー",
+    "zh": "菲利普斯#0，撬棒",
+    "es": "Phillips #0, spudger"
    },
    "cautions": {
     "ko": "USB-C 포트를 비스듬히 홈에 먼저 끼운 다음, 보드를 평평하게 눌러요.",
-    "en": "Seat the USB-C port into its recess at an angle, then press the board flat."
+    "en": "Seat the USB-C port into its recess at an angle, then press the board flat.",
+    "ja": "USB-C ポートを凹部に斜めに差し込み、ボードを平らに押します。",
+    "zh": "将 USB-C 端口以一定角度放入其凹槽中，然后将板压平。",
+    "es": "Asiente el puerto USB-C en su hueco en ángulo, luego presione la placa para que quede plana."
    },
    "path": "drop",
    "sourceIds": [
     "s6",
     "s9"
-   ]
+   ],
+   "title_ja": "USB-Cポート付きサブ基板",
+   "title_zh": "带USB-C接口的副板",
+   "title_es": "Placa secundaria con puerto USB-C"
   },
   {
    "n": 4,
@@ -2467,16 +2692,25 @@
    ],
    "tools": {
     "ko": "십자 #0, 꺾인 핀셋",
-    "en": "Phillips #0, angled tweezers"
+    "en": "Phillips #0, angled tweezers",
+    "ja": "プラス #0、角度付きピンセット",
+    "zh": "Phillips #0，斜角镊子",
+    "es": "Phillips #0, pinzas en ángulo"
    },
    "cautions": {
     "ko": "mmWave 모델에만 있어요.",
-    "en": "Only on mmWave SKUs"
+    "en": "Only on mmWave SKUs",
+    "ja": "ミリ波 SKU のみ",
+    "zh": "仅适用于毫米波 SKU",
+    "es": "Solo en SKU mmWave"
    },
    "path": "drop",
    "sourceIds": [
     "s9"
-   ]
+   ],
+   "title_ja": "5Gミリ波アンテナと金具（ミリ波対応機種）",
+   "title_zh": "5G毫米波天线及支架（毫米波机型）",
+   "title_es": "Antena 5G mmWave y soporte (modelos mmWave)"
   },
   {
    "n": 5,
@@ -2488,16 +2722,25 @@
    ],
    "tools": {
     "ko": "스퍼저",
-    "en": "spudger"
+    "en": "spudger",
+    "ja": "スパッジャー",
+    "zh": "撬棒",
+    "es": "espátula"
    },
    "cautions": {
     "ko": "전도성 테이프를 옮겨 붙여요.",
-    "en": "Transfer conductive tape"
+    "en": "Transfer conductive tape",
+    "ja": "転写導電テープ",
+    "zh": "转移导电胶带",
+    "es": "Cinta conductora de transferencia"
    },
    "path": "drop",
    "sourceIds": [
     "s9"
-   ]
+   ],
+   "title_ja": "導電テープ上のアンテナモジュール",
+   "title_zh": "导电胶带上的天线模组",
+   "title_es": "Módulo de antena sobre cinta conductora"
   },
   {
    "n": 6,
@@ -2509,17 +2752,26 @@
    ],
    "tools": {
     "ko": "핀셋, 얇은 양면 테이프",
-    "en": "tweezers, thin double-sided tape"
+    "en": "tweezers, thin double-sided tape",
+    "ja": "ピンセット、薄い両面テープ",
+    "zh": "镊子、薄双面胶带",
+    "es": "pinzas, cinta adhesiva fina de doble cara"
    },
    "cautions": {
     "ko": "카메라 기판을 카메라 몸체에서 떼지 마세요.",
-    "en": "Do not separate camera PCB from its housing"
+    "en": "Do not separate camera PCB from its housing",
+    "ja": "カメラ PCB をハウジングから分離しないでください",
+    "zh": "请勿将相机 PCB 与其外壳分开",
+    "es": "No separe la PCB de la cámara de su carcasa"
    },
    "path": "drop",
    "sourceIds": [
     "s9",
     "s11"
-   ]
+   ],
+   "title_ja": "フレームのくぼみに前面カメラを取り付ける",
+   "title_zh": "将前置相机装入边框凹槽",
+   "title_es": "Introducir cámara frontal en el hueco del marco"
   },
   {
    "n": 7,
@@ -2533,17 +2785,26 @@
    ],
    "tools": {
     "ko": "스퍼저",
-    "en": "spudger"
+    "en": "spudger",
+    "ja": "スパッジャー",
+    "zh": "撬棒",
+    "es": "espátula"
    },
    "cautions": {
     "ko": "초광각 카메라는 핀 두 개에 걸어요. 45도로 기울여 넣어요.",
-    "en": "Ultrawide hooks onto two pegs; insert at 45 degrees"
+    "en": "Ultrawide hooks onto two pegs; insert at 45 degrees",
+    "ja": "2 本のペグに超幅広のフックを掛けます。 45度で挿入",
+    "zh": "超宽挂钩挂在两个钉子上； 45度插入",
+    "es": "Ganchos ultraanchos en dos clavijas; insertar a 45 grados"
    },
    "path": "press",
    "sourceIds": [
     "s5",
     "s12"
-   ]
+   ],
+   "title_ja": "メイン基板に背面カメラを取り付ける",
+   "title_zh": "将后置相机装到主板上",
+   "title_es": "Montar cámaras traseras sobre placa principal"
   },
   {
    "n": 8,
@@ -2566,17 +2827,26 @@
    ],
    "tools": {
     "ko": "십자 #0, 스퍼저",
-    "en": "Phillips #0, spudger"
+    "en": "Phillips #0, spudger",
+    "ja": "フィリップス #0、スパッジャー",
+    "zh": "菲利普斯#0，撬棒",
+    "es": "Phillips #0, spudger"
    },
    "cautions": {
     "ko": "전면 카메라와 mmWave 케이블을 보드 위로 지나가게 한 뒤 연결해요.",
-    "en": "Route front camera and mmWave cables over the board, then connect them"
+    "en": "Route front camera and mmWave cables over the board, then connect them",
+    "ja": "フロントカメラとミリ波ケーブルをボード上に配線し、接続します。",
+    "zh": "将前置摄像头和毫米波电缆布置在电路板上，然后连接它们",
+    "es": "Pase los cables de la cámara frontal y mmWave sobre el tablero, luego conéctelos"
    },
    "path": "drop",
    "sourceIds": [
     "s5",
     "s9"
-   ]
+   ],
+   "title_ja": "カメラ付きメイン基板をフレームに取り付ける",
+   "title_zh": "将带相机的主板装入边框",
+   "title_es": "Montar placa principal con cámaras en el marco"
   },
   {
    "n": 9,
@@ -2589,18 +2859,27 @@
    ],
    "tools": {
     "ko": "스퍼저",
-    "en": "spudger"
+    "en": "spudger",
+    "ja": "スパッジャー",
+    "zh": "撬棒",
+    "es": "espátula"
    },
    "cautions": {
     "ko": "커넥터는 부품이 없는 평평한 곳만 눌러요.",
-    "en": "Press connectors only on flat areas without components"
+    "en": "Press connectors only on flat areas without components",
+    "ja": "コンポーネントのない平らな領域にのみコネクタを押してください",
+    "zh": "仅在没有元件的平坦区域上按压连接器",
+    "es": "Conectores a presión solo en áreas planas sin componentes"
    },
    "path": "press",
    "sourceIds": [
     "s5",
     "s6",
     "s7"
-   ]
+   ],
+   "title_ja": "画面ケーブルと2本の中継ケーブル",
+   "title_zh": "屏幕排线与两条互连排线",
+   "title_es": "Cable de pantalla y dos cables de interconexión"
   },
   {
    "n": 10,
@@ -2612,17 +2891,26 @@
    ],
    "tools": {
     "ko": "십자 #0, 스퍼저",
-    "en": "Phillips #0, spudger"
+    "en": "Phillips #0, spudger",
+    "ja": "フィリップス #0、スパッジャー",
+    "zh": "菲利普斯#0，撬棒",
+    "es": "Phillips #0, spudger"
    },
    "cautions": {
     "ko": "나사를 조이기 전에 수화부 스피커를 먼저 연결해요.",
-    "en": "Connect earpiece before screwing down"
+    "en": "Connect earpiece before screwing down",
+    "ja": "ネジを締める前にイヤホンを接続してください",
+    "zh": "拧紧之前连接耳机",
+    "es": "Conecte el auricular antes de atornillarlo"
    },
    "path": "drop",
    "sourceIds": [
     "s5",
     "s10"
-   ]
+   ],
+   "title_ja": "受話スピーカー一式",
+   "title_zh": "听筒扬声器总成",
+   "title_es": "Conjunto del auricular"
   },
   {
    "n": 11,
@@ -2633,16 +2921,25 @@
    ],
    "tools": {
     "ko": "스퍼저",
-    "en": "spudger"
+    "en": "spudger",
+    "ja": "スパッジャー",
+    "zh": "撬棒",
+    "es": "espátula"
    },
    "cautions": {
     "ko": "배터리는 내부 케이블을 모두 연결한 다음 마지막에 연결해요.",
-    "en": "Battery is connected after all internal cables (it is the first thing disconnected after the coil)"
+    "en": "Battery is connected after all internal cables (it is the first thing disconnected after the coil)",
+    "ja": "バッテリーはすべての内部ケーブルの後に接続されます（コイルの後に最初に外されるものです）",
+    "zh": "在所有内部电缆之后连接电池（在线圈之后首先断开电池）",
+    "es": "La batería se conecta después de todos los cables internos (es lo primero que se desconecta después de la bobina)"
    },
    "path": "press",
    "sourceIds": [
     "s5"
-   ]
+   ],
+   "title_ja": "バッテリーを接続する",
+   "title_zh": "连接电池",
+   "title_es": "Conectar la batería"
   },
   {
    "n": 12,
@@ -2653,13 +2950,19 @@
    ],
    "tools": {
     "ko": "SIM 핀",
-    "en": "SIM eject tool"
+    "en": "SIM eject tool",
+    "ja": "SIM取り出しツール",
+    "zh": "SIM 弹出工具",
+    "es": "Herramienta de expulsión de SIM"
    },
    "cautions": null,
    "path": "slide",
    "sourceIds": [
     "s9"
-   ]
+   ],
+   "title_ja": "SIMトレーを挿入する",
+   "title_zh": "插入SIM卡托",
+   "title_es": "Insertar bandeja SIM"
   },
   {
    "n": 13,
@@ -2674,17 +2977,26 @@
    ],
    "tools": {
     "ko": "십자 #0, 스퍼저",
-    "en": "Phillips #0, spudger"
+    "en": "Phillips #0, spudger",
+    "ja": "フィリップス #0、スパッジャー",
+    "zh": "菲利普斯#0，撬棒",
+    "es": "Phillips #0, spudger"
    },
    "cautions": {
     "ko": "스피커 테두리를 돌아가며 눌러 프레임에 딸깍 고정한 뒤 나사 13개를 조이고, 코일 커넥터를 꽂아요.",
-    "en": "Work round the speaker's rim until it snaps into the frame, then drive the 13 screws and plug in the coil."
+    "en": "Work round the speaker's rim until it snaps into the frame, then drive the 13 screws and plug in the coil.",
+    "ja": "スピーカーのリムをフレームにカチッとはまるまで回してから、13 本のネジを締めてコイルを差し込みます。",
+    "zh": "围绕扬声器边缘进行操作，直至其卡入框架，然后拧入 13 颗螺钉并插入线圈。",
+    "es": "Trabaje alrededor del borde del altavoz hasta que encaje en el marco, luego coloque los 13 tornillos y conecte la bobina."
    },
    "path": "drop",
    "sourceIds": [
     "s5",
     "s6"
-   ]
+   ],
+   "title_ja": "ワイヤレスコイルとスピーカー一式",
+   "title_zh": "无线线圈与扬声器总成",
+   "title_es": "Conjunto de bobina inalámbrica y altavoz"
   },
   {
    "n": 14,
@@ -2697,53 +3009,86 @@
    ],
    "tools": {
     "ko": "열풍기, 클램프, 새 접착제",
-    "en": "heat, clamps, new adhesive"
+    "en": "heat, clamps, new adhesive",
+    "ja": "熱、クランプ、新しい接着剤",
+    "zh": "加热、夹具、新粘合剂",
+    "es": "calor, abrazaderas, adhesivo nuevo"
    },
    "cautions": {
     "ko": "덮기 전에 동작을 확인해요. 접착제를 새로 잘 붙이지 않으면 방수 성능(IP68)이 사라져요.",
-    "en": "Test the phone before sealing; IP68 is lost unless the adhesive is reapplied well"
+    "en": "Test the phone before sealing; IP68 is lost unless the adhesive is reapplied well",
+    "ja": "封をする前に携帯電話をテストしてください。接着剤をしっかりと再塗布しないとIP68は失われます",
+    "zh": "密封前测试手机；除非重新涂好粘合剂，否则 IP68 将丧失",
+    "es": "Pruebe el teléfono antes de sellar; IP68 se pierde a menos que se vuelva a aplicar bien el adhesivo"
    },
    "path": "drop",
    "sourceIds": [
     "s4"
-   ]
+   ],
+   "title_ja": "新しい接着材で背面ガラスを取り付ける",
+   "title_zh": "用新胶粘层安装背板玻璃",
+   "title_es": "Vidrio trasero con adhesivo nuevo"
   }
  ],
  "meta": {
   "interpretation": {
    "ko": "삼성 갤럭시 S24 기본형 (SM-S921)",
-   "en": "Samsung Galaxy S24 base model (SM-S921)"
+   "en": "Samsung Galaxy S24 base model (SM-S921)",
+   "ja": "Samsung Galaxy S24 ベースモデル (SM-S921)",
+   "zh": "三星 Galaxy S24 基本型号 (SM-S921)",
+   "es": "Modelo base Samsung Galaxy S24 (SM-S921)"
   },
   "researchedAt": "2026-10-29",
   "gate2": "pass",
   "limitations": [
    {
     "ko": "내부 부품의 치수와 위치는 공개된 수치가 없어 외형 치수와 배터리 크기에 맞춰 추정했어요.",
-    "en": "No internal dimensions are published; inner positions and sizes are estimated against the outer size and the battery."
+    "en": "No internal dimensions are published; inner positions and sizes are estimated against the outer size and the battery.",
+    "ja": "内部寸法は公開されていません。内側の位置とサイズは、外側のサイズとバッテリーに対して推定されます。",
+    "zh": "未公布内部尺寸；内部位置和尺寸是根据外部尺寸和电池来估计的。",
+    "es": "No se publican dimensiones internas; Las posiciones y tamaños internos se estiman en función del tamaño externo y la batería."
    },
    {
     "ko": "보조 보드 나사 수는 자료마다 달라요(2개/3개). 보조 보드만 다루는 iFixit 가이드(3개)를 따랐어요.",
-    "en": "Sources disagree on the daughterboard screws (2 vs 3); the dedicated iFixit daughterboard guide (3) is followed."
+    "en": "Sources disagree on the daughterboard screws (2 vs 3); the dedicated iFixit daughterboard guide (3) is followed.",
+    "ja": "ドーターボードのネジについては情報源の意見が一致していません (2 対 3)。専用の iFixit ドーターボード ガイド (3) に従います。",
+    "zh": "消息来源对子板螺丝的看法不一（2 比 3）；遵循专用的 iFixit 子板指南 (3)。",
+    "es": "Las fuentes no están de acuerdo con los tornillos de la placa hija (2 frente a 3); Se sigue la guía dedicada de la placa hija iFixit (3)."
    },
    {
     "ko": "진동 모터 위치, 상단 안테나의 이름, mmWave 케이블의 다른 끝은 자료가 없어 추정했어요.",
-    "en": "The vibration motor position, the top antenna and the far end of the mmWave cable are not documented and are estimated."
+    "en": "The vibration motor position, the top antenna and the far end of the mmWave cable are not documented and are estimated.",
+    "ja": "振動モーターの位置、上部アンテナ、ミリ波ケーブルの遠端は文書化されておらず、推定されています。",
+    "zh": "振动电机位置、顶部天线和毫米波电缆的远端未记录且是估计的。",
+    "es": "La posición del motor de vibración, la antena superior y el otro extremo del cable mmWave no están documentados y son estimados."
    },
    {
     "ko": "스피커 모듈이 보조 보드 위로 이어지는 부분(스피커 날개)은 나사 배치에서 추론한 가설이에요.",
-    "en": "The loudspeaker \"wing\" across the sub board is a hypothesis drawn from its screw layout."
+    "en": "The loudspeaker \"wing\" across the sub board is a hypothesis drawn from its screw layout.",
+    "ja": "サブボード上のラウドスピーカーの「ウィング」は、ネジの配置から導き出された仮説です。",
+    "zh": "子板上的扬声器“翼”是根据其螺钉布局得出的假设。",
+    "es": "El \"ala\" del altavoz a través del tablero secundario es una hipótesis extraída de su disposición de tornillos."
    },
    {
     "ko": "mmWave 안테나·브래킷은 mmWave 모델(예: SM-S921U)에만 있어요.",
-    "en": "The mmWave antenna and bracket exist only on mmWave models (e.g. SM-S921U)."
+    "en": "The mmWave antenna and bracket exist only on mmWave models (e.g. SM-S921U).",
+    "ja": "ミリ波アンテナとブラケットはミリ波モデル (SM-S921U など) にのみ存在します。",
+    "zh": "毫米波天线和支架仅存在于毫米波型号（例如 SM-S921U）上。",
+    "es": "La antena mmWave y el soporte existen solo en los modelos mmWave (por ejemplo, SM-S921U)."
    },
    {
     "ko": "케이블 경로, 나사 위치, 차폐 캔 배치는 사진 비례로 그린 그림이에요.",
-    "en": "Cable routes, screw positions and shield-can layout are drawn from photo proportions."
+    "en": "Cable routes, screw positions and shield-can layout are drawn from photo proportions.",
+    "ja": "ケーブルルート、ネジの位置、シールドカンのレイアウトは写真の比率から描かれています。",
+    "zh": "电缆路线、螺钉位置和屏蔽罩布局均根据照片比例绘制。",
+    "es": "Las rutas de los cables, las posiciones de los tornillos y la disposición de las cajas de protección están tomadas de proporciones fotográficas."
    },
    {
     "ko": "고품질 표면의 회로 무늬·미세 결·렌즈 코팅은 설명용 추정입니다. 실측 회로도·재료 사양을 뜻하지 않습니다.",
-    "en": "High-quality circuit marks, micrograin and lens coatings are illustrative estimates, not measured circuitry or material specifications."
+    "en": "High-quality circuit marks, micrograin and lens coatings are illustrative estimates, not measured circuitry or material specifications.",
+    "ja": "高品質の回路マーク、マイクログレイン、レンズ コーティングは推定値であり、回路や材料の仕様を測定したものではありません。",
+    "zh": "高质量电路标记、微晶粒和透镜涂层只是说明性估计，而不是测量的电路或材料规格。",
+    "es": "Las marcas de circuitos de alta calidad, los microgranos y los recubrimientos de lentes son estimaciones ilustrativas, no circuitos medidos ni especificaciones de materiales."
    }
   ],
   "positionsEstimated": true,

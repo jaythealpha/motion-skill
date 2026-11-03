@@ -108,3 +108,7 @@ Gate 1 sees every part as its box: housings as floor + walls (+ bumps), screws p
 - boxes outside the product
 - two parts overlapping when assembled (unless attached, exempt, or `passesThrough`)
 - a part that, on its way in, passes through one already seated (fix the order or the position)
+
+### Five language fields
+
+All user-facing text fields use `{en, ko, ja, zh, es}`. English is the fresh-visit default; numbers, IDs, source IDs and bibliographic titles retain their original values. Legacy Unfold `name_en` / `name_ko` fields also accept `name_ja`, `name_zh`, `name_es` (similarly for titles/descriptions/tools). The normalizer must retain those variants. Prefer object fields in newly authored models. Source text is bundled at build time, never translated over the network during playback.

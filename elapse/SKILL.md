@@ -1,6 +1,6 @@
 ---
 name: elapse
-description: Build a World Trade Center9/11/recovery/rebuilding study (2001–2018), an offline Notre-Dame fire/restoration timeline (2019–2024), a chaptered construction timeline for the Eiffel Tower (1887–1889), or turn a shipwreck into one self-contained HTML page with a chaptered time bar that runs from the accident through the sinking to the wreck's decay on the seabed. For example, RMS Titanic from the iceberg to its projected collapse. The page shows water filling the watertight compartments in an x-ray view, the lights failing, the hull breaking, the pieces falling to the seabed with a depth gauge, rusticles and dated collapses over the years, and projections clearly marked. Every scene is marked sourced, estimated, disputed or projection. Claude researches inquiry records, analyses and expedition reports, writes a time model, and must pass two automatic gates before delivering. Use whenever someone wants to see how a ship sank, what happened to a wreck over time, "what happened to the Titanic / Lusitania / Britannic", a sinking timeline, or how a wreck changed from discovery to now, even if they don't name the skill. Korean UI by default.
+description: Build a World Trade Center9/11/recovery/rebuilding study (2001–2018), an offline Notre-Dame fire/restoration timeline (2019–2024), a chaptered construction timeline for the Eiffel Tower (1887–1889), or turn a shipwreck into one self-contained HTML page with a chaptered time bar that runs from the accident through the sinking to the wreck's decay on the seabed. For example, RMS Titanic from the iceberg to its projected collapse. The page shows water filling the watertight compartments in an x-ray view, the lights failing, the hull breaking, the pieces falling to the seabed with a depth gauge, rusticles and dated collapses over the years, and projections clearly marked. Every scene is marked sourced, estimated, disputed or projection. Claude researches inquiry records, analyses and expedition reports, writes a time model, and must pass two automatic gates before delivering. Use whenever someone wants to see how a ship sank, what happened to a wreck over time, "what happened to the Titanic / Lusitania / Britannic", a sinking timeline, or how a wreck changed from discovery to now, even if they don't name the skill. English UI by default, with Korean, Japanese, Simplified Chinese and Spanish.
 ---
 
 # Elapse
@@ -102,7 +102,7 @@ s.pieces.get('funnel-1').matrix   // its world matrix then (column-major 4×4)
      Write keys that follow the piece that matters (the bow on its way down). Use a point for wide wreck views. Leave room for the iceberg if it is in frame. Keep `cameraSubject` to the main pieces.
    - **Iceberg:** place it beside the ship's track, never in its path.
    - **Burial:** give buried pieces an `embed` depth from the record.
-   - **Card wording:** Korean first. Keep each card one or two short sentences; numbers go in `detail`.
+   - **Card wording:** Provide English, Korean, Japanese, Simplified Chinese and Spanish in each user-visible bilingual field. English is the default. Keep each card one or two short sentences; numbers go in `detail`.
 4. **Gate 1 (data).** Run `node <skill>/scripts/check_model.mjs model.json --official LOA,BEAM,DEPTH` until it prints `GATE1 PASS`. It checks:
    - schema and references, and chapters (cover the bar, in time order)
    - every confidence mark, with projection chapters all marked `projection`
@@ -154,7 +154,7 @@ s.pieces.get('funnel-1').matrix   // its world matrix then (column-major 4×4)
 
 ## Page parameters (for screenshots and links)
 
-`?t=0..100` `&chapter=N` `&style=color|blueprint` `&xray=0|1` `&depth=simple|detail` `&lang=ko|en` `&speed=xslow|slow|normal|fast` (1× / 2× / 3× / 5×; default 2×) `&yaw=&pitch=&zoom=` `&auto=0` `&play=1` `&panel=sources|about` `&branch=a|b`
+`?t=0..100` `&chapter=N` `&style=color|blueprint` `&xray=0|1` `&depth=simple|detail` `&lang=en|ko|ja|zh|es` `&speed=xslow|slow|normal|fast` (1× / 2× / 3× / 5×; default 2×) `&yaw=&pitch=&zoom=` `&auto=0` `&play=1` `&panel=sources|about` `&branch=a|b`
 
 ## When something else fits better
 
@@ -211,3 +211,9 @@ Open `?t=90&mode=explore&stop=bow&cutaway=1&study=quality`. The page offers exis
 For subsequent Elapse subjects and revisions, follow `references/visual-quality-baseline.md`: the user approved the Britannic fracture art-pass detail level on2026-11-02. Preserve this level of structural readability, restrained materials, context/close-up views and fixed information slots. Implement subject-specific evidence and geometry rather than copying Britannic damage into unrelated examples. Visual approval does not establish measured accuracy or physical-device performance.
 
 The packaged Titanic, Britannic, Eiffel, Notre-Dame and WTC examples opt into subject-specific high-detail tiers with `meta.renderQuality: "high"`; their research generators retain that setting. See `references/quality-tier.md`. New geometry must use the subject's own structural references and dated visibility/transform groups. The shared material treatment alone is not sufficient evidence of matching the approved detail standard.
+
+### Locales and playback quality
+
+Populate user-facing `{en, ko, ja, zh, es}` fields without changing sourced facts or identifiers. English is the fresh-install default. The gallery language is passed by `?lang=` and remembered locally; an explicit URL wins. Translate titles, parts, steps, events, limitations and inspection descriptions, not only controls. Never call a translation API during playback. Review domain terminology and preserve source titles as bibliographic originals. Verify all five locales at 375, 768 and 1440 px, and retain time/view/speed when switching language. The renderer uses full materials on native GPUs and a lighter material/pixel budget for software rendering or narrow mobile viewports. Measure real animation intervals separately from draw calls; do not claim physical-device FPS from headless software tests.
+
+Before building a newly generated model, run `node <skill>/shared/check-locales.mjs model.json`. Fix missing translations until it prints `LOCALES PASS`; the normalizer and the raw research-style fields are both checked. This check supplements the data and screen gates. It does not assess translation accuracy.

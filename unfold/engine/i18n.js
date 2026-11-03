@@ -1,4 +1,5 @@
-// UI strings. Korean is the default; ?lang=en switches to English.
+import{LANGS,tr,translatePack,setLocale}from'../shared/locale.js';
+// Five local UI languages; English is the fresh-visit default.
 const S = {
   ko: {
     depth: '보기', simple: '간단히', detail: '자세히', manual: '매뉴얼',
@@ -45,6 +46,6 @@ const S = {
     unofficial: 'An unofficial illustration, not made or endorsed by the manufacturer. Product names and trademarks belong to their owners, and the real layout may differ.',
   },
 };
-export const LANGS = Object.keys(S);
-export function strings(lang) { return S[lang] || S.ko; }
-export const pick = (bi, lang) => (bi ? bi[lang] || bi.ko || bi.en || '' : '');
+export {LANGS};
+export function strings(lang='en') { setLocale(lang,{url:false});return lang==='ko'?S.ko:lang==='en'?S.en:translatePack(S.en,lang); }
+export const pick = (bi, lang='en') => typeof bi==='string'?tr(bi,lang):(bi ? bi[lang] ?? tr(bi.en || bi.ko || '',lang) : '');

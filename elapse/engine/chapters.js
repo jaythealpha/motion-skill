@@ -39,7 +39,15 @@ export function timeToBar(model, at) {
 const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const p2 = n => String(n).padStart(2, '0');
 // the real time at bar t: '4월 15일 01:00' / 'Apr 15, 01:00' in a minute chapter, '1996년' / '1996' in a year chapter
-export function formatTime(model, t, lang = 'ko') {
+const formatters=new Map();
+export function formatTime(model, t, lang = 'en') {
+  if(!['ko','en'].includes(lang)){
+    const c=model.chapters[chapterAt(model,t)],raw=barToTime(model,t),seconds=model.geometry?.type==='wtc-2001-2018';
+    const ms=c.unit==='minute'?(seconds?Math.floor(raw/1000)*1000:Math.round(raw/60000)*60000):raw;
+    const tag={ja:'ja-JP',zh:'zh-CN',es:'es-ES'}[lang]||'en',key=tag+':'+c.unit+':'+seconds;
+    if(!formatters.has(key))formatters.set(key,new Intl.DateTimeFormat(tag,{timeZone:'UTC',...(c.unit==='year'?{year:'numeric'}:c.unit==='month'?{year:'numeric',month:'long'}:{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',...(seconds?{second:'2-digit'}:{}),hourCycle:'h23'})}));
+    return formatters.get(key).format(new Date(ms));
+  }
   const c = model.chapters[chapterAt(model, t)], ms = barToTime(model, t);
   if(c.unit==='month'){const d=new Date(ms);return lang==='en'?`${d.getUTCFullYear()}.${p2(d.getUTCMonth()+1)}`:`${d.getUTCFullYear()}년 ${d.getUTCMonth()+1}월`;}
   if (c.unit === 'year') { const y = new Date(ms).getUTCFullYear(); return lang === 'en' ? String(y) : `${y}년`; }

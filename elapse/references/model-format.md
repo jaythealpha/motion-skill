@@ -126,3 +126,7 @@ Each stop needs a unique id, a bilingual-name object (at least one language), ex
 `meta.renderQuality: "high"` selects the opt-in Britannic rendering layer by default. URL `quality=standard` overrides it. `cutaway=1` opens an explicitly explanatory bridge roof cutaway; it does not add a historical collapse event. `mode=explore&stop=<valid stop id>` starts a model-declared inspection target. Unknown stop ids fall back to the normal default. `build-quality.mjs` produces a companion model with independently authored quality stops, source links and limitations while leaving its input model unchanged.
 
 `stops[].trimY` and `trimZ` use the same optional0…1 fraction contract as `trimX`, clipping the first target piece's local bounds for inspection framing only. They do not remove geometry. The Britannic `breach` inspection uses these crops to show the torn plate edge closely.
+
+### Five language fields
+
+All user-facing text fields use `{en, ko, ja, zh, es}`. English is the fresh-visit default; numbers, IDs, source IDs and bibliographic titles retain their original values. Legacy Unfold `name_en` / `name_ko` fields also accept `name_ja`, `name_zh`, `name_es` (similarly for titles/descriptions/tools). The normalizer must retain those variants. Prefer object fields in newly authored models. Source text is bundled at build time, never translated over the network during playback.

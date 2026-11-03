@@ -15,11 +15,11 @@ export const KEY_RANGE = [6, 8];
 // a field that may come as a plain string, as {ko, en}, or as research-style name_ko / name_en
 const bi = (obj, key) => {
   const v = obj[key];
-  if (v && typeof v === 'object') return { ko: v.ko ?? v.en ?? '', en: v.en ?? v.ko ?? '' };
+  if (v && typeof v === 'object') return { ...v, ko: v.ko ?? v.en ?? '', en: v.en ?? v.ko ?? '' };
   if (typeof v === 'string') return { ko: v, en: v };
   const ko = obj[key + '_ko'], en = obj[key + '_en'];
   if (ko == null && en == null) return null;
-  return { ko: ko ?? en, en: en ?? ko };
+  return { ko: ko ?? en, en: en ?? ko, ...Object.fromEntries(['ja','zh','es'].filter(l=>typeof obj[key+'_'+l]==='string').map(l=>[l,obj[key+'_'+l]])) };
 };
 
 export function normalizeModel(raw) {

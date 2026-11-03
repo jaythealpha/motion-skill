@@ -23,7 +23,10 @@
   "notes": "Open 164.6 x 117.8 x 5.2 mm, shut 84.1 x 117.8 x 11.3 mm, 254 g (Apple). Batteries 11.56 Wh (2,962 mAh) + 7.5 Wh (1,921 mAh) = 4,883 mAh per teardowns; Apple publishes no mAh. fold.at assumes symmetric halves; gap = 11.3 - 2 x 5.2 = 0.9 mm (estimated). Orientation: open, inner display down, seen from the back: half A (back glass, logic board, cameras, Touch ID and Camera Control on the free edge x=0, volume on the top edge) on the left; half B (cover display, I/O board, USB-C) on the right. This assumes the usual book-fold layout with the hinge on the left of the cover screen; Apple's procedures are done with the phone shut. Apple's own repair manual is the main source for part names, halves, screws and order; nearly all bbox positions are estimated.",
   "name": {
    "ko": "아이폰 듀오",
-   "en": "iPhone Duo"
+   "en": "iPhone Duo",
+   "ja": "iPhone Duo",
+   "zh": "iPhone Duo",
+   "es": "iPhone Duo"
   },
   "kind": "foldable",
   "fold": {
@@ -294,8 +297,17 @@
    "key": true,
    "desc": {
     "ko": "펼치면 7.6인치가 되는 안쪽 접이식 화면.",
-    "en": "The 7.6-inch folding inner screen."
-   }
+    "en": "The 7.6-inch folding inner screen.",
+    "ja": "7.6インチの折りたたみ式インナースクリーン。",
+    "zh": "7.6英寸折叠内屏。",
+    "es": "La pantalla interior plegable de 7,6 pulgadas."
+   },
+   "name_ja": "内側折りたたみディスプレイ",
+   "name_zh": "内折叠显示屏",
+   "name_es": "Pantalla interior plegable",
+   "desc_ja": "他の部品を組み付ける基準となる7.6インチの折りたたみ画面。",
+   "desc_zh": "作为其他部件装配基础的7.6英寸折叠屏。",
+   "desc_es": "Pantalla plegable de 7,6 pulgadas que sirve de base al resto de los componentes."
   },
   {
    "id": "cover-layer",
@@ -335,7 +347,10 @@
     "template": "adhesive",
     "columns": true,
     "mat": "adhesive"
-   }
+   },
+   "name_ja": "内側画面のカバー層（ナノテクスチャ）",
+   "name_zh": "内屏覆盖层（纳米纹理）",
+   "name_es": "Capa de cubierta de la pantalla interior (nanotextura)"
   },
   {
    "id": "inner-display-trim",
@@ -379,7 +394,10 @@
     "template": "box",
     "columns": true,
     "mat": "black"
-   }
+   },
+   "name_ja": "内側画面の縁枠",
+   "name_zh": "内屏边框",
+   "name_es": "Marco de la pantalla interior"
   },
   {
    "id": "inner-display-adhesive-a",
@@ -413,7 +431,10 @@
     "template": "adhesive",
     "r": 4,
     "ring": 1.6
-   }
+   },
+   "name_ja": "内側画面の接着材（A側）",
+   "name_zh": "内屏胶粘层（A半部）",
+   "name_es": "Adhesivo de pantalla interior (mitad A)"
   },
   {
    "id": "inner-display-adhesive-b",
@@ -447,7 +468,10 @@
     "template": "adhesive",
     "r": 4,
     "ring": 1.6
-   }
+   },
+   "name_ja": "内側画面の接着材（B側）",
+   "name_zh": "内屏胶粘层（B半部）",
+   "name_es": "Adhesivo de pantalla interior (mitad B)"
   },
   {
    "id": "inner-display-foam",
@@ -482,7 +506,10 @@
     "r": 4,
     "ring": 1.6,
     "columns": true
-   }
+   },
+   "name_ja": "内側画面の発泡シール",
+   "name_zh": "内屏泡棉密封条",
+   "name_es": "Junta de espuma de pantalla interior"
   },
   {
    "id": "grounding-foams-a",
@@ -515,7 +542,10 @@
    "shape": {
     "template": "box",
     "r": 0.4
-   }
+   },
+   "name_ja": "接地用フォーム（A側の角）",
+   "name_zh": "接地泡棉（A半部角落）",
+   "name_es": "Espumas de contacto a tierra (esquinas de mitad A)"
   },
   {
    "id": "grounding-foams-b",
@@ -548,7 +578,10 @@
    "shape": {
     "template": "box",
     "r": 0.4
-   }
+   },
+   "name_ja": "接地用フォーム（B側の角）",
+   "name_zh": "接地泡棉（B半部角落）",
+   "name_es": "Espumas de contacto a tierra (esquinas de mitad B)"
   },
   {
    "id": "support-plate-a",
@@ -583,7 +616,10 @@
     "template": "plate",
     "r": 0.8,
     "mat": "metal"
-   }
+   },
+   "name_ja": "炭素繊維製の画面支持板（A側）",
+   "name_zh": "碳纤维屏幕支撑板（A半部）",
+   "name_es": "Placa de soporte de fibra de carbono (mitad A)"
   },
   {
    "id": "support-plate-b",
@@ -618,7 +654,10 @@
     "template": "plate",
     "r": 0.8,
     "mat": "metal"
-   }
+   },
+   "name_ja": "炭素繊維製の画面支持板（B側）",
+   "name_zh": "碳纤维屏幕支撑板（B半部）",
+   "name_es": "Placa de soporte de fibra de carbono (mitad B)"
   },
   {
    "id": "enclosure-a",
@@ -663,7 +702,10 @@
     "colors": {
      "alu": "#c9c3b8"
     }
-   }
+   },
+   "name_ja": "筐体A側（背面ガラス側）",
+   "name_zh": "壳体A半部（背板玻璃侧）",
+   "name_es": "Carcasa, mitad A (lado del vidrio trasero)"
   },
   {
    "id": "enclosure-b",
@@ -708,7 +750,10 @@
     "colors": {
      "alu": "#c9c3b8"
     }
-   }
+   },
+   "name_ja": "筐体B側（外側画面側）",
+   "name_zh": "壳体B半部（外屏侧）",
+   "name_es": "Carcasa, mitad B (lado de la pantalla exterior)"
   },
   {
    "id": "hinge-support-bar",
@@ -743,7 +788,10 @@
     "columns": true,
     "mat": "metal",
     "colors": {}
-   }
+   },
+   "name_ja": "ヒンジ中央支持棒",
+   "name_zh": "铰链中央支撑条",
+   "name_es": "Barra central de soporte de la bisagra"
   },
   {
    "id": "hinge-mechanism",
@@ -784,8 +832,17 @@
    "key": true,
    "desc": {
     "ko": "동기화 기어와 링크 사슬로 된 힌지. 두 쪽이 같은 각도로 열려요.",
-    "en": "Hinge with synchronising gears and a chain of links, so both halves open evenly."
-   }
+    "en": "Hinge with synchronising gears and a chain of links, so both halves open evenly.",
+    "ja": "同期ギアとリンクチェーンを備えたヒンジなので、両方の半分が均等に開きます。",
+    "zh": "带有同步齿轮和链节的铰链，使两半均匀打开。",
+    "es": "Bisagra con engranajes sincronizadores y una cadena de eslabones, para que ambas mitades se abran uniformemente."
+   },
+   "name_ja": "ヒンジ機構",
+   "name_zh": "铰链机构",
+   "name_es": "Mecanismo de bisagra",
+   "desc_ja": "100点以上の部品からなるチタン製ヒンジ。両側を折りたたみ、画面を平らに保持します。",
+   "desc_zh": "由100多个部件构成的钛铰链，用于折叠两半机身并使屏幕保持平整。",
+   "desc_es": "Bisagra de titanio con más de 100 piezas que permite plegar las mitades y mantener plana la pantalla."
   },
   {
    "id": "hinge-flex",
@@ -956,7 +1013,10 @@
       2.4000000000000004
      ]
     ]
-   }
+   },
+   "name_ja": "ヒンジ用フレックスケーブル（折り目を横断する蛇腹形状）",
+   "name_zh": "铰链柔性排线（褶皱形，跨越折叠处）",
+   "name_es": "Cable flexible de bisagra (plegado, cruza el pliegue)"
   },
   {
    "id": "hinge-cover",
@@ -989,7 +1049,10 @@
     "colors": {
      "metal": "#c9c3b8"
     }
-   }
+   },
+   "name_ja": "ヒンジカバー（3Dプリント製チタン）",
+   "name_zh": "铰链盖（3D打印钛）",
+   "name_es": "Cubierta de bisagra (titanio impreso en 3D)"
   },
   {
    "id": "side-button-touch-id",
@@ -1030,7 +1093,10 @@
     "colors": {
      "alu": "#c9c3b8"
     }
-   }
+   },
+   "name_ja": "Touch ID搭載サイドボタン",
+   "name_zh": "带Touch ID的侧键",
+   "name_es": "Botón lateral con Touch ID"
   },
   {
    "id": "camera-control-button",
@@ -1071,7 +1137,10 @@
     "colors": {
      "alu": "#c9c3b8"
     }
-   }
+   },
+   "name_ja": "Camera Controlボタン",
+   "name_zh": "Camera Control按钮",
+   "name_es": "Botón Camera Control"
   },
   {
    "id": "touchid-cc-brackets",
@@ -1105,7 +1174,10 @@
     "template": "plate",
     "r": 0.8,
     "mat": "metal"
-   }
+   },
+   "name_ja": "Touch ID / Camera Control固定金具",
+   "name_zh": "Touch ID / Camera Control支架",
+   "name_es": "Soportes de Touch ID / Camera Control"
   },
   {
    "id": "touchid-cc-flex",
@@ -1149,7 +1221,10 @@
       1.8
      ]
     ]
-   }
+   },
+   "name_ja": "Touch ID / Camera Controlフレックスケーブル",
+   "name_zh": "Touch ID / Camera Control排线",
+   "name_es": "Cable flexible de Touch ID / Camera Control"
   },
   {
    "id": "touchid-cc-cowlings",
@@ -1182,7 +1257,10 @@
    "shape": {
     "template": "shield",
     "r": 0.6
-   }
+   },
+   "name_ja": "Touch ID / Camera Control保護カバー",
+   "name_zh": "Touch ID / Camera Control保护盖",
+   "name_es": "Cubiertas de Touch ID / Camera Control"
   },
   {
    "id": "screws-touchid-cc",
@@ -1239,7 +1317,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "Touch ID / Camera Control用ねじ",
+   "name_zh": "Touch ID / Camera Control螺钉",
+   "name_es": "Tornillos de Touch ID / Camera Control"
   },
   {
    "id": "volume-buttons",
@@ -1281,7 +1362,10 @@
     "colors": {
      "alu": "#c9c3b8"
     }
-   }
+   },
+   "name_ja": "音量ボタン",
+   "name_zh": "音量键",
+   "name_es": "Botones de volumen"
   },
   {
    "id": "volume-bracket",
@@ -1315,7 +1399,10 @@
     "template": "plate",
     "r": 0.8,
     "mat": "metal"
-   }
+   },
+   "name_ja": "音量ボタン固定金具",
+   "name_zh": "音量键支架",
+   "name_es": "Soporte de botones de volumen"
   },
   {
    "id": "volume-flex",
@@ -1360,7 +1447,10 @@
       1.8
      ]
     ]
-   }
+   },
+   "name_ja": "音量ボタンのフレックスケーブル",
+   "name_zh": "音量键排线",
+   "name_es": "Cable flexible de botones de volumen"
   },
   {
    "id": "screws-volume-bracket",
@@ -1409,7 +1499,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "音量ボタン金具用ねじ",
+   "name_zh": "音量键支架螺钉",
+   "name_es": "Tornillos del soporte de volumen"
   },
   {
    "id": "upper-antenna-2",
@@ -1442,7 +1535,10 @@
     "template": "box",
     "r": 0.5,
     "mat": "flex"
-   }
+   },
+   "name_ja": "上部アンテナ2のフレックスケーブル",
+   "name_zh": "上部天线2排线",
+   "name_es": "Cable flexible de antena superior 2"
   },
   {
    "id": "screws-upper-antenna-2",
@@ -1487,7 +1583,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "上部アンテナ2用ねじ",
+   "name_zh": "上部天线2螺钉",
+   "name_es": "Tornillos de antena superior 2"
   },
   {
    "id": "mic-cowling-a",
@@ -1521,7 +1620,10 @@
    "shape": {
     "template": "shield",
     "r": 0.6
-   }
+   },
+   "name_ja": "マイク保護カバー（上部、A側）",
+   "name_zh": "麦克风保护盖（顶部，A半部）",
+   "name_es": "Cubierta de micrófono (superior, mitad A)"
   },
   {
    "id": "main-microphone",
@@ -1555,7 +1657,10 @@
     "template": "speaker",
     "r": 1,
     "slots": 3
-   }
+   },
+   "name_ja": "メインマイク",
+   "name_zh": "主麦克风",
+   "name_es": "Micrófono principal"
   },
   {
    "id": "screw-main-microphone",
@@ -1596,7 +1701,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "メインマイク用ねじ",
+   "name_zh": "主麦克风螺钉",
+   "name_es": "Tornillo del micrófono principal"
   },
   {
    "id": "taptic-engine",
@@ -1629,7 +1737,10 @@
    "shape": {
     "template": "motor",
     "r": 0.8
-   }
+   },
+   "name_ja": "タップティック エンジン",
+   "name_zh": "触觉引擎",
+   "name_es": "Motor Táptico"
   },
   {
    "id": "lower-antenna-flex",
@@ -1675,7 +1786,10 @@
       4.15
      ]
     ]
-   }
+   },
+   "name_ja": "下部アンテナのフレックスケーブル",
+   "name_zh": "下部天线排线",
+   "name_es": "Cable flexible de antena inferior"
   },
   {
    "id": "bottom-speaker",
@@ -1709,7 +1823,10 @@
     "template": "speaker",
     "r": 1,
     "slots": 5
-   }
+   },
+   "name_ja": "下部スピーカー",
+   "name_zh": "底部扬声器",
+   "name_es": "Altavoz inferior"
   },
   {
    "id": "screws-bottom-speaker",
@@ -1763,7 +1880,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "下部スピーカー用ねじ",
+   "name_zh": "底部扬声器螺钉",
+   "name_es": "Tornillos del altavoz inferior"
   },
   {
    "id": "screws-taptic",
@@ -1808,7 +1928,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "Taptic Engine用ねじ",
+   "name_zh": "Taptic Engine螺钉",
+   "name_es": "Tornillos del Taptic Engine"
   },
   {
    "id": "screws-lower-antenna-trilobe",
@@ -1857,7 +1980,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "下部アンテナケーブル用ねじ（トライローブ）",
+   "name_zh": "下部天线排线螺钉（三叶型）",
+   "name_es": "Tornillos del cable de antena inferior (trilobulares)"
   },
   {
    "id": "vapor-chamber",
@@ -1892,7 +2018,10 @@
     "template": "plate",
     "r": 1,
     "mat": "copper"
-   }
+   },
+   "name_ja": "ベーパーチャンバー",
+   "name_zh": "均热板",
+   "name_es": "Cámara de vapor"
   },
   {
    "id": "logic-board",
@@ -1938,8 +2067,17 @@
    "key": true,
    "desc": {
     "ko": "카메라 아래에 있는 로직보드. 금속 차폐로 덮여 있어요.",
-    "en": "Logic board under the camera plateau, under metal shields."
-   }
+    "en": "Logic board under the camera plateau, under metal shields.",
+    "ja": "ロジックボードはカメラプラトーの下、金属シールドの下にあります。",
+    "zh": "逻辑板位于相机平台下方，金属屏蔽下方。",
+    "es": "Placa lógica debajo de la plataforma de la cámara, debajo de protectores metálicos."
+   },
+   "name_ja": "ロジックボード（単層）",
+   "name_zh": "主板（单层）",
+   "name_es": "Placa lógica (una capa)",
+   "desc_ja": "カメラ台座の下にある、A20 Pro搭載の単層メイン基板。",
+   "desc_zh": "位于相机凸台下方、搭载A20 Pro的单层主板。",
+   "desc_es": "Placa principal de una capa con A20 Pro, bajo la plataforma de las cámaras."
   },
   {
    "id": "screws-logic-board",
@@ -1988,7 +2126,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "ロジックボード用ねじ",
+   "name_zh": "主板螺钉",
+   "name_es": "Tornillos de la placa lógica"
   },
   {
    "id": "conn-battery-1",
@@ -2021,7 +2162,10 @@
    "shape": {
     "template": "connector"
    },
-   "path": "press"
+   "path": "press",
+   "name_ja": "バッテリー1コネクター",
+   "name_zh": "电池1连接器",
+   "name_es": "Conector de batería 1"
   },
   {
    "id": "conn-back-glass",
@@ -2054,7 +2198,10 @@
    "shape": {
     "template": "connector"
    },
-   "path": "press"
+   "path": "press",
+   "name_ja": "背面ガラス側コネクター",
+   "name_zh": "背板玻璃连接器",
+   "name_es": "Conector del vidrio trasero"
   },
   {
    "id": "conn-interposer-a",
@@ -2086,7 +2233,10 @@
    "shape": {
     "template": "connector"
    },
-   "path": "press"
+   "path": "press",
+   "name_ja": "中継コネクター（ロジックボード）",
+   "name_zh": "转接连接器（主板）",
+   "name_es": "Conector intermedio (placa lógica)"
   },
   {
    "id": "conn-camera",
@@ -2132,7 +2282,10 @@
      ]
     ]
    },
-   "path": "press"
+   "path": "press",
+   "name_ja": "背面カメラのコネクター",
+   "name_zh": "后置相机连接器",
+   "name_es": "Conectores de cámaras traseras"
   },
   {
    "id": "conn-facetime",
@@ -2164,7 +2317,10 @@
    "shape": {
     "template": "connector"
    },
-   "path": "press"
+   "path": "press",
+   "name_ja": "FaceTimeカメラのコネクター",
+   "name_zh": "FaceTime相机连接器",
+   "name_es": "Conector de cámara FaceTime"
   },
   {
    "id": "conn-logic-board-misc",
@@ -2240,7 +2396,10 @@
      ]
     ]
    },
-   "path": "press"
+   "path": "press",
+   "name_ja": "その他のロジックボード用フレックスコネクター",
+   "name_zh": "其他主板排线连接器",
+   "name_es": "Otros conectores flexibles de la placa lógica"
   },
   {
    "id": "interposer-flex-a",
@@ -2285,7 +2444,10 @@
       3.15
      ]
     ]
-   }
+   },
+   "name_ja": "中継フレックスケーブル（A側）",
+   "name_zh": "转接排线（A半部）",
+   "name_es": "Cable flexible intermedio (mitad A)"
   },
   {
    "id": "upper-antenna-1",
@@ -2319,7 +2481,10 @@
     "template": "box",
     "r": 0.5,
     "mat": "flex"
-   }
+   },
+   "name_ja": "上部アンテナ1のフレックスケーブル",
+   "name_zh": "上部天线1排线",
+   "name_es": "Cable flexible de antena superior 1"
   },
   {
    "id": "screw-upper-antenna-1",
@@ -2360,7 +2525,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "上部アンテナ1用ねじ（トライローブ）",
+   "name_zh": "上部天线1螺钉（三叶型）",
+   "name_es": "Tornillo de antena superior 1 (trilobular)"
   },
   {
    "id": "screws-antenna-crosshead",
@@ -2406,7 +2574,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "アンテナケーブル用ねじ（十字G4/G5）",
+   "name_zh": "天线排线螺钉（十字G4/G5）",
+   "name_es": "Tornillos de cable de antena (cruz G4/G5)"
   },
   {
    "id": "battery-1-adhesive",
@@ -2440,7 +2611,10 @@
     "template": "adhesive",
     "r": 4,
     "ring": 1.6
-   }
+   },
+   "name_ja": "バッテリー1の接着材（通電で剥離）",
+   "name_zh": "电池1胶粘层（通电解胶）",
+   "name_es": "Adhesivo de batería 1 (despegado eléctrico)"
   },
   {
    "id": "battery-1",
@@ -2479,7 +2653,13 @@
    "shape": {
     "template": "battery",
     "r": 2.5
-   }
+   },
+   "name_ja": "バッテリー1（背面ガラス側）",
+   "name_zh": "电池1（背板玻璃侧半部）",
+   "name_es": "Batería 1 (mitad del vidrio trasero)",
+   "desc_ja": "背面ガラス側のバッテリー（小さいセル。割り当ては推定）。",
+   "desc_zh": "背板玻璃侧半部的电池（较小电芯，归属为推定）。",
+   "desc_es": "Batería en la mitad del vidrio trasero (celda menor; asignación inferida)."
   },
   {
    "id": "rear-camera-module",
@@ -2538,8 +2718,17 @@
    "key": true,
    "desc": {
     "ko": "렌즈 두 개가 나란히 있는 후면 카메라 모듈.",
-    "en": "Rear camera module with two lenses side by side."
-   }
+    "en": "Rear camera module with two lenses side by side.",
+    "ja": "2 つのレンズを並べたリアカメラモジュール。",
+    "zh": "后置摄像头模块有两个并排的镜头。",
+    "es": "Módulo de cámara trasera con dos lentes una al lado de la otra."
+   },
+   "name_ja": "背面カメラモジュール（Fusionメイン＋超広角）",
+   "name_zh": "后置相机模组（Fusion主摄＋超广角）",
+   "name_es": "Módulo de cámara trasera (Fusion principal + ultra gran angular)",
+   "desc_ja": "隆起した台座の下にある、48MPカメラ2基の背面モジュール。",
+   "desc_zh": "凸起平台下的双4800万像素后置相机模组。",
+   "desc_es": "Módulo trasero de dos cámaras de 48 MP bajo la plataforma elevada."
   },
   {
    "id": "screws-camera-super",
@@ -2584,7 +2773,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "カメラ用ねじ（super）",
+   "name_zh": "相机螺钉（super）",
+   "name_es": "Tornillos de cámara (super)"
   },
   {
    "id": "screw-camera-crosshead",
@@ -2625,7 +2817,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "カメラ角部のねじ（十字）",
+   "name_zh": "相机角部螺钉（十字）",
+   "name_es": "Tornillo de esquina de cámara (cruz)"
   },
   {
    "id": "wifi-flex",
@@ -2669,7 +2864,10 @@
       3.15
      ]
     ]
-   }
+   },
+   "name_ja": "Wi-Fiアンテナのフレックスケーブル",
+   "name_zh": "Wi-Fi天线排线",
+   "name_es": "Cable flexible de antena Wi-Fi"
   },
   {
    "id": "upper-antenna-4",
@@ -2703,7 +2901,10 @@
     "template": "box",
     "r": 0.5,
     "mat": "flex"
-   }
+   },
+   "name_ja": "上部アンテナ4のフレックスケーブル",
+   "name_zh": "上部天线4排线",
+   "name_es": "Cable flexible de antena superior 4"
   },
   {
    "id": "camera-spacer",
@@ -2737,7 +2938,10 @@
     "template": "plate",
     "r": 0.8,
     "mat": "metal"
-   }
+   },
+   "name_ja": "カメラスペーサー",
+   "name_zh": "相机间隔件",
+   "name_es": "Separador de cámara"
   },
   {
    "id": "screws-camera-spacer",
@@ -2790,7 +2994,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "カメラスペーサー用ねじ",
+   "name_zh": "相机间隔件螺钉",
+   "name_es": "Tornillos del separador de cámara"
   },
   {
    "id": "facetime-camera-adhesive",
@@ -2823,7 +3030,10 @@
    "shape": {
     "template": "adhesive",
     "r": 4
-   }
+   },
+   "name_ja": "FaceTimeカメラ用接着材",
+   "name_zh": "FaceTime相机胶粘层",
+   "name_es": "Adhesivo de cámara FaceTime"
   },
   {
    "id": "facetime-camera",
@@ -2868,7 +3078,10 @@
       2.52
      ]
     ]
-   }
+   },
+   "name_ja": "FaceTimeカメラ（内側画面の下）",
+   "name_zh": "FaceTime相机（内屏下方）",
+   "name_es": "Cámara FaceTime (bajo pantalla interior)"
   },
   {
    "id": "facetime-cowling",
@@ -2901,7 +3114,10 @@
    "shape": {
     "template": "shield",
     "r": 0.6
-   }
+   },
+   "name_ja": "FaceTimeカメラ保護カバー",
+   "name_zh": "FaceTime相机保护盖",
+   "name_es": "Cubierta de cámara FaceTime"
   },
   {
    "id": "screws-facetime-cowling",
@@ -2947,7 +3163,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "FaceTimeカメラカバー用ねじ",
+   "name_zh": "FaceTime相机保护盖螺钉",
+   "name_es": "Tornillos de cubierta FaceTime"
   },
   {
    "id": "logic-board-upper-cowling",
@@ -2981,7 +3200,10 @@
    "shape": {
     "template": "shield",
     "r": 0.6
-   }
+   },
+   "name_ja": "ロジックボード上部カバー",
+   "name_zh": "主板上部保护盖",
+   "name_es": "Cubierta superior de placa lógica"
   },
   {
    "id": "screws-lb-upper-cowling",
@@ -3031,7 +3253,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "ロジックボード上部カバー用ねじ",
+   "name_zh": "主板上部保护盖螺钉",
+   "name_es": "Tornillos de cubierta superior de placa lógica"
   },
   {
    "id": "battery-connector-cowling-a",
@@ -3064,7 +3289,10 @@
    "shape": {
     "template": "shield",
     "r": 0.6
-   }
+   },
+   "name_ja": "バッテリーコネクター保護カバー（A側）",
+   "name_zh": "电池连接器保护盖（A半部）",
+   "name_es": "Cubierta del conector de batería (mitad A)"
   },
   {
    "id": "screws-battery-cowling-a",
@@ -3109,7 +3337,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "バッテリーコネクターカバー用ねじ",
+   "name_zh": "电池连接器保护盖螺钉",
+   "name_es": "Tornillos de cubierta del conector de batería"
   },
   {
    "id": "magsafe-coil",
@@ -3151,8 +3382,14 @@
    "key": true,
    "desc": {
     "ko": "자석 고리가 달린 MagSafe 무선 충전 코일.",
-    "en": "MagSafe wireless-charging coil with its magnet ring."
-   }
+    "en": "MagSafe wireless-charging coil with its magnet ring.",
+    "ja": "MagSafe ワイヤレス充電コイルとマグネット リング。",
+    "zh": "MagSafe 无线充电线圈及其磁环。",
+    "es": "Bobina de carga inalámbrica MagSafe con su anillo magnético."
+   },
+   "name_ja": "MagSafe / Qi2コイルと磁石リング",
+   "name_zh": "MagSafe / Qi2线圈与磁环",
+   "name_es": "Bobina y anillo magnético MagSafe / Qi2"
   },
   {
    "id": "back-glass-adhesive",
@@ -3186,7 +3423,10 @@
     "template": "adhesive",
     "r": 4,
     "ring": 1.6
-   }
+   },
+   "name_ja": "背面ガラス接着剤",
+   "name_zh": "背玻璃胶",
+   "name_es": "Adhesivo de vidrio trasero"
   },
   {
    "id": "back-glass-a",
@@ -3261,8 +3501,17 @@
    "key": true,
    "desc": {
     "ko": "A쪽 후면 유리. 위쪽에 카메라 단이 솟아 있어요.",
-    "en": "Back glass of half A, with the raised camera plateau at the top."
-   }
+    "en": "Back glass of half A, with the raised camera plateau at the top.",
+    "ja": "ハーフ A の背面ガラス。上部に盛り上がったカメラ台地があります。",
+    "zh": "半 A 型后玻璃，顶部有凸起的摄像头平台。",
+    "es": "Vidrio trasero de media A, con la plataforma elevada de la cámara en la parte superior."
+   },
+   "name_ja": "背面ガラス（Ceramic Shield）",
+   "name_zh": "背板玻璃（Ceramic Shield）",
+   "name_es": "Vidrio trasero (Ceramic Shield)",
+   "desc_ja": "MagSafeコイルを備えたA側のCeramic Shield背面。",
+   "desc_zh": "A半部的Ceramic Shield背板，带MagSafe线圈。",
+   "desc_es": "Parte trasera Ceramic Shield de la mitad A, con bobina MagSafe."
   },
   {
    "id": "camera-plateau",
@@ -3330,7 +3579,10 @@
       6.18
      ]
     ]
-   }
+   },
+   "name_ja": "カメラ台座",
+   "name_zh": "相机凸台",
+   "name_es": "Plataforma de cámaras"
   },
   {
    "id": "lens-covers",
@@ -3374,7 +3626,10 @@
       5.88
      ]
     ]
-   }
+   },
+   "name_ja": "サファイア製レンズカバー",
+   "name_zh": "蓝宝石镜头盖",
+   "name_es": "Cubiertas de lente de zafiro"
   },
   {
    "id": "screws-pentalobe-a",
@@ -3420,7 +3675,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "背面ガラス用ねじ（PL1.1ペンタローブ）",
+   "name_zh": "背板玻璃螺钉（PL1.1五角）",
+   "name_es": "Tornillos del vidrio trasero (pentalobe PL1.1)"
   },
   {
    "id": "usb-c-connector",
@@ -3457,7 +3715,10 @@
    "shape": {
     "template": "port",
     "r": 1
-   }
+   },
+   "name_ja": "USB-Cコネクターモジュール",
+   "name_zh": "USB-C连接器模组",
+   "name_es": "Módulo de conector USB-C"
   },
   {
    "id": "screws-usb-c",
@@ -3504,7 +3765,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "USB-C用ねじ（Torx Plus 3IP）",
+   "name_zh": "USB-C螺钉（Torx Plus 3IP）",
+   "name_es": "Tornillos USB-C (Torx Plus 3IP)"
   },
   {
    "id": "io-board",
@@ -3542,7 +3806,10 @@
     "thick": 0.3999999999999999,
     "chips": [],
     "passives": 40
-   }
+   },
+   "name_ja": "入出力基板",
+   "name_zh": "输入输出板",
+   "name_es": "Placa de entrada/salida"
   },
   {
    "id": "screws-io-super",
@@ -3600,7 +3867,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "入出力基板用ねじ（super）",
+   "name_zh": "输入输出板螺钉（super）",
+   "name_es": "Tornillos de placa E/S (super)"
   },
   {
    "id": "screws-io-crosshead",
@@ -3646,7 +3916,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "入出力基板用ねじ（十字）",
+   "name_zh": "输入输出板螺钉（十字）",
+   "name_es": "Tornillos de placa E/S (cruz)"
   },
   {
    "id": "conn-inner-display",
@@ -3679,7 +3952,10 @@
    "shape": {
     "template": "connector"
    },
-   "path": "press"
+   "path": "press",
+   "name_ja": "内側画面コネクター",
+   "name_zh": "内屏连接器",
+   "name_es": "Conector de pantalla interior"
   },
   {
    "id": "conn-interposer-b",
@@ -3711,7 +3987,10 @@
    "shape": {
     "template": "connector"
    },
-   "path": "press"
+   "path": "press",
+   "name_ja": "中継コネクター（入出力基板）",
+   "name_zh": "转接连接器（输入输出板）",
+   "name_es": "Conector intermedio (placa E/S)"
   },
   {
    "id": "conn-io-other",
@@ -3771,7 +4050,10 @@
      ]
     ]
    },
-   "path": "press"
+   "path": "press",
+   "name_ja": "その他の入出力基板コネクター",
+   "name_zh": "其他输入输出板连接器",
+   "name_es": "Otros conectores de placa E/S"
   },
   {
    "id": "interposer-flex-b",
@@ -3816,7 +4098,10 @@
       1.7
      ]
     ]
-   }
+   },
+   "name_ja": "中継フレックスケーブル（B側）",
+   "name_zh": "转接排线（B半部）",
+   "name_es": "Cable flexible intermedio (mitad B)"
   },
   {
    "id": "inner-display-flex",
@@ -3863,7 +4148,10 @@
       1.8
      ]
     ]
-   }
+   },
+   "name_ja": "内部ディスプレイフレックス",
+   "name_zh": "内部显示屏柔性",
+   "name_es": "Flex de pantalla interior"
   },
   {
    "id": "battery-2-adhesive",
@@ -3897,7 +4185,10 @@
     "template": "adhesive",
     "r": 4,
     "ring": 1.6
-   }
+   },
+   "name_ja": "バッテリー2の接着材（通電で剥離）",
+   "name_zh": "电池2胶粘层（通电解胶）",
+   "name_es": "Adhesivo de batería 2 (despegado eléctrico)"
   },
   {
    "id": "battery-2",
@@ -3940,8 +4231,17 @@
    "key": true,
    "desc": {
     "ko": "B쪽의 더 큰 배터리 셀. 배터리는 두 쪽에 나뉘어 있어요.",
-    "en": "The larger cell, in half B; the battery is split across both halves."
-   }
+    "en": "The larger cell, in half B; the battery is split across both halves.",
+    "ja": "大きいセル、半分 B。バッテリーは両方の半分に分割されています。",
+    "zh": "较大的单元格，位于 B 的一半；电池分为两半。",
+    "es": "La celda más grande, en la mitad B; la batería está dividida en ambas mitades."
+   },
+   "name_ja": "バッテリー2（外側画面側）",
+   "name_zh": "电池2（外屏侧半部）",
+   "name_es": "Batería 2 (mitad de pantalla exterior)",
+   "desc_ja": "カバー画面の下のバッテリー（大きいセル。割り当ては推定）。",
+   "desc_zh": "外屏下方的电池（较大电芯，归属为推定）。",
+   "desc_es": "Batería bajo la pantalla exterior (celda mayor; asignación inferida)."
   },
   {
    "id": "top-speaker",
@@ -3975,7 +4275,10 @@
     "template": "speaker",
     "r": 1,
     "slots": 5
-   }
+   },
+   "name_ja": "トップスピーカー",
+   "name_zh": "顶级扬声器",
+   "name_es": "Orador superior"
   },
   {
    "id": "screws-top-speaker",
@@ -4024,7 +4327,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "上部スピーカー用ねじ",
+   "name_zh": "顶部扬声器螺钉",
+   "name_es": "Tornillos del altavoz superior"
   },
   {
    "id": "outer-front-camera",
@@ -4066,7 +4372,10 @@
       3.2399999999999998
      ]
     ]
-   }
+   },
+   "name_ja": "外側前面カメラ（12MP Center Stage）",
+   "name_zh": "外侧前置相机（1200万像素Center Stage）",
+   "name_es": "Cámara frontal exterior (12 MP Center Stage)"
   },
   {
    "id": "screws-front-camera",
@@ -4111,7 +4420,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "外側前面カメラ用ねじ",
+   "name_zh": "外侧前置相机螺钉",
+   "name_es": "Tornillos de cámara frontal exterior"
   },
   {
    "id": "ambient-light-sensor",
@@ -4144,7 +4456,10 @@
    "shape": {
     "template": "box",
     "r": 0.4
-   }
+   },
+   "name_ja": "環境光センサーとフレックスケーブル",
+   "name_zh": "环境光传感器及排线",
+   "name_es": "Sensor de luz ambiental con cable flexible"
   },
   {
    "id": "io-board-cowling",
@@ -4179,7 +4494,10 @@
    "shape": {
     "template": "shield",
     "r": 0.6
-   }
+   },
+   "name_ja": "入出力基板カバー（バッテリーコネクターカバー）",
+   "name_zh": "输入输出板保护盖（电池连接器保护盖）",
+   "name_es": "Cubierta de placa E/S (cubierta de conector de batería)"
   },
   {
    "id": "screws-io-cowling",
@@ -4241,7 +4559,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "入出力基板カバー用ねじ",
+   "name_zh": "输入输出板保护盖螺钉",
+   "name_es": "Tornillos de cubierta de placa E/S"
   },
   {
    "id": "screws-io-grounding",
@@ -4288,7 +4609,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "入出力部の接地ばね用ねじ（ねじキャップの下）",
+   "name_zh": "输入输出接地弹片螺钉（螺钉盖下）",
+   "name_es": "Tornillos de resortes de tierra E/S (bajo tapas)"
   },
   {
    "id": "als-cowling",
@@ -4323,7 +4647,10 @@
    "shape": {
     "template": "shield",
     "r": 0.6
-   }
+   },
+   "name_ja": "環境光センサー保護カバー",
+   "name_zh": "环境光传感器保护盖",
+   "name_es": "Cubierta del sensor de luz ambiental"
   },
   {
    "id": "outer-display-adhesive",
@@ -4357,7 +4684,10 @@
     "template": "adhesive",
     "r": 4,
     "ring": 1.6
-   }
+   },
+   "name_ja": "外側画面用接着材",
+   "name_zh": "外屏胶粘层",
+   "name_es": "Adhesivo de pantalla exterior"
   },
   {
    "id": "outer-display",
@@ -4405,8 +4735,17 @@
    "key": true,
    "desc": {
     "ko": "접었을 때 쓰는 5.4인치 바깥 화면.",
-    "en": "The 5.4-inch outer screen used when shut."
-   }
+    "en": "The 5.4-inch outer screen used when shut.",
+    "ja": "閉じたときに使用する 5.4 インチの外側スクリーン。",
+    "zh": "关闭时使用的5.4英寸外屏。",
+    "es": "La pantalla exterior de 5,4 pulgadas se utiliza cuando está cerrada."
+   },
+   "name_ja": "外側カバー画面",
+   "name_zh": "外侧显示屏",
+   "name_es": "Pantalla exterior",
+   "desc_ja": "B側を閉じる5.4インチのカバー画面。",
+   "desc_zh": "覆盖B半部的5.4英寸外屏。",
+   "desc_es": "Pantalla exterior de 5,4 pulgadas que cierra la mitad B."
   },
   {
    "id": "screws-pentalobe-b",
@@ -4452,7 +4791,10 @@
      ]
     ]
    },
-   "path": "screw"
+   "path": "screw",
+   "name_ja": "外側画面用ねじ（PL1.1ペンタローブ）",
+   "name_zh": "外屏螺钉（PL1.1五角）",
+   "name_es": "Tornillos de pantalla exterior (pentalobe PL1.1)"
   }
  ],
  "steps": [
@@ -4467,16 +4809,25 @@
    ],
    "tools": {
     "ko": "안쪽 화면 고정 지그, 정렬 트레이, 나일론 스틱",
-    "en": "Inner display fixture, alignment tray, nylon stick"
+    "en": "Inner display fixture, alignment tray, nylon stick",
+    "ja": "内部展示固定具、位置合わせトレイ、ナイロンスティック",
+    "zh": "内部展示夹具、对齐托盘、尼龙棒",
+    "es": "Accesorio de visualización interior, bandeja de alineación, varilla de nailon"
    },
    "cautions": {
     "ko": "안쪽 화면은 깨지기 쉬워요. 테두리는 힌지 쪽은 클립, 나머지는 21곳에 접착돼요.",
-    "en": "Inner screen is fragile; trim is clipped at the hinge and glued in 21 pockets"
+    "en": "Inner screen is fragile; trim is clipped at the hinge and glued in 21 pockets",
+    "ja": "内側のスクリーンは壊れやすいです。トリムはヒンジでクリップされ、21 個のポケットに接着されています。",
+    "zh": "内屏易碎；饰边夹在铰链处并粘在 21 个口袋中",
+    "es": "La pantalla interior es frágil; El borde se recorta en la bisagra y se pega en 21 bolsillos."
    },
    "sourceIds": [
     "s22",
     "s26"
-   ]
+   ],
+   "title_ja": "内側画面モジュール（基部）",
+   "title_zh": "内屏模组（基础）",
+   "title_es": "Módulo de pantalla interior (base)"
   },
   {
    "n": 2,
@@ -4493,17 +4844,26 @@
    ],
    "tools": {
     "ko": "ESD 핀셋, 나일론 스틱, 접착제 주사기",
-    "en": "ESD tweezers, nylon stick, glue syringe"
+    "en": "ESD tweezers, nylon stick, glue syringe",
+    "ja": "ESDピンセット、ナイロンスティック、接着剤シリンジ",
+    "zh": "防静电镊子、尼龙棒、胶水注射器",
+    "es": "Pinzas ESD, palo de nailon, jeringa de pegamento"
    },
    "cautions": {
     "ko": "큰 폴리에스터 띠는 한 번에 떼야 해요. 힌지 덮개 모양에 맞는 심을 골라요.",
-    "en": "Large polyester strips must come off in one piece; pick the right shims by hinge cover pattern"
+    "en": "Large polyester strips must come off in one piece; pick the right shims by hinge cover pattern",
+    "ja": "大きなポリエステルのストリップは一体的に取り外さなければなりません。ヒンジカバーのパターンに応じて適切なシムを選択してください",
+    "zh": "大聚酯条必须整片脱落；根据铰链盖图案选择合适的垫片",
+    "es": "Las tiras grandes de poliéster deben desprenderse en una sola pieza; elija las cuñas adecuadas según el patrón de la cubierta de la bisagra"
    },
    "sourceIds": [
     "s22",
     "s4",
     "s2"
-   ]
+   ],
+   "title_ja": "画面背面の接着材・フォーム・支持板",
+   "title_zh": "屏幕后方的胶粘层、泡棉与支撑板",
+   "title_es": "Adhesivos, espumas y placas de soporte tras la pantalla"
   },
   {
    "n": 3,
@@ -4519,17 +4879,26 @@
    ],
    "tools": {
     "ko": "가열된 안쪽 화면 포켓, 안쪽 화면 압착 판, 화면 압착기",
-    "en": "Heated inner display pocket, inner display press plate, display press"
+    "en": "Heated inner display pocket, inner display press plate, display press",
+    "ja": "加熱された内側ディスプレイポケット、内側ディスプレイプレスプレート、ディスプレイプレス",
+    "zh": "加热内展示袋、内展示压板、展示压机",
+    "es": "Bolsillo de visualización interior con calefacción, placa de prensa de visualización interior, prensa de visualización"
    },
    "cautions": {
     "ko": "힌지와 케이스는 한 덩어리 서비스 부품이에요. 힌지 쪽을 깊게 자르면 힌지와 케이블이 상해요.",
-    "en": "Hinge and enclosure are one service part; cutting too deep at the hinge damages the hinge and flexes"
+    "en": "Hinge and enclosure are one service part; cutting too deep at the hinge damages the hinge and flexes",
+    "ja": "ヒンジとエンクロージャは 1 つのサービス部品です。ヒンジを深く切り込みすぎると、ヒンジが損傷し、曲がってしまいます。",
+    "zh": "铰链和外壳是一个维修部件；铰链处切割太深会损坏铰链并弯曲",
+    "es": "La bisagra y el recinto son una parte de servicio; Cortar demasiado profundo en la bisagra daña la bisagra y se flexiona."
    },
    "sourceIds": [
     "s21",
     "s23",
     "s27"
-   ]
+   ],
+   "title_ja": "筐体の両側とヒンジ",
+   "title_zh": "两半壳体与铰链",
+   "title_es": "Mitades de carcasa y bisagra"
   },
   {
    "n": 4,
@@ -4552,16 +4921,25 @@
    ],
    "tools": {
     "ko": "십자 비트, 회색·파란색 토크 드라이버, 롱노즈 플라이어, ESD 핀셋",
-    "en": "Crosshead bit, gray/blue torque drivers, needle-nose pliers, ESD tweezers"
+    "en": "Crosshead bit, gray/blue torque drivers, needle-nose pliers, ESD tweezers",
+    "ja": "クロスヘッドビット、グレー/ブルーのトルクドライバー、ラジオペンチ、ESDピンセット",
+    "zh": "十字头钻头、灰色/蓝色扭矩起子、尖嘴钳、ESD 镊子",
+    "es": "Broca de cruceta, destornilladores dinamométricos grises/azules, alicates de punta fina, pinzas ESD"
    },
    "cautions": {
     "ko": "다시 조립한 뒤 버튼마다 딸깍 눌리는지 확인해요.",
-    "en": "Check each button clicks after reassembly."
+    "en": "Check each button clicks after reassembly.",
+    "ja": "再組み立て後に各ボタンのクリック感を確認してください。",
+    "zh": "重新组装后检查每个按钮的咔嗒声。",
+    "es": "Verifique que cada botón haga clic después del reensamblaje."
    },
    "sourceIds": [
     "s24",
     "s25"
-   ]
+   ],
+   "title_ja": "A側のボタン",
+   "title_zh": "A半部按键",
+   "title_es": "Botones de la mitad A"
   },
   {
    "n": 5,
@@ -4579,17 +4957,26 @@
    ],
    "tools": {
     "ko": "십자 비트와 슈퍼 스크루 비트, 10–34 N·cm 조절식 드라이버, 주황색 드라이버",
-    "en": "Crosshead and super screw bits, adjustable 10-34 N·cm and orange driver"
+    "en": "Crosshead and super screw bits, adjustable 10-34 N·cm and orange driver",
+    "ja": "クロスヘッドビットとスーパースクリュービット、調整可能な10-34N・cmとオレンジのドライバー",
+    "zh": "十字头和超级螺丝刀，可调 10-34 N·cm 和橙色螺丝刀",
+    "es": "Puntas de cruceta y supertornillo regulables 10-34 N·cm y destornillador naranja"
    },
    "cautions": {
     "ko": "아래쪽 안테나 케이블 접착이 강해요. 접지 클립 방향을 지켜요.",
-    "en": "Lower antenna flex adhesive is strong; keep grounding clip orientation"
+    "en": "Lower antenna flex adhesive is strong; keep grounding clip orientation",
+    "ja": "下部アンテナのフレックス接着剤は強力です。アースクリップの向きを維持する",
+    "zh": "下天线柔性粘合力强；保持接地夹方向",
+    "es": "El adhesivo flexible de la antena inferior es fuerte; mantenga la orientación del clip de conexión a tierra"
    },
    "sourceIds": [
     "s12",
     "s13",
     "s14"
-   ]
+   ],
+   "title_ja": "マイク・Taptic Engine・下部スピーカー",
+   "title_zh": "麦克风、Taptic Engine与底部扬声器",
+   "title_es": "Micrófono, Taptic Engine y altavoz inferior"
   },
   {
    "n": 6,
@@ -4612,15 +4999,24 @@
    ],
    "tools": {
     "ko": "슈퍼 스크루 비트, 청록색·초록색·회색 드라이버",
-    "en": "Super screw bit, teal/green/gray drivers"
+    "en": "Super screw bit, teal/green/gray drivers",
+    "ja": "スーパースクリュービット、ティール/グリーン/グレードライバー",
+    "zh": "超级螺丝刀，青色/绿色/灰色起子",
+    "es": "Broca súper roscada, controladores verde azulado/verde/gris"
    },
    "cautions": {
     "ko": "케이블이 보드 아래에 깔리지 않게 해요. 로직보드 교체 후에는 시스템 구성이 필요해요.",
-    "en": "Keep flexes out from under the board; logic board swap needs System Configuration"
+    "en": "Keep flexes out from under the board; logic board swap needs System Configuration",
+    "ja": "ボードの下にフレックスが入らないようにします。ロジックボードの交換が必要 システム構成",
+    "zh": "使弯曲部分远离板下方；逻辑板交换需要系统配置",
+    "es": "Mantenga los flexiones fuera de debajo de la tabla; Necesidad de cambio de placa lógica Configuración del sistema"
    },
    "sourceIds": [
     "s11"
-   ]
+   ],
+   "title_ja": "ベイパーチャンバー・ロジックボード・アンテナ1",
+   "title_zh": "均热板、主板与天线1",
+   "title_es": "Cámara de vapor, placa lógica y antena 1"
   },
   {
    "n": 7,
@@ -4632,15 +5028,24 @@
    ],
    "tools": {
     "ko": "배터리 1 압착 판, 화면 압착기, 정렬 심",
-    "en": "Battery 1 press plate, display press, alignment shims"
+    "en": "Battery 1 press plate, display press, alignment shims",
+    "ja": "バッテリー 1 プレス プレート、ディスプレイ プレス、アライメント シム",
+    "zh": "电池 1 压板、显示屏压板、对准垫片",
+    "es": "Batería 1 placa de prensa, prensa de visualización, cuñas de alineación"
    },
    "cautions": {
     "ko": "새 배터리는 충전되지 않은 상태로 와요. 헐겁지 않은지 확인해요.",
-    "en": "New battery ships uncharged; check it is not loose"
+    "en": "New battery ships uncharged; check it is not loose",
+    "ja": "新しいバッテリーは充電されていない状態で出荷されます。緩んでいないか確認してください",
+    "zh": "新电池发货时未充电；检查是否松动",
+    "es": "La batería nueva se envía descargada; revisa que no esté suelto"
    },
    "sourceIds": [
     "s10"
-   ]
+   ],
+   "title_ja": "バッテリー1",
+   "title_zh": "电池1",
+   "title_es": "Batería 1"
   },
   {
    "n": 8,
@@ -4657,15 +5062,24 @@
    ],
    "tools": {
     "ko": "슈퍼 스크루 50 mm 비트, 조절식 드라이버 14.5 N·cm, 십자 비트",
-    "en": "Super screw 50 mm bit, adjustable driver 14.5 N·cm, crosshead bit"
+    "en": "Super screw 50 mm bit, adjustable driver 14.5 N·cm, crosshead bit",
+    "ja": "スーパースクリュー50mmビット、アジャスタブルドライバー14.5N・cm、クロスヘッドビット",
+    "zh": "超级螺丝 50 mm 钻头，可调驱动器 14.5 N·cm，十字头钻头",
+    "es": "Punta súper tornillo 50 mm, destornillador regulable 14,5 N·cm, punta en cruz"
    },
    "cautions": {
     "ko": "위쪽 안테나 4가 카메라 아래에 끼지 않게 하고, 렌즈는 장갑을 끼고 다뤄요.",
-    "en": "Do not trap upper antenna 4 under the camera; gloves for lenses"
+    "en": "Do not trap upper antenna 4 under the camera; gloves for lenses",
+    "ja": "上部アンテナ 4 をカメラの下に閉じ込めないでください。レンズ用手袋",
+    "zh": "请勿将上天线 4 夹在摄像机下方；镜片手套",
+    "es": "No atrape la antena superior 4 debajo de la cámara; guantes para lentes"
    },
    "sourceIds": [
     "s8"
-   ]
+   ],
+   "title_ja": "背面カメラモジュール",
+   "title_zh": "后置相机模组",
+   "title_es": "Módulo de cámara trasera"
   },
   {
    "n": 9,
@@ -4681,15 +5095,24 @@
    ],
    "tools": {
     "ko": "트라이로브 비트, 검은색·회색·초록색 드라이버",
-    "en": "Trilobe bit, black/gray/green drivers"
+    "en": "Trilobe bit, black/gray/green drivers",
+    "ja": "トリローブビット、ブラック/グレー/グリーンドライバー",
+    "zh": "三叶钻头，黑色/灰色/绿色驱动器",
+    "es": "Broca trilobular, controladores negro/gris/verde"
    },
    "cautions": {
     "ko": "카메라를 20초 눌러 붙여요. 이 카메라에는 적외선 레이저가 있어요.",
-    "en": "Press camera 20 s; camera has IR lasers"
+    "en": "Press camera 20 s; camera has IR lasers",
+    "ja": "カメラを 20 秒間押します。カメラにはIRレーザーが搭載されています",
+    "zh": "按下相机20秒；相机有红外激光",
+    "es": "Presione la cámara 20 s; La cámara tiene láseres IR."
    },
    "sourceIds": [
     "s9"
-   ]
+   ],
+   "title_ja": "FaceTimeカメラと保護カバー",
+   "title_zh": "FaceTime相机与保护盖",
+   "title_es": "Cámara FaceTime y cubiertas"
   },
   {
    "n": 10,
@@ -4707,15 +5130,24 @@
    ],
    "tools": {
     "ko": "가열된 고정 지그, 후면 유리 압착 판, PL1.1 비트, 회색 드라이버",
-    "en": "Heated fixture, back glass press plates, PL1.1 bit, gray driver"
+    "en": "Heated fixture, back glass press plates, PL1.1 bit, gray driver",
+    "ja": "加熱治具、背面ガラスプレスプレート、PL1.1 ビット、グレードライバー",
+    "zh": "加热夹具、后玻璃压板、PL1.1 钻头、灰色驱动器",
+    "es": "Accesorio calefactado, placas de presión de vidrio posterior, broca PL1.1, controlador gris"
    },
    "cautions": {
     "ko": "닫을 때 배터리는 마지막에 연결해요. 케이블이 짧으니 유리를 열 때는 거의 평평하게 유지해요.",
-    "en": "Connect the battery last when closing. Keep the glass almost flat when opening; the flex cables are short."
+    "en": "Connect the battery last when closing. Keep the glass almost flat when opening; the flex cables are short.",
+    "ja": "バッテリーを閉じるときは最後に接続してください。開けるときはガラスをほぼ平らに保ちます。フレックスケーブルが短いです。",
+    "zh": "关闭时最后连接电池。打开时保持玻璃几乎平整；柔性电缆很短。",
+    "es": "Conecte la batería al final al cerrar. Mantenga el cristal casi plano al abrirlo; Los cables flexibles son cortos."
    },
    "sourceIds": [
     "s7"
-   ]
+   ],
+   "title_ja": "背面ガラス（A側を閉じる）",
+   "title_zh": "背板玻璃（封闭A半部）",
+   "title_es": "Vidrio trasero (cierre de mitad A)"
   },
   {
    "n": 11,
@@ -4727,15 +5159,24 @@
    ],
    "tools": {
     "ko": "Torx Plus 3IP 비트, 파란색 드라이버, 정렬용 USB-C 케이블",
-    "en": "Torx Plus 3IP bit, blue driver, USB-C cable for alignment"
+    "en": "Torx Plus 3IP bit, blue driver, USB-C cable for alignment",
+    "ja": "Torx Plus 3IP ビット、青色ドライバー、アライメント用 USB-C ケーブル",
+    "zh": "Torx Plus 3IP 起子头、蓝色螺丝刀、用于对齐的 USB-C 电缆",
+    "es": "Bit Torx Plus 3IP, controlador azul, cable USB-C para alineación"
    },
    "cautions": {
     "ko": "드라이버를 낮게 유지하고 배터리 쪽을 건드리지 마세요.",
-    "en": "Keep the driver low; do not touch the battery area"
+    "en": "Keep the driver low; do not touch the battery area",
+    "ja": "ドライバーの姿勢を低く保ちます。バッテリー部分には触れないでください",
+    "zh": "保持驾驶员低位；请勿触摸电池区域",
+    "es": "Mantenga el conductor agachado; no toque el área de la batería"
    },
    "sourceIds": [
     "s20"
-   ]
+   ],
+   "title_ja": "USB-Cコネクター",
+   "title_zh": "USB-C连接器",
+   "title_es": "Conector USB-C"
   },
   {
    "n": 12,
@@ -4753,17 +5194,26 @@
    ],
    "tools": {
     "ko": "슈퍼 스크루 비트와 십자 비트, 파란색·회색 드라이버",
-    "en": "Super screw and crosshead bits, blue/gray drivers"
+    "en": "Super screw and crosshead bits, blue/gray drivers",
+    "ja": "スーパースクリューおよびクロスヘッドビット、ブルー/グレードライバー",
+    "zh": "超级螺丝和十字头钻头，蓝色/灰色螺丝刀",
+    "es": "Puntas de súper tornillo y cruceta, destornilladores azul/gris"
    },
    "cautions": {
     "ko": "케이블이 끼지 않게 해요. I/O 보드 교체 후에는 시스템 구성이 필요해요.",
-    "en": "Do not trap flex cables; I/O board swap needs System Configuration"
+    "en": "Do not trap flex cables; I/O board swap needs System Configuration",
+    "ja": "フレックスケーブルを巻き込まないでください。 I/Oボード交換が必要 システム構成",
+    "zh": "不要夹住柔性电缆； I/O 板交换需要系统配置",
+    "es": "No atrapar cables flexibles; Es necesario cambiar la placa de E/S Configuración del sistema"
    },
    "sourceIds": [
     "s19",
     "s22",
     "s27"
-   ]
+   ],
+   "title_ja": "入出力基板とヒンジを横断するケーブル",
+   "title_zh": "输入输出板及跨铰链排线",
+   "title_es": "Placa E/S y cables que cruzan la bisagra"
   },
   {
    "n": 13,
@@ -4775,15 +5225,24 @@
    ],
    "tools": {
     "ko": "배터리 2 압착 판, 화면 압착기",
-    "en": "Battery 2 press plate, display press"
+    "en": "Battery 2 press plate, display press",
+    "ja": "バッテリー2プレスプレート、ディスプレイプレス",
+    "zh": "电池2压板、显示压板",
+    "es": "Placa de prensa de batería 2, prensa de pantalla"
    },
    "cautions": {
     "ko": "배터리를 오른쪽 위 모서리부터 자리에 맞춘 뒤 평평하게 내려놓고 압착 판으로 눌러요.",
-    "en": "Line the battery up from its top-right corner, lay it flat, then press it down with the press plate."
+    "en": "Line the battery up from its top-right corner, lay it flat, then press it down with the press plate.",
+    "ja": "バッテリーを右上隅から並べて平らに置き、プレスプレートで押し下げます。",
+    "zh": "将电池从右上角对齐，放平，然后用压板将其压下。",
+    "es": "Alinee la batería desde su esquina superior derecha, colóquela plana y luego presiónela hacia abajo con la placa de presión."
    },
    "sourceIds": [
     "s18"
-   ]
+   ],
+   "title_ja": "バッテリー2",
+   "title_zh": "电池2",
+   "title_es": "Batería 2"
   },
   {
    "n": 14,
@@ -4798,16 +5257,25 @@
    ],
    "tools": {
     "ko": "십자 비트, 주황색·회색 드라이버",
-    "en": "Crosshead bit, orange and gray drivers"
+    "en": "Crosshead bit, orange and gray drivers",
+    "ja": "クロスヘッドビット、オレンジとグレーのドライバー",
+    "zh": "十字头钻头，橙色和灰色起子",
+    "es": "Broca de cruceta, drivers naranja y gris"
    },
    "cautions": {
     "ko": "카메라 케이블은 조도 센서 케이블 아래로 지나가게 하고, 접지 스프링을 피해요.",
-    "en": "Route camera flex under the ALS flex; avoid grounding springs"
+    "en": "Route camera flex under the ALS flex; avoid grounding springs",
+    "ja": "カメラ フレックスを ALS フレックスの下にルーティングします。スプリングの接地を避ける",
+    "zh": "在 ALS Flex 下路由相机 Flex；避免接地弹簧",
+    "es": "Dirija el flex de la cámara debajo del flex ALS; Evite los resortes de puesta a tierra."
    },
    "sourceIds": [
     "s16",
     "s17"
-   ]
+   ],
+   "title_ja": "上部スピーカー・外側前面カメラ・光センサー",
+   "title_zh": "顶部扬声器、外侧前置相机与光传感器",
+   "title_es": "Altavoz superior, cámara frontal exterior y sensor de luz"
   },
   {
    "n": 15,
@@ -4824,21 +5292,33 @@
    ],
    "tools": {
     "ko": "바깥 화면 압착 판, PL1.1 비트, 회색·초록색·파란색 드라이버",
-    "en": "Outer display press plates, PL1.1 bit, gray/green/blue drivers"
+    "en": "Outer display press plates, PL1.1 bit, gray/green/blue drivers",
+    "ja": "外側ディスプレイ プレス プレート、PL1.1 ビット、グレー/グリーン/ブルー ドライバー",
+    "zh": "外显压板，PL1.1位，灰/绿/蓝驱动器",
+    "es": "Placas de prensa de pantalla exterior, bit PL1.1, controladores gris/verde/azul"
    },
    "cautions": {
     "ko": "배터리 케이블은 마지막에 연결해요. 화면이 클립에 딸깍 들어가야 하고 나사는 평평하게 앉아야 해요.",
-    "en": "Connect battery flex last; display clicks in at the clips; screws must sit flush"
+    "en": "Connect battery flex last; display clicks in at the clips; screws must sit flush",
+    "ja": "バッテリーフレックスを最後に接続してください。クリップでクリック音が表示されます。ネジは同一平面上にある必要があります",
+    "zh": "最后连接电池；显示剪辑中的点击次数；螺钉必须齐平",
+    "es": "Conecte el flex de la batería al final; mostrar clics en los clips; los tornillos deben quedar al ras"
    },
    "sourceIds": [
     "s15"
-   ]
+   ],
+   "title_ja": "保護カバーと外側画面（B側を閉じる）",
+   "title_zh": "保护盖与外屏（封闭B半部）",
+   "title_es": "Cubiertas y pantalla exterior (cierre de mitad B)"
   }
  ],
  "meta": {
   "interpretation": {
    "ko": "애플 아이폰 듀오 (2026년 10월 출시, 첫 폴더블 아이폰)",
-   "en": "Apple iPhone Duo (October 2026, the first foldable iPhone)"
+   "en": "Apple iPhone Duo (October 2026, the first foldable iPhone)",
+   "ja": "Apple iPhone Duo (2026年10月、初の折りたたみ式iPhone)",
+   "zh": "Apple iPhone Duo（2026 年 10 月，首款可折叠 iPhone）",
+   "es": "Apple iPhone Duo (octubre de 2026, el primer iPhone plegable)"
   },
   "researchedAt": "2026-10-29",
   "gate2": "pass",
@@ -4846,15 +5326,24 @@
   "limitations": [
    {
     "ko": "내부 부품의 위치와 크기는 공개된 수치가 없어 모두 추정했어요. \"자료 확인\"은 부품의 존재, 위치한 쪽, 고정 방식, 개수가 자료로 확인됐다는 뜻이에요.",
-    "en": "No internal dimensions are published, so every position and size is estimated. \"Sourced\" means a source confirms the part exists, its half, its fastening and its count."
+    "en": "No internal dimensions are published, so every position and size is estimated. \"Sourced\" means a source confirms the part exists, its half, its fastening and its count.",
+    "ja": "内部寸法は公表されていないため、すべての位置とサイズは推定されます。 「ソース」とは、部品の存在、その半分、締結、およびその数をソースが確認したことを意味します。",
+    "zh": "没有公布内部尺寸，因此每个位置和尺寸都是估计的。 “来源”是指来源确认该零件存在、其一半、其紧固和其数量。",
+    "es": "No se publican dimensiones internas, por lo que se estima cada posición y tamaño. \"Obtenido\" significa que una fuente confirma que la pieza existe, su mitad, su fijación y su recuento."
    },
    {
     "ko": "안쪽 화면은 힌지 축을 감싸며 작은 반지름으로 휘게 그렸어요. 실제 물방울형 힌지의 휘는 모양과는 달라요.",
-    "en": "The inner screen is drawn wrapping the hinge axis on a small radius; the real teardrop bend is shaped differently."
+    "en": "The inner screen is drawn wrapping the hinge axis on a small radius; the real teardrop bend is shaped differently.",
+    "ja": "内側のスクリーンは、小さな半径でヒンジ軸を包み込むように描かれています。実際のティアドロップベンドの形状は異なります。",
+    "zh": "内屏被绘制为以小半径包裹铰链轴；真正的泪珠弯曲形状不同。",
+    "es": "La pantalla interior se dibuja envolviendo el eje de la bisagra en un radio pequeño; la curvatura en forma de lágrima real tiene una forma diferente."
    },
    {
     "ko": "고품질 표면의 회로 무늬·미세 결·렌즈 코팅은 설명용 추정입니다. 실측 회로도·재료 사양을 뜻하지 않습니다.",
-    "en": "High-quality circuit marks, micrograin and lens coatings are illustrative estimates, not measured circuitry or material specifications."
+    "en": "High-quality circuit marks, micrograin and lens coatings are illustrative estimates, not measured circuitry or material specifications.",
+    "ja": "高品質の回路マーク、マイクログレイン、レンズ コーティングは推定値であり、回路や材料の仕様を測定したものではありません。",
+    "zh": "高质量电路标记、微晶粒和透镜涂层只是说明性估计，而不是测量的电路或材料规格。",
+    "es": "Las marcas de circuitos de alta calidad, los microgranos y los recubrimientos de lentes son estimaciones ilustrativas, no circuitos medidos ni especificaciones de materiales."
    }
   ],
   "renderQuality": "high"

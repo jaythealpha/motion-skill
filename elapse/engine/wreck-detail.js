@@ -1,3 +1,4 @@
+import{surfaceMaterial}from'../shared/material-budget.js';
 import {planHalfWidth} from './britannic-form.js';
 // Britannic structural detail plus colour-only seabed dressing. Positions/organism distribution are illustrative,
 // not a surveyed wreck mesh. Researched poses and collision envelopes stay unchanged.
@@ -7,11 +8,11 @@ import { rng } from './math.js';
 
 export function createWreckDetail({root,model,items,ground,shallow=true}) {
   const groups=[], weather=[],growth=[], random=rng(19161121);
-  const metal=new THREE.MeshStandardMaterial({color:shallow?'#697d70':'#665746',roughness:.96,metalness:.15});
-  const rim=new THREE.MeshStandardMaterial({color:shallow?'#8d947d':'#93816c',roughness:.94,metalness:.12});
-  const black=new THREE.MeshStandardMaterial({color:'#0b2429',roughness:1,side:THREE.DoubleSide});
-  const pale=new THREE.MeshStandardMaterial({color:'#b3b49a',roughness:1});
-  const rust=new THREE.MeshStandardMaterial({color:'#75583b',roughness:1});
+  const metal=surfaceMaterial({color:shallow?'#697d70':'#665746',roughness:.96,metalness:.15});
+  const rim=surfaceMaterial({color:shallow?'#8d947d':'#93816c',roughness:.94,metalness:.12});
+  const black=surfaceMaterial({color:'#0b2429',roughness:1,side:THREE.DoubleSide});
+  const pale=surfaceMaterial({color:'#b3b49a',roughness:1});
+  const rust=surfaceMaterial({color:'#75583b',roughness:1});
   const rodGeo=new THREE.CylinderGeometry(1,1,1,6);
   function rods(g,segments,mat=metal){
     if(!segments.length)return;
@@ -105,7 +106,7 @@ export function createWreckDetail({root,model,items,ground,shallow=true}) {
       if(color){const pos=m.geometry.getAttribute('position');for(let i=0;i<color.count;i++){
         const n=(Math.sin(pos.getX(i)*1.72+pos.getZ(i)*3.17)+Math.sin(pos.getX(i)*.29-pos.getZ(i)*1.9)+2)/4;
         for(let k=0;k<3;k++)aged[i*3+k]=original[i*3+k]*(.28+.65*n);}}
-      const mat=new THREE.MeshStandardMaterial({color:u.baseColor.clone(),vertexColors:!!u.vertexColors,roughness:.95,metalness:.13,polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1});
+      const mat=surfaceMaterial({color:u.baseColor.clone(),vertexColors:!!u.vertexColors,roughness:.95,metalness:.13,polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1});
       const ageUniform={value:0};
       mat.onBeforeCompile=shader=>{
         shader.uniforms.wreckAge=ageUniform;

@@ -23,7 +23,7 @@ const { imports } = importMap({ root: ROOT, prefix: 'unfold' });
 const name = typeof model.product?.name === 'object' ? (model.product.name.ko || model.product.name.en) : model.product?.name;
 const json = JSON.stringify(model).replace(/</g, '\\u003c');
 const html = `<!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en" translate="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${String(name || 'Unfold').replace(/[<&]/g, '')} · Unfold</title>
 <meta name="generator" content="Unfold">
 ${licenseBlock(ROOT)}

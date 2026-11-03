@@ -1,3 +1,5 @@
+import{LANGS,resolveLocale,setLocale,LANGUAGE_NAMES}from'../shared/locale.js';
+import{tr}from'../shared/locale.js';
 // Page shell: header with evidence share, toggles, the stage (canvas + labels), the time bar, panels, exports.
 import { createRenderer } from './render.js';
 import { strings, pick } from './i18n.js';
@@ -9,6 +11,7 @@ import { SPEEDS, DEFAULT_SPEED, advance, stepSpeed, speedLabel } from '../shared
 export { SPEEDS };
 
 const CSS = `
+[data-k]{min-width:44px!important;min-height:44px!important;display:inline-flex!important;align-items:center;justify-content:center;box-sizing:border-box!important}
 .uf{--ink:#15171c;--muted:#626a76;--line:#d9dee6;--panel:#ffffff;--accent:#ff5a36;--bpbg:#0f3460;
   font:14px/1.45 system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--ink);max-width:1180px;margin:0 auto;padding:18px 18px 28px;box-sizing:border-box}
 .uf *{box-sizing:border-box}
@@ -111,8 +114,9 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const fmt = v => (Math.round(v * 10) / 10).toString();
 
 export function mountUnfold(root, model, params = {}) {
+  const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
   if(params.quality==='standard') model={...model,meta:{...model.meta,renderQuality:'standard'}};
-  const st = { lang: params.lang === 'en' ? 'en' : 'ko', depth: ['simple', 'detail', 'manual'].includes(params.depth) ? params.depth : 'detail',
+  const st = { lang: resolveLocale(params.lang), depth: ['simple', 'detail', 'manual'].includes(params.depth) ? params.depth : 'detail',
     layout: params.layout === 'knoll' ? 'knoll' : 'stack', style: params.style === 'blueprint' ? 'blueprint' : (params.style === 'color' ? 'color' : null),
     t: 0, playing: false, sel: null, speed: SPEEDS[params.speed] ? params.speed : DEFAULT_SPEED };
   if (!st.style) st.style = st.depth === 'manual' ? 'blueprint' : 'color';
@@ -147,7 +151,7 @@ export function mountUnfold(root, model, params = {}) {
 
   // header, toggles, actions (re-rendered on language change) -----------------------------------------
   function chrome() {
-    L = strings(st.lang); document.documentElement.lang = st.lang;
+    setLocale(st.lang);L = strings(st.lang);document.title=pick(model.product.name,st.lang)+tr(" · Unfold");
     $('.uf-top h1').textContent = pick(model.product.name, st.lang);
     $('.uf-sub').textContent = [model.product.maker, model.meta.interpretation ? L.interpreted(pick(model.meta.interpretation, st.lang)) : null].filter(Boolean).join(' · ');
     $('.uf-trust').innerHTML = `<span>${L.parts(model.parts.length)}</span><span class="v">${L.verified(pct)}</span><span class="e">${L.estimated(100 - pct)}</span>${model.meta.positionsEstimated ? `<span class="e">${L.posEstimated}</span>` : ''}<span>${L.unofficialChip}</span>`;
@@ -155,7 +159,7 @@ export function mountUnfold(root, model, params = {}) {
     const warn = $('.uf-warn'); warn.hidden = share >= WARN_SHARE; warn.textContent = L.warn(pct);
     const seg = (key, opts) => `<span class="uf-seg"><b>${L[key]}</b><div role="group" aria-label="${L[key]}">${opts.map(o => `<button type="button" data-k="${key}" data-o="${o}" aria-pressed="${st[key] === o}">${L[o]}</button>`).join('')}</div></span>`;
     $('.uf-controls').innerHTML = seg('depth', ['simple', 'detail', 'manual']) + seg('layout', ['stack', 'knoll']) + seg('style', ['color', 'blueprint'])
-      + `<span class="uf-seg"><div role="group" aria-label="language">${['ko', 'en'].map(o => `<button type="button" data-k="lang" data-o="${o}" aria-pressed="${st.lang === o}">${o.toUpperCase()}</button>`).join('')}</div></span>`;
+      + `<span class="uf-seg"><div role="group" aria-label="${tr("Language")}">${LANGS.map(o => `<button type="button" data-k="lang" data-o="${o}" aria-label="${LANGUAGE_NAMES[o]}" lang="${o==='zh'?'zh-Hans':o}" aria-pressed="${st.lang === o}">${o.toUpperCase()}</button>`).join('')}</div></span>`;
     $('.uf-view [data-v=auto]').textContent = L.autoCam; $('.uf-view [data-v=reset]').textContent = L.resetView;
     $('.uf-view [data-v=auto]').setAttribute('aria-pressed', R.state.auto);
     $('.uf-actions').innerHTML = `<button type="button" data-a="png">${L.png}</button><button type="button" data-a="video"${st.recording ? ' disabled' : ''}>${st.recording ? L.recording : L.video}</button><button type="button" data-a="print">${L.print}</button><button type="button" data-a="src">${L.sources}</button>`;
@@ -366,7 +370,7 @@ export function mountUnfold(root, model, params = {}) {
     if (/input|textarea|select/i.test(e.target.tagName) && e.target !== range) return;
     if (st.recording) return;
     if (e.key === '[' || e.key === ']') { st.speed = stepSpeed(st.speed, e.key === ']' ? 1 : -1); $('.uf-speed select').value = st.speed; return; }
-    if (e.key === ' ') { e.preventDefault(); play(!st.playing); }
+    if (e.key === ' '&&e.target===document.body) { e.preventDefault(); play(!st.playing); }
     if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { if (e.target === range) return; e.preventDefault();
       const d = e.key === 'ArrowRight' ? 1 : -1;
       if (st.depth === 'manual') stepTo(d);
@@ -379,12 +383,12 @@ export function mountUnfold(root, model, params = {}) {
     if (st.recording && (b.dataset.k || b.dataset.a)) return;
     if (b.dataset.k) {
       const k = b.dataset.k, o = b.dataset.o; if (st[k] === o) return;
-      st[k] = o;
+      st[k] = o; if(k==='lang')setLocale(o,{persist:true});
       if (k === 'depth') { R.setDepth(o); if (o === 'manual' && !params.style && st.style !== 'blueprint') { st.style = 'blueprint'; R.setStyle('blueprint'); }
         if (o === 'manual' && st.t < INTRO_END) setT(INTRO_END); }
       if (k === 'layout') R.setLayout(o);
       if (k === 'style') R.setStyle(o);
-      chrome(); return;
+      chrome();root.querySelector(`[data-k="${k}"][data-o="${o}"]`)?.focus({preventScroll:true}); return;
     }
     const v = b.dataset.v;
     if (v === 'reset') R.resetView();
@@ -441,7 +445,8 @@ export function mountUnfold(root, model, params = {}) {
   if (params.panel === 'sources') $('.uf-src').hidden = false;
   if (params.zoom != null && isFinite(+params.zoom) && +params.zoom > 0) R.zoom(+params.zoom);
   if (params.pick) requestAnimationFrame(() => { const a = R.project(params.pick); if (a) showPop(params.pick, a.x, a.y); });
-  if (params.play === '1') { R.renderNow(); play(true); }
+  reducedMotion.addEventListener('change',e=>{if(e.matches&&st.playing)play(false);});
+  if (params.play === '1'&&!reducedMotion.matches) { R.renderNow(); play(true); }
   window.__unfold = Object.assign(window.__unfold || {}, { R, model, st, errors, setT, play });
   return window.__unfold;
 }

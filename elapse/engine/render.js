@@ -1,3 +1,5 @@
+import{configureMaterialBudget,presentationPixelRatio}from'../shared/material-budget.js';
+import{createPresentation}from'../shared/presentation.js';
 import {createTitanicQuality} from './quality-titanic.js';
 import {createQualityStudy} from './quality.js';
 // three.js renderer. Model coordinates are z-up metres; the root group turns them so z points up on screen.
@@ -24,7 +26,7 @@ const toThree = ([x, y, z]) => new THREE.Vector3(x, z, -y);
 
 export function createRenderer(canvas, model, opts = {}) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  configureMaterialBudget(renderer);renderer.setPixelRatio(presentationPixelRatio(renderer));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(35, 1, 1, 10000);
   const hemi = new THREE.HemisphereLight('#ffffff', '#5a6878', 1.5), sun = new THREE.DirectionalLight('#ffffff', 2);
@@ -118,7 +120,7 @@ export function createRenderer(canvas, model, opts = {}) {
   const wreckDetail = hasDirecting(model) ? createWreckDetail({root,model,items,ground,shallow:isBritannic(model)}) : null;
   const ecology=isTitanic(model)?createDeepEcology({root,scene,camera,model,items,ground}):null;
   const surveyLamp=new THREE.SpotLight('#c5e6ef',1,500,.5,.85,2);scene.add(surveyLamp,surveyLamp.target);surveyLamp.visible=false;surveyLamp.name='exploration-lamp';
-  const st = {exploring:false,exploreTarget:null,lampStrength:1, ecology:opts.ecology!==false, exploreLight:opts.exploreLight!==false, ecoView:opts.ecoView||'scene',ecoClock:0,t: 0, branch: 'a', style: 'color', xray: false, auto: opts.auto !== false, yaw: opts.yaw ?? null, pitch: opts.pitch ?? null, zoom: opts.zoom || 1, last: null, cam: null };
+  const st = {exploring:false,exploreTarget:null,lampStrength:1, ecology:opts.ecology!==false, exploreLight:opts.exploreLight!==false, ecoView:opts.ecoView||'scene',ecoClock:0,t: 0, branch: 'a', style: 'color', xray: false, auto: opts.auto !== false, yaw: opts.yaw ?? null, pitch: opts.pitch ?? null, zoom: opts.zoom || 1, last: null, cam: null, userCamera:opts.yaw!=null||opts.pitch!=null||(opts.zoom!=null&&opts.zoom!==1) };
   if (opts.yaw != null || opts.pitch != null) st.auto = false;
 
   // the extra motion of a collapsing piece, on top of its pose
@@ -241,15 +243,15 @@ export function createRenderer(canvas, model, opts = {}) {
     if(submerged)eye[2]=Math.min(-8,eye[2]);
     camera.position.copy(toThree(eye)); camera.near = Math.max(st.ecoFocus ? .003 : .5, dist / 200); camera.far = st.ecoFocus ? Math.max(20,dist*40) : dist * 40 + 10000; camera.updateProjectionMatrix();
     camera.lookAt(toThree(T));
-    if(cinematic && st.auto){
+    if(cinematic && (st.auto||!st.userCamera)){
       // Fit the current subject at every aspect ratio, with room for the overlay cards.
       const b=st.focusBox || subjectBox(model,st.last,frameSubject(model,st.t));
       for(let attempt=0;attempt<18;attempt++){
-        camera.updateMatrixWorld();let fit=true;
+        camera.updateMatrixWorld();let factor=1;
         for(const x of [b.min[0],b.max[0]])for(const y of [b.min[1],b.max[1]])for(const z of [b.min[2],b.max[2]]){
-          const v=toThree([x,y,z]).project(camera);if(Math.abs(v.x)>.83||Math.abs(v.y)>.56||v.z>1)fit=false;
+          const v=toThree([x,y,z]).project(camera);factor=Math.max(factor,Math.abs(v.x)/.83,Math.abs(v.y)/.78,v.z>1?1.5:1);
         }
-        if(fit)break;dist*=1.12;
+        if(factor<=1.001)break;dist*=factor*1.002;
         eye[0]=T[0]+dist*Math.cos(pitch)*Math.cos(yaw);eye[1]=T[1]+dist*Math.cos(pitch)*Math.sin(yaw);eye[2]=T[2]+dist*Math.sin(pitch);
         if(submerged)eye[2]=Math.min(-8,eye[2]);
         camera.position.copy(toThree(eye));camera.lookAt(toThree(T));
@@ -261,9 +263,10 @@ export function createRenderer(canvas, model, opts = {}) {
   }
 
   const quality=opts.quality==='high'&&isBritannic(model)?createQualityStudy({renderer,scene,camera,root,items,ground,hemi,sun,model,cutaway:opts.qualityCutaway}):opts.quality==='high'&&isTitanic(model)?createTitanicQuality({renderer,scene,items}):null;
+  const presentation=createPresentation(renderer,scene,{kind:'marine'});
   function render() { if (!st.last) apply(st.t); placeCamera(); cinematic?.update(st); wreckDetail?.update(st); ecology?.updateLight(st,hemi,sun); surveyLamp.visible=st.exploring&&(!ecology||!ecologyMode(model,st))&&st.style==='color'&&st.exploreLight;
     if(surveyLamp.visible){const T=toThree(st.cam.target),d=camera.position.distanceTo(T);surveyLamp.position.copy(camera.position);surveyLamp.target.position.copy(T);surveyLamp.distance=d*5+5;surveyLamp.intensity=d*d*2*st.lampStrength;}
-    quality?.update(st);
+    quality?.update(st); if(quality)presentation.update(st);
     renderer.render(scene, camera); opts.onRender?.(); }
 
   function resize() {
@@ -273,17 +276,18 @@ export function createRenderer(canvas, model, opts = {}) {
 
   // drag to turn, wheel or pinch to zoom; any of these hands the camera to the viewer
   const ptrs = new Map(); let pinch = 0;
-  const manual = () => { if (st.auto) { st.auto = false; st.yaw = st.cam?.yaw ?? 215; st.pitch = st.cam?.pitch ?? 20; opts.onManual?.(); } };
-  canvas.addEventListener('pointerdown', e => { ptrs.set(e.pointerId, [e.clientX, e.clientY]); canvas.setPointerCapture?.(e.pointerId); });
+  const manual = () => { st.userCamera=true;if(st.yaw==null)st.yaw=st.cam?.yaw??215;if(st.pitch==null)st.pitch=st.cam?.pitch??20;if (st.auto) { st.auto = false; st.yaw = st.cam?.yaw ?? 215; st.pitch = st.cam?.pitch ?? 20; opts.onManual?.(); } };
+  let renderRaf=0;const requestRender=()=>{if(!renderRaf)renderRaf=requestAnimationFrame(()=>{renderRaf=0;render();});};
+ canvas.addEventListener('pointerdown', e => { ptrs.set(e.pointerId, [e.clientX, e.clientY]); canvas.setPointerCapture?.(e.pointerId); });
   canvas.addEventListener('pointermove', e => {
     if (!ptrs.has(e.pointerId)) return;
     const [x0, y0] = ptrs.get(e.pointerId); ptrs.set(e.pointerId, [e.clientX, e.clientY]);
-    if (ptrs.size === 2) { const [a, b] = [...ptrs.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]); if (pinch) { st.zoom = Math.max(0.15, Math.min(6, st.zoom * pinch / d)); manual(); } pinch = d; render(); return; }
-    manual(); st.yaw -= (e.clientX - x0) * 0.35; st.pitch = Math.max(-80, Math.min(85, st.pitch + (e.clientY - y0) * 0.3)); render();
+    if (ptrs.size === 2) { const [a, b] = [...ptrs.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]); if (pinch) { st.zoom = Math.max(0.15, Math.min(6, st.zoom * pinch / d)); manual(); } pinch = d; requestRender(); return; }
+    manual(); st.yaw -= (e.clientX - x0) * 0.35; st.pitch = Math.max(-80, Math.min(85, st.pitch + (e.clientY - y0) * 0.3)); requestRender();
   });
   const up = e => { ptrs.delete(e.pointerId); if (ptrs.size < 2) pinch = 0; };
   canvas.addEventListener('pointerup', up); canvas.addEventListener('pointercancel', up);
-  canvas.addEventListener('wheel', e => { e.preventDefault(); manual(); st.zoom = Math.max(0.15, Math.min(6, st.zoom * Math.exp(e.deltaY * 0.0012))); render(); }, { passive: false });
+  canvas.addEventListener('wheel', e => { e.preventDefault(); manual(); st.zoom = Math.max(0.15, Math.min(6, st.zoom * Math.exp(e.deltaY * 0.0012))); requestRender(); }, { passive: false });
 
   // the subject's box on screen: how much of it is in view, and how big it is
   function screenBox() {
@@ -342,9 +346,9 @@ export function createRenderer(canvas, model, opts = {}) {
       if (o.t != null) st.t = o.t;
       apply(st.t); render();
     },
-    setAuto(on) { st.auto = !!on; if (on) { st.zoom = 1; } render(); },
-    reset() { st.auto = true; st.zoom = 1; st.yaw = st.pitch = null; render(); },
-    restoreView(v){for(const k of ['auto','yaw','pitch','zoom'])st[k]=v[k];render();},
+    setAuto(on) { st.auto = !!on; if (on) { st.zoom = 1;st.userCamera=false; } render(); },
+    reset() { st.auto = true;st.userCamera=false; st.zoom = 1; st.yaw = st.pitch = null; render(); },
+    restoreView(v){for(const k of ['auto','yaw','pitch','zoom'])st[k]=v[k];st.userCamera=v.userCamera??(!v.auto&&(v.yaw!=null||v.pitch!=null||v.zoom!==1));render();},
     zoomBy(f){manual();st.zoom=Math.max(.2,Math.min(5,st.zoom*f));render();},
     animateEcology(clock){st.ecoClock=clock;render();},
     frame, probe, resize, render,

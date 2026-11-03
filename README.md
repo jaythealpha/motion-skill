@@ -23,7 +23,9 @@ Two experimental [Claude Code](https://claude.com/claude-code) skills. Each turn
 - Ship examples: RMS Titanic and HMHS Britannic.
 - Building examples: World Trade Center9/11, recovery and selected rebuilding through2018, with dated exploration; Notre-Dame fire, damage and restoration (2019–2024), with seven inspection stops and an explicitly labelled vault cutaway; Eiffel Tower construction (1887–1889), with monthly milestones, estimated lattice geometry, construction-height gauges and structural exploration.
 
-한국어 UI가 기본이고 영어도 지원해요. 두 스킬 모두 공개 자료를 조사해서 만들고, 자료 조사부터 빌드까지 이어지는 작업 절차를 제공해요. 도구 권한·네트워크·AI 실행 환경에 따라 중단될 수 있고, 새 결과물은 데이터·화면 검사를 거쳐야 해요. 자동 검사는 역사·제품 구조·수리 안전성의 정확성을 보증하지 않아요.
+영어 UI가 기본이며 한국어·일본어·중국어(간체)·스페인어도 지원해요. 두 스킬 모두 공개 자료를 조사해서 만들고, 자료 조사부터 빌드까지 이어지는 작업 절차를 제공해요. 도구 권한·네트워크·AI 실행 환경에 따라 중단될 수 있고, 새 결과물은 데이터·화면 검사를 거쳐야 해요. 자동 검사는 역사·제품 구조·수리 안전성의 정확성을 보증하지 않아요.
+
+All 12 demos and both skills support English (default), Korean, Japanese, Simplified Chinese and Spanish. The gallery passes its selected language to each demo, and standalone pages remember your choice locally. Translation is bundled; playback makes no translation requests.
 
 Packaged demos include subject-specific high-detail finishes; see [visual quality and limits](DEMOS.md#고품질-표현). Additional surface/structural detail is illustrative and does not increase measured accuracy or the sourced share.
 

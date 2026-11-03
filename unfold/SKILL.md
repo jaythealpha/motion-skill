@@ -1,6 +1,6 @@
 ---
 name: unfold
-description: Turn a real product (smartphones, including foldables like the Galaxy Z Fold or iPhone Duo, from a model name or a photo) into one self-contained HTML page where a 0–100 time bar opens the finished phone, bursts it into its real parts and assembles it again — exploded stack or parts laid out on a mat, colour illustration or animated blueprint, simple / detailed / manual depth, labelled parts, a bill of materials, a printable step-by-step assembly manual, and every part marked as sourced or estimated. Claude researches public teardown and repair data, writes an assembly model, and must pass two automatic gates before delivering. Use whenever someone wants to see how a product goes together or comes apart, a teardown, an exploded view, "what's inside" a phone or device, an assembly animation, or an assembly manual from a model name — even if they don't name the skill. Korean UI by default.
+description: Turn a real product (smartphones, including foldables like the Galaxy Z Fold or iPhone Duo, from a model name or a photo) into one self-contained HTML page where a 0–100 time bar opens the finished phone, bursts it into its real parts and assembles it again — exploded stack or parts laid out on a mat, colour illustration or animated blueprint, simple / detailed / manual depth, labelled parts, a bill of materials, a printable step-by-step assembly manual, and every part marked as sourced or estimated. Claude researches public teardown and repair data, writes an assembly model, and must pass two automatic gates before delivering. Use whenever someone wants to see how a product goes together or comes apart, a teardown, an exploded view, "what's inside" a phone or device, an assembly animation, or an assembly manual from a model name — even if they don't name the skill. English UI by default, with Korean, Japanese, Simplified Chinese and Spanish.
 ---
 
 # Unfold
@@ -38,7 +38,7 @@ The skill folder (`<skill>` below) holds the engine (`engine/`), the bundled sha
 
 2. **Research.** Read `references/research.md`. Collect the official dimensions (w × l × t in mm), the disassembly order, every part with its fastening (screw counts and lengths, connectors, adhesive), and estimated sizes and positions. Write short notes as you go (what is verified, what conflicts).
 
-3. **Write the model.** Read `references/model-format.md` and copy the structure of the closest example. Give every part a shape template and real-looking parameters (corner radii, holes, lens positions, screw positions, cable routes, shield cans). Steps follow the reverse of disassembly. Everything goes in from above (+z), so the **base** is the one part with no `attachedTo`: the lowest part. Every other part names what it is fixed to and how (`fastening`), and moves at t=0. Mark 6–8 key parts with `key: true` and a one-line `desc` in Korean and English. Write `meta.limitations` from your notes. If no source gives internal positions (the usual case), set `meta.positionsEstimated: true` so the page says so.
+3. **Write the model.** Read `references/model-format.md` and copy the structure of the closest example. Give every part a shape template and real-looking parameters (corner radii, holes, lens positions, screw positions, cable routes, shield cans). Steps follow the reverse of disassembly. Everything goes in from above (+z), so the **base** is the one part with no `attachedTo`: the lowest part. Every other part names what it is fixed to and how (`fastening`), and moves at t=0. Mark 6–8 key parts with `key: true` and a one-line `desc` in English, Korean, Japanese, Simplified Chinese and Spanish. Write `meta.limitations` from your notes. If no source gives internal positions (the usual case), set `meta.positionsEstimated: true` so the page says so.
    **Decide the build direction first.**
    - **Back-access** (the usual Samsung, Pixel and older iPhone build): repair starts at the back glass. The model lies **screen down**, and the base is the display.
    - **Front-access** (e.g. iPhone 17 Pro): repair starts by lifting the screen, and the display goes on last. The model lies **screen up**:
@@ -106,7 +106,7 @@ The skill folder (`<skill>` below) holds the engine (`engine/`), the bundled sha
 
 ## Page parameters (for screenshots and links)
 
-`?t=0..100` `&layout=stack|knoll` `&style=color|blueprint` `&depth=simple|detail|manual` `&step=N` (the end of step N; `t` wins if both are given) `&lang=ko|en` `&speed=xslow|slow|normal|fast` (1× / 2× / 3× / 5×; default 2×) `&fold=0..180` (foldables, at t=0 or 100) `&yaw=&pitch=` `&auto=0` `&play=1` `&panel=sources` `&pick=<partId>`
+`?t=0..100` `&layout=stack|knoll` `&style=color|blueprint` `&depth=simple|detail|manual` `&step=N` (the end of step N; `t` wins if both are given) `&lang=en|ko|ja|zh|es` `&speed=xslow|slow|normal|fast` (1× / 2× / 3× / 5×; default 2×) `&fold=0..180` (foldables, at t=0 or 100) `&yaw=&pitch=` `&auto=0` `&play=1` `&panel=sources` `&pick=<partId>`
 
 ## When something else fits better
 
@@ -122,3 +122,9 @@ New models default to `meta.renderQuality: "high"`. Packaged examples enable thi
 High detail uses material-specific metal/polymer/PCB finishes, lens coating, subtle anti-aliased estimated circuit/label surface marks and smoother bevel/curve tessellation. These marks are illustrative, not measured traces, serials, labels or material specifications. Add this limitation to the model in both languages. Do not invent extra components or raise the sourced share because the rendering looks more detailed.
 
 `?quality=standard` retains the original toon rendering for comparison and a lighter geometry path. Blueprint and manual modes retain technical line work. Run Gate1 and full Gate2, review full-size shots, and additionally check375/768/1440px, both layouts, both styles, fold controls and the print manual before claiming delivery. Headless timings do not establish real-device FPS or engineering accuracy. See `references/quality-tier.md`.
+
+### Locales and playback quality
+
+Populate user-facing `{en, ko, ja, zh, es}` fields without changing sourced facts or identifiers. English is the fresh-install default. The gallery language is passed by `?lang=` and remembered locally; an explicit URL wins. Translate titles, parts, steps, events, limitations and inspection descriptions, not only controls. Never call a translation API during playback. Review domain terminology and preserve source titles as bibliographic originals. Verify all five locales at 375, 768 and 1440 px, and retain time/view/speed when switching language. The renderer uses full materials on native GPUs and a lighter material/pixel budget for software rendering or narrow mobile viewports. Measure real animation intervals separately from draw calls; do not claim physical-device FPS from headless software tests.
+
+Before building a newly generated model, run `node <skill>/shared/check-locales.mjs model.json`. Fix missing translations until it prints `LOCALES PASS`; the normalizer and the raw research-style fields are both checked. This check supplements the data and screen gates. It does not assess translation accuracy.

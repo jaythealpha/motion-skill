@@ -1,3 +1,4 @@
+import{tr,sceneLanguagePicker}from'../shared/locale.js';
 // A focused, reversible directing study. Simulation poses stay in the researched model.
 import * as THREE from 'three';
 import { normalizeModel } from './model.js';
@@ -49,10 +50,10 @@ pg.attributes.position.needsUpdate=pg.attributes.size.needsUpdate=pg.attributes.
 R.renderer.render(R.scene,R.camera);
 document.querySelector('#timeline').value=progress*1000;document.querySelector('#time').textContent=new Date(at).toISOString().slice(11,19);
 const stage=sec<0?0:sec<15?1:2;document.querySelectorAll('[data-beat]').forEach((el,i)=>el.classList.toggle('active',i===stage));
-document.querySelector('#caption').textContent=['들린 선미 · 선체에 집중되는 하중','정전, 그리고 분리 · 갈라지는 틈을 따라 시선을 이동','가라앉는 선수와 잠시 내려앉는 선미'][stage];
-document.querySelector('#rate').textContent=sec>=-4&&sec<=8?'SLOW MOTION · 분리 순간 확대':'시간 압축 재생';
+document.querySelector('#caption').textContent=[tr("들린 선미 · 선체에 집중되는 하중"),tr("정전, 그리고 분리 · 갈라지는 틈을 따라 시선을 이동"),tr("가라앉는 선수와 잠시 내려앉는 선미")][stage];
+document.querySelector('#rate').textContent=sec>=-4&&sec<=8?tr("SLOW MOTION · 분리 순간 확대"):tr("시간 압축 재생");
 window.__study.state={p:progress,t,sec,particles:N,errors};}
-function play(on){if(on&&playing)return;playing=on;document.querySelector('#play').textContent=on?'일시정지':'재생';if(!on)return;if(progress>=1)progress=0;last=performance.now();requestAnimationFrame(tick);}
+function play(on){if(on&&playing)return;playing=on;document.querySelector('#play').textContent=on?tr("일시정지"):tr("재생");if(!on)return;if(progress>=1)progress=0;last=performance.now();requestAnimationFrame(tick);}
 function tick(now){if(!playing)return;const dt=Math.min(.2,(now-last)/1000);last=now;draw(progress+dt/total);if(progress>=1)play(false);else requestAnimationFrame(tick);}
 document.querySelector('#play').onclick=()=>play(!playing);
 document.querySelector('#replay').onclick=()=>{draw(0);play(true);};
@@ -60,4 +61,6 @@ document.querySelector('#timeline').oninput=e=>{play(false);draw(+e.target.value
 document.querySelector('#speed').onchange=e=>total=30/(+e.target.value);
 document.querySelectorAll('[data-beat]').forEach(el=>el.onclick=()=>{play(false);draw(+el.dataset.beat);});
 addEventListener('resize',()=>{R.resize();draw(progress);});
-window.__study={draw,play,errors,state:{}};R.resize();draw(progress);if(q.has('play')&&!reduced)play(true);
+window.__study={draw,play,errors,state:{}};R.resize();draw(progress);if(q.get('play')==='1'&&!reduced)play(true);
+
+sceneLanguagePicker(()=>{const resume=playing;play(false);draw(progress);if(resume)play(true)});

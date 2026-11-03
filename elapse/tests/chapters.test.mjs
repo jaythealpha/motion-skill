@@ -30,3 +30,9 @@ test('formatTime', () => {
   assert.equal(formatTime(m, y, 'ko'), '1996년');
   assert.equal(formatTime(m, y, 'en'), '1996');
 });
+
+test('localized minute clocks keep the same rounded historical minute',()=>{
+  const m=load('mini-ship');
+  const t=timeToBar(m,'1912-04-15T01:00:40');
+  for(const lang of ['en','ko','ja','zh','es'])assert.ok(formatTime(m,t,lang).includes('01:01'),lang);
+});

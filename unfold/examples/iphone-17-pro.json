@@ -2,7 +2,10 @@
  "product": {
   "name": {
    "ko": "아이폰 17 프로",
-   "en": "iPhone 17 Pro"
+   "en": "iPhone 17 Pro",
+   "ja": "iPhone 17 Pro",
+   "zh": "iPhone 17 Pro",
+   "es": "iPhone 17 Pro"
   },
   "maker": "Apple",
   "kind": "phone",
@@ -138,7 +141,10 @@
    "id": "unibody",
    "name": {
     "ko": "알루미늄 유니바디(측면 프레임+뒷면 판)",
-    "en": "Forged aluminium unibody (rails + back floor)"
+    "en": "Forged aluminium unibody (rails + back floor)",
+    "ja": "アルミ鍛造ユニボディ（レール＋バックフロア）",
+    "zh": "锻造铝制一体式机身（导轨+后地板）",
+    "es": "Unibody de aluminio forjado (rieles + piso trasero)"
    },
    "category": "housing",
    "bbox": [
@@ -209,7 +215,10 @@
    "key": true,
    "desc": {
     "ko": "7000 계열 알루미늄을 단조한 한 덩어리 몸체예요. 모든 부품이 앞쪽에서 여기에 들어가요.",
-    "en": "One forged 7000-series aluminium body; every part goes into it from the front."
+    "en": "One forged 7000-series aluminium body; every part goes into it from the front.",
+    "ja": "7000 シリーズ アルミニウム鍛造ボディ 1 つ。各パーツは正面から入ります。",
+    "zh": "1个锻造7000系列铝制机身；每个部分都从前面进入。",
+    "es": "Un cuerpo de aluminio forjado serie 7000; cada parte entra desde el frente."
    },
    "notes": "Antenna band positions estimated; Apple only says the antennas run around the perimeter."
   },
@@ -217,7 +226,10 @@
    "id": "camera-plateau",
    "name": {
     "ko": "카메라 플래토(유니바디 일체형)",
-    "en": "Camera plateau (forged with the unibody)"
+    "en": "Camera plateau (forged with the unibody)",
+    "ja": "カメラプラトー (ユニボディで鍛造)",
+    "zh": "相机平台（一体成型）",
+    "es": "Meseta de cámara (forjada con el unibody)"
    },
    "category": "housing",
    "bbox": [
@@ -293,7 +305,10 @@
    "id": "rear-lens-covers",
    "name": {
     "ko": "후면 렌즈 커버·링 3개",
-    "en": "Rear lens covers and rings (3)"
+    "en": "Rear lens covers and rings (3)",
+    "ja": "リアレンズカバーとリング (3)",
+    "zh": "后镜头盖和环 (3)",
+    "es": "Tapas y anillos de lentes traseros (3)"
    },
    "category": "camera",
    "bbox": [
@@ -349,7 +364,10 @@
    "id": "vapor-chamber",
    "name": {
     "ko": "베이퍼 챔버(구리, 물 봉입)",
-    "en": "Vapor chamber (copper, sealed water)"
+    "en": "Vapor chamber (copper, sealed water)",
+    "ja": "ベーパーチャンバー (銅、密閉水)",
+    "zh": "均热板（铜、密封水）",
+    "es": "Cámara de vapor (cobre, agua sellada)"
    },
    "category": "thermal",
    "bbox": [
@@ -383,7 +401,10 @@
    "id": "back-glass-adhesive",
    "name": {
     "ko": "후면 창 접착제",
-    "en": "Back window adhesive"
+    "en": "Back window adhesive",
+    "ja": "バックウィンドウ接着剤",
+    "zh": "后窗胶",
+    "es": "Adhesivo para ventana trasera"
    },
    "category": "adhesive",
    "bbox": [
@@ -413,7 +434,10 @@
    "id": "back-glass",
    "name": {
     "ko": "세라믹 실드 후면 창",
-    "en": "Ceramic Shield back window"
+    "en": "Ceramic Shield back window",
+    "ja": "セラミックシールドバックウィンドウ",
+    "zh": "陶瓷屏蔽后窗",
+    "es": "Ventana trasera con escudo cerámico"
    },
    "category": "housing",
    "bbox": [
@@ -446,7 +470,10 @@
    "key": true,
    "desc": {
     "ko": "처음으로 세라믹 실드를 쓴 뒷면 창이에요. 무선 충전 부품이 붙어서 한 부품으로 교체돼요.",
-    "en": "The first Ceramic Shield back; the wireless-charging unit comes attached to it."
+    "en": "The first Ceramic Shield back; the wireless-charging unit comes attached to it.",
+    "ja": "最初のセラミックシールドバック。ワイヤレス充電ユニットが付属しています。",
+    "zh": "第一个陶瓷屏蔽背板；无线充电装置已附在其上。",
+    "es": "El primer respaldo Ceramic Shield; La unidad de carga inalámbrica viene adjunta."
    },
    "notes": "Window outline estimated. In reality it is glued in from the outside; here it drops in from the front."
   },
@@ -454,7 +481,10 @@
    "id": "magsafe-coil",
    "name": {
     "ko": "맥세이프 무선 충전 코일·자석",
-    "en": "MagSafe / Qi2 charging coil and magnets"
+    "en": "MagSafe / Qi2 charging coil and magnets",
+    "ja": "MagSafe / Qi2 充電コイルと磁石",
+    "zh": "MagSafe / Qi2 充电线圈和磁铁",
+    "es": "Bobina de carga e imanes MagSafe/Qi2"
    },
    "category": "wireless",
    "bbox": [
@@ -487,7 +517,10 @@
    "id": "magsafe-flex",
    "name": {
     "ko": "무선 충전 케이블",
-    "en": "Wireless-charging flex"
+    "en": "Wireless-charging flex",
+    "ja": "ワイヤレス充電フレックス",
+    "zh": "无线充电柔性",
+    "es": "Flex de carga inalámbrica"
    },
    "category": "flex",
    "bbox": [
@@ -529,7 +562,10 @@
    "id": "action-button",
    "name": {
     "ko": "동작 버튼",
-    "en": "Action button"
+    "en": "Action button",
+    "ja": "アクションボタン",
+    "zh": "动作按钮",
+    "es": "Botón de acción"
    },
    "category": "button",
    "bbox": [
@@ -561,7 +597,10 @@
    "id": "volume-up",
    "name": {
     "ko": "음량 높이기 버튼",
-    "en": "Volume up button"
+    "en": "Volume up button",
+    "ja": "音量を上げるボタン",
+    "zh": "音量调高按钮",
+    "es": "Botón para subir el volumen"
    },
    "category": "button",
    "bbox": [
@@ -596,7 +635,10 @@
    "id": "volume-down",
    "name": {
     "ko": "음량 낮추기 버튼",
-    "en": "Volume down button"
+    "en": "Volume down button",
+    "ja": "音量ダウンボタン",
+    "zh": "音量调低按钮",
+    "es": "Botón para bajar el volumen"
    },
    "category": "button",
    "bbox": [
@@ -631,7 +673,10 @@
    "id": "side-button",
    "name": {
     "ko": "측면 버튼",
-    "en": "Side button"
+    "en": "Side button",
+    "ja": "サイドボタン",
+    "zh": "侧边按钮",
+    "es": "Botón lateral"
    },
    "category": "button",
    "bbox": [
@@ -666,7 +711,10 @@
    "id": "camera-control",
    "name": {
     "ko": "카메라 컨트롤(사파이어+압력 센서)",
-    "en": "Camera Control (sapphire + force sensor)"
+    "en": "Camera Control (sapphire + force sensor)",
+    "ja": "カメラ制御 (サファイア + 力センサー)",
+    "zh": "相机控制（蓝宝石+力传感器）",
+    "es": "Control de cámara (zafiro + sensor de fuerza)"
    },
    "category": "button",
    "bbox": [
@@ -697,7 +745,10 @@
    "id": "left-button-flex",
    "name": {
     "ko": "왼쪽 버튼 케이블(동작·음량)",
-    "en": "Left button flex (Action, volume)"
+    "en": "Left button flex (Action, volume)",
+    "ja": "左ボタンのフレックス (アクション、ボリューム)",
+    "zh": "左键伸缩（动作、音量）",
+    "es": "Flex botón izquierdo (Acción, volumen)"
    },
    "category": "flex",
    "bbox": [
@@ -743,7 +794,10 @@
    "id": "right-button-flex",
    "name": {
     "ko": "측면 버튼 케이블",
-    "en": "Side button flex"
+    "en": "Side button flex",
+    "ja": "サイドボタンフレックス",
+    "zh": "侧边按钮伸缩",
+    "es": "Flex de botón lateral"
    },
    "category": "flex",
    "bbox": [
@@ -790,7 +844,10 @@
    "id": "camera-control-flex",
    "name": {
     "ko": "카메라 컨트롤 케이블",
-    "en": "Camera Control flex"
+    "en": "Camera Control flex",
+    "ja": "カメラ コントロール フレックス",
+    "zh": "相机控制灵活",
+    "es": "Flex de control de cámara"
    },
    "category": "flex",
    "bbox": [
@@ -830,7 +887,10 @@
    "id": "sim-reader",
    "name": {
     "ko": "SIM 리더",
-    "en": "SIM card reader"
+    "en": "SIM card reader",
+    "ja": "SIM カード リーダー",
+    "zh": "SIM卡读卡器",
+    "es": "Lector de tarjetas SIM"
    },
    "category": "sim",
    "bbox": [
@@ -860,7 +920,10 @@
    "id": "usbc-graphite",
    "name": {
     "ko": "USB-C 아래 그라파이트 시트",
-    "en": "Graphite sheet under the USB-C assembly"
+    "en": "Graphite sheet under the USB-C assembly",
+    "ja": "USB-C アセンブリの下のグラファイト シート",
+    "zh": "USB-C 组件下的石墨片",
+    "es": "Hoja de grafito debajo del conjunto USB-C"
    },
    "category": "adhesive",
    "bbox": [
@@ -890,7 +953,10 @@
    "id": "usbc-assembly",
    "name": {
     "ko": "USB-C 포트 어셈블리(하단 마이크 모듈 포함)",
-    "en": "USB-C port assembly (with the mic module)"
+    "en": "USB-C port assembly (with the mic module)",
+    "ja": "USB-C ポートアセンブリ (マイクモジュール付き)",
+    "zh": "USB-C 端口组件（带麦克风模块）",
+    "es": "Conjunto de puerto USB-C (con el módulo de micrófono)"
    },
    "category": "port",
    "bbox": [
@@ -919,7 +985,10 @@
    "key": true,
    "desc": {
     "ko": "충전 단자와 왼쪽 마이크가 한 덩어리예요. 나사 10개와 접착으로 아래 모서리에 붙어요.",
-    "en": "The charging port and the mic beside it, held by 10 screws and adhesive along the bottom edge."
+    "en": "The charging port and the mic beside it, held by 10 screws and adhesive along the bottom edge.",
+    "ja": "充電ポートとその横のマイクは、10 本のネジと下端に沿った接着剤で固定されています。",
+    "zh": "充电端口和旁边的麦克风，由 10 个螺丝和沿底部边缘的粘合剂固定。",
+    "es": "El puerto de carga y el micrófono al lado, sujetos por 10 tornillos y adhesivo a lo largo del borde inferior."
    },
    "passesThrough": [
     "unibody"
@@ -929,7 +998,10 @@
    "id": "usbc-flex",
    "name": {
     "ko": "USB-C 케이블(메인보드 왼쪽 아래로)",
-    "en": "USB-C flex to the logic board"
+    "en": "USB-C flex to the logic board",
+    "ja": "USB-C フレックスをロジックボードに接続",
+    "zh": "USB-C 柔性连接至逻辑板",
+    "es": "Flex USB-C a la placa lógica"
    },
    "category": "flex",
    "bbox": [
@@ -981,7 +1053,10 @@
    "id": "screws-usbc-inner",
    "name": {
     "ko": "USB-C 어셈블리 나사",
-    "en": "USB-C assembly screws"
+    "en": "USB-C assembly screws",
+    "ja": "USB-C 組み立てネジ",
+    "zh": "USB-C 组装螺丝",
+    "es": "Tornillos de montaje USB-C"
    },
    "category": "fastener",
    "bbox": [
@@ -1040,7 +1115,10 @@
    "id": "screws-usbc-frame",
    "name": {
     "ko": "USB-C 프레임 나사",
-    "en": "USB-C frame screws"
+    "en": "USB-C frame screws",
+    "ja": "USB-C フレームネジ",
+    "zh": "USB-C 框架螺丝",
+    "es": "Tornillos del marco USB-C"
    },
    "category": "fastener",
    "bbox": [
@@ -1091,7 +1169,10 @@
    "id": "lower-mic-gasket",
    "name": {
     "ko": "하단 마이크 접착 개스킷",
-    "en": "Lower microphone adhesive gasket"
+    "en": "Lower microphone adhesive gasket",
+    "ja": "下部マイク粘着ガスケット",
+    "zh": "下部麦克风粘合垫片",
+    "es": "Junta adhesiva de micrófono inferior"
    },
    "category": "adhesive",
    "bbox": [
@@ -1121,7 +1202,10 @@
    "id": "lower-mic",
    "name": {
     "ko": "하단 마이크",
-    "en": "Lower microphone"
+    "en": "Lower microphone",
+    "ja": "下部マイク",
+    "zh": "下部麦克风",
+    "es": "Micrófono inferior"
    },
    "category": "audio",
    "bbox": [
@@ -1151,7 +1235,10 @@
    "id": "screws-lower-mic",
    "name": {
     "ko": "하단 마이크 나사",
-    "en": "Lower microphone screws"
+    "en": "Lower microphone screws",
+    "ja": "マイク下部ネジ",
+    "zh": "下部麦克风螺丝",
+    "es": "Tornillos inferiores del micrófono"
    },
    "category": "fastener",
    "bbox": [
@@ -1194,7 +1281,10 @@
    "id": "taptic-engine",
    "name": {
     "ko": "탭틱 엔진",
-    "en": "Taptic Engine"
+    "en": "Taptic Engine",
+    "ja": "タップティック エンジン",
+    "zh": "触觉引擎",
+    "es": "Motor Táptico"
    },
    "category": "haptics",
    "bbox": [
@@ -1224,14 +1314,20 @@
    "key": true,
    "desc": {
     "ko": "진동을 만드는 리니어 모터예요. 아래쪽 홈에 눕혀 넣고 스탠드오프 나사 2개로 고정해요.",
-    "en": "The linear vibration motor; it lies in a recess at the bottom, held by two standoff screws."
+    "en": "The linear vibration motor; it lies in a recess at the bottom, held by two standoff screws.",
+    "ja": "リニア振動モーター。底部のくぼみにあり、2 本のスタンドオフ ネジで固定されています。",
+    "zh": "直线振动电机；它位于底部的凹槽中，由两个支座螺钉固定。",
+    "es": "El motor de vibración lineal; se encuentra en un hueco en la parte inferior, sostenido por dos tornillos separadores."
    }
   },
   {
    "id": "screws-taptic",
    "name": {
     "ko": "탭틱 엔진 나사(스탠드오프)",
-    "en": "Taptic Engine standoff screws"
+    "en": "Taptic Engine standoff screws",
+    "ja": "Taptic Engine スタンドオフ ネジ",
+    "zh": "Taptic Engine 支架螺钉",
+    "es": "Tornillos separadores del motor Taptic"
    },
    "category": "fastener",
    "bbox": [
@@ -1274,7 +1370,10 @@
    "id": "flex-antenna",
    "name": {
     "ko": "하단 플렉스 안테나",
-    "en": "Lower flex antenna"
+    "en": "Lower flex antenna",
+    "ja": "下部フレックスアンテナ",
+    "zh": "下部柔性天线",
+    "es": "Antena flex inferior"
    },
    "category": "antenna",
    "bbox": [
@@ -1306,7 +1405,10 @@
    "id": "screws-flex-antenna",
    "name": {
     "ko": "플렉스 안테나 나사",
-    "en": "Flex antenna screws"
+    "en": "Flex antenna screws",
+    "ja": "フレックスアンテナネジ",
+    "zh": "柔性天线螺丝",
+    "es": "Tornillos de antena flexible"
    },
    "category": "fastener",
    "bbox": [
@@ -1353,7 +1455,10 @@
    "id": "ground-clip",
    "name": {
     "ko": "접지 클립",
-    "en": "Ground clip"
+    "en": "Ground clip",
+    "ja": "アースクリップ",
+    "zh": "接地夹",
+    "es": "Clip de tierra"
    },
    "category": "bracket",
    "bbox": [
@@ -1385,7 +1490,10 @@
    "id": "screws-ground-clip",
    "name": {
     "ko": "접지 클립 나사",
-    "en": "Ground clip screws"
+    "en": "Ground clip screws",
+    "ja": "アースクリップネジ",
+    "zh": "接地夹螺钉",
+    "es": "Tornillos de sujeción a tierra"
    },
    "category": "fastener",
    "bbox": [
@@ -1428,7 +1536,10 @@
    "id": "loudspeaker-gasket",
    "name": {
     "ko": "스피커 접착 개스킷",
-    "en": "Loudspeaker adhesive gasket"
+    "en": "Loudspeaker adhesive gasket",
+    "ja": "スピーカー接着ガスケット",
+    "zh": "扬声器粘合垫片",
+    "es": "Junta adhesiva de altavoz"
    },
    "category": "adhesive",
    "bbox": [
@@ -1458,7 +1569,10 @@
    "id": "loudspeaker",
    "name": {
     "ko": "하단 스피커",
-    "en": "Loudspeaker"
+    "en": "Loudspeaker",
+    "ja": "スピーカー",
+    "zh": "喇叭",
+    "es": "Altavoz"
    },
    "category": "audio",
    "bbox": [
@@ -1490,7 +1604,10 @@
    "id": "screws-loudspeaker",
    "name": {
     "ko": "스피커 나사",
-    "en": "Loudspeaker screws"
+    "en": "Loudspeaker screws",
+    "ja": "スピーカーのネジ",
+    "zh": "扬声器螺丝",
+    "es": "Tornillos de altavoz"
    },
    "category": "fastener",
    "bbox": [
@@ -1549,7 +1666,10 @@
    "id": "taptic-buffer",
    "name": {
     "ko": "탭틱 엔진 완충 스트립",
-    "en": "Taptic Engine buffer strip"
+    "en": "Taptic Engine buffer strip",
+    "ja": "Taptic Engine バッファー ストリップ",
+    "zh": "Taptic Engine 缓冲条",
+    "es": "Tira de amortiguación del motor Taptic"
    },
    "category": "adhesive",
    "bbox": [
@@ -1580,7 +1700,10 @@
    "id": "lidar",
    "name": {
     "ko": "LiDAR 스캐너",
-    "en": "LiDAR scanner"
+    "en": "LiDAR scanner",
+    "ja": "LiDAR スキャナ",
+    "zh": "激光雷达扫描仪",
+    "es": "Escáner LiDAR"
    },
    "category": "camera",
    "bbox": [
@@ -1615,7 +1738,10 @@
    "id": "lidar-cover",
    "name": {
     "ko": "LiDAR 덮개",
-    "en": "LiDAR cover"
+    "en": "LiDAR cover",
+    "ja": "LiDAR カバー",
+    "zh": "激光雷达罩",
+    "es": "Cubierta LiDAR"
    },
    "category": "bracket",
    "bbox": [
@@ -1647,7 +1773,10 @@
    "id": "screws-lidar-cover",
    "name": {
     "ko": "LiDAR 덮개 나사",
-    "en": "LiDAR cover screws"
+    "en": "LiDAR cover screws",
+    "ja": "LiDAR カバーのネジ",
+    "zh": "激光雷达盖螺丝",
+    "es": "Tornillos de tapa LiDAR"
    },
    "category": "fastener",
    "bbox": [
@@ -1690,7 +1819,10 @@
    "id": "flash",
    "name": {
     "ko": "트루 톤 플래시",
-    "en": "True Tone flash"
+    "en": "True Tone flash",
+    "ja": "トゥルートーンフラッシュ",
+    "zh": "原彩闪光灯",
+    "es": "Flash de tono verdadero"
    },
    "category": "other",
    "bbox": [
@@ -1721,7 +1853,10 @@
    "id": "logic-board",
    "name": {
     "ko": "메인보드(A19 Pro, 2층 적층)",
-    "en": "Logic board (A19 Pro, stacked)"
+    "en": "Logic board (A19 Pro, stacked)",
+    "ja": "ロジックボード (A19 Pro、スタック)",
+    "zh": "逻辑板（A19 Pro，堆叠式）",
+    "es": "Placa lógica (A19 Pro, apilada)"
    },
    "category": "board",
    "bbox": [
@@ -1778,7 +1913,10 @@
    "key": true,
    "desc": {
     "ko": "A19 Pro 칩이 올라간 2층 보드예요. 배터리 위쪽, 플래토 아래 공간에 들어가요.",
-    "en": "The stacked board with the A19 Pro, above the battery and reaching under the plateau."
+    "en": "The stacked board with the A19 Pro, above the battery and reaching under the plateau.",
+    "ja": "A19 Pro を搭載した積層ボード、バッテリーの上、プラトーの下に達しています。",
+    "zh": "与 A19 Pro 的堆叠板，位于电池上方并到达平台下方。",
+    "es": "El tablero apilado con el A19 Pro, encima de la batería y llegando debajo de la meseta."
    },
    "notes": "Outline and stacking estimated; board screws are not counted in any guide (it is held by connectors and covers)."
   },
@@ -1786,7 +1924,10 @@
    "id": "conn-wireless",
    "name": {
     "ko": "무선 충전 커넥터(보드 아래, 덮개 포함)",
-    "en": "Wireless-charging connector (underside, with cover)"
+    "en": "Wireless-charging connector (underside, with cover)",
+    "ja": "ワイヤレス充電コネクタ (下側、カバー付き)",
+    "zh": "无线充电连接器（底部，带盖）",
+    "es": "Conector de carga inalámbrica (parte inferior, con tapa)"
    },
    "category": "connector",
    "bbox": [
@@ -1817,7 +1958,10 @@
    "id": "conn-board",
    "name": {
     "ko": "보드 커넥터(화면·ALS·배터리·USB-C·버튼)",
-    "en": "Board connectors (screen, ALS, battery, USB-C, buttons)"
+    "en": "Board connectors (screen, ALS, battery, USB-C, buttons)",
+    "ja": "ボードコネクタ (スクリーン、ALS、バッテリー、USB-C、ボタン)",
+    "zh": "板连接器（屏幕、ALS、电池、USB-C、按钮）",
+    "es": "Conectores de placa (pantalla, ALS, batería, USB-C, botones)"
    },
    "category": "connector",
    "bbox": [
@@ -1885,7 +2029,10 @@
    "id": "conn-cameras",
    "name": {
     "ko": "카메라·상단 커넥터",
-    "en": "Camera and top-edge connectors"
+    "en": "Camera and top-edge connectors",
+    "ja": "カメラとトップエッジコネクタ",
+    "zh": "相机和顶部边缘连接器",
+    "es": "Cámara y conectores de borde superior"
    },
    "category": "connector",
    "bbox": [
@@ -1954,7 +2101,10 @@
    "id": "cover-buttons",
    "name": {
     "ko": "버튼 커넥터 덮개",
-    "en": "Button connector cover"
+    "en": "Button connector cover",
+    "ja": "ボタンコネクタカバー",
+    "zh": "按钮连接器盖",
+    "es": "Tapa del conector del botón"
    },
    "category": "bracket",
    "bbox": [
@@ -1986,7 +2136,10 @@
    "id": "screw-cover-buttons",
    "name": {
     "ko": "버튼 덮개 나사",
-    "en": "Button cover screw"
+    "en": "Button cover screw",
+    "ja": "ボタンカバーネジ",
+    "zh": "按钮盖螺丝",
+    "es": "Tornillo tapa botón"
    },
    "category": "fastener",
    "bbox": [
@@ -2025,7 +2178,10 @@
    "id": "top-speaker",
    "name": {
     "ko": "상단 스피커(수화부)",
-    "en": "Top speaker (earpiece)"
+    "en": "Top speaker (earpiece)",
+    "ja": "トップスピーカー（受話口）",
+    "zh": "顶部扬声器（听筒）",
+    "es": "Altavoz superior (auricular)"
    },
    "category": "audio",
    "bbox": [
@@ -2058,7 +2214,10 @@
    "id": "screws-top-speaker",
    "name": {
     "ko": "상단 스피커 나사",
-    "en": "Top speaker screws"
+    "en": "Top speaker screws",
+    "ja": "上部スピーカーのネジ",
+    "zh": "顶部扬声器螺丝",
+    "es": "Tornillos del altavoz superior"
    },
    "category": "fastener",
    "bbox": [
@@ -2106,7 +2265,10 @@
    "id": "front-camera",
    "name": {
     "ko": "전면 카메라·Face ID 어셈블리(18MP)",
-    "en": "Front camera and Face ID assembly (18 MP)"
+    "en": "Front camera and Face ID assembly (18 MP)",
+    "ja": "フロントカメラと Face ID アセンブリ (18 MP)",
+    "zh": "前置摄像头和 Face ID 组件 (18 MP)",
+    "es": "Conjunto de cámara frontal y Face ID (18 MP)"
    },
    "category": "camera",
    "bbox": [
@@ -2155,7 +2317,10 @@
    "id": "cover-front-camera",
    "name": {
     "ko": "전면 카메라 커넥터 덮개",
-    "en": "Front camera connector cover"
+    "en": "Front camera connector cover",
+    "ja": "フロントカメラコネクタカバー",
+    "zh": "前置摄像头连接器盖",
+    "es": "Tapa del conector de la cámara frontal"
    },
    "category": "bracket",
    "bbox": [
@@ -2188,7 +2353,10 @@
    "id": "screw-cover-front-camera",
    "name": {
     "ko": "전면 카메라 덮개 나사",
-    "en": "Front camera cover screw"
+    "en": "Front camera cover screw",
+    "ja": "フロントカメラカバーネジ",
+    "zh": "前置摄像头盖螺丝",
+    "es": "Tornillo de la cubierta de la cámara frontal"
    },
    "category": "fastener",
    "bbox": [
@@ -2228,7 +2396,10 @@
    "id": "rear-camera",
    "name": {
     "ko": "후면 카메라 어셈블리(48MP ×3)",
-    "en": "Rear camera assembly (3 × 48 MP)"
+    "en": "Rear camera assembly (3 × 48 MP)",
+    "ja": "リアカメラアセンブリ (3 × 48 MP)",
+    "zh": "后置摄像头组件 (3 × 48 MP)",
+    "es": "Conjunto de cámara trasera (3×48 MP)"
    },
    "category": "camera",
    "bbox": [
@@ -2278,7 +2449,10 @@
    "key": true,
    "desc": {
     "ko": "메인·초광각·망원(4배 테트라프리즘) 세 카메라가 한 덩어리예요. 하나만 고장 나도 통째로 바꿔요.",
-    "en": "Main, ultra-wide and 4x tetraprism telephoto in one block; any fault means replacing all three."
+    "en": "Main, ultra-wide and 4x tetraprism telephoto in one block; any fault means replacing all three.",
+    "ja": "メイン、超広角、4 倍テトラプリズム望遠を 1 つのブロックに収めたもの。何らかの障害が発生した場合は、3 つすべてを交換することを意味します。",
+    "zh": "主摄、超广角、4倍四棱镜长焦三合一；任何故障都意味着更换所有三个。",
+    "es": "Teleobjetivo principal, ultra gran angular y tetraprisma 4x en un solo bloque; cualquier avería supone sustituir los tres."
    },
    "notes": "Drawn as a block: the camera template points its lenses at +z, which here is the screen side."
   },
@@ -2286,7 +2460,10 @@
    "id": "screws-rear-camera",
    "name": {
     "ko": "후면 카메라 나사(Torx Plus)",
-    "en": "Rear camera screws (Torx Plus)"
+    "en": "Rear camera screws (Torx Plus)",
+    "ja": "リアカメラネジ (トルクスプラス)",
+    "zh": "后置摄像头螺丝 (Torx Plus)",
+    "es": "Tornillos de la cámara trasera (Torx Plus)"
    },
    "category": "fastener",
    "bbox": [
@@ -2334,7 +2511,10 @@
    "id": "cover-rear-camera",
    "name": {
     "ko": "후면 카메라 커넥터 덮개",
-    "en": "Rear camera connector cover"
+    "en": "Rear camera connector cover",
+    "ja": "リアカメラコネクタカバー",
+    "zh": "后置摄像头连接器盖",
+    "es": "Tapa del conector de la cámara trasera"
    },
    "category": "bracket",
    "bbox": [
@@ -2367,7 +2547,10 @@
    "id": "screw-cover-rear-camera",
    "name": {
     "ko": "후면 카메라 덮개 나사",
-    "en": "Rear camera cover screw"
+    "en": "Rear camera cover screw",
+    "ja": "リアカメラカバーネジ",
+    "zh": "后置摄像头盖螺丝",
+    "es": "Tornillo de la tapa de la cámara trasera"
    },
    "category": "fastener",
    "bbox": [
@@ -2407,7 +2590,10 @@
    "id": "battery-tray",
    "name": {
     "ko": "배터리 트레이(금속 셸)",
-    "en": "Battery tray (metal shell)"
+    "en": "Battery tray (metal shell)",
+    "ja": "バッテリートレイ（金属シェル）",
+    "zh": "电池托盘（金属壳）",
+    "es": "Bandeja de batería (carcasa metálica)"
    },
    "category": "bracket",
    "bbox": [
@@ -2440,7 +2626,10 @@
    "id": "battery",
    "name": {
     "ko": "배터리 3,988mAh(SIM 모델)",
-    "en": "Battery 3,988 mAh (SIM model)"
+    "en": "Battery 3,988 mAh (SIM model)",
+    "ja": "バッテリー 3,988 mAh (SIM モデル)",
+    "zh": "电池 3,988 mAh（SIM 型号）",
+    "es": "Batería 3.988 mAh (modelo SIM)"
    },
    "category": "battery",
    "bbox": [
@@ -2474,7 +2663,10 @@
    "key": true,
    "desc": {
     "ko": "금속 트레이에 붙은 채로 Torx Plus 나사 13개(eSIM 전용 모델은 14개)로 고정돼요. 처음으로 나사로 고정한 아이폰 배터리예요.",
-    "en": "Glued into a metal tray held by 13 Torx Plus screws (14 on eSIM-only models), a first for an iPhone battery."
+    "en": "Glued into a metal tray held by 13 Torx Plus screws (14 on eSIM-only models), a first for an iPhone battery.",
+    "ja": "iPhoneのバッテリーとしては初めて、13本のトルクスプラスネジ（eSIM専用モデルでは14本）で固定された金属トレイに接着されています。",
+    "zh": "粘在由 13 颗 Torx Plus 螺丝固定的金属托盘中（仅 eSIM 型号上有 14 颗），这对于 iPhone 电池来说尚属首次。",
+    "es": "Pegado en una bandeja de metal sostenida por 13 tornillos Torx Plus (14 en modelos solo eSIM), una novedad en la batería de un iPhone."
    },
    "notes": "Capacity from a regulatory leak (s17); eSIM-only models have 4,252 mAh and 14 tray screws."
   },
@@ -2482,7 +2674,10 @@
    "id": "screws-battery-tray",
    "name": {
     "ko": "배터리 트레이 나사 3.7 mm",
-    "en": "Battery tray screws, 3.7 mm"
+    "en": "Battery tray screws, 3.7 mm",
+    "ja": "バッテリートレイネジ、3.7 mm",
+    "zh": "电池托盘螺丝，3.7 毫米",
+    "es": "Tornillos para bandeja de batería, 3,7 mm"
    },
    "category": "fastener",
    "bbox": [
@@ -2554,7 +2749,10 @@
    "id": "screws-battery-tray-long",
    "name": {
     "ko": "배터리 트레이 나사(7.5·5.9·3.4·2.3 mm)",
-    "en": "Battery tray screws (7.5, 5.9, 3.4, 2.3 mm)"
+    "en": "Battery tray screws (7.5, 5.9, 3.4, 2.3 mm)",
+    "ja": "バッテリートレイネジ (7.5、5.9、3.4、2.3 mm)",
+    "zh": "电池托盘螺钉（7.5、5.9、3.4、2.3 毫米）",
+    "es": "Tornillos de la bandeja de la batería (7,5, 5,9, 3,4, 2,3 mm)"
    },
    "category": "fastener",
    "bbox": [
@@ -2605,7 +2803,10 @@
    "id": "battery-flex",
    "name": {
     "ko": "배터리 케이블",
-    "en": "Battery flex"
+    "en": "Battery flex",
+    "ja": "バッテリーフレックス",
+    "zh": "电池柔性",
+    "es": "Flex de bateria"
    },
    "category": "flex",
    "bbox": [
@@ -2647,7 +2848,10 @@
    "id": "sim-tray",
    "name": {
     "ko": "SIM 트레이",
-    "en": "SIM tray"
+    "en": "SIM tray",
+    "ja": "SIMトレイ",
+    "zh": "SIM 卡托盘",
+    "es": "Bandeja SIM"
    },
    "category": "sim",
    "bbox": [
@@ -2681,7 +2885,10 @@
    "id": "display-flex",
    "name": {
     "ko": "화면·센서 케이블",
-    "en": "Screen and sensor flex"
+    "en": "Screen and sensor flex",
+    "ja": "スクリーンとセンサーのフレックス",
+    "zh": "屏幕和传感器柔性",
+    "es": "Flex de pantalla y sensor"
    },
    "category": "flex",
    "bbox": [
@@ -2728,7 +2935,10 @@
    "id": "cover-display",
    "name": {
     "ko": "화면 커넥터 덮개",
-    "en": "Screen connector cover"
+    "en": "Screen connector cover",
+    "ja": "スクリーンコネクタカバー",
+    "zh": "屏幕连接器盖",
+    "es": "Tapa del conector de la pantalla"
    },
    "category": "bracket",
    "bbox": [
@@ -2760,7 +2970,10 @@
    "id": "cover-battery",
    "name": {
     "ko": "배터리 커넥터 덮개",
-    "en": "Battery connector cover"
+    "en": "Battery connector cover",
+    "ja": "バッテリーコネクタカバー",
+    "zh": "电池连接器盖",
+    "es": "Tapa del conector de la batería"
    },
    "category": "bracket",
    "bbox": [
@@ -2793,7 +3006,10 @@
    "id": "screws-covers",
    "name": {
     "ko": "덮개 나사(JIS 00)",
-    "en": "Cover screws (JIS 00)"
+    "en": "Cover screws (JIS 00)",
+    "ja": "カバーねじ（JIS 00）",
+    "zh": "盖螺丝 (JIS 00)",
+    "es": "Tornillos de tapa (JIS 00)"
    },
    "category": "fastener",
    "bbox": [
@@ -2836,7 +3052,10 @@
    "id": "front-sensors",
    "name": {
     "ko": "전면 센서(주변광·마이크)",
-    "en": "Front sensors (ambient light, mic)"
+    "en": "Front sensors (ambient light, mic)",
+    "ja": "フロントセンサー (環境光、マイク)",
+    "zh": "前置传感器（环境光、麦克风）",
+    "es": "Sensores frontales (luz ambiental, micrófono)"
    },
    "category": "other",
    "bbox": [
@@ -2866,7 +3085,10 @@
    "id": "front-sensors-bracket",
    "name": {
     "ko": "전면 센서 브래킷",
-    "en": "Front sensors bracket"
+    "en": "Front sensors bracket",
+    "ja": "フロントセンサーブラケット",
+    "zh": "前传感器支架",
+    "es": "Soporte sensores delanteros"
    },
    "category": "bracket",
    "bbox": [
@@ -2898,7 +3120,10 @@
    "id": "display-adhesive",
    "name": {
     "ko": "화면 접착 시트",
-    "en": "Screen adhesive"
+    "en": "Screen adhesive",
+    "ja": "スクリーン接着剤",
+    "zh": "屏幕胶",
+    "es": "Adhesivo de pantalla"
    },
    "category": "adhesive",
    "bbox": [
@@ -2928,7 +3153,10 @@
    "id": "display",
    "name": {
     "ko": "디스플레이(세라믹 실드 2, 6.3형 OLED)",
-    "en": "Display (Ceramic Shield 2, 6.3\" OLED)"
+    "en": "Display (Ceramic Shield 2, 6.3\" OLED)",
+    "ja": "ディスプレイ (Ceramic Shield 2、6.3 インチ OLED)",
+    "zh": "显示屏（陶瓷屏蔽 2，6.3 英寸 OLED）",
+    "es": "Pantalla (Ceramic Shield 2, OLED de 6,3\")"
    },
    "category": "display",
    "bbox": [
@@ -2964,14 +3192,20 @@
    "key": true,
    "desc": {
     "ko": "마지막에 덮는 앞면이에요. 접착 시트와 클립 5개로 붙고, 케이블 두 개를 보드에 꽂아요.",
-    "en": "The front goes on last: adhesive, five clips and two cables into the board."
+    "en": "The front goes on last: adhesive, five clips and two cables into the board.",
+    "ja": "最後に前面が続きます。接着剤、5 つのクリップ、2 本のケーブルをボードに接続します。",
+    "zh": "最后是正面：粘合剂、五个夹子和两根电缆连接到板上。",
+    "es": "El frente va al final: adhesivo, cinco clips y dos cables dentro del tablero."
    }
   },
   {
    "id": "pentalobe-screws",
    "name": {
     "ko": "하단 펜타로브 나사",
-    "en": "Bottom pentalobe screws"
+    "en": "Bottom pentalobe screws",
+    "ja": "底部ペンタローブネジ",
+    "zh": "底部五角螺钉",
+    "es": "Tornillos pentalobe inferiores"
    },
    "category": "fastener",
    "bbox": [
@@ -3017,7 +3251,10 @@
    "n": 1,
    "title": {
     "ko": "유니바디(플래토·렌즈 커버 포함)",
-    "en": "Unibody with plateau and lens covers"
+    "en": "Unibody with plateau and lens covers",
+    "ja": "プラトーとレンズカバーを備えたユニボディ",
+    "zh": "带平台和镜头盖的一体式机身",
+    "es": "Unibody con meseta y cubiertas de lentes"
    },
    "parts": [
     "unibody",
@@ -3026,11 +3263,17 @@
    ],
    "tools": {
     "ko": "없음 (공장에서 완성된 몸체)",
-    "en": "none (comes as one finished body)"
+    "en": "none (comes as one finished body)",
+    "ja": "なし（1つの完成品として提供されます）",
+    "zh": "无（作为一个成品）",
+    "es": "ninguno (viene como un cuerpo terminado)"
    },
    "cautions": {
     "ko": "플래토 모서리는 아노다이징이 얇아 긁히기 쉬워요.",
-    "en": "The plateau's sharp edge is where the anodising chips most easily."
+    "en": "The plateau's sharp edge is where the anodising chips most easily.",
+    "ja": "プラトーの鋭いエッジは、陽極酸化処理が最も簡単に欠ける場所です。",
+    "zh": "高原的锋利边缘是阳极氧化最容易碎裂的地方。",
+    "es": "El borde afilado de la meseta es donde el anodizado se astilla con mayor facilidad."
    },
    "path": "drop",
    "sourceIds": [
@@ -3042,7 +3285,10 @@
    "n": 2,
    "title": {
     "ko": "세라믹 실드 후면 창, 무선 충전부, 베이퍼 챔버",
-    "en": "Ceramic Shield back window, charging unit and vapor chamber"
+    "en": "Ceramic Shield back window, charging unit and vapor chamber",
+    "ja": "セラミック シールド バック ウィンドウ、充電ユニット、ベーパー チャンバー",
+    "zh": "陶瓷屏蔽后窗、充电装置和均温板",
+    "es": "Ventana trasera Ceramic Shield, unidad de carga y cámara de vapor"
    },
    "parts": [
     "vapor-chamber",
@@ -3053,11 +3299,17 @@
    ],
    "tools": {
     "ko": "열풍기, 새 접착제, 클램프",
-    "en": "heat, new adhesive, clamps"
+    "en": "heat, new adhesive, clamps",
+    "ja": "熱、新しい接着剤、クランプ",
+    "zh": "加热、新粘合剂、夹具",
+    "es": "calor, adhesivo nuevo, abrazaderas"
    },
    "cautions": {
     "ko": "실제로는 뒤쪽에서 붙여요. 이 그림은 한 방향으로만 조립해서 앞쪽에서 내려 넣어요.",
-    "en": "In reality it goes on from the back; the page only assembles in one direction, so it drops in from the front."
+    "en": "In reality it goes on from the back; the page only assembles in one direction, so it drops in from the front.",
+    "ja": "実際には、それは後ろから続きます。ページは一方向にのみ組み立てられるため、前面からドロップされます。",
+    "zh": "事实上，它是从后面开始的。该页面仅沿一个方向组装，因此它从前面落入。",
+    "es": "En realidad va desde atrás; la página solo se ensambla en una dirección, por lo que cae desde el frente."
    },
    "path": "drop",
    "sourceIds": [
@@ -3068,7 +3320,10 @@
    "n": 3,
    "title": {
     "ko": "버튼, 카메라 컨트롤, SIM 리더",
-    "en": "Buttons, Camera Control and SIM reader"
+    "en": "Buttons, Camera Control and SIM reader",
+    "ja": "ボタン、カメラコントロール、SIMリーダー",
+    "zh": "按钮、摄像头控制和 SIM 卡读卡器",
+    "es": "Botones, Control de Cámara y Lector SIM"
    },
    "parts": [
     "action-button",
@@ -3083,11 +3338,17 @@
    ],
    "tools": {
     "ko": "JIS 00, 핀셋",
-    "en": "JIS 00, tweezers"
+    "en": "JIS 00, tweezers",
+    "ja": "JIS 00、ピンセット",
+    "zh": "JIS 00，镊子",
+    "es": "JIS 00, pinzas"
    },
    "cautions": {
     "ko": "버튼 케이블은 화면 테두리 3 mm 안쪽을 지나요. 나중에 화면을 열 때 픽을 깊이 넣지 마세요.",
-    "en": "The button cables run within 3 mm of the screen edge; never push an opening pick deeper."
+    "en": "The button cables run within 3 mm of the screen edge; never push an opening pick deeper.",
+    "ja": "ボタン ケーブルは画面の端から 3 mm 以内に配線されます。決してオープニングピックを深く押し込まないでください。",
+    "zh": "按键排线距离屏幕边缘 3 毫米以内；切勿将开挖镐推得更深。",
+    "es": "Los cables de los botones pasan dentro de los 3 mm del borde de la pantalla; Nunca empujes una púa de apertura más profundamente."
    },
    "path": "drop",
    "sourceIds": [
@@ -3099,7 +3360,10 @@
    "n": 4,
    "title": {
     "ko": "USB-C 포트 어셈블리",
-    "en": "USB-C port assembly"
+    "en": "USB-C port assembly",
+    "ja": "USB-Cポートアセンブリ",
+    "zh": "USB-C 端口组件",
+    "es": "Conjunto de puerto USB-C"
    },
    "parts": [
     "usbc-graphite",
@@ -3110,11 +3374,17 @@
    ],
    "tools": {
     "ko": "JIS 00, 트라이포인트 Y000, 열풍기, 오프닝 픽",
-    "en": "JIS 00, tri-point Y000, heat, opening pick"
+    "en": "JIS 00, tri-point Y000, heat, opening pick",
+    "ja": "JIS 00、トライポイント Y000、ヒート、オープニングピック",
+    "zh": "JIS 00、三点 Y000、加热、撬片",
+    "es": "JIS 00, triple punto Y000, calor, púa de apertura"
    },
    "cautions": {
     "ko": "그라파이트 시트는 얇아서 잘 찢어져요. 나사 길이가 섞여 있으니 자리를 기억하세요.",
-    "en": "The graphite sheet tears easily; screw lengths are mixed, so keep track of each hole."
+    "en": "The graphite sheet tears easily; screw lengths are mixed, so keep track of each hole.",
+    "ja": "グラファイトシートは簡単に破れます。ネジの長さはさまざまなので、それぞれの穴を把握しておいてください。",
+    "zh": "石墨片易撕裂；螺钉长度是混合的，因此请记录每个孔。",
+    "es": "La lámina de grafito se rasga fácilmente; Las longitudes de los tornillos son variadas, así que realice un seguimiento de cada orificio."
    },
    "path": "drop",
    "sourceIds": [
@@ -3125,7 +3395,10 @@
    "n": 5,
    "title": {
     "ko": "하단 마이크",
-    "en": "Lower microphone"
+    "en": "Lower microphone",
+    "ja": "下部マイク",
+    "zh": "下部麦克风",
+    "es": "Micrófono inferior"
    },
    "parts": [
     "lower-mic-gasket",
@@ -3134,11 +3407,17 @@
    ],
    "tools": {
     "ko": "스탠드오프 드라이버, JIS 00, 스퍼저",
-    "en": "standoff driver, JIS 00, spudger"
+    "en": "standoff driver, JIS 00, spudger",
+    "ja": "スタンドオフドライバー、JIS 00、スパッジャー",
+    "zh": "隔离驱动器、JIS 00、撬棒",
+    "es": "controlador de separación, JIS 00, spudger"
    },
    "cautions": {
     "ko": "개스킷이 구멍을 막지 않게 맞춘 다음 커넥터를 눌러요.",
-    "en": "Line the gasket up with the port holes before pressing the connector."
+    "en": "Line the gasket up with the port holes before pressing the connector.",
+    "ja": "コネクタを押す前に、ガスケットをポート穴に合わせます。",
+    "zh": "在按压连接器之前，将垫圈与端口孔对齐。",
+    "es": "Alinee la junta con los orificios de los puertos antes de presionar el conector."
    },
    "path": "drop",
    "sourceIds": [
@@ -3149,7 +3428,10 @@
    "n": 6,
    "title": {
     "ko": "탭틱 엔진",
-    "en": "Taptic Engine"
+    "en": "Taptic Engine",
+    "ja": "タップティック エンジン",
+    "zh": "触觉引擎",
+    "es": "Motor Táptico"
    },
    "parts": [
     "taptic-engine",
@@ -3157,11 +3439,17 @@
    ],
    "tools": {
     "ko": "스탠드오프 드라이버, 스퍼저",
-    "en": "standoff driver, spudger"
+    "en": "standoff driver, spudger",
+    "ja": "スタンドオフドライバー、スパッジャー",
+    "zh": "防区外驱动器、撬棒",
+    "es": "conductor separador, spudger"
    },
    "cautions": {
     "ko": "커넥터를 먼저 끼우고 엔진을 홈 안으로 뒤집어 넣어요.",
-    "en": "Connect it first, then flip the engine down into its recess."
+    "en": "Connect it first, then flip the engine down into its recess.",
+    "ja": "まず接続してから、エンジンを凹部に倒します。",
+    "zh": "首先连接它，然后将发动机向下翻转到其凹槽中。",
+    "es": "Conéctelo primero, luego baje el motor a su hueco."
    },
    "path": "drop",
    "sourceIds": [
@@ -3172,7 +3460,10 @@
    "n": 7,
    "title": {
     "ko": "플렉스 안테나와 접지 클립",
-    "en": "Flex antenna and ground clip"
+    "en": "Flex antenna and ground clip",
+    "ja": "フレックスアンテナとグランドクリップ",
+    "zh": "柔性天线和接地夹",
+    "es": "Antena flexible y clip de tierra"
    },
    "parts": [
     "flex-antenna",
@@ -3182,11 +3473,17 @@
    ],
    "tools": {
     "ko": "JIS 00, 핀셋",
-    "en": "JIS 00, tweezers"
+    "en": "JIS 00, tweezers",
+    "ja": "JIS 00、ピンセット",
+    "zh": "JIS 00，镊子",
+    "es": "JIS 00, pinzas"
    },
    "cautions": {
     "ko": "접지 클립은 얇아서 쉽게 휘어요.",
-    "en": "The ground clip is thin and bends easily."
+    "en": "The ground clip is thin and bends easily.",
+    "ja": "アースクリップは薄くて曲がりやすいです。",
+    "zh": "接地夹很薄，容易弯曲。",
+    "es": "El clip de tierra es delgado y se dobla fácilmente."
    },
    "path": "drop",
    "sourceIds": [
@@ -3197,7 +3494,10 @@
    "n": 8,
    "title": {
     "ko": "하단 스피커와 완충 스트립",
-    "en": "Loudspeaker and buffer strip"
+    "en": "Loudspeaker and buffer strip",
+    "ja": "ラウドスピーカーとバッファーストリップ",
+    "zh": "扬声器及缓冲带",
+    "es": "Altavoz y franja amortiguadora"
    },
    "parts": [
     "loudspeaker-gasket",
@@ -3207,11 +3507,17 @@
    ],
    "tools": {
     "ko": "JIS 00, 스퍼저",
-    "en": "JIS 00, spudger"
+    "en": "JIS 00, spudger",
+    "ja": "JIS 00、スパッジャー",
+    "zh": "JIS 00，撬棒",
+    "es": "JIS 00, spudger"
    },
    "cautions": {
     "ko": "스피커의 위쪽 가장자리를 마지막에 눌러 개스킷을 붙여요.",
-    "en": "Press the top edge in last so the gasket seals."
+    "en": "Press the top edge in last so the gasket seals.",
+    "ja": "ガスケットが密閉されるように、最後に上端を押し込みます。",
+    "zh": "最后按下顶部边缘，使垫圈密封。",
+    "es": "Presione el borde superior hacia adentro al final para que la junta selle."
    },
    "path": "drop",
    "sourceIds": [
@@ -3222,7 +3528,10 @@
    "n": 9,
    "title": {
     "ko": "LiDAR 스캐너와 플래시",
-    "en": "LiDAR scanner and flash"
+    "en": "LiDAR scanner and flash",
+    "ja": "LiDAR スキャナーとフラッシュ",
+    "zh": "LiDAR 扫描仪和闪光灯",
+    "es": "Escáner LiDAR y flash"
    },
    "parts": [
     "lidar",
@@ -3232,11 +3541,17 @@
    ],
    "tools": {
     "ko": "스탠드오프 드라이버, JIS 00",
-    "en": "standoff driver, JIS 00"
+    "en": "standoff driver, JIS 00",
+    "ja": "スタンドオフドライバー、JIS 00",
+    "zh": "隔离驱动器，JIS 00",
+    "es": "controlador de separación, JIS 00"
    },
    "cautions": {
     "ko": "LiDAR는 메인보드 아래에 있어서 보드보다 먼저 넣어요.",
-    "en": "The LiDAR sits under the logic board, so it goes in first."
+    "en": "The LiDAR sits under the logic board, so it goes in first.",
+    "ja": "LiDAR はロジックボードの下にあるため、最初に取り付けます。",
+    "zh": "激光雷达位于逻辑板下方，因此它首先进入。",
+    "es": "El LiDAR se encuentra debajo de la placa lógica, por lo que entra primero."
    },
    "path": "drop",
    "sourceIds": [
@@ -3247,7 +3562,10 @@
    "n": 10,
    "title": {
     "ko": "메인보드",
-    "en": "Logic board"
+    "en": "Logic board",
+    "ja": "ロジックボード",
+    "zh": "逻辑板",
+    "es": "Placa lógica"
    },
    "parts": [
     "logic-board",
@@ -3257,11 +3575,17 @@
    ],
    "tools": {
     "ko": "트라이포인트 Y000, 스퍼저, 오프닝 픽",
-    "en": "tri-point Y000, spudger, opening pick"
+    "en": "tri-point Y000, spudger, opening pick",
+    "ja": "トライポイント Y000、スパッジャー、オープニングピック",
+    "zh": "三点 Y000、撬棒、撬片",
+    "es": "triple punta Y000, spudger, púa de apertura"
    },
    "cautions": {
     "ko": "무선 충전 케이블을 보드 밑에서 먼저 꽂아요. 보드를 내려놓기 전에 왼쪽과 아래쪽 가장자리의 케이블이 모두 비켜 있는지 확인해요.",
-    "en": "Plug the wireless-charging cable in beneath the board first. Before the board settles, check that no cable along its left or bottom edge is caught."
+    "en": "Plug the wireless-charging cable in beneath the board first. Before the board settles, check that no cable along its left or bottom edge is caught.",
+    "ja": "まず、ワイヤレス充電ケーブルをボードの下に差し込みます。ボードが安定する前に、ボードの左端または下端に沿ってケーブルが引っかかっていないか確認してください。",
+    "zh": "首先将无线充电线插入板下方。在电路板安定之前，检查其左侧或底部边缘是否有电缆被卡住。",
+    "es": "Primero, conecte el cable de carga inalámbrica debajo de la placa. Antes de que la placa se asiente, verifique que no haya ningún cable atrapado en su borde izquierdo o inferior."
    },
    "path": "drop",
    "sourceIds": [
@@ -3272,7 +3596,10 @@
    "n": 11,
    "title": {
     "ko": "버튼·USB-C 케이블 연결, 덮개",
-    "en": "Connect buttons and USB-C, fit the cover"
+    "en": "Connect buttons and USB-C, fit the cover",
+    "ja": "ボタンと USB-C を接続し、カバーを取り付けます",
+    "zh": "连接按钮和 USB-C，装上盖子",
+    "es": "Conectar botones y USB-C, colocar la tapa"
    },
    "parts": [
     "cover-buttons",
@@ -3280,11 +3607,17 @@
    ],
    "tools": {
     "ko": "스퍼저, 트라이포인트 Y000",
-    "en": "spudger, tri-point Y000"
+    "en": "spudger, tri-point Y000",
+    "ja": "スパッジャー、トライポイント Y000",
+    "zh": "三点撬棒 Y000",
+    "es": "spudger, tres puntas Y000"
    },
    "cautions": {
     "ko": "커넥터 6개를 누른 뒤 덮개 걸쇠를 보드에 걸어요. 전원 버튼 케이블이 보드 아래에 끼지 않았는지 봐요.",
-    "en": "Press the six connectors, then latch the cover; check the power-button cable is not trapped under the board."
+    "en": "Press the six connectors, then latch the cover; check the power-button cable is not trapped under the board.",
+    "ja": "6 つのコネクタを押して、カバーをラッチします。電源ボタン ケーブルがボードの下に挟まっていないことを確認してください。",
+    "zh": "按下六个连接器，然后锁上盖子；检查电源按钮电缆是否被卡在板下。",
+    "es": "Presione los seis conectores, luego cierre la tapa; verifique que el cable del botón de encendido no esté atrapado debajo de la placa."
    },
    "path": "press",
    "sourceIds": [
@@ -3295,7 +3628,10 @@
    "n": 12,
    "title": {
     "ko": "상단 스피커",
-    "en": "Top speaker"
+    "en": "Top speaker",
+    "ja": "トップスピーカー",
+    "zh": "顶级扬声器",
+    "es": "Orador superior"
    },
    "parts": [
     "top-speaker",
@@ -3303,7 +3639,10 @@
    ],
    "tools": {
     "ko": "JIS 00",
-    "en": "JIS 00"
+    "en": "JIS 00",
+    "ja": "JIS 00",
+    "zh": "日标00",
+    "es": "JIS 00"
    },
    "cautions": null,
    "path": "drop",
@@ -3316,7 +3655,10 @@
    "n": 13,
    "title": {
     "ko": "전면 카메라·Face ID",
-    "en": "Front camera and Face ID"
+    "en": "Front camera and Face ID",
+    "ja": "フロントカメラとFace ID",
+    "zh": "前置摄像头和面容 ID",
+    "es": "Cámara frontal y Face ID"
    },
    "parts": [
     "front-camera",
@@ -3325,11 +3667,17 @@
    ],
    "tools": {
     "ko": "스퍼저, 트라이포인트 Y000",
-    "en": "spudger, tri-point Y000"
+    "en": "spudger, tri-point Y000",
+    "ja": "スパッジャー、トライポイント Y000",
+    "zh": "三点撬棒 Y000",
+    "es": "spudger, tres puntas Y000"
    },
    "cautions": {
     "ko": "렌즈와 센서 창을 만지지 마세요. 커넥터 두 개는 위아래로 겹쳐 있어요.",
-    "en": "Do not touch the lenses or sensor windows; the two connectors sit one over the other."
+    "en": "Do not touch the lenses or sensor windows; the two connectors sit one over the other.",
+    "ja": "レンズやセンサーウィンドウには触れないでください。 2 つのコネクタが重なって配置されます。",
+    "zh": "请勿触摸镜头或传感器窗口；两个连接器一个叠放在另一个上。",
+    "es": "No toque las lentes ni las ventanas del sensor; Los dos conectores se colocan uno encima del otro."
    },
    "path": "drop",
    "sourceIds": [
@@ -3341,7 +3689,10 @@
    "n": 14,
    "title": {
     "ko": "후면 카메라 어셈블리",
-    "en": "Rear camera assembly"
+    "en": "Rear camera assembly",
+    "ja": "リアカメラアセンブリ",
+    "zh": "后置摄像头总成",
+    "es": "Conjunto de cámara trasera"
    },
    "parts": [
     "rear-camera",
@@ -3351,11 +3702,17 @@
    ],
    "tools": {
     "ko": "Torx Plus 4IP, 트라이포인트 Y000, 스퍼저",
-    "en": "Torx Plus 4IP, tri-point Y000, spudger"
+    "en": "Torx Plus 4IP, tri-point Y000, spudger",
+    "ja": "Torx Plus 4IP、トライポイント Y000、スパッジャー",
+    "zh": "Torx Plus 4IP、三点 Y000、撬棒",
+    "es": "Torx Plus 4IP, tres puntos Y000, spudger"
    },
    "cautions": {
     "ko": "4.4 mm 나사는 정해진 구멍에만 들어가요. 커넥터 3개 중 하나는 다른 것 밑에 있어요.",
-    "en": "The 4.4 mm screw has its own hole; one of the three connectors sits under another."
+    "en": "The 4.4 mm screw has its own hole; one of the three connectors sits under another.",
+    "ja": "4.4 mm ネジには独自の穴があります。 3 つのコネクタのうちの 1 つは、別のコネクタの下にあります。",
+    "zh": "4.4毫米螺丝有自己的孔；三个连接器之一位于另一个连接器下方。",
+    "es": "El tornillo de 4,4 mm tiene su propio orificio; uno de los tres conectores se encuentra debajo del otro."
    },
    "path": "drop",
    "sourceIds": [
@@ -3367,7 +3724,10 @@
    "n": 15,
    "title": {
     "ko": "배터리 트레이",
-    "en": "Battery in its tray"
+    "en": "Battery in its tray",
+    "ja": "トレイ内のバッテリー",
+    "zh": "托盘中的电池",
+    "es": "Batería en su bandeja"
    },
    "parts": [
     "battery-tray",
@@ -3378,11 +3738,17 @@
    ],
    "tools": {
     "ko": "Torx Plus 4IP",
-    "en": "Torx Plus 4IP"
+    "en": "Torx Plus 4IP",
+    "ja": "トルクスプラス4IP",
+    "zh": "梅花加 4IP",
+    "es": "Torx Plus 4IP"
    },
    "cautions": {
     "ko": "SIM 모델은 나사가 13개예요. 트레이 아래에 케이블이 끼지 않게 내려놓아요.",
-    "en": "SIM models take 13 screws; keep every cable clear of the tray as it goes down."
+    "en": "SIM models take 13 screws; keep every cable clear of the tray as it goes down.",
+    "ja": "SIM モデルには 13 個のネジが必要です。すべてのケーブルが下降するときにトレイから遠ざけてください。",
+    "zh": "SIM 型号需要 13 个螺丝；当托盘下降时，请确保每根电缆都远离托盘。",
+    "es": "Los modelos SIM llevan 13 tornillos; Mantenga todos los cables alejados de la bandeja a medida que desciende."
    },
    "path": "drop",
    "sourceIds": [
@@ -3393,14 +3759,20 @@
    "n": 16,
    "title": {
     "ko": "SIM 트레이",
-    "en": "SIM tray"
+    "en": "SIM tray",
+    "ja": "SIMトレイ",
+    "zh": "SIM 卡托盘",
+    "es": "Bandeja SIM"
    },
    "parts": [
     "sim-tray"
    ],
    "tools": {
     "ko": "SIM 핀",
-    "en": "SIM eject tool"
+    "en": "SIM eject tool",
+    "ja": "SIM取り出しツール",
+    "zh": "SIM 弹出工具",
+    "es": "Herramienta de expulsión de SIM"
    },
    "cautions": null,
    "path": "drop",
@@ -3412,7 +3784,10 @@
    "n": 17,
    "title": {
     "ko": "화면 연결과 닫기",
-    "en": "Connect and close the display"
+    "en": "Connect and close the display",
+    "ja": "ディスプレイを接続して閉じる",
+    "zh": "连接并关闭显示器",
+    "es": "Conectar y cerrar la pantalla"
    },
    "parts": [
     "display-flex",
@@ -3427,11 +3802,17 @@
    ],
    "tools": {
     "ko": "스퍼저, JIS 00, 트라이포인트 Y000, P2 펜타로브, 새 접착 시트, 열풍기",
-    "en": "spudger, JIS 00, tri-point Y000, P2 pentalobe, new adhesive sheet, heat"
+    "en": "spudger, JIS 00, tri-point Y000, P2 pentalobe, new adhesive sheet, heat",
+    "ja": "スパッジャー、JIS 00、トライポイント Y000、P2ペンタローブ、新粘着シート、ヒート",
+    "zh": "撬棒，JIS 00，三点 Y000，P2 五角，新型粘合片，热",
+    "es": "spudger, JIS 00, tri-point Y000, pentalobe P2, nueva hoja adhesiva, calor"
    },
    "cautions": {
     "ko": "닫기 전에 켜서 확인해요. 위쪽부터 내리고 테두리를 꾹 눌러요. 접착 시트가 없으면 방수(IP68)가 사라져요.",
-    "en": "Test before sealing; lower it from the top edge and squeeze the rim. Without new adhesive the IP68 rating is gone."
+    "en": "Test before sealing; lower it from the top edge and squeeze the rim. Without new adhesive the IP68 rating is gone.",
+    "ja": "シールする前にテストしてください。上端から下げてリムを絞ります。新しい接着剤を使用しないと、IP68 等級は失われます。",
+    "zh": "密封前进行测试；将其从顶部边缘降低并挤压边缘。如果没有新的粘合剂，IP68 等级就会消失。",
+    "es": "Prueba antes del sellado; bájelo desde el borde superior y apriete el borde. Sin adhesivo nuevo, la clasificación IP68 desaparece."
    },
    "path": "drop",
    "sourceIds": [
@@ -3442,42 +3823,69 @@
  "meta": {
   "interpretation": {
    "ko": "애플 아이폰 17 프로 (2025년 9월 출시, 6.3형). 한국 판매형과 같은 nano-SIM+eSIM 모델(A3523), 코스믹 오렌지",
-   "en": "Apple iPhone 17 Pro (September 2025, 6.3-inch), the nano-SIM + eSIM model sold in Korea (A3523), Cosmic Orange"
+   "en": "Apple iPhone 17 Pro (September 2025, 6.3-inch), the nano-SIM + eSIM model sold in Korea (A3523), Cosmic Orange",
+   "ja": "Apple iPhone 17 Pro (2025年9月、6.3インチ)、韓国で販売されたnano-SIM + eSIMモデル(A3523)、コズミックオレンジ",
+   "zh": "Apple iPhone 17 Pro（2025 年 9 月，6.3 英寸），韩国销售的 nano-SIM + eSIM 型号（A3523），宇宙橙",
+   "es": "Apple iPhone 17 Pro (septiembre de 2025, 6,3 pulgadas), el modelo nano-SIM + eSIM vendido en Corea (A3523), Cosmic Orange"
   },
   "researchedAt": "2026-10-29",
   "positionsEstimated": true,
   "limitations": [
    {
     "ko": "내부 부품의 위치와 크기는 공개된 수치가 없어 외형과 사진 비례로 추정했어요. '자료 확인'은 부품의 존재, 고정 방식, 나사 수와 길이가 자료로 확인됐다는 뜻이에요.",
-    "en": "No internal dimensions are published; positions and sizes are estimated from the outline and photo proportions. \"Sourced\" means a source confirms the part, its fastening and its screw counts and lengths."
+    "en": "No internal dimensions are published; positions and sizes are estimated from the outline and photo proportions. \"Sourced\" means a source confirms the part, its fastening and its screw counts and lengths.",
+    "ja": "内部寸法は公開されていません。位置と大きさは輪郭と写真の比率から推定します。 「情報源」とは、情報源が部品、その締結、ねじの数と長さを確認していることを意味します。",
+    "zh": "未公布内部尺寸；位置和尺寸是根据轮廓和照片比例估算的。 “来源”是指来源确认零件、其紧固以及螺钉数量和长度。",
+    "es": "No se publican dimensiones internas; Las posiciones y los tamaños se estiman a partir del contorno y las proporciones de la fotografía. \"De origen\" significa que una fuente confirma la pieza, su fijación y el número y longitud de sus tornillos."
    },
    {
     "ko": "플래토(2.5 mm)와 렌즈(1.7 mm) 돌출 높이는 같은 플래토를 쓰는 17 프로 맥스의 측정값으로 추정했어요. 플래토는 유니바디와 한 덩어리지만 그림에서는 따로 움직여요.",
-    "en": "Plateau (2.5 mm) and lens (1.7 mm) heights are taken from a 17 Pro Max measurement (same plateau). The plateau is forged with the unibody but moves as its own part here."
+    "en": "Plateau (2.5 mm) and lens (1.7 mm) heights are taken from a 17 Pro Max measurement (same plateau). The plateau is forged with the unibody but moves as its own part here.",
+    "ja": "プラトー (2.5 mm) とレンズ (1.7 mm) の高さは、17 Pro Max の測定値から取得されます (同じプラトー)。プラトーはユニボディとともに鍛造されていますが、ここでは独自の部分として動きます。",
+    "zh": "平台 (2.5 毫米) 和镜头 (1.7 毫米) 高度取自 17 Pro Max 测量值（相同平台）。平台是与一体成型的，但在这里作为它自己的一部分移动。",
+    "es": "Las alturas de la meseta (2,5 mm) y de la lente (1,7 mm) se toman de una medición de 17 Pro Max (misma meseta). La meseta está forjada con el monocasco, pero aquí se mueve como una pieza propia."
    },
    {
     "ko": "세라믹 실드 후면 창은 실제로 뒤쪽에서 붙이지만, 이 그림은 한 방향으로만 조립해서 앞쪽에서 넣는 것처럼 보여요. 바닥 나사(펜타로브)도 실제로는 옆에서 들어가요.",
-    "en": "The Ceramic Shield back window really goes on from the back, and the pentalobe screws go in sideways; the page assembles in one direction only, so both are shown from the front."
+    "en": "The Ceramic Shield back window really goes on from the back, and the pentalobe screws go in sideways; the page assembles in one direction only, so both are shown from the front.",
+    "ja": "Ceramic Shield のバック ウィンドウは実際には背面から続いており、ペンタローブのネジは横方向に差し込まれています。ページは一方向のみで組み立てられるため、両方を正面から示しています。",
+    "zh": "陶瓷屏蔽后窗实际上是从后面打开的，五角螺钉是从侧面拧入的；页面仅沿一个方向组装，因此两者都是从正面显示的。",
+    "es": "La ventana trasera Ceramic Shield realmente va desde atrás, y los tornillos pentalobe van hacia los lados; la página se ensambla en una sola dirección, por lo que ambas se muestran desde el frente."
    },
    {
     "ko": "베이퍼 챔버는 애플은 '레이저 용접', iFixit 분해는 '모듈식'이라고 해서 자료가 엇갈려요. 고정 방식은 '논란'으로 두 가지를 모두 적었어요.",
-    "en": "Sources disagree on the vapor chamber: Apple says laser-welded, the iFixit teardown found it modular. The fastening lists both as disputed."
+    "en": "Sources disagree on the vapor chamber: Apple says laser-welded, the iFixit teardown found it modular. The fastening lists both as disputed.",
+    "ja": "ベイパーチャンバーについては情報筋の意見が異なっており、Apple はレーザー溶接されているが、iFixit の分解調査ではモジュール式であることが判明したと述べている。付属書には、両方とも係争中のものとして記載されています。",
+    "zh": "消息人士对均热板的看法不一：苹果称采用激光焊接，iFixit 拆解发现它是模块化的。扣件将两者列为有争议的。",
+    "es": "Las fuentes no están de acuerdo con la cámara de vapor: Apple dice que está soldada con láser, pero el desmontaje de iFixit la encontró modular. El cierre enumera ambos como en disputa."
    },
    {
     "ko": "배터리 용량 3,988mAh(SIM 모델)는 규제 기관 자료 유출에서 나온 값이고 애플 공식 수치가 아니에요. eSIM 전용 모델은 4,252mAh에 트레이 나사가 14개예요.",
-    "en": "The 3,988 mAh capacity (SIM model) comes from a regulatory leak, not from Apple. eSIM-only models have 4,252 mAh and 14 tray screws."
+    "en": "The 3,988 mAh capacity (SIM model) comes from a regulatory leak, not from Apple. eSIM-only models have 4,252 mAh and 14 tray screws.",
+    "ja": "3,988 mAh の容量 (SIM モデル) は Apple からではなく、規制上のリークから来ています。 eSIM のみのモデルには 4,252 mAh と 14 個のトレイネジが付いています。",
+    "zh": "3,988 mAh 容量（SIM 型号）来自监管泄露，而非 Apple。仅支持 eSIM 的型号配备 4,252 mAh 电池和 14 个托盘螺丝。",
+    "es": "La capacidad de 3.988 mAh (modelo SIM) proviene de una filtración regulatoria, no de Apple. Los modelos solo eSIM tienen 4252 mAh y 14 tornillos de bandeja."
    },
    {
     "ko": "카메라 컨트롤, SIM 리더, 버튼 케이블, 플래시의 위치와 고정 방식은 자료가 없어 추정했어요. 메인보드 고정 나사도 가이드에 나오지 않아 따로 그리지 않았어요.",
-    "en": "Camera Control, the SIM reader, the button cables and the flash are not documented and are estimated; no guide lists logic-board screws, so none are drawn."
+    "en": "Camera Control, the SIM reader, the button cables and the flash are not documented and are estimated; no guide lists logic-board screws, so none are drawn.",
+    "ja": "カメラ コントロール、SIM リーダー、ボタン ケーブル、フラッシュは文書化されておらず、推定値です。どのガイドにもロジックボードのネジが記載されていないため、何も描かれていません。",
+    "zh": "相机控制、SIM 读卡器、按钮电缆和闪光灯均未记录且是估计的；没有指南列出逻辑板螺钉，因此没有绘制。",
+    "es": "El Control de la Cámara, el lector SIM, los cables de los botones y el flash no están documentados y son estimados; ninguna guía enumera los tornillos de la placa lógica, por lo que no se muestra ninguno."
    },
    {
     "ko": "커넥터 덮개 나사 길이는 분해 단계(1.3·1.4 mm)와 조립 단계(1.2 mm)에서 다르게 적혀 있어요.",
-    "en": "The connector-cover screw lengths differ between the removal (1.3/1.4 mm) and reassembly (1.2 mm) steps of the guides."
+    "en": "The connector-cover screw lengths differ between the removal (1.3/1.4 mm) and reassembly (1.2 mm) steps of the guides.",
+    "ja": "コネクタ カバーのネジの長さは、ガイドの取り外し手順 (1.3/1.4 mm) と再組み立て手順 (1.2 mm) で異なります。",
+    "zh": "导轨的拆卸 (1.3/1.4 mm) 和重新组装 (1.2 mm) 步骤之间的连接器盖螺钉长度不同。",
+    "es": "Las longitudes de los tornillos de la cubierta del conector difieren entre los pasos de extracción (1,3/1,4 mm) y reensamblaje (1,2 mm) de las guías."
    },
    {
     "ko": "고품질 표면의 회로 무늬·미세 결·렌즈 코팅은 설명용 추정입니다. 실측 회로도·재료 사양을 뜻하지 않습니다.",
-    "en": "High-quality circuit marks, micrograin and lens coatings are illustrative estimates, not measured circuitry or material specifications."
+    "en": "High-quality circuit marks, micrograin and lens coatings are illustrative estimates, not measured circuitry or material specifications.",
+    "ja": "高品質の回路マーク、マイクログレイン、レンズ コーティングは推定値であり、回路や材料の仕様を測定したものではありません。",
+    "zh": "高质量电路标记、微晶粒和透镜涂层只是说明性估计，而不是测量的电路或材料规格。",
+    "es": "Las marcas de circuitos de alta calidad, los microgranos y los recubrimientos de lentes son estimaciones ilustrativas, no circuitos medidos ni especificaciones de materiales."
    }
   ],
   "renderQuality": "high",

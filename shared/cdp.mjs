@@ -17,22 +17,28 @@ export function findChrome() {
   return null;
 }
 
-export async function openBrowser({ tag = 'shoot', minutes = 15 } = {}) {
+export async function openBrowser({ tag = 'shoot', minutes = 15, graphics = process.env.MOTION_GRAPHICS === 'hardware' ? 'hardware' : 'software' } = {}) {
   if (typeof WebSocket === 'undefined') { console.log(`GATE2 SKIPPED (needs Node 22 or newer for its built-in WebSocket; this is Node ${process.versions.node})`); process.exit(2); }
   const chrome = findChrome();
   if (!chrome) { console.log('GATE2 SKIPPED (no Chrome or Chromium found; set CHROME=/path/to/chrome)'); process.exit(2); }
   const profile = mkdtempSync(join(tmpdir(), `${tag}-shoot-`));
   const proc = spawn(chrome, ['--headless=new', '--remote-debugging-port=0', `--user-data-dir=${profile}`, '--hide-scrollbars',
-    '--no-first-run', '--no-default-browser-check', '--disable-background-timer-throttling', '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows', '--enable-unsafe-swiftshader', '--use-angle=swiftshader', 'about:blank'], { stdio: ['ignore', 'ignore', 'pipe'] });
+    '--no-first-run', '--no-default-browser-check', '--disable-background-timer-throttling', '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows', ...(graphics==='hardware'?(process.platform==='darwin'?['--use-angle=metal']:[]):['--enable-unsafe-swiftshader','--use-angle=swiftshader']), 'about:blank'], { stdio: ['ignore', 'ignore', 'pipe'] });
   let ws = null, cleaned = false, deadline = null;
   const waiting = new Map(), listeners = [];
   const failAll = why => { for (const [, w] of waiting) w.rej(new Error(why)); waiting.clear(); };
   // always leave nothing behind: kill Chrome, wait for it, remove its profile
   async function cleanup() {
     if (cleaned) return; cleaned = true; clearTimeout(deadline);
-    try { ws?.close(); } catch {}
+    // Close this isolated browser gracefully before the kill fallback. Active renderers can
+    // otherwise keep inherited stderr pipes open after their browser parent is killed.
+    try { if(ws?.readyState===WebSocket.OPEN)ws.send(JSON.stringify({id:900000000,method:'Browser.close'})); } catch {}
     if (proc.exitCode === null && proc.signalCode === null) {
-      const gone = new Promise(r => { proc.once('exit', r); setTimeout(r, 4000); }); proc.kill('SIGKILL'); await gone; }
+      await new Promise(r=>{let to;const done=()=>{clearTimeout(to);proc.removeListener('exit',done);r();};proc.once('exit',done);to=setTimeout(done,1200);});
+      if(proc.exitCode===null&&proc.signalCode===null){proc.kill('SIGKILL');await new Promise(r=>{let to;const done=()=>{clearTimeout(to);proc.removeListener('exit',done);r();};proc.once('exit',done);to=setTimeout(done,1200);});}
+    }
+    try { ws?.close(); } catch {}
+    proc.stdin?.destroy();proc.stdout?.destroy();proc.stderr?.destroy();
     try { rmSync(profile, { recursive: true, force: true }); } catch {}
   }
   const bail = async (msg, code = 1) => { console.log(msg); await cleanup(); process.exit(code); };

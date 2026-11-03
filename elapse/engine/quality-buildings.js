@@ -1,10 +1,11 @@
+import{surfaceMaterial}from'../shared/material-budget.js';
 import * as THREE from 'three';
 import {boxInstances} from './quality-surfaces.js';
 // Shapes and coordinates are independent illustrative estimates within the existing model.
-export function towerFacade(parent,h,material){const rows=[],step=62.8/56;for(const side of [-1,1])for(let i=1;i<56;i++){const k=-31.4+i*step;rows.push([k,side*31.48,h/2,.17,.32,h],[side*31.48,k,h/2,.32,.17,h]);}return boxInstances(parent,rows,material);}
+export function towerFacade(parent,h,material){const rows=[],step=62.8/56;for(const side of [-1,1])for(let i=1;i<56;i++){const k=-31.4+i*step;rows.push([k,side*31.8,h/2,.32,.3,h],[side*31.8,k,h/2,.3,.32,h]);}const m=boxInstances(parent,rows,material);m.userData.facadeRibs=true;return m;}
 export function wtcDetail(form){
  for(const tw of form.towers){towerFacade(tw.body,tw.height,tw.clips[0]);towerFacade(tw.top,tw.topHeight,tw.top.children.find(o=>o.isMesh)?.material||tw.clips[0]);}
- const mat=new THREE.MeshStandardMaterial({color:'#716f65',roughness:.95}),steel=new THREE.MeshStandardMaterial({color:'#646a69',roughness:.82,metalness:.3}),slabs=[],webs=[],flanges=[];
+ const mat=surfaceMaterial({color:'#716f65',roughness:.95}),steel=surfaceMaterial({color:'#646a69',roughness:.82,metalness:.3}),slabs=[],webs=[],flanges=[];
  mat.userData.color=mat.color.clone();steel.userData.color=steel.color.clone();form.materials.push(mat,steel);
  for(let i=0;i<100;i++){const x=-112+(i*37%220),y=-85+(i*29%290),z=2+i%11,rz=i*1.37,l=4+i%10;slabs.push([x,y,z,l,2+i%4,.22,rz]);webs.push([x,y,z+.5,l,.14,.8,rz]);flanges.push([x,y,z+.1,l,.65,.12,rz],[x,y,z+.9,l,.65,.12,rz]);}boxInstances(form.groups.rubble,slabs,mat);boxInstances(form.groups.rubble,webs,steel);boxInstances(form.groups.rubble,flanges,steel);
  // Estimated podium/rooftop service detailing, attached to the dated building groups.
@@ -26,4 +27,10 @@ export function eiffelDetail(groups,beams,material){
  const ends=new Map();for(const beam of beams){if(!ends.has(beam.group))ends.set(beam.group,[]);const list=ends.get(beam.group);for(const p of [beam.a,beam.b])list.push([p[0],p[1],p[2],Math.max(.18,beam.w*1.6),Math.max(.18,beam.w*1.6),.11]);}
  for(const [kind,rows]of ends){const g=groups.get(kind);if(g)boxInstances(g,rows,material(kind,'#6b3e2c'));}
  for(const [kind,z,w]of [['first',57,70],['second',115,41],['crown',276,10]]){const rows=[],a=w/2;for(let p=-a;p<a;p+=1.4)for(const side of[-1,1])rows.push([p,side*a,z+.8,.07,.07,1.6],[side*a,p,z+.8,.07,.07,1.6]);for(const side of[-1,1])rows.push([0,side*a,z+1.5,w,.08,.08],[side*a,0,z+1.5,.08,w,.08]);boxInstances(groups.get(kind),rows,material(kind,'#7e4b35'));}
+}
+
+// Thin geometry aliases against the mapped facade when it spans fewer than a few pixels.
+export function facadeLOD(parent,distance,canvasHeight,fov){
+ const pitch=canvasHeight/(2*Math.tan(fov*Math.PI/360))*(62.8/56)/Math.max(1,distance);
+ parent.traverse(q=>{if(!q.userData.facadeRibs)return;if(q.visible&&pitch<5)q.visible=false;else if(!q.visible&&pitch>6)q.visible=true;});
 }

@@ -1,4 +1,5 @@
-// UI strings. Korean is the default; ?lang=en switches to English.
+import{LANGS,tr,translatePack,setLocale}from'../shared/locale.js';
+// Five local UI languages; English is the fresh-visit default.
 const S = {
   ko: {
     style: '그림', color: '컬러', blueprint: '도면', xray: '투시', on: '켜기', off: '끄기',
@@ -33,6 +34,6 @@ const S = {
     branch: 'Path', noVideo: 'This browser cannot record video.', chapter: 'Chapter', towers: (n, name) => `${n}× ${name}`,
   },
 };
-export const LANGS = Object.keys(S);
-export function strings(lang) { return S[lang] || S.ko; }
-export const pick = (bi, lang) => (bi ? bi[lang] || bi.ko || bi.en || '' : '');
+export {LANGS};
+export function strings(lang='en') { setLocale(lang,{url:false});return lang==='ko'?S.ko:lang==='en'?S.en:translatePack(S.en,lang); }
+export const pick = (bi, lang='en') => typeof bi==='string'?tr(bi,lang):(bi ? bi[lang] ?? tr(bi.en || bi.ko || '',lang) : '');

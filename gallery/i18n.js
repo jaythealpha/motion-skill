@@ -13,12 +13,12 @@ export const messages = {
     "note": "Experimental educational illustrations. Internal shapes, positions and motion include estimates; these are not official repair manuals or validated physical simulations. Check each demo’s sources and limitations. No AI account is needed to view the demos.",
     "unfoldIntro": "From separate parts to a finished product. Explore colour, blueprint and playback speed.",
     "elapseIntro": "Explore historical change and restoration, distinguishing recorded events from interpretation.",
-    "footer": "Gallery: 5 languages · Timelines: English / Korean · Scene studies: Korean · Standalone HTML · MIT",
+    "footer": "12 demos · 5 languages · Standalone HTML · MIT",
     "notices": "Licences & third-party notices",
     "guide": "Demo guide & known limitations",
     "affiliation": "No approval or affiliation with manufacturers or related institutions is implied.",
     "language": "Language",
-    "scope": "Full timelines support English and Korean; scene studies are Korean only. Japanese, Chinese and Spanish gallery selections open English timelines.",
+    "scope": "All timelines and scene studies support English, Korean, Japanese, Simplified Chinese and Spanish. Your selected language follows each demo link.",
     "view": "View {name} →",
     "status": "Gallery language: English",
     "names": [
@@ -59,7 +59,7 @@ export const messages = {
       "A separate scene study examining aircraft, facade, flame and smoke representation.",
       "A scene study exploring the camera and water effects as the hull separates."
     ],
-    "studySuffix": " (Korean)"
+    "studySuffix": ""
   },
   "ko": {
     "title": "Unfold & Elapse · 인터랙티브 데모",
@@ -75,12 +75,12 @@ export const messages = {
     "note": "교육·설명용 실험 버전입니다. 내부 형상·위치·움직임에는 추정이 포함되며, 공식 수리 매뉴얼이나 검증된 물리 시뮬레이션이 아닙니다. 각 데모의 출처와 제한을 확인하세요. 데모 감상에는 AI 계정이 필요하지 않습니다.",
     "unfoldIntro": "분해된 부품에서 완성된 제품까지. 컬러·도면과 속도를 바꾸어 관찰합니다.",
     "elapseIntro": "기록된 사건과 해석을 구분하며, 역사적 변화와 복원을 탐색합니다.",
-    "footer": "갤러리 5개 언어 · 타임라인 한국어·영어 · 대표 장면 한국어 · 단일 HTML · MIT",
+    "footer": "데모 12개 · 5개 언어 · 독립 HTML · MIT",
     "notices": "라이선스·제3자 고지",
     "guide": "데모 안내·알려진 한계",
     "affiliation": "공식 제조사·관련 기관의 승인이나 제휴를 뜻하지 않습니다.",
     "language": "언어",
-    "scope": "전체 타임라인은 한국어·영어, 대표 장면 연구는 한국어를 지원합니다. 일본어·중국어·스페인어 갤러리에서는 영어 타임라인으로 연결됩니다.",
+    "scope": "모든 타임라인과 대표 장면에서 영어·한국어·일본어·중국어 간체·스페인어를 지원하며 선택한 언어로 데모가 열립니다.",
     "view": "{name} 보기 →",
     "status": "갤러리 언어: 한국어",
     "names": [
@@ -121,7 +121,7 @@ export const messages = {
       "항공기·외벽·화염·연기의 표현을 검토하는 별도 장면 연구입니다.",
       "선체가 두 부분으로 나뉘는 장면의 카메라와 물 효과를 살펴봅니다."
     ],
-    "studySuffix": " (한국어)"
+    "studySuffix": ""
   },
   "ja": {
     "title": "Unfold & Elapse · インタラクティブデモ",
@@ -137,12 +137,12 @@ export const messages = {
     "note": "学習・説明を目的とした実験的な図解です。内部形状・位置・動きには推定が含まれます。公式修理マニュアルや検証済みの物理シミュレーションではありません。各デモの出典と制約をご確認ください。閲覧にAIアカウントは不要です。",
     "unfoldIntro": "個々の部品から完成品まで。カラー・図面・再生速度を切り替えて観察します。",
     "elapseIntro": "記録された出来事と解釈を区別しながら、歴史的な変化と修復を探ります。",
-    "footer": "ギャラリー：5言語 · タイムライン：英語・韓国語 · シーン研究：韓国語 · 単一HTML · MIT",
+    "footer": "デモ12件 · 5言語 · 単独HTML · MIT",
     "notices": "ライセンス・第三者表記",
     "guide": "デモガイド・既知の制約",
     "affiliation": "メーカーや関連機関による承認・提携を示すものではありません。",
     "language": "言語",
-    "scope": "完全版タイムラインは英語・韓国語、シーン研究は韓国語のみ対応しています。日本語・中国語・スペイン語のギャラリーからは英語版タイムラインが開きます。",
+    "scope": "すべてのタイムラインとシーン研究で英語・韓国語・日本語・簡体字中国語・スペイン語に対応しています。選択した言語でデモが開きます。",
     "view": "{name}を見る →",
     "status": "ギャラリーの言語：日本語",
     "names": [
@@ -183,7 +183,7 @@ export const messages = {
       "航空機・外壁・炎・煙の表現を検討する、独立したシーン研究です。",
       "船体が分離する場面のカメラと水の効果を検討します。"
     ],
-    "studySuffix": "（韓国語）"
+    "studySuffix": ""
   },
   "zh": {
     "title": "Unfold & Elapse · 交互演示",
@@ -199,12 +199,12 @@ export const messages = {
     "note": "用于学习和讲解的实验性图示。内部形状、位置和运动含有推测，不是官方维修手册或经过验证的物理模拟。请查看各演示的来源和局限。观看演示无需 AI 账号。",
     "unfoldIntro": "从独立零件到完整产品。切换彩色、图纸和播放速度进行观察。",
     "elapseIntro": "区分有记录的事件与解读，探索历史变化和修复过程。",
-    "footer": "图库：5种语言 · 时间轴：英语／韩语 · 场景研究：韩语 · 单个 HTML · MIT",
+    "footer": "12个演示 · 5种语言 · 独立HTML · MIT",
     "notices": "许可证与第三方声明",
     "guide": "演示指南与已知局限",
     "affiliation": "不代表制造商或相关机构的认可或合作。",
     "language": "语言",
-    "scope": "完整时间轴支持英语和韩语，场景研究仅支持韩语。选择日语、中文或西班牙语图库时，时间轴将以英语打开。",
+    "scope": "所有时间线和场景研究均支持英语、韩语、日语、简体中文和西班牙语。演示将使用您选择的语言。",
     "view": "查看{name} →",
     "status": "图库语言：简体中文",
     "names": [
@@ -245,7 +245,7 @@ export const messages = {
       "独立场景研究，探讨飞机、外墙、火焰和烟雾的表现。",
       "研究船体分离场景中的镜头与水面效果。"
     ],
-    "studySuffix": "（韩语）"
+    "studySuffix": ""
   },
   "es": {
     "title": "Unfold & Elapse · Demostraciones interactivas",
@@ -261,12 +261,12 @@ export const messages = {
     "note": "Ilustraciones experimentales con fines educativos. Las formas internas, posiciones y movimientos incluyen estimaciones; no son manuales de reparación oficiales ni simulaciones físicas validadas. Consulta las fuentes y limitaciones de cada demostración. No necesitas una cuenta de IA para verlas.",
     "unfoldIntro": "De las piezas separadas al producto terminado. Explora las vistas en color y de plano y la velocidad de reproducción.",
     "elapseIntro": "Explora los cambios históricos y la restauración, distinguiendo los hechos documentados de las interpretaciones.",
-    "footer": "Galería: 5 idiomas · Líneas temporales: inglés/coreano · Estudios de escenas: coreano · Un único HTML · MIT",
+    "footer": "12 demos · 5 idiomas · HTML independiente · MIT",
     "notices": "Licencias y avisos de terceros",
     "guide": "Guía de demostraciones y limitaciones conocidas",
     "affiliation": "No implica aprobación ni afiliación con los fabricantes o instituciones relacionadas.",
     "language": "Idioma",
-    "scope": "Las líneas temporales completas están disponibles en inglés y coreano; los estudios de escenas, solo en coreano. Las galerías en japonés, chino y español abren las líneas temporales en inglés.",
+    "scope": "Todas las líneas de tiempo y los estudios de escena admiten inglés, coreano, japonés, chino simplificado y español. Los enlaces conservan el idioma elegido.",
     "view": "Ver {name} →",
     "status": "Idioma de la galería: español",
     "names": [
@@ -307,7 +307,7 @@ export const messages = {
       "Estudio independiente sobre la representación del avión, la fachada, las llamas y el humo.",
       "Estudio de la cámara y los efectos del agua durante la separación del casco."
     ],
-    "studySuffix": " (coreano)"
+    "studySuffix": ""
   }
 };
 export const languageTags = {en:"en",ko:"ko",ja:"ja",zh:"zh-Hans",es:"es"};

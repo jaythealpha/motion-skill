@@ -1,3 +1,4 @@
+import{surfaceMaterial}from'../shared/material-budget.js';
 import {createQualityStructure} from './quality-structure.js';
 // Optional authored look-development layer; no scanned textures or surveyed geometry.
 import * as THREE from 'three';
@@ -11,7 +12,7 @@ export function createQualityStudy({renderer,scene,camera,root,items,ground,hemi
  const random=rng(11211916),overrides=[],extras=[];
  renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.95;
  const finish=(base,kind='metal')=>{
-  const mat=new THREE.MeshStandardMaterial({color:base,roughness:.92,metalness:.08,transparent:kind==='sand',depthWrite:kind!=='sand'});
+  const mat=surfaceMaterial({color:base,roughness:.92,metalness:.08,transparent:kind==='sand',depthWrite:kind!=='sand'});
   mat.onBeforeCompile=s=>{
    s.vertexShader='varying vec3 qPosition;\n'+s.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nqPosition=position;');
    s.fragmentShader='varying vec3 qPosition;\nfloat qHash(vec3 p){return fract(sin(dot(p,vec3(12.9898,78.233,37.719)))*43758.5453);}\nfloat qNoise(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(mix(qHash(i),qHash(i+vec3(1,0,0)),f.x),mix(qHash(i+vec3(0,1,0)),qHash(i+vec3(1,1,0)),f.x),f.y),mix(mix(qHash(i+vec3(0,0,1)),qHash(i+vec3(1,0,1)),f.x),mix(qHash(i+vec3(0,1,1)),qHash(i+vec3(1,1,1)),f.x),f.y),f.z);}\n'+s.fragmentShader;
@@ -47,7 +48,7 @@ export function createQualityStudy({renderer,scene,camera,root,items,ground,hemi
  const growthLOD=[];for(const it of items)it.g.traverse(o=>{if(o.isInstancedMesh&&o.geometry.type==='IcosahedronGeometry'){
   const original=o.instanceMatrix.array.slice(),scaled=original.slice(),m=new THREE.Matrix4(),v=new THREE.Vector3(),q=new THREE.Quaternion(),scale=new THREE.Vector3();
   for(let i=0;i<o.count;i++){m.fromArray(original,i*16);m.decompose(v,q,scale);scale.multiplyScalar(.42);m.compose(v,q,scale);m.toArray(scaled,i*16);}
-  growthLOD.push({mesh:o,original,scaled,active:null,mat:new THREE.MeshStandardMaterial({color:'#536055',roughness:1,metalness:0})});
+  growthLOD.push({mesh:o,original,scaled,active:null,mat:surfaceMaterial({color:'#536055',roughness:1,metalness:0})});
  }});
  const structure=createQualityStructure({items,finish,mobile});
  const sandGeo=new THREE.PlaneGeometry(550,350,140,90),a=sandGeo.attributes.position;

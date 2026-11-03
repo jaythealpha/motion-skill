@@ -8,7 +8,7 @@ Drag the 0–100 time bar and the finished phone opens, bursts into its parts an
 - **Two styles:** colour illustration, or an animated blueprint with numbered balloons, assembly guides and a parts list.
 - **Three depths:** simple (key parts and what they do), detailed (everything, labelled as it moves) and manual (step cards, tools, cautions, bill of materials, a printable manual).
 - **Honest by design:** every part is marked sourced or estimated, the page shows the share, and the known limitations are listed with the sources.
-- Works offline and on phones. Exports a PNG, a WebM video and a printed manual. Korean UI by default, English with one click.
+- Works offline and on phones. Exports a PNG, a WebM video and a printed manual. English by default; Korean, Japanese, Simplified Chinese and Spanish are available.
 
 ```
 node scripts/check_model.mjs examples/galaxy-s24.json --official 70.6,147,7.6   # Gate 1 (foldables: add --official-folded W,L,T)

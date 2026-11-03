@@ -7,7 +7,10 @@
     "id": "eiffel-1889",
     "name": {
       "ko": "에펠탑 · 1887–1889",
-      "en": "Eiffel Tower · 1887–1889"
+      "en": "Eiffel Tower · 1887–1889",
+      "ja": "エッフェル塔 · 1887–1889",
+      "zh": "埃菲尔铁塔 · 1887–1889",
+      "es": "Torre Eiffel · 1887–1889"
     },
     "dims": {
       "width": 125,
@@ -18,32 +21,53 @@
   "meta": {
     "interpretation": {
       "ko": "공식 공정 기록을 따라 세워지는 300m 주구조 도해. 철골 좌표·중간 공정은 추정입니다.",
-      "en": "Construction study of the 300 m main structure; member coordinates and intermediate assembly are estimated."
+      "en": "Construction study of the 300 m main structure; member coordinates and intermediate assembly are estimated.",
+      "ja": "300mの主要構造物の建設検討。メンバーの座標と中間アセンブリが推定されます。",
+      "zh": "300m主体结构施工研究；估计成员坐标和中间装配。",
+      "es": "Estudio constructivo de la estructura principal de 300 m; Se estiman las coordenadas de los miembros y el ensamblaje intermedio."
     },
     "about": {
       "ko": "교육용 건축 시공 도해입니다. 개별 부재를 실측한 CAD나 구조 안전·양중 계획이 아닙니다. 현재 안테나·현대 야간 조명은 제외했습니다.",
-      "en": "Educational construction study, not surveyed CAD, structural certification or a lifting plan. Modern antennas and night illumination are excluded."
+      "en": "Educational construction study, not surveyed CAD, structural certification or a lifting plan. Modern antennas and night illumination are excluded.",
+      "ja": "教育用建築研究。測量 CAD、構造証明書、吊り上げ計画ではありません。最新のアンテナと夜間照明は除外されます。",
+      "zh": "教育性建筑研究，而非 CAD 测量、结构认证或吊装计划。现代天线和夜间照明不包括在内。",
+      "es": "Estudio educativo de construcción, no relevado CAD, certificación estructural ni plano de elevación. Se excluyen las antenas modernas y la iluminación nocturna."
     },
     "limitations": [
       {
         "ko": "300m는 주구조 기준입니다. 1889년 깃대·최상부 부속을 포함한 전체 높이를 재현하지 않습니다.",
-        "en": "300 m is the main-structure reference; the complete 1889 flagpole/top fittings are not reproduced."
+        "en": "300 m is the main-structure reference; the complete 1889 flagpole/top fittings are not reproduced.",
+        "ja": "300 m は主要構造の基準です。 1889 年の旗竿と上部の取り付け部分は完全には再現されていません。",
+        "zh": "300m为主体结构参考；未复制完整的 1889 年旗杆/顶部配件。",
+        "es": "300 m es la referencia de la estructura principal; No se reproducen los accesorios completos del mástil/superior de la bandera de 1889."
       },
       {
         "ko": "개별 철골·접합부·플랫폼·가설물·장식·기초의 상세 형상과 시공 순서는 추정입니다.",
-        "en": "Detailed members, joints, platforms, temporary works, decoration, foundations and assembly order are estimated."
+        "en": "Detailed members, joints, platforms, temporary works, decoration, foundations and assembly order are estimated.",
+        "ja": "詳細な部材、接合部、架台、仮設工事、装飾、基礎、組立順序の見積りを行います。",
+        "zh": "详细估算构件、接缝、平台、临时工程、装饰、地基和装配顺序。",
+        "es": "Se estiman detalles de miembros, juntas, plataformas, obras temporales, decoración, cimentaciones y orden de montaje."
       },
       {
         "ko": "시공 높이는 기준 시점 사이를 보간한 도해 값이며 실제 일별 공정률이 아닙니다.",
-        "en": "Displayed construction height is interpolated, not a measured daily completion rate."
+        "en": "Displayed construction height is interpolated, not a measured daily completion rate.",
+        "ja": "表示される建設高さは補間されたものであり、1 日あたりの完了率の測定値ではありません。",
+        "zh": "显示的施工高度是插值的，而不是测量的每日完工率。",
+        "es": "La altura de construcción mostrada es una interpolación, no una tasa de finalización diaria medida."
       },
       {
         "ko": "착공일은 공식 자료 간 일자 차이가 있어 1887년 1월로 표현합니다. 지하부는 노출 도해입니다.",
-        "en": "Groundbreaking is shown by month because official pages differ on the day. Subgrade work is shown exposed."
+        "en": "Groundbreaking is shown by month because official pages differ on the day. Subgrade work is shown exposed.",
+        "ja": "地鎮祭は日によって公式ページが異なるため、月ごとに表示しています。路盤工事は露出した状態で示されています。",
+        "zh": "破土动工按月显示，因为官方页面在当天有所不同。路基工程暴露在外。",
+        "es": "La inauguración se muestra por mes porque las páginas oficiales difieren según el día. El trabajo de subrasante se muestra expuesto."
       },
       {
         "ko": "고품질 구조·접합부·외벽 부재·재질 디테일은 기존 기준 자료를 참고한 독립 추정 형상이며 실측 CAD나 물리 시뮬레이션이 아닙니다.",
-        "en": "Enhanced structure, joints, facade members and material details are independent estimates based on the existing references, not surveyed CAD or physical simulation."
+        "en": "Enhanced structure, joints, facade members and material details are independent estimates based on the existing references, not surveyed CAD or physical simulation.",
+        "ja": "強化された構造、接合部、ファサード部材、および材料の詳細は、調査された CAD や物理シミュレーションではなく、既存の参考資料に基づいた独立した見積もりです。",
+        "zh": "增强结构、接缝、立面构件和材料细节是根据现有参考资料独立估算的，而不是经过测量的 CAD 或物理模拟。",
+        "es": "La estructura mejorada, las juntas, los miembros de la fachada y los detalles de los materiales son estimaciones independientes basadas en las referencias existentes, no en CAD ni en simulación física."
       }
     ],
     "renderQuality": "high",
@@ -71,7 +95,10 @@
       "id": "foundations",
       "name": {
         "ko": "기초",
-        "en": "Foundations"
+        "en": "Foundations",
+        "ja": "基礎",
+        "zh": "基础",
+        "es": "Cimientos"
       },
       "start": "1887-01-01",
       "end": "1887-07-01",
@@ -85,7 +112,10 @@
       "id": "legs",
       "name": {
         "ko": "네 기둥",
-        "en": "Four legs"
+        "en": "Four legs",
+        "ja": "4本の足",
+        "zh": "四足",
+        "es": "cuatro patas"
       },
       "start": "1887-07-01",
       "end": "1887-12-07",
@@ -99,7 +129,10 @@
       "id": "first",
       "name": {
         "ko": "1층 연결",
-        "en": "First level"
+        "en": "First level",
+        "ja": "最初のレベル",
+        "zh": "第一级",
+        "es": "primer nivel"
       },
       "start": "1887-12-07",
       "end": "1888-04-01",
@@ -113,7 +146,10 @@
       "id": "second",
       "name": {
         "ko": "2층",
-        "en": "Second level"
+        "en": "Second level",
+        "ja": "第 2 レベル",
+        "zh": "第二级",
+        "es": "Segundo nivel"
       },
       "start": "1888-04-01",
       "end": "1888-08-14",
@@ -127,7 +163,10 @@
       "id": "upper",
       "name": {
         "ko": "정상부",
-        "en": "Upper tower"
+        "en": "Upper tower",
+        "ja": "アッパータワー",
+        "zh": "上塔",
+        "es": "Torre superior"
       },
       "start": "1888-08-14",
       "end": "1889-03-31",
@@ -141,7 +180,10 @@
       "id": "complete",
       "name": {
         "ko": "완공",
-        "en": "Complete"
+        "en": "Complete",
+        "ja": "完了",
+        "zh": "完全的",
+        "es": "Completo"
       },
       "start": "1889-03-31",
       "end": "1889-03-31T23:59",
@@ -157,7 +199,10 @@
       "id": "overview",
       "name": {
         "ko": "전체 구조",
-        "en": "Whole structure"
+        "en": "Whole structure",
+        "ja": "全体構造",
+        "zh": "整体结构",
+        "es": "Estructura completa"
       },
       "confidence": "estimated",
       "sourceIds": [
@@ -168,7 +213,10 @@
       "id": "foundation",
       "name": {
         "ko": "기초 블록",
-        "en": "Foundation blocks"
+        "en": "Foundation blocks",
+        "ja": "基礎ブロック",
+        "zh": "基础块",
+        "es": "Bloques de cimentación"
       },
       "confidence": "estimated",
       "sourceIds": [
@@ -179,7 +227,10 @@
       "id": "legs",
       "name": {
         "ko": "곡선 기둥·격자",
-        "en": "Curved legs / lattice"
+        "en": "Curved legs / lattice",
+        "ja": "曲線脚・格子",
+        "zh": "弧形腿/格子",
+        "es": "Patas curvas / celosía"
       },
       "confidence": "estimated",
       "sourceIds": [
@@ -190,7 +241,10 @@
       "id": "first",
       "name": {
         "ko": "1층 플랫폼",
-        "en": "First platform"
+        "en": "First platform",
+        "ja": "最初のプラットフォーム",
+        "zh": "第一平台",
+        "es": "Primera plataforma"
       },
       "confidence": "estimated",
       "sourceIds": [
@@ -201,7 +255,10 @@
       "id": "second",
       "name": {
         "ko": "2층 플랫폼",
-        "en": "Second platform"
+        "en": "Second platform",
+        "ja": "2番目のプラットフォーム",
+        "zh": "第二平台",
+        "es": "Segunda plataforma"
       },
       "confidence": "estimated",
       "sourceIds": [
@@ -212,7 +269,10 @@
       "id": "crown",
       "name": {
         "ko": "상부·정상부",
-        "en": "Upper tower / crown"
+        "en": "Upper tower / crown",
+        "ja": "アッパータワー/クラウン",
+        "zh": "上塔/冠",
+        "es": "Torre superior/corona"
       },
       "confidence": "estimated",
       "sourceIds": [
@@ -223,7 +283,10 @@
       "id": "arch",
       "name": {
         "ko": "아치",
-        "en": "Arches"
+        "en": "Arches",
+        "ja": "アーチ",
+        "zh": "拱门",
+        "es": "Arcos"
       },
       "confidence": "estimated",
       "sourceIds": [
@@ -234,7 +297,10 @@
       "id": "scaffold",
       "name": {
         "ko": "가설 비계·크레인",
-        "en": "Temporary scaffolds / cranes"
+        "en": "Temporary scaffolds / cranes",
+        "ja": "仮設足場・クレーン",
+        "zh": "临时脚手架/起重机",
+        "es": "Andamios / grúas temporales"
       },
       "confidence": "estimated",
       "sourceIds": [
@@ -249,11 +315,17 @@
       "kind": "note",
       "title": {
         "ko": "기초 공사",
-        "en": "Foundation works"
+        "en": "Foundation works",
+        "ja": "基礎工事",
+        "zh": "地基工程",
+        "es": "Obras de fundación"
       },
       "text": {
         "ko": "1887년 1월 공사가 시작됩니다. 이 구간의 날짜 표시는 월 단위입니다.",
-        "en": "Work begins in January 1887; this opening boundary represents the month."
+        "en": "Work begins in January 1887; this opening boundary represents the month.",
+        "ja": "作業は 1887 年 1 月に始まります。この開始境界は月を表します。",
+        "zh": "工作于 1887 年 1 月开始；这个开放边界代表月份。",
+        "es": "Las obras se inician en enero de 1887; este límite de apertura representa el mes."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -266,11 +338,17 @@
       "kind": "note",
       "title": {
         "ko": "철골 조립 시작",
-        "en": "Ironwork assembly begins"
+        "en": "Ironwork assembly begins",
+        "ja": "鉄器の組み立てが始まる",
+        "zh": "铁工组装开始",
+        "es": "Comienza el montaje de herrajes"
       },
       "text": {
         "ko": "7월 1일, 기둥 조립이 시작됩니다.",
-        "en": "Pillar assembly starts on 1 July."
+        "en": "Pillar assembly starts on 1 July.",
+        "ja": "柱の組み立ては 7 月 1 日に開始されます。",
+        "zh": "支柱组装将于 7 月 1 日开始。",
+        "es": "El montaje del pilar comienza el 1 de julio."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -283,11 +361,17 @@
       "kind": "note",
       "title": {
         "ko": "1층 보의 연결",
-        "en": "First-level girders meet"
+        "en": "First-level girders meet",
+        "ja": "1層桁接合部",
+        "zh": "第一层梁相遇",
+        "es": "Encuentro de vigas de primer nivel"
       },
       "text": {
         "ko": "12월 7일, 1층까지의 주요 보가 연결됩니다.",
-        "en": "Major girders up to the first level are joined on 7 December."
+        "en": "Major girders up to the first level are joined on 7 December.",
+        "ja": "1 段目までの主要桁は 12 月 7 日に接合されます。",
+        "zh": "12 月 7 日，第一层的主梁连接完毕。",
+        "es": "Las vigas principales hasta el primer nivel se unen el 7 de diciembre."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -300,11 +384,17 @@
       "kind": "note",
       "title": {
         "ko": "1층 완성",
-        "en": "First floor complete"
+        "en": "First floor complete",
+        "ja": "1階完成",
+        "zh": "一楼已竣工",
+        "es": "Primer piso completo"
       },
       "text": {
         "ko": "1888년 4월 1일은 공식 일정의 1층 완성 시점입니다.",
-        "en": "The official schedule marks first-floor completion on 1 April."
+        "en": "The official schedule marks first-floor completion on 1 April.",
+        "ja": "公式スケジュールでは、1 階の完成は 4 月 1 日となっています。",
+        "zh": "官方时间表显示一楼将于 4 月 1 日竣工。",
+        "es": "El calendario oficial marca la finalización del primer piso el 1 de abril."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -317,11 +407,17 @@
       "kind": "note",
       "title": {
         "ko": "2층 완성",
-        "en": "Second floor complete"
+        "en": "Second floor complete",
+        "ja": "2階完成",
+        "zh": "二楼已竣工",
+        "es": "Segundo piso completo"
       },
       "text": {
         "ko": "공식 일정에서 2층은 8월 14일에 완성됩니다.",
-        "en": "The second floor is completed on 14 August."
+        "en": "The second floor is completed on 14 August.",
+        "ja": "2階は8月14日に完成。",
+        "zh": "二楼于8月14日竣工。",
+        "es": "El segundo piso estará terminado el 14 de agosto."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -334,11 +430,17 @@
       "kind": "note",
       "title": {
         "ko": "정상부 조립 완료",
-        "en": "Top assembly complete"
+        "en": "Top assembly complete",
+        "ja": "上部の組み立てが完了",
+        "zh": "顶部组装完成",
+        "es": "Montaje superior completo"
       },
       "text": {
         "ko": "1889년 3월 31일 정상부 조립이 완료됩니다. 도해는 300m 주구조를 대상으로 합니다.",
-        "en": "Top assembly finishes on 31 March 1889. This study represents the 300 m main structure."
+        "en": "Top assembly finishes on 31 March 1889. This study represents the 300 m main structure.",
+        "ja": "上部の組み立ては 1889 年 3 月 31 日に終了します。この研究は 300 m の主要構造物を表しています。",
+        "zh": "顶部组装于 1889 年 3 月 31 日完成。这项研究代表了 300 m 的主体结构。",
+        "es": "El montaje de la parte superior finaliza el 31 de marzo de 1889. Este estudio representa la estructura principal de 300 m."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -403,7 +505,10 @@
       "id": "overview",
       "name": {
         "ko": "전체 구조",
-        "en": "Whole structure"
+        "en": "Whole structure",
+        "ja": "全体構造",
+        "zh": "整体结构",
+        "es": "Estructura completa"
       },
       "box": {
         "min": [
@@ -428,7 +533,10 @@
       "id": "foundation",
       "name": {
         "ko": "기초·기둥 밑동",
-        "en": "Foundations / feet"
+        "en": "Foundations / feet",
+        "ja": "基礎・足",
+        "zh": "基础/脚",
+        "es": "Cimentaciones/pies"
       },
       "box": {
         "min": [
@@ -453,7 +561,10 @@
       "id": "legs",
       "name": {
         "ko": "하부 격자·아치",
-        "en": "Lower lattice / arches"
+        "en": "Lower lattice / arches",
+        "ja": "下部格子/アーチ",
+        "zh": "下格子/拱门",
+        "es": "Celosía inferior/arcos"
       },
       "box": {
         "min": [
@@ -478,7 +589,10 @@
       "id": "first",
       "name": {
         "ko": "1층 플랫폼",
-        "en": "First platform"
+        "en": "First platform",
+        "ja": "最初のプラットフォーム",
+        "zh": "第一平台",
+        "es": "Primera plataforma"
       },
       "box": {
         "min": [
@@ -503,7 +617,10 @@
       "id": "second",
       "name": {
         "ko": "2층 플랫폼",
-        "en": "Second platform"
+        "en": "Second platform",
+        "ja": "2番目のプラットフォーム",
+        "zh": "第二平台",
+        "es": "Segunda plataforma"
       },
       "box": {
         "min": [
@@ -528,7 +645,10 @@
       "id": "crown",
       "name": {
         "ko": "상부·정상부",
-        "en": "Upper tower / crown"
+        "en": "Upper tower / crown",
+        "ja": "アッパータワー/クラウン",
+        "zh": "上塔/冠",
+        "es": "Torre superior/corona"
       },
       "box": {
         "min": [
