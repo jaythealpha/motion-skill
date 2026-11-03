@@ -88,6 +88,31 @@
       "url": "https://armarchitecture.com.au/news/celebrating-a-milestone-sydney-opera-house-reopens/"
     },
     {
+      "id": "organ-history",
+      "title": "Museums of History NSW · Sydney Opera House guide",
+      "url": "https://mhnsw.au/guides/sydney-opera-house/"
+    },
+    {
+      "id": "arup-structure",
+      "title": "Arup · Designing the Sydney Opera House",
+      "url": "https://www.arup.com/en-us/projects/designing-the-sydney-opera-house/"
+    },
+    {
+      "id": "heritage",
+      "title": "Australian Government · World Heritage description",
+      "url": "https://www.dcceew.gov.au/parks-heritage/heritage/places/world/sydney-opera-house"
+    },
+    {
+      "id": "technical",
+      "title": "Sydney Opera House · Concert Hall technical specification, January2024",
+      "url": "https://www.sydneyoperahouse.com/sites/default/files/collaborodam_assets/SOHVenueTechnicalSpecifications_ConcertHall202401.pdf"
+    },
+    {
+      "id": "principles",
+      "title": "Sydney Opera House · Utzon Design Principles, May2002",
+      "url": "https://www.sydneyoperahouse.com/sites/default/files/collaborodam_assets/utzon-design-principles.pdf"
+    },
+    {
       "id": "utzon",
       "title": "Sydney Opera House · Jørn Utzon AC",
       "url": "https://www.sydneyoperahouse.com/our-story/jorn-utzon"
@@ -199,6 +224,53 @@
   ],
   "pieces": [
     {
+      "id": "ribs",
+      "name": {
+        "en": "Precast roof ribs",
+        "ko": "프리캐스트 지붕 리브",
+        "ja": "プレキャスト屋根リブ",
+        "zh": "预制屋顶肋梁",
+        "es": "Nervios prefabricados"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "spherical",
+        "heritage",
+        "principles"
+      ]
+    },
+    {
+      "id": "glazing",
+      "name": {
+        "en": "Harbour curtain wall",
+        "ko": "항구 쪽 유리 커튼월",
+        "ja": "港側のガラス壁",
+        "zh": "临港玻璃幕墙",
+        "es": "Muro cortina del puerto"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "spherical",
+        "heritage",
+        "principles"
+      ]
+    },
+    {
+      "id": "organ",
+      "name": {
+        "en": "Stage and grand organ",
+        "ko": "무대와 파이프 오르간",
+        "ja": "舞台と大オルガン",
+        "zh": "舞台与管风琴",
+        "es": "Escenario y órgano"
+      },
+      "confidence": "estimated",
+      "sourceIds": [
+        "technical",
+        "organ-history"
+      ]
+    },
+    {
       "id": "overview",
       "name": {
         "en": "Whole site",
@@ -210,7 +282,8 @@
       "confidence": "estimated",
       "sourceIds": [
         "spherical",
-        "creators"
+        "heritage",
+        "principles"
       ]
     },
     {
@@ -224,8 +297,8 @@
       },
       "confidence": "estimated",
       "sourceIds": [
-        "spherical",
-        "creators"
+        "heritage",
+        "arup-structure"
       ]
     },
     {
@@ -240,7 +313,8 @@
       "confidence": "estimated",
       "sourceIds": [
         "spherical",
-        "creators"
+        "heritage",
+        "principles"
       ]
     },
     {
@@ -254,8 +328,9 @@
       },
       "confidence": "estimated",
       "sourceIds": [
-        "spherical",
-        "creators"
+        "technical",
+        "renewal",
+        "arm"
       ]
     },
     {
@@ -269,8 +344,9 @@
       },
       "confidence": "estimated",
       "sourceIds": [
-        "spherical",
-        "creators"
+        "technical",
+        "renewal",
+        "arm"
       ]
     }
   ],
@@ -542,24 +618,31 @@
         "zh": "基座与台阶",
         "es": "Podio y escalinata"
       },
+      "description": {
+        "en": "Explanatory opening of the podium exposes folded concrete beams. Their positions and the representative foundation shafts are estimates, not a structural survey.",
+        "ko": "기단을 설명용으로 열어 접힌 형상의 콘크리트 보를 드러냅니다. 보의 위치와 대표 기초 말뚝은 추정이며 구조 실측 도면이 아닙니다.",
+        "ja": "説明用に基壇を開き、折板状コンクリート梁を示します。梁と代表基礎杭の位置は推定で、実測構造図ではありません。",
+        "zh": "说明性打开基座，展示折板形混凝土梁。梁与代表性基础桩的位置为估计，非结构测绘。",
+        "es": "La apertura explicativa del podio muestra vigas plegadas. Posiciones de vigas y pilotes representativos estimadas; no es un levantamiento estructural."
+      },
       "box": {
         "min": [
-          -60,
-          -90,
+          -51,
+          -63,
           0
         ],
         "max": [
-          60,
-          40,
-          14
+          51,
+          -39,
+          13
         ]
       },
       "parts": [
         "podium"
       ],
       "availableFrom": 32,
-      "yaw": 225,
-      "pitch": 25
+      "yaw": 230,
+      "pitch": 18
     },
     {
       "id": "shells",
@@ -573,12 +656,12 @@
       "box": {
         "min": [
           -50,
-          -35,
-          12
+          -15,
+          11
         ],
         "max": [
-          50,
-          72,
+          0,
+          68,
           67
         ]
       },
@@ -587,7 +670,77 @@
       ],
       "availableFrom": 62,
       "yaw": 225,
-      "pitch": 25
+      "pitch": 26
+    },
+    {
+      "id": "ribs",
+      "name": {
+        "en": "Precast roof ribs",
+        "ko": "프리캐스트 지붕 리브",
+        "ja": "プレキャスト屋根リブ",
+        "zh": "预制屋顶肋梁",
+        "es": "Nervios prefabricados"
+      },
+      "description": {
+        "en": "Tile cladding is hidden to reveal precast ribs fanning from supports toward ridge beams. The common-sphere principle is documented; radius, patch cuts and individual rib positions are model assumptions.",
+        "ko": "타일을 숨겨 받침에서 용마루 보로 펼쳐지는 프리캐스트 리브를 보여줍니다. 공통 구면 원리는 기록에 근거하며 반지름·쉘 절단선·개별 리브 위치는 모델의 가정입니다.",
+        "ja": "タイルを隠し、支持部から棟梁へ広がるプレキャストリブを示します。共通球面の原理は記録に基づき、半径・切断線・個々のリブ位置はモデル上の仮定です。",
+        "zh": "隐藏瓷砖，展示由支座向屋脊展开的预制肋梁。共同球面原理有文献依据，半径、切口及各肋梁位置为模型假设。",
+        "es": "Se ocultan las baldosas para mostrar nervios prefabricados entre apoyos y cumbrera. El principio es documental; radio, cortes y posiciones individuales son supuestos."
+      },
+      "box": {
+        "min": [
+          -49,
+          4,
+          11
+        ],
+        "max": [
+          0,
+          67,
+          67
+        ]
+      },
+      "parts": [
+        "ribs"
+      ],
+      "availableFrom": 62,
+      "yaw": 235,
+      "pitch": 28
+    },
+    {
+      "id": "glazing",
+      "name": {
+        "en": "Harbour curtain wall",
+        "ko": "항구 쪽 유리 커튼월",
+        "ja": "港側のガラス壁",
+        "zh": "临港玻璃幕墙",
+        "es": "Muro cortina del puerto"
+      },
+      "description": {
+        "en": "Sloping glass walls and branching mullions sit under the shell ends. The curtain-wall concept is documented; pane boundaries and joint positions are illustrative.",
+        "ko": "쉘 끝 아래의 경사진 유리벽과 갈라지는 멀리언을 살펴봅니다. 커튼월 개념은 기록에 근거하며 유리 구획과 접합부 위치는 설명용 추정입니다.",
+        "ja": "シェル端部の傾斜ガラス壁と枝分かれする方立を観察します。壁の概念は記録に基づき、ガラス区割と接合位置は推定です。",
+        "zh": "查看壳体端部下方倾斜玻璃墙及分叉竖框。幕墙概念有文献依据，玻璃分格与节点位置为说明性估计。",
+        "es": "Muros de vidrio inclinados y montantes bajo las cáscaras. Concepto documentado; división de paneles y uniones ilustrativas."
+      },
+      "box": {
+        "min": [
+          -49,
+          50,
+          11
+        ],
+        "max": [
+          -1,
+          67,
+          67
+        ]
+      },
+      "parts": [
+        "glazing"
+      ],
+      "availableFrom": 62,
+      "yaw": 65,
+      "pitch": 20
     },
     {
       "id": "hall",
@@ -598,24 +751,66 @@
         "zh": "音乐厅剖切",
         "es": "Sección del Concert Hall"
       },
+      "description": {
+        "en": "South-facing stage: normal centreline depth12.30m, front width14.50m and auditorium offset0.90m, from venue technical information. Seating, balconies and ceiling positions are estimates; illustrated seat count is not venue capacity.",
+        "ko": "남쪽을 향한 무대의 일반 구성: 중심 깊이 12.30m, 전면 폭 14.50m, 객석 바닥과 높이 차 0.90m는 공연장 기술 자료에 근거합니다. 객석·발코니·천장 위치는 추정이며 모델 좌석 수는 실제 수용 인원이 아닙니다.",
+        "ja": "南向き舞台の通常構成：中心奥行12.30m、前幅14.50m、客席との高低差0.90mは会場技術資料に基づきます。客席・バルコニー・天井位置は推定で、模型座席数は実定員ではありません。",
+        "zh": "朝南舞台普通配置：中心进深12.30米、前宽14.50米、与观众席高差0.90米，依据场馆技术资料。座位、包厢及天花位置为估计，模型座椅数非场馆容量。",
+        "es": "Escenario hacia el sur: profundidad central normal12,30m, frente14,50m y desnivel0,90m según información técnica. Asientos, balcones y techo aproximados; el número ilustrado no es el aforo."
+      },
       "box": {
         "min": [
-          -43,
-          -6,
+          -46,
+          -39,
           12
         ],
         "max": [
-          -6,
-          66,
-          41
+          -4,
+          40,
+          36
         ]
       },
       "parts": [
         "hall"
       ],
       "availableFrom": 62,
-      "yaw": 235,
-      "pitch": 55
+      "yaw": 60,
+      "pitch": 48
+    },
+    {
+      "id": "organ",
+      "name": {
+        "en": "Stage and grand organ",
+        "ko": "무대와 파이프 오르간",
+        "ja": "舞台と大オルガン",
+        "zh": "舞台与管风琴",
+        "es": "Escenario y órgano"
+      },
+      "description": {
+        "en": "The organ was completed on30 May1979, after the1973 opening. The visible pipe arrangement is an original simplified interpretation, not a pipe inventory or playable instrument.",
+        "ko": "오르간 완성일은 1973년 개관 이후인 1979년 5월 30일입니다. 표시된 파이프 배열은 독자적으로 단순화한 형상이며 실제 파이프 목록이나 연주 가능한 악기가 아닙니다.",
+        "ja": "オルガンは1973年開館後の1979年5月30日に完成しました。パイプ配置は独自の簡略表現で、実物の目録や演奏可能な楽器ではありません。",
+        "zh": "管风琴完成于1979年5月30日，晚于1973年开幕。管排列为原创简化示意，非真实管清单或可演奏乐器。",
+        "es": "El órgano se terminó el30 de mayo de1979, después de la apertura de1973. Disposición de tubos simplificada y original; no es un inventario ni instrumento ejecutable."
+      },
+      "box": {
+        "min": [
+          -34,
+          -37,
+          16
+        ],
+        "max": [
+          -16,
+          -30,
+          26
+        ]
+      },
+      "parts": [
+        "organ"
+      ],
+      "availableFrom": 92,
+      "yaw": 90,
+      "pitch": 10
     },
     {
       "id": "renewal",
@@ -626,24 +821,31 @@
         "zh": "声学与无障碍",
         "es": "Acústica y acceso"
       },
+      "description": {
+        "en": "Renewed hall:18 overhead reflectors,22 wall reflectors (11 per side); overhead trim8.5–12m above stage, depending on event configuration. Arrangement, lift route and cutaway remain illustrative; no acoustic simulation.",
+        "ko": "개선된 홀: 천장 반사판 18개, 벽 반사판 22개(양쪽 11개). 천장 반사판 높이는 행사 구성에 따라 무대 위 8.5–12m입니다. 배열·승강기 경로·절개는 설명용 추정이며 음향 시뮬레이션이 아닙니다.",
+        "ja": "改修ホール：上部反射板18枚、壁面22枚（左右11枚）。上部高さは催事構成で舞台上8.5〜12m。配置・昇降機経路・断面は推定で、音響解析ではありません。",
+        "zh": "更新后音乐厅：上方反射板18块，墙面22块（每侧11块）；上方高度依演出配置为舞台上8.5至12米。排列、电梯路线及剖切为说明性估计，非声学模拟。",
+        "es": "Sala renovada:18 reflectores superiores y22 laterales (11 por lado); altura superior8,5–12m sobre escenario según montaje. Disposición, ascensor y sección ilustrativos; sin simulación acústica."
+      },
       "box": {
         "min": [
           -45,
-          25,
-          12
+          -34,
+          13
         ],
         "max": [
-          -7,
-          64,
-          36
+          -5,
+          -9,
+          30
         ]
       },
       "parts": [
         "renewal"
       ],
       "availableFrom": 92,
-      "yaw": 235,
-      "pitch": 55
+      "yaw": 65,
+      "pitch": 45
     }
   ],
   "remembrance": {
@@ -690,6 +892,46 @@
         "title": "ARM Architecture · Celebrating a Milestone",
         "url": "https://armarchitecture.com.au/news/celebrating-a-milestone-sydney-opera-house-reopens/",
         "locator": "12 August2022 project account: ARM / Andrew Hayne, Müller BBM; July reopening, 12+4+2 reflectors and40cm stage lowering",
+        "type": "institution",
+        "checkedAt": "2026-11-04"
+      },
+      {
+        "id": "organ-history",
+        "title": "Museums of History NSW · Sydney Opera House guide",
+        "url": "https://mhnsw.au/guides/sydney-opera-house/",
+        "locator": "Chronology: organ finished30 May1979, distinct from1973 opening",
+        "type": "institution",
+        "checkedAt": "2026-11-04"
+      },
+      {
+        "id": "arup-structure",
+        "title": "Arup · Designing the Sydney Opera House",
+        "url": "https://www.arup.com/en-us/projects/designing-the-sydney-opera-house/",
+        "locator": "Site-precast rib erection and folded prestressed beams below podium; numerical sphere diameter not adopted due conflicting descriptions",
+        "type": "institution",
+        "checkedAt": "2026-11-04"
+      },
+      {
+        "id": "heritage",
+        "title": "Australian Government · World Heritage description",
+        "url": "https://www.dcceew.gov.au/parks-heritage/heritage/places/world/sydney-opera-house",
+        "locator": "Three interlocking roof groups; slightly splayed north–south hall axes; stages to south; pedestal-to-ridge precast ribs; glazed tiles and granite podium",
+        "type": "institution",
+        "checkedAt": "2026-11-04"
+      },
+      {
+        "id": "technical",
+        "title": "Sydney Opera House · Concert Hall technical specification, January2024",
+        "url": "https://www.sydneyoperahouse.com/sites/default/files/collaborodam_assets/SOHVenueTechnicalSpecifications_ConcertHall202401.pdf",
+        "locator": "Pages7–8 stage12.30m depth,14.50m front,0.90m floor offset; pages13–14 eighteen overhead and twenty-two wall reflectors; later reference for2022 renewed interior, not an event in2024",
+        "type": "institution",
+        "checkedAt": "2026-11-04"
+      },
+      {
+        "id": "principles",
+        "title": "Sydney Opera House · Utzon Design Principles, May2002",
+        "url": "https://www.sydneyoperahouse.com/sites/default/files/collaborodam_assets/utzon-design-principles.pdf",
+        "locator": "Architectural composition, podium/roof distinction and ceramic cladding; not digitised or redistributed plans",
         "type": "institution",
         "checkedAt": "2026-11-04"
       },

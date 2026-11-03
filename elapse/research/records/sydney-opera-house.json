@@ -46,6 +46,46 @@
       "checkedAt": "2026-11-04"
     },
     {
+      "id": "organ-history",
+      "title": "Museums of History NSW · Sydney Opera House guide",
+      "url": "https://mhnsw.au/guides/sydney-opera-house/",
+      "locator": "Chronology: organ finished30 May1979, distinct from1973 opening",
+      "type": "institution",
+      "checkedAt": "2026-11-04"
+    },
+    {
+      "id": "arup-structure",
+      "title": "Arup · Designing the Sydney Opera House",
+      "url": "https://www.arup.com/en-us/projects/designing-the-sydney-opera-house/",
+      "locator": "Site-precast rib erection and folded prestressed beams below podium; numerical sphere diameter not adopted due conflicting descriptions",
+      "type": "institution",
+      "checkedAt": "2026-11-04"
+    },
+    {
+      "id": "heritage",
+      "title": "Australian Government · World Heritage description",
+      "url": "https://www.dcceew.gov.au/parks-heritage/heritage/places/world/sydney-opera-house",
+      "locator": "Three interlocking roof groups; slightly splayed north–south hall axes; stages to south; pedestal-to-ridge precast ribs; glazed tiles and granite podium",
+      "type": "institution",
+      "checkedAt": "2026-11-04"
+    },
+    {
+      "id": "technical",
+      "title": "Sydney Opera House · Concert Hall technical specification, January2024",
+      "url": "https://www.sydneyoperahouse.com/sites/default/files/collaborodam_assets/SOHVenueTechnicalSpecifications_ConcertHall202401.pdf",
+      "locator": "Pages7–8 stage12.30m depth,14.50m front,0.90m floor offset; pages13–14 eighteen overhead and twenty-two wall reflectors; later reference for2022 renewed interior, not an event in2024",
+      "type": "institution",
+      "checkedAt": "2026-11-04"
+    },
+    {
+      "id": "principles",
+      "title": "Sydney Opera House · Utzon Design Principles, May2002",
+      "url": "https://www.sydneyoperahouse.com/sites/default/files/collaborodam_assets/utzon-design-principles.pdf",
+      "locator": "Architectural composition, podium/roof distinction and ceramic cladding; not digitised or redistributed plans",
+      "type": "institution",
+      "checkedAt": "2026-11-04"
+    },
+    {
       "id": "utzon",
       "title": "Sydney Opera House · Jørn Utzon AC",
       "url": "https://www.sydneyoperahouse.com/our-story/jorn-utzon",
