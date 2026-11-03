@@ -685,11 +685,195 @@
         "title": "Société d’Exploitation de la Tour Eiffel · History",
         "url": "https://www.toureiffel.paris/en/the-monument/history",
         "type": "institution",
-        "locator": "Construction dates and key figures",
-        "checkedAt": "2026-11-03"
+        "locator": "Key figures; The construction; The Rivet Workers; top assembly completed 31 March 1889",
+        "checkedAt": "2026-11-04"
+      },
+      {
+        "id": "koechlin",
+        "title": "SETE · Maurice Koechlin, the engineer without whom the Tower would not exist",
+        "url": "https://www.toureiffel.paris/en/news/history-and-culture/maurice-koechlin-engineer-without-whom-tower-would-not-exist",
+        "type": "institution",
+        "locator": "The author of the first sketch; Gustave Eiffel finally convinced: sketch dated 6 June 1884; Nouguier, Sauvestre and Eiffel roles",
+        "checkedAt": "2026-11-04"
+      },
+      {
+        "id": "painting",
+        "title": "SETE · Painting the Eiffel Tower",
+        "url": "https://www.toureiffel.paris/en/the-monument/painting-eiffel-tower",
+        "type": "institution",
+        "locator": "The Tower’s protection; safety equipment; Diagnose, clean, apply paint: 2019 campaign start, preparation and manual application",
+        "checkedAt": "2026-11-04"
+      },
+      {
+        "id": "gatier-team",
+        "title": "SETE · Major work to maintain the Tower for the future",
+        "url": "https://www.toureiffel.paris/en/news/works/major-work-maintain-tower-future",
+        "type": "institution",
+        "locator": "Painting campaign and published text transcript: Pierre-Antoine Gatier, project manager Marion Gauchard, Jarnias, Atelier de France, archives, paint-layer study and worker protection; contemporary plans are not completion evidence",
+        "checkedAt": "2026-11-04"
+      },
+      {
+        "id": "lift-care",
+        "title": "SETE · The Eiffel Tower’s elevators",
+        "url": "https://www.toureiffel.paris/en/the-monument/lifts",
+        "type": "institution",
+        "locator": "The elevators today: technicians check and start machinery before opening, monitor operation; elevator operators manage visitors",
+        "checkedAt": "2026-11-04"
+      },
+      {
+        "id": "north-return",
+        "title": "SETE · The Eiffel Tower North Elevator is back",
+        "url": "https://www.toureiffel.paris/en/news/works/eiffel-tower-north-elevator-back",
+        "type": "institution",
+        "locator": "Opening paragraph and A Monumental Modernization: return in 2024; Baudin-Châteauneuf and Eiffage Métal roles; Comfort and Safety / maintenance systems",
+        "checkedAt": "2026-11-04"
       }
     ],
     "records": [
+      {
+        "id": "design-team",
+        "title": {
+          "en": "Koechlin, Nouguier and Sauvestre · shared design",
+          "ko": "쾨클랭·누기에·소베스트르 · 함께 만든 설계",
+          "ja": "ケクラン・ヌーギエ・ソーヴェストル：協働の設計",
+          "zh": "凯克兰、努吉耶与索维斯特：共同设计",
+          "es": "Koechlin, Nouguier y Sauvestre · diseño compartido"
+        },
+        "action": {
+          "en": "SETE dates Maurice Koechlin’s first sketch to June 6, 1884. He developed the tower idea with engineer Émile Nouguier; architect Stephen Sauvestre then helped reshape its appearance. Gustave Eiffel supported and advanced the revised project. The operator also records Koechlin’s supervision of calculations, foundations and construction.",
+          "ko": "운영기관은 모리스 쾨클랭의 첫 스케치 날짜를 1884년 6월 6일로 기록합니다. 그는 엔지니어 에밀 누기에와 탑의 구상을 발전시켰고, 건축가 스테팡 소베스트르는 외관을 다듬었습니다. 귀스타브 에펠은 수정안을 지지하고 추진했습니다. 자료는 쾨클랭의 계산·기초·시공 감독도 설명합니다.",
+          "ja": "運営機関はモーリス・ケクランの最初のスケッチを1884年6月6日と記録しています。彼は技師エミール・ヌーギエと構想を発展させ、建築家ステファン・ソーヴェストルが外観を整えました。ギュスターヴ・エッフェルは修正案を支持し推進しました。計算・基礎・建設をケクランが監督したことも記されています。",
+          "zh": "运营方将莫里斯·凯克兰的初稿定于1884年6月6日。他与工程师埃米尔·努吉耶共同发展构想，建筑师斯蒂芬·索维斯特随后改进外观，古斯塔夫·埃菲尔支持并推动修订方案。资料也记述了凯克兰对计算、基础与施工的监督。",
+          "es": "SETE fecha el primer boceto de Maurice Koechlin el 6 de junio de 1884. Desarrolló la idea con el ingeniero Émile Nouguier; el arquitecto Stephen Sauvestre ayudó después a mejorar su aspecto. Gustave Eiffel respaldó e impulsó la propuesta revisada. El operador también describe la supervisión de cálculos, cimientos y construcción por Koechlin."
+        },
+        "meaning": {
+          "en": "Remember the different skills and contributions behind a monument bearing one name.",
+          "ko": "하나의 이름으로 알려진 건축물 뒤의 서로 다른 전문성과 기여를 기억합니다.",
+          "ja": "一つの名前で知られる建造物を支えた、多様な専門性と貢献を記憶します。",
+          "zh": "记住以一个名字闻名的建筑背后，不同专业与个人的贡献。",
+          "es": "Recordar las distintas capacidades y aportaciones detrás de un monumento conocido por un solo nombre."
+        },
+        "unknowns": {
+          "en": "This is the operator’s historical account, not the complete design archive or an allocation of individual credit. The 1884 sketch is not the final built design.",
+          "ko": "운영기관의 역사 해설이며 설계 기록 전체나 개인별 공적 배분을 확정하지 않습니다. 1884년 스케치는 최종 시공안과 다릅니다.",
+          "ja": "運営機関の歴史解説であり、設計史料の全体や個人別の功績配分を確定しません。1884年のスケッチは最終施工案ではありません。",
+          "zh": "这是运营方的历史叙述，并非完整设计档案或个人功劳分配。1884年草图不等于最终施工方案。",
+          "es": "Es el relato histórico del operador, no el archivo completo ni un reparto del mérito individual. El boceto de 1884 no es el diseño finalmente construido."
+        },
+        "time": {
+          "date": "1884-06-06",
+          "precision": "date",
+          "note": {
+            "en": "Date of Koechlin’s sketch; collaborators’ later work did not all occur that day. The linked 1887 construction scene is illustrative context.",
+            "ko": "쾨클랭의 스케치 날짜입니다. 이후 협업 전체가 이날 이뤄진 것은 아닙니다. 연결된 1887년 시공 장면은 설명용 맥락입니다.",
+            "ja": "ケクランのスケッチの日付です。その後の協働すべてが同日ではありません。関連する1887年の施工場面は説明用です。",
+            "zh": "这是凯克兰草图的日期，后续合作并非都发生在当天。关联的1887年施工场景仅作说明背景。",
+            "es": "Fecha del boceto de Koechlin; no toda la colaboración posterior ocurrió ese día. La escena de construcción de 1887 aporta contexto ilustrativo."
+          }
+        },
+        "sceneAnchor": {
+          "eventId": "start"
+        },
+        "sourceIds": [
+          "koechlin",
+          "construction"
+        ],
+        "facts": []
+      },
+      {
+        "id": "workshop-riveters",
+        "title": {
+          "en": "Workshop crews and riveters · making the joints",
+          "ko": "공장 작업자와 리벳공 · 연결을 만든 손들",
+          "ja": "工場作業員とリベット工：接合を担う人々",
+          "zh": "工厂工人与铆工：完成连接的人们",
+          "es": "Talleres y remachadores · construir las uniones"
+        },
+        "action": {
+          "en": "Parts were prepared at Levallois-Perret before assembly on site. SETE distinguishes 150 factory workers from the 150–300 workers on the building site. Its riveting account describes four cooperating roles: heating, holding, forming the head and hammering. These are different workplaces and a task team, not one combined workforce total.",
+          "ko": "부재는 르발루아페레 공장에서 준비한 뒤 현장에서 조립했습니다. 운영기관은 공장 작업자 150명과 현장 작업자 150~300명을 구분합니다. 리벳 작업은 가열·고정·머리 성형·망치질을 맡은 네 사람이 협력했다고 설명합니다. 서로 다른 작업 장소와 작업조의 수이며 하나의 전체 인원으로 합산하지 않습니다.",
+          "ja": "部材はルヴァロワ＝ペレの工場で準備してから現場で組み立てられました。運営機関は工場の150人と現場の150〜300人を区別しています。リベット作業は加熱・保持・頭部成形・打ち込みの4役で協力したと説明します。別の職場と作業班の数であり、総人数として合算しません。",
+          "zh": "构件先在勒瓦卢瓦-佩雷工厂准备，再到现场组装。运营方区分了150名工厂工人与150至300名现场工人。铆接由加热、固定、成形铆钉头和锤击四个岗位配合完成。这些是不同场所的人数与单个作业组的配置，不能相加当作总人数。",
+          "es": "Las piezas se preparaban en Levallois-Perret antes del montaje. SETE distingue 150 trabajadores de fábrica de los 150–300 de la obra. Para remachar describe cuatro funciones coordinadas: calentar, sujetar, formar la cabeza y martillar. Son centros de trabajo y un equipo de tarea distintos, no un total acumulable."
+        },
+        "meaning": {
+          "en": "Precision depended on preparation and cooperation across the workshop and the building site.",
+          "ko": "정밀한 연결은 공장과 현장을 잇는 준비와 협력으로 가능했습니다.",
+          "ja": "精密な接合は工場と現場をつなぐ準備と協力に支えられました。",
+          "zh": "精确连接依靠工厂与工地之间的准备与协作。",
+          "es": "La precisión dependía de la preparación y la cooperación entre taller y obra."
+        },
+        "unknowns": {
+          "en": "The figures are the operator’s construction summary, not a complete payroll, daily headcount or list of worker names. No individual shift, route or injury record is reconstructed.",
+          "ko": "수치는 운영기관의 시공 요약이며 전체 급여대장·일별 인원·작업자 명부가 아닙니다. 개인별 근무·동선·산재 기록을 재현하지 않습니다.",
+          "ja": "数字は運営機関の施工概要で、完全な給与台帳・日別人数・名簿ではありません。個人の勤務・経路・労災記録は再現しません。",
+          "zh": "数字来自运营方施工概述，并非完整工资册、每日人数或人员名册。未重建个人班次、路线或工伤记录。",
+          "es": "Las cifras son una síntesis del operador, no una nómina completa, un recuento diario ni una lista de nombres. No se reconstruyen turnos, rutas ni accidentes individuales."
+        },
+        "time": {
+          "date": "1887-07-01",
+          "precision": "date",
+          "note": {
+            "en": "Start of pillar assembly, used as a reference for the 1887–1889 construction period; not the date of every worker’s task.",
+            "ko": "기둥 조립 시작일을 1887–1889년 시공의 기준일로 삼았습니다. 모든 작업자의 활동 날짜가 아닙니다.",
+            "ja": "柱の組立開始日を1887〜1889年の施工期間の基準とし、全作業員の作業日を意味しません。",
+            "zh": "以立柱组装开始日作为1887至1889年施工期的参考，并非所有工人的作业日期。",
+            "es": "Inicio del montaje de pilares como referencia del período de 1887–1889, no fecha de todas las tareas."
+          }
+        },
+        "sceneAnchor": {
+          "eventId": "legs"
+        },
+        "sourceIds": [
+          "construction"
+        ],
+        "facts": [
+          {
+            "id": "factory-workers",
+            "label": {
+              "en": "Workers at the Levallois-Perret factory",
+              "ko": "르발루아페레 공장 작업자",
+              "ja": "ルヴァロワ＝ペレ工場の作業員",
+              "zh": "勒瓦卢瓦-佩雷工厂工人",
+              "es": "Trabajadores de la fábrica de Levallois-Perret"
+            },
+            "value": 150,
+            "unit": "people",
+            "scope": {
+              "en": "Factory workforce in SETE’s construction summary; separate from the on-site range, not the total unique workers over the project.",
+              "ko": "운영기관 시공 요약의 공장 인원입니다. 현장 인원 범위와 별개이며 전체 기간의 중복 없는 총원이 아닙니다.",
+              "ja": "運営機関の施工概要にある工場人数です。現場の人数幅とは別で、全期間の実人数総計ではありません。",
+              "zh": "运营方施工概述中的工厂人数，与现场人数范围分开，并非整个项目去重后的总人数。",
+              "es": "Personal de fábrica según SETE; distinto del rango en obra y del total de personas únicas a lo largo del proyecto."
+            },
+            "sourceIds": [
+              "construction"
+            ]
+          },
+          {
+            "id": "rivet-team",
+            "label": {
+              "en": "Roles in the described riveting team",
+              "ko": "자료가 설명하는 리벳 작업조",
+              "ja": "記述されたリベット作業班",
+              "zh": "资料所述铆接作业组",
+              "es": "Funciones del equipo de remachado descrito"
+            },
+            "value": 4,
+            "unit": "people",
+            "scope": {
+              "en": "One described task team, not the total number of riveters, simultaneous teams or people employed on the Tower.",
+              "ko": "설명된 한 작업조의 구성입니다. 전체 리벳공·동시 작업조·전체 고용 인원이 아닙니다.",
+              "ja": "説明された一作業班の構成で、全リベット工・同時作業班・塔の全雇用者数ではありません。",
+              "zh": "指所描述的一个作业组，不是全部铆工、同时作业组数或塔的总雇员人数。",
+              "es": "Composición de un equipo de tarea, no todos los remachadores, equipos simultáneos ni empleados de la Torre."
+            },
+            "sourceIds": [
+              "construction"
+            ]
+          }
+        ]
+      },
       {
         "id": "construction",
         "title": {
@@ -754,6 +938,106 @@
             ]
           }
         ]
+      },
+      {
+        "id": "painting-care",
+        "title": {
+          "en": "Painters, safety specialists and conservation architects",
+          "ko": "도장공·안전 전문가·보존 건축가",
+          "ja": "塗装工・安全専門家・保存建築家",
+          "zh": "油漆工、安全专家与保护建筑师",
+          "es": "Pintores, especialistas en seguridad y arquitectos de conservación"
+        },
+        "action": {
+          "en": "SETE describes surface diagnosis, preparation, repair and protective coats applied by hand. Specialists first install lifelines and safety nets. Its account of the twentieth campaign names architect Pierre-Antoine Gatier, project manager Marion Gauchard, Jarnias and Atelier de France, alongside paint conservators and laboratory support studying old paint layers and archives.",
+          "ko": "운영기관은 표면 진단·준비·보수와 손으로 보호 도료를 칠하는 작업을 설명합니다. 전문가들이 먼저 생명줄과 안전망을 설치합니다. 20차 캠페인 자료에는 건축가 피에르앙투안 가티에, 프로젝트 담당 마리옹 고샤르, Jarnias와 Atelier de France가 등장하며, 도료 보존 전문가와 연구기관도 옛 도막·기록 조사에 참여합니다.",
+          "ja": "運営機関は表面診断・下地処理・補修と手作業の保護塗装を説明しています。専門家が先にライフラインと安全網を設置します。第20次工事の記録には建築家ピエール＝アントワーヌ・ガティエ、責任者マリオン・ゴシャール、Jarnias、Atelier de Franceと、塗膜や史料を調べる保存専門家・研究機関が登場します。",
+          "zh": "运营方介绍了表面诊断、基层处理、修补和手工保护涂装。专业人员先安装生命线与安全网。第20轮工程资料列出建筑师皮埃尔-安托万·加蒂耶、项目负责人玛丽翁·戈沙尔、Jarnias及Atelier de France，以及研究旧涂层与档案的涂装保护专家和实验室支持。",
+          "es": "SETE describe diagnóstico, preparación, reparación y capas protectoras aplicadas a mano. Especialistas instalan primero líneas de vida y redes. Su relato de la vigésima campaña identifica al arquitecto Pierre-Antoine Gatier, la responsable Marion Gauchard, Jarnias y Atelier de France, junto con conservadores de pintura y apoyo de laboratorio para estudiar capas antiguas y archivos."
+        },
+        "meaning": {
+          "en": "Preservation depends on repeated skilled care and on protecting the people who do it.",
+          "ko": "보존을 가능하게 하는 반복된 숙련 작업과 작업자를 지키는 준비를 기억합니다.",
+          "ja": "保存を支える継続的な熟練作業と、働く人を守る準備を記憶します。",
+          "zh": "记住持续的专业维护，以及保护劳动者的准备工作。",
+          "es": "Recordar el cuidado especializado y repetido, y la protección de quienes lo realizan."
+        },
+        "unknowns": {
+          "en": "These are institutional descriptions, not a worker roster or an independent safety audit. A campaign plan does not establish completion, full paint removal or the present condition of every member. The 1889 scene does not depict this modern campaign.",
+          "ko": "기관의 설명이며 작업자 명부나 독립 안전 감사가 아닙니다. 캠페인 계획으로 완료·전체 도막 제거·모든 부재의 현재 상태를 확정하지 않습니다. 1889년 장면은 현대 도장 공사를 묘사하지 않습니다.",
+          "ja": "機関の説明であり、作業員名簿や独立した安全監査ではありません。計画から完了・全塗膜除去・全構材の現状は確定しません。1889年の場面は現代の塗装工事を描きません。",
+          "zh": "这些是机构叙述，不是人员名册或独立安全审计。工程计划不能证明全部完工、彻底除漆或所有构件的当前状况。1889年场景未描绘现代涂装工程。",
+          "es": "Son descripciones institucionales, no una plantilla ni una auditoría independiente de seguridad. Un plan no prueba finalización, retirada total de pintura ni el estado actual de cada pieza. La escena de 1889 no representa esta campaña moderna."
+        },
+        "time": {
+          "date": "2019",
+          "precision": "year",
+          "note": {
+            "en": "Year the operator gives for the start of the twentieth painting campaign, not the date of every named contribution or its completion. Related 3D remains at 1889.",
+            "ko": "운영기관이 밝힌 20차 도장 캠페인 시작 연도입니다. 이름이 언급된 모든 참여자의 작업·완료 연도가 아닙니다. 관련3D는 1889년 시공 맥락입니다.",
+            "ja": "運営機関による第20次塗装工事の開始年です。全参加者の作業年や完了年ではありません。関連3Dは1889年の施工です。",
+            "zh": "这是运营方记载的第20轮涂装开始年份，并非所有参与者的作业或完工年份。关联3D仍为1889年施工背景。",
+            "es": "Año de inicio de la vigésima campaña según el operador, no de todas las aportaciones ni de su finalización. El contexto 3D sigue en 1889."
+          }
+        },
+        "sceneAnchor": {
+          "eventId": "complete"
+        },
+        "sourceIds": [
+          "painting",
+          "gatier-team"
+        ],
+        "facts": []
+      },
+      {
+        "id": "lift-technicians",
+        "title": {
+          "en": "Elevator technicians and operators · everyday care",
+          "ko": "승강기 기술자와 운전원 · 매일 이어지는 돌봄",
+          "ja": "昇降機の技術者と運転員：日々の手入れ",
+          "zh": "电梯技术人员与操作员：日常维护",
+          "es": "Técnicos y operadores de ascensores · cuidado diario"
+        },
+        "action": {
+          "en": "SETE describes technicians checking and starting the elevators before visitors arrive, monitoring operation, lubricating and replacing parts; operators manage visitor flow. For the North elevator’s return in 2024, it credits Baudin-Châteauneuf with controls, automation and mechanics, and Eiffage Métal with structural work. Updated maintenance and troubleshooting systems also support the service teams.",
+          "ko": "운영기관은 방문객이 오기 전 승강기를 점검·기동하고 운전 중 감시하며 윤활·부품 교체를 맡는 기술자들과 방문객 흐름을 관리하는 운전원들을 설명합니다. 2024년 북측 승강기 재개통 자료는 Baudin-Châteauneuf의 제어·자동화·기계 작업과 Eiffage Métal의 구조 작업을 구분합니다. 개선된 유지보수·고장 진단 장치도 담당자들의 일을 지원합니다.",
+          "ja": "運営機関は開場前の点検・起動、運転監視、給油・部品交換を担う技術者と、来場者の流れを扱う運転員を説明しています。2024年の北側昇降機再開ではBaudin-Châteauneufの制御・自動化・機械とEiffage Métalの構造工事を区別しています。保守・故障診断装置の更新も担当者を支えます。",
+          "zh": "运营方介绍了在访客到来前检查、启动电梯，运行中监控、润滑和更换部件的技术人员，以及组织客流的操作员。北侧电梯2024年恢复运行的资料分别记述Baudin-Châteauneuf的控制、自动化和机械工作，以及Eiffage Métal的结构工程。更新的维护与故障诊断系统也支持服务团队。",
+          "es": "SETE describe a técnicos que revisan y ponen en marcha los ascensores antes de la llegada del público, vigilan su funcionamiento, lubrican y sustituyen piezas; los operadores gestionan el flujo de visitantes. Para la reapertura del ascensor Norte en 2024 atribuye a Baudin-Châteauneuf los controles, la automatización y la mecánica, y a Eiffage Métal la estructura. Los nuevos sistemas de mantenimiento y diagnóstico apoyan a los equipos."
+        },
+        "meaning": {
+          "en": "A landmark remains usable through daily inspection, repair and the work of people beyond its original builders.",
+          "ko": "랜드마크는 최초의 건설자들 이후에도 매일의 점검·수리와 사람들의 노동으로 쓰일 수 있습니다.",
+          "ja": "建造物は建設後も、日々の点検・修理と人々の仕事で使い続けられます。",
+          "zh": "地标在建成之后，仍依靠人们每日检查与修理才能持续使用。",
+          "es": "Un monumento sigue siendo utilizable gracias a la inspección y reparación diarias, más allá de sus constructores originales."
+        },
+        "unknowns": {
+          "en": "The sources do not name every technician or provide complete shift and inspection logs. The 2024 return is one elevator milestone, not completion of all maintenance or a present-day safety certification by this project. Modern machinery is not reconstructed in the 1889 scene.",
+          "ko": "자료는 모든 기술자의 이름이나 전체 근무·점검 일지를 제공하지 않습니다. 2024년 재개통은 승강기 하나의 이정표이며 모든 유지보수의 종료나 이 프로젝트의 현재 안전 인증이 아닙니다. 현대 설비를 1889년 장면에 재현하지 않습니다.",
+          "ja": "全技術者の氏名や完全な勤務・点検日誌は示されていません。2024年の再開は一機の節目で、全保守の終了や本プロジェクトによる現在の安全認証ではありません。現代設備を1889年の場面に再現しません。",
+          "zh": "资料未提供所有技术人员姓名或完整班次与检查日志。2024年复运只是某一部电梯的节点，不代表全部维护结束，也不是本项目对当前安全的认证。1889年场景未重建现代设备。",
+          "es": "Las fuentes no nombran a todos los técnicos ni ofrecen registros completos de turnos e inspecciones. El regreso de 2024 es un hito de un ascensor, no el fin de todo mantenimiento ni una certificación actual de este proyecto. No se reconstruye maquinaria moderna en la escena de 1889."
+        },
+        "time": {
+          "date": "2024",
+          "precision": "year",
+          "note": {
+            "en": "Year of the North elevator’s return; daily care spans other years. The linked scene shows only the completed 1889 structure, not the modern elevator or this work.",
+            "ko": "북측 승강기 재개통 연도입니다. 일상 관리는 여러 해에 걸칩니다. 연결 장면은 1889년 완성 구조물의 맥락이며 현대 승강기·작업 현장이 아닙니다.",
+            "ja": "北側昇降機の再開年です。日常保守は他の年にも及びます。関連場面は1889年の完成構造で、現代の昇降機や工事現場ではありません。",
+            "zh": "北侧电梯恢复运行的年份，日常维护跨越其他年份。关联场景仅显示1889年建成结构，不是现代电梯或作业现场。",
+            "es": "Año del regreso del ascensor Norte; el cuidado cotidiano abarca otros años. La escena muestra la estructura de 1889, no el ascensor moderno ni estos trabajos."
+          }
+        },
+        "sceneAnchor": {
+          "eventId": "complete"
+        },
+        "sourceIds": [
+          "lift-care",
+          "north-return"
+        ],
+        "facts": []
       }
     ]
   }

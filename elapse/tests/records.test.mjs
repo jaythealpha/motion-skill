@@ -15,3 +15,23 @@ test('ship counts and recollections cannot become a different rescue, event or d
 
 test('Notre-Dame care records retain reopening and do not turn publication dates into work dates',()=>{const model=load('notre-dame');assert.equal(model.remembrance.sources.find(s=>s.id==='fire-response').type,'institution');const r=model.remembrance.records;assert.equal(r.length,5);for(const id of ['fire-response','didier-safeguard','leroux-stone','craft-restoration'])assert.ok(r.find(r=>r.id===id));assert.equal(r.find(r=>r.id==='restoration').time.date,'2024-12-08');for(const id of ['leroux-stone','craft-restoration']){const e=r.find(r=>r.id===id);assert.equal(e.time.date,'2024-11-12');assert.match(e.time.note.en,/publication date/);assert.match(e.time.note.en,/not the day/);}const fire=r.find(r=>r.id==='fire-response');assert.equal(fire.time.date,'2019-04-15');assert.equal(fire.facts[0].value,'2019-04-17');});
 test('Notre-Dame transfer batches and temporary supports keep distinct units and scope',()=>{const r=load('notre-dame').remembrance.records,d=r.find(r=>r.id==='didier-safeguard'),c=r.find(r=>r.id==='craft-restoration');assert.deepEqual(d.facts.map(f=>f.value),[56,18]);assert.ok(d.facts.every(f=>f.unit==='artworks'));assert.match(d.facts[1].scope.en,/19 April 2019/);assert.match(d.unknowns.en,/different batches and dates/);assert.equal(c.facts[0].value,28);assert.equal(c.facts[0].unit,'objects');assert.match(c.unknowns.en,/not permanent original components/);for(const l of ['en','ko','ja','zh','es'])assert.ok(renderRecords(load('notre-dame'),l).includes('data-value="56"'));});
+
+
+test('Eiffel shared work keeps stable completion links and distinct workforce scopes',()=>{
+ const m=load('eiffel-tower'),r=m.remembrance.records;
+ assert.equal(r.length,5);assert.ok(r.some(x=>x.id==='construction'));
+ const work=r.find(x=>x.id==='workshop-riveters');
+ assert.deepEqual(work.facts.map(x=>[x.id,x.value,x.unit]),[['factory-workers',150,'people'],['rivet-team',4,'people']]);
+ for(const f of work.facts)for(const l of ['en','ko','ja','zh','es'])assert.ok(f.scope[l].length>20);
+ assert.equal(r.find(x=>x.id==='design-team').time.date,'1884-06-06');
+ assert.ok(m.remembrance.sources.every(s=>s.type==='institution'));
+});
+test('modern Eiffel care records do not acquire false dates or move the historical scene',()=>{
+ const m=load('eiffel-tower'),r=m.remembrance.records;
+ for(const [id,year]of [['painting-care','2019'],['lift-technicians','2024']]){
+  const a=r.find(x=>x.id===id);assert.equal(a.time.precision,'year');assert.equal(a.time.date,year);
+  assert.equal(a.sceneAnchor.eventId,'complete');assert.equal(contextT(m,a),contextT(m,r.find(x=>x.id==='construction')));
+  for(const l of ['en','ko','ja','zh','es'])assert.ok(a.time.note[l].includes('1889'));
+ }
+ assert.ok(m.chapters.every(c=>+c.start.slice(0,4)<=1889&&+c.end.slice(0,4)<=1889));
+});
