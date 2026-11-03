@@ -31,17 +31,19 @@ The batching, shadow and pixel-budget decisions follow the primary three.js guid
 
 ## Validation status
 
-Local validation passed. Local evidence, before/after captures and intermediate failures are retained in `trials/immersive-five-locales-2026-11-03/` (not published). Pages delivery is recorded separately after deployment.
+Local validation passed. Local evidence, before/after captures and intermediate failures are retained in `trials/immersive-five-locales-2026-11-03/` (not published). Revision `6ba0b2a` was pushed and its Pages build completed; all 15 gallery/demo files returned HTTP 200 with matching local SHA-256 values. The public URL then passed the complete 180-case language/viewport matrix. Subsequent evidence-label terminology edits are checked separately and regenerated into the same 12 pages.
 
 - 180 delivery locale/viewport cases: 12 demos × 5 languages × 375/768/1440 px passed startup, language propagation, retained progress, subject framing, overflow and console checks. A subsequent 105-case Elapse/study pass verified the mobile toolbar/caption layout fix.
 - All ten original data models passed Gate 1 with zero errors/warnings.
 - All ten full-demo Gate 2 runs passed, producing 611 captures. After substantive camera and facade changes, Titanic, Britannic and WTC passed full reruns with 97, 73 and 57 captures respectively. Later changes to copy, translation protection and keyboard focus were checked separately; these capture counts are not a claim that every final byte was used in every earlier run.
-- Unfold 43 unit tests passed; Elapse 112 passed in UTC and again in Asia/Seoul; 3 additional locale-contract tests passed.
+- Unfold 43 unit tests passed; Elapse 112 passed in UTC and again in Asia/Seoul; 8 shared tests and 3 additional locale-contract tests passed.
 - Fifteen gallery locale/viewport combinations passed, including selected-language links, keyboard focus, persistence, explicit URL priority, blocked storage and the English no-script fallback.
 - Four representative offline page types passed startup and preference tests. Both studies retained playback, progress and speed during language changes. Reduced-motion preferences suppress automatic playback. Actual Space-key activation on both full-demo language buttons changes language, retains focus and does not accidentally start playback.
 - All five Elapse examples passed actual Explore/Timeline button flows, state retention, fixed information-slot bounds and coalesced wheel input checks. Fresh isolated copies of both skills passed their locale audits and standalone builds without relying on the parent checkout.
 - Source shared-file synchronization and diff-whitespace checks passed.
 
 Browser review found two additional correctness issues and verified their fixes: mobile Spanish camera controls covered the figure caption, so narrow layouts now put those controls below the canvas; automatic browser translation overwrote app-selected Japanese with Korean, so generated documents now use the standard [`translate="no"` attribute](https://html.spec.whatwg.org/multipage/dom.html#the-translate-attribute). Native Chrome subsequently retained the app's authored English and entered Explore correctly. Browser preferences were not changed.
+
+Public native-Chrome review exercised the gallery's Japanese WTC link, English selection, Explore entry and return to Timeline, and the aircraft-impact chapter. Final phone-image review also caught procurement/job-position mistranslations of evidence badges in Japanese and Chinese; those terms, the sourced-share print label and the Spanish sourced-share wording were corrected locally. The subsequent 75-case phone language/viewport check passed, and the corrected Japanese mobile capture was inspected directly. This targeted editing does not substitute for comprehensive native-language review.
 
 Remaining acceptance boundaries: comprehensive native-language editing, real-device mobile performance, official repair/manual approval and surveyed/photoreal asset fidelity are not established by these tests. The result remains a detailed educational 3D illustration; a claim of photorealism would be unsupported.

@@ -31,4 +31,4 @@ No known P0, P1 or P2 issue remains in the tested changes. P3/acceptance boundar
 
 ## Public delivery
 
-Pending the final commit and Pages verification. The deployed revision, HTTP/hash checks and public-browser results will be appended after publication.
+Revision `6ba0b2a` completed GitHub Pages deployment. The gallery's three files and all twelve standalone HTML files returned HTTP 200 and matched the local SHA-256 values. The deployed pages passed all 180 language/viewport cases. Native Chrome confirmed Japanese gallery-to-WTC navigation, English selection, Explore entry, Timeline return and chapter selection. Final evidence-label terminology corrections passed a separate 75-case phone layout check, with direct review of the corrected Japanese mobile capture; public delivery of those regenerated files is verified in the completion report. No claim is made that the earlier screenshots contain later copy edits.
