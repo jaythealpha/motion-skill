@@ -40,6 +40,8 @@ Read `references/remembrance-format.md` before authoring historical-event conten
 
 The Titanic/Britannic examples include help and care records alongside their legacy discovery/survey records. Follow their distinctions between testimony, library-published extracts and contemporary press; never move a Titanic recollection into a Britannic narrative merely because a person survived both. A reported count of people picked up alive is not automatically a final-survivor total.
 
+Notre-Dame’s examples distinguish emergency response, heritage safeguarding, scientific assessment and restoration crafts. Keep transferred-object batches separate; temporary stabilization supports are not permanent rebuilt components. A retrospective’s publication date is not the day every worker acted. Preserve the existing reopening record and its distinction between ceremonies and public access.
+
 Packaged generators load `research/records/*.json` through `withRemembrance`. Such pages default to the reader, render English content without scripts, and lazily initialize the optional 3D view. `?view=scene`, explicit `?t=…` and Explore/play links retain the old scene entry. A related scene is context, not a re-enactment of a person's exact actions. Gate 1 and build validate records; verify five-language reader behavior, no-JS/WebGL-failure fallback and scene return as well as normal scene QA. Do not claim model-item source shares measure historical accuracy.
 
 ## Rules that always hold

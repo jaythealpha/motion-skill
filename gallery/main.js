@@ -1,4 +1,4 @@
-import {messages, languageTags} from './i18n.js?v=20261103-ship-help';
+import {messages, languageTags} from './i18n.js?v=20261103-notre-care';
 const key='motion-skill:gallery-language:v1';
 const normalize=value=>{const code=String(value||'').toLowerCase();return ({'ch':'zh','zh-cn':'zh','zh-hans':'zh'})[code]||code;};
 const supported=value=>Object.hasOwn(messages,normalize(value));
@@ -15,7 +15,7 @@ function apply(lang,persist=false){
   const i=+card.dataset.card,name=m.names[i],link=card.querySelector('a');
   card.querySelector('h3').textContent=name;card.querySelector('p').textContent=m.descs[i];card.querySelector('.tag').textContent=m.tags[+card.dataset.tag];
   link.textContent=m.view.replace('{name}',name);
-  const target=new URL(link.href);target.searchParams.set('lang',lang);target.searchParams.set('v','20261103-ship-help');link.href=target.href;
+  const target=new URL(link.href);target.searchParams.set('lang',lang);target.searchParams.set('v','20261103-notre-care');link.href=target.href;
  }
  picker.value=lang;document.querySelector('#language-status').textContent=m.status;
  const url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState(null,'',url);

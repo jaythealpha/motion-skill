@@ -769,9 +769,330 @@
         "type": "institution",
         "locator": "Published 2024-12-03, updated 2025-03-25; public access after ceremonies",
         "checkedAt": "2026-11-03"
+      },
+      {
+        "id": "fire-response",
+        "title": "French Presidency · Council of Ministers report, 17 April 2019",
+        "url": "https://www.elysee.fr/front/pdf/elysee-module-3048-fr.pdf",
+        "type": "institution",
+        "locator": "17 April 2019; p1: BSPP and supporting services, evacuation of rue du Cloître Notre-Dame homes; report date is not the incident date",
+        "checkedAt": "2026-11-03"
+      },
+      {
+        "id": "operational-drawings",
+        "title": "French Ministry of Culture · Les témoins racontent",
+        "url": "https://notre-dame-de-paris.culture.gouv.fr/fr/les-temoins-racontent",
+        "type": "institution",
+        "locator": "Du côté des pompiers / Laurent Clergeau, operational drawings; ministry summary and attributed testimony, not a personal rescue tally",
+        "checkedAt": "2026-11-03"
+      },
+      {
+        "id": "art-safeguard",
+        "title": "French Ministry of Culture · Les mises à l’abri des œuvres d’art et du trésor",
+        "url": "https://notre-dame-de-paris.culture.gouv.fr/fr/les-mises-labri-des-oeuvres-dart-et-du-tresor",
+        "type": "institution",
+        "locator": "15 avril: une chaîne humaine; 56 movable objects to Hôtel-de-Ville overnight, Louvre on16 April; 19 avril: 18 paintings in a later operation; different batches",
+        "checkedAt": "2026-11-03"
+      },
+      {
+        "id": "restoration-teams",
+        "title": "French Ministry of Culture · Un chantier hors-normes (3/6)",
+        "url": "https://www.culture.gouv.fr/actualites/special-notre-dame-de-paris-3-6-un-chantier-hors-normes",
+        "type": "institution",
+        "locator": "Published 12 November 2024; sections on Marie-Hélène Didier, Lise Leroux with rope-access specialists,28 timber supports, carpentry and stonework; retrospective, not a full work log",
+        "checkedAt": "2026-11-03"
       }
     ],
     "records": [
+      {
+        "id": "fire-response",
+        "title": {
+          "en": "Firefighters and supporting teams · protecting people",
+          "ko": "소방대와 협력기관 · 사람의 안전을 먼저",
+          "ja": "消防と支援チーム：人々の安全を守る",
+          "zh": "消防与支援团队：保护人员安全",
+          "es": "Bomberos y equipos de apoyo · proteger a las personas"
+        },
+        "action": {
+          "en": "The 17 April official report records evacuation of nearby homes threatened by a possible collapse and cooperation between firefighters, police, emergency medical teams and civil-protection volunteers. The Culture Ministry also describes Laurent Clergeau sharing operational sketches with commanders to clarify the building and access points.",
+          "ko": "4월 17일 공식 보고서는 붕괴 위험에 노출된 인근 주택의 대피와 소방대·경찰·응급의료진·민간안전 자원봉사자들의 협력을 기록합니다. 문화부 자료에는 로랑 클레르조가 건물과 진입 지점을 이해할 수 있도록 지휘팀에 현장 도면을 제공한 일도 나옵니다.",
+          "ja": "4月17日の公式報告は、倒壊の恐れがある近隣住宅の避難と、消防・警察・救急医療・民間防災ボランティアの連携を記録しています。文化省はロラン・クレルジョーが建物や進入地点を示す現場図を指揮者に提供したことも紹介しています。",
+          "zh": "4月17日官方报告记述了有倒塌风险的附近住宅疏散，以及消防、警察、急救团队和民防志愿者的协作。文化部也介绍洛朗·克莱尔若向指挥人员提供现场草图，帮助理解建筑与入口。",
+          "es": "El informe oficial del 17 de abril registra la evacuación de viviendas próximas por riesgo de derrumbe y la cooperación de bomberos, policía, servicios médicos y voluntarios de protección civil. Cultura también describe los croquis operativos que Laurent Clergeau compartió con los mandos."
+        },
+        "meaning": {
+          "en": "Safety also depends on shared information, evacuation and support work beyond the most visible firefighting.",
+          "ko": "눈에 띄는 진화 장면뿐 아니라 정보 공유·대피·지원 작업도 안전을 지탱했음을 기억합니다.",
+          "ja": "目立つ消火だけでなく、情報共有・避難・支援も安全を支えたことを記憶します。",
+          "zh": "安全不仅依靠可见的灭火，也依靠信息共享、疏散与支援。",
+          "es": "La seguridad también depende de información compartida, evacuación y apoyo, más allá de la extinción visible."
+        },
+        "unknowns": {
+          "en": "These accounts do not establish a personal rescue count or an exact visitor-evacuation route. Operational drawings supported decisions; they are not evidence that one drafter personally rescued each evacuee. Minute-by-minute timings are not harmonized here.",
+          "ko": "이 자료로 개인별 구조 인원이나 방문객의 정확한 대피 동선을 확정할 수는 없습니다. 도면은 판단을 지원한 것이며 작성자가 대피자 모두를 직접 구조했다는 뜻이 아닙니다. 자료 사이의 분 단위 시각을 하나로 확정하지 않습니다.",
+          "ja": "個人別救助人数や訪問者の正確な避難経路は確定しません。図は判断の支援であり、作図者が全員を直接救助した証拠ではありません。資料間の分単位の時刻は統合しません。",
+          "zh": "这些材料不能确定个人救援人数或访客精确疏散路线。草图支持决策，并不证明绘图者亲自救出每名疏散者。此处不统一各来源的分钟级时序。",
+          "es": "No establecen rescates individuales ni rutas exactas de visitantes. Los croquis apoyaron decisiones; no prueban que su autor rescatara personalmente a cada evacuado. No se unifican las cronologías minuto a minuto."
+        },
+        "time": {
+          "date": "2019-04-15",
+          "precision": "date",
+          "note": {
+            "en": "Work described extends from 15 to 16 April 2019. The scene is context, not a person’s exact route or action time.",
+            "ko": "기록한 대응은 2019년 4월 15~16일에 걸칩니다. 연결된 장면은 맥락이며 개인의 정확한 동선·활동 시각이 아닙니다.",
+            "ja": "記録された対応は2019年4月15〜16日にわたります。場面は文脈であり、個人の正確な経路・活動時刻ではありません。",
+            "zh": "记录中的应对跨越2019年4月15日至16日。场景仅为背景，并非个人确切路线或行动时刻。",
+            "es": "Las actuaciones abarcan el 15–16 de abril de 2019. La escena aporta contexto, no rutas ni horas individuales exactas."
+          }
+        },
+        "sceneAnchor": {
+          "eventId": "night"
+        },
+        "sourceIds": [
+          "fire-response",
+          "operational-drawings"
+        ],
+        "facts": [
+          {
+            "id": "report-date",
+            "label": {
+              "en": "Official report date",
+              "ko": "공식 보고서 날짜",
+              "ja": "公式報告日",
+              "zh": "官方报告日期",
+              "es": "Fecha del informe oficial"
+            },
+            "value": "2019-04-17",
+            "unit": "date",
+            "scope": {
+              "en": "Council of Ministers report; not the fire or evacuation date.",
+              "ko": "국무회의 보고서 · 화재·대피 날짜와 구분합니다.",
+              "ja": "閣議報告・火災や避難の日付とは区別します。",
+              "zh": "部长会议报告，并非火灾或疏散日期。",
+              "es": "Informe del Consejo de Ministros, no fecha del incendio o evacuación."
+            },
+            "sourceIds": [
+              "fire-response"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "didier-safeguard",
+        "title": {
+          "en": "Marie-Hélène Didier and a human chain · protecting cultural heritage",
+          "ko": "마리엘렌 디디에와 사람들의 사슬 · 문화재 보호",
+          "ja": "マリー＝エレーヌ・ディディエと人々の連携：文化財を守る",
+          "zh": "玛丽-埃莱娜·迪迪埃与协作队伍：保护文化遗产",
+          "es": "Marie-Hélène Didier y una cadena humana · proteger el patrimonio"
+        },
+        "action": {
+          "en": "The ministry credits heritage conservator Didier with coordinating treasury-object extraction alongside other staff during the 15–16 April night. Firefighters, cathedral staff, conservators, transporters and other services relayed objects to safety. Further transfers, inventory checks and a separate painting operation followed; this was sustained collective care.",
+          "ko": "문화부는 역사유적 보존 담당자 디디에가 다른 직원들과 함께 4월 15~16일 밤 보물실 물품 반출을 조정했다고 기록합니다. 소방대·성당 직원·보존 전문가·운송팀·여러 기관이 물품을 이어 옮겼습니다. 이후 이송·목록 확인·별도의 회화 반출로 이어진 공동 보호 활동이었습니다.",
+          "ja": "文化省は歴史的建造物の保存担当ディディエが他の職員と4月15〜16日夜の宝物庫搬出を調整したと記しています。消防、聖堂職員、保存専門家、運搬チームなどが品々を引き継ぎ、後の移送・照合・別の絵画搬出へと続きました。",
+          "zh": "文化部记述历史建筑保护负责人迪迪埃与其他人员协调4月15日至16日夜间的珍宝物品搬出。消防员、教堂员工、保护专家、运输人员等接力转移物品，随后继续转运、清点及另一次绘画搬运。这是持续的集体保护。",
+          "es": "El ministerio atribuye a la conservadora de patrimonio Didier la coordinación de la extracción del tesoro junto con otros agentes durante la noche del 15–16 de abril. Bomberos, personal de la catedral, conservadores y transportistas trabajaron en relevo. Siguieron traslados, inventarios y otra operación de pinturas."
+        },
+        "meaning": {
+          "en": "Preparation, permission, handling, transport and documentation all mattered. Preserve the coordination rather than a story of one person saving everything.",
+          "ko": "준비·접근 승인·취급·운송·기록을 함께 기억합니다. 한 사람이 모든 것을 구했다는 이야기 대신 협업을 남깁니다.",
+          "ja": "準備・立入許可・取扱い・運搬・記録をともに記憶します。一人が全てを救った話にはしません。",
+          "zh": "准备、准入、搬运、运输与记录同样重要；记住协作，而非一人挽救全部的故事。",
+          "es": "Importaron preparación, permisos, manipulación, transporte y documentación. Conservar la coordinación, no el relato de una persona salvándolo todo."
+        },
+        "unknowns": {
+          "en": "The reported 56 objects and later 18 paintings are different batches and dates, not a total of everything protected and not Didier’s personal tally. This is a ministry account, not a new independent inventory audit or a complete list of helpers.",
+          "ko": "기록된 56점과 후속 회화 18점은 날짜와 반출 묶음이 다릅니다. 보호한 모든 문화재의 총계나 디디에 개인의 실적이 아닙니다. 문화부의 설명이며 새 독립 재고 감사나 모든 조력자의 명단은 아닙니다.",
+          "ja": "56点と後の絵画18点は日付と搬出群が異なります。保護品全体の総数や個人の実績ではありません。文化省の説明であり独立再監査や全協力者名簿ではありません。",
+          "zh": "56件物品与后续18幅绘画属于不同日期和批次，不是全部受保护文物总数，也不是迪迪埃个人成绩。这是文化部叙述，并非新独立清点审计或完整帮助者名单。",
+          "es": "Los 56 objetos y las 18 pinturas posteriores son lotes y fechas distintos, no el total del patrimonio protegido ni una cifra personal de Didier. Es un relato ministerial, no una auditoría nueva ni la lista completa de participantes."
+        },
+        "time": {
+          "date": "2019-04-15",
+          "precision": "date",
+          "note": {
+            "en": "Work described extends from 15 to 16 April 2019. The scene is context, not a person’s exact route or action time.",
+            "ko": "기록한 대응은 2019년 4월 15~16일에 걸칩니다. 연결된 장면은 맥락이며 개인의 정확한 동선·활동 시각이 아닙니다.",
+            "ja": "記録された対応は2019年4月15〜16日にわたります。場面は文脈であり、個人の正確な経路・活動時刻ではありません。",
+            "zh": "记录中的应对跨越2019年4月15日至16日。场景仅为背景，并非个人确切路线或行动时刻。",
+            "es": "Las actuaciones abarcan el 15–16 de abril de 2019. La escena aporta contexto, no rutas ni horas individuales exactas."
+          }
+        },
+        "sceneAnchor": {
+          "eventId": "night"
+        },
+        "sourceIds": [
+          "art-safeguard",
+          "restoration-teams"
+        ],
+        "facts": [
+          {
+            "id": "overnight-batch",
+            "label": {
+              "en": "Overnight movable-object batch",
+              "ko": "당일 밤 반출된 이동 가능한 문화재 묶음",
+              "ja": "夜間搬出された動産文化財の一群",
+              "zh": "当夜转移的可移动文物批次",
+              "es": "Lote nocturno de bienes muebles"
+            },
+            "value": 56,
+            "unit": "artworks",
+            "scope": {
+              "en": "Ministry’s 15–16 April account: cathedral to Hôtel-de-Ville, then Louvre on 16 April. Not all protected objects.",
+              "ko": "문화부의 4월 15~16일 기록 · 성당에서 파리 시청으로, 16일 루브르로 이송한 묶음이며 전체 보호 물품이 아닙니다.",
+              "ja": "文化省の4月15〜16日の説明。聖堂から市庁舎、16日にルーヴルへ移送した群であり保護品全体ではありません。",
+              "zh": "文化部记述的4月15日至16日批次：从教堂至市政厅，16日再至卢浮宫，并非全部受保护物品。",
+              "es": "Relato ministerial del 15–16 de abril: catedral, Ayuntamiento y Louvre el 16. No todos los bienes protegidos."
+            },
+            "sourceIds": [
+              "art-safeguard"
+            ]
+          },
+          {
+            "id": "later-paintings",
+            "label": {
+              "en": "Later painting evacuation",
+              "ko": "후속 회화 반출",
+              "ja": "後の絵画搬出",
+              "zh": "后续绘画转移",
+              "es": "Evacuación posterior de pinturas"
+            },
+            "value": 18,
+            "unit": "artworks",
+            "scope": {
+              "en": "Paintings removed on 19 April 2019 in a separate operation. Do not add to 56 as a complete rescue total.",
+              "ko": "2019년 4월 19일 별도 작업의 회화 수이며 56점에 더해 전체 구조 실적으로 삼지 않습니다.",
+              "ja": "2019年4月19日の別作業の絵画数。56点と足して全搬出総数にはしません。",
+              "zh": "2019年4月19日另一作业的绘画数，不与56相加作为完整抢救总数。",
+              "es": "Pinturas retiradas el 19 de abril de 2019 en otra operación. No sumar a 56 como total completo."
+            },
+            "sourceIds": [
+              "art-safeguard"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "leroux-stone",
+        "title": {
+          "en": "Lise Leroux and rope-access specialists · reading the damaged stone",
+          "ko": "리즈 르루와 로프 작업 전문가들 · 손상된 돌을 읽다",
+          "ja": "リーズ・ルルーとロープ作業専門家：損傷した石を調べる",
+          "zh": "莉兹·勒鲁与绳索作业专家：了解受损石材",
+          "es": "Lise Leroux y especialistas en acceso por cuerda · estudiar la piedra dañada"
+        },
+        "action": {
+          "en": "The ministry describes Leroux of the historic-monuments research laboratory working with rope-access specialists to choose suitable assessment methods for stone affected by fire and water. Photographic surveys and mechanical assessments supported structural decisions. Scientific knowledge and practical access had to work together.",
+          "ko": "문화부는 역사유적 연구소의 르루가 로프 작업 전문가들과 화재·물의 영향을 받은 석재의 평가 방법을 함께 정했다고 설명합니다. 사진 조사와 기계적 성질 평가는 구조 판단을 도왔습니다. 과학적 지식과 현장 접근 기술이 함께 필요했습니다.",
+          "ja": "文化省は歴史的建造物研究所のルルーがロープ作業専門家と、火と水の影響を受けた石材の評価方法を選んだと説明しています。写真調査と力学的評価が構造判断を支え、科学と現場技術が協働しました。",
+          "zh": "文化部介绍，历史建筑研究实验室的勒鲁与绳索作业专家共同选择适合评估受火和水影响石材的方法。摄影调查及力学评估支持结构判断，科学知识与现场技术需要配合。",
+          "es": "El ministerio describe cómo Leroux, del laboratorio de monumentos históricos, colaboró con especialistas en cuerda para evaluar piedra afectada por fuego y agua. Los levantamientos fotográficos y las evaluaciones mecánicas apoyaron decisiones estructurales. Ciencia y acceso práctico trabajaron juntos."
+        },
+        "meaning": {
+          "en": "Before rebuilding, people had to learn what remained and how it could be approached safely. Care includes observation and judgment, not only visible new construction.",
+          "ko": "다시 짓기 전에 무엇이 남았고 어떻게 접근할지 알아야 했습니다. 눈에 보이는 새 구조물뿐 아니라 관찰과 판단도 돌봄의 일부입니다.",
+          "ja": "再建前には何が残りどう近づけるかを知る必要がありました。観察と判断もケアの一部です。",
+          "zh": "重建前需要了解遗存及安全接近的方法。照护也包括观察与判断，而不仅是新建结构。",
+          "es": "Antes de reconstruir hubo que conocer lo que quedaba y cómo acceder. Observar y decidir también es cuidar."
+        },
+        "unknowns": {
+          "en": "This is the ministry’s account, not the full laboratory dataset or every worker’s log. It does not establish which individual stones were reused or provide a minute-by-minute work route.",
+          "ko": "문화부의 설명이며 전체 실험 데이터나 모든 작업자의 일지가 아닙니다. 개별 석재의 재사용 여부·분 단위 작업 동선을 확정하지 않습니다.",
+          "ja": "文化省の説明であり全実験データや全作業者の日誌ではありません。個々の石の再利用、分単位の作業経路は確定しません。",
+          "zh": "这是文化部介绍，并非完整实验数据或每名工人的日志。未确定每块石材是否重用或逐分钟作业路线。",
+          "es": "Es un relato ministerial, no todos los datos de laboratorio ni cada diario de trabajo. No documenta qué piedras se reutilizaron ni las rutas minuto a minuto."
+        },
+        "time": {
+          "date": "2024-11-12",
+          "precision": "date",
+          "note": {
+            "en": "This is the publication date of the ministry’s retrospective, not the day each person performed or completed this work.",
+            "ko": "문화부 회고 자료의 발행 날짜이며 각 사람이 작업하거나 완료한 날짜가 아닙니다.",
+            "ja": "文化省の回顧記事の発行日であり、各人の作業日・完了日ではありません。",
+            "zh": "这是文化部回顾文章的发布日期，并非每个人执行或完成工作的日期。",
+            "es": "Es la fecha de publicación de la retrospectiva, no el día de ejecución o finalización de cada trabajo."
+          }
+        },
+        "sceneAnchor": {
+          "eventId": "restoration"
+        },
+        "sourceIds": [
+          "restoration-teams"
+        ],
+        "facts": []
+      },
+      {
+        "id": "craft-restoration",
+        "title": {
+          "en": "Architects, carpenters and stonemasons · many hands rebuilding",
+          "ko": "건축가·목수·석공 · 여러 손으로 이어 간 복원",
+          "ja": "建築家・大工・石工：多くの手による修復",
+          "zh": "建筑师、木匠与石匠：众人协力修复",
+          "es": "Arquitectos, carpinteros y canteros · muchas manos restaurando"
+        },
+        "action": {
+          "en": "The ministry describes oak roof-frame reconstruction using architects’ documentation and carpenters’ craft, alongside masons and stonecutters restoring the crossing vault. Philippe Villeneuve explains the earlier bracing of flying buttresses to stabilize the building. Temporary protection and reconstruction were different but connected tasks.",
+          "ko": "문화부는 건축가들의 자료와 목수의 기술로 참나무 지붕틀을 재구성하고, 석공들이 교차부 볼트를 복원한 일을 설명합니다. 필리프 빌뇌브는 앞선 단계에서 공중 부벽을 받쳐 건물을 안정화한 원리를 설명합니다. 임시 보호와 재건은 서로 다르지만 연결된 작업이었습니다.",
+          "ja": "文化省は建築家の資料と大工の技術によるオークの屋根架構再建、石工による交差部ヴォールト修復を説明しています。フィリップ・ヴィルヌーヴは先行段階の飛梁の支保工を解説しています。仮保護と再建は異なる、つながった仕事でした。",
+          "zh": "文化部介绍了依靠建筑师资料和木匠技艺重建橡木屋架，以及石匠修复交叉部拱顶的工作。菲利普·维尔纳夫解释了前期用支撑稳定飞扶壁的原理。临时保护与重建是不同但相连的任务。",
+          "es": "El ministerio describe la reconstrucción de la armadura de roble con documentación de arquitectos y oficio de carpinteros, junto a canteros que restauraron la bóveda del crucero. Philippe Villeneuve explica el apuntalamiento previo de los arbotantes. Protección temporal y reconstrucción fueron tareas distintas y conectadas."
+        },
+        "meaning": {
+          "en": "Remember the coordination and transmission of skills, including work hidden behind the finished silhouette.",
+          "ko": "완성된 윤곽 뒤에 가려지는 작업까지, 기술을 잇고 조율한 사람들을 기억합니다.",
+          "ja": "完成した輪郭の背後に隠れる作業も含め、技術の継承と連携を記憶します。",
+          "zh": "记住技艺传承与协调，也记住完工轮廓背后不显眼的劳动。",
+          "es": "Recordar coordinación y transmisión de oficios, también el trabajo oculto tras la silueta terminada."
+        },
+        "unknowns": {
+          "en": "The 28 supports refer to the stabilization phase, not permanent original components or one person’s output. The article predates public reopening and does not prove every restoration task ended. Individual work dates are not reconstructed.",
+          "ko": "지지틀 28개는 안정화 단계의 수치이며 원래의 영구 부재 수나 한 사람의 작업 실적이 아닙니다. 이 기사는 일반 공개 이전 자료로 모든 복원 작업의 종료를 뜻하지 않습니다. 개별 작업 날짜는 재현하지 않습니다.",
+          "ja": "28基は安定化段階の支保工であり、元の恒久部材数や個人の実績ではありません。一般公開前の記事であり全修復作業の終了を示しません。個別作業日は再現しません。",
+          "zh": "28件支撑指稳定阶段，并非原有永久构件数或个人产量。文章发表于公众开放前，不证明所有修复任务已结束。未重建个人作业日期。",
+          "es": "Los 28 apoyos pertenecen a la estabilización, no son piezas originales permanentes ni producción individual. El artículo precede a la apertura y no prueba que todo trabajo terminara. No se reconstruyen fechas individuales."
+        },
+        "time": {
+          "date": "2024-11-12",
+          "precision": "date",
+          "note": {
+            "en": "This is the publication date of the ministry’s retrospective, not the day each person performed or completed this work.",
+            "ko": "문화부 회고 자료의 발행 날짜이며 각 사람이 작업하거나 완료한 날짜가 아닙니다.",
+            "ja": "文化省の回顧記事の発行日であり、各人の作業日・完了日ではありません。",
+            "zh": "这是文化部回顾文章的发布日期，并非每个人执行或完成工作的日期。",
+            "es": "Es la fecha de publicación de la retrospectiva, no el día de ejecución o finalización de cada trabajo."
+          }
+        },
+        "sceneAnchor": {
+          "eventId": "restoration"
+        },
+        "sourceIds": [
+          "restoration-teams"
+        ],
+        "facts": [
+          {
+            "id": "temporary-supports",
+            "label": {
+              "en": "Timber supports for flying buttresses",
+              "ko": "공중 부벽을 위한 목재 지지틀",
+              "ja": "飛梁を支える木製支保工",
+              "zh": "飞扶壁木制支撑",
+              "es": "Apoyos de madera de los arbotantes"
+            },
+            "value": 28,
+            "unit": "objects",
+            "scope": {
+              "en": "Reported stabilization supports, beginning in 2019. Not a count of all rebuilt roof members or all restoration work.",
+              "ko": "2019년부터의 안정화 지지틀 기록 · 재건한 지붕 부재 전체나 전체 복원 작업의 수가 아닙니다.",
+              "ja": "2019年からの安定化支保工の記録。再建屋根の全部材や修復全体の数ではありません。",
+              "zh": "2019年开始的稳定支撑记录，并非重建屋顶全部构件或所有修复工作的数量。",
+              "es": "Apoyos de estabilización desde 2019, no todos los elementos del tejado ni todos los trabajos."
+            },
+            "sourceIds": [
+              "restoration-teams"
+            ]
+          }
+        ]
+      },
       {
         "id": "restoration",
         "title": {
