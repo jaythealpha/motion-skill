@@ -102,3 +102,5 @@ cd shared && node --test
 MIT (see [LICENSE](LICENSE)). Bundled three.js is separately attributed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md), with its licence retained in every skill. External sources remain subject to their own terms; source links do not grant rights to their text or images.
 
 These are unofficial educational illustrations, not endorsed by Apple, Samsung or the shipwreck source organisations. Product names remain their owners’ marks.
+
+Titanic and Britannic also include sourced help/care records: Carpathia’s coordinated preparation, Lowe and volunteers, Jessop’s child-care recollection, Sheila Macbeth Mitchell’s account, assisted evacuation reported through Matron Dowse and Scourge’s shared food. Report findings, testimony, museum accounts and contemporary press remain distinct. These texts add no invented people or rescue motions to the3D scenes. See [the ship-record evidence review](docs/reviews/2026-11-03-ship-rescue-records.md).

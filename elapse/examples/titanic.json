@@ -6985,9 +6985,221 @@
     "type": "institution",
     "locator": "Opening; joint WHOI/IFREMER mission; debris trail",
     "checkedAt": "2026-11-03"
+   },
+   {
+    "id": "carpathia-report",
+    "title": "US Senate inquiry · The Rescue (1912)",
+    "url": "https://www.titanicinquiry.org/USInq/USReport/AmInqRep08.php",
+    "type": "report",
+    "locator": "The Rescue; Captain Rostron; departmental preparations, doctors, blankets, warm drinks and accommodation; transcription hosted by Titanic Inquiry Project",
+    "checkedAt": "2026-11-03"
+   },
+   {
+    "id": "lowe-testimony",
+    "title": "US Senate inquiry · Harold G. Lowe, Day5",
+    "url": "https://www.titanicinquiry.org/USInq/AmInq05Lowe06.php",
+    "type": "report",
+    "locator": "Day5 (1912); testimony on boat14, volunteers and four people picked up alive; one subsequently died; transcription",
+    "checkedAt": "2026-11-03"
+   },
+   {
+    "id": "jessop-museum",
+    "title": "National Maritime Museum Cornwall · A lucky lady",
+    "url": "https://nmmc.co.uk/object/cornish_maritime_collection/a-lucky-lady/",
+    "type": "museum",
+    "locator": "Curator account of Violet Jessop’s coat; Titanic lifeboat/child recollection, paragraph2; do not transfer this episode to Britannic",
+    "checkedAt": "2026-11-03"
+   },
+   {
+    "id": "carpathia-british",
+    "title": "British Wreck Commissioner’s report · Rescue by SS Carpathia",
+    "url": "https://www.titanicinquiry.org/BOTInq/BOTReport/botRepRescue.php",
+    "type": "report",
+    "locator": "Account of the Saving and Rescue of those who Survived; course change, reception and reported totals; Titanic Inquiry Project transcription",
+    "checkedAt": "2026-11-03"
+   },
+   {
+    "id": "carpathia-nara",
+    "title": "US National Archives · They Said It Couldn’t Sink",
+    "url": "https://www.archives.gov/publications/prologue/2012/spring/titanic.html",
+    "type": "institution",
+    "locator": "Prologue, Spring2012, vol44 no1; Carpathia passenger manifest count, not an individual rescuer’s total",
+    "checkedAt": "2026-11-03"
    }
   ],
   "records": [
+   {
+    "id": "carpathia-care",
+    "title": {
+     "en": "Carpathia · Rostron and a prepared crew",
+     "ko": "카르파티아호 · 로스트론과 준비한 승무원들",
+     "ja": "カルパチア号：ロストロンと乗組員の準備",
+     "zh": "卡帕西亚号：罗斯特朗与船员的准备",
+     "es": "Carpathia · Rostron y una tripulación preparada"
+    },
+    "action": {
+     "en": "The Senate report records Rostron turning Carpathia toward the distress call. While the ship approached, crew prepared medical stations, blankets, hot drinks and space for survivors. Rescue depended on coordinated work across departments.",
+     "ko": "상원 보고서는 로스트론이 조난 연락을 받고 카르파티아호의 방향을 돌렸다고 기록합니다. 접근하는 동안 승무원들은 진료 장소, 담요, 따뜻한 음료와 생존자들이 머물 공간을 준비했습니다. 구조에는 여러 부서의 협업이 있었습니다.",
+     "ja": "上院報告はロストロンが遭難通信を受けて針路を変えたと記録しています。接近中、乗組員は診療場所、毛布、温かい飲み物、収容場所を準備しました。救助は部門を越えた協働でした。",
+     "zh": "参议院报告记述罗斯特朗收到求救信息后改变航向。接近期间，船员准备医疗接待、毛毯、热饮及安置空间。救援依靠各部门协作。",
+     "es": "El informe del Senado registra el cambio de rumbo de Rostron tras la llamada de socorro. Durante la aproximación, la tripulación preparó atención médica, mantas, bebidas calientes y alojamiento. El rescate requirió coordinación entre departamentos."
+    },
+    "meaning": {
+     "en": "Remember practical preparation and care, including the work of people who are not individually named here.",
+     "ko": "이름이 하나씩 남지 않은 사람들의 준비와 돌봄도 함께 기억합니다.",
+     "ja": "一人ずつ名前の残らない人々の準備とケアも記憶します。",
+     "zh": "记住实际准备和照护，也记住未被逐一列名的人们。",
+     "es": "Recordar la preparación y los cuidados, también de quienes no figuran por su nombre."
+    },
+    "unknowns": {
+     "en": "Orders in a report do not establish every person’s actions or an exact minute-by-minute route. Rescue totals differ across historical records; none is assigned to one person here.",
+     "ko": "보고서의 지시 사항만으로 모든 사람의 행동·분 단위 동선을 확정할 수는 없습니다. 구조 인원은 역사 자료마다 차이가 있으며 여기서는 한 사람의 구조 실적으로 제시하지 않습니다.",
+     "ja": "報告の指示だけで全員の行動や分単位の経路は確定しません。歴史資料の救助人数には差があり、個人の実績にはしません。",
+     "zh": "报告中的命令不能确定每个人的行动或逐分钟路线。历史资料的获救总数有差异，此处不归为一人的救援成绩。",
+     "es": "Las órdenes no establecen cada acción ni rutas minuto a minuto. Los totales históricos difieren y aquí no se atribuyen a una sola persona."
+    },
+    "time": {
+     "date": "1912-04-15",
+     "precision": "date",
+     "note": {
+      "en": "The date refers to the help described. The linked ship-loss scene supplies context, not the rescue location or its exact time.",
+      "ko": "날짜는 도움의 활동이 있었던 날입니다. 연결된 침몰 장면은 맥락이며 구조 장소나 정확한 구조 시각이 아닙니다.",
+      "ja": "日付は援助が行われた日です。関連する沈没場面は文脈であり、救助の場所や正確な時刻ではありません。",
+      "zh": "日期指援助活动发生之日。关联沉船场景仅提供背景，并非救援地点或确切时刻。",
+      "es": "La fecha corresponde a la ayuda descrita. La escena del hundimiento aporta contexto, no el lugar ni la hora exacta del rescate."
+     }
+    },
+    "sceneAnchor": {
+     "eventId": "gone"
+    },
+    "sourceIds": [
+     "carpathia-report",
+     "carpathia-british",
+     "carpathia-nara"
+    ],
+    "facts": []
+   },
+   {
+    "id": "lowe-volunteers",
+    "title": {
+     "en": "Harold Lowe and volunteers · returning to search",
+     "ko": "해럴드 로와 자원한 사람들 · 다시 돌아간 수색",
+     "ja": "ハロルド・ロウと志願者：戻って捜す",
+     "zh": "哈罗德·洛与志愿者：返回搜寻",
+     "es": "Harold Lowe y voluntarios · volver a buscar"
+    },
+    "action": {
+     "en": "Lowe testified that he transferred passengers to other boats, asked for volunteers and returned in boat14 to search the wreckage. He said four people were brought aboard alive; one later died. This describes a crew effort, not a solo rescue.",
+     "ko": "로는 승객들을 다른 구명정으로 옮긴 뒤 자원자를 구해 14호정으로 잔해 주변을 수색했다고 증언했습니다. 살아 있는 네 사람을 태웠으며 그중 한 사람은 이후 숨졌다고 말했습니다. 혼자가 아닌 함께한 구조였습니다.",
+     "ja": "ロウは乗客を他艇へ移し、志願者を募って14号艇で残骸付近を捜索したと証言しました。4人を生きた状態で収容し、うち1人は後に死亡したと述べています。個人だけの救助ではありません。",
+     "zh": "洛作证说，他把乘客转移到其他艇上，征求志愿者后乘14号艇返回残骸附近搜寻。他称接上四名当时仍活着的人，其中一人后来去世。这是共同救援。",
+     "es": "Lowe declaró que trasladó pasajeros a otros botes, pidió voluntarios y regresó en el bote14 a buscar entre los restos. Dijo que recogieron a cuatro personas vivas y una murió después. Fue una labor compartida."
+    },
+    "meaning": {
+     "en": "Remember the volunteers and the difference between bringing someone aboard alive and their eventual survival.",
+     "ko": "함께 나선 사람들과, 살아 있는 사람을 배에 태운 일과 최종 생존이 다르다는 점을 기억합니다.",
+     "ja": "協力した人々と、生存状態での収容と最終的な生存との違いを記憶します。",
+     "zh": "记住共同参与者，也区分接上仍有生命的人与其最终存活。",
+     "es": "Recordar a los voluntarios y distinguir entre recoger a alguien vivo y su supervivencia posterior."
+    },
+    "unknowns": {
+     "en": "This is Lowe’s testimony, not an independently measured rescue total. It does not identify every volunteer or establish exact personal routes. The four are not the total rescued by boat14 in all operations.",
+     "ko": "로의 증언이며 독립 실측 구조 인원이 아닙니다. 모든 자원자의 신원·정확한 동선을 확정하지 않습니다. 네 명은 14호정의 모든 활동을 합친 구조 인원이 아닙니다.",
+     "ja": "ロウの証言であり独立した実測集計ではありません。志願者全員の身元や正確な経路は確定できません。4人は14号艇の全活動の救助総数ではありません。",
+     "zh": "这是洛的证词，并非独立测量的救援统计。未确定所有志愿者身份或精确路线。四人并非14号艇所有行动的获救总数。",
+     "es": "Es el testimonio de Lowe, no un recuento medido independiente. No identifica a todos los voluntarios ni rutas exactas. Cuatro no es el total de todas las operaciones del bote14."
+    },
+    "time": {
+     "date": "1912-04-15",
+     "precision": "date",
+     "note": {
+      "en": "The date refers to the help described. The linked ship-loss scene supplies context, not the rescue location or its exact time.",
+      "ko": "날짜는 도움의 활동이 있었던 날입니다. 연결된 침몰 장면은 맥락이며 구조 장소나 정확한 구조 시각이 아닙니다.",
+      "ja": "日付は援助が行われた日です。関連する沈没場面は文脈であり、救助の場所や正確な時刻ではありません。",
+      "zh": "日期指援助活动发生之日。关联沉船场景仅提供背景，并非救援地点或确切时刻。",
+      "es": "La fecha corresponde a la ayuda descrita. La escena del hundimiento aporta contexto, no el lugar ni la hora exacta del rescate."
+     }
+    },
+    "sceneAnchor": {
+     "eventId": "gone"
+    },
+    "sourceIds": [
+     "lowe-testimony"
+    ],
+    "facts": [
+     {
+      "id": "picked-up-alive",
+      "label": {
+       "en": "People picked up alive, according to Lowe",
+       "ko": "살아 있는 상태로 구조한 인원 · 로의 증언",
+       "ja": "ロウの証言による生存状態での収容人数",
+       "zh": "据洛证词，接上时仍活着的人数",
+       "es": "Personas recogidas vivas, según Lowe"
+      },
+      "value": 4,
+      "unit": "people",
+      "scope": {
+       "en": "This return search only; one later died. Not four final survivors or all boat14 rescues.",
+       "ko": "이 귀환 수색에 한함 · 한 사람은 이후 사망. 최종 생존자 네 명이나 14호정 전체 구조 인원이 아닙니다.",
+       "ja": "この帰還捜索のみ・1人は後に死亡。最終生存者4人や14号艇の総救助人数ではありません。",
+       "zh": "仅指此次返回搜寻；一人后来去世。并非四名最终幸存者或14号艇总救援人数。",
+       "es": "Solo esta búsqueda de regreso; una murió después. No son cuatro supervivientes finales ni el total del bote14."
+      },
+      "sourceIds": [
+       "lowe-testimony"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "jessop-child",
+    "title": {
+     "en": "Violet Jessop · caring for a child",
+     "ko": "바이올렛 제섭 · 아이를 돌본 기억",
+     "ja": "ヴァイオレット・ジェソップ：幼児を預かった記憶",
+     "zh": "维奥莱特·杰索普：照看婴儿的记忆",
+     "es": "Violet Jessop · cuidar de un bebé"
+    },
+    "action": {
+     "en": "The Cornwall museum relates Jessop’s recollection that an officer handed her a baby as she entered a Titanic lifeboat. She said a woman later took the child aboard Carpathia. The episode is presented as recollection, not a fully identified family history.",
+     "ko": "콘월 해양박물관은 제섭이 타이타닉 구명정에 탈 때 사관에게 아기를 받아 돌봤다는 회고를 소개합니다. 제섭은 카르파티아호에서 한 여성이 아이를 데려갔다고 했습니다. 가족 관계가 모두 확인된 이야기로 단정하지 않습니다.",
+     "ja": "コーンウォールの博物館は、ジェソップがタイタニックの救命艇に乗る際、士官から幼児を預かったという回想を紹介しています。カルパチア号で女性がその子を連れていったといいます。家族の身元まで確定した記録ではありません。",
+     "zh": "康沃尔海事博物馆介绍了杰索普的回忆：她登上泰坦尼克号救生艇时，一名船员把婴儿交给她照看。她说后来在卡帕西亚号上一名女子抱走了孩子。此事作为回忆呈现，不视为完整确认的家庭史。",
+     "es": "El museo de Cornualles recoge su recuerdo de recibir un bebé de un oficial al subir a un bote del Titanic. Dijo que después una mujer se llevó al niño en Carpathia. Se presenta como recuerdo, no como una historia familiar plenamente identificada."
+    },
+    "meaning": {
+     "en": "Care also includes staying with someone who cannot look after themselves.",
+     "ko": "스스로를 돌볼 수 없는 사람 곁에 있어 주는 행동도 기억합니다.",
+     "ja": "自分では身を守れない人に付き添うことも記憶します。",
+     "zh": "照护也包括陪伴无法照顾自己的人。",
+     "es": "Cuidar también significa acompañar a quien no puede valerse por sí mismo."
+    },
+    "unknowns": {
+     "en": "The child’s identity, the woman’s relationship to the child and an exact time are not established here. This is a Titanic account from1912, not a Britannic episode.",
+     "ko": "아이의 신원, 여성과 아이의 관계, 정확한 시각은 여기서 확정하지 않습니다. 1912년 타이타닉 회고이며 브리타닉의 일화로 옮기지 않습니다.",
+     "ja": "幼児の身元、女性との関係、正確な時刻はここでは確定しません。1912年のタイタニックの回想であり、ブリタニックの出来事ではありません。",
+     "zh": "此处未确定婴儿身份、女子与其关系及确切时间。这是1912年泰坦尼克号的回忆，不移用于不列颠尼克号。",
+     "es": "No se establecen la identidad del niño, su relación con la mujer ni la hora exacta. Es un relato del Titanic de1912, no del Britannic."
+    },
+    "time": {
+     "date": "1912-04-15",
+     "precision": "date",
+     "note": {
+      "en": "The date refers to the help described. The linked ship-loss scene supplies context, not the rescue location or its exact time.",
+      "ko": "날짜는 도움의 활동이 있었던 날입니다. 연결된 침몰 장면은 맥락이며 구조 장소나 정확한 구조 시각이 아닙니다.",
+      "ja": "日付は援助が行われた日です。関連する沈没場面は文脈であり、救助の場所や正確な時刻ではありません。",
+      "zh": "日期指援助活动发生之日。关联沉船场景仅提供背景，并非救援地点或确切时刻。",
+      "es": "La fecha corresponde a la ayuda descrita. La escena del hundimiento aporta contexto, no el lugar ni la hora exacta del rescate."
+     }
+    },
+    "sceneAnchor": {
+     "eventId": "gone"
+    },
+    "sourceIds": [
+     "jessop-museum"
+    ],
+    "facts": []
+   },
    {
     "id": "discovery",
     "title": {

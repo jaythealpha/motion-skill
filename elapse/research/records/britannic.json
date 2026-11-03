@@ -8,9 +8,195 @@
       "type": "expedition",
       "locator": "2025 expedition account; depth and condition observations",
       "checkedAt": "2026-11-03"
+    },
+    {
+      "id": "sheila-diary",
+      "title": "Edinburgh Libraries · Sheila Macbeth Mitchell story, part2",
+      "url": "https://talesofonecity.wordpress.com/2016/11/18/sheila-macbeth-mitchell-story-part-2/",
+      "type": "archive",
+      "locator": "Published18 November2016; attributed scrapbook extracts: wounded picked from water; Scourge sailors sharing food. Digitised full scrapbook linked by library; original pages not fully inspected here.",
+      "checkedAt": "2026-11-03"
+    },
+    {
+      "id": "dowse-press",
+      "title": "National Library of New Zealand · Press,25 November1916, p10",
+      "url": "https://paperspast.natlib.govt.nz/newspapers/CHP19161125.2.57",
+      "type": "archive",
+      "locator": "ON THE SEAS / ACTION OF THE NURSES; cable attributing account to Matron Dowse via Daily Chronicle Athens correspondent; contemporary newspaper, OCR text; provisional casualty claims elsewhere excluded.",
+      "checkedAt": "2026-11-03"
     }
   ],
   "records": [
+    {
+      "id": "sheila-care",
+      "title": {
+        "en": "Sheila Macbeth Mitchell and companions · care in a boat",
+        "ko": "실라 맥베스 미첼과 동료들 · 구명정에서 이어진 돌봄",
+        "ja": "シーラ・マクベス・ミッチェルと仲間：艇上でのケア",
+        "zh": "希拉·麦克白·米切尔与同伴：艇上的照护",
+        "es": "Sheila Macbeth Mitchell y sus compañeros · cuidados en un bote"
+      },
+      "action": {
+        "en": "Edinburgh Libraries publishes scrapbook extracts in which Sheila recalls her boat’s occupants picking injured people from the water and caring for them. The library also describes returning to search after the ship sank. These actions belong to the boat’s group, not Sheila alone.",
+        "ko": "에든버러 도서관이 공개한 스크랩북 발췌에서 실라는 구명정의 사람들이 물에서 부상자들을 건져 돌봤다고 회고합니다. 도서관 해설에는 침몰 뒤 다시 수색한 일도 나옵니다. 실라 혼자가 아닌 함께 탄 사람들의 행동으로 남깁니다.",
+        "ja": "エディンバラ図書館のスクラップブック抜粋で、シーラは艇の人々が水中から負傷者を引き上げて世話したと回想しています。図書館は沈没後に戻って捜索したことも説明しています。艇の仲間の行動として記録します。",
+        "zh": "爱丁堡图书馆发表的剪贴簿摘录中，希拉回忆艇上同伴从水中救起伤者并照料他们。图书馆也介绍沉船后返回搜寻的行动。这是同艇人员的共同援助，而非她一人的功绩。",
+        "es": "En extractos publicados por las bibliotecas de Edimburgo, Sheila recuerda que los ocupantes de su bote sacaron heridos del agua y los atendieron. La biblioteca también relata el regreso para buscar tras el hundimiento. Fue una acción del grupo, no solo de Sheila."
+      },
+      "meaning": {
+        "en": "Those escaping danger can also help others; remember shared care without assigning a solo rescue score.",
+        "ko": "위험에서 벗어나는 사람들도 다른 사람을 도울 수 있었습니다. 한 사람의 실적 대신 함께한 돌봄을 기억합니다.",
+        "ja": "危険から逃れつつ他者を助けた共同のケアを、個人の得点にせず記憶します。",
+        "zh": "逃离危险的人们也在帮助他人；记住共同照护，不设个人救援分数。",
+        "es": "Quienes escapaban del peligro también ayudaban. Recordar los cuidados compartidos sin puntuar rescates individuales."
+      },
+      "unknowns": {
+        "en": "These are library-published extracts and interpretation, not a complete independent incident log. The original scrapbook pages were not fully inspected. Names, individual totals and exact times are not established.",
+        "ko": "도서관이 공개한 발췌와 해설이며 독립된 전체 사고 로그가 아닙니다. 원본 스크랩북 전체를 직접 확인하지는 못했습니다. 동료들의 이름·개인별 인원·정확한 시각은 확정하지 않습니다.",
+        "ja": "図書館公開の抜粋と解説であり独立した全事故ログではありません。原本全頁は未確認です。仲間の名前、個人別人数、正確な時刻は確定しません。",
+        "zh": "这是图书馆公布的摘录和解说，并非完整独立事故日志。未完整查阅原剪贴簿；同伴姓名、个人救援人数及确切时刻未确定。",
+        "es": "Son extractos e interpretación de la biblioteca, no un registro independiente completo. No se inspeccionó todo el original. No se establecen nombres, totales individuales ni horas exactas."
+      },
+      "time": {
+        "date": "1916-11-21",
+        "precision": "date",
+        "note": {
+          "en": "The date refers to the help described. The linked ship-loss scene supplies context, not the rescue location or its exact time.",
+          "ko": "날짜는 도움의 활동이 있었던 날입니다. 연결된 침몰 장면은 맥락이며 구조 장소나 정확한 구조 시각이 아닙니다.",
+          "ja": "日付は援助が行われた日です。関連する沈没場面は文脈であり、救助の場所や正確な時刻ではありません。",
+          "zh": "日期指援助活动发生之日。关联沉船场景仅提供背景，并非救援地点或确切时刻。",
+          "es": "La fecha corresponde a la ayuda descrita. La escena del hundimiento aporta contexto, no el lugar ni la hora exacta del rescate."
+        }
+      },
+      "sceneAnchor": {
+        "eventId": "gone"
+      },
+      "sourceIds": [
+        "sheila-diary"
+      ],
+      "facts": []
+    },
+    {
+      "id": "dowse-evacuation",
+      "title": {
+        "en": "Matron Dowse’s reported account · helping unwell staff",
+        "ko": "간호감독 다우스의 보도된 증언 · 아픈 동료의 대피",
+        "ja": "婦長ダウズの報道された証言：体調不良の仲間の避難",
+        "zh": "护士长道斯的报道证言：协助身体不适的同事",
+        "es": "El relato atribuido a la matrona Dowse · evacuar a compañeros enfermos"
+      },
+      "action": {
+        "en": "A contemporary Press cable attributes to Matron Dowse an account of unwell staff being carried up and evacuated safely. It records assistance within the medical team; it does not identify every helper or say Dowse carried them herself.",
+        "ko": "당시 Press 신문의 통신 기사는 다우스 간호감독의 말로, 아픈 직원들이 위로 옮겨져 무사히 대피했다고 전합니다. 의료진 안에서 서로를 도운 기록이며 모든 조력자의 이름이나 다우스가 직접 업어 옮겼다는 주장으로 바꾸지 않습니다.",
+        "ja": "当時のPress紙の通信記事はダウズ婦長の話として、体調不良の職員が上へ運ばれ無事避難したと伝えています。医療チーム内の援助の記録であり、全員の名前や婦長自身が運んだとは記していません。",
+        "zh": "当时《Press》电讯报道引述护士长道斯的叙述：身体不适的工作人员被抬到上方并安全撤离。这记录了医疗团队内部的援助，并未列明所有帮助者，也不表示道斯亲自抬人。",
+        "es": "Un cable de Press atribuye a la matrona Dowse el relato de personal enfermo llevado arriba y evacuado a salvo. Registra ayuda dentro del equipo médico, sin identificar a cada ayudante ni afirmar que Dowse los cargara personalmente."
+      },
+      "meaning": {
+        "en": "Caregivers may need help themselves. Assisted evacuation belongs in the record alongside independent escape.",
+        "ko": "돌보는 사람도 도움이 필요할 수 있습니다. 스스로의 탈출과 함께 도움을 받아 이뤄진 대피도 남깁니다.",
+        "ja": "ケアをする人自身にも援助が必要なことがあります。介助された避難も記録します。",
+        "zh": "照护者也可能需要帮助；协助撤离同样值得记录。",
+        "es": "Quienes cuidan también pueden necesitar ayuda. Conservar la evacuación asistida junto a la huida independiente."
+      },
+      "unknowns": {
+        "en": "This is an attributed newspaper account, not a verbatim interview transcript. Exact routes, helper identities and totals are unknown. The article’s provisional casualty figures and wartime claims are not adopted here.",
+        "ko": "기자가 전달한 신문 보도이며 인터뷰 전문이 아닙니다. 정확한 동선·조력자 신원·인원은 확인되지 않습니다. 같은 기사의 잠정 피해 수치와 전시 주장은 여기서 채택하지 않습니다.",
+        "ja": "伝聞を含む新聞記事でありインタビュー全文ではありません。正確な経路、援助者、人数は不明です。同記事の暫定被害数や戦時の主張は採用しません。",
+        "zh": "这是转述的新闻报道，并非访谈逐字稿。确切路线、帮助者身份及人数未知。不采用同篇文章中的暂定伤亡数字或战时论断。",
+        "es": "Es un relato atribuido en prensa, no una transcripción literal. Se desconocen rutas, identidades y cifras. No se adoptan las cifras provisionales ni las afirmaciones bélicas del artículo."
+      },
+      "time": {
+        "date": "1916-11-21",
+        "precision": "date",
+        "note": {
+          "en": "The date refers to the help described. The linked ship-loss scene supplies context, not the rescue location or its exact time.",
+          "ko": "날짜는 도움의 활동이 있었던 날입니다. 연결된 침몰 장면은 맥락이며 구조 장소나 정확한 구조 시각이 아닙니다.",
+          "ja": "日付は援助が行われた日です。関連する沈没場面は文脈であり、救助の場所や正確な時刻ではありません。",
+          "zh": "日期指援助活动发生之日。关联沉船场景仅提供背景，并非救援地点或确切时刻。",
+          "es": "La fecha corresponde a la ayuda descrita. La escena del hundimiento aporta contexto, no el lugar ni la hora exacta del rescate."
+        }
+      },
+      "sceneAnchor": {
+        "eventId": "abandon"
+      },
+      "sourceIds": [
+        "dowse-press"
+      ],
+      "facts": [
+        {
+          "id": "publication-date",
+          "label": {
+            "en": "Newspaper publication",
+            "ko": "신문 발행 날짜",
+            "ja": "新聞発行日",
+            "zh": "报纸出版日期",
+            "es": "Publicación del periódico"
+          },
+          "value": "1916-11-25",
+          "unit": "date",
+          "scope": {
+            "en": "Press, issue15757, page10. Publication date, not the evacuation date.",
+            "ko": "Press 제15757호 10면. 대피 날짜가 아닌 보도 발행 날짜입니다.",
+            "ja": "Press紙15757号10頁。避難日ではなく発行日です。",
+            "zh": "《Press》第15757期第10页。是出版日期，并非撤离日期。",
+            "es": "Press, número15757, página10. Fecha de publicación, no de evacuación."
+          },
+          "sourceIds": [
+            "dowse-press"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scourge-care",
+      "title": {
+        "en": "Scourge’s sailors · sharing food after rescue",
+        "ko": "스커지호 선원들 · 구조 뒤 나눈 음식",
+        "ja": "スカージ号の水兵：救助後に分け合った食べ物",
+        "zh": "Scourge号水兵：救援后分享食物",
+        "es": "Marineros del Scourge · compartir comida después del rescate"
+      },
+      "action": {
+        "en": "The library’s account of Sheila’s scrapbook describes her transfer to Scourge and sailors sharing tea, biscuits and oranges. Bringing people aboard was followed by practical hospitality. The account identifies a ship’s crew effort, not a complete list of individual providers.",
+        "ko": "실라의 스크랩북을 소개한 도서관 기록은 스커지호로 옮겨 간 뒤 선원들이 차·비스킷·오렌지를 나눴다고 전합니다. 배에 태우는 구조 뒤에도 실질적인 환대가 이어졌습니다. 개별 제공자를 모두 특정하지 않고 선원들의 도움으로 남깁니다.",
+        "ja": "図書館の記録は、シーラがスカージ号へ移り、水兵がお茶、ビスケット、オレンジを分けたと伝えています。収容後も具体的な援助が続きました。提供者全員の名前は特定しません。",
+        "zh": "图书馆介绍希拉的剪贴簿时记述，她转乘Scourge号后，水兵分享了茶、饼干和橙子。接人上船后，实际照料仍在继续。此处记录船员的集体援助，不声称列明每位提供者。",
+        "es": "El relato bibliotecario describe el traslado de Sheila al Scourge y a marineros compartiendo té, galletas y naranjas. A la recogida siguió una hospitalidad práctica. Se registra el esfuerzo de la tripulación, no una lista completa de proveedores."
+      },
+      "meaning": {
+        "en": "Remember the ordinary things that restore comfort and dignity after immediate danger.",
+        "ko": "급한 위험을 벗어난 뒤 편안함과 존엄을 되찾게 한 일상의 도움을 기억합니다.",
+        "ja": "目前の危険を逃れた後、安らぎと尊厳を取り戻す日常の援助を記憶します。",
+        "zh": "记住脱离眼前危险后，帮助恢复安适与尊严的日常行动。",
+        "es": "Recordar los gestos cotidianos que devuelven bienestar y dignidad tras el peligro inmediato."
+      },
+      "unknowns": {
+        "en": "One survivor’s account is not a full inventory or a complete rescue-fleet history. It does not establish exact serving times, food quantities or individual rescue totals.",
+        "ko": "한 생존자의 기록이며 전체 물자 목록이나 구조 선단의 완전한 역사가 아닙니다. 제공 시각·음식 수량·개인별 구조 인원을 확정하지 않습니다.",
+        "ja": "一生存者の記録であり、全物資目録や救助船団全体の歴史ではありません。提供時刻、量、個人別救助人数は確定しません。",
+        "zh": "这是一名幸存者的记录，并非完整物资清单或救援船队全史。未确定供应时间、食物数量或个人救援人数。",
+        "es": "Es un relato individual, no un inventario ni la historia completa de la flota de rescate. No establece horas de reparto, cantidades ni cifras de rescate individuales."
+      },
+      "time": {
+        "date": "1916-11-21",
+        "precision": "date",
+        "note": {
+          "en": "The date refers to the help described. The linked ship-loss scene supplies context, not the rescue location or its exact time.",
+          "ko": "날짜는 도움의 활동이 있었던 날입니다. 연결된 침몰 장면은 맥락이며 구조 장소나 정확한 구조 시각이 아닙니다.",
+          "ja": "日付は援助が行われた日です。関連する沈没場面は文脈であり、救助の場所や正確な時刻ではありません。",
+          "zh": "日期指援助活动发生之日。关联沉船场景仅提供背景，并非救援地点或确切时刻。",
+          "es": "La fecha corresponde a la ayuda descrita. La escena del hundimiento aporta contexto, no el lugar ni la hora exacta del rescate."
+        }
+      },
+      "sceneAnchor": {
+        "eventId": "gone"
+      },
+      "sourceIds": [
+        "sheila-diary"
+      ],
+      "facts": []
+    },
     {
       "id": "survey",
       "title": {
