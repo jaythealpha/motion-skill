@@ -1,3 +1,4 @@
+import {isOpera} from './opera-model.js';
 import {rt,rp} from './records-text.js';
 import {trafficText,trafficAvailable} from './seongsu-traffic-motion.js';
 import {isCivil,isSeongsu,advanceCivil} from './civil-model.js';
@@ -110,7 +111,7 @@ body{margin:0;background:linear-gradient(180deg,#f2f4f7,#e3e8ee);min-height:100v
 .el-quality-links{flex-wrap:wrap}.el-quality-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;border-radius:8px;color:#174d86}.el-quality-links a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.el-quality-links span{font-size:11px;color:var(--muted)}
 .el-eco-controls[hidden]{display:none}
 .el-eco-controls button{box-sizing:border-box;min-height:44px}.el-eco-controls button:disabled{opacity:.4;cursor:not-allowed}
-.el button:focus-visible,.el select:focus-visible,.el input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.el button:focus-visible,.el select:focus-visible,.el input:focus-visible,.el canvas[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .el-cinematic .el-view button,.el-cinematic .el-chapters button{min-height:44px}
 @media (max-width:640px){.el{padding:12px 16px 22px}.el-stage{height:58vh}.el-bar{grid-template-columns:auto 1fr}.el-now{grid-column:1/-1;text-align:left;max-width:none}
   .el-g{min-width:96px;padding:5px 8px}.el-levels{height:36px}.el-card{font-size:12.5px;max-width:calc(100% - 24px)}.el-gauges{top:auto;bottom:52px}.el-lightnote{display:none}}
@@ -120,7 +121,7 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '
 
 export function mountElapse(root, model, params = {}) {
   params={...params,quality:params.quality??model.meta.renderQuality};
-  const bridge=isSeongsu(model),civil=isCivil(model),wtc=isWTC(model),nd=isNotreDame(model),building=isBuilding(model),defaultStop=explorationStops(model).find(s=>s.id==='bridge')?.id||explorationStops(model)[0]?.id;
+  const opera=isOpera(model),bridge=isSeongsu(model),civil=isCivil(model),wtc=isWTC(model),nd=isNotreDame(model),building=isBuilding(model),defaultStop=explorationStops(model).find(s=>s.id==='bridge')?.id||explorationStops(model)[0]?.id;
   const speedKeys=(wtc||civil)?['quarter','half',...Object.keys(SPEEDS)]:Object.keys(SPEEDS),speedName=k=>k==='quarter'?'0.25×':k==='half'?'0.5×':speedLabel(k);
   const st = { lang: resolveLocale(params.lang), depth: params.depth === 'simple' ? 'simple' : 'detail',
     trafficAllowReduced:false,trafficMoving:!matchMedia('(prefers-reduced-motion: reduce)').matches,exploring:false,exploreMoving:false,exploreStop:'bridge',lampStrength:1,history:null,ecology:params.life!=='0',exploreLight:params.lamp!=='0',ecoClock:0,ecoView:['coral','sponge','fish'].includes(params.eco)?params.eco:'scene',
@@ -166,6 +167,7 @@ export function mountElapse(root, model, params = {}) {
     range.setAttribute('aria-label',st.lang!=='ko'?tr("Timeline"):tr("시간 진행"));
     const stopName=st.exploring?explorationStops(model).find(q=>q.id===st.exploreStop)?.name:null;
     canvas.setAttribute('aria-label',stopName?pick(stopName,st.lang)+(st.lang!=='ko'?tr(' inspection'):tr(" 탐사")):building?(st.lang!=='ko'?tr("3D building construction over time"):tr("시간에 따른 건축 시공 3D")):(st.lang!=='ko'?tr("3D ship changes over time"):tr("시간에 따른 선체 변화 3D")));
+    if(opera)canvas.setAttribute('aria-description',pick(model.presentation.inputHint||model.presentation.inspectionHint,st.lang));
     $('.el-top h1').textContent = pick(model.subject.name, st.lang);
     $('.el-sub').textContent = model.meta.interpretation ? L.interpreted(pick(model.meta.interpretation, st.lang)) : '';
     $('.el-trust').innerHTML = CLASSES.filter(c => shares[c] || c === 'sourced').map(c => `<span class="cf-badge cf-${c}">${L.share(L[c], shares[c])}</span>`).join('');
@@ -361,13 +363,13 @@ export function mountElapse(root, model, params = {}) {
     if(['ecology','exploreLight'].includes(k)){st[k]=o==='on';if(k==='ecology'&&!st.ecology){st.ecoView='scene';if(st.exploring)st.exploreStop=defaultStop;}chrome();root.querySelector(`[data-k="${k}"][data-o="${o}"]`)?.focus();return;}
     if(k==='ecoView'){st.ecoView=o;if(st.exploring)st.exploreStop=o==='scene'?defaultStop:o;R.setAuto(true);chrome();root.querySelector(`[data-k="ecoView"][data-o="${o}"]`)?.focus();return;}
     if (k === 'lang') { st.lang = o;setLocale(o,{persist:true});chrome();root.querySelector(`[data-k=lang][data-o=${o}]`)?.focus({preventScroll:true}); return; }
-    if (k === 'style') { st.style = o;if(st.exploring){st.ecoView='scene';st.exploreStop=defaultStop;} chrome(); return; }
+    if (k === 'style') { st.style = o;if(st.exploring&&!opera){st.ecoView='scene';st.exploreStop=defaultStop;} chrome();if(opera)root.querySelector(`[data-k=style][data-o=${o}]`)?.focus({preventScroll:true});return; }
     if (k === 'depth') { st.depth = o; chrome(); return; }
     if (k === 'xray') { st.xray = o === 'on';if(st.exploring){st.ecoView='scene';st.exploreStop=defaultStop;} chrome(); return; }
     if (ch != null) { play(false); setT(model.chapters[+ch].bar[0], true); return; }
     if (br) { st.branch = br; chrome(); return; }
     if (v === 'auto') { R.setAuto(!R.state.auto); viewButtons(); setT(st.t, true); return; }
-    if (v === 'reset') { st.ecoView='scene';if(st.exploring)st.exploreStop=defaultStop;R.reset();chrome();return; }
+    if (v === 'reset') { st.ecoView='scene';if(st.exploring&&!opera)st.exploreStop=defaultStop;R.reset();chrome();return; }
     if (b.classList.contains('el-play')) { play(!st.playing); return; }
     if (b.classList.contains('el-trust') || a === 'sources') { panel('sources'); return; }
     if (a === 'about') { panel('about'); return; }

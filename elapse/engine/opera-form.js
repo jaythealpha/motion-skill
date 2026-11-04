@@ -1,3 +1,4 @@
+import {nearWallSide} from './opera-navigation.js';
 import * as T from 'three';
 import {surfaceMaterial} from '../shared/material-budget.js';
 import {enrichMaterial,boxInstances} from './quality-surfaces.js';
@@ -51,7 +52,7 @@ export function operaForm(root){
  // Technical reference: normal stage depth12.30m; front width14.50m; floor offset0.90m.
  const hall=groups.interior;hall.position.x=-25;const floorZ=13,stageY=-22,stageZ=13.9;
  box(hall,41,83,1,0,2,12.5,wood);const floor=new T.Shape([[-7.25,stageY-6.15],[7.25,stageY-6.15],[8,stageY+6.15],[-8,stageY+6.15]].map(p=>new T.Vector2(...p)));const stage=new T.Mesh(new T.ExtrudeGeometry(floor,{depth:.9,bevelEnabled:false}),wood);stage.position.z=floorZ;stage.name='south-facing-stage';hall.add(stage);
- const deck=[],seatRows=[],backs=[],seatWood=[],armrests=[],rails=[],wallPanels=[];
+ const deck=[],seatRows=[],backs=[],seatWood=[],armrests=[],rails=[];
  for(let row=0;row<25;row++){
   const q=hallRow(row),outline=new T.Shape(rowOutline(row).map(p=>new T.Vector2(...p)));
   const tread=new T.ExtrudeGeometry(outline,{depth:.4,bevelEnabled:false});tread.translate(0,0,q.z-.4);deck.push(tread);
@@ -67,7 +68,7 @@ export function operaForm(root){
  const terraceSeats=[],terraceBacks=[],tierBlocks=[];for(const side of[-1,1])for(let tier=0;tier<3;tier++)for(let block=0;block<5;block++){const x=side*(16.2+tier*.72),y=-9+block*10,z=17+tier*2.3+block*.7;tierBlocks.push([x,y,z,3.5,8,.55]);rails.push(lineGeo([[x-side*1.75,y-4,z+.4],[x-side*1.75,y+4,z+.4]],.12));for(let a=0;a<3;a++)for(let b=0;b<6;b++){terraceSeats.push([x+side*(a*.75-.9),y-3+b*1.03,z+.55,.6,.66,.16]);terraceBacks.push([x+side*(a*.75-.9),y-2.72+b*1.03,z+.85,.6,.13,.58]);}}
  for(let row=0;row<5;row++){const z=21.5+row*.65,y=31.5+row*1.35;tierBlocks.push([0,y,z,32,1.4,.5]);for(let x=-15;x<16;x+=.82){if(Math.abs(x)<1||Math.abs(Math.abs(x)-8)<.5)continue;terraceSeats.push([x,y,z+.5,.62,.65,.16]);terraceBacks.push([x,y+.28,z+.8,.62,.13,.58]);}}
  boxInstances(hall,tierBlocks,wood);boxInstances(hall,terraceSeats,fabric);boxInstances(hall,terraceBacks,birch);merge(hall,rails,birch);
- for(const side of[-1,1])for(let y=-28;y<=39;y+=2.5)wallPanels.push([side*19.5,y,21,1,2.28,15]);boxInstances(hall,wallPanels,wood);
+ const sideWalls=[];for(const side of[-1,1]){const panels=[];for(let y=-28;y<=39;y+=2.5)panels.push([side*19.5,y,21,1,2.28,15]);const wall=boxInstances(hall,panels,wood);wall.name=side<0?'hall-wall-west':'hall-wall-east';sideWalls.push({side,wall});}
  // Configurable horseshoe stage lifts are a2022-renewal feature, not a1973 fixture.
  const stageRisers=group(hall,'renewed-stage-risers'),risers=[];
  for(let i=0;i<4;i++){const outline=new T.Shape(riserOutline(6.9-i*1.3,5.85-i*1.3).map(p=>new T.Vector2(...p)));const g=new T.ExtrudeGeometry(outline,{depth:(4-i)*.2,bevelEnabled:false});g.translate(0,0,stageZ);risers.push(g);}merge(stageRisers,risers,wood);
@@ -83,7 +84,16 @@ export function operaForm(root){
  const organ=group(hall,'grand-organ'),pipeGeos=[],mouths=[];box(organ,13,2,7.7,0,-35,21,darkWood);for(let i=0;i<61;i++){const x=(i-30)*.185,h=3.2+3.8*(.4+.6*Math.cos(x*.75)**2),r=.055+.025*(h/7);const g=new T.CylinderGeometry(r,r,h,10,1,true);g.rotateX(Math.PI/2);g.translate(x,-33.8,17.8+h/2);pipeGeos.push(g);mouths.push([x,-33.71,18.3,r*1.1,.025,.13]);}merge(organ,pipeGeos,pipe);boxInstances(organ,mouths,darkWood);
  // 18 variable-height petals: 12 orchestra, four audience-facing and two choir.
  const reflectorPositions=[];for(let row=0;row<3;row++)for(let col=0;col<4;col++)reflectorPositions.push([(col-1.5)*3.9,-25+row*3.7,stageZ+9.2+row*.55]);for(let i=0;i<4;i++)reflectorPositions.push([(i-1.5)*4.1,-12,stageZ+10.7]);for(const x of[-4.5,4.5])reflectorPositions.push([x,-30.7,stageZ+9.8]);
- const hangers=[];for(const[x,y,z]of reflectorPositions){const p=new T.Mesh(new T.SphereGeometry(1,20,10,0,Math.PI*2,0,Math.PI*.72),petal);p.scale.set(1.8,2.5,.48);p.rotation.x=.12;p.position.set(x-25,y,z);groups.renewal.add(p);hangers.push(lineGeo([[x-25,y,z+.2],[x-25,y,z+4]],.028));}merge(groups.renewal,hangers,metal);
+ // Thin, closed, independently authored curved panels, rather than open spheres.
+ // No claim that these estimated contours reproduce the manufactured reflectors.
+ const pv=[],pi=[],rings=8,slices=32,layerSize=1+rings*slices;
+ for(const side of[1,-1]){pv.push(0,0,side*.04);for(let r=1;r<=rings;r++)for(let j=0;j<slices;j++){const u=r/rings,a=j/slices*Math.PI*2;pv.push(1.8*u*Math.cos(a)*(1+.15*Math.sin(a)),2.5*u*Math.sin(a),-.28*u*u+.05*u*Math.sin(a)+side*.04);}}
+ for(let j=0;j<slices;j++)pi.push(0,1+j,1+(j+1)%slices);
+ for(let r=0;r<rings-1;r++)for(let j=0;j<slices;j++){const a=1+r*slices+j,b=a+slices,c=1+r*slices+(j+1)%slices,d=c+slices;pi.push(a,b,c,c,b,d);}
+ const frontIndices=[...pi];for(let i=0;i<frontIndices.length;i+=3)pi.push(frontIndices[i]+layerSize,frontIndices[i+2]+layerSize,frontIndices[i+1]+layerSize);
+ for(let j=0;j<slices;j++){const a=1+(rings-1)*slices+j,b=1+(rings-1)*slices+(j+1)%slices;pi.push(a,a+layerSize,b,b,a+layerSize,b+layerSize);}
+ const petalGeometry=new T.BufferGeometry();petalGeometry.setAttribute('position',new T.Float32BufferAttribute(pv,3));petalGeometry.setIndex(pi);petalGeometry.computeVertexNormals();
+ const hangers=[];for(const[x,y,z]of reflectorPositions){const p=new T.Mesh(petalGeometry,petal);p.rotation.x=.12;p.position.set(x-25,y,z);groups.renewal.add(p);p.name='acoustic-petal-'+hangers.length;hangers.push(lineGeo([[x-25,y,z+.04],[x-25,y,z+4]],.028));}merge(groups.renewal,hangers,metal);
  const sideReflectors=[];for(const side of[-1,1])for(let i=0;i<11;i++)sideReflectors.push([side*18.6-25,-12+i*4.3,26.3,1.4,2.9,.32]);boxInstances(groups.renewal,sideReflectors,petal);
  box(groups.renewal,2.5,2.5,10,-3,42,18,glass);merge(groups.renewal,[lineGeo([[-3,-22,13.2],[-3,42,13.2],[-10,42,13.2]],.17)],petal);
  return{groups,materials,stats:{illustratedShells:ROOF_SPECS.length,sphericalPatches:18,workingSphereRadius:ROOF_RADIUS,reflectors:18,sideReflectors:22,illustratedSeats:seatRows.length+terraceSeats.length,stageDepth:12.3,stageFrontWidth:14.5},apply(p,st){
@@ -92,6 +102,7 @@ export function operaForm(root){
   groups.podium.visible=p.podium>.001;terraces.visible=p.podium>=.42&&!podiumView;paving.visible=p.podium>=.94&&!podiumView;foyer.visible=podiumView&&p.podium>.8;
   groups.shells.visible=!cut;for(const[g,t]of shellStages)g.visible=p.shells>=t&&!(ribView&&/tile-band|panel-joints|edge-capping/.test(g.name));
   groups.glazing.visible=!cut&&!ribView&&p.fitout>.8;
+  const near=nearWallSide(st.cam?.yaw??60);for(const {side,wall}of sideWalls)wall.visible=!cut||side!==near;
   stage.position.z=floorZ+.4*(1-p.renewal);stageRisers.visible=p.renewal>.99;diffusers.visible=p.renewal>.99;groups.interior.visible=cut&&p.fitout>.95;ceiling.visible=cut&&p.fitout>.95&&st.exploreTarget==='hall';organ.visible=p.organ>.99;
   groups.renewal.visible=cut&&p.renewal>.99&&st.exploreTarget!=='organ';groups.erection.visible=p.shells>.04&&p.shells<.94;
  }};
