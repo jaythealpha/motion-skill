@@ -83,6 +83,11 @@
       "url": "https://stories.sydneyoperahouse.com/renewing-an-icon/"
     },
     {
+      "id": "arm-project",
+      "title": "ARM Architecture · Concert Hall Renewal project",
+      "url": "https://armarchitecture.com.au/projects/sydney-opera-house-concert-hall-renewal/"
+    },
+    {
       "id": "arm",
       "title": "ARM Architecture · Celebrating a Milestone",
       "url": "https://armarchitecture.com.au/news/celebrating-a-milestone-sydney-opera-house-reopens/"
@@ -330,7 +335,8 @@
       "sourceIds": [
         "technical",
         "renewal",
-        "arm"
+        "arm",
+        "arm-project"
       ]
     },
     {
@@ -346,7 +352,8 @@
       "sourceIds": [
         "technical",
         "renewal",
-        "arm"
+        "arm",
+        "arm-project"
       ]
     }
   ],
@@ -767,7 +774,7 @@
         "max": [
           -4,
           40,
-          36
+          30
         ]
       },
       "parts": [
@@ -775,7 +782,7 @@
       ],
       "availableFrom": 62,
       "yaw": 60,
-      "pitch": 48
+      "pitch": 43
     },
     {
       "id": "organ",
@@ -884,6 +891,14 @@
         "title": "Sydney Opera House · Renewing an icon",
         "url": "https://stories.sydneyoperahouse.com/renewing-an-icon/",
         "locator": "Concert Hall, February2020–July2022: 18 reflectors, stage lowered400mm, lift/passageway; not completion of all building conservation",
+        "type": "institution",
+        "checkedAt": "2026-11-04"
+      },
+      {
+        "id": "arm-project",
+        "title": "ARM Architecture · Concert Hall Renewal project",
+        "url": "https://armarchitecture.com.au/projects/sydney-opera-house-concert-hall-renewal/",
+        "locator": "Stage lowered400mm and new automated horseshoe risers; acoustic diffusing box fronts; eastern passage and Northern Foyer lift. Exact coordinates and profiles remain estimated",
         "type": "institution",
         "checkedAt": "2026-11-04"
       },

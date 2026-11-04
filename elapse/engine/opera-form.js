@@ -1,6 +1,7 @@
 import * as T from 'three';
 import {surfaceMaterial} from '../shared/material-budget.js';
 import {enrichMaterial,boxInstances} from './quality-surfaces.js';
+import {hallRow,hallSeat,rowOutline,riserOutline} from './opera-hall-layout.js';
 import {placedPatch,ROOF_SPECS,ROOF_RADIUS} from './opera-geometry.js';
 // An original explanatory model informed by published architectural descriptions
 // and the venue's technical dimensions. No photographs, scans or plan pixels embedded.
@@ -36,9 +37,9 @@ export function operaForm(root){
  for(let s=0;s<ROOF_SPECS.length;s++){
   const spec=ROOF_SPECS[s],pair=group(groups.shells,'shell-pair-'+s),start=s<4?s*.025:s<8?.11+(s-4)*.025:.23;
   for(const side of[-1,1]){const p=placedPatch(spec,side),ribs=group(pair,'precast-ribs-'+side),ends=[];
-   for(let band=0;band<4;band++){const g=group(ribs,'rib-course-'+band),geos=[];for(let r=0;r<=15;r++){const points=[];for(let i=0;i<=9;i++){const a=p.point((band+i/9)/4,r/15);a[2]-=.58;points.push(a);}geos.push(lineGeo(points,.21+band*.025));}merge(g,geos,concrete);shellStages.push([g,start+band*.095]);}
-   for(let band=0;band<4;band++){const g=group(pair,'tile-band-'+side+'-'+band);merge(g,[patchMesh(p,band/4,(band+1)/4,0,1)],roof);merge(g,[patchMesh(p,band/4,(band+1)/4,0,1,-.4)],underside);shellStages.push([g,.43+start+band*.07]);}
-   for(const v of[0,1]){const pts=[];for(let i=0;i<=40;i++)pts.push(p.point(i/40,v));ends.push(lineGeo(pts,.22));}const lip=group(pair,'edge-capping-'+side);merge(lip,ends,roof);shellStages.push([lip,.7+start]);
+   for(let band=0;band<4;band++){const g=group(ribs,'rib-course-'+band),geos=[];for(let r=side<0?0:1;r<=15;r++){const points=[];for(let i=0;i<=9;i++){const a=p.point((band+i/9)/4,r/15);a[2]-=.58;points.push(a);}geos.push(lineGeo(points,.21+band*.025));}merge(g,geos,concrete);shellStages.push([g,start+band*.095]);}
+   for(let band=0;band<4;band++){const g=group(pair,'tile-band-'+side+'-'+band);merge(g,[patchMesh(p,band/4,(band+1)/4,0,1)],roof);const edges=[];for(const v of[1])for(let i=0;i<18;i++){const a=p.point((band+i/18)/4,v),b=p.point((band+(i+1)/18)/4,v),c=[...a],d=[...b];c[2]-=.4;d[2]-=.4;edges.push(...a,...c,...b,...b,...c,...d);}if(band===3)for(let i=0;i<20;i++){const a=p.point(1,i/20),b=p.point(1,(i+1)/20),c=[...a],d=[...b];c[2]-=.4;d[2]-=.4;edges.push(...a,...c,...b,...b,...c,...d);}const wall=new T.BufferGeometry();wall.setAttribute('position',new T.Float32BufferAttribute(edges,3));wall.computeVertexNormals();merge(g,[patchMesh(p,band/4,(band+1)/4,0,1,-.4),wall],underside);shellStages.push([g,.43+start+band*.07]);}
+   for(const v of(side<0?[0,1]:[1])){const pts=[];for(let i=0;i<=40;i++)pts.push(p.point(i/40,v));ends.push(lineGeo(pts,.22));}const lip=group(pair,'edge-capping-'+side);merge(lip,ends,roof);shellStages.push([lip,.7+start]);
    const seams=[];for(let r=1;r<16;r++)for(let i=1;i<25;i++){const a=p.point(i/25,r/16),b=p.point((i+1)/25,r/16);a[2]+=.025;b[2]+=.025;seams.push(...a,...b);}const sg=group(pair,'panel-joints-'+side);segments(sg,seams);shellStages.push([sg,.75+start]);
    // End curtain wall: fan of tapered panes, splayed mullions and cross rails.
    const panes=[],mullions=[];for(let k=0;k<15;k++){const v0=k/15,v1=(k+1)/15,a=p.point(1,v0),b=p.point(1,v1),ba=[a[0],a[1]-spec[5]*3,11.4],bb=[b[0],b[1]-spec[5]*3,11.4];const geom=new T.BufferGeometry();geom.setAttribute('position',new T.Float32BufferAttribute([...a,...ba,...b,...b,...ba,...bb],3));geom.computeVertexNormals();panes.push(geom);mullions.push(lineGeo([ba,a],.11));for(let f=1;f<5;f++)mullions.push(lineGeo([a.map((x,i)=>ba[i]+(x-ba[i])*f/5),b.map((x,i)=>bb[i]+(x-bb[i])*f/5)],.075));}merge(groups.glazing,panes,glass);merge(groups.glazing,mullions,metal);
@@ -49,35 +50,49 @@ export function operaForm(root){
  // Concert Hall: south-facing stage, fan stalls and ascending perimeter terraces.
  // Technical reference: normal stage depth12.30m; front width14.50m; floor offset0.90m.
  const hall=groups.interior;hall.position.x=-25;const floorZ=13,stageY=-22,stageZ=13.9;
- box(hall,34,67,1,0,12,12.5,darkWood);const floor=new T.Shape([[-7.25,stageY-6.15],[7.25,stageY-6.15],[8,stageY+6.15],[-8,stageY+6.15]].map(p=>new T.Vector2(...p)));const stage=new T.Mesh(new T.ExtrudeGeometry(floor,{depth:.9,bevelEnabled:false}),wood);stage.position.z=floorZ;stage.name='south-facing-stage';hall.add(stage);
- const deck=[],seatRows=[],backs=[],rails=[],wallPanels=[];
+ box(hall,41,83,1,0,2,12.5,wood);const floor=new T.Shape([[-7.25,stageY-6.15],[7.25,stageY-6.15],[8,stageY+6.15],[-8,stageY+6.15]].map(p=>new T.Vector2(...p)));const stage=new T.Mesh(new T.ExtrudeGeometry(floor,{depth:.9,bevelEnabled:false}),wood);stage.position.z=floorZ;stage.name='south-facing-stage';hall.add(stage);
+ const deck=[],seatRows=[],backs=[],seatWood=[],armrests=[],rails=[],wallPanels=[];
  for(let row=0;row<25;row++){
-  const y=-14+row*1.7,z=floorZ+Math.max(0,row-3)*.235,width=12+Math.sin(row/24*Math.PI)*3;
-  deck.push([0,y,z-.2,width*2,1.72,.4]);
-  for(let x=-width+.55;x<width-.4;x+=.82){if(Math.abs(x)<.9||Math.abs(Math.abs(x)-7.4)<.55)continue;const seatY=y-3.4*(x/width)**2;seatRows.push([x,seatY,z+.44,.62,.64,.16]);backs.push([x,seatY+.28,z+.76,.62,.13,.58]);}
+  const q=hallRow(row),outline=new T.Shape(rowOutline(row).map(p=>new T.Vector2(...p)));
+  const tread=new T.ExtrudeGeometry(outline,{depth:.4,bevelEnabled:false});tread.translate(0,0,q.z-.4);deck.push(tread);
+  for(let x=-q.width+.55;x<q.width-.4;x+=.82){
+   if(Math.abs(x)<.9||Math.abs(Math.abs(x)-7.4)<.55)continue;
+   const f=hallSeat(row,x),c=Math.cos(f.angle),sn=Math.sin(f.angle);
+   seatRows.push([x,f.y,f.z+.44,.62,.64,.16,f.angle]);backs.push([f.backX,f.backY,f.z+.76,.62,.13,.58,f.angle]);
+   for(const side of[-1,1]){const dx=side*.32;armrests.push([x+dx*c,f.y+dx*sn,f.z+.69,.07,.57,.07,f.angle]);seatWood.push([x+dx*c,f.y+dx*sn,f.z+.24,.055,.055,.42,f.angle]);}
+  }
  }
- boxInstances(hall,deck,wood);boxInstances(hall,seatRows,fabric);boxInstances(hall,backs,birch);
+ merge(hall,deck,wood);boxInstances(hall,seatRows,fabric);boxInstances(hall,backs,birch);boxInstances(hall,seatWood,darkWood);boxInstances(hall,armrests,birch);
  // Side boxes, rear circle, aisles and balcony fronts give the volume real depth.
  const terraceSeats=[],terraceBacks=[],tierBlocks=[];for(const side of[-1,1])for(let tier=0;tier<3;tier++)for(let block=0;block<5;block++){const x=side*(16.2+tier*.72),y=-9+block*10,z=17+tier*2.3+block*.7;tierBlocks.push([x,y,z,3.5,8,.55]);rails.push(lineGeo([[x-side*1.75,y-4,z+.4],[x-side*1.75,y+4,z+.4]],.12));for(let a=0;a<3;a++)for(let b=0;b<6;b++){terraceSeats.push([x+side*(a*.75-.9),y-3+b*1.03,z+.55,.6,.66,.16]);terraceBacks.push([x+side*(a*.75-.9),y-2.72+b*1.03,z+.85,.6,.13,.58]);}}
  for(let row=0;row<5;row++){const z=21.5+row*.65,y=31.5+row*1.35;tierBlocks.push([0,y,z,32,1.4,.5]);for(let x=-15;x<16;x+=.82){if(Math.abs(x)<1||Math.abs(Math.abs(x)-8)<.5)continue;terraceSeats.push([x,y,z+.5,.62,.65,.16]);terraceBacks.push([x,y+.28,z+.8,.62,.13,.58]);}}
  boxInstances(hall,tierBlocks,wood);boxInstances(hall,terraceSeats,fabric);boxInstances(hall,terraceBacks,birch);merge(hall,rails,birch);
  for(const side of[-1,1])for(let y=-28;y<=39;y+=2.5)wallPanels.push([side*19.5,y,21,1,2.28,15]);boxInstances(hall,wallPanels,wood);
- // Stage risers, choral terraces and a subdued overhead timber ceiling section.
- const risers=[];for(let i=0;i<4;i++)risers.push([0,-29-i*1.1,14.3+i*.5,14.5-i,.95,.5]);boxInstances(hall,risers,wood);
- const ceiling=group(root,'cutaway-rib-context'),cg=[];for(let y=-24;y<43;y+=5.2)cg.push(lineGeo([[-44,y,27],[-36,y,33],[-25,y,35],[-14,y,33],[-6,y,27]],.32));merge(ceiling,cg,concrete);
+ // Configurable horseshoe stage lifts are a2022-renewal feature, not a1973 fixture.
+ const stageRisers=group(hall,'renewed-stage-risers'),risers=[];
+ for(let i=0;i<4;i++){const outline=new T.Shape(riserOutline(6.9-i*1.3,5.85-i*1.3).map(p=>new T.Vector2(...p)));const g=new T.ExtrudeGeometry(outline,{depth:(4-i)*.2,bevelEnabled:false});g.translate(0,0,stageZ);risers.push(g);}merge(stageRisers,risers,wood);
+ // Retained side strips suggest a timber ceiling; the centre is explicitly cut
+ // away for visibility. Its profile is estimated, never a surveyed roof section.
+ const ceiling=group(root,'cutaway-rib-context'),cg=[];
+ for(let y=-28;y<40;y+=4.8)for(const side of[-1,1])cg.push(lineGeo([[-25+side*19.2,y,26.8],[-25+side*16,y,28],[-25+side*12,y,28.9]],.18));merge(ceiling,cg,wood);
+ // Solid balcony fronts and shallow varied diffuser fins provide visible thickness.
+ const fronts=[],fins=[];for(const side of[-1,1])for(let tier=0;tier<3;tier++)for(let block=0;block<5;block++){
+  const x=side*(16.2+tier*.72),y=-9+block*10,z=17+tier*2.3+block*.7;
+  fronts.push([x-side*1.75,y,z-.3,.22,8,1.15]);for(let j=0;j<18;j++)fins.push([x-side*(1.9+.05*(j%4)),y-3.8+j*.43,z-.3,.15,.14,.95]);
+ }boxInstances(hall,fronts,wood);const diffusers=boxInstances(hall,fins,birch);diffusers.name='renewed-box-diffusers';
  const organ=group(hall,'grand-organ'),pipeGeos=[],mouths=[];box(organ,13,2,7.7,0,-35,21,darkWood);for(let i=0;i<61;i++){const x=(i-30)*.185,h=3.2+3.8*(.4+.6*Math.cos(x*.75)**2),r=.055+.025*(h/7);const g=new T.CylinderGeometry(r,r,h,10,1,true);g.rotateX(Math.PI/2);g.translate(x,-33.8,17.8+h/2);pipeGeos.push(g);mouths.push([x,-33.71,18.3,r*1.1,.025,.13]);}merge(organ,pipeGeos,pipe);boxInstances(organ,mouths,darkWood);
  // 18 variable-height petals: 12 orchestra, four audience-facing and two choir.
  const reflectorPositions=[];for(let row=0;row<3;row++)for(let col=0;col<4;col++)reflectorPositions.push([(col-1.5)*3.9,-25+row*3.7,stageZ+9.2+row*.55]);for(let i=0;i<4;i++)reflectorPositions.push([(i-1.5)*4.1,-12,stageZ+10.7]);for(const x of[-4.5,4.5])reflectorPositions.push([x,-30.7,stageZ+9.8]);
  const hangers=[];for(const[x,y,z]of reflectorPositions){const p=new T.Mesh(new T.SphereGeometry(1,20,10,0,Math.PI*2,0,Math.PI*.72),petal);p.scale.set(1.8,2.5,.48);p.rotation.x=.12;p.position.set(x-25,y,z);groups.renewal.add(p);hangers.push(lineGeo([[x-25,y,z+.2],[x-25,y,z+4]],.028));}merge(groups.renewal,hangers,metal);
  const sideReflectors=[];for(const side of[-1,1])for(let i=0;i<11;i++)sideReflectors.push([side*18.6-25,-12+i*4.3,26.3,1.4,2.9,.32]);boxInstances(groups.renewal,sideReflectors,petal);
- box(groups.renewal,2.5,2.5,10,-47,15,17,glass);merge(groups.renewal,[lineGeo([[-47,-36,13.2],[-47,15,13.2],[-43,15,13.2]],.17)],petal);
+ box(groups.renewal,2.5,2.5,10,-3,42,18,glass);merge(groups.renewal,[lineGeo([[-3,-22,13.2],[-3,42,13.2],[-10,42,13.2]],.17)],petal);
  return{groups,materials,stats:{illustratedShells:ROOF_SPECS.length,sphericalPatches:18,workingSphereRadius:ROOF_RADIUS,reflectors:18,sideReflectors:22,illustratedSeats:seatRows.length+terraceSeats.length,stageDepth:12.3,stageFrontWidth:14.5},apply(p,st){
   for(const[g,key,t]of stages)g.visible=p[key]>=t;
   const cut=st.exploring&&['hall','renewal','organ'].includes(st.exploreTarget),ribView=st.exploring&&st.exploreTarget==='ribs',podiumView=st.exploring&&st.exploreTarget==='podium';
   groups.podium.visible=p.podium>.001;terraces.visible=p.podium>=.42&&!podiumView;paving.visible=p.podium>=.94&&!podiumView;foyer.visible=podiumView&&p.podium>.8;
   groups.shells.visible=!cut;for(const[g,t]of shellStages)g.visible=p.shells>=t&&!(ribView&&/tile-band|panel-joints|edge-capping/.test(g.name));
   groups.glazing.visible=!cut&&!ribView&&p.fitout>.8;
-  stage.position.z=floorZ+.4*(1-p.renewal);groups.interior.visible=cut&&p.fitout>.95;ceiling.visible=cut&&p.fitout>.95&&st.exploreTarget==='hall';organ.visible=p.organ>.99;
+  stage.position.z=floorZ+.4*(1-p.renewal);stageRisers.visible=p.renewal>.99;diffusers.visible=p.renewal>.99;groups.interior.visible=cut&&p.fitout>.95;ceiling.visible=cut&&p.fitout>.95&&st.exploreTarget==='hall';organ.visible=p.organ>.99;
   groups.renewal.visible=cut&&p.renewal>.99&&st.exploreTarget!=='organ';groups.erection.visible=p.shells>.04&&p.shells<.94;
  }};
 }

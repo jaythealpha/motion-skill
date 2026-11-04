@@ -81,6 +81,11 @@
       "url": "https://stories.sydneyoperahouse.com/renewing-an-icon/"
     },
     {
+      "id": "arm-project",
+      "title": "ARM Architecture · Concert Hall Renewal project",
+      "url": "https://armarchitecture.com.au/projects/sydney-opera-house-concert-hall-renewal/"
+    },
+    {
       "id": "arm",
       "title": "ARM Architecture · Celebrating a Milestone",
       "url": "https://armarchitecture.com.au/news/celebrating-a-milestone-sydney-opera-house-reopens/"
@@ -328,7 +333,8 @@
       "sourceIds": [
         "technical",
         "renewal",
-        "arm"
+        "arm",
+        "arm-project"
       ]
     },
     {
@@ -344,7 +350,8 @@
       "sourceIds": [
         "technical",
         "renewal",
-        "arm"
+        "arm",
+        "arm-project"
       ]
     }
   ],
@@ -765,7 +772,7 @@
         "max": [
           -4,
           40,
-          36
+          30
         ]
       },
       "parts": [
@@ -773,7 +780,7 @@
       ],
       "availableFrom": 62,
       "yaw": 60,
-      "pitch": 48
+      "pitch": 43
     },
     {
       "id": "organ",
