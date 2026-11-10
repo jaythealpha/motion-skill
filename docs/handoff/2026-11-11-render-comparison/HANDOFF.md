@@ -2,6 +2,8 @@
 
 ## 시작점
 
+서랍 프로젝트: `mwbafp34c51s`
+
 - 저장소: https://github.com/jaythealpha/motion-skill
 - 이전 개발 인계: [2026-11-10 인계 자료](../2026-11-10-claude/HANDOFF.md). 이 문서는 그 이후 변경의 보충 자료다.
 - 기준 구현: `67f2ffc` (Sydney 전체 타임라인 및 WTC 개선). 이 인계 문서가 포함된 커밋을 사용한다.
