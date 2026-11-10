@@ -2,6 +2,8 @@
 
 Two experimental [Claude Code](https://claude.com/claude-code) skills. Each turns a real subject into **one offline HTML page** with a time bar you can drag.
 
+**개발 인계 / Claude:** [인계 자료 시작하기](docs/handoff/2026-11-10-claude/README.md) · [개발자 Handoff](docs/handoff/2026-11-10-claude/HANDOFF.md) · [Claude 시작 프롬프트](docs/handoff/2026-11-10-claude/CLAUDE-START.md) · [전체 ZIP](docs/handoff/motion-skill-claude-handoff-2026-11-10.zip). 앱 소스 기준은59aa9bb이며, 로컬 로봇 실험 브랜치는 별도 작업입니다.
+
 **Unfold: how a product goes together**
 - It researches public teardown data and writes an assembly model of the phone's parts.
 - The bar runs from the finished phone, through its parts burst apart, back to the finished phone.

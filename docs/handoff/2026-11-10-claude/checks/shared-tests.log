@@ -1,0 +1,20 @@
+
+> test
+> node --test
+
+✔ classOf (1.332616ms)
+✔ explicit sourced needs sources (0.139963ms)
+✔ advance covers the bar in the preset time (1.057509ms)
+✔ the slowest preset is 1× and the others are multiples of it (0.873967ms)
+✔ stepSpeed clamps (0.188054ms)
+✔ sync copies with a header, vendor byte for byte, no tests (143.359783ms)
+✔ --check flags a stale copy (135.168958ms)
+✔ an orphan copy is flagged by --check and removed by a sync (266.124081ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 655.578957

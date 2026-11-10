@@ -1,0 +1,322 @@
+{
+  "asOfDate": "2026-11-10",
+  "timezone": "Asia/Seoul",
+  "workspace": "/Users/jay/motion-skill",
+  "repository": {
+    "url": "https://github.com/jaythealpha/motion-skill",
+    "visibilityVerified": "public",
+    "currentBranch": "robot-dawn-film",
+    "head": "4d590749b4c94b42112cabc95a6d4be69cc33f61",
+    "localMain": "59aa9bb8d55d9f6461f239ebd211d2bffcadda96",
+    "originMain": "59aa9bb8d55d9f6461f239ebd211d2bffcadda96",
+    "liveRemoteMain": "59aa9bb8d55d9f6461f239ebd211d2bffcadda96",
+    "liveRemoteBranches": [
+      "main"
+    ],
+    "headAheadOfPublicMain": 1,
+    "localOnlyRobotCommit": "4d590749b4c94b42112cabc95a6d4be69cc33f61",
+    "additionalCommitFiles": [
+      "trials/robot-dawn-2026-11-05/audiocheck.mjs",
+      "trials/robot-dawn-2026-11-05/build.mjs",
+      "trials/robot-dawn-2026-11-05/determinism.mjs",
+      "trials/robot-dawn-2026-11-05/dumpasset.mjs",
+      "trials/robot-dawn-2026-11-05/perf.mjs",
+      "trials/robot-dawn-2026-11-05/prompt.md",
+      "trials/robot-dawn-2026-11-05/robot-dawn.html",
+      "trials/robot-dawn-2026-11-05/sheet.mjs",
+      "trials/robot-dawn-2026-11-05/shoot.mjs",
+      "trials/robot-dawn-2026-11-05/src/assets.js",
+      "trials/robot-dawn-2026-11-05/src/audio.js",
+      "trials/robot-dawn-2026-11-05/src/core.js",
+      "trials/robot-dawn-2026-11-05/src/main.js",
+      "trials/robot-dawn-2026-11-05/src/paint.js",
+      "trials/robot-dawn-2026-11-05/src/robot.js",
+      "trials/robot-dawn-2026-11-05/src/shots.js",
+      "trials/robot-dawn-2026-11-05/src/template.html"
+    ],
+    "existingUntrackedFilesToPreserve": [
+      "docs/reviews/2026-11-02-fresh-topic-field-test.md",
+      "docs/specs/2026-11-01-elapse-buildings-proposal.md"
+    ]
+  },
+  "deployment": {
+    "url": "https://jaythealpha.github.io/motion-skill/",
+    "source": {
+      "branch": "main",
+      "path": "/"
+    },
+    "buildType": "legacy",
+    "statusVerified": "built",
+    "commitVerified": "59aa9bb8d55d9f6461f239ebd211d2bffcadda96",
+    "publicFilesCheckedOn": "2026-11-10",
+    "publicFileChecks": [
+      {
+        "path": "elapse/examples/sydney-opera-house.html",
+        "byteIdenticalToWorkspace": true,
+        "bytes": 2080907,
+        "sha256": "1a23355bf1b8ac7271f53eccd537f6e28cd634860ef46e1cb92e7681420b2c70"
+      },
+      {
+        "path": "elapse/examples/sydney-opera-house.json",
+        "byteIdenticalToWorkspace": true,
+        "bytes": 72880,
+        "sha256": "5716e50453c835182e13abeb20c73af4ee700485bd0e52529a31a7d085a084b1"
+      }
+    ],
+    "browserSuiteRerunForThisHandoff": false
+  },
+  "tools": {
+    "node": "v24.21.0",
+    "python": "3.14.7",
+    "threeRevision": "180",
+    "claudeBinary": "/Users/jay/.local/bin/claude",
+    "claudeAuthOrBillingInspected": false,
+    "npmInstallRequiredForIncludedBuilds": false
+  },
+  "models": [
+    {
+      "file": "unfold/examples/galaxy-s24.json",
+      "parts": 56,
+      "steps": 14,
+      "stops": null,
+      "records": 0,
+      "gate2Metadata": "pass"
+    },
+    {
+      "file": "unfold/examples/galaxy-z-flip8.json",
+      "parts": 57,
+      "steps": 10,
+      "stops": null,
+      "records": 0,
+      "gate2Metadata": "pass"
+    },
+    {
+      "file": "unfold/examples/galaxy-z-fold8.json",
+      "parts": 72,
+      "steps": 12,
+      "stops": null,
+      "records": 0,
+      "gate2Metadata": "pass"
+    },
+    {
+      "file": "unfold/examples/iphone-17-pro.json",
+      "parts": 69,
+      "steps": 17,
+      "stops": null,
+      "records": 0,
+      "gate2Metadata": "pass"
+    },
+    {
+      "file": "unfold/examples/iphone-duo.json",
+      "parts": 97,
+      "steps": 15,
+      "stops": null,
+      "records": 0,
+      "gate2Metadata": "pass"
+    },
+    {
+      "file": "elapse/examples/britannic.json",
+      "parts": null,
+      "steps": null,
+      "stops": 6,
+      "records": 4,
+      "gate2Metadata": "pass"
+    },
+    {
+      "file": "elapse/examples/eiffel-tower.json",
+      "parts": null,
+      "steps": null,
+      "stops": 6,
+      "records": 5,
+      "gate2Metadata": "pass"
+    },
+    {
+      "file": "elapse/examples/notre-dame.json",
+      "parts": null,
+      "steps": null,
+      "stops": 7,
+      "records": 5,
+      "gate2Metadata": "pass"
+    },
+    {
+      "file": "elapse/examples/sampoong.json",
+      "parts": null,
+      "steps": null,
+      "stops": 6,
+      "records": 2,
+      "gate2Metadata": null
+    },
+    {
+      "file": "elapse/examples/seongsu-bridge.json",
+      "parts": null,
+      "steps": null,
+      "stops": 7,
+      "records": 2,
+      "gate2Metadata": null
+    },
+    {
+      "file": "elapse/examples/sydney-opera-house.json",
+      "parts": null,
+      "steps": null,
+      "stops": 8,
+      "records": 5,
+      "gate2Metadata": "pass"
+    },
+    {
+      "file": "elapse/examples/titanic.json",
+      "parts": null,
+      "steps": null,
+      "stops": 6,
+      "records": 4,
+      "gate2Metadata": "pass"
+    },
+    {
+      "file": "elapse/examples/world-trade-center.json",
+      "parts": null,
+      "steps": null,
+      "stops": 7,
+      "records": 4,
+      "gate2Metadata": "pass"
+    }
+  ],
+  "officialDemoCounts": {
+    "unfold": 5,
+    "elapseTimelines": 8,
+    "sceneStudies": 3,
+    "total": 16,
+    "peopleRecords": 31,
+    "robotTrialIncluded": false
+  },
+  "installedSkillDocumentAudit": [
+    {
+      "file": "/Users/jay/.claude/skills/elapse/SKILL.md",
+      "exists": true,
+      "sha256": "d1a978d11bd44f38fc4a6cb8cead33b8b97caf4106070b396b4e5b30cdfdfc10",
+      "repositorySkillSha256": "6c355f3f43acc5b14079c3ad46d891a4648b750fc4187cbcb31c14b2308b3880",
+      "sameSkillDocumentAsRepository": false,
+      "engineVersionAudited": false
+    },
+    {
+      "file": "/Users/jay/.agents/skills/elapse/SKILL.md",
+      "exists": true,
+      "sha256": "60fd7d10cbec4e5799f0e85ad4c511db9223e87d56a45759ca8f897f1e12f3cf",
+      "repositorySkillSha256": "6c355f3f43acc5b14079c3ad46d891a4648b750fc4187cbcb31c14b2308b3880",
+      "sameSkillDocumentAsRepository": false,
+      "engineVersionAudited": false
+    },
+    {
+      "file": "/Users/jay/.claude/skills/unfold/SKILL.md",
+      "exists": true,
+      "sha256": "beda743e264826c208e6bde1b19d929adf60a4c61277316551f3f3390c35bf04",
+      "repositorySkillSha256": "fdbf57c59b093baffc39574c53604db989a686479b92846c84a916338c6bac54",
+      "sameSkillDocumentAsRepository": false,
+      "engineVersionAudited": false
+    },
+    {
+      "file": "/Users/jay/.agents/skills/unfold/SKILL.md",
+      "exists": true,
+      "sha256": "210cfd954d0a932abc6893ff9f1759db072eb76b7a9c3eb160843aae10324329",
+      "repositorySkillSha256": "fdbf57c59b093baffc39574c53604db989a686479b92846c84a916338c6bac54",
+      "sameSkillDocumentAsRepository": false,
+      "engineVersionAudited": false
+    }
+  ],
+  "testsExecutedForHandoff": [
+    {
+      "name": "elapse",
+      "executedOn": "2026-11-10",
+      "exitCode": 0,
+      "testCountsPerRun": [
+        158,
+        158
+      ],
+      "failuresPerRun": [
+        0,
+        0
+      ],
+      "timezones": [
+        "UTC",
+        "Asia/Seoul"
+      ],
+      "log": "checks/elapse-tests.log"
+    },
+    {
+      "name": "unfold",
+      "executedOn": "2026-11-10",
+      "exitCode": 0,
+      "testCountsPerRun": [
+        43
+      ],
+      "failuresPerRun": [
+        0
+      ],
+      "timezones": null,
+      "log": "checks/unfold-tests.log"
+    },
+    {
+      "name": "shared",
+      "executedOn": "2026-11-10",
+      "exitCode": 0,
+      "testCountsPerRun": [
+        8
+      ],
+      "failuresPerRun": [
+        0
+      ],
+      "timezones": null,
+      "log": "checks/shared-tests.log"
+    },
+    {
+      "name": "locales",
+      "executedOn": "2026-11-10",
+      "exitCode": 0,
+      "testCountsPerRun": [
+        3
+      ],
+      "failuresPerRun": [
+        0
+      ],
+      "timezones": null,
+      "log": "checks/locales-tests.log"
+    }
+  ],
+  "sharedSyncCheck": {
+    "executedOn": "2026-11-10",
+    "exitCode": 0,
+    "result": "shared copies are up to date"
+  },
+  "priorBrowserEvidence": {
+    "date": "2026-11-05",
+    "report": "docs/reviews/2026-11-05-opera-usability/design-qa.md",
+    "operaFocusedCases": 105,
+    "gate2Shots": 49,
+    "fiveLocaleCases": 15,
+    "recordsCases": 79,
+    "surfaceCases": 3,
+    "isolatedRegenerations": 12,
+    "physicalTouchDeviceAcceptance": false,
+    "surveyedOrExpertArchitecturalApproval": false,
+    "nativeSpeakerFullReview": false
+  },
+  "scopeOfThisHandoff": {
+    "applicationCodeModified": false,
+    "examplesRegenerated": false,
+    "installedSkillsOverwritten": false,
+    "branchSwitched": false,
+    "committed": false,
+    "pushed": false,
+    "deploymentChanged": false,
+    "sourceCodeIncludedInZip": false,
+    "robotSourceIncludedInZip": false,
+    "notes": "Documentation, a read-only state snapshot and copied current unit-test logs only. Re-check live state before new development."
+  },
+  "snapshotSemantics": "Immutable initial pre-publication audit. Branch/deployment/scope fields describe the original audit, not the current main tip after documentation publication.",
+  "publicationContext": {
+    "authorizedScope": "Handoff documentation, its archive and root README entry link only. No application code or robot branch merge/push.",
+    "targetBranch": "main",
+    "applicationBaselineCommit": "59aa9bb8d55d9f6461f239ebd211d2bffcadda96",
+    "originalWorkspaceBranchToPreserve": "robot-dawn-film",
+    "originalWorkspaceHeadToPreserve": "4d590749b4c94b42112cabc95a6d4be69cc33f61",
+    "latestPublishedTip": "Resolve current origin/main; the documentation commit cannot contain its own commit SHA."
+  }
+}

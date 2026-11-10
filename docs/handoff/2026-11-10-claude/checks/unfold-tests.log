@@ -1,0 +1,55 @@
+
+> unfold@1.0.1 test
+> node --test
+
+✔ check_model passes mini (109.361035ms)
+✔ check_model fails broken with named fields (70.071003ms)
+✔ collision detected (91.713186ms)
+✔ official dims are checked (73.805619ms)
+✔ json output (86.818816ms)
+✔ bad input fails cleanly instead of crashing (135.538258ms)
+✔ folded collision detected (162.709523ms)
+✔ folded dims checked (186.617936ms)
+✔ open is identity (3.612309ms)
+✔ closed mirrors B about the fold line, gap apart (0.815434ms)
+✔ bend is continuous (0.61088ms)
+✔ B moves rigidly and matches the bend at its edge (0.561924ms)
+✔ asymmetric fold (2.887644ms)
+✔ half derived from the fold line (0.60278ms)
+✔ fold fixture validates (1.536669ms)
+✔ normalize fills defaults (2.897213ms)
+✔ validate mini is clean (1.325708ms)
+✔ broken refs (1.21661ms)
+✔ dims tolerance (0.852543ms)
+✔ bbox outside product (0.661325ms)
+✔ verifiedShare + warn flag (0.630862ms)
+✔ part count warning (1.58995ms)
+✔ structure rules: steps, one base, fastening, key parts, dims (1.914816ms)
+✔ access and bumps (0.429258ms)
+✔ housing yields 5 boxes inside bbox (1.143952ms)
+✔ ring yields 4 boxes (0.868727ms)
+✔ screw with 3 positions yields 3 boxes (0.217086ms)
+✔ plate yields its bbox (0.7016ms)
+✔ pure across segments (7.380541ms)
+✔ t=0 and t=100 are the finished phone (1.089733ms)
+✔ burst rises before it spreads (knoll) (0.798351ms)
+✔ stepAt is null in intro and finale (0.697303ms)
+✔ foldable story: shut, open, turn over, burst; and back (0.895244ms)
+✔ a front-access phone stays screen up and is lit at both ends (0.673691ms)
+✔ windows cover 8..92 in order, no gaps (2.829364ms)
+✔ pure and endpoints (3.53494ms)
+✔ knoll footprints do not overlap (1.220574ms)
+✔ stack start is above the assembled top (0.500221ms)
+✔ screw spins only in the last 40% (0.658097ms)
+✔ finale flips and lights the screen (0.5785ms)
+✔ screws gather in a row on the mat and return to their holes (0.902152ms)
+✔ a step end still belongs to that step (0.612917ms)
+✔ a long sliding part (a stylus) only comes down beside the phone, never over it (1.484493ms)
+ℹ tests 43
+ℹ suites 0
+ℹ pass 43
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1029.781713

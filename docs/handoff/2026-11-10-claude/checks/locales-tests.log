@@ -1,0 +1,11 @@
+✔ fresh language is English, explicit URL beats stored preference, Chinese aliases resolve (0.939751ms)
+✔ function translations preserve interpolated arguments (1.298023ms)
+✔ all public narrative fields include five languages, including after Unfold normalization (24.859832ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 32.621509
