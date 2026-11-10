@@ -1,0 +1,1017 @@
+{
+  "responsive": [
+    {
+      "subject": "opera-hall",
+      "requested": 375,
+      "language": "en",
+      "canvasVisible": true,
+      "height": 812,
+      "htmlLang": "en",
+      "overflow": false,
+      "selected": "en",
+      "stop": "hall",
+      "width": 375
+    },
+    {
+      "subject": "opera-hall",
+      "requested": 375,
+      "language": "ko",
+      "canvasVisible": true,
+      "height": 812,
+      "htmlLang": "ko",
+      "overflow": false,
+      "selected": "ko",
+      "stop": "hall",
+      "width": 375
+    },
+    {
+      "subject": "opera-hall",
+      "requested": 375,
+      "language": "ja",
+      "canvasVisible": true,
+      "height": 812,
+      "htmlLang": "ja",
+      "overflow": false,
+      "selected": "ja",
+      "stop": "hall",
+      "width": 375
+    },
+    {
+      "subject": "opera-hall",
+      "requested": 375,
+      "language": "zh",
+      "canvasVisible": true,
+      "height": 812,
+      "htmlLang": "zh-Hans",
+      "overflow": false,
+      "selected": "zh",
+      "stop": "hall",
+      "width": 375
+    },
+    {
+      "subject": "opera-hall",
+      "requested": 375,
+      "language": "es",
+      "canvasVisible": true,
+      "height": 812,
+      "htmlLang": "es",
+      "overflow": false,
+      "selected": "es",
+      "stop": "hall",
+      "width": 375
+    },
+    {
+      "subject": "opera-hall",
+      "requested": 768,
+      "language": "en",
+      "canvasVisible": true,
+      "height": 1024,
+      "htmlLang": "en",
+      "overflow": false,
+      "selected": "en",
+      "stop": "hall",
+      "width": 768
+    },
+    {
+      "subject": "opera-hall",
+      "requested": 768,
+      "language": "ko",
+      "canvasVisible": true,
+      "height": 1024,
+      "htmlLang": "ko",
+      "overflow": false,
+      "selected": "ko",
+      "stop": "hall",
+      "width": 768
+    },
+    {
+      "subject": "opera-hall",
+      "requested": 768,
+      "language": "ja",
+      "canvasVisible": true,
+      "height": 1024,
+      "htmlLang": "ja",
+      "overflow": false,
+      "selected": "ja",
+      "stop": "hall",
+      "width": 768
+    },
+    {
+      "subject": "opera-hall",
+      "requested": 768,
+      "language": "zh",
+      "canvasVisible": true,
+      "height": 1024,
+      "htmlLang": "zh-Hans",
+      "overflow": false,
+      "selected": "zh",
+      "stop": "hall",
+      "width": 768
+    },
+    {
+      "subject": "opera-hall",
+      "requested": 768,
+      "language": "es",
+      "canvasVisible": true,
+      "height": 1024,
+      "htmlLang": "es",
+      "overflow": false,
+      "selected": "es",
+      "stop": "hall",
+      "width": 768
+    },
+    {
+      "subject": "opera-hall",
+      "requested": 1440,
+      "language": "en",
+      "canvasVisible": true,
+      "height": 1000,
+      "htmlLang": "en",
+      "overflow": false,
+      "selected": "en",
+      "stop": "hall",
+      "width": 1440
+    },
+    {
+      "subject": "opera-hall",
+      "requested": 1440,
+      "language": "ko",
+      "canvasVisible": true,
+      "height": 1000,
+      "htmlLang": "ko",
+      "overflow": false,
+      "selected": "ko",
+      "stop": "hall",
+      "width": 1440
+    },
+    {
+      "subject": "opera-hall",
+      "requested": 1440,
+      "language": "ja",
+      "canvasVisible": true,
+      "height": 1000,
+      "htmlLang": "ja",
+      "overflow": false,
+      "selected": "ja",
+      "stop": "hall",
+      "width": 1440
+    },
+    {
+      "subject": "opera-hall",
+      "requested": 1440,
+      "language": "zh",
+      "canvasVisible": true,
+      "height": 1000,
+      "htmlLang": "zh-Hans",
+      "overflow": false,
+      "selected": "zh",
+      "stop": "hall",
+      "width": 1440
+    },
+    {
+      "subject": "opera-hall",
+      "requested": 1440,
+      "language": "es",
+      "canvasVisible": true,
+      "height": 1000,
+      "htmlLang": "es",
+      "overflow": false,
+      "selected": "es",
+      "stop": "hall",
+      "width": 1440
+    },
+    {
+      "subject": "wtc",
+      "requested": 375,
+      "language": "en",
+      "canvasVisible": true,
+      "height": 812,
+      "htmlLang": "en",
+      "overflow": false,
+      "selected": "en",
+      "width": 375
+    },
+    {
+      "subject": "wtc",
+      "requested": 375,
+      "language": "ko",
+      "canvasVisible": true,
+      "height": 812,
+      "htmlLang": "ko",
+      "overflow": false,
+      "selected": "ko",
+      "width": 375
+    },
+    {
+      "subject": "wtc",
+      "requested": 375,
+      "language": "ja",
+      "canvasVisible": true,
+      "height": 812,
+      "htmlLang": "ja",
+      "overflow": false,
+      "selected": "ja",
+      "width": 375
+    },
+    {
+      "subject": "wtc",
+      "requested": 375,
+      "language": "zh",
+      "canvasVisible": true,
+      "height": 812,
+      "htmlLang": "zh-Hans",
+      "overflow": false,
+      "selected": "zh",
+      "width": 375
+    },
+    {
+      "subject": "wtc",
+      "requested": 375,
+      "language": "es",
+      "canvasVisible": true,
+      "height": 812,
+      "htmlLang": "es",
+      "overflow": false,
+      "selected": "es",
+      "width": 375
+    },
+    {
+      "subject": "wtc",
+      "requested": 768,
+      "language": "en",
+      "canvasVisible": true,
+      "height": 1024,
+      "htmlLang": "en",
+      "overflow": false,
+      "selected": "en",
+      "width": 768
+    },
+    {
+      "subject": "wtc",
+      "requested": 768,
+      "language": "ko",
+      "canvasVisible": true,
+      "height": 1024,
+      "htmlLang": "ko",
+      "overflow": false,
+      "selected": "ko",
+      "width": 768
+    },
+    {
+      "subject": "wtc",
+      "requested": 768,
+      "language": "ja",
+      "canvasVisible": true,
+      "height": 1024,
+      "htmlLang": "ja",
+      "overflow": false,
+      "selected": "ja",
+      "width": 768
+    },
+    {
+      "subject": "wtc",
+      "requested": 768,
+      "language": "zh",
+      "canvasVisible": true,
+      "height": 1024,
+      "htmlLang": "zh-Hans",
+      "overflow": false,
+      "selected": "zh",
+      "width": 768
+    },
+    {
+      "subject": "wtc",
+      "requested": 768,
+      "language": "es",
+      "canvasVisible": true,
+      "height": 1024,
+      "htmlLang": "es",
+      "overflow": false,
+      "selected": "es",
+      "width": 768
+    },
+    {
+      "subject": "wtc",
+      "requested": 1440,
+      "language": "en",
+      "canvasVisible": true,
+      "height": 1000,
+      "htmlLang": "en",
+      "overflow": false,
+      "selected": "en",
+      "width": 1440
+    },
+    {
+      "subject": "wtc",
+      "requested": 1440,
+      "language": "ko",
+      "canvasVisible": true,
+      "height": 1000,
+      "htmlLang": "ko",
+      "overflow": false,
+      "selected": "ko",
+      "width": 1440
+    },
+    {
+      "subject": "wtc",
+      "requested": 1440,
+      "language": "ja",
+      "canvasVisible": true,
+      "height": 1000,
+      "htmlLang": "ja",
+      "overflow": false,
+      "selected": "ja",
+      "width": 1440
+    },
+    {
+      "subject": "wtc",
+      "requested": 1440,
+      "language": "zh",
+      "canvasVisible": true,
+      "height": 1000,
+      "htmlLang": "zh-Hans",
+      "overflow": false,
+      "selected": "zh",
+      "width": 1440
+    },
+    {
+      "subject": "wtc",
+      "requested": 1440,
+      "language": "es",
+      "canvasVisible": true,
+      "height": 1000,
+      "htmlLang": "es",
+      "overflow": false,
+      "selected": "es",
+      "width": 1440
+    }
+  ],
+  "studies": [
+    {
+      "subject": "wtc-study",
+      "lang": "en",
+      "htmlLang": "en",
+      "metrics": {
+        "buffer": [
+          341,
+          469
+        ],
+        "cpuP95Ms": 8900.8,
+        "drawCalls": 40,
+        "filmic": {
+          "fallback": false,
+          "mode": "bypass",
+          "passes": 1,
+          "reason": "low",
+          "targets": 0
+        },
+        "frames": 3,
+        "geometries": 40,
+        "gpu": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5300, Unspecified Version)",
+        "longFrames": 0,
+        "low": true,
+        "medianMs": null,
+        "p": 0.53,
+        "p95Ms": null,
+        "pixelRatio": 1,
+        "samples": 0,
+        "subject": "wtc-study",
+        "textures": 12,
+        "triangles": 6141
+      },
+      "overflow": false,
+      "title": "South Tower impact · Scene study",
+      "w": 375
+    },
+    {
+      "subject": "wtc-study",
+      "lang": "ko",
+      "htmlLang": "ko",
+      "metrics": {
+        "buffer": [
+          341,
+          469
+        ],
+        "cpuP95Ms": 8900.8,
+        "drawCalls": 40,
+        "filmic": {
+          "fallback": false,
+          "mode": "bypass",
+          "passes": 1,
+          "reason": "low",
+          "targets": 0
+        },
+        "frames": 4,
+        "geometries": 40,
+        "gpu": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5300, Unspecified Version)",
+        "longFrames": 0,
+        "low": true,
+        "medianMs": null,
+        "p": 0.53,
+        "p95Ms": null,
+        "pixelRatio": 1,
+        "samples": 0,
+        "subject": "wtc-study",
+        "textures": 12,
+        "triangles": 6141
+      },
+      "overflow": false,
+      "title": "남타워 충돌 · 대표 장면",
+      "w": 375
+    },
+    {
+      "subject": "wtc-study",
+      "lang": "ja",
+      "htmlLang": "ja",
+      "metrics": {
+        "buffer": [
+          341,
+          469
+        ],
+        "cpuP95Ms": 8900.8,
+        "drawCalls": 40,
+        "filmic": {
+          "fallback": false,
+          "mode": "bypass",
+          "passes": 1,
+          "reason": "low",
+          "targets": 0
+        },
+        "frames": 5,
+        "geometries": 40,
+        "gpu": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5300, Unspecified Version)",
+        "longFrames": 0,
+        "low": true,
+        "medianMs": null,
+        "p": 0.53,
+        "p95Ms": null,
+        "pixelRatio": 1,
+        "samples": 0,
+        "subject": "wtc-study",
+        "textures": 12,
+        "triangles": 6141
+      },
+      "overflow": false,
+      "title": "南タワー衝突・代表シーン",
+      "w": 375
+    },
+    {
+      "subject": "wtc-study",
+      "lang": "zh",
+      "htmlLang": "zh-Hans",
+      "metrics": {
+        "buffer": [
+          341,
+          469
+        ],
+        "cpuP95Ms": 8900.8,
+        "drawCalls": 40,
+        "filmic": {
+          "fallback": false,
+          "mode": "bypass",
+          "passes": 1,
+          "reason": "low",
+          "targets": 0
+        },
+        "frames": 6,
+        "geometries": 40,
+        "gpu": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5300, Unspecified Version)",
+        "longFrames": 0,
+        "low": true,
+        "medianMs": null,
+        "p": 0.53,
+        "p95Ms": null,
+        "pixelRatio": 1,
+        "samples": 0,
+        "subject": "wtc-study",
+        "textures": 12,
+        "triangles": 6141
+      },
+      "overflow": false,
+      "title": "南塔撞击 · 代表场景",
+      "w": 375
+    },
+    {
+      "subject": "wtc-study",
+      "lang": "es",
+      "htmlLang": "es",
+      "metrics": {
+        "buffer": [
+          341,
+          469
+        ],
+        "cpuP95Ms": 8900.8,
+        "drawCalls": 40,
+        "filmic": {
+          "fallback": false,
+          "mode": "bypass",
+          "passes": 1,
+          "reason": "low",
+          "targets": 0
+        },
+        "frames": 7,
+        "geometries": 40,
+        "gpu": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5300, Unspecified Version)",
+        "longFrames": 0,
+        "low": true,
+        "medianMs": null,
+        "p": 0.53,
+        "p95Ms": null,
+        "pixelRatio": 1,
+        "samples": 0,
+        "subject": "wtc-study",
+        "textures": 12,
+        "triangles": 6141
+      },
+      "overflow": false,
+      "title": "Impacto en la Torre Sur · escena de estudio",
+      "w": 375
+    },
+    {
+      "subject": "opera-study",
+      "lang": "en",
+      "errorVisible": false,
+      "htmlLang": "en",
+      "images": [
+        {
+          "h": 470,
+          "w": 375
+        },
+        {
+          "h": 470,
+          "w": 375
+        }
+      ],
+      "overflow": false,
+      "title": "A different light",
+      "w": 375
+    },
+    {
+      "subject": "opera-study",
+      "lang": "ko",
+      "errorVisible": false,
+      "htmlLang": "ko",
+      "images": [
+        {
+          "h": 470,
+          "w": 375
+        },
+        {
+          "h": 470,
+          "w": 375
+        }
+      ],
+      "overflow": false,
+      "title": "빛으로 다시 보는 건축",
+      "w": 375
+    },
+    {
+      "subject": "opera-study",
+      "lang": "ja",
+      "errorVisible": false,
+      "htmlLang": "ja",
+      "images": [
+        {
+          "h": 470,
+          "w": 375
+        },
+        {
+          "h": 470,
+          "w": 375
+        }
+      ],
+      "overflow": false,
+      "title": "光で見る建築",
+      "w": 375
+    },
+    {
+      "subject": "opera-study",
+      "lang": "zh",
+      "errorVisible": false,
+      "htmlLang": "zh",
+      "images": [
+        {
+          "h": 470,
+          "w": 375
+        },
+        {
+          "h": 470,
+          "w": 375
+        }
+      ],
+      "overflow": false,
+      "title": "以光重看建筑",
+      "w": 375
+    },
+    {
+      "subject": "opera-study",
+      "lang": "es",
+      "errorVisible": false,
+      "htmlLang": "es",
+      "images": [
+        {
+          "h": 470,
+          "w": 375
+        },
+        {
+          "h": 470,
+          "w": 375
+        }
+      ],
+      "overflow": false,
+      "title": "Arquitectura bajo otra luz",
+      "w": 375
+    }
+  ],
+  "phases": [
+    {
+      "explanation": "Recorded at · Sep 11, 08:46:00\n08:46 · North Tower impact\nSourced\n\nHijacked American Airlines Flight 11 strikes the North Tower. The generic aircraft silhouette",
+      "metrics": {
+        "buffer": [
+          1142,
+          518
+        ],
+        "cpuP95Ms": 4.7,
+        "drawCalls": 1,
+        "filmic": {
+          "bloom": {
+            "height": 130,
+            "width": 286
+          },
+          "exposure": 1,
+          "fallback": false,
+          "fullscreenPasses": 4,
+          "hdr": true,
+          "lastFrame": "full",
+          "mode": "full",
+          "passes": 5,
+          "samples": 0,
+          "scene": {
+            "height": 518,
+            "width": 1142
+          },
+          "sceneStats": {
+            "calls": 28,
+            "triangles": 23233
+          },
+          "targetType": "HalfFloat",
+          "targets": 3,
+          "toneMapping": "ACESFilmic"
+        },
+        "frames": 26,
+        "geometries": 77,
+        "gpu": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5300, Unspecified Version)",
+        "longFrames": 0,
+        "low": false,
+        "medianMs": null,
+        "p95Ms": null,
+        "pixelRatio": 1,
+        "samples": 0,
+        "shot": "north-impact",
+        "style": "color",
+        "subject": "wtc",
+        "t": 8.05,
+        "textures": 17,
+        "triangles": 1
+      },
+      "t": "8.05"
+    },
+    {
+      "explanation": "Recorded at · Sep 11, 09:03:00\n09:03 · South Tower impact\nSourced\n\nHijacked United Airlines Flight 175 strikes the South Tower. This does not reconstruct flight",
+      "metrics": {
+        "buffer": [
+          1142,
+          518
+        ],
+        "cpuP95Ms": 4.7,
+        "drawCalls": 1,
+        "filmic": {
+          "bloom": {
+            "height": 130,
+            "width": 286
+          },
+          "exposure": 1,
+          "fallback": false,
+          "fullscreenPasses": 4,
+          "hdr": true,
+          "lastFrame": "full",
+          "mode": "full",
+          "passes": 5,
+          "samples": 0,
+          "scene": {
+            "height": 518,
+            "width": 1142
+          },
+          "sceneStats": {
+            "calls": 32,
+            "triangles": 24714
+          },
+          "targetType": "HalfFloat",
+          "targets": 3,
+          "toneMapping": "ACESFilmic"
+        },
+        "frames": 27,
+        "geometries": 81,
+        "gpu": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5300, Unspecified Version)",
+        "longFrames": 0,
+        "low": false,
+        "medianMs": null,
+        "p95Ms": null,
+        "pixelRatio": 1,
+        "samples": 0,
+        "shot": "south-impact",
+        "style": "color",
+        "subject": "wtc",
+        "t": 12.7,
+        "textures": 17,
+        "triangles": 1
+      },
+      "t": "12.7"
+    },
+    {
+      "explanation": "Recorded at · Sep 11, 09:59:00\n09:59 · South Tower collapse\nSourced\n\nThe South Tower collapses first. Members, dust, motion and playback duration are estimates,",
+      "metrics": {
+        "buffer": [
+          1142,
+          518
+        ],
+        "cpuP95Ms": 4.7,
+        "drawCalls": 1,
+        "filmic": {
+          "bloom": {
+            "height": 130,
+            "width": 286
+          },
+          "exposure": 1,
+          "fallback": false,
+          "fullscreenPasses": 4,
+          "hdr": true,
+          "lastFrame": "full",
+          "mode": "full",
+          "passes": 5,
+          "samples": 0,
+          "scene": {
+            "height": 518,
+            "width": 1142
+          },
+          "sceneStats": {
+            "calls": 41,
+            "triangles": 30614
+          },
+          "targetType": "HalfFloat",
+          "targets": 3,
+          "toneMapping": "ACESFilmic"
+        },
+        "frames": 28,
+        "geometries": 81,
+        "gpu": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5300, Unspecified Version)",
+        "longFrames": 0,
+        "low": false,
+        "medianMs": null,
+        "p95Ms": null,
+        "pixelRatio": 1,
+        "samples": 0,
+        "shot": "south-collapse",
+        "style": "color",
+        "subject": "wtc",
+        "t": 28.55,
+        "textures": 17,
+        "triangles": 1
+      },
+      "t": "28.55"
+    },
+    {
+      "explanation": "Recorded at · Sep 11, 10:28:00\n10:28 · North Tower collapse\nSourced\n\nThe North Tower collapses. This illustrative full-collapse motion is not the NIST investiga",
+      "metrics": {
+        "buffer": [
+          1142,
+          518
+        ],
+        "cpuP95Ms": 4.7,
+        "drawCalls": 1,
+        "filmic": {
+          "bloom": {
+            "height": 130,
+            "width": 286
+          },
+          "exposure": 1,
+          "fallback": false,
+          "fullscreenPasses": 4,
+          "hdr": true,
+          "lastFrame": "full",
+          "mode": "full",
+          "passes": 5,
+          "samples": 0,
+          "scene": {
+            "height": 518,
+            "width": 1142
+          },
+          "sceneStats": {
+            "calls": 31,
+            "triangles": 24221
+          },
+          "targetType": "HalfFloat",
+          "targets": 3,
+          "toneMapping": "ACESFilmic"
+        },
+        "frames": 29,
+        "geometries": 86,
+        "gpu": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5300, Unspecified Version)",
+        "longFrames": 0,
+        "low": false,
+        "medianMs": null,
+        "p95Ms": null,
+        "pixelRatio": 1,
+        "samples": 0,
+        "shot": "north-collapse",
+        "style": "color",
+        "subject": "wtc",
+        "t": 47.25,
+        "textures": 17,
+        "triangles": 1
+      },
+      "t": "47.25"
+    },
+    {
+      "explanation": "Recorded at · Sep 11, 17:20:52\n17:20:52 · WTC 7 collapse\nSourced\n\nWTC 7, which was not struck by an aircraft, collapses after fires. It was the subject of a sep",
+      "metrics": {
+        "buffer": [
+          1142,
+          518
+        ],
+        "cpuP95Ms": 4.7,
+        "drawCalls": 1,
+        "filmic": {
+          "bloom": {
+            "height": 130,
+            "width": 286
+          },
+          "exposure": 1,
+          "fallback": false,
+          "fullscreenPasses": 4,
+          "hdr": true,
+          "lastFrame": "full",
+          "mode": "full",
+          "passes": 5,
+          "samples": 0,
+          "scene": {
+            "height": 518,
+            "width": 1142
+          },
+          "sceneStats": {
+            "calls": 16,
+            "triangles": 15104
+          },
+          "targetType": "HalfFloat",
+          "targets": 3,
+          "toneMapping": "ACESFilmic"
+        },
+        "frames": 30,
+        "geometries": 86,
+        "gpu": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5300, Unspecified Version)",
+        "longFrames": 0,
+        "low": false,
+        "medianMs": null,
+        "p95Ms": null,
+        "pixelRatio": 1,
+        "samples": 0,
+        "shot": "seven-collapse",
+        "style": "color",
+        "subject": "wtc",
+        "t": 53.1,
+        "textures": 17,
+        "triangles": 1
+      },
+      "t": "53.1"
+    },
+    {
+      "explanation": "Recorded at · 2018.06\n3 WTC opens · rebuilding milestone\nSourced\n\nThe study ends with the opening of 3 WTC. It depicts selected structures in 2018, not the pres",
+      "metrics": {
+        "buffer": [
+          1142,
+          518
+        ],
+        "cpuP95Ms": 4.7,
+        "drawCalls": 1,
+        "filmic": {
+          "bloom": {
+            "height": 130,
+            "width": 286
+          },
+          "exposure": 1,
+          "fallback": false,
+          "fullscreenPasses": 4,
+          "hdr": true,
+          "lastFrame": "full",
+          "mode": "full",
+          "passes": 5,
+          "samples": 0,
+          "scene": {
+            "height": 518,
+            "width": 1142
+          },
+          "sceneStats": {
+            "calls": 29,
+            "triangles": 49026
+          },
+          "targetType": "HalfFloat",
+          "targets": 3,
+          "toneMapping": "ACESFilmic"
+        },
+        "frames": 31,
+        "geometries": 86,
+        "gpu": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5300, Unspecified Version)",
+        "longFrames": 0,
+        "low": false,
+        "medianMs": null,
+        "p95Ms": null,
+        "pixelRatio": 1,
+        "samples": 0,
+        "shot": null,
+        "style": "color",
+        "subject": "wtc",
+        "t": 100,
+        "textures": 17,
+        "triangles": 1
+      },
+      "t": "100"
+    }
+  ],
+  "performance": [
+    {
+      "case": "wtc-desktop-play",
+      "data": {
+        "buffer": [
+          2284,
+          1036
+        ],
+        "cpuP95Ms": 2,
+        "drawCalls": 1,
+        "filmic": {
+          "bloom": {
+            "height": 259,
+            "width": 571
+          },
+          "exposure": 1,
+          "fallback": false,
+          "fullscreenPasses": 4,
+          "hdr": true,
+          "lastFrame": "full",
+          "mode": "full",
+          "passes": 5,
+          "samples": 0,
+          "scene": {
+            "height": 1036,
+            "width": 2284
+          },
+          "targetType": "HalfFloat",
+          "targets": 3,
+          "toneMapping": "ACESFilmic"
+        },
+        "frames": 420,
+        "geometries": 73,
+        "gpu": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5300, Unspecified Version)",
+        "longFrames": 0,
+        "low": false,
+        "medianMs": 16.7,
+        "p95Ms": 18.3,
+        "pixelRatio": 2,
+        "samples": 406,
+        "shot": "south-collapse",
+        "style": "color",
+        "subject": "wtc",
+        "t": 29.562506666665612,
+        "textures": 17,
+        "triangles": 1
+      }
+    },
+    {
+      "case": "opera-desktop-play",
+      "data": {
+        "artPass": true,
+        "buffer": [
+          1142,
+          518
+        ],
+        "cpuP95Ms": 1.1,
+        "drawCalls": 17,
+        "frames": 613,
+        "geometries": 343,
+        "gpu": "ANGLE (AMD, ANGLE Metal Renderer: AMD Radeon Pro 5300, Unspecified Version)",
+        "interior": false,
+        "longFrames": 1,
+        "low": false,
+        "medianMs": 16.7,
+        "p95Ms": 18.2,
+        "pixelRatio": 1,
+        "reflectionVisibility": 0,
+        "samples": 600,
+        "style": "color",
+        "subject": "opera",
+        "t": 32,
+        "textures": 12,
+        "triangles": 7592
+      }
+    }
+  ]
+}

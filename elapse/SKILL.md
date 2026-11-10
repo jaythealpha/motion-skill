@@ -41,6 +41,12 @@ The skill folder (`<skill>` below) holds:
   - `titanic`: a night sinking, flooding by compartment, a break into two, a deep wreck, projections. Its generator is `research/titanic-gen.mjs`, its notes `research/titanic-notes.md`; copy both patterns.
   - `britannic`: a daytime sinking in one piece with a crumpled bow, in shallow water (120 m), capsizing onto her side. It shows hull paint bands (the hospital ship's green band and red crosses, the mine damage), water entering through open portholes (`inflow`), a shallow-water growth crust and a final-attitude check (`wreck.poses`). Generator `research/britannic-gen.mjs`.
 
+## Rendering changes and regression checks
+
+Sydney's full timeline shares `opera-art-pass.js` and `opera-hall-finish.js` with the same-camera `opera-art-study.html`. Gate water reflections by shell progress; preserve historical interior availability. Blueprint must disable authored water/sky and restore maps on return. Shader hook snippets need newline boundaries around preprocessor directives. Warm representative materials before autoplay, restore the requested state, and respect reduced motion.
+
+WTC uses `city-render-pass.js` for bounded HDR/edge/bloom presentation: three targets, quarter-resolution bloom and one output transform. Lightweight devices and blueprint use direct rendering. Preserve clipping, timeline/event records and labelled context estimates. Read local `canvas.dataset.renderMetrics` for bounded playback samples; setup compilation and hidden-tab time are not playback performance. Measure at actual CSS widths and inspect screenshots; a requested viewport size is not proof of the effective size. Never infer mobile GPU performance from a resized desktop browser.
+
 ## Facts, people and memory
 
 Read `references/remembrance-format.md` before authoring historical-event content. The purpose is to preserve what happened, concrete help/preparation and lessons, with evidence and uncertainty. For new topics, supply version-1 `remembrance` with scoped values and all five languages. Keep personal action times at the precision supported by evidence. Never invent a name, rescue count, dialogue, motive or route; do not equate a company's evacuation count with a solo rescue total. Separate survivor recollection, institutional accounts, investigation findings and editorial reflection. Include collective care and preparation; do not rank heroism or animate death totals. Non-disaster subjects may use construction/research/restoration records rather than a memorial narrative.

@@ -1,0 +1,7 @@
+{
+  "model": "claude-fable-5-2",
+  "scope": "specification-only city HDR/postprocessing module",
+  "source_files_sent": false,
+  "estimated_api_cost_usd": 0.985072,
+  "original_output_sha256": "c704f87a8e5ac9cc96ad7f827e805e716faf24a499296691c7c1baf3660ac0ad"
+}

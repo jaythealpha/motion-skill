@@ -27,7 +27,7 @@ Two experimental [Claude Code](https://claude.com/claude-code) skills. Each turn
 
 영어 UI가 기본이며 한국어·일본어·중국어(간체)·스페인어도 지원해요. 두 스킬 모두 공개 자료를 조사해서 만들고, 자료 조사부터 빌드까지 이어지는 작업 절차를 제공해요. 도구 권한·네트워크·AI 실행 환경에 따라 중단될 수 있고, 새 결과물은 데이터·화면 검사를 거쳐야 해요. 자동 검사는 역사·제품 구조·수리 안전성의 정확성을 보증하지 않아요.
 
-All 16 demos and both skills support English (default), Korean, Japanese, Simplified Chinese and Spanish. The gallery passes its selected language to each demo, and standalone pages remember your choice locally. Translation is bundled; playback makes no translation requests.
+All 17 demos and both skills support English (default), Korean, Japanese, Simplified Chinese and Spanish. The gallery passes its selected language to each demo, and standalone pages remember your choice locally. Translation is bundled; playback makes no translation requests.
 
 Packaged demos include subject-specific high-detail finishes; see [visual quality and limits](DEMOS.md#고품질-표현). Additional surface/structural detail is illustrative and does not increase measured accuracy or the sourced share.
 
@@ -62,11 +62,11 @@ Chinese selectors display **CH**. Standard `zh` / `zh-Hans` document tags and ex
 
 ## 시작하기
 
-**[브라우저에서 16개 데모 바로 보기](https://jaythealpha.github.io/motion-skill/)**
+**[브라우저에서 17개 데모 바로 보기](https://jaythealpha.github.io/motion-skill/)**
 
 
 - **설치:** [준비물·복제·기존 설치 보존·첫 빌드](INSTALL.md)
-- **보기:** [16개 데모와 로컬 실행 방법](DEMOS.md)
+- **보기:** [17개 데모와 로컬 실행 방법](DEMOS.md)
 - **최근 변경:** [역사 건축·WTC·해저 장면과 공개 준비](elapse/CHANGELOG.md)
 
 생성 작업은 Claude Code용입니다. 포함된 HTML 데모는 AI 없이 브라우저에서 볼 수 있습니다. 전체 검사에는 Node 22 이상과 Chrome/Chromium이 필요하며 npm 패키지는 설치하지 않습니다. 설치·빌드 재현은 macOS에서 확인하며, 다른 OS와 에이전트의 동작은 별도 검증이 필요합니다.
@@ -112,3 +112,9 @@ Titanic and Britannic also include sourced help/care records: Carpathia’s coor
 [Eiffel Tower’s people and care records](https://jaythealpha.github.io/motion-skill/elapse/examples/eiffel-tower.html?view=records&lang=en) cover shared design, workshop and rivet teams, painting and worker protection, and elevator technicians/operators. Factory headcounts and a riveting task team have separate scopes. Modern maintenance records do not extend or relabel the 1887–1889 construction scene. See [the evidence review](docs/reviews/2026-11-04-eiffel-care-records.md).
 
 New Elapse topics now use the [people-and-facts authoring workflow](elapse/references/new-topic-workflow.md). The agent researches contributors and scoped numeric facts, then `build-topic.mjs` compiles the supplied evidence and rejects omitted coverage or records an explicit visible evidence gap. This is source-coverage validation, not automated historical authentication. [Sydney Opera House](https://jaythealpha.github.io/motion-skill/elapse/examples/sydney-opera-house.html?view=records&lang=en) exercises the full path with five records, three scoped numeric values and its own estimated architectural context. Its [construction view](https://jaythealpha.github.io/motion-skill/elapse/examples/sydney-opera-house.html?view=scene&t=34&play=1&lang=en) separates rib erection, cladding and fit-out; [eight inspection stops](https://jaythealpha.github.io/motion-skill/elapse/examples/sydney-opera-house.html?t=100&mode=explore&stop=hall&lang=en) include roof ribs, curtain walls and a dimension-informed hall cutaway. Detailed shapes and intermediate construction states remain illustrative. See the [Opera inspection QA](docs/reviews/2026-11-05-opera-usability/design-qa.md) for the camera, cutaway, keyboard and blueprint follow-up.
+
+### Rendering studies (November 2026)
+
+The [Sydney same-camera comparison](https://jaythealpha.github.io/motion-skill/elapse/examples/opera-art-study.html?lang=en&p=0.8055556&compare=1) now also informs its full construction timeline: finer shell tessellation, ceramic detail, harbour water, directional light and an illustrative timber-lined Concert Hall. Construction visibility and the 1979/2022 interior milestones remain separate.
+
+WTC's full timeline and impact study add a bounded HDR presentation pass: selective warm bloom, edge antialiasing and a single tone/output transform, with direct rendering on lightweight devices and in blueprint mode. Lower tridents and context surface variation improve depth; surrounding buildings remain estimated massing. These are original educational graphics, not photoreal or forensic simulations. Performance measurements and limits are recorded in [the release review](docs/reviews/2026-11-10-opera-wtc-release/design-qa.md).

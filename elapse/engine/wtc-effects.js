@@ -7,6 +7,8 @@ import {WTC_DATES} from './wtc-model.js';
 const clamp=x=>Math.max(0,Math.min(1,x)),smooth=x=>{x=clamp(x);return x*x*(3-2*x);};
 export function createWTCEffects(root){const group=new THREE.Group();root.add(group);const sm=softTexture(),fm=softTexture(true),fires=[],smokes=[],dusts=[];
 const batches=[spriteBatch(group,fm,'#ffffff',52),spriteBatch(group,sm,'#aaa49d',117),spriteBatch(group,sm,'#d4c8b6',126)];let fi=0,si=0,di=0;
+// Authored radiance, not a measured fire temperature; retains the atlas's dark edge/core gradient.
+batches[0].mesh.material.color.setRGB(2.8,2.1,1.15);
 for(let k=0;k<3;k++){fires[k]=batches[0].particles.slice(fi,fi+(k===2?8:22));fi+=fires[k].length;smokes[k]=batches[1].particles.slice(si,si+(k===2?25:46));si+=smokes[k].length;dusts[k]=batches[2].particles.slice(di,di+42);di+=42;}
 const debris=new THREE.InstancedMesh(new THREE.BoxGeometry(.55,.3,2.3),surfaceMaterial({color:'#a4a6a3',roughness:.8}),90);debris.frustumCulled=false;group.add(debris);const obj=new THREE.Object3D();let active=null;
 function set(p,bp){group.visible=!bp;active=null;for(const[k,id,x,y,z,sign,h]of[[0,'north',-43.5,63,365,1,417],[1,'south',19.5,-78,300,-1,415],[2,'seven',0,201,80,1,186]]){const hit=parseAt(k===2?WTC_DATES.northFall:WTC_DATES[id+'Hit']),fallAt=parseAt(WTC_DATES[id+'Fall']),age=(p.ms-hit)/1000,f=p[id+'Fall'],q=(p.ms-fallAt)/120000;const glow=smooth(age/7)*(1-smooth((age-40)/65));

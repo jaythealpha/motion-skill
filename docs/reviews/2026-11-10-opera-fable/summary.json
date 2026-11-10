@@ -1,0 +1,8 @@
+{
+  "unit_test_runs": 2,
+  "passed_each_run": 2,
+  "locale_cases": 15,
+  "local_browser_console_issues": 0,
+  "public_deployment": false,
+  "comparison_url": "http://127.0.0.1:8766/elapse/examples/opera-art-study.html?lang=ko&p=0.8055556&compare=1"
+}

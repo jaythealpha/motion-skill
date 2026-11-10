@@ -1,6 +1,6 @@
 # 데모 실행
 
-이 저장소의 데모는 단일 HTML입니다. **GitHub의 HTML 파일 링크는 소스 보기이며 실행 화면이 아닙니다.** **[GitHub Pages에서 16개 데모 바로 보기](https://jaythealpha.github.io/motion-skill/)**. 설치 없이 브라우저에서 실행할 수 있습니다.
+이 저장소의 데모는 단일 HTML입니다. **GitHub의 HTML 파일 링크는 소스 보기이며 실행 화면이 아닙니다.** **[GitHub Pages에서 17개 데모 바로 보기](https://jaythealpha.github.io/motion-skill/)**. 설치 없이 브라우저에서 실행할 수 있습니다.
 
 ## 사실·사람·기억 읽기
 
@@ -12,7 +12,7 @@ JavaScript가 꺼져도 영어 기록 전체와 출처를 읽을 수 있습니�
 
 ## 갤러리 언어
 
-공개 갤러리는 처음 방문하면 영어로 표시됩니다. 상단에서 English·한국어·日本語·CH · 简体中文·Español을 선택할 수 있으며, 제목·안내·16개 카드 설명·링크·접근성 문구가 함께 바뀝니다. 선택은 이 브라우저에 저장되고 `?lang=en|ko|ja|zh|es` 주소로 공유할 수 있습니다. URL의 명시적 언어가 저장된 선택보다 우선합니다. 브라우저의 기본 언어를 자동 적용하지 않습니다.
+공개 갤러리는 처음 방문하면 영어로 표시됩니다. 상단에서 English·한국어·日本語·CH · 简体中文·Español을 선택할 수 있으며, 제목·안내·17개 카드 설명·링크·접근성 문구가 함께 바뀝니다. 선택은 이 브라우저에 저장되고 `?lang=en|ko|ja|zh|es` 주소로 공유할 수 있습니다. URL의 명시적 언어가 저장된 선택보다 우선합니다. 브라우저의 기본 언어를 자동 적용하지 않습니다.
 
 전체 타임라인 12개와 대표 장면 3개 모두 5개 언어를 지원합니다. 갤러리에서 선택한 언어가 개별 데모와 대표 장면의 전체 타임라인 링크로 이어집니다. 새 방문은 영어가 기본이며, 개별 데모에서도 언어를 바꿀 수 있습니다. 번역은 HTML에 포함되므로 재생 중 외부 번역 서비스에 접속하지 않습니다. 출처의 서지 제목·고유 명칭은 원문을 유지할 수 있습니다. 일본어·중국어·스페인어는 자동 번역 후 주요 UI 용어를 보정했으며 전체 문장의 원어민 교정은 미검증입니다.
 
@@ -94,3 +94,11 @@ WTC 전체 타임라인과 대표 장면은 연기·화염·분진을 인스턴�
 [Public demo](https://jaythealpha.github.io/motion-skill/elapse/examples/sydney-opera-house.html?view=records&lang=en) · [local HTML](elapse/examples/sydney-opera-house.html) · [evidence notes](elapse/research/sydney-notes.md).
 
 Five records cover shared design, construction workers, Peter Hall and interior completion, Concert Hall acoustic/access renewal, and recognition in2023. Numeric facts are approximately10,000 construction participants over1959–1973,18 reflectors in the2022 Concert Hall renewal and0.4m relative stage lowering, with separate scopes. English defaults with five-language reading, source links, color/blueprint, playback and five exploration stops. The hall/renewal views explicitly hide shells for explanation. Estimated120×180×67m envelope, sail groups, joints, windows, hall and intermediate construction are not surveyed CAD or acoustic/accessibility validation. No people or source media are rendered.
+
+## 시드니·WTC 렌더링 보완 (2026-11-10)
+
+- [시드니 동일 카메라 기존·개선 비교](https://jaythealpha.github.io/motion-skill/elapse/examples/opera-art-study.html?lang=en&p=0.8055556&compare=1): 외관·쉘·콘서트홀을 비교합니다. 갤러리의 언어 선택이 이어집니다.
+- 시드니 전체 타임라인에도 세라믹·곡면·수면·목재 마감을 적용했습니다. 반사는 지붕 건설 진도에 따라 나타나며, 도면 모드에서는 연출 조명·수면을 해제합니다.
+- WTC 전체/대표 장면은 HDR 렌더 타깃과 제한된 빛 번짐·가장자리 보정을 사용합니다. 저사양 경로와 도면은 직접 렌더링합니다. `render=direct`는 후처리만 생략하는 비교 옵션입니다.
+- 하부 트라이던트의 상세 치수, 주변 도시 배치, 화염·연기·카메라는 추정입니다. 자료의 수치·사람들의 기록·역사적 시점은 변경하지 않았습니다.
+- 실제 기기마다 성능이 다릅니다. 데스크톱 브라우저 측정은 실제 휴대폰 GPU의 성능 보증이 아닙니다.

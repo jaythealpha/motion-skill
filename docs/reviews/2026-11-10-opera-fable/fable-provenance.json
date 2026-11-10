@@ -1,0 +1,19 @@
+{
+  "model": "claude-fable-5-2",
+  "scope": "specification-only art-pass module",
+  "estimated_api_cost_usd": 1.730282,
+  "original_model_output_sha256": "ef0c0775eee70432f0727114f255dc55b85ca5e946ed63faf7c38d7a45ebabe4",
+  "source_files_sent": false,
+  "source_payload_rejection": "The rejected full-source payload was not sent. A separate specification-only request was approved.",
+  "integrated_module_sha256": "f7dc6dca152bea97fe845843d70169465bb37c650822b0e87cc5cdc980de49d6",
+  "reviewed_and_refined_by": "Codex",
+  "integration_refinements": [
+    "same-camera comparison and 36-second three-shot player",
+    "opt-in bounded shell tessellation",
+    "timber bump/glass intensity and estimated hall finish",
+    "static shader warm-up and GPU setup synchronization",
+    "remove duplicate lights and redundant procedural surface shader layers",
+    "four-wave water instead of six-wave HQ path",
+    "responsive five-language UI, keyboard focus, offline-portable original links"
+  ]
+}
