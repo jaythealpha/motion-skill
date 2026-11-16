@@ -22,3 +22,12 @@ Dates are Paris **local wall-clock values**, stored without automatic timezone c
 Stone twin towers remain standing. Roof skin and timber are separate from masonry and local vault openings. Exploration locks the chosen date and returns paused to the previous time/style/camera. Seven stops include surviving west front/rose, crossing, roof, cutaway vault and apse/buttresses. The vault stop hides roof and spire layers explicitly for observation. This is not a real visitor route, emergency training tool, structural/fire simulation, restoration work instruction or surveyed CAD.
 
 The confidence share counts tagged explanatory pieces and dated events; it is not a percentage accuracy of the mesh. Geometry is estimated even when the corresponding event date is sourced. Sources were current when checked; later conservation milestones are outside this model.
+
+## 2026-11-16 art pass and island context
+
+Read on 2026-11-16: [Ville de Paris — Notre-Dame de Paris : à quoi ressembleront les abords de la cathédrale ?](https://www.paris.fr/pages/les-abords-de-notre-dame-vont-faire-peau-neuve-17332) (updated 21 September 2026). Facts used for the 2019–2024 setting only; the planned redesign (from 2026 onward) is **not** shown:
+- A forecourt (parvis) lies in front of the three west entrance portals.
+- Squares Jean-XXIII and Île-de-France lie behind the cathedral, toward the eastern tip of the Île de la Cité. Gardens with existing trees lie on the south side toward the Seine.
+- The upper and lower Seine quays, quai de l'Archevêché and rue du Cloître-Notre-Dame bound the site.
+
+Authored, not sourced: positions, sizes and shapes of the parvis, street, gardens, quay and river; tree count, size and placement; stone course height and joint pattern, grime, lead seams and patina, fresh-oak grain and colour; sky, haze and light. The model's +y is taken as north. Rebuilt timber now uses a separate fresh-oak material so it reads differently from the pre-fire frame; the dated visibility of old and new timber is unchanged. No people, no statues as human figures, no exhibition of debris beyond the existing estimated rubble. `?art=0` renders the previous look for comparison.

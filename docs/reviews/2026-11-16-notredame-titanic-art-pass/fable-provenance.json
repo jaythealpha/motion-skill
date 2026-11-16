@@ -1,0 +1,18 @@
+{
+  "model": "claude-fable-5-2",
+  "pricing_checked": { "url": "https://platform.claude.com/docs/en/about-claude/pricing", "date": "2026-11-16", "usd_per_mtok": { "input": 8, "output": 40, "cache_write_1h": 16 } },
+  "billing_context": "Claude Code CLI on a Max plan with extra usage turned off ($0.00 extra spend at the time of checking). Reported costs are list-price estimates (total_cost_usd), most likely drawn from plan usage rather than charged. Invoice settlement was not checked.",
+  "calls": [
+    { "purpose": "Notre-Dame limestone / lead / fresh oak patches, Île de la Cité ground, trees", "reported_cost_usd": 1.939136, "output_tokens": 46650, "thinking_tokens_included": 28396, "duration_ms": 438999, "original_output_sha256": "cc3dd2f99793f24c61a70e11847ea32caa6f8f6e6d769628da299449025e41d0", "integrated_module": "elapse/engine/notredame-art-pass.js" },
+    { "purpose": "Titanic seabed sediment / survey-light pools, water column, marine snow, toon wreck weathering", "reported_cost_usd": 1.339856, "output_tokens": 32076, "thinking_tokens_included": 16107, "duration_ms": 287819, "original_output_sha256": "e5abd84e97fe91a72712d93e6707c16d8dc5414cdf49120d34366be03b037b43", "integrated_module": "elapse/engine/deepsea-art-pass.js" }
+  ],
+  "reported_total_usd_this_batch": 3.278992,
+  "reported_total_usd_session": 4.777992,
+  "source_files_sent": false,
+  "prompt_contents": "Written specifications only (coordinate frames, shader-chunk constraints, determinism, performance limits, the sourced placement facts). No repository source, records, keys or personal data.",
+  "reviewed_and_integrated_by": "Claude Opus 5.5 (Claude Code)",
+  "integration_refinements": {
+    "notre-dame": ["ground edge fade widened (330-348 m -> 205-345 m) after a hard pale ring appeared", "tree foliage darkened for ACES output", "city-block ground darkened", "hemisphere fill reduced and stone tint raised after close views blew out", "fresh-oak material split from the pre-fire frame", "existing quality mortar pass skipped for patched stone/lead/oak to avoid double joint grids", "fire-period sky zenith blends toward grey"],
+    "titanic": ["sediment albedo darkened (0x8f978a -> 0x4a524d) after the seabed read as shallow water", "light pools strengthened and ambient floor reduced", "wreck weathering applied only to Simple-view toon materials because the detailed view already has a rust surface", "fog/water column blended in only below ~1,200 m camera depth"]
+  }
+}

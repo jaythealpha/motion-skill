@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {register} from 'node:module';
+import * as THREE from '../shared/vendor/three.module.min.js';
+const vendor=new URL('../shared/vendor/three.module.min.js',import.meta.url).href;
+register('data:text/javascript,'+encodeURIComponent(`export async function resolve(s,c,n){return s==='three'?{url:${JSON.stringify(vendor)},shortCircuit:true}:n(s,c);}`));
+const nd=await import('../engine/notredame-art-pass.js'),ds=await import('../engine/deepsea-art-pass.js');
+const src=f=>readFileSync(new URL('../engine/'+f,import.meta.url),'utf8');
+test('art-pass modules record spec-only Fable provenance, use no wall clock and fetch nothing',()=>{for(const f of ['notredame-art-pass.js','deepsea-art-pass.js','titanic-deep-art.js']){const s=src(f);if(f!=='titanic-deep-art.js')assert.match(s,/claude-fable-5-2/);assert.doesNotMatch(s,/performance\.now|Date\.now|getElapsedTime/);assert.doesNotMatch(s,/https?:\/\/(?!www\.w3)/);}});
+test('Notre-Dame trees are deterministic and keep clear of the cathedral footprint',()=>{const read=()=>{const t=nd.createTrees(),m=new THREE.Matrix4(),p=new THREE.Vector3(),rows=[];const trunks=t.group.children[0];for(let i=0;i<trunks.count;i++){trunks.getMatrixAt(i,m);p.setFromMatrixPosition(m);rows.push([p.x,p.y]);}return rows;};const a=read(),b=read();assert.deepEqual(a,b);assert.ok(a.length>=40);
+ for(const [x,y] of a){assert.ok(Number.isFinite(x)&&Number.isFinite(y));const inNave=x>-70&&x<70&&Math.abs(y)<19,inTransept=x>-6&&x<16&&Math.abs(y)<32;assert.ok(!inNave&&!inTransept,`tree at ${x},${y} overlaps the cathedral`);}});
+test('Notre-Dame patches chain prior hooks and keep distinct program keys',()=>{const m=new THREE.MeshStandardMaterial();m.onBeforeCompile=()=>{};m.customProgramCacheKey=()=>'prior';const h=nd.patchLimestone(m);assert.match(m.customProgramCacheKey(),/^prior\|nd-art:limestone/);h.setClean(2);h.setStyle('blueprint');const l=new THREE.MeshStandardMaterial();nd.patchLead(l);assert.notEqual(l.customProgramCacheKey(),m.customProgramCacheKey());});
+test('deep-sea inputs are bounded and wreck weathering patches only once',()=>{const s=ds.createSeabedMaterial();s.setPieces(Array.from({length:12},(_,i)=>({x:i,y:i,radius:50,strength:2})));s.setLamps([{x:0,y:0,z:NaN,radius:-5}]);s.setStrength(4);const u=s.material;assert.ok(u);const t=new THREE.MeshToonMaterial(),h1=ds.patchWreckSurface(t),h2=ds.patchWreckSurface(t);assert.equal(h1,h2);h1.setRust(3);h1.setEnabled(false);assert.match(t.customProgramCacheKey(),/ds-wreck-v1/);});

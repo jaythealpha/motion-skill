@@ -20,6 +20,7 @@ import { evaluate } from './tracks.js';
 import { cameraAt, subjectBox, frameSubject, pieceWorldBox } from './camera.js';
 import { pieceBox, waterPlane, clampToPlane, groundFn, worldBox } from './geom.js';
 import { gradientMap, INK, BP } from '../shared/toon.js';
+import { createTitanicDeepArt } from './titanic-deep-art.js';
 
 const DEG = Math.PI / 180;
 const toThree = ([x, y, z]) => new THREE.Vector3(x, z, -y);
@@ -174,6 +175,7 @@ export function createRenderer(canvas, model, opts = {}) {
       if (it.rusticles) { it.rusticles.count = bp ? 0 : Math.round(Math.max(0, ps.rust) * 600); it.rusticles.visible = !st.xray; }
     }
     if (env.seabed) env.seabed.material = env.seabed.userData.mats[st.style];
+    deepArt?.apply(st,s);
     // light: a dim blue night and dark deep water, still drawn bright enough to see
     const deep = st.cam ? st.cam.target[2] < -200 : false;
     hemi.intensity = bp ? 1.5 : night || deep ? 1.15 : 1.6; hemi.color.set(night || deep ? '#c9d6f0' : '#ffffff'); sun.color.set(cinematic && (deep || (isBritannic(model) && st.eyeZ<0)) ? '#a1c7df' : '#ffffff'); sun.intensity = night || deep ? (cinematic ? 2.6 : 1.3) : 2;
@@ -264,7 +266,9 @@ export function createRenderer(canvas, model, opts = {}) {
 
   const quality=opts.quality==='high'&&isBritannic(model)?createQualityStudy({renderer,scene,camera,root,items,ground,hemi,sun,model,cutaway:opts.qualityCutaway}):opts.quality==='high'&&isTitanic(model)?createTitanicQuality({renderer,scene,items}):null;
   const presentation=createPresentation(renderer,scene,{kind:'marine'});
-  function render() { if (!st.last) apply(st.t); placeCamera(); cinematic?.update(st); wreckDetail?.update(st); ecology?.updateLight(st,hemi,sun); surveyLamp.visible=st.exploring&&(!ecology||!ecologyMode(model,st))&&st.style==='color'&&st.exploreLight;
+  // Titanic seabed art pass (authored illustration; ?art=0 keeps the previous look). Britannic is unaffected.
+  const deepArt=isTitanic(model)&&opts.artPass!=='0'?createTitanicDeepArt({renderer,scene,root,env,items,seaFloor,toonWeathering:!quality}):null;
+  function render() { if (!st.last) apply(st.t); placeCamera(); deepArt?.beforeRender(st,camera); cinematic?.update(st); wreckDetail?.update(st); ecology?.updateLight(st,hemi,sun); surveyLamp.visible=st.exploring&&(!ecology||!ecologyMode(model,st))&&st.style==='color'&&st.exploreLight;
     if(surveyLamp.visible){const T=toThree(st.cam.target),d=camera.position.distanceTo(T);surveyLamp.position.copy(camera.position);surveyLamp.target.position.copy(T);surveyLamp.distance=d*5+5;surveyLamp.intensity=d*d*2*st.lampStrength;}
     quality?.update(st); if(quality)presentation.update(st);
     renderer.render(scene, camera); opts.onRender?.(); }

@@ -1,3 +1,10 @@
+## 2026-11-17 — Notre-Dame setting and Titanic seabed art pass
+
+- Notre-Dame: Île de la Cité setting (parvis, north street, gardens and trees, quay and Seine), placed from the City of Paris description of the cathedral's surroundings and shown as in 2019–2024. Coursed limestone that lightens with the dated cleaning, standing-seam lead, and a separate fresh-oak material for the rebuilt frame. Positions and sizes are estimated.
+- Titanic: dark abyssal sediment, soft survey-light pools at the resting hull sections, debris-field tone, a deep-water background and fine marine snow, plus wreck weathering in Simple view. All of it is authored illustration; there is no daylight at ~3,800 m.
+- Fixed a seabed-close-up stutter: ecology spotlights now stay counted at intensity 0 instead of being hidden, which avoided a one-time recompile of every lit shader.
+- Both modules came from Fable 5.2 specification-only calls and were reviewed and tuned in integration. `?art=0` shows the previous look. Records, dates and sources are unchanged. [Review](../docs/reviews/2026-11-16-notredame-titanic-art-pass/design-qa.md) · [Unfold assessment](../docs/reviews/2026-11-16-unfold-assessment.md).
+
 ## 2026-11-16 — Eiffel construction art pass
 
 - Eiffel timeline gets its own renderer (`eiffel-render.js`): authored sky and haze, a procedural worksite ground with excavation pads and haul paths, an illustrative Seine-side strip, lattice shadows that respect the construction reveal, per-member iron tone variation and sub-pixel lattice widening against moiré. Camera framing is unchanged.

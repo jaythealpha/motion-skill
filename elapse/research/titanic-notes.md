@@ -467,3 +467,11 @@ Range: **1,490–1,517** (official 1912). Modern consensus ≈ 1,496 (`disputed`
 | s50 | Encyclopedia Titanica forum: Hackett & Bedford 1996 trim figures ("Affecting Titanic's Trim") | https://www.encyclopedia-titanica.org/community/threads/affecting-titanics-trim.9618/ | Encyclopedia Titanica forum (weak) | n.d. |
 
 Notes on access: Encyclopedia Titanica article pages returned HTTP 403 and WHOI pages failed TLS for the fetch tool, so figures from those sites (s30, s31, s45, s50) were taken from search-result summaries and are weaker than the titanicinquiry.org transcripts. Wikipedia (CC BY-SA) is used only as a secondary pointer; no text was copied from it.
+
+## 2026-11-16 seabed art pass
+
+Unchanged: dates, poses, break interpretation, rust timing, records, sources and projections. Sourced context already in these notes: the two main pieces lie about 600 m apart (s23) with a debris field between them.
+
+Authored, not sourced: sediment colour and texture, ripples, scour and berm tone, debris-field stain specks, the water-column gradient, marine snow and wreck streaking. At ~3,800 m there is no daylight. The visible light, including soft pools around the resting hull sections, follows an illustrative survey-lighting convention and is not a measured scene. No people, remains or lifeboats are shown. `?art=0` renders the previous look.
+
+Performance fix in `deep-ecology.js`: the two survey spotlights used to be switched with `.visible`, which changed the scene's light count and forced a one-time shader recompile of every lit material at the start of the seabed close-up (183–283 ms on the original page, up to 5.2 s with the heavier seabed shader). They now stay counted at intensity 0 when off. Lighting appearance is unchanged.

@@ -77,7 +77,8 @@ float ecoNoise(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix
  function updateLight(st,hemi,sun){const active=ecologyMode(model,st),lit=active&&st.exploreLight!==false;
    const target=st.cam.target,eye=camera.position.clone(),T=toThree(target),d=eye.distanceTo(T),right=new THREE.Vector3(1,0,0).applyQuaternion(camera.quaternion),macro=!!st.ecoFocus;
    hemi.intensity=lit?.13:hemi.intensity;sun.intensity=lit?.10:sun.intensity;
-   spots.forEach((l,i)=>{l.visible=lit;if(!lit)return;l.position.copy(eye).addScaledVector(right,(i?1:-1)*d*.13);l.target.position.copy(T).addScaledVector(right,(i?1:-1)*d*.08);l.angle=macro?.43:.35;l.distance=d*5+5;l.intensity=d*d*(macro?3.8:5.2)*(st.lampStrength||1);});
+   // Lights stay counted (intensity 0 when off) so toggling the survey lamps never forces a mid-playback shader recompile.
+   spots.forEach((l,i)=>{l.visible=true;if(!lit){l.intensity=0;return;}l.position.copy(eye).addScaledVector(right,(i?1:-1)*d*.13);l.target.position.copy(T).addScaledVector(right,(i?1:-1)*d*.08);l.angle=macro?.43:.35;l.distance=d*5+5;l.intensity=d*d*(macro?3.8:5.2)*(st.lampStrength||1);});
    snow.visible=active;if(!active)return;
    const span=macro?(st.ecoFocus.kind==='fish'?2: .55): Math.min(70,Math.max(15,d*.35)),clock=st.ecoClock||0,C=target;
    for(let i=0;i<N;i++){const q=snowPoint(seeds[i],clock,span);pos.set([C[0]+q[0],C[1]+q[1],C[2]+q[2]],i*3);alpha[i]=(lit?.26:.055)*(1-Math.abs(q[2])/span)*(i%9===0?1.5:1);}

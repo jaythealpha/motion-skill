@@ -7,15 +7,22 @@ import {qualityLighting,qualitySceneMaterials} from './quality-surfaces.js';
 import * as THREE from 'three';
 import {cathedralForm} from './notredame-form.js';
 import {notreDameState} from './notredame-model.js';
+import {createSky,applyFog} from './eiffel-art-pass.js';
+import {patchLimestone,patchLead,patchOak,createCiteGround,createTrees,SUGGESTED_LIGHTS} from './notredame-art-pass.js';
 const V=([x,y,z])=>new THREE.Vector3(x,z,-y);
 export function createNotreDameRenderer(canvas,model,opts={}){
- const renderer=new THREE.WebGLRenderer({canvas,antialias:true,preserveDrawingBuffer:true});configureMaterialBudget(renderer);renderer.setPixelRatio(presentationPixelRatio(renderer));renderer.outputColorSpace=THREE.SRGBColorSpace;
+ const renderer=new THREE.WebGLRenderer({canvas,antialias:true,preserveDrawingBuffer:true}),lightweight=configureMaterialBudget(renderer),art=opts.artPass!=='0';renderer.setPixelRatio(presentationPixelRatio(renderer));renderer.outputColorSpace=THREE.SRGBColorSpace;
  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(35,1,.1,5000),root=new THREE.Group();root.rotation.x=-Math.PI/2;scene.add(root);
  const hemi=new THREE.HemisphereLight('#fff8e8','#59646f',2),sun=new THREE.DirectionalLight('#fff3d8',3);sun.position.set(-100,150,80);scene.add(hemi,sun);
  const st={t:0,style:'color',auto:opts.auto!==false,yaw:opts.yaw??null,pitch:opts.pitch??null,zoom:opts.zoom||1,exploring:false,exploreTarget:'overview',lampStrength:1,last:null,cam:null,focusIds:null,focusBox:null,ecoFocus:null};if(st.yaw!=null||st.pitch!=null)st.auto=false;
  const form=cathedralForm(root),{groups:g,mats,roofs,oldTimbers,newTimbers,vaults}=form;
+ // Art pass: the rebuilt frame gets its own fresh-oak material; dated visibility is unchanged.
+ if(art){mats.oak=mats.wood.clone();mats.oak.color.set('#b98a55');for(const q of newTimbers)if(q.isMesh)q.material=mats.oak;for(const m of [mats.stone,mats.trim,mats.lead,mats.oak])m.userData.qualitySurface=true;}
  const initialColors=new Map();root.traverse(o=>{if(o.material&&!initialColors.has(o.material))initialColors.set(o.material,o.material.color.clone());});
  const ground=new THREE.Mesh(new THREE.PlaneGeometry(550,400),surfaceMaterial({color:'#b6b3a6',roughness:1}));ground.position.z=-.3;root.add(ground);
+ // Authored Île de la Cité setting (Fable 5.2 module); placement illustrative, see notredame-notes.md.
+ const site=art?createCiteGround({lightweight}):null,trees=art?createTrees({lightweight}):null,sky=art?createSky():null,fog=art?applyFog(scene):null;if(art){site.mesh.material.userData.qualitySurface=true;root.add(site.mesh,trees.group);scene.add(sky.mesh);const L=SUGGESTED_LIGHTS;hemi.color.set(L.hemiSky);hemi.groundColor.set(L.hemiGround);sun.color.set(L.sunColor);}
+ const fireSky=new THREE.Color('#8f8d88'),clearZenith=sky?sky.mesh.material.uniforms.uZenith.value.clone():null;
  const plinth=new THREE.Mesh(new THREE.BoxGeometry(150,68,.4),surfaceMaterial({color:'#d3cbb8',roughness:1}));plinth.position.set(0,0,-.1);root.add(plinth);
  let progress=notreDameState(model,0);const allBox=()=>({min:[-66,-28,0],max:[66,28,progress.fall<1?96:progress.rebuild>0?96:70]});
  function view(){let b=allBox(),yaw=245,pitch=22;const stop=st.exploring&&model.stops.find(s=>s.id===st.exploreTarget);if(stop&&st.t>=stop.availableFrom){b=structuredClone(stop.box);if(stop.id==='overview')b=allBox();yaw=stop.yaw??225;pitch=stop.pitch??20;}
@@ -24,10 +31,12 @@ export function createNotreDameRenderer(canvas,model,opts={}){
  }
  function project(b){const nodes=[];if(st.focusIds?.[0]==='overview'){for(const x of [-65,65])for(const y of [-26,26])for(const z of [0,44])nodes.push([x,y,z]);for(const x of [-65,-45])for(const y of [-22,22])nodes.push([x,y,69]);nodes.push([5,0,b.max[2]]);}else for(const x of [b.min[0],b.max[0]])for(const y of [b.min[1],b.max[1]])for(const z of [b.min[2],b.max[2]])nodes.push([x,y,z]);const ps=nodes.map(p=>V(p).project(camera));return {minX:Math.min(...ps.map(p=>p.x)),maxX:Math.max(...ps.map(p=>p.x)),minY:Math.min(...ps.map(p=>p.y)),maxY:Math.max(...ps.map(p=>p.y))};}
  const enhanced=opts.quality==='high';if(enhanced){cathedralDetail(form);qualitySceneMaterials(root,m=>m===mats.wood||m===mats.char?'wood':m===mats.stone||m===mats.trim?'stone':'metal');}
+ const patches=art?[patchLimestone(mats.stone,{lightweight,tint:.55}),patchLimestone(mats.trim,{lightweight,tint:.15}),patchLead(mats.lead,{lightweight}),patchOak(mats.oak,{lightweight,grain:'auto'})]:[];
  const fireEffects=cathedralEffects(root);
  const presentation=createPresentation(renderer,scene,{kind:'stone',sun,root});
- function render(){view();presentation.update(st);if(enhanced)qualityLighting(renderer,scene,st);renderer.render(scene,camera);opts.onRender?.();}
+ function render(){view();presentation.update(st);if(enhanced)qualityLighting(renderer,scene,st);root.updateMatrixWorld();for(const p of patches)p.update(root.matrixWorld);renderer.render(scene,camera);opts.onRender?.();}
  function set(o={}){Object.assign(st,o);progress=notreDameState(model,st.t);st.progress=progress;st.last={pieces:new Map(),water:new Map(),lights:0};const bp=st.style==='blueprint';scene.background=new THREE.Color(bp?'#172b40':progress.fire>0?'#a6a6a0':'#e3e6df');ground.material.color.set(bp?'#152639':'#b6b3a6');plinth.material.color.set(bp?'#21384d':'#d3cbb8');
+  if(art){const style=bp?'blueprint':'color';ground.visible=bp;plinth.visible=bp;site.setStyle(style);trees.setStyle(style);sky.setVisible(!bp);fog.setEnabled(!bp);for(const p of patches)p.setStyle(style);patches[0].setClean(progress.clean);patches[1].setClean(progress.clean);sky.mesh.material.uniforms.uZenith.value.copy(clearZenith).lerp(fireSky,Math.min(1,progress.fire*1.4));}
   for(const [m,color] of initialColors){m.color.copy(bp?new THREE.Color('#a9d1dc'):color);if('metalness'in m)m.metalness=bp?0:(m===mats.lead?.35:0);}
   mats.stone.color.copy(bp?new THREE.Color('#95b7c7'):new THREE.Color('#b9ad91').lerp(new THREE.Color('#ded5bd'),progress.clean*.5));mats.dark.color.set(bp?'#132538':'#273541');
   roofs.forEach((q,i)=>{q.visible=progress.damage<(i%9+1)/10||progress.cover>(i%9+1)/10;});
@@ -42,7 +51,7 @@ export function createNotreDameRenderer(canvas,model,opts={}){
   g.support.visible=progress.support>.05;g.tarp.visible=progress.tarp>.1;
   g.fire.visible=g.smoke.visible=false;fireEffects.set(progress,bp,st.t);g.fire.scale.z=Math.max(.01,progress.fire);g.fire.position.z=44*(1-progress.fire);g.smoke.children.forEach((q,i)=>{q.scale.setScalar(.5+progress.fire*(1+(i%3)*.2));q.material.opacity=.17*progress.fire;});
   if(st.exploring&&st.exploreTarget==='vault'){g.roof.visible=false;g.oldTimber.visible=false;g.newTimber.visible=false;g.tarp.visible=false;g.oldSpire.visible=false;g.newSpire.visible=false;}else g.roof.visible=true;
-  sun.intensity=(bp?0:3)*(st.exploring?st.lampStrength:1);hemi.intensity=bp?2:2;render();}
+  sun.intensity=(bp?0:art?SUGGESTED_LIGHTS.sunIntensity:3)*(st.exploring?st.lampStrength:1);hemi.intensity=bp?2:art?SUGGESTED_LIGHTS.hemiIntensity*1.35:2;render();}
  const manual=()=>{if(st.yaw==null)st.yaw=st.cam?.yaw??225;if(st.pitch==null)st.pitch=st.cam?.pitch??20;if(st.auto){st.auto=false;st.yaw=st.cam.yaw;st.pitch=st.cam.pitch;opts.onManual?.();}};const pointers=new Map();let pinch=0;
  let renderRaf=0;const requestRender=()=>{if(!renderRaf)renderRaf=requestAnimationFrame(()=>{renderRaf=0;render();});};
  canvas.addEventListener('pointerdown',e=>{pointers.set(e.pointerId,[e.clientX,e.clientY]);canvas.setPointerCapture?.(e.pointerId);});canvas.addEventListener('pointermove',e=>{if(!pointers.has(e.pointerId))return;const old=pointers.get(e.pointerId);pointers.set(e.pointerId,[e.clientX,e.clientY]);manual();if(pointers.size===2){const [a,b]=[...pointers.values()],d=Math.hypot(a[0]-b[0],a[1]-b[1]);if(pinch)st.zoom=Math.max(.2,Math.min(5,st.zoom*pinch/d));pinch=d;}else{st.yaw-=(e.clientX-old[0])*.35;st.pitch=Math.max(-30,Math.min(75,st.pitch+(e.clientY-old[1])*.25));}requestRender();});for(const evt of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(evt,e=>{pointers.delete(e.pointerId);pinch=0;});canvas.addEventListener('wheel',e=>{e.preventDefault();manual();st.zoom=Math.max(.2,Math.min(5,st.zoom*Math.exp(e.deltaY*.001)));requestRender();},{passive:false});canvas.style.touchAction='none';
