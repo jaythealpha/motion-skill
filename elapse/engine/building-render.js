@@ -11,6 +11,7 @@ import {isWTC} from './wtc-model.js';
 import {createWTCRenderer} from './wtc-render.js';
 import {isNotreDame} from './notredame-model.js';
 import {createNotreDameRenderer} from './notredame-render.js';
+import {createEiffelRenderer} from './eiffel-render.js';
 import * as THREE from 'three';
 import {eiffelMembers,halfWidth} from './eiffel-form.js';
 import {buildingProgress} from './building-model.js';
@@ -20,6 +21,7 @@ export function createBuildingRenderer(canvas,model,opts={}){
  if(isCivil(model))return createCivilRenderer(canvas,model,opts);
  if(isWTC(model))return createWTCRenderer(canvas,model,opts);
  if(isNotreDame(model))return createNotreDameRenderer(canvas,model,opts);
+ if(model.geometry?.type==='eiffel-1889'&&opts.artPass!=='0')return createEiffelRenderer(canvas,model,opts);
  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,preserveDrawingBuffer:true});configureMaterialBudget(renderer);renderer.setPixelRatio(presentationPixelRatio(renderer));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.localClippingEnabled=true;
  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(35,1,.1,5000),root=new THREE.Group();root.rotation.x=-Math.PI/2;scene.add(root);
  const hemi=new THREE.HemisphereLight('#fff9ed','#525d62',2),sun=new THREE.DirectionalLight('#fff2d9',3);sun.position.set(-150,380,240);scene.add(hemi,sun);

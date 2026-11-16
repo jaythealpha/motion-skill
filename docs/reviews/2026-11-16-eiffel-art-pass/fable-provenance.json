@@ -1,0 +1,37 @@
+{
+  "model": "claude-fable-5-2",
+  "availability_check": "2026-11-16 via Claude Code CLI, provider firstParty, costBasis list",
+  "pricing_checked": {
+    "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+    "date": "2026-11-16",
+    "fable_5_2_usd_per_mtok": { "input": 8, "cache_write_5m": 10, "cache_write_1h": 16, "cache_read": 0.2, "output": 40 }
+  },
+  "calls": [
+    { "purpose": "availability probe (one-word reply)", "reported_cost_usd": 0.014768 },
+    {
+      "purpose": "specification-only Eiffel atmosphere / site ground / iron finish / steam module",
+      "reported_cost_usd": 1.484232,
+      "output_tokens": 35343,
+      "thinking_tokens_included": 22729,
+      "cache_creation_input_tokens": 4406,
+      "duration_ms": 335916
+    }
+  ],
+  "reported_total_usd": 1.499,
+  "cost_note": "Costs are the CLI's list-price estimates (total_cost_usd). Invoice settlement was not checked.",
+  "source_files_sent": false,
+  "prompt_contents": "A written specification of coordinate frame, light setup, shader-chunk constraints, determinism and performance limits. No repository source, records, keys or personal data.",
+  "original_model_output_sha256": "b70317807e8b98f368e3f2c96f62ba2c4a54a0c3abc6038123ba98e4864acdac",
+  "integrated_module": "elapse/engine/eiffel-art-pass.js",
+  "reviewed_and_integrated_by": "Claude Opus 5.5 (Claude Code)",
+  "integration_refinements": [
+    "two-line provenance header",
+    "bluer zenith gradient and narrower haze band after same-camera review (the first output read greyer than the original sky)",
+    "fog density 0.00072 -> 0.00052 for lattice contrast",
+    "darker earth/damp/quay and desaturated river colours for ACES output",
+    "raised ground patch, drift and haul-path contrast",
+    "steam opacity 0.55 -> 0.42 for close inspection stops",
+    "iron patch applied after the existing quality surface so each program keeps a distinct cache key; ground excluded from that surface pass",
+    "explicit lattice shadow casting with clipShadows so unbuilt members cast no shadow"
+  ]
+}

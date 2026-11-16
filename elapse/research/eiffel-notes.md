@@ -16,3 +16,14 @@ Height interpolates between reference anchors; the first-level beam connection a
 The building branch has its own dimension and chronology checks, renderer and gauges. It shares source marking, playback, fixed slots and exploration with Elapse; ship flooding/wreck checks do not certify it. Unsupported building templates are rejected. No external photos, scans, video frames, meshes or fonts were downloaded or embedded. No NIST/9·11 or Notre-Dame geometry has been implemented in this pass.
 
 See `../representative/eiffel-qa.md` for verification and limits.
+
+## 2026-11-16 art pass and site context
+
+Re-read on 2026-11-16: [SETE history](https://www.toureiffel.paris/en/the-monument/history). Facts used, all prose newly written, no images copied:
+- The first level was assembled with twelve temporary wooden scaffolds 30 m high and four larger scaffolds 40 m high. These match the existing `eiffel-form.js` scaffold towers; the new ledgers, decks and sole plates only dress them.
+- Small steam cranes were mounted on the tower and climbed it on the runners later used by the elevators. The renderer moves the two existing cranes onto the leg centre line below the second level and inside the shaft above it. Crane count, form and exact path are estimated.
+- Parts were prefabricated at Levallois-Perret and assembled into sections about 5 m long. Stacks of 5 m sections near the haul path are illustrative; counts and positions are estimated.
+- On the Seine side, watertight metal caissons with compressed air allowed work below water level. Caissons are shown only on the two +y (Seine-side) pillars during the foundation chapter; their number, shape and airlock form are estimated.
+- The tower stands on the Champ-de-Mars with a 125 m square base. The river strip on the +y side indicates direction only; its distance, width and quay shape are not surveyed.
+
+Authored, not sourced: sky, haze, fog density, ground colours and textures, excavation pads, haul paths, iron tone variation, steam appearance and light colours. No people, no modern site features, no exhibition buildings. The `art=0` URL option renders the previous presentation from the same page for comparison. See `docs/reviews/2026-11-16-eiffel-art-pass/design-qa.md`.

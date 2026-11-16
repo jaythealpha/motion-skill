@@ -152,7 +152,7 @@ export function mountElapse(root, model, params = {}) {
   const $ = s => root.querySelector(s);
   const canvas = $('canvas'), range = $('.el-track input');
   const num = k => params[k] != null && isFinite(+params[k]) ? +params[k] : undefined;
-  const R = (building?createBuildingRenderer:createRenderer)(canvas, model, {quality:params.quality,qualityCutaway:params.cutaway==='1',ecology:st.ecology,exploreLight:st.exploreLight,ecoView:st.ecoView, auto: params.auto !== '0', yaw: num('yaw'), pitch: num('pitch'), zoom: num('zoom'), onManual: () => viewButtons(), onRender: () => drawing() });
+  const R = (building?createBuildingRenderer:createRenderer)(canvas, model, {quality:params.quality,artPass:params.art,qualityCutaway:params.cutaway==='1',ecology:st.ecology,exploreLight:st.exploreLight,ecoView:st.ecoView, auto: params.auto !== '0', yaw: num('yaw'), pitch: num('pitch'), zoom: num('zoom'), onManual: () => viewButtons(), onRender: () => drawing() });
   const cs = classShares(model), shares = Object.fromEntries(CLASSES.map(c => [c, Math.round(100 * cs[c])]));
   const projCh = new Set(model.features.projectionChapters || []);
   const comps = model.pieces.filter(p => p.template === 'compartment' && model.tracks.some(tr => tr.piece === p.id && tr.prop === 'water'));
