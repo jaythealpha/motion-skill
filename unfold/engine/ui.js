@@ -342,7 +342,7 @@ export function mountUnfold(root, model, params = {}) {
   canvas.addEventListener('pointermove', e => { if (!pts.has(e.pointerId)) return; pts.set(e.pointerId, [e.clientX, e.clientY]);
     if (pts.size === 2) { const [a, b] = [...pts.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]); if (pinch) R.zoom(d / pinch); pinch = d; moved = true; return; }
     if (!drag) return; const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
-    if (Math.abs(dx) + Math.abs(dy) > 3) { moved = true; canvas.classList.add('drag'); if (R.state.auto) { R.setAuto(false); $('.uf-view [data-v=auto]').setAttribute('aria-pressed', false); } }
+    if (Math.abs(dx) + Math.abs(dy) > 3) { moved = true; canvas.classList.add('drag'); }
     R.orbit(-dx * 0.4, dy * 0.3); drag = { x: e.clientX, y: e.clientY }; });
   const up = e => { pts.delete(e.pointerId); canvas.classList.remove('drag');
     if (!moved && e.type === 'pointerup' && pts.size === 0) { const id = R.pick(e.clientX, e.clientY), r = stage.getBoundingClientRect(); showPop(id, e.clientX - r.left, e.clientY - r.top); }

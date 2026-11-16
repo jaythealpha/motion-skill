@@ -106,7 +106,7 @@ The skill folder (`<skill>` below) holds the engine (`engine/`), the bundled sha
 
 ## Page parameters (for screenshots and links)
 
-`?t=0..100` `&layout=stack|knoll` `&style=color|blueprint` `&depth=simple|detail|manual` `&step=N` (the end of step N; `t` wins if both are given) `&lang=en|ko|ja|zh|es` `&speed=xslow|slow|normal|fast` (1× / 2× / 3× / 5×; default 2×) `&fold=0..180` (foldables, at t=0 or 100) `&yaw=&pitch=` `&auto=0` `&play=1` `&panel=sources` `&pick=<partId>`
+`?t=0..100` `&layout=stack|knoll` `&style=color|blueprint` `&depth=simple|detail|manual` `&step=N` (the end of step N; `t` wins if both are given) `&lang=en|ko|ja|zh|es` `&speed=xslow|slow|normal|fast` (1× / 2× / 3× / 5×; default 2×) `&fold=0..180` (foldables, at t=0 or 100) `&yaw=&pitch=` `&auto=0` (Auto camera off: frame the whole exploded envelope instead of the current step) `&play=1` `&panel=sources` `&pick=<partId>`
 
 ## When something else fits better
 

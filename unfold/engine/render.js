@@ -6,9 +6,10 @@ import{patchFinish,createStudioEnvironment,SUGGESTED_LIGHTS}from'./unfold-art-pa
 import * as THREE from 'three';
 import {qualityMaterial} from './quality.js';
 import { buildPartMesh, partCentre } from './shapes.js';
-import { createTimeline, storyPose, screenFor, ease, INTRO_END, ASM_END } from './timeline.js';
+import { createTimeline, storyPose, screenFor, ease, stepWindows, INTRO_END, ASM_END } from './timeline.js';
 import { foldInfo, motionOf, bAffine, mapPoint, spineBand } from './fold.js';
 import { gradientMap, edgeMaterials, INK, ACCENT, BP } from '../shared/toon.js';
+import { frameTable, frameAt, boxUnion } from './framing.js';
 
 const COLOR = {
   alu: '#c9ced6', glass: '#2a3542', black: '#2b2d31', pcb: '#2f7d5a', pcbDark: '#22573f', chip: '#25272b', passive: '#cdbf96',
@@ -162,6 +163,7 @@ export function createRenderer(canvas, model, opts = {}) {
   const S = { style: opts.style || 'color', layout: opts.layout || 'stack', depth: opts.depth || 'detail', t: 0,
     yaw: opts.yaw ?? 35, pitch: opts.pitch ?? 32, zoom: 1, auto: opts.auto ?? true, playing: false,
     target: new THREE.Vector3(), frameCentre: new THREE.Vector3(), frameR: 100, focus: null, camT: new THREE.Vector3(), camZ: 1 };
+  S.autoK = S.auto ? 1 : 0;   // 0 = the whole exploded envelope, 1 = step framing (eases when Auto camera is toggled)
   let tl = createTimeline(model, S.layout), dirty = true;
   const frameFns = [];
 
@@ -195,6 +197,15 @@ export function createRenderer(canvas, model, opts = {}) {
     S.corners = []; for (const x of [box.min.x, box.max.x]) for (const y of [box.min.y, box.max.y]) for (const z of [box.min.z, box.max.z]) S.corners.push(new THREE.Vector3(x, z, -y));
     const hb = new THREE.Box3(); for (const { part: p } of parts.values()) { hb.expandByPoint(new THREE.Vector3(p.bbox[0], p.bbox[1], p.bbox[2])); hb.expandByPoint(new THREE.Vector3(p.bbox[3], p.bbox[4], p.bbox[5])); }
     const hc = hb.getCenter(new THREE.Vector3()); S.homeCentre = new THREE.Vector3(hc.x, hc.z, -hc.y);
+    // step framing: the finished phone where parts land, plus each step's parts at their start and home
+    const arr = b3 => [b3.min.x, b3.min.y, b3.min.z, b3.max.x, b3.max.y, b3.max.z], lift = S.layout === 'knoll' ? 8 : 0;
+    const win = stepWindows(model), stepBoxes = model.steps.map(s => { let b = arr(hb); const [w0, w1] = win.get(s.n);
+      for (const id of s.parts) { const P = parts.get(id); if (!P) continue; const pb = P.part.bbox, st = tl.start(id), o = st.pos;
+        b = boxUnion(b, st.fp ? [st.fp[0], st.fp[1], 0, st.fp[2], st.fp[3], pb[5] - pb[2]] : [pb[0] + o[0], pb[1] + o[1], pb[2] + o[2], pb[3] + o[0], pb[4] + o[1], pb[5] + o[2]]);
+        // the path in between (parts lift and arc on their way home)
+        for (let i = 0; i <= 16; i++) { const q = tl.pose(id, w0 + (w1 - w0) * i / 16).pos; b = boxUnion(b, [pb[0] + q[0], pb[1] + q[1], pb[2] + q[2], pb[3] + q[0], pb[4] + q[1], pb[5] + q[2]]); } }
+      b[5] += lift; return b; });
+    S.frames = frameTable(arr(box), stepBoxes, t => tl.stepIndexAt(t));
     S.homeCorners = []; for (const x of [hb.min.x, hb.max.x]) for (const y of [hb.min.y, hb.max.y]) for (const z of [hb.min.z, hb.max.z]) S.homeCorners.push(new THREE.Vector3(x, z, -y));
     dirty = true;
   }
@@ -277,13 +288,23 @@ export function createRenderer(canvas, model, opts = {}) {
       if (!hb.isEmpty()) { homeC = hb.getCenter(new THREE.Vector3()); homeK = [];
         for (const x of [hb.min.x, hb.max.x]) for (const y of [hb.min.y, hb.max.y]) for (const z of [hb.min.z, hb.max.z]) homeK.push(new THREE.Vector3(x, y, z)); }
     }
-    const look = S.camT.clone().lerp(homeC || S.camT, f);
+    // base framing: the whole envelope, or (Auto camera) the current step's box, both in model coordinates
+    let baseC = S.frameCentre, baseK = S.corners;
+    if (S.autoK > 0.001 && S.frames) {
+      const sb = frameAt(S.frames, S.t), k = S.autoK, fb = unionBox, mn = [fb.min.x, fb.min.y, fb.min.z], mx = [fb.max.x, fb.max.y, fb.max.z];
+      const lo = mn.map((v, i) => v + (sb[i] - v) * k), hi = mx.map((v, i) => v + (sb[i + 3] - v) * k);
+      baseC = new THREE.Vector3((lo[0] + hi[0]) / 2, (lo[2] + hi[2]) / 2, -(lo[1] + hi[1]) / 2);
+      baseK = []; for (const x of [lo[0], hi[0]]) for (const y of [lo[1], hi[1]]) for (const z of [lo[2], hi[2]]) baseK.push(new THREE.Vector3(x, z, -y));
+    }
+    const look = baseC.clone().add(S.camT.clone().sub(S.frameCentre)).lerp(homeC || S.camT, f);
     camera.position.copy(look).addScaledVector(dir, 2000); camera.lookAt(look);
     camera.updateMatrixWorld();
     // fit the box as seen from this angle (the phone flips about its own centre, so the box still holds)
     const right = new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 0), up = new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 1);
     const fit = (corners, c0) => { let hr = 1, hu = 1; for (const c of corners || []) { const d = c.clone().sub(c0); hr = Math.max(hr, Math.abs(d.dot(right))); hu = Math.max(hu, Math.abs(d.dot(up))); } return Math.max(hu, hr / aspect) * 1.1; };
-    let half = fit(S.corners, S.frameCentre);
+    let half = fit(baseK, baseC);
+    // keep some context: never closer than 2.4x the whole-envelope view, and a little more margin when framing a step
+    if (baseK !== S.corners) half = Math.max(half * (1 + 0.08 * S.autoK), fit(S.corners, S.frameCentre) / 2.4);
     if (f > 0) half = half + (fit(homeK, homeC) * 1.25 - half) * f;
     half /= S.zoom * S.camZ;
     camera.left = -half * aspect; camera.right = half * aspect; camera.top = half; camera.bottom = -half;
@@ -295,17 +316,11 @@ export function createRenderer(canvas, model, opts = {}) {
     renderer.setSize(Math.max(1, rect.width), Math.max(1, rect.height), false); dirty = true;
   }
 
-  // the auto camera eases toward the parts being fitted while the bar plays
+  // Auto camera on/off eases between the two framings; within either, the view is a function of t
   function followCamera() {
-    let goal = S.frameCentre, gz = 1;
-    if (S.auto && S.playing && S.activeIds?.length) {
-      const v = new THREE.Vector3(), tmp = new THREE.Vector3();
-      for (const id of S.activeIds) { parts.get(id).group.getWorldPosition(tmp); v.add(tmp); }
-      v.multiplyScalar(1 / S.activeIds.length); goal = S.frameCentre.clone().lerp(v, 0.55); gz = 1.35;
-    }
-    const before = S.camT.clone(), z0 = S.camZ;
-    S.camT.lerp(goal, 0.06); S.camZ += (gz - S.camZ) * 0.06;
-    return before.distanceToSquared(S.camT) > 1e-4 || Math.abs(z0 - S.camZ) > 1e-4;
+    const goal = S.auto ? 1 : 0, k0 = S.autoK;
+    S.autoK += (goal - S.autoK) * 0.08; if (Math.abs(goal - S.autoK) < 1e-3) S.autoK = goal;
+    return Math.abs(k0 - S.autoK) > 1e-5;
   }
 
   function loop() {
@@ -349,8 +364,8 @@ export function createRenderer(canvas, model, opts = {}) {
     // render one frame at another t / style (for the printed manual) and return it as an image. With focus (part ids),
     // the view closes in on those parts, keeping about as much again around them so the reader sees where they sit.
     dataURL(t, { style, depth, focus } = {}) {
-      const keep = { t: S.t, style: S.style, depth: S.depth, camT: S.camT.clone(), camZ: S.camZ, fold: S.foldOverride };
-      S.foldOverride = null;
+      const keep = { t: S.t, style: S.style, depth: S.depth, camT: S.camT.clone(), camZ: S.camZ, fold: S.foldOverride, autoK: S.autoK };
+      S.foldOverride = null; S.autoK = 0;
       S.style = style || S.style; S.depth = depth || S.depth; S.t = t; applyStyle(); applyPoses();
       S.camT.copy(S.frameCentre); S.camZ = 1; placeCamera();
       if (focus?.length) {
@@ -367,7 +382,7 @@ export function createRenderer(canvas, model, opts = {}) {
       }
       renderer.render(scene, camera);
       const url = canvas.toDataURL('image/png');
-      Object.assign(S, { t: keep.t, style: keep.style, depth: keep.depth, camZ: keep.camZ, foldOverride: keep.fold }); S.camT.copy(keep.camT); applyStyle(); applyPoses();
+      Object.assign(S, { t: keep.t, style: keep.style, depth: keep.depth, camZ: keep.camZ, foldOverride: keep.fold, autoK: keep.autoK }); S.camT.copy(keep.camT); applyStyle(); applyPoses();
       return url;
     },
     canvas,
