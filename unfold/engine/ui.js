@@ -143,7 +143,7 @@ export function mountUnfold(root, model, params = {}) {
   const $ = s => root.querySelector(s);
   const stage = $('.uf-stage'), canvas = $('canvas'), range = $('.uf-track input');
   const R = createRenderer(canvas, model, { style: st.style, layout: st.layout, depth: st.depth, t: 0,
-    yaw: params.yaw != null ? +params.yaw : undefined, pitch: params.pitch != null ? +params.pitch : undefined, auto: params.auto !== '0' });
+    yaw: params.yaw != null ? +params.yaw : undefined, pitch: params.pitch != null ? +params.pitch : undefined, auto: params.auto !== '0', artPass: params.art });
   const tl = () => R.timeline;
   const partById = new Map(model.parts.map(p => [p.id, p]));
   const bomIndex = new Map(model.parts.map((p, i) => [p.id, i + 1]));

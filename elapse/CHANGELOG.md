@@ -1,3 +1,7 @@
+## 2026-11-17 — 브리태닉 해저 표현
+
+- 타이타닉 해저 모듈을 대륙붕 설정으로 재사용: 녹회색 퇴적물, 쓸림 자국, 청록 수층, 마린 스노. 수심 약 120m라 조사 조명 풀은 넣지 않음. 기존 화면이 이미 양호해 개선 폭은 작음. `?art=0` 이전 표현. [검수](../docs/reviews/2026-11-17-britannic-unfold/design-qa.md)
+
 ## 2026-11-17 — Notre-Dame setting and Titanic seabed art pass
 
 - Notre-Dame: Île de la Cité setting (parvis, north street, gardens and trees, quay and Seine), placed from the City of Paris description of the cathedral's surroundings and shown as in 2019–2024. Coursed limestone that lightens with the dated cleaning, standing-seam lead, and a separate fresh-oak material for the rebuilt frame. Positions and sizes are estimated.

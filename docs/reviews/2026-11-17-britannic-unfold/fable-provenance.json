@@ -1,0 +1,13 @@
+{
+  "model": "claude-fable-5-2",
+  "billing_context": "Claude Code CLI, Max plan, extra usage off ($0.00 extra spend when checked). Costs are CLI list-price estimates, most likely drawn from plan usage. Invoice not checked.",
+  "calls": [
+    { "purpose": "Unfold shared finishes (alu/metal/glass/pcb/chip/battery/flex/copper/black), studio environment, light rig", "reported_cost_usd": 1.505408, "output_tokens": 36198, "thinking_tokens_included": 18971, "duration_ms": 338531, "original_output_sha256": "f537aaaf6edbeeda18e62279f25c02a21177289cd57a75b9a245eeebb30cf6ba", "integrated_module": "unfold/engine/unfold-art-pass.js" }
+  ],
+  "britannic": "No new Fable call: the Titanic deep-sea module was reused with an authored 'shelf' preset.",
+  "reported_total_usd_session": 6.2834,
+  "source_files_sent": false,
+  "prompt_contents": "Written specification only (coordinate frame, palette keys, shader-chunk constraints, determinism and performance limits). No repository source, records, keys or personal data.",
+  "reviewed_and_integrated_by": "Claude Opus 5.5 (Claude Code)",
+  "integration_notes": ["shared materials mean per-part setBounds is not used (defaults: grain along y, no radial mode)", "studio environment replaces the image of the existing presentation texture in place", "amplitudes left unchanged after review: finer patterns are visible only when zoomed in"]
+}

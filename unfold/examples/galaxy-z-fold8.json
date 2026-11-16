@@ -1692,7 +1692,7 @@
     "s11"
    ],
    "confidence": "verified",
-   "notes": "Two cells on opposite halves verified (s5). Labels 2393 / 2267 mAh (s9). Which label is on which half is NOT documented. Here the smaller cell goes in A because the main board takes about 40 mm of A's height. Size works out to about 820 Wh/L.",
+   "notes": "Two cells on opposite halves verified (s5). Labels 2393 / 2267 mAh (s9). Which label is on which half is NOT documented. Here the smaller cell goes in A because the main board takes about 40 mm of A's height. Size works out to about 820 Wh/L. Access: s5 says one of the two cells requires going through the outer display; this A cell is taken from the back-glass side, consistent with s5 (re-read 2026-11-17). The A-side order is not described step by step in s5.",
    "shapeNote": "thin rectangular pouch, connector tail at the top edge",
    "shape": {
     "template": "battery",
@@ -2867,7 +2867,7 @@
     "s16"
    ],
    "confidence": "verified",
-   "notes": "Reached only through the outer (cover) display (s5, s16). Label-to-half assignment estimated. Thinner than A because the cover display is thicker than the back glass.",
+   "notes": "Reached only through the outer (cover) display (s5, s16). Label-to-half assignment estimated. Thinner than A because the cover display is thicker than the back glass. s5 (re-read 2026-11-17): getting to one cell requires going through the outer display.",
    "shapeNote": "thin rectangular pouch, connector tail at the top edge",
    "shape": {
     "template": "battery",
@@ -3856,11 +3856,11 @@
     "es": "La fuente s9 proporciona totales de tornillos contradictorios: 24 para la bisagra (6 + 18) y 56 en general. Los 18 tornillos de la columna siguen a s9, pero su ubicación es estimada."
    },
    {
-    "ko": "iFixit(s5)은 두 배터리 모두 바깥 화면 쪽으로 들어가야 꺼낼 수 있다고 해요. 이 모델은 배터리 A를 후면 유리 쪽에서 넣어서 그 설명과 맞지 않아요.",
-    "en": "iFixit (s5) says either battery is reached through the outer display; this model reaches battery A from the back-glass side, which conflicts with s5.",
-    "ja": "iFixit (s5) は、どちらかのバッテリーが外側のディスプレイから到達していると言っています。このモデルはバックガラス側からバッテリーAに到達するため、s5と競合します。",
-    "zh": "iFixit (s5) 表示通过外部显示屏到达任一电池；该型号从后玻璃侧到达电池 A，这与 s5 冲突。",
-    "es": "iFixit (s5) dice que se accede a cualquiera de las baterías a través de la pantalla exterior; este modelo llega a la batería A desde el lado del cristal trasero, lo que entra en conflicto con el s5."
+    "ko": "iFixit(s5)는 두 셀이 서로 다른 반쪽에 있고 그중 하나에 접근하려면 바깥(커버) 화면을 거쳐야 한다고 설명해요. 이 모델은 B쪽 셀을 커버 화면 쪽에서, A쪽 셀을 후면 유리 쪽에서 꺼내므로 이 설명과 맞아요. 다만 s5는 A쪽 경로를 단계별로 설명하지 않아 그 순서는 추정이에요. (2026-11-17 원문 재확인, 이전 '충돌' 표기는 오독이었어요.)",
+    "en": "iFixit (s5) says the two cells sit on opposite halves and getting to one of them requires going through the outer (cover) display. This model removes the B cell from the cover-display side and the A cell from the back-glass side, which is consistent with s5. s5 does not describe the A-side path step by step, so that order is estimated. (Re-read 2026-11-17; the earlier 'conflict' note was a misreading.)",
+    "ja": "iFixit（s5）によると、2つのセルは反対側の半分にあり、そのうち1つに到達するには外側（カバー）ディスプレイを経由する必要があります。このモデルはBセルをカバーディスプレイ側から、Aセルを背面ガラス側から取り出すため、s5と一致します。s5はA側の手順を段階的に説明していないため、その順序は推定です。（2026-11-17に原文を再確認。以前の「矛盾」表記は誤読でした。）",
+    "zh": "iFixit（s5）指出两块电芯分别位于两半，其中一块需要经由外屏（封面屏）才能取出。本模型从封面屏一侧取出 B 侧电芯，从后玻璃一侧取出 A 侧电芯，与 s5 一致。s5 未逐步描述 A 侧的拆解路径，因此该顺序为估计。（2026-11-17 重新核对原文；此前的“冲突”说明属于误读。）",
+    "es": "iFixit (s5) indica que las dos celdas están en mitades opuestas y que llegar a una de ellas exige pasar por la pantalla exterior (de portada). Este modelo retira la celda B por el lado de la pantalla de portada y la celda A por el lado del cristal trasero, lo que concuerda con s5. s5 no describe paso a paso la ruta del lado A, así que ese orden es estimado. (Revisado el 2026-11-17; la nota anterior de «conflicto» era una lectura errónea.)"
    },
    {
     "ko": "고품질 표면의 회로 무늬·미세 결·렌즈 코팅은 설명용 추정입니다. 실측 회로도·재료 사양을 뜻하지 않습니다.",

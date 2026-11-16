@@ -31,7 +31,7 @@ python3 -m http.server 8765 --bind 127.0.0.1
 | 갤럭시 S24 | [HTML](unfold/examples/galaxy-s24.html) | http://127.0.0.1:8765/unfold/examples/galaxy-s24.html |
 | 아이폰 17 Pro | [HTML](unfold/examples/iphone-17-pro.html) | http://127.0.0.1:8765/unfold/examples/iphone-17-pro.html |
 | 아이폰 듀오 | [HTML](unfold/examples/iphone-duo.html) | http://127.0.0.1:8765/unfold/examples/iphone-duo.html |
-| 갤럭시 Z 폴드8 — 알려진 구조 불일치 포함 | [HTML](unfold/examples/galaxy-z-fold8.html) | http://127.0.0.1:8765/unfold/examples/galaxy-z-fold8.html |
+| 갤럭시 Z 폴드8 — 내부 위치·크기 추정 | [HTML](unfold/examples/galaxy-z-fold8.html) | http://127.0.0.1:8765/unfold/examples/galaxy-z-fold8.html |
 | 갤럭시 Z 플립8 — 추정 중심 | [HTML](unfold/examples/galaxy-z-flip8.html) | http://127.0.0.1:8765/unfold/examples/galaxy-z-flip8.html |
 | 남타워 충돌 대표 장면 | [HTML](elapse/examples/wtc-impact-study.html) | http://127.0.0.1:8765/elapse/examples/wtc-impact-study.html |
 | 세계무역센터 ·9·11과 재건 | [HTML](elapse/examples/world-trade-center.html) | http://127.0.0.1:8765/elapse/examples/world-trade-center.html |
@@ -63,7 +63,7 @@ WTC 대표 장면은 항공기 단면·엔진·조종석, 금속과 유리를 �
 
 ## 한계
 
-교육·설명용 예시이며 제조사 공식 도면이나 승인된 수리 매뉴얼이 아닙니다. 폴더블의 내부 위치·치수·일부 구조는 추정이며 플립8은 이전 세대 자료도 사용합니다. 폴드8에는 배터리 접근 방향과 출처 설명이 충돌하는 알려진 제한이 있습니다. 타이타닉·브리타닉의 물·입자 효과는 유체 시뮬레이션이 아닙니다. 상세 제한과 출처는 각 데모 안에 표시됩니다.
+교육·설명용 예시이며 제조사 공식 도면이나 승인된 수리 매뉴얼이 아닙니다. 폴더블의 내부 위치·치수·일부 구조는 추정이며 플립8은 이전 세대 자료도 사용합니다. 폴드8의 배터리 접근 방향은 2026-11-17 iFixit 원문을 다시 확인한 결과 모델과 일치합니다(한쪽 셀만 바깥 화면을 거쳐 접근). 이전의 '충돌' 표기는 원문 오독이었으며, A쪽 분해 순서는 추정입니다. 타이타닉·브리타닉의 물·입자 효과는 유체 시뮬레이션이 아닙니다. 상세 제한과 출처는 각 데모 안에 표시됩니다.
 
 에펠탑의 3D는 1887–1889년 시공 도해입니다. 기록 읽기에는 1884년 설계, 2019년 시작 도장 캠페인, 2024년 북측 승강기 재개통과 일상 유지관리도 포함합니다. 기록 날짜와 3D 맥락 시각을 구분하며 현대 공사를 옛 시공 장면으로 재현하지 않습니다. 주요 공정일은 공식 기록을 사용하며, 철골·가설물·기초·중간 높이와 조립 순서는 추정입니다. 300m는 주구조 기준이고 깃대·정상 부속 및 현대 안테나는 재현하지 않습니다. 수위·수심 대신 월별 기록·도해 시공 높이·기준 치수를 표시합니다.
 

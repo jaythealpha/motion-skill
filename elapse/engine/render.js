@@ -266,8 +266,8 @@ export function createRenderer(canvas, model, opts = {}) {
 
   const quality=opts.quality==='high'&&isBritannic(model)?createQualityStudy({renderer,scene,camera,root,items,ground,hemi,sun,model,cutaway:opts.qualityCutaway}):opts.quality==='high'&&isTitanic(model)?createTitanicQuality({renderer,scene,items}):null;
   const presentation=createPresentation(renderer,scene,{kind:'marine'});
-  // Titanic seabed art pass (authored illustration; ?art=0 keeps the previous look). Britannic is unaffected.
-  const deepArt=isTitanic(model)&&opts.artPass!=='0'?createTitanicDeepArt({renderer,scene,root,env,items,seaFloor,toonWeathering:!quality}):null;
+  // Ship seabed art pass (authored illustration; ?art=0 keeps the previous look): abyssal for Titanic, shelf for Britannic.
+  const deepArt=(isTitanic(model)||isBritannic(model))&&opts.artPass!=='0'?createTitanicDeepArt({renderer,scene,root,env,items,seaFloor,toonWeathering:!quality&&isTitanic(model),preset:isBritannic(model)?'shelf':'abyssal'}):null;
   function render() { if (!st.last) apply(st.t); placeCamera(); deepArt?.beforeRender(st,camera); cinematic?.update(st); wreckDetail?.update(st); ecology?.updateLight(st,hemi,sun); surveyLamp.visible=st.exploring&&(!ecology||!ecologyMode(model,st))&&st.style==='color'&&st.exploreLight;
     if(surveyLamp.visible){const T=toThree(st.cam.target),d=camera.position.distanceTo(T);surveyLamp.position.copy(camera.position);surveyLamp.target.position.copy(T);surveyLamp.distance=d*5+5;surveyLamp.intensity=d*d*2*st.lampStrength;}
     quality?.update(st); if(quality)presentation.update(st);

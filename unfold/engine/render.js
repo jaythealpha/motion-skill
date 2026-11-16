@@ -1,5 +1,6 @@
 import{configureMaterialBudget,presentationPixelRatio}from'../shared/material-budget.js';
 import{createPresentation}from'../shared/presentation.js';
+import{patchFinish,createStudioEnvironment,SUGGESTED_LIGHTS}from'./unfold-art-pass.js';
 // three.js renderer. The model lives in a root group turned so model z (the assembly axis) points up.
 // Two styles share the same parts: material-finished colour (or original toon) and blueprint line work.
 import * as THREE from 'three';
@@ -59,8 +60,13 @@ export function createRenderer(canvas, model, opts = {}) {
   const gpu=dbg?String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL)):'';
   const lightweight = innerWidth < 600 || /swiftshader|llvmpipe|software/i.test(gpu);
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, -5000, 5000);
-  scene.add(new THREE.HemisphereLight('#ffffff', '#8a94a3', 1.6));
-  const sun = new THREE.DirectionalLight('#ffffff', 2.2); sun.position.set(-0.6, 1.4, 0.9); scene.add(sun);
+  // Art pass (Fable 5.2 module, authored finishes; ?art=0 keeps the previous look): studio environment image, retuned
+  // key/fill and one cool rim light. The environment swaps the image of the presentation's texture in place.
+  const art = enhanced && opts.artPass !== '0', L = SUGGESTED_LIGHTS;
+  scene.add(new THREE.HemisphereLight(art ? L.hemiSky : '#ffffff', art ? L.hemiGround : '#8a94a3', art ? L.hemiIntensity : 1.6));
+  const sun = new THREE.DirectionalLight(art ? L.keyColor : '#ffffff', art ? L.keyIntensity : 2.2); sun.position.set(-0.6, 1.4, 0.9); scene.add(sun);
+  if (art) { const rim = new THREE.DirectionalLight(L.rimColor, L.rimIntensity); rim.position.set(...L.rimDirection); scene.add(rim);
+    if (presentation.env) { const studio = createStudioEnvironment({ size: lightweight ? 256 : 512 }); presentation.env.image = studio.texture.image; presentation.env.needsUpdate = true; } }
 
   const { w, l, t: thick } = model.product.dims;
   const root = new THREE.Group(); root.rotation.x = -Math.PI / 2; scene.add(root);     // model z -> world up
@@ -91,7 +97,7 @@ export function createRenderer(canvas, model, opts = {}) {
     let m;
     if (style === 'blueprint') m = new THREE.MeshBasicMaterial({ color: BP.fill, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
     else if (key === 'shine') m = new THREE.MeshBasicMaterial({ color: '#ffffff' });
-    else if (enhanced) m = qualityMaterial(key, color || COLOR[key] || COLOR.black, lightweight, presentation.env);
+    else if (enhanced) { m = qualityMaterial(key, color || COLOR[key] || COLOR.black, lightweight, presentation.env); if (art) patchFinish(m, key, { lightweight }); }
     else m = new THREE.MeshToonMaterial({ color: color || COLOR[key] || COLOR.black, gradientMap: gmap, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
     if (key === 'adhesive' && style === 'color') { m.transparent = true; m.opacity = 0.55; }
     if (dim === 1) { m.transparent = true; m.opacity = style === 'blueprint' ? 0.25 : 0.14; m.depthWrite = false; }
@@ -127,8 +133,11 @@ export function createRenderer(canvas, model, opts = {}) {
   if (FI && FI.spine > 0) {
     // it also fills the trough between the frames' ends and the fold line, so the shut hinge end reads solid
     const U = FI.axis === 'x', depth = 2 * FI.T + FI.gap, len = U ? w : l, band = spineBand(model, FI), sp = FI.spine + band;
-    const g = new THREE.BoxGeometry(U ? len : sp, U ? sp : len, depth);
+    // Rounded spine: plan corners on the outer side and bevelled z edges follow the halves' rounded corners, so the
+    // shut hinge end no longer reads as a square block standing proud of the body. Envelope (length, spine, depth) is
+    // unchanged; the corner radii are an estimated finish, not measured hinge-cover geometry.
     const uc = FI.at + FI.bSign * (FI.spine - band) / 2, zc = (FI.T - (FI.T + FI.gap)) / 2;
+    const g = spineGeometry(THREE, len, sp, depth, FI.bSign, U);
     g.translate(U ? w / 2 - C[0] : uc - C[0], U ? uc - C[1] : l / 2 - C[1], zc - C[2]);
     const frameCol = model.parts.find(p => p.shape?.template === 'housing')?.shape?.colors?.alu;
     spineMesh = new THREE.Mesh(g, enhanced ? qualityMaterial('alu',frameCol || COLOR.alu, lightweight, presentation.env) : new THREE.MeshToonMaterial({ color: frameCol || COLOR.alu, gradientMap: gmap }));
@@ -367,4 +376,22 @@ export function createRenderer(canvas, model, opts = {}) {
   new ResizeObserver(resize).observe(canvas);
   requestAnimationFrame(loop);
   return R;
+}
+
+// A rounded hinge spine centred on the origin: `len` along the hinge, `sp` across it (outer side toward +bSign), `depth` in z.
+export function spineGeometry(THREE, len, sp, depth, bSign, alongX) {
+  const bevel = Math.min(1.4, depth * 0.12, sp * 0.3), r = Math.max(0.2, Math.min(sp - bevel - 0.05, 6) ), a = len / 2 - bevel, u0 = -sp / 2 + bevel, u1 = sp / 2 - bevel;
+  const s = new THREE.Shape(), P = (x, y) => alongX ? [x, y] : [y, x], o = (x, y) => { const [X, Y] = P(x, y); return [X, Y]; };
+  // outline in (along, across); the outer edge is at +across, rounded at both ends; the inner edge (against the body) stays square
+  const pts = []; pts.push([-a, u0], [a, u0], [a, u1 - r]);
+  for (let k = 1; k <= 8; k++) { const t = k / 8 * Math.PI / 2; pts.push([a - r + r * Math.cos(t), u1 - r + r * Math.sin(t)]); }
+  pts.push([-a + r, u1]);
+  for (let k = 1; k <= 8; k++) { const t = Math.PI / 2 + k / 8 * Math.PI / 2; pts.push([-a + r + r * Math.cos(t), u1 - r + r * Math.sin(t)]); }
+  const mapped = pts.map(([x, y]) => o(x, bSign > 0 ? y : -y));
+  // keep a counter-clockwise outline whatever the axis/side mapping does to the winding
+  let area = 0; for (let i = 0; i < mapped.length; i++) { const [x1, y1] = mapped[i], [x2, y2] = mapped[(i + 1) % mapped.length]; area += x1 * y2 - x2 * y1; }
+  if (area < 0) mapped.reverse();
+  mapped.forEach(([x, y], i) => i ? s.lineTo(x, y) : s.moveTo(x, y)); s.closePath();
+  const g = new THREE.ExtrudeGeometry(s, { depth: depth - 2 * bevel, bevelEnabled: true, bevelSize: bevel, bevelThickness: bevel, bevelSegments: 3, curveSegments: 8 });
+  g.translate(0, 0, -(depth - 2 * bevel) / 2); g.computeVertexNormals(); return g;
 }
