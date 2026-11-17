@@ -50,7 +50,7 @@
     },
     {
       "id": "study-exterior",
-      "title": "Seoul Institute · June1995 exterior record01O01101Db8000",
+      "title": "Seoul Institute · June 1995 exterior photograph, code 01O01101Db8000",
       "url": "https://data.si.re.kr/node/52399"
     },
     {
@@ -272,18 +272,18 @@
       "at": "1995-07-19T00:00",
       "kind": "note",
       "title": {
-        "en": "Disaster declaration",
-        "ko": "특별재난지역 선포",
-        "ja": "特別災難地域の宣言",
-        "zh": "特别灾难地区宣布",
-        "es": "Declaración de desastre"
+        "en": "Special disaster area declared",
+        "ko": "특별재해지역 선포",
+        "ja": "特別災害地域の宣布",
+        "zh": "宣布特别灾害地区",
+        "es": "Declaración de zona especial de desastre"
       },
       "text": {
-        "en": "A presidential record on 19 July concerns the special-disaster-area declaration. This is the historical endpoint; the department store is not shown rebuilt.",
-        "ko": "7월 19일 대통령 기록은 특별재난지역 선포를 다룹니다. 여기서 역사 범위를 마치며 백화점을 다시 세운 것으로 표현하지 않습니다.",
-        "ja": "7月19日の大統領記録は特別災難地域宣言を扱います。ここで終了し、百貨店の再建は描きません。",
-        "zh": "7月19日总统档案涉及特别灾难地区宣布。历史范围到此为止，不展示百货店重建。",
-        "es": "Un registro presidencial del 19 de julio trata la declaración de zona de desastre. El estudio termina aquí, sin reconstruir los grandes almacenes."
+        "en": "A presidential record dated 19 July concerns the address declaring the site a special disaster area under the new Disaster Management Act. This is the historical endpoint; the department store is not shown rebuilt.",
+        "ko": "7월 19일 대통령 기록은 새 재난관리법에 따른 특별재해지역 선포 담화를 다룹니다. 여기서 역사 범위를 마치며 백화점을 다시 세운 것으로 표현하지 않습니다.",
+        "ja": "7月19日の大統領記録は、新しい災難管理法に基づく特別災害地域宣布の談話を扱います。ここで終了し、百貨店の再建は描きません。",
+        "zh": "7月19日的总统档案涉及依据新《灾难管理法》宣布特别灾害地区的讲话。历史范围到此为止，不展示百货店重建。",
+        "es": "Un registro presidencial del 19 de julio trata el mensaje que declaró el lugar zona especial de desastre según la nueva Ley de Gestión de Desastres. El estudio termina aquí, sin reconstruir los grandes almacenes."
       },
       "confidence": "sourced",
       "sourceIds": [
@@ -723,6 +723,38 @@
         "type": "archive",
         "locator": "Authored subject essay; 사고전개; 김보환; revised 2014; not an institutional position",
         "checkedAt": "2026-11-03"
+      },
+      {
+        "id": "policy-record",
+        "title": "Presidential Archives · special disaster area address, 19 July 1995",
+        "url": "https://www.pa.go.kr/research/contents/policy/index15.jsp?poMode=view&policySeq=3045",
+        "type": "institution",
+        "locator": "Record 1A00614174634055; produced 1995-07-19; archive description of the recorded address",
+        "checkedAt": "2026-11-17"
+      },
+      {
+        "id": "act",
+        "title": "Korean Law Information Center · Disaster Management Act (Act No. 4950)",
+        "url": "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%9E%AC%EB%82%9C%EA%B4%80%EB%A6%AC%EB%B2%95/(04950,19950718)",
+        "type": "institution",
+        "locator": "Enacted and in force 1995-07-18; Articles 1, 3, 20, 23, 30–32; addenda",
+        "checkedAt": "2026-11-17"
+      },
+      {
+        "id": "memory",
+        "title": "Seoul Metropolitan Government · Memory in Seoul project, Sampoong (2014)",
+        "url": "https://news.seoul.go.kr/culture/archives/50141",
+        "type": "institution",
+        "locator": "Seoul culture news, article 50141; 2014 announcement describing collection in progress",
+        "checkedAt": "2026-11-17"
+      },
+      {
+        "id": "memorial",
+        "title": "Seoul news hub · why the Sampoong memorial stands in Yangjae Citizens' Forest",
+        "url": "https://mediahub.seoul.go.kr/archives/2002100",
+        "type": "institution",
+        "locator": "Citizen-reporter article, 2021-06-30; hosted by the city, not an official position",
+        "checkedAt": "2026-11-17"
       }
     ],
     "records": [
@@ -794,32 +826,32 @@
       {
         "id": "warning-care",
         "title": {
-          "en": "Warnings, evacuation decisions and civic help",
-          "ko": "사전 징후·대피 판단·시민의 도움",
-          "ja": "兆候、避難判断、市民の援助",
-          "zh": "预警、疏散决策与市民援助",
-          "es": "Señales, decisiones de evacuación y ayuda ciudadana"
+          "en": "Warnings and the duty to evacuate",
+          "ko": "사전 징후와 대피 판단의 책임",
+          "ja": "兆候と避難判断の責任",
+          "zh": "预警与疏散决策的责任",
+          "es": "Señales y el deber de evacuar"
         },
         "action": {
-          "en": "The National Archives subject essay describes a fifth-floor crack around 08:05 and the absence of customer evacuation. It also describes volunteers coming to help after the collapse.",
-          "ko": "국가기록원 주제해설은 08:05경 5층 균열과 고객 대피 조치의 부재를 설명합니다. 붕괴 뒤 도움을 주러 온 자원봉사자들도 기록합니다.",
-          "ja": "国家記録院の主題解説は08:05頃の5階の亀裂と顧客避難措置の不在、崩壊後のボランティアの援助を記しています。",
-          "zh": "国家档案院专题文章记述约08:05五层出现裂缝、未疏散顾客，以及坍塌后志愿者前来援助。",
-          "es": "El ensayo del Archivo Nacional describe grietas en la quinta planta hacia las 08:05, la falta de evacuación de clientes y la llegada de voluntarios tras el derrumbe."
+          "en": "The National Archives subject essay describes a fifth-floor crack around 08:05 and the absence of customer evacuation before the collapse.",
+          "ko": "국가기록원 주제해설은 08:05경 5층 균열과, 붕괴 전 고객 대피 조치가 없었다는 점을 설명합니다.",
+          "ja": "国家記録院の主題解説は、08:05頃の5階の亀裂と、崩壊前に顧客避難措置がなかったことを記しています。",
+          "zh": "国家档案院专题文章记述约08:05五层出现裂缝，以及坍塌前未疏散顾客。",
+          "es": "El ensayo del Archivo Nacional describe grietas en la quinta planta hacia las 08:05 y la falta de evacuación de clientes antes del derrumbe."
         },
         "meaning": {
-          "en": "Remember both the responsibility to act on warnings and the people who offered help.",
-          "ko": "징후를 보고 행동해야 할 책임과 도움을 건넨 사람들을 함께 기억합니다.",
-          "ja": "兆候に対応する責任と援助した人々をともに記憶します。",
-          "zh": "同时记住对预警采取行动的责任和伸出援手的人们。",
-          "es": "Recordar la responsabilidad de actuar y a quienes ofrecieron ayuda."
+          "en": "Remember the responsibility to act on warnings before people are harmed.",
+          "ko": "사람이 다치기 전에 징후를 보고 행동해야 할 책임을 기억합니다.",
+          "ja": "人が傷つく前に兆候に対応する責任を記憶します。",
+          "zh": "记住在人员受伤之前对预警采取行动的责任。",
+          "es": "Recordar la responsabilidad de actuar ante las señales antes de que haya víctimas."
         },
         "unknowns": {
-          "en": "This is an authored archival essay, not a raw forensic log. 08:05 is approximate; it is not the time of the later volunteer response. Sources differ on the collapse minute.",
-          "ko": "집필된 기록 해설이며 현장 실측 로그가 아닙니다. 08:05는 약시각으로 이후 자원봉사 활동 시각이 아닙니다. 붕괴 분 단위 시각에는 자료 차이가 있습니다.",
-          "ja": "執筆された史料解説であり現場の実測ログではありません。08:05は概時で、後の援助時刻ではありません。崩壊時刻は資料差があります。",
-          "zh": "这是署名档案解说，并非现场测量日志。08:05为约时，不是后来志愿行动的时刻。各来源对坍塌分钟有差异。",
-          "es": "Es un ensayo firmado, no un registro forense. Las 08:05 son aproximadas y no fechan el voluntariado posterior. Las fuentes difieren sobre el minuto del derrumbe."
+          "en": "This is an authored archival essay, not a raw forensic log. 08:05 is approximate. Sources differ on the collapse minute.",
+          "ko": "집필된 기록 해설이며 현장 실측 로그가 아닙니다. 08:05는 약시각입니다. 붕괴 분 단위 시각에는 자료 차이가 있습니다.",
+          "ja": "執筆された史料解説であり現場の実測ログではありません。08:05は概時です。崩壊時刻は資料差があります。",
+          "zh": "这是署名档案解说，并非现场测量日志。08:05为约时。各来源对坍塌分钟有差异。",
+          "es": "Es un ensayo firmado, no un registro forense. Las 08:05 son aproximadas. Las fuentes difieren sobre el minuto del derrumbe."
         },
         "time": {
           "date": "1995-06-29T08:05",
@@ -853,6 +885,259 @@
             },
             "sourceIds": [
               "warning"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "rescue-together",
+        "title": {
+          "en": "Firefighters, police, soldiers and volunteers · searching together",
+          "ko": "소방·경찰·군과 자원봉사자 · 함께한 구조",
+          "ja": "消防・警察・軍とボランティア：ともに続けた救助",
+          "zh": "消防、警察、军队与志愿者：共同搜救",
+          "es": "Bomberos, policía, militares y voluntarios · buscar juntos"
+        },
+        "action": {
+          "en": "The presidential record says that firefighters, police, the military and all available people and equipment were mobilised for rescue right after the collapse. The National Archives essay records volunteers pouring into the site.",
+          "ko": "대통령 기록은 사고 직후 소방·경찰·군을 비롯해 동원할 수 있는 인력과 장비를 인명 구조에 쏟았다고 말합니다. 국가기록원 해설은 자원봉사자들이 현장으로 몰려왔다고 기록합니다.",
+          "ja": "大統領記録は、崩壊直後から消防・警察・軍を含むあらゆる人員と装備を人命救助に動員したと述べています。国家記録院の解説は、ボランティアが現場に駆けつけたことを記しています。",
+          "zh": "总统档案称，事故后立即动员消防、警察、军队等一切人力和装备全力救人。国家档案院专题文章记载大批志愿者涌向现场。",
+          "es": "El registro presidencial afirma que bomberos, policía, militares y todo el personal y equipo disponibles se movilizaron para el rescate tras el derrumbe. El ensayo del Archivo Nacional registra la llegada masiva de voluntarios."
+        },
+        "meaning": {
+          "en": "Remember the agencies and citizens who kept searching the collapsed building for the living.",
+          "ko": "무너진 건물에서 살아 있는 사람을 찾기 위해 여러 기관과 시민이 함께 움직인 시간을 기억합니다.",
+          "ja": "崩れた建物で生存者を探し続けた機関と市民の時間を記憶します。",
+          "zh": "记住各机构与市民在坍塌建筑中坚持搜寻生还者的时光。",
+          "es": "Recordar a las instituciones y ciudadanos que siguieron buscando con vida a quienes estaban bajo el edificio."
+        },
+        "unknowns": {
+          "en": "Neither record gives head counts, rescuers' names or a rescue sequence. The archive essay also notes poor traffic control, missing drawings and crowding by the press, so cooperation should not be read as smooth.",
+          "ko": "두 기록 모두 인원수, 구조자 이름, 구조 순서를 담지 않습니다. 국가기록원 해설은 교통 통제 미흡, 도면 정보 부족, 과열 취재로 초기 구조가 어려웠다고도 적어, 협력이 매끄러웠다고 볼 수 없습니다.",
+          "ja": "どちらの記録にも人数、救助者名、救助の順序はありません。解説は交通統制の不備、図面情報の不足、過熱取材で初期救助が難航したとも記しており、協力が円滑だったとは言えません。",
+          "zh": "两份记录均未提供人数、救援者姓名或救援顺序。档案文章还指出交通管制不力、图纸信息缺乏和媒体拥挤使初期救援受阻，因此不能认为协作十分顺畅。",
+          "es": "Ninguno de los registros da cifras, nombres ni la secuencia del rescate. El ensayo también señala un control de tráfico deficiente, falta de planos y aglomeración de prensa, por lo que la cooperación no fue fluida."
+        },
+        "time": {
+          "date": "1995-06-29",
+          "precision": "date"
+        },
+        "sceneAnchor": {
+          "eventId": "aftermath"
+        },
+        "sourceIds": [
+          "policy-record",
+          "warning"
+        ],
+        "facts": []
+      },
+      {
+        "id": "disaster-act",
+        "title": {
+          "en": "Disaster Management Act · rescue written into law",
+          "ko": "재난관리법 · 구조를 제도로 남기다",
+          "ja": "災難管理法：救助を制度に残す",
+          "zh": "《灾难管理法》：把救援写入制度",
+          "es": "Ley de Gestión de Desastres · el rescate convertido en norma"
+        },
+        "action": {
+          "en": "On 18 July, nineteen days after the collapse, the Disaster Management Act (Act No. 4950) was enacted and took effect. It set duties for national and local governments, created emergency rescue headquarters, let on-site command assign tasks to rescue agencies and volunteers, and provided for special disaster areas.",
+          "ko": "붕괴 19일 뒤인 7월 18일 재난관리법(법률 제4950호)이 제정·시행되었습니다. 이 법은 국가와 지방자치단체의 재난관리 책무, 긴급구조구난본부, 현장지휘가 구조기관과 자원봉사자에게 임무를 주는 체계, 특별재해지역 선포를 규정했습니다.",
+          "ja": "崩壊から19日後の7月18日、災難管理法（法律第4950号）が制定・施行されました。国と自治体の責務、緊急救助本部、現場指揮が救助機関とボランティアに任務を与える体制、特別災害地域の宣布を定めました。",
+          "zh": "坍塌19天后的7月18日，《灾难管理法》（第4950号法律）颁布并施行，规定了国家和地方政府的职责、紧急救援本部、现场指挥向救援机构和志愿者分配任务的体制，以及特别灾害地区的宣布。",
+          "es": "El 18 de julio, diecinueve días después del derrumbe, se promulgó y entró en vigor la Ley de Gestión de Desastres (Ley n.º 4950). Fijó deberes estatales y locales, creó centros de rescate de emergencia, permitió al mando en el lugar asignar tareas a servicios y voluntarios y previó las zonas especiales de desastre."
+        },
+        "meaning": {
+          "en": "Remember the responsibility to turn the confusion seen on site into a system for the next rescue.",
+          "ko": "현장에서 드러난 혼선을 다음 구조를 위한 제도로 바꾸어야 할 책임을 기억합니다.",
+          "ja": "現場で見えた混乱を次の救助のための制度に変える責任を記憶します。",
+          "zh": "记住把现场暴露的混乱转化为下一次救援制度的责任。",
+          "es": "Recordar la responsabilidad de convertir el desorden del lugar en un sistema para el próximo rescate."
+        },
+        "unknowns": {
+          "en": "The statute shows how the system was designed, not how well it worked in later emergencies. Only the 1995 text is used here; later laws are not covered. The presidential record links the law to this collapse.",
+          "ko": "법 조문은 제도의 설계를 보여 줄 뿐, 이후 재난 현장에서 얼마나 잘 작동했는지는 알려 주지 않습니다. 1995년 원문만 다루며 이후 법체계는 다루지 않습니다. 이 참사와 법의 관계는 대통령 기록의 설명에 근거합니다.",
+          "ja": "条文は制度の設計を示すだけで、その後の災害現場でどれほど機能したかは示しません。1995年の原文のみを扱い、その後の法体系は扱いません。崩壊との関係は大統領記録の説明に基づきます。",
+          "zh": "法条仅显示制度设计，不说明其在后来灾害中的实际效果。此处只使用1995年原文，不涉及后续法律。该法与此次坍塌的关联依据总统档案的说明。",
+          "es": "El texto legal muestra el diseño del sistema, no su eficacia en emergencias posteriores. Solo se usa el texto de 1995, no leyes posteriores. El vínculo con el derrumbe se basa en el registro presidencial."
+        },
+        "time": {
+          "date": "1995-07-18",
+          "precision": "date"
+        },
+        "sceneAnchor": {
+          "eventId": "policy"
+        },
+        "sourceIds": [
+          "act",
+          "policy-record"
+        ],
+        "facts": [
+          {
+            "id": "enacted",
+            "label": {
+              "en": "Enacted and in force",
+              "ko": "제정·시행",
+              "ja": "制定・施行",
+              "zh": "颁布与施行",
+              "es": "Promulgación y vigencia"
+            },
+            "value": "1995-07-18",
+            "unit": "date",
+            "scope": {
+              "en": "Act No. 4950, as listed in the national law database",
+              "ko": "국가법령정보센터의 법률 제4950호 기준",
+              "ja": "国家法令情報センターの法律第4950号による",
+              "zh": "依据国家法令信息中心所载第4950号法律",
+              "es": "Ley n.º 4950 según la base legal nacional"
+            },
+            "sourceIds": [
+              "act"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "memory-voices",
+        "title": {
+          "en": "Memory collectors and the citizens who spoke · a record in voices",
+          "ko": "기억수집가와 증언한 시민들 · 목소리로 남긴 기록",
+          "ja": "記憶収集家と証言した市民：声で残す記録",
+          "zh": "记忆收集者与讲述的市民：用声音留下的记录",
+          "es": "Recopiladores de memoria y testigos · un registro de voces"
+        },
+        "action": {
+          "en": "In 2014 the Seoul Foundation for Arts and Culture's Memory in Seoul project sent 15 citizen memory collectors to record survivors, witnesses and rescuers. The city said the recordings would be kept for anyone to hear at Seoul Library and online.",
+          "ko": "2014년 서울문화재단의 메모리인서울 프로젝트는 시민 기억수집가 15명이 생존자, 목격자, 구조대원 등의 기억을 찾아 기록하게 했습니다. 서울시는 녹음을 서울도서관과 누리집에 보관해 누구나 들을 수 있게 하겠다고 밝혔습니다.",
+          "ja": "2014年、ソウル文化財団のメモリー・イン・ソウル事業では、市民の記憶収集家15人が生存者、目撃者、救助隊員などの記憶を記録しました。ソウル市は録音をソウル図書館とウェブサイトで誰でも聞けるよう保管すると説明しました。",
+          "zh": "2014年，首尔文化财团的“记忆首尔”项目由15名市民记忆收集者记录幸存者、目击者和救援人员的记忆。首尔市表示，录音将保存在首尔图书馆和网站上供所有人收听。",
+          "es": "En 2014 el proyecto Memory in Seoul de la Fundación de Arte y Cultura de Seúl encargó a 15 recopiladores ciudadanos grabar a supervivientes, testigos y rescatistas. La ciudad indicó que las grabaciones se conservarían en la Biblioteca de Seúl y en línea para cualquiera."
+        },
+        "meaning": {
+          "en": "Remember the citizens who kept personal experiences that official records did not hold, so later generations can hear them.",
+          "ko": "공식 기록에 다 담기지 않은 개인의 경험을 다음 세대가 들을 수 있도록 남긴 시민들을 기억합니다.",
+          "ja": "公式記録に残らなかった個人の経験を、次の世代が聞けるよう残した市民を記憶します。",
+          "zh": "记住那些把官方记录未能收录的个人经历留给后代聆听的市民。",
+          "es": "Recordar a quienes guardaron experiencias personales ausentes de los registros oficiales para que otras generaciones las escuchen."
+        },
+        "unknowns": {
+          "en": "This is a 2014 announcement made while collection was under way. Final interview totals, publications and individual testimony were not checked here and are not reproduced.",
+          "ko": "수집이 진행 중이던 2014년 발표 기사입니다. 최종 인터뷰 인원, 출간물, 개별 증언 내용은 여기서 확인하지 않았고 옮기지 않습니다.",
+          "ja": "収集途中の2014年の発表記事です。最終的な聞き取り人数、刊行物、個々の証言は確認しておらず、転載しません。",
+          "zh": "这是2014年收集期间发布的文章。最终访谈人数、出版物及个别证词未在此核实，也不予转载。",
+          "es": "Es un anuncio de 2014, con la recogida en curso. No se comprobaron ni reproducen las cifras finales, las publicaciones ni los testimonios."
+        },
+        "time": {
+          "date": "2014-09",
+          "precision": "month",
+          "note": {
+            "en": "Collection began 19 years after the collapse; this is not a 1995 date.",
+            "ko": "붕괴 19년 뒤 시작한 수집이며 1995년의 날짜가 아닙니다.",
+            "ja": "崩壊19年後に始まった収集で、1995年の日付ではありません。",
+            "zh": "收集始于坍塌19年后，并非1995年的日期。",
+            "es": "La recogida empezó 19 años después; no es una fecha de 1995."
+          }
+        },
+        "sceneAnchor": {
+          "eventId": "policy"
+        },
+        "sourceIds": [
+          "memory"
+        ],
+        "facts": [
+          {
+            "id": "collectors",
+            "label": {
+              "en": "Memory collectors",
+              "ko": "기억수집가",
+              "ja": "記憶収集家",
+              "zh": "记忆收集者",
+              "es": "Recopiladores de memoria"
+            },
+            "value": 15,
+            "unit": "people",
+            "scope": {
+              "en": "Members of the 2014 Sampoong practice group, as announced",
+              "ko": "2014년 삼풍 실행공동체 참여 인원, 발표 기준",
+              "ja": "2014年の三豊実践共同体の参加人数（発表時）",
+              "zh": "2014年三丰实践小组参与人数（公告时）",
+              "es": "Integrantes del grupo de 2014 sobre Sampoong, según el anuncio"
+            },
+            "sourceIds": [
+              "memory"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "memorial",
+        "title": {
+          "en": "The Sampoong memorial · a place for the 502",
+          "ko": "삼풍참사 위령탑 · 502위를 기억하는 자리",
+          "ja": "三豊惨事慰霊塔：502人を記憶する場所",
+          "zh": "三丰惨案慰灵塔：铭记502位遇难者之地",
+          "es": "El memorial de Sampoong · un lugar para las 502 víctimas"
+        },
+        "action": {
+          "en": "A citizen-reporter article on the city's news hub says the memorial stands in Yangjae Citizens' Forest, about 5 km from the site, to console the 502 victims. On the 26th anniversary, families had left flowers and messages there.",
+          "ko": "서울시 시민기자 기사는 위령탑이 사고 현장에서 약 5km 떨어진 양재 시민의 숲에 있으며, 희생된 502위를 위로하는 뜻을 담았다고 전합니다. 26주기에는 유족들이 남긴 꽃과 메시지가 놓여 있었습니다.",
+          "ja": "ソウル市の市民記者記事によると、慰霊塔は現場から約5km離れた良才市民の森にあり、犠牲となった502人を慰める意味が込められています。26周忌には遺族が残した花とメッセージが置かれていました。",
+          "zh": "首尔市民记者的文章称，慰灵塔位于距事故现场约5公里的良才市民之林，用以告慰502位遇难者。26周年时，遗属在那里留下了鲜花和留言。",
+          "es": "Un artículo de un reportero ciudadano en el portal municipal indica que el memorial está en el Bosque Ciudadano de Yangjae, a unos 5 km del lugar, para honrar a las 502 víctimas. En el 26.º aniversario, las familias dejaron flores y mensajes."
+        },
+        "meaning": {
+          "en": "Keep both the memorial built away from the site and the families who keep returning to it.",
+          "ko": "현장에서 떨어진 곳에 세워진 추모 공간과, 그곳을 계속 찾는 유족들의 기억을 함께 남깁니다.",
+          "ja": "現場から離れて建てられた追悼の場と、そこを訪れ続ける遺族の記憶をともに残します。",
+          "zh": "同时留下远离现场建立的追悼空间，以及不断前往那里的遗属的记忆。",
+          "es": "Conservar a la vez el memorial levantado lejos del lugar y a las familias que siguen visitándolo."
+        },
+        "unknowns": {
+          "en": "This is a citizen-reporter article, not an official city position. The memorial's construction date and unveiling were not verified from this source. The 3D scene does not show the memorial.",
+          "ko": "시민기자 기사이며 서울시의 공식 입장이 아닙니다. 위령탑의 건립 날짜와 제막 경위는 이 출처로 확인하지 않았습니다. 3D 장면은 위령탑을 그리지 않습니다.",
+          "ja": "市民記者の記事であり、ソウル市の公式見解ではありません。慰霊塔の建立日と除幕の経緯はこの出典では確認していません。3D場面は慰霊塔を描きません。",
+          "zh": "这是市民记者的文章，并非首尔市官方立场。慰灵塔的建造日期和揭幕经过未经此来源核实。3D场景不显示慰灵塔。",
+          "es": "Es un artículo de un reportero ciudadano, no una posición oficial. No se verificaron con esta fuente la fecha de construcción ni la inauguración. La escena 3D no muestra el memorial."
+        },
+        "time": {
+          "date": "2021-06",
+          "precision": "month",
+          "note": {
+            "en": "Date of the article at the 26th anniversary, not the memorial's construction date.",
+            "ko": "26주기 기사 작성 시점이며 위령탑 건립 날짜가 아닙니다.",
+            "ja": "26周忌の記事の時点で、慰霊塔の建立日ではありません。",
+            "zh": "为26周年文章的发表时间，并非慰灵塔建造日期。",
+            "es": "Fecha del artículo en el 26.º aniversario, no de la construcción."
+          }
+        },
+        "sceneAnchor": {
+          "eventId": "policy"
+        },
+        "sourceIds": [
+          "memorial"
+        ],
+        "facts": [
+          {
+            "id": "victims",
+            "label": {
+              "en": "Victims commemorated",
+              "ko": "위로하는 희생자",
+              "ja": "慰霊の対象",
+              "zh": "告慰的遇难者",
+              "es": "Víctimas recordadas"
+            },
+            "value": 502,
+            "unit": "people",
+            "scope": {
+              "en": "As stated in the article; matches the reported death toll",
+              "ko": "기사에 적힌 위령 대상이며 보고된 사망자 수와 같음",
+              "ja": "記事の記述で、報告された死者数と一致",
+              "zh": "据文章所述，与报道的死亡人数一致",
+              "es": "Según el artículo; coincide con el número de muertes"
+            },
+            "sourceIds": [
+              "memorial"
             ]
           }
         ]
