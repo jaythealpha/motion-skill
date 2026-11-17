@@ -28,3 +28,7 @@ Validation evidence and limitations: `docs/reviews/2026-11-03-seoul-civil-histor
 
 ## Normal-traffic detail update —2026-11-03
 User requested visible cars passing. Four lanes use two directions. Sedans/vans,32 illustration instances, spacing42m and nominal9m/s are original presentation choices, not records of actual vehicles/occupants/speed. The independent traffic clock does not advance historical dates. It freezes on demand, hidden tabs, reduced-motion settings and structural-inspection stops; the dedicated road-traffic stop permits movement. Vehicles are hidden during collapse and incomplete replacement as an explicit display choice, not a claim of evacuation. Original width19.4m and four-lane1997 endpoint are retained.
+
+## River and sky art pass — 2026-11-17
+
+Authored look only, no new facts. The Seongsu scene gains a hazy daytime sky dome and distance fog (shared with the Eiffel pass), and the Han River surface reflects that sky by view angle (Fresnel), lightens toward the horizon and dissolves at its plane edge into the haze. Ripples follow the timeline `t`, not the wall clock. Weather, light, water colour and the far-bank skyline blocks are illustrative, not records of 21 October 1994 or of real buildings. `?art=0` shows the previous look; blueprint is unchanged. Sampoong uses the same renderer and is unchanged. No generation service was used.
